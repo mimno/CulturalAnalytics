@@ -1,0 +1,1964 @@
+Journal of
+Cultural Analytics
+
+January 18, 2021
+
+Abolitionist Networks: Modeling Lan­
+guage Change in Nineteenth­Century
+Activist Newspapers
+Sandeep Soni, Lauren F. Klein and Jacob Eisenstein
+Sandeep Soni School of Interactive Computing, Georgia Institute of Technology, Atlanta. sandeepsoni@gatech.edu.
+Lauren F. Klein Departments of English and Quantitative Theory and Methods, Emory University, Atlanta. lauren.klein@emory.
+edu.
+Jacob Eisenstein Google Research, Seattle. jeisenstein@google.com
+Peer­Reviewers:David Smith, Richard Jean So
+Dataverse DOI:10.7910/DVN/EWYMFG
+
+ABSTRACT
+
+The abolitionist movement of the nineteenth­century United States remains among the most significant social and political
+movements in US history. Abolitionist newspapers played a crucial role in spreading information and shaping public
+opinion around a range of issues relating to the abolition of slavery. These newspapers also serve as a primary source of
+information about the movement for scholars today, resulting in powerful new accounts of the movement and its leaders.
+This paper supplements recent qualitative work on the role of women in abolition’s vanguard, as well as the role of the Black
+press, with a quantitative text modeling approach. Using diachronic word embeddings, we identify which newspapers
+tended to lead lexical semantic innovations — the introduction of new usages of specific words — and which newspapers
+tended to follow. We then aggregate the evidence across hundreds of changes into a weighted network with the newspapers
+as nodes; directed edge weights represent the frequency with which each newspaper led the other in the adoption of a lexical
+semantic change. Analysis of this network reveals pathways of lexical semantic influence, distinguishing leaders from
+followers, as well as others who stood apart from the semantic changes that swept through this period. More specifically,
+we find that two newspapers edited by women — The Provincial Freeman and The Lily — led a large number of semantic
+changes in our corpus, lending additional credence to the argument that a multiracial coalition of women led the abolitionist
+movement in terms of both thought and action. It also contributes additional complexity to the scholarship that has sought
+to tease apart the relation of the abolitionist movement to the women’s suffrage movement, and the vexed racial politics
+that characterized their relation.
+
+Introduction
+Scholars often grapple with the power they hold as the producers of historical
+knowledge, as well as with the historical forces of power that shaped the docu­
+ments that provide them with evidence about the past.1 These forces of power
+are plainly apparent in the newspapers that document the abolitionist movement
+of the nineteenth­century United States. These newspapers played a crucial role
+in spreading information and shaping public opinion about the abolition of slav­
+Journal of Cultural Analytics 1 (2021): 1­43. doi: 10.22148/001c.18841
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+Doug
+FLW
+GLB
+Lib
+Lily
+NASS
+NEra
+PF
+TCA
+TCR
+
+Douglass Newspapers
+Frank Leslie’s Weekly
+Godey’s Lady’s Book
+The Liberator
+The Lily
+National Anti­Slavery Standard
+The National Era
+The Provincial Freeman
+The Colored American
+The Christian Recorder
+
+Figure 1: A spring layout of the ten newspapers in our collection, in which newspapers are positioned nearby in
+space to the extent that they influence each other;4 the strength of the pairwise influence is also reflected in the
+darkness of the tie. Dark gray nodes represent members of the Black press; nodes with darker outlines represent
+publications edited by and/or aimed at women. For more details on the newspapers, see Data.
+
+ery and related social justice issues. They also now serve as a primary source of
+information about abolition for scholars today. And yet, these newspapers are
+still subject to the historical forces that surrounded their production: those edited
+by white people (and white men in particular) have been more fully preserved,
+and therefore, are more accessible to researchers. As a result, until relatively
+recently, these newspapers — and the efforts of the white men who edited them
+— have dominated historical accounts of the abolitionist movement.2 However,
+in the past decade or so, scholars3 have worked to highlight the leadership role
+of the Black press in the movement. This has resulted in new and necessary
+historical narratives that confirm the central role played by the Black press in
+the fight against slavery and in support of liberation broadly conceived.
+But there is more work to be done. Intersectional approaches to the study of
+abolition have highlighted the role of women, and Black women in particular,
+in the movement’s vanguard. Citing newspapers edited by women, both Black
+and white, among other sources, Manisha Sinha, for example, makes the case
+that “women were abolition’s foot­soldiers and, more controversially, its leaders
+and orators”.5 This work dovetails with the past several decades of scholarship
+on nineteenth­century Black women’s activism, which has demonstrated how
+Black women emerged as “visible and authoritative community leaders” over
+the course of the nineteenth century.6 Yet it has been generally understood that
+2
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+this emergence was gradual, with Black women securing their public presence
+in the years after the Civil War.7 While recovery efforts such as the Colored
+Conventions Project8 have sought to excavate evidence of how Black women
+participated in early conversations about abolition and related issues of social,
+economic, and educational justice, it is still often necessary to “read between
+the lines” of the archival record “for echoes of women’s contributions” to the
+abolitionist movement, as Derrick Spires explains.9
+This project shares the commitment of the sources cited above to amplifying
+the leadership contributions of Black people, and Black women in particular, to
+the abolitionist cause. But we diverge in our methodological approach. Rather
+than seek out additional archival sources that might augment existing accounts
+of social and political leadership — in terms of either thought, or action, or
+both — or “read between the lines” of existing documents so as to generate new
+narratives about who exemplified leadership in its various forms, we focus on
+the micro­structure of the language of the archive. We hypothesize that aspects
+of social and political leadership — more specifically, the introduction of new
+concepts, the reframing of existing ones, and the advancement and circulation
+of both — can be identified in the appearance of individual words and the statis­
+tics that describe their lexical contexts. By connecting these words and contexts
+to the specific newspapers in which they appear, we offer a new layer of evi­
+dence about the emergence of certain social and political currents, the sources
+responsible for their transmission, and the networks that helped sustain them.
+Contextual accounts of the meaning of words, such as the one just described,
+are known in linguistics as distributional semantics.10 Through computational
+analysis of large text corpora, this contextual information can be summarized in
+the form of numerical vectors known as word embeddings, which have been
+shown to provide a powerful measure of changes in the meaning of individ­
+ual terms,11 as well as an index of deeper social dynamics.12 For these rea­
+sons, word embeddings have attracted growing interest in the digital humanities,
+where they have been applied to identify the evolution of concepts13 and offer
+a “lexical panorama” of a particular discourse.14 We go further by adding a
+3
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+network perspective to the dynamics of word meaning: we ask not only which
+individual words have changed in meaning and how they have changed, but
+also who was responsible for those changed meanings and how that responsibil­
+ity was expressed. We propose a method of identifying the specific newspapers
+that were responsible for introducing new or changed meanings of words into
+the surrounding discourse, as well as the newspapers which quickly adopted
+those new or changed usages. To do so, we develop a model of semantic change
+and a measure of semantic leadership that links each word in the corpus to a pair
+of newspapers: a leader and a follower. We then aggregate over hundreds of
+semantic changes to construct a network between the set of newspapers in our
+collection. The analysis of this network reveals the specific roles played by each
+newspaper in the evolving discourse of abolitionism. This novel computational
+approach offers a counterweight, however imperfect, to the forces of power that
+operate along the lines of both race and gender, and that have overdetermined
+much of the historical scholarship on the abolitionist press to this point.15
+We find that two newspapers edited by women — The Provincial Freeman and
+The Lily — played a leading role in a large number of semantic changes in our
+corpus. That the former is an abolitionist newspaper edited by a Black woman,
+and the latter is a women’s suffrage newspaper edited by a white woman, lends
+additional credence to the argument that a multiracial coalition of women led the
+abolitionist movement in terms of both thought and action. In addition, it con­
+tributes additional complexity to the scholarship that has sought to tease apart
+the relation of the abolitionist movement to the women’s suffrage movement,
+and the vexed racial politics that characterize their relation.16 By aggregating
+this evidence of semantic leadership into a weighted network, with the news­
+papers as nodes and the number of their lead words as edge weights, we reveal
+additional pathways of semantic influence. More specifically, we find evidence
+to confirm extant accounts of the leadership role played by The Liberator, a
+white­edited newspaper, as well as new insight into the leadership relationships
+among newspapers associated with the Black press. Our methods of valida­
+tion, which involve both qualitative and quantitative analysis, demonstrate how
+4
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+this evidence might be incorporated back into existing scholarly conversations
+about nineteenth­century freedom struggles. More generally, our results sug­
+gest that our model of semantic leadership might be applied to other incomplete
+or otherwise fragmentary archives, thereby contributing to the rebalancing of
+the historical narratives that the archives prompt.
+
+Lexical Semantic Change and Leadership
+Our methodological approach draws on both semantic and sociolinguistic per­
+spectives on language change, which have rarely been reconciled in prior work.
+This may be due in part to each subfield’s preferred sources of data: seman­
+tic change is studied mainly from diachronic corpora of written texts, which
+typically have limited social information, while sociolinguistic research is built
+mainly on interviews, with temporal changes inferred from each speaker’s age.17
+Because our newspaper corpus (described more fully in Data) is large and di­
+achronic, and contains sources that were known to have been in conversation,
+we are able to take a step towards unifying these perspectives in a novel mod­
+eling framework (described in Method: From timestamped text to aggregate
+influence networks). To set the stage for this work, we now review the key
+foundations of our modeling framework before summarizing our methodologi­
+cal contributions.
+
+Lexical semantic change
+Languages undergo constant change, and even an intuitive reflection on a word
+like awesome makes clear that this instability extends to the lexicon, which
+links words and their semantics.18 Lexical semantic changes can be identified
+in corpora by building on the theory of distributional semantics,19 which asserts
+that the meaning of a linguistic element can be ascertained by the contexts in
+which it appears. Consequently, if a word undergoes a change in the distribu­
+tion over contexts — in its distributional statistics — then its meaning is likely
+to have changed as well. In contemporary computational linguistics, distribu­
+5
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+tional statistics are summarized by vector word embeddings, which are usually
+estimated by maximizing a probability model on a corpus.20 In the past sev­
+eral years, word embeddings have begun to be applied in digital humanities
+research.21 By making word embeddings dynamic, they can be powerful tools
+for revealing changes in word meaning.22 A typical approach is to estimate
+embeddings on multiple corpora from different time periods and then align the
+embedding vectors to make them comparable; however, there are many alterna­
+tives.23
+After identifying lexical semantic changes, we next ask what can be learned
+from them in aggregate. Hamilton, Leskovec, and Jurafsky24 treat diachronic
+word embeddings as evidence for structural constraints on semantic change,
+while Garg et al.25 trace shifts in public attitudes towards race and ethnicity by
+tracking word embeddings in large­scale corpora of books. In the digital human­
+ities, diachronic word embeddings have been used to trace the history of con­
+cepts: for example, Shechtman26 explores the “technical, ideological, and envi­
+ronmental valences” of the idea of media by comparing near neighbors of me­
+dia and related terms across a corpus of 20th century magazines. Most closely
+related to our own work, Soni, Lerman, and Eisenstein27 present a method for
+identifying the specific documents that lead lexical semantic changes, which the
+authors show to accrue more citations in corpora of scientific abstracts and legal
+opinions. This work provides further evidence for the validity of our approach
+of linking lexical semantic leadership to broader influence. Methodologically,
+we diverge from this prior work by identifying leaders of individual semantic
+changes, and then computing and analyzing aggregate leadership networks over
+hundreds of changes.
+
+The leaders of language change and their social networks
+The search for leaders of language change is a core concern of sociolinguis­
+tics, which seeks to identify groups of people who tend to be in the linguistic
+vanguard.28 A robust finding from this literature is that women tend to lead lan­
+guage change, particularly in phonology (the sound system) and in grammar.29
+6
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+This type of sociolinguistic research relies heavily on the method of apparent
+time:30 first, identify changes in progress by comparing the speech of younger
+and older individuals; then, identify individuals whose speech is better aligned
+with that of younger people, which implies that they were among the earlier
+adopters of the change. The key assumption is that each person’s use of lan­
+guage is stable throughout their adult life, a hypothesis that has been broadly
+supported by prior work on changes in phonology and grammar.31 Here, how­
+ever, we focus on changes in word meaning, where there is less evidence in favor
+of adult stability.32 We therefore provide real­time evidence from a diachronic
+corpus, and we identify many changes in the lexical semantics of individual
+editors.
+Methodologically, we analyze language change in the context of a social net­
+work. Prior work in sociolinguistics has linked the network characteristics of
+individuals with their positioning with respect to language change: for example,
+Labov33 argues that individuals with many weak ties tend to be leaders, while
+Milroy34 finds that dense sub­networks of strong ties tend to resist language
+change. Our focus is not on characterizing the social networks of the leaders of
+language change, but on aggregating dyadic leader­follower relationships into
+an overall summary of the pathways of innovation in a community of news­
+papers. More closely related is computational research on lexical innovations
+in Twitter: Eisenstein et al.35 construct a network of sociolinguistic influence
+between cities in the United States, and Goel et al.36 model the structural char­
+acteristics of influence events between individual Twitter users. Both of these
+studies are based on the frequencies of lexical items, rather than changes in their
+meanings. Beyond sociolinguistics, there have been a number of attempts to
+quantify influence in text corpora, largely from researchers in computer science
+and machine learning. Some approaches operate at the level of individual word
+frequencies: for example, Guo et al.37 measure influence within small groups
+by the use of individual words, on the assumption that Alice is likely to have
+influenced Bob if words used by Alice tend to be subsequently used by Bob.
+Kelly et al.38 apply this idea to a dataset of patents, finding that the most in­
+7
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+fluential patents (in terms of citations and market value) are those whose word
+distributions are distinct from prior documents, but similar to subsequent docu­
+ments. Topic models39 have also been used to measure influence in networks:40
+in a humanities context, Barron et al.41 apply a topic­based analysis to speeches
+from the French revolution, identifying as influencers those individuals whose
+topic distributions were distinct from the past and similar to the future. All of
+these methods focus on changes in which words are used, rather than how they
+are used. While lexical frequencies can be informative — particularly in cases
+that fit theoretical models like communicative accomodation theory42 — they
+are often caused by outside events (e.g., new people or keywords) rather than
+conceptual changes in the discourse.
+To summarize, prior work in sociolinguistics has been concerned largely with
+phonology and morphosyntax, while computational researchers have focused
+on the frequency of words or topics. In contrast, we study changes in the mean­
+ings of words, as quantified by diachronic word embeddings that summarize the
+changing contexts in which those words appear. Such changes are especially rel­
+evant to questions of social and political influence in a networked discourse —
+as in the various groups involved in the abolitionist movement of the nineteenth­
+century United States. For example, it has long been argued that Black Amer­
+icans, both those enslaved and those free, helped to expand the idea of what
+freedom properly entails.43 While freedom, in the nineteenth century, was ini­
+tially understood in terms of legal emancipation — a conception formulated by
+white abolitionists fixated on ending slavery — Black Americans of that same
+era understood freedom as much more capacious, encompassing ideas about so­
+cial, economic, and educational justice, as well as liberation broadly conceived.
+Is it possible to detect a signal that tracks this conceptual change? And if so,
+is it possible to determine who in the corpus was responsible for advancing
+and/or popularizing the expanded conception of the term? Our method allows
+us to explore these questions from a semantic and statistical perspective: we
+can test whether words like freedom really did undergo semantic change in the
+documents in our newspaper corpus; identify the specific newspaper that led
+8
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+those changes; and aggregate across individual changes to an overall summary
+of lexical semantic leadership. This aggregate measure functions as a proxy
+for overall linguistic influence in the corpus, taking into account the influence
+of known words and phrases, like freedom, as well as other terms that might
+not otherwise invite attention in a manual analysis. The resulting network pro­
+vides a new way of understanding the relationships among the newspapers that
+document this pivotal era in the history of the United States.
+
+Summary of technical contributions
+The work described in this paper builds upon these efforts to model semantic
+changes and aggregate them into a summary network. We enhance prior di­
+achronic word embedding techniques by incorporating metadata about the news­
+papers that serve as the source of word occurrence. We then compute the lead or
+lag of each source with respect to each semantic change. These lead­lag pairs
+are then aggregated into a network of semantic leadership, which we analyze to
+arrive at a new understanding of the roles of each newspaper in the linguistic
+changes that accompanies the evolving discourse on the abolition of slavery in
+the United States. To summarize, we make three methodological contributions:
+1. We propose a text modeling approach to identify semantic leadership in
+a corpus of timestamped documents from a set of sources, such as news­
+papers. As described in the following section, this approach includes (a)
+a model to identify semantic changes in language using diachronic word
+embeddings, and (b) a statistical measure to quantify the extent to which
+each source led others in the adoption of each change.
+2. We apply this method to a corpus of nineteenth­century newspapers dig­
+itized by Accessible Archives.44 We extract the words that changed in
+meaning during the period between 1827 to 1865, the period bounded by
+the publication of the first known abolitionist newspaper and the ratifi­
+cation of the Emancipation Proclamation. We then quantify the lead­lag
+relationships between the newspapers for each of these changes.
+9
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+3. We aggregate the dyadic relationships between newspapers into a weighted
+semantic leadership network, retaining links between newspapers for each
+semantic change only if the relationship is so strong as to be highly un­
+likely to have arisen by chance. We then apply two metrics for holistic
+network analysis — PageRank45 and Hyperlink Induced Topic Search
+(HITS)46 — to identify the specific roles of each newspaper as a leader,
+follower, or outsider in the evolving discourse of abolitionism.
+
+Method: From timestamped text to aggregate influence net­
+works
+This section describes our method in more detail. We first describe a model to
+learn diachronic word embeddings from text, then augment the model to learn
+diachronic word embeddings that are conditional on the newspapers and which
+can be used to statistically measure the lead of one newspaper over other, and
+finally propose a scheme to aggregate the lead­lag relationships of newspapers
+and quantify their influence.
+Mathematical notation. We define a document as a sequence of discrete to­
+kens (words) from a finite vocabulary V, so that document i is denoted wi =
+(wi,1 , wi,2 , . . . , wi,ni ), with ni indicating the length of document i. We define a
+corpus as a set of N documents, W = {w1 , w2 , . . . , wN }. Each document is
+associated with a discrete time ti and source label si . The time is created by bin­
+ning the document timestamps into T bins; there are S sources, corresponding
+to each of the newspapers in the collection. The specific newspapers and time
+bins are described in the following section.
+
+Word embeddings
+Our approach builds on word embeddings, which represent each word in the
+vocabulary as a vector of real numbers.47 We estimate the embeddings by opti­
+mizing the classical skipgram objective, in which embeddings are parameters
+10
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+in a model of the probability of each word token conditioned on its neighbor­
+ing tokens.48 While the method is well known, the details are relevant to the
+innovative aspects of our methodology, so we review them briefly. Omitting
+the document index i, the skipgram objective is based on the probability,
+!
+"
+P(wj! | wj ) ∝ exp vwj! · uwj ,
+(1)
+
+where vwj! is the “output” embedding of wj! , and uwj is the “input” embedding of
+wj . Each v and u is a vector, which is estimated by maximizing the product of
+these probabilities across all nearby pairs of tokens (wj , wj! ). The result is that
+words that appear in similar contexts tend to have similar embedding vectors,
+which is the essence of the theory of distributional semantics.49 We focus on
+the input embeddings u, as in most of the prior applications of the skipgram
+embedding model to digital humanities research.50
+
+Identifying semantic changes
+The skipgram embedding model is not equipped to use metadata such as times
+associated with the tokens. However, Bamman, Dyer, and Smith51 proposed
+an extension to specialize the embeddings accounting for any discrete labels
+attached to each token. The core idea of their approach is to decompose the input
+embedding of a word as a sum of two embeddings — a base embedding and a
+residual embedding. Though originally developed to learn distinct embeddings
+of words based on geography, we apply it to learn diachronic embeddings.52 To
+do this, we discretize time into T bins, with ti ∈ 1 . . . T indicating the time bin
+for document i. Then if w appears at position j in document i, the following
+input embedding is substituted in Equation 1.
+u(twii,j) = bwi,j + r(twii,j) ,
+
+(2)
+(t )
+
+where bwi,j is the base embedding of the word wi,j and rwii,j is the residual for time
+ti . The base embedding represents the elements of meaning that do not change
+over time; the residual embeddings are specialized for the contexts encountered
+11
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+Figure 2: Semantic change in cabinet. The embeddings of cabinet and its near neighbors are projected to two
+dimensions using singular value decomposition. The embeddings of the target word indicate meaning shift from
+the architectural uses to political uses. This is reflected in the position of the embedding but even more so in the
+change in near neighbors.
+
+at each temporal epoch, making it possible to model semantic change. To ensure
+that the base embedding is used to account for the time­invariant components of
+meaning, the residual embeddings are regularized by adding an l2 penalty to the
+# # (t)
+skipgram objective, corresponding to the sum of squared values, Vw Tt (rw )2 .
+This encourages the estimator to choose values of r that are close to zero unless
+a strong temporal signal is observed.
+We focus on terms whose embeddings change substantially over time. Among
+many possible ways to quantify change in embeddings,53 we apply the method
+from Hamilton, Leskovec, and Jurafsky,54 in which the words are ranked for se­
+mantic change by computing the difference in the similarity of their neighbors
+over time in the embedding space. Because we have multiple time bins, we ex­
+tend this method by computing the differences between neighbors for all pairs
+of times in T for every word and pick the interval that has the maximum dif­
+ference as the measure of semantic change in the word. Words are then ranked
+based on this measure, yielding an ordered list of changes as tuples of words
+and timestamps.
+Figure 2 provides an example: the term cabinet enters the corpus being used
+in the (now) archaic sense to describe a small storage room, as in a cabinet of
+curiosities; but in the final years of the corpus, fully shifts to reflect its usage
+12
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+in the political sense, as in the context of a president’s Cabinet (other changes
+pertinent to abolition are described below in the section Semantic changes). As
+a measure of the validity of our approach, many changes refer to entities and
+concepts from the Civil War, such as ferry (later referring to Harper’s Ferry),
+confederates (acquiring a specialized meaning after the formation of the Con­
+federacy), and battery (from an assault to an array of guns). Changes referring
+to specific named entities were filtered at a later stage.
+Our approach of modeling semantic changes has three main advantages. First,
+as a joint model of words and time, it does not require the computationally
+expensive post­alignment of the word embeddings that is common in standard
+approaches.55 Second, temporal embeddings can be learned even for words that
+emerge or disappear before the start or end of the time period respectively —
+these are just the base embeddings. Finally, the model is easily extended to
+incorporate other metadata about the text if available, as described in the next
+section.
+
+Finding semantic leaders
+Language changes are not adopted by everyone at the same time: for any change
+there are leaders, followers, and individuals who resist the change altogether.
+Moreover, being a leader for one semantic change does not imply semantic lead­
+ership for all changes.56 We are interested in identifying who led and followed
+in each semantic change. To do this, we augment the diachronic embedding
+model to include an additional term for the source of each token — that is, the
+newspaper in which the token appears. The underlying input embedding repre­
+sentation can then be written,
+u(twii,j,si ) = bwi,j + r(twii,j) + r(twii,j,si ) ,
+(t ,s )
+
+(3)
+
+where rwii,j i is the source­specific temporal deviation added to the temporal and
+atemporal components of the input embedding. As before we apply l2 regular­
+(t,s)
+ization to the residual terms, which ensures that rw = 0 for words that are not
+13
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+used by source s at time t.
+The fully conditioned embeddings are then used to assign a leadership score
+between a pair of sources for a given change (w, t1 , t2 ), where t1 < t2 are the
+timestamps of a change in the meaning of word w. For each pair of sources, s1
+and s2 , we calculate two quantities: first, the similarity in meaning of the word
+for s1 with s2 at the two different times and, second, the similarity in meaning
+of the word for s2 at the two different times. A measure of the lead of source s1
+over s2 is the ratio of vector inner products,
+(t ,s1 )
+
+Lead(s1 → s2 , w, t1 , t2 ) =
+
+uw1
+
+(t ,s2 )
+
+uw1
+
+(t ,s2 )
+
+· uw2
+
+(t ,s2 )
+
+· uw2
+
+(4)
+
+A higher score indicates more leadership, with a score of 1 corresponding to a
+baseline case of no leadership. For more intuition, consider a few cases:
+• If s1 is indeed leading s2 on w, then s1 ’s use of the word with the new mean­
+ing should precede that of s2 . Equation 4 checks this precisely by com­
+paring cross­source similarity (the numerator) with self­similarity (the
+denominator) in meaning across the two times. If the numerator is larger
+than the denominator, then s1 is likely to have used the word with the new
+meaning before s2 adopted it. Conversely, if the denominator is larger,
+then s2 has not followed s1 in its use of this word.
+• If w does not change in meaning, then no newspaper should be deemed a
+leader.This is reflected in our measure because the numerator is unlikely
+to significantly exceed the denominator in this case.
+(t ,s )
+
+• If a source si does not publish at time ti , then rwi i = 0. This means that
+(t ,s )
+uwi i will be identical to the global average at time ti , and therefore si can
+be neither a strong leader or follower.
+• Suppose w changes in meaning between time t1 and t2 , but both s1 and
+s2 reach the new meaning in synchrony, as may happen if the change in
+14
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+meaning is caused by a sudden external event. In this case, s1 and s2
+would both use an older sense of the word at t1 and then switch to the
+newer sense at t2 . The numerator and denominator in Equation 4 will be
+approximately equal, resulting in a leadership measure close to 1.
+We focus on the changes that took place over adjacent time periods, which are
+most likely to be indicative of inter­newspaper transmission. For each word in
+each successive temporal interval over the entire timespan, we calculated the
+lead of each newspaper over each of the others. We identified the two news­
+papers (one leader, one follower) that produced the maximum lead score and
+retained the pair if it passed the threshold obtained from the randomization pro­
+cedure described below.
+
+Controlling for random noise and dataset artifacts
+In any finite dataset, there will be spurious correlations, which may appear to
+be meaningful due only to random noise. In our dataset, there is added risk
+due to two sources of heterogeneity of the data. As shown in Figure 3, some
+newspapers publish towards the beginning of the dataset (from 1831) and others
+towards the end (1861­1865); furthermore, the corpus overall contains more
+text published in the years leading up to the Civil War. Second, the number and
+length of the articles published by each newspaper are widely divergent. While
+this heterogeneity reflects the reality of the historical trajectory of newspaper
+publishing at the time,57 it is potentially problematic: a statistical analysis of
+temporal trends might inherently focus on the newspapers that publish early and
+often as leaders, simply due to temporal precedence; similarly, newspapers that
+publish in greater volume may play an outsize role in determining the temporal
+(t )
+word embeddings uwij , so that our assessment of semantic leadership will be
+most sensitive to changes in the words that these newspapers emphasize.
+While these issues can be partially mitigated by limiting the number of tokens
+per newspaper at each time step, additional controls are necessary due to the
+temporal heterogeneity of the data. We use randomization to control for both
+15
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+structural heterogeneity and random noise. We create a set of K = 100 ran­
+domized datasets, in which word tokens are randomly swapped between news­
+papers. This preserves the structure of the dataset — each newspaper has the
+same number of tokens within each time period — but it breaks the link between
+individual newspapers and contextual word statistics. Any leadership relation­
+ships that are detected in such a randomized dataset must be attributed to either
+structural bias or random noise, because the word tokens have been assigned to
+individual newspapers at random.
+To see how these randomized datasets help us to control for noise and hetero­
+geneity, recall that a leadership event is a tuple (s1 → s2 , w, t1 , t2 ), where s1
+and s2 are newspaper sources, w is a word, and t1 and t2 are timestamps. For
+each such event, we compute the leadership statistic from Equation 4 in each
+randomized dataset, yielding a set of values {Lead(k) (s1 → s2 , w, t1 , t2 )} for
+k ∈ 1 . . . K. We can then compare these values with the score that was observed
+in the original, nonrandomized dataset. Our final set of influence events is the
+set of tuples such that,
+!
+"
+(k)
+K
+Lead(s1 → s2 , w, t1 , t2 ) > Φ.95 {Lead (s1 → s2 , w, t1 , t2 )}k=1 , (5)
+
+where the function Φ.95 (S) selects the 95th percentile value of the set S; as a
+special case, Φ.5 (S) is the median of S. This procedure is based on principles
+from statistical significance testing,58 and allows us to approximately bound the
+probability of each leadership score arising by chance.59
+
+Aggregated semantic influence network
+To generalize from individual leadership events, we aggregate the events into a
+semantic leadership network among the newspapers. Specifically, we construct
+an edge­weighted network, G = (S, E), where, as before, S is the set of news­
+papers that form the nodes in the network, and every e ∈ E is a weighted edge,
+denoted e = (s1 → s2 , c12 ), with c12 indicating the number of words for which
+s2 leads s1 .
+16
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+We interrogate the structure of this aggregate influence network using two graph­
+theoretic measures. The first is pagerank, which computes the overall centrality
+of each node in the network;60 however, as we will see, this single measure fails
+to distinguish three cases of interest: newspapers that usually lead, newspapers
+that usually follow, and newspapers that generally do not engage with the rest
+of the network. For this reason, we perform a more fine­grained analysis using
+the HITS metrics of hubs and authorities.61 While details of these algorithms
+can be found in network analysis textbooks,62 we give brief descriptions here.
+
+Pagerank. The principle behind pagerank is that the importance of a node is
+a function of the importance of the nodes that link to it (its “backlinks”). In our
+context, each edge s1 → s2 is weighted by the number of innovations in which
+s2 led s1 , and then this weight is normalized by the sum of weights on edges
+from s1 . This means that a newspaper has high pagerank if it leads other high
+pagerank newspapers, and particularly if it is the sole (or main) leader of those
+newspapers. Mathematically, the pagerank of node i is given by:
+Pageranki = α
+
+$
+j
+
+A
+# ij Pagerankj + β,
+k Akj
+
+(6)
+
+where Aij is the weight on the edge from j to i (number of words for which i leads
+j), Pagerankj is the pagerank of node j, and α and β are additional free parame­
+ters.63 This formulation is recursive: the pagerank of each node is computed in
+terms of the pageranks of the other nodes. The overall pagerank problem can be
+formulated as a system of linear equations (one for each node), and these equa­
+tions can be solved simultaneously by factorization of the matrix A. Pagerank
+has been used in prior work in the digital humanities,64 and is closely related to
+eigenvector centrality, which is used more widely in the social sciences.65
+
+HITS. A limitation of pagerank is that it assigns only a single importance
+score to any newspaper, which fails to differentiate followers from newspapers
+17
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+that simply do not participate in ongoing semantic changes. We therefore turn
+to a more fine­grained analysis technique. HITS, which stands for hyperlink­
+induced topic search, is another linear algebra­based network centrality algo­
+rithm, which decomposes central nodes into two complementary groups, au­
+thorities and hubs. Authorities are those nodes that are pointed to by high­
+scoring hubs, and conversely, hubs are nodes that point to high­scoring authori­
+ties. In our context, high scores as an authority and hub indicate the importance
+of a newspaper as a leader and follower respectively.
+Mathematically, the authority and the hub score for a node i can be given by the
+paired equations,
+
+Authorityi = α
+
+$
+
+Aij Hubj ,
+
+(7)
+
+Aji Authorityj ,
+
+(8)
+
+j
+
+Hubi = β
+
+$
+j
+
+where Aij is the weight on the edge from j to i (number of words for which i
+leads j), Authorityi is the authority score of node i, Hubi is the hub score of node
+i.66 Similar to pagerank, HITS also originated with the application of ranking
+webpages in a hyperlinked environment, but it has been increasingly used in
+information sciences67 and digital humanities.68
+
+Data
+We analyze a subset of nineteenth century newspapers digitized and hand­keyed
+by Accessible Archives.69 We obtained permission to scrape the contents of sev­
+eral of Accessible Archives’s collections, including ”African American News­
+papers,” the ”Women’s Suffrage Collection,” and several individual titles. Each
+newspaper in the archive consists of multiple issues, and each issue contains
+multiple articles. Each article is encoded as a unique
+page. We extracted
+18
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+the text from each page using
+package in python, following
+70
+a process similar to Klein, Eisenstein, and Sun. We further process the data
+using the methods described below.
+
+Contents and Metadata
+For the purposes of this study, we limit our corpus to the period between March
+1827, the date of the earliest newspaper in our collection, and December 1865,
+which marks the ratification of the Emancipation Proclamation. Most newspa­
+pers in our collection published weekly, though some titles are monthly publi­
+cations. The temporal distribution of the newspapers in our collection is given
+in Figure 3, and a detailed description of the newspapers is found in Table 1.
+The collection is temporally skewed: the later years have more newspapers and
+more articles. This reflects a general trend in the rise in abolitionist newspapers
+published in the United States,71 as well as the influence of scholarship on the
+subject, which has focused on specific titles published in the final decades of
+our study, leading to their being digitized more quickly and more completely
+than other less­known works.72
+
+19
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+Title
+
+First Issue
+
+Description
+
+Freedom’s Journal
+
+1827
+
+The Liberator
+
+1831
+
+The Colored Ameri­
+can
+
+1837
+
+National Anti­Slavery
+Standard
+
+1840
+
+The Douglass Papers
+
+1847
+
+The National Era
+
+1847
+
+The Christian
+Recorder
+
+1854
+
+Provincial Freeman
+
+1854
+
+The Lily
+
+1849
+
+Godey’s Lady’s Book
+
+1830
+
+Frank Leslie’s Weekly
+
+1855
+
+An abolitionist newspaper established by two Black clergymen, Samuel
+E. Cornish and John Brown Russworm. The earliest newspaper edited by
+and for Black Americans presently known.
+An abolitionist newspaper established by William Lloyd Garrison, the
+famed white abolitionist. It was known for its fiery rhetoric and is consid­
+ered among the most influential papers of its day.
+An abolitionist newspaper established by Phillip A. Bell as The Weekly
+Advocate. Samuel Cornish, of Freedom’s Journal, became its editor sev­
+eral months later, and initiated the name change. The Colored American
+was intended to serve as a national publication edited by and for Black
+Americans.
+The official newspaper of the majority­white American Anti­Slavery
+Society. The author and abolitionist Lydia Maria Child was its first editor.
+It was intended to serve as a more moderate counterpart to The Liberator,
+and appeal to a white reading public.
+A set of abolitionist newspapers edited Frederick Douglass, the author
+and orator who liberated himself from slavery. The North Star was
+launched in 1847, with Martin Delaney as co­editor. Douglass renamed
+it Frederick Douglass’s Paper upon Delaney’s departure in 1851. After a
+several year pause, Douglass launched Douglass’s Monthly in 1859.
+A more general newspaper, founded by Dr. Gamaliel Bailey, Jr. and
+aimed at a white audience. It supported the cause of abolition, and is
+most famous for being the first to publish Uncle Tom’s Cabin.
+A newspaper established by the African Methodist Episcopal (AME)
+Church. Once overlooked for its contributions to abolition, it is now
+understood as central to the movement for Black liberation in the nine­
+teenth century.
+An abolitionist newspaper established by Mary Ann Shadd, a Black
+abolitionist, educator, and later lawyer, who emigrated from the US to
+Canada. The Freeman is believed to be the first newspaper edited by a
+Black woman in all of North America.
+The first known women’s suffrage newspaper founded by Amelia
+Bloomer, who was white. Its initial emphasis was on the temperance
+movement, but it became more invested in women’s rights over time.
+A monthly women’s magazine edited by a white woman, Sarah Josepha
+Hale, for the majority of its run. It was rarely overtly political. It is
+included in the corpus as a point of comparison with The Lily.
+A weekly magazine aimed at a white reading public. It offered a wide
+range of content, and is best known for its literary selections and cover­
+age of current events. It is included in this corpus as a point of compari­
+son to both the abolitionist and suffragist papers of the same era.
+
+Table 1: Detailed description of all newspaper titles. We include Freedom’s Journal in identifying semantic
+changes but exclude it from the subsequent analysis because its publication stopped very early in the timeframe
+that we considered.
+
+The focus of this study is on the abolitionist movement of the nineteenth­century
+20
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Figure 3: The distribution of data in Accessible archives, after further processing to remove duplication and
+fixing digital errors, that is used for analysis in the rest of the paper.
+
+United States. This is reflected in the titles included in our corpus, the majority
+of which explicitly identify as abolitionist newspapers. Our corpus is notable
+for its relatively equal number of Black­edited and white­edited abolitionist ti­
+tles; this was among the reasons we selected Accessible Archives as our original
+data source. Accessible Archives also provides information about the race and
+gender of the editors of each newspaper, as well as about the paper’s intended
+audience; we confirmed the identity of each editor and each newspaper’s audi­
+ence with a second scholarly source, and then converted this information into
+additional metadata for use in the project. During this period, most newspa­
+pers were associated with a small group of editors (on the order of one to three
+people), which remained relatively constant over the newspaper’s run, and who
+exerted a high degree of control over the newspaper’s contents.73
+For this project, we supplemented the abolitionist titles with additional newspa­
+pers linked to the women’s suffrage movement, so as to enable a comparison
+between the two movements, which were often linked. We have also included
+21
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+a more general newspaper of that same era, as well as two monthly magazines.
+Our rationale for including these titles was to provide a baseline for any claims
+about abolition (or women’s rights) that we might make. While this dataset is
+far from exhaustive, it represents a meaningful “scholarly edition of a literary
+system,” as Katherine Bode might describe it, one which captures some of the
+key titles in the scholarship on the subject along with known interlocutors and
+additional likely influences.74 For more on the history of these newspapers, see
+Gross and Kelley.75
+
+Data Processing
+Digital error correction. While Accessible Archives’ hand­keyed texts are
+far less error­prone than those digitized using optical character recognition(OCR),76
+we discovered several types of errors in the course of our analysis. One com­
+mon source of error in this collection is whitespace.77 Such errors, also known
+as word segmentation errors or spacing errors, arise during both OCR and the
+post­digitization handling of the data78 — the latter being the source of the error
+in the Accessible Archives corpus — and result in the elimination of whites­
+pace between words. This leads to out­of­vocabulary items like senatoradmits
+and endowedwith. Our approach to correcting these errors is described in prior
+work.79
+
+Deduplication. The collection also contains a number of articles that were
+reprinted verbatim from other newspapers (e.g. mission statements, notices,
+speeches) as well as many that were reprinted with minor modifications (e.g.
+advertisement campaigns, commodity price reports). While these reprinted arti­
+cles are an artifact of the time,80 their presence in the corpus is problematic for
+modeling, potentially resulting in false positive semantic changes. As a conser­
+vative heuristic, we remove from the corpus all articles that share a contiguous
+sequence of eight or more words with another article. Though this heuristic can
+also remove a number of non­duplicate articles, we apply it because it does not
+affect the distribution of the documents temporally or across newspapers, and
+22
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+keeps roughly 90,000 articles in the corpus.
+
+Data and experimental setup. For all the analysis, we divide the corpus into
+ten equal time intervals.81 Newspapers that do not contain at least 500 arti­
+cles throughout their tenure in the period of interest are ignored. To maximize
+the number of newspapers that meet this condition, we group together several
+smaller newspapers that share an editor. Namely, we consolidate The North
+Star, Frederick Douglass’s Paper, and the Douglass Monthly into a single source
+we label Douglass Papers, because each was edited by the Black abolitionist and
+orator Frederick Douglass; we also group The Weekly Advocate with The Col­
+ored American, since the former changed its name to the latter several months
+into its publication run.
+
+Vocabulary and hyperparameters. All the text is lowercased before process­
+ing. The vocabulary is limited to the 50,000 most frequent words in the corpus.
+The embedding size for all the models is set to 100 dimensions. The window
+size to determine the context words is set to 5 in both directions. The #2 regu­
+larization penalty is set to 1e−4 .
+
+Results
+Our method offers insights about the evolution of conceptual terms related to
+abolition, as well as about the specific newspapers that contributed to the spread
+of the terms’ changed meanings. By considering these terms in relation to others
+identified by the model as associated with particular newspapers, we elaborate
+an argument about the nature of semantic leadership and its relation to social
+and political influence within our newspaper corpus. We also discuss the sig­
+nificance of the overall influence network generated by our model, which con­
+firms aspects of our previous understanding of the movement’s intellectual lead­
+ers and followers, while illuminating additional pathways of influence among
+23
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+some of the understudied newspapers in our corpus. Taken together, these re­
+sults help to establish the validity of our method and, we hope, will seed new
+research questions about these important newspapers, the relationships among
+them, and their significance for our understanding of the abolitionist movement.
+We now discuss the findings that result from each phase of our methodological
+pipeline, building towards the conclusion about women’s leadership and the role
+of the Black press.
+
+Semantic changes
+The first step in our method identifies terms that undergo semantic change. Il­
+lustrative examples are documented in Table 2. The word equality, in its earli­
+est usage in the corpus (1827­1831), seems to express the idea of equality in a
+Lockean sense. It is nearest in meaning to other key terms in the Enlightenment
+discourse of natural rights, such as liberty, rights, wisdom, and mankind — the
+same terms that were commonplace at the time of the nation’s founding, and
+into the early years of the republic. Over time, however, the usage of the term
+becomes more connected to questions of the practice of democracy. Although it
+retains some of its original associations, by 1857 equality also becomes closely
+associated with the idea of self­government issues of suffrage, and the specific
+guarantees of the ideals expressed in nation’s founding documents. While this
+shift from abstract to concrete is often attributed to the authors of the nation’s
+founding documents, as they attempted to translate political philosophy into a
+governing structure, it is interesting to observe that in the abolitionist press (and
+related publications), the shift happens several decades later. Could it reflect a
+concerted effort, on the part of the abolitionist press, to first frame the issue of
+slavery in philosophical terms before recognizing that slavery’s abolition might
+require a more concrete argument? Could it reflect the growing influence of
+the women’s suffrage movement, which seized upon equality as its governing
+ideological principle? While the changing meaning of equality does not of­
+fer a definitive answer to these questions, it helps point to how the changing
+meanings of individual words, as documented in our corpus, can index larger
+24
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Word
+
+From
+
+Until
+
+Earlier examples
+
+Later examples
+
+cabinet
+
+1831­1835
+
+1861­1865
+
+a cabinet of antiquities
+the secret cabinet on the right
+
+president and his cabinet
+members of the cabinet
+
+equality
+
+1827­1831
+
+1853­1857
+
+liberty and equality to all
+blessed with liberty and equality
+
+the equality of the races
+an equality with the whites
+
+freedom
+
+1827­1831
+
+1857­1861
+
+the spirit of freedom is marching
+
+opposition of slavery to freedom
+continues
+colored man for freedom and
+self­government
+advocate the rights of the black
+man
+the rights of women
+
+rights
+
+1841­1845
+
+1861­1865
+
+establish their freedom from
+being sold
+inalienable rights of man
+
+justice
+
+1831­1835
+
+1861­1865
+
+legislature or the court of justice
+
+immediate
+
+1827­1831
+
+1849­1853
+
+fight
+
+1827­1831
+
+1849­1853
+
+service
+
+1831­1835
+
+1861­1865
+
+james madison and chief justice
+marshall
+the immediate legislation of
+congress
+the immediate extinction of
+slavery
+you are paid to fight
+a fight took place
+first military service was in
+corsica
+their service in the army
+
+gallant service at fort wagner
+
+state fugitive aid society
+liberal offers to aid the cause of
+freedom
+republic is growing darker
+everyday
+stole the growing light of dawn
+
+aid
+
+1831­1835
+
+1861­1865
+
+offers of aid from colonizationists
+gave them aid and tyrants fled
+
+growing
+
+1835­1839
+
+1861­1865
+
+growing up in shame and poverty
+
+writing
+
+1827­1831
+
+1853­1857
+
+hoped
+
+1841­1845
+
+1845­1849
+
+courage
+
+1827­1831
+
+1849­1853
+
+one simple act of justice to the
+slave
+emancipation as an act of justice
+and humanity
+hostile to immediate emancipa­
+tion
+safety of immediate uncondi­
+tional emancipation
+profess to fight for liberty
+determination to fight till the last
+
+extreme want growing out of the
+toil
+coloured adults in reading, writ­
+ing, arithmetic
+reading or writing the letters
+seem
+it is hoped that every newspaper
+it was hoped however that the
+friends of temperance
+possessed of both sense and
+courage
+wit and courage amongst all
+
+service was held in the church
+
+the writing is blotted in many
+places
+full of writing in a round­text
+hand
+promised and hoped for but
+homeless future
+he now hoped to have peace
+renewed courage instead of the
+hopeless feeling of banishment
+personal courage and devotion
+
+Table 2: Examples of semantic changes. The terms are detected to have changed most in meaning from the
+earlier timespan to the later.
+
+25
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+ideological changes and debates.
+The term freedom follows a similar, if more chronologically consistent shift
+from abstract to concrete. It enters the corpus with general associations to the
+nation’s foundational ideals. Its near neighbors include words like humanity,
+people, and country. By the time of beginning of the Civil War, however, the
+associations of the term have become more specific, including references to both
+liberty and slavery, as well as terms that reference arguments about the rights
+and guarantees of the nation that should ensure freedom, as well as the insti­
+tutions that should enforce it. With respect to the term rights, we find that this
+term also moves from a more abstract to a more concrete meaning, tracking both
+freedom and equality — terms which appear in its list of near neighbors, along
+with terms like humanity, which reinforce a sense of the term that is broadly
+applied. Over the second half of the corpus, however, the term narrows in its
+application to questions of citizenship and suffrage.
+As with the questions prompted by the term equality, knowledge of which news­
+paper was most responsible for this narrowed sense of the term might tell us
+something about who was responsible for shifting the conversation about rights
+and their application. Was it one of the newspapers edited by women? This
+finding would help to confirm the argument made by Manisha Sinha, among
+others, that women abolitionists were responsible for pushing the movement to
+consider issues of enfranchisement and women’s rights more broadly. Or was it
+one of the papers associated with the Black press? This might introduce another
+facet of the argument made by Derrick Spires about how Black Americans, both
+before and after emancipation, understood citizenship as a broad concept, one
+that transcended any legal definition in order to incorporate civic engagement,
+public expression, and mutual aid.
+A final term, justice, is worth exploring in this context. Like freedom and rights,
+this term also follows a trajectory that is consistent with historical scholarship
+on the subject, albeit one that moves in the reverse direction from concrete to
+abstract. It enters the corpus with narrow associations to the legal system, as
+26
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+evidenced by near neighbors including judges, trial, offense, and crime. But by
+the final years of the corpus, the term has significantly expanded, commanding
+a more ideological frame. Its associations at the onset of the Civil War include
+the terms liberty, equality, rights, and oppression, which tracks arguments about
+how justice transformed into a much more powerful concept over the course of
+the nineteenth century as a result of the criminal justice movement. In our cor­
+pus, this transformation is reinforced by the appearance of the terms universal,
+humanity, citizenship, and nation, which suggest the success of those who advo­
+cated for criminal justice in expanding not only legal protections, but also ideas
+about what justice properly entailed.
+Taken together, these terms demonstrate how changes in near neighbors, cou­
+pled with information about which newspapers were most responsible for those
+changes, can point to a new understanding of (or, alternately, enhance existing
+knowledge about) the abolitionist movement and its conceptual undercurrents.
+
+Semantic Leadership
+Of the changes discussed in the section above, two — justice and rights — were
+attributable to specific newspapers. In terms of justice, interestingly, the news­
+paper most closely associated with the more ideological conception of the word
+was not an abolitionist newspaper at all, but rather, the women’s suffrage news­
+paper, The Lily. More interesting still, it is The Liberator — the long­running
+abolitionist newspaper with a reputation for its impassioned arguments against
+slavery — which is identified as the most significant follower in this new usage.
+Could it be that The Liberator, edited by a white abolitionist, William Lloyd
+Garrison, was not as ideologically innovative as the historical narrative would
+lead us to believe? We continue this line of inquiry below.
+As for rights, our method identifies the two more general newspapers, both
+intended for a white readership, as the leader­follower pair. In the period be­
+tween 1853 and 1861, The National Era is the most responsible for narrowing
+the scope of the conversation about rights from abstract and ideological to le­
+27
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+gal and concrete; and it is Frank Leslie’s Weekly, a weekly magazine which
+also published a wide range of content, which most closely followed this trend.
+That the conversation about rights is bounded by white, general­audience news­
+papers suggests that this concept, with its anchor in political philosophy, may
+hold less relevance to the abolitionist press, or to women’s suffrage newspapers,
+than concepts involving ideas about morality, humanity, or other more expan­
+sive understandings about the implications of the persistence of slavery.
+Beyond the analysis of individual words and the newspapers that lead in their
+changing meanings, it is also possible to examine any two newspapers as leader­
+follower pairs. Comparing two newspapers that published at the same time as
+each other, and were known to be in conversation — for example, The Colored
+American, a newspaper edited by a Black editorial staff which circulated among
+a predominantly Black audience, and The Liberator, mentioned above, edited by
+William Lloyd Garrison, who was white, and which circulated among a mixed,
+if predominantly white audience — we find that The Colored American leads
+on the terms immediate and fight. While not explicitly political terms, they do
+suggest a tone of urgency that might surround an argument for liberation, one
+which helps to further dismantle the narrative of The Liberator as the most radi­
+cal of the abolitionist papers, and in the process, provides additional evidence to
+support a claim that The Colored American, led by Black abolitionists, deserves
+more of the credit for accelerating the fight against slavery.
+When considering how newspaper pairs and the words that connect them can
+open up new research questions, we might consider the leader­follower rela­
+tionship between The Christian Recorder, the official newspaper of the African
+Methodist Episcopal (AME) Church, and Godey’s Lady’s Book, a magazine
+aimed at white women. The Christian Recorder is among the several publi­
+cations of the AME Church, including The Christian Recorder that have been
+posited as key sources in the emergence of a Black print culture,82 and yet The
+Christian Recorder stands far to the side in our influence network, neither lead­
+ing nor following many other newspapers. This suggests that the conversations
+taking place in that paper were disconnected from the others — in terms of lan­
+28
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Figure 4: The leader­follower newspaper pairs. The leading newspapers are shown on the left and the trailing
+newspapers on the right. Each newspaper is shown as a rectangular patch with height proportional to the
+number of words for which it is considered a leader (or follower). The thickness of each stripe connecting two
+newspapers is proportional to the number of words between the newspapers that the stripe connects.
+
+guage and therefore abolitionist thought. A prior thematic analysis confirms
+that the articles did indeed consist mostly of religious content.83 Yet our model
+detects that the paper does lead the rest of the network on the terms service and
+aid. These terms clearly relate to core tenets of Christianity, but is interesting to
+note that the main follower is not another abolitionist paper but instead a white
+women’s magazine. This suggests an unexpected new line of inquiry: how
+Christian benevolence, often framed as the contribution of white women’s in­
+volvement in the abolitionist movement, was instead rooted in the Black church.
+Thus far, we have considered individual newspaper pairs and the specific words
+which connect them. But we can also analyze these words in aggregate. Our
+method identifies 435 semantic leadership events, containing a mixture of po­
+29
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+litical terms and activist language, as well as other words that are not easily
+connected to any particular political or ideological stance. In fact, words like
+growing and writing, hoped and courage — words which suggest generalized
+movement, motion, action, and emotion — emerged with some of the high­
+est leadership scores. This finding suggests that the influence detected by our
+model might be better understood at the level of what might be described as
+discourse, rather than at the level of individual words.
+Looking at the aggregated counts of leader­follower pairs confirms this hypoth­
+esis: the relationship between The Liberator and The National Anti­Slavery
+Standard rises to the top of the list, with 32 words (of the 435) on which The
+Liberator leads and The National Anti­Slavery Standard follows. This is a valu­
+able if unsurprising result, since of all of the newspapers in our corpus, histori­
+cal circumstance suggests these two titles should be in close dialogue with each
+other, as they were both published by the American Anti­Slavery Society. The
+relationship with the second highest count, between Godey’s Lady’s Book and
+the Standard, is more surprising: the Standard was launched in no small part
+to bring women around to the abolitionist cause, and a woman — the white
+abolitionist and author Lydia Maria Child — edited the paper in its early years.
+The topical analysis performed by Klein84 revealed that the Standard did indeed
+contain more thematic content related to women, but the identification of the
+Standard as a follower of Godey’s Lady’s Book provides new evidence about
+the centrality of women’s issues to Standard. Intriguingly, the Standard also
+follows The Provincial Freeman, an abolitionist newspaper edited by a Black
+woman, in outsized degree to the Freeman’s far smaller circulation. Edited by
+Mary Ann Shadd (later Carey), the Freeman was known, like The Liberator, for
+its uncompromising editorial tone.85 As a result, it struggled to find a wide read­
+ership.86 It was also published out of western Canada, which further limited its
+reach. And yet here we find its influence reaching quite far indeed, through the
+pages of the widely­circulated National Anti­Slavery Standard, which adopted
+aspects of its discourse. Notably, the Freeman also holds sway over the newspa­
+pers edited by Frederick Douglass, which have dominated accounts of the Black
+30
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+(a) Newspapers with Black editors as leaders
+
+(b) Newspapers with women editors as leaders
+
+(c) Newspapers with Black editors as followers
+
+(d) Newspapers with women editors as followers
+
+Figure 5: Focused lead­lag relationships We highlight the dyads in which the newspapers that had Black ed­
+itors (left) and women editors (right). The top row shows the dyads in which these newspapers lead, while the
+bottom row shows the dyads in which they trail. For more details on the editorial coding of newspapers, see
+Contents and Metadata .
+
+31
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+press. Taken together, these aggregated leader­follower pairs point to how a
+quantitative analysis conducted at the level of changes in individual words, and
+subsequently subjected to an analysis in terms of leadership, can help shift the
+narrative about the abolition and those responsible for shaping its discourse.
+
+Semantic Leadership Network
+It is also possible to aggregate the leader­follower pairs and their changes all
+together in order to form a directed, weighted network. In Figure 4, we display
+leader­follower the relationships among all of the newspapers considered in our
+study. In this diagram, all of the newspapers in our corpus are listed in order on
+both sides. A chord that emerges from a newspaper’s name on the left indicates
+that it leads on a single word, while one that connects on the right indicates that
+the newspaper follows on that term. Thus, the vertical length next to any partic­
+ular title indicates the number of words that the newspaper leads on or follows,
+respectively. Examining the titles associated with the highest number of lead­
+ing and following words, we find confirmation of two known findings: first,
+that The Liberator holds broad influence over many of the other newspapers,
+as intimated above; and second, that the National Anti­Slavery Standard tends
+to follow much more than it leads. This reflects the rationale for launching the
+paper, which was to provide a more moderate publication than The Liberator
+so as to appeal to a broader coalition of potential supporters. (Recall that both
+newspapers were published by the American Anti­Slavery Society.)
+Just below those top­level leaders and followers, the most prominent leaders are
+The Lily and Godey’s Lady’s Book. Both newspapers (mostly) edited by and
+written for white women; neither is an abolitionist newspaper, so it is surprising
+that they are found to lead in a corpus are centered on abolition. While more
+research is required in order to understand the source of this influence, we can
+learn a bit more by examining the relationships among them, as pictured in
+Figure 5. Here we see two things: first, that the influence of these publications
+can be detected in every single newspaper in our corpus; and second, that The
+National Anti­Slavery Standard and Frederick Douglass’s various papers claim
+32
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+the majority of their influences from these women’s publications.
+When considering the sub­network of newspapers associated with the Black
+press (Figure 5), we again observe that the influence of these papers is dis­
+tributed across the corpus. Two newspapers dominate this sub­network: Freder­
+ick Douglass’s newspapers and The Provincial Freeman. But it is worth noting
+the titles that are far less embedded in the network: The Colored American and
+The Christian Recorder, which rarely lead or follow. This does not imply that
+they were not influential in their own right, but it does imply that their discourse
+was not connected to the discourse of this larger, white­dominated print network.
+It is quite possible — as has been suggested in the qualitative scholarship on the
+subject — that the conversations documented in these papers stood apart from
+the dominant, white­led abolitionist discourse. Future research might examine
+these newspapers for additional evidence of what the conversation about aboli­
+tion looked like in a predominately Black print sphere.
+
+Network centrality
+Finally, to better understand the holistic roles of each newspaper in the network,
+we now move to the more sophisticated network analytic methods of pagerank
+and HITS, described above. We first consider pagerank, which is based on the
+number of terms on which each newspaper leads, but which especially rewards
+newspaper who lead other leaders. High pagerank newspapers can therefore
+be viewed as centralized consolidators of influence. Many of the titles previ­
+ously discussed exhibit high pagerank scores (shown by node size in Figure 6),
+including The National Anti­Slavery Standard and The Liberator. Again we
+see Godey’s Lady’s Book and The Lily, as well as The National Era, suggest­
+ing that these papers each played a central role in consolidating the abolitionist
+discourse.
+The HITS metrics (Hub and Authority scores, shown by position in Figure 6)
+help to clarify this relationship by differentiate several distinct groups, as well
+as some outliers. Once again, National Anti­Slavery Standard stands out with
+33
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+Figure 6: Aggregate network statistics. For each newspaper, the Hub Score roughly corresponds to how often
+it followed ongoing semantic changes, and the Authority Score to how often it led; node size corresponds to
+pagerank. Node abbreviations are given in Figure 1. As in Figure 1, newspapers with Black editors are shown in
+dark gray, and newspapers that were predominantly edited by and/or aimed at women have darker outlines.
+
+the largest Hub score by far, indicating its position as a fast follower (but not
+originator) of semantic change. We also find, conversely, that The Liberator
+stands out with the largest Authority score, indicating its position as a leader. A
+cluster of newspapers — Godey’s Lady’s Book, the Douglass Papers, as well as
+the The Liberator — scored high on both metrics, indicating their active partic­
+ipation as both leaders and followers of semantic change.
+Returning to our initial focus on leadership, there are two titles with high Author­
+ity scores but low Hub scores, indicating that they lead but rarely follow. These
+are the two titles indicated at the outset of the essay: The Lily and The Provin­
+cial Freeman, both of which were edited by women. That The Lily, women’s
+suffrage paper, is so influential as a leader in this network of abolitionist news­
+papers is a finding that points to the need for additional research, as it might sug­
+gest a potentially revisionist narrative to the story that has the white women’s
+suffrage movement departing from — and, at times, explicitly opposing — the
+abolitionist cause.
+That the Provincial Freeman is the second title on this list is more intriguing
+still. Upon announcing her departure from the paper, Mary Ann Shadd, the
+newspaper’s founder and editor, lamented that “Few, if any females had had to
+34
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+contend against the same business” that she had faced, referring to the criticism
+she had received as a result of her hard­hitting editorial style.87 She despairs
+at the lack of recognition that her paper had commanded, in spite of her having
+“broken the Editorial ice” for “colored women everywhere” by serving as the
+first Black woman to edit a newspaper in all of North America. And yet here in
+this chart is evidence of the influence that Shadd indeed commanded through
+her editorial work. Long after The Provincial Freeman ceased publication, we
+can return to its contents with fresh eyes, employing quantitative methods to
+surface the semantic leadership that characterized the paper all along.
+
+Conclusion
+The archive of abolition will always be bound by the historical forces that con­
+tributed to its creation — what Michel­Rolph Trouillot88 has described as the
+“silences” of the past. But these silences have not stopped scholars from at­
+tempting to derive meaning from the documents the archive does contain. On
+the contrary, the constraints of the archive have prompted a range of scholars to
+develop powerful new methods for the writing of history, methods which can
+expand our knowledge of the past.
+With this paper, we aim to contribute to these efforts. We argue that the con­
+ceptual undercurrents of the abolitionist movement of the nineteenth­century
+United States can be characterized in part by a consideration of neighbors: as
+the meanings of words shift over time, these shifts are reflected in statistical
+changes in the distributions over neighboring terms; similarly, the role of indi­
+vidual newspapers with respect to these changes is characterized by the extent
+to which they led or followed other newspapers in the adoption of these changes.
+In some cases, these semantic changes are clearly at the core of the concerns of
+the abolitionist movement, as in the case of terms like justice and rights. In­
+deed, such examples are so central to the narrative of abolition that they merit
+close individual analysis through non­computational techniques. Yet the bulk of
+the semantic changes uncovered by our method are not of this type — they are
+35
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+“everyday” words like busy and bold, ears and arms. To understand the story
+told by these changes, we turn to aggregation, identifying newspapers that con­
+sistently led their neighbors in the adoption (and in some cases, instigation) of
+these shifts. This aggregate view confirms some existing intuitions: for exam­
+ple, The Liberator, known for its role on the movement’s vanguard, is found
+at the center (Figure 1), while Frank Leslie’s Weekly, which was intentionally
+less political, is placed at the periphery. Aggregation also enables the use of net­
+work statistics to distinguish classes of participants: leaders, like The Lily; fast
+followers, like National Anti­Slavery Standard; and outsiders, like The Chris­
+tian Recorder. The aggregate view also proposes some more unexpected results,
+such as the prominence of the Godey’s Lady’s Book, a magazine that sought to
+position itself apart from the political fray.
+From a methodological perspective, a key intervention in this work is the use of
+randomization to ensure that are findings are robust. This was necessary for two
+reasons. First, although our dataset is large, we are interested in relatively rare
+phenomena — the appearances of individual words in specific linguistic con­
+texts by each newspaper at several different points in time. In any finite dataset,
+rare phenomena may give rise to spurious correlations which are not represent
+of meaningful underlying trends. Second, our dataset is heterogeneous: because
+some newspapers publish earlier and more often than others, temporal methods
+for detecting influence will inherently favor these newspapers. Randomization
+addresses both of these issues by comparing our quantitative results against the
+distribution of results obtained from a large set of alternative datasets in which
+no semantic leadership is possible by construction. This methodology of control
+by randomization is broadly applicable, and is especially applicable to analysis
+of temporal phenomena, which is difficult to validate using traditional hypoth­
+esis testing.89
+Our hope is that the results presented here — the specific semantic changes, the
+newspapers that exhibit semantic leadership (or that follow those leaders), and
+the overall picture of the network of semantic influence among these various
+papers — will become additional evidence that scholars working on the archive
+36
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+of abolition can incorporate into their future work. Our findings about the lexi­
+cal semantic leadership of two newspapers edited by women, one white and one
+Black, certainly seem to prompt further investigation. The network of lexical
+semantic leadership among the members of the Black press also seems worthy
+of additional inquiry. And while any model developed with a particular archive
+in mind must be translated to other contexts with intention and care, we believe
+that our model, as documented in this essay, can be applied to other archives
+in which questions of influence run up against the constraints of the historical
+record, potentially enabling new narratives about the actors and agents involved
+in advancing a shared social, cultural, or political goal.
+
+Acknowledgments
+The authors thank the anonymous reviewers for their valuable feedback. The ini­
+tial corpus creation effort was performed as part of the Interactive Topic Model
+and Metadata Visualization (TOME) project, supported by NEH Office of Dig­
+ital Humanities Grant HD­51705­13. This research was additionally supported
+by NSF IIS­1452443.
+
+Notes
+1
+
+E.g., Michel­Rolph Trouillot, Silencing the past: power and the production of history (Beacon Press, 1995);
+Ann Laura Stoler, Along the archival grain: epistemic anxieties and colonial common sense (Princeton University
+Press, 2009); Marisa J. Fuentes, Dispossessed lives: enslaved women, violence, and the archive, 1st edition, Early
+American studies (PENN University of Pennsylvania Press, 2016).
+2
+
+John Ernest, Liberation historiography: African American writers and the challenge of history, 1794­1861
+(University of North Carolina Press, 2004).
+3
+
+F. S. Foster, “A Narrative of the Interesting Origins and (Somewhat) Surprising Developments of African­
+American Print Culture,” American Literary History 17, no. 4 (2005): 714–40, https : / / doi . org / 10 . 1093 / alh /
+aji042; Eric Gardner, Unexpected places: relocating nineteenth­century african american literature. (Univ. Press
+of Mississippi, 2011); Benjamin Fagan, The black newspaper and the chosen nation (The University of Georgia
+Press, 2016); Derrick R Spires, The Practice of Citizenship: Black Politics and Print Culture in the Early United
+States. (2019).
+
+37
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+4
+
+Thomas MJ Fruchterman and Edward M Reingold, “Graph drawing by force­directed placement,” Software:
+Practice and experience 21, no. 11 (1991): 1129–64.
+5
+
+M. Sinha, The Slave’s Cause: A History of Abolition (Yale University Press, 2016), pg. 2.
+
+6
+
+Martha S Jones, All Bound up Together: The Woman Question in African American Public Culture, 1830­1900.
+(University of North Carolina Press, 2009), pg. 2.
+7
+
+E.g., Carla L. Peterson, Doers of the word: African­American women speakers and writers in the North (1830­
+1880), Race and American culture (Oxford University Press, 1995); P. Gabrielle Foreman, Activist sentiments:
+reading Black women in the nineteenth century, The new Black studies series (University of Illinois Press, 2009);
+Jones, All Bound up Together: The Woman Question in African American Public Culture, 1830­1900.
+8
+
+Colored Conventions Project, 2020.
+
+9
+
+Spires, The Practice of Citizenship: Black Politics and Print Culture in the Early United States., pg. 108.
+
+10
+
+John R Firth, “A synopsis of linguistic theory, 1930­1955,” Studies in linguistic analysis, 1957,
+
+11
+
+Derry Tanti Wijaya and Reyyan Yeniterzi, “Understanding semantic change of words over centuries,” in Pro­
+ceedings of the 2011 international workshop on DETecting and Exploiting Cultural diversiTy on the social web
+(ACM, 2011), 35–40; Andrey Kutuzov et al., “Diachronic word embeddings and semantic shifts: a survey,” in
+Proceedings of the 27th International Conference on Computational Linguistics (2018), 1384–97.
+12
+
+Nikhil Garg et al., “Word embeddings quantify 100 years of gender and ethnic stereotypes,” Proceedings of
+the National Academy of Sciences 115, no. 16 (2018): E3635–E3644; Austin C Kozlowski, Matt Taddy, and James
+A Evans, “The Geometry of Culture: Analyzing the Meanings of Class through Word Embeddings,” American
+Sociological Review 84, no. 5 (2019): 905–49.
+13
+
+Michael Gavin et al., “Spaces of Meaning: Conceptual History, Vector Semantics, and Close Reading,” in
+Debates in the Digital Humanities 2019 (University of Minnesota Press, 2019), 243–67.
+14
+
+Anna Shechtman, “Command of Media’s Metaphors,” Critical Inquiry 47, no. 2 (2020).
+
+15
+
+The code can be found at https://github.com/sandeepsoni/semantic­leadership­network
+
+16
+
+E.g., Martha S. Jones, Vanguard: how black women broke barriers, won the vote, and insisted on equality for
+all, First edition (Basic Books, 2020); Elizabeth Gillespie McRae, Mothers of massive resistance: white women
+and the politics of white supremacy (Oxford University Press, 2018).
+17
+
+Guy Bailey, “Real and Apparent Time,” in The Handbook of Language Variation and Change (2002), 312–33.
+
+18
+
+Janet B Pierrehumbert, “The dynamic lexicon,” Handbook of laboratory phonology, 2012, 173–83.
+
+19
+
+Firth, “A synopsis of linguistic theory, 1930­1955.”
+
+20
+
+Tomas Mikolov et al., “Distributed representations of words and phrases and their compositionality,” in Ad­
+
+38
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+vances in neural information processing systems (2013), 3111–19.
+21
+
+E.g. Benjamin Schmidt, “Vector space models for the digital humanities,” Ben’s Bookworm Blog. Accessed
+October 25 (2015): 2015; Ryan James Heuser, “Word Vectors in the Eighteenth Century.,” in Digital Humanities
+(2017); Michael Gavin, “Vector Semantics, William Empson, and the Study of Ambiguity,” Critical Inquiry 44,
+no. 4 (2018): 641–73, https://doi.org/10.1086/698174; Gavin et al., “Spaces of Meaning: Conceptual History,
+Vector Semantics, and Close Reading.”
+22
+
+E.g., Wijaya and Yeniterzi, “Understanding semantic change of words over centuries”; Yoon Kim et al., “Tem­
+poral Analysis of Language through Neural Language Models,” in Proceedings of the ACL 2014 Workshop on
+Language Technologies and Computational Social Science (2014), 61–65; Vivek Kulkarni et al., “Statistically
+significant detection of linguistic change,” in Proceedings of the 24th International Conference on World Wide
+Web (International World Wide Web Conferences Steering Committee, 2015), 625–35; William L Hamilton, Jure
+Leskovec, and Dan Jurafsky, “Diachronic Word Embeddings Reveal Statistical Laws of Semantic Change,” in Pro­
+ceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers),
+vol. 1 (2016), 1489–501; Maja Rudolph and David Blei, “Dynamic embeddings for language evolution,” in Pro­
+ceedings of the 2018 World Wide Web Conference (2018), 1003–11; Zijun Yao et al., “Dynamic word embeddings
+for evolving semantic discovery,” in Proceedings of the Eleventh ACM International Conference on Web Search
+and Data Mining (ACM, 2018), 673–81.
+23
+
+For an overview, see Kutuzov et al., “Diachronic word embeddings and semantic shifts: a survey”; Nina Tah­
+masebi, Lars Borin, and Adam Jatowt, “Survey of Computational Approaches to Diachronic Conceptual Change,”
+arXiv preprint arXiv:1811.06278, 2018, Xuri Tang, “A state­of­the­art of semantic change computation,” Natural
+Language Engineering 24, no. 5 (2018): 649–76.
+24
+
+William L Hamilton, Jure Leskovec, and Dan Jurafsky, “Diachronic Word Embeddings Reveal Statistical Laws
+of Semantic Change,” in Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics
+(Volume 1: Long Papers), vol. 1 (2016), 1489–501
+25
+
+Nikhil Garg et al., “Word embeddings quantify 100 years of gender and ethnic stereotypes,” Proceedings of
+the National Academy of Sciences 115, no. 16 (2018): E3635–E3644
+26
+
+Anna Shechtman, “Command of Media’s Metaphors,” Critical Inquiry 47, no. 2 (2020)
+
+27
+
+Sandeep Soni, Kristina Lerman, and Jacob Eisenstein, “Follow the Leader: Documents on the Leading Edge of
+Semantic Change Get More Citations,” Journal for the Association of Information Science and Technology, 2020,
+28
+
+William Labov, “Principles of linguistic change Volume 2: Social factors,” Language in society 29 (2001).
+
+29
+
+See William Labov, “The intersection of sex and social class in the course of linguistic change,” Language
+variation and change 2, no. 2 (1990): 205–54; Penelope Eckert and Sally McConnell­Ginet, Language and gen­
+der (Cambridge University Press, 2013); Sali A Tagliamonte and Alexandra D’Arcy, “Peaks beyond phonology:
+Adolescence, incrementation, and language change,” Language, 2009, 58–108. This finding is generally reported
+without consideration of non­binary genders; for research on the sociolinguistics of non­binary genders, see Lal
+Zimman and Kira Hall, “Language, embodiment, and the ‘third sex’,” Language and identities 166 (2009): 178
+and Chantal Gratton, “Resisting the gender binary: The use of (ING) in the construction of non­binary transgender
+
+39
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+identities,” University of Pennsylvania Working Papers in Linguistics 22, no. 2 (2016): 7.
+30
+
+Bailey, “Real and Apparent Time.”
+
+31
+
+Gillian Sankoff and Hélène Blondeau, “Language change across the lifespan:/r/in Montreal French,” Lan­
+guage, 2007, 560–88.
+32
+
+Cristian Danescu­Niculescu­Mizil et al., “No country for old members: User lifecycle and linguistic change
+in online communities,” in Proceedings of the 22nd international conference on World Wide Web (2013), 307–18
+find evidence of stability in which words are used, but provide no evidence about word meaning.
+33
+
+Labov, “Principles of linguistic change Volume 2: Social factors”
+
+34
+
+Lesley Milroy, Language and social networks (Wiley­Blackwell, 1987)
+
+35
+
+Jacob Eisenstein et al., “Diffusion of lexical change in social media,” PloS one 9, no. 11 (2014): e113114
+
+36
+
+Rahul Goel et al., “The social dynamics of language change in online networks,” in International Conference
+on Social Informatics (Springer, 2016), 41–57
+37
+
+Fangjian Guo et al., “The bayesian echo chamber: Modeling social influence via linguistic accommodation,”
+in Artificial Intelligence and Statistics (2015), 315–23.
+38
+
+Bryan Kelly et al., Measuring technological innovation over the long run, technical report (National Bureau
+of Economic Research, 2018).
+39
+
+David M Blei, “Probabilistic topic models,” Communications of the ACM 55, no. 4 (2012): 77–84.
+
+40
+
+Jie Tang et al., “Social influence analysis in large­scale networks,” in Proceedings of the 15th ACM SIGKDD in­
+ternational conference on Knowledge discovery and data mining (2009), 807–16; Lu Liu et al., “Mining topic­level
+influence in heterogeneous networks,” in Proceedings of the 19th ACM international conference on Information
+and knowledge management (2010), 199–208.
+41
+
+Kelly et al., Measuring technological innovation over the long run.
+
+42
+
+Howard Giles, Nikolas Coupland, and Justine Coupland, “Accommodation theory: Communication, context,
+and consequence,” in Contexts of accommodation: Developments in applied sociolinguistics, ed. Howard Giles,
+Justine Coupland, and Nikolas Coupland (Cambridge University Press, 1991), 1–68.
+43
+
+E.g. Robin D. G Kelley, Freedom dreams: the Black radical imagination (Beacon Press, 2002); Salamishah
+Tillet, Sites of slavery: citizenship and racial democracy in the post­civil rights imagination (Duke University
+Press, 2012).
+44
+
+Susan Maret, “Accessible archives,” The Charleston Advisor 18, no. 2 (2016): 17–20.
+
+45
+
+Lawrence Page et al., The PageRank citation ranking: Bringing order to the web., technical report (Stanford
+InfoLab, 1999).
+
+40
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+46
+
+Jon M Kleinberg, “Authoritative sources in a hyperlinked environment,” Journal of the ACM (JACM) 46, no.
+5 (1999): 604–32.
+47
+
+Scott Deerwester et al., “Indexing by latent semantic analysis,” Journal of the American society for information
+science 41, no. 6 (1990): 391–407; Peter D Turney and Patrick Pantel, “From frequency to meaning: Vector space
+models of semantics,” Journal of artificial intelligence research 37 (2010): 141–88.
+48
+
+Mikolov et al., “Distributed representations of words and phrases and their compositionality.”
+
+49
+
+Zellig S Harris, “Distributional structure,” Word 10, nos. 2­3 (1954): 146–62; Firth, “A synopsis of linguistic
+theory, 1930­1955”; Alessandro Lenci, “Distributional semantics in linguistic and cognitive research,” Italian
+journal of linguistics 20, no. 1 (2008): 1–31.
+50
+
+E.g., Heuser, “Word Vectors in the Eighteenth Century.”; Gavin, “Vector Semantics, William Empson, and the
+Study of Ambiguity.”
+51
+
+David Bamman, Chris Dyer, and Noah A Smith, “Distributed representations of geographically situated lan­
+guage,” in Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics (Volume 2:
+Short Papers) (2014), 828–34.
+52
+
+See also recent work by Nabeel Gillani and Roger Levy, “Simple dynamic word embeddings for mapping
+perceptions in the public sphere,” in Proceedings of the Third Workshop on Natural Language Processing and
+Computational Social Science (2019), 94–99.
+53
+
+E.g. William L Hamilton, Jure Leskovec, and Dan Jurafsky, “Cultural Shift or Linguistic Drift? Comparing
+Two Computational Measures of Semantic Change.,” in Proceedings of the Conference on Empirical Methods
+in Natural Language Processing, vol. 2016 (2016), 2116; Ehsaneddin Asgari, Christoph Ringlstetter, and Hinrich
+Schütze, “Unsupervised Embedding­based Detection of Lexical Semantic Changes,” arXiv preprint arXiv:2005.07979,
+2020, Hila Gonen et al., “Simple, Interpretable and Stable Method for Detecting Words with Usage Change across
+Corpora,” in Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (Online:
+Association for Computational Linguistics, July 2020), 538–55.
+54
+
+Hamilton, Leskovec, and Jurafsky, “Cultural Shift or Linguistic Drift? Comparing Two Computational Mea­
+sures of Semantic Change.”
+55
+
+E.g. Kulkarni et al., “Statistically significant detection of linguistic change”; Hamilton, Leskovec, and Juraf­
+sky, “Diachronic Word Embeddings Reveal Statistical Laws of Semantic Change.”
+56
+
+Helena Raumolin­Brunberg, “Leaders of linguistic change in Early Modern England,” Corpus­based studies
+of diachronic English, 2006, 115–34.
+57
+
+E.g. Thomas C. Leonard, News for all: America’s coming­of­age with the press (Oxford University Press,
+1995); Robert A Gross and Mary Kelley, eds., An extensive republic: print, culture, and society in the new nation,
+1790­1840, A history of the book in America (Published in Association with the American Antiquarian Society by
+The University of North Carolina Press, 2010).
+58
+
+Morris H. DeGroot and Mark J. Schervish, Probability and statistics, 4th (Pearson Education, 2011).
+
+41
+
+A B O L I T I O N I S T N E T W O R K S : M O D E L I N G L A N G U A G E C H A N G E I N N I N E T E E N T H ­ C E N T U RY
+A C T I V I S T N E W S PA P E R S
+
+59
+
+Similar procedures which involve permutation have been used in network regression. For example, see
+William Simpson, “QAP: The quadratic assignment procedure,” in North American STATA users’ group meeting
+(2001), 12–13
+60
+
+Page et al., The PageRank citation ranking: Bringing order to the web.
+
+61
+
+Kleinberg, “Authoritative sources in a hyperlinked environment.”
+
+62
+
+E.g., Mark Newman, Networks (Oxford university press, 2018).
+
+63
+
+We set α = 0.85 and β = 0.15/|S|, as is typical of many applications of pagerank see Pavel Berkhin, “A
+Survey on PageRank Computing,” Internet Mathematics 2, no. 1 (2005): for a discussion.
+64
+
+Matthew L. Jockers, “Computing and Visualizing the 19th­Century Literary Genome,” in DH (2012).
+
+65
+
+Matthew O Jackson, Social and economic networks (Princeton university press, 2010).
+
+66
+
+Unlike pagerank, α and β are not needed to be preset and are related to the leading eigen value of AT A and
+AA Newman, Networks.
+T
+
+67
+
+E.g. Xiaorui Jiang, Xiaoping Sun, and Hai Zhuge, “Towards an effective and unbiased ranking of scientific
+literature through mutual reinforcement,” in Proceedings of the 21st ACM international conference on Information
+and knowledge management (2012), 714–23.
+68
+
+E.g. Saatviga Sudhahar et al., “Network analysis of narrative content in large corpora,” Natural Language
+Engineering 21, no. 1 (2015): 81.
+69
+
+https://www.accessible­archives.com/
+
+70
+
+Lauren F. Klein, Jacob Eisenstein, and Iris Sun, “Exploratory Thematic Analysis for Digitized Archival Collec­
+tions,” Digital Scholarship in the Humanities 30, no. suppl 1 (2015): i130–i141, https://doi.org/10.1093/llc/fqv052.
+71
+
+Leonard, News for all: America’s coming­of­age with the press.
+
+72
+
+Fagan, The black newspaper and the chosen nation.
+
+73
+
+Jim Casey, Editing Forms: The Emergence of Editorship in Nineteenth­Century U.S. Periodicals, PhD Dis­
+sertation (University of Delaware, 2017).
+74
+
+Katherine Bode, A world of fiction: digital collections and the future of literary history (University of Michigan
+Press, 2018).
+75
+
+Gross and Kelley, An extensive republic: print, culture, and society in the new nation, 1790­1840.
+
+76
+
+Ray Smith, “An overview of the Tesseract OCR engine,” in Document Analysis and Recognition, 2007. ICDAR
+2007. Ninth International Conference on, vol. 2 (IEEE, 2007), 629–33.
+
+42
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+77
+
+Other digital errors (e.g. first or last letter of a word getting stripped) also occur in the corpus but are not
+systematic.
+78
+
+Ido Kissos and Nachum Dershowitz, “OCR error correction using character correction and feature­based word
+classification,” in 2016 12th IAPR Workshop on Document Analysis Systems (DAS) (IEEE, 2016), 198–203.
+79
+
+Sandeep Soni, Lauren Klein, and Jacob Eisenstein, “Correcting Whitespace Errors in Digitized Historical
+Texts,” in Proceedings of the 3rd Joint SIGHUM Workshop on Computational Linguistics for Cultural Heritage,
+Social Sciences, Humanities and Literature (2019), 98–103.
+80
+
+See Ryan Cordell et al., Going the Rounds Virality in Nineteenth­Century American Newspapers (University
+of Minnesota Press, Forthcoming).
+81
+
+With 5 and 20 time intervals, the discovered semantic changes were very similar, with approximately 90% of
+all changes preserved across all three settings. However, increasing the number of intervals made the residuals
+more difficult to compute, while decreasing the number of intervals made it difficult to isolate the precise time of
+changes. Consequently, we set the number of intervals to ten as a tradeoff.
+82
+
+Foster, “A Narrative of the Interesting Origins and (Somewhat) Surprising Developments of African­American
+Print Culture”; Fagan, The black newspaper and the chosen nation.
+83
+
+Lauren F. Klein, “Dimensions of Scale: Invisible Labor, Editorial Work, and the Future of Quantitative Literary
+Studies,” PMLA 135, no. 1 (2020): 23–39, https://doi.org/10.1632/pmla.2020.135.1.23.
+84
+
+Klein.
+
+85
+
+Jane Rhodes, Mary Ann Shadd Cary: the Black press and protest in the nineteenth century (Indiana University
+Press, 1998); Jim Casey, “Parsing Special Characters: Mary Ann Shadd and the Limits of Search Algorithms,” in
+Infrastructures of African American Print (University of Wisconsin Press, 2019).
+86
+
+Rhodes, Mary Ann Shadd Cary: the Black press and protest in the nineteenth century.
+
+87
+
+Mary Ann Shadd, “Adieu,” Provincial Freeman, June 1855,
+
+88
+
+Trouillot, Silencing the past: power and the production of history.
+
+89
+
+E.g., Haim Dubossarsky, Daphna Weinshall, and Eitan Grossman, “Outta control: Laws of semantic change
+and inherent biases in word representation models,” in Proceedings of the 2017 conference on empirical methods
+in natural language processing (2017), 1136–45; Haim Dubossarsky et al., “Time­Out: Temporal Referencing for
+Robust Modeling of Lexical Semantic Change,” in The 57th Annual Meeting of the Association for Computational
+Linguistics (ACL 2019) Proceedings of the Conference (ACL, 2019).
+
+43
+
+

@@ -1,0 +1,483 @@
+Annotation Guideline No. 4: Annotating
+Narrative Levels in Literature
+Nora Ketschik, Benjamin Krautter, Sandra Murr, Yvonne Zimmermann
+10.03.19
+Article DOI: 10.22148/16.055
+Journal ISSN: 2371-4549
+Cite: Nora Ketschik, Benjamin Krautter, Sandra Murr, Yvonne Zimmermann, “Annotation Guideline No. 4: Annotating Narrative Levels in Literature,” Journal of
+Cultural Analytics. December 3, 2019. doi: 10.22148/16.055
+
+Introduction
+Our participation in the Shared Task on the Analysis of Narrative Levels Through
+Annotation was motivated by a theoretical and practical interest in narratological phenomena of literary texts. We are a group of four literary scholars, three of
+whom are also working in the field of Digital Humanities. Combining these two
+scientific perspectives seems to be a fruitful research approach to formalize concepts of narratology with a focus on intersubjectivity. Therefore, a shared task
+dealing with narrative levels was particularly appealing to us, since narrative levels are both a delimited aspect of narratological categories and a complex concept
+of literary theory that can be of great importance for a formal text analysis and
+the following interpretation.
+When thinking about narrative levels in more detail, we noticed the necessity to
+first address the question of what a narrative is. Narratological concepts such as
+the distinction of exegesis and diegesis, the position of the narrator or the act
+of telling a story have been the starting point of our reflections. In a first step,
+our guidelines clarify the concepts that are fundamental to understand narrative
+levels. Since different narratological theories and traditions focus on different
+aspects and details of narrativity, it is important—from our point of view—to
+1
+
+Nora Ketschik et al.
+
+Cultural Analytics
+
+explain the underlying theory and the ensuing concepts of the guidelines. Therefore, it was essential for us to define the characteristics and the exact scope of narrative levels according to our understanding. In addition, we sought to illustrate
+our definition with several examples in order to help annotate them adequately.
+Automation, up until now, has not been a part of our considerations.
+After having analyzed and annotated several literary texts and having discussed
+the phenomenon at the SANTA workshop in Hamburg (2018), more specific and
+detailed questions regarding our guidelines arose. On the one hand, becoming
+more familiar with different narratological theories, scientific disciplines and approaches to annotation, we recognized that it would be beneficial for the applicability and the usefulness of our guidelines to rework some of their aspects, as
+they were written with a very specific theoretical background in mind. On the
+other hand, while annotating with our guidelines, we detected some elements
+that should be refined or clarified. However, most of these aspects remain open
+for discussion, and we will continue to think about them in more detail.
+During the workshop, our guidelines were perceived as very dense and theoryladen. Thus, we seek to better connect our theoretical premises with the actual
+annotation guidelines in a revised version. Furthermore, we aim to provide more
+examples for standard cases, while also trying to explain the reasoning behind the
+annotation in those examples in a more detailed way. We noticed that some narratological terms have been utilized in different understandings by the research
+teams (e.g., the terms ‘narrator’ and ‘speaker’). Therefore, we will aim for a better
+defined terminology in a revised version of our guidelines.
+Going into greater detail, there is at least one problematic aspect in our annotation tagset: the letter E (short for ‘exegesis’) that we used for annotating nonnarrative passages should be replaced by the letter N, since non-narrative passages do not necessarily have to be linked to the exegesis.
+Since the organizers’ explanation of the shared task focused on narrative levels,
+we have limited ourselves to defining and annotating these, although there are
+features such as the narrator, the position of the narrator, or speakers (who can
+become narrators in embedded narratives), which not only might help the annotators in using our guidelines, but also could be utilized as indicators in an
+automatic annotation process. In a revised version of our guidelines, we will
+think about adding other narratological categories to our tagset, as long as they
+help identify narrative levels. Those features might also be beneficial for subsequent corpus analyses of literary texts. But before we approach such questions,
+we still have to solve sophisticated and challenging theoretical issues that require
+a more detailed analysis and understanding of the phenomenon. For the future,
+2
+
+Cultural Analytics
+
+Annotation Guideline No. 4
+
+we will at least try to examine the following questions: How should we deal with
+different forms of imagination (as they appear, e.g., in Anton Chekhovs “The Lottery Ticket”)? What about dreams or visions? Is it sufficient to characterize the
+narrator, or should we think about the narratee as well? Which specific criteria
+do we need in order to distinguish between analepses (flashbacks) and embedded narrative levels? Does it make a difference in this context, if an analepsis
+is completed or not, external or internal? If there is no change of narrator, how
+comprehensive must our criteria be for regarding presence of another set of characters, spatial distance and temporal distance to the subordinate narrative level?
+Is our assumption of at least two applying indicators too arbitrary? These and
+other questions will form the basis for further theoretical discussions and will be
+integrated in our revised guidelines.
+
+Submitted Guidelines for the Annotation of Narrative Levels
+I. Theoretical Introduction
+Narrative theory—or Narratology—has been one of the central concerns of international literary studies since the early nineteen-sixties.1 Narratology deals “with
+the general theory and practice of narrative,”2 especially with different types of
+narrators and structural elements such as narrative levels. A fundamental interest of narratologists lies in the organization and structure of the literary plot. To
+describe both, the sequence of events in time and their implementation into an organized plot, Gérard Genette develops a systematic terminology that utilizes the
+terms discours and histoire3 in order to differentiate between what is narrated and
+how it is narrated. While histoire subsumes the “totality of the narrated events”,4
+the “discours du récit” is the actual realization of the histoire in the narration, be
+it oral or written.
+For the distinction of narrative levels, Genette proposes a classification of the
+narrator in extradiegetic, intradiegetic and metadiegetic. The extradiegetic narrator produces a “first narrative with its diegesis.”5 S/he is potentially followed by
+an intradiegetic narrator, a character that appears in the first narrative, who goes
+on to produce a second narrative, and so on.
+In principle, we follow Genette’s idea that a new narrative level needs a sufficiently
+1 Matías
+2 M.
+
+Martínez and Michael Scheffel, Einführung in die Erzähltheorie (München, 2007), 7.
+H. Abrams, “Narrative and Narratology,” in A Glossary of Literary Terms (Orlando, 1999),
+
+173.
+3 Gérard
+
+Genette, Narrative Discourse Revisited (Ithaca, 1988 [1983]), 13-15.
+Narrative Discourse Revisited, 13.
+5 Genette, Narrative Discourse Revisited, 84.
+4 Genette,
+
+3
+
+Nora Ketschik et al.
+
+Cultural Analytics
+
+marked ”threshold between one diegesis and another.”6 However, Genette ties a
+new narrative level to a new narrator. We would like to expand on this concept as,
+according to our understanding, literature has produced examples that show clear
+signs of being new narrative levels without exchanging the narrator.7 Still, new
+narrative levels need to have clearly distinguishable diegeses. Thus, the crossing
+of illocutionary boundaries alone, i.e. speech acts that introduce a new speaker,8
+do not necessarily lead to the creation of a new narrative level. The extraction
+of direct speech is a separate annotating task that we will not apply within our
+Annotation Guidelines for narrative levels.
+In order to understand and interpret a narrative text, we assume that it is necessary to analyze the structure and the form of the text to gain insight into the interrelation between form and content (e.g., Emil Staiger’s “Gehalt-Gestalt-Gefüge”).
+Herein, narrative levels have a great relevance, as there is an important dependency regarding different narrators and different narrative levels within a given
+literary text. Possible research questions based on distinguishing narrative levels can focus on structural elements of a text, e.g., an overview of the different
+narrators and the stories they tell, the relationship between frame and embedded
+stories, or the importance of a narrative level according to its length. However,
+research questions can also address the content of narrative levels. Since narrative levels can be functionally related to each other, e.g., an embedded story that
+serves as an explanation for the frame story, it is important to interpret characters or the narrator’s distribution of information with such interdependencies in
+mind. Furthermore, a more systematic analysis of crossovers reaching from one
+narrative level to another seems to be a productive goal that requires the recognition of narrative levels as fundamental.
+II. Terminology & Concepts
+In order to get a basic grasp on the terminology that is used in our Annotation
+Guidelines (IV), we strive to explain some fundamental technical terms in a concise way. This should help to achieve a clearer understanding of our guidelines
+and the underlying literary concepts:
+1. Narrative levels:
+The terminology used to describe narrative levels is diverse and varies widely.
+Our basic approach is to define any new story that occurs within a given narrative text as a new narrative level (see III. 2 for a more detailed explanation).
+6 Genette,
+
+Narrative Discourse Revisited, 84.
+Lahn and Jan Christoph Meister, Einführung in die Erzähltextanalyse (Stuttgart, 2013), 83.
+8 Marie-Laure Ryan, Possible Worlds, Artificial Intelligence and Narrative Theory (Bloomington,
+Indianapolis, 2001), 175-177.
+7 Silke
+
+4
+
+Cultural Analytics
+
+Annotation Guideline No. 4
+
+Narrative levels can be interlaced. Within the frame story (superordinate level),
+several embedded stories with a different degree can occur. As an embedded
+story can become the frame story for another embedded story, we use the terms
+first-, second-, third-, … degree narrative as an alternative terminology in order
+to avoid ambiguities.9 Narrative levels can also be arranged sequentially. E.g.,
+several embedded stories that belong to the same frame story are arranged next
+to each other.
+2. Homodiegetic and heterodiegetic narrator:
+With regard to the distinction of different narrators and, consequently, the change
+of a narrator in a single text, it is useful to determine her/his position in relation
+to the story s/he tells. In principle, it must be determined whether the narrator is
+part of the diegetic world or not. A homodiegetic narrator is a character in the
+story s/he tells. In contrast, a heterodiegetic narrator is not part of the story s/he
+tells.10
+3. Exegesis and diegesis:
+“[D]iegesis designates the level of the narrated world, and exegesis the level of the
+narrating.”11 Consequently, a homodiegetic narrator (of a first-degree narrative)
+belongs to both levels: In her/his function as narrator, s/he belongs to the exegesis, but since s/he tells a story with herself/himself being a character in it, s/he is
+also part of the diegesis.12 A heterodiegetic narrator, however, belongs only to
+the exegesis; the narrated world which s/he is not part of is the diegesis.
+4. Narrating and experiencing “I”/self, experiencing space:
+A homodiegetic narrator’s “I”/self is split into a narrating and an experiencing
+“I”/self. While the narrating “I”/self is located in the exegesis or on the superordinate level of the current narrative level, the experiencing “I”/self is located on
+the current narrative level as one character among others.13 As a heterodiegetic
+narrator is not part of the story s/he tells, there is no experiencing “I”/self in the
+story. Therefore, we opt for the term “experiencing space” as an alternative. The
+experiencing space subsumes features of the narrative level regarding its time,
+9 Manfred Jahn, Narratology: A Guide to the Theory of Narrative (Universität Köln, 2017). http:
+//www.uni-koeln.de/%7Eame02/pppn.htm (06/15/2018).
+10 Gérard Genette, Narrative Discourse. An Essay in Method, trans. Jane E. Lewin Oxford, 1980
+[1972]), 244-245.
+11 Didier Coste and John Pier, “Narrative Levels,” in The Living Handbook of Narratology.
+(2016a [2014]). http://www.lhn.uni-hamburg.de/article/narrative-levels-revised-version-uploaded23-april-2014 (06/15/2018).
+12 Genette, Narrative Discourse Revisited, 84.
+13 Lahn and Meister, Einführung in die Erzähltextanalyse, 70; Monika Fludernik, An Introduction
+to Narratology (Abingdon, 2009), 90.
+
+5
+
+Nora Ketschik et al.
+
+Cultural Analytics
+
+space and characters. The distinction between narrating “I”/self and experiencing “I”/self or experiencing space can help to identify narrative levels (see III. 4).
+5. Projected teller role:
+A projected teller role, i.e. “an agent whose sole involvement with the text is its
+material dissemination,”14 always demands an additional narrative level (even
+if this level consists of only one sentence). The most prominent example for a
+projected teller role is the editor figure.
+III. Premises
+1. We identify all narrative levels in a given narrative text. Our basic assumption is that each text has at least one narrative level.
+2. A new story15 within a text calls for a new narrative level.
+3. A change of the narrator results in a change of the narrative level. However,
+a change of the narrative level does not necessarily have to be accompanied
+by a change of the narrator (cf. Max Frisch’s “I’m not Stiller”: homodiegetic
+narrator, who tells a fairy tale within her/his own narration). Attention:
+In our understanding, not every character speech is automatically a story.
+For this to be true, the criteria according to III. 2 have to be met.
+4. What is needed for a change of narrative levels:
+a. In a story that is narrated by a heterodiegetic narrator there is a clear
+distinction between the position of the narrator and the experiencing space
+of the characters.
+b. In a story that is narrated by a homodiegetic narrator there is a clear
+distinction between the narrating “I”/self and the experiencing “I”/self.
+c. In a new story that changes its narrator (e.g., a character telling an embedded story), there is a new narrating “I”/self. In a new story that does
+not change its narrator (e.g., a homodiegetic narrator telling an embedded story), the narrative “I”/self remains the same. Thus, for a change of
+narrative levels, there must be another experiencing “I”/self (experiencing
+space) perceptible.
+14 Marie-Laure Ryan, “The Narratorial Functions,” Breaking Down a Theoretical Primitive, Contemporary Narratology 9.2, (2001): 151.
+15 Genette’s term histoire is oftentimes translated as story. Our concept of story, however, does not
+coincide with Genette’s histoire.
+
+6
+
+Cultural Analytics
+
+Annotation Guideline No. 4
+
+d. Two of the following indicators, which point to a new experiencing
+space, must apply, if a new story—and thus a new narrative level—is created by the same narrator:16
+
+•
+
+– the presence of another set of characters,
+– a spatial distance to the first/current narrative level,
+– a temporal distance to the first/current narrative level. However, it is also possible that a character narrates a storyline that
+takes place simultaneously. For this to be a new narrative level,
+the other two indicators (set of characters, spatial distance) have
+to apply Attention: In certain cases, the distance between the
+experiencing and the narrating “I”/self is seemingly removed.17
+
+5. Embedded stories can be functionally related to their superordinate narrative level, their frame stories. Possible functions are:18 a. explicative:
+The embedded story provides an explanation for elements of the frame
+story. b. actional: The embedded story is constitutive for the frame story.
+c. thematic: The embedded story is thematically related (analogies, correspondence, contrast, relationships) to the frame story.
+
+6. Narrative levels can be interlaced (inclusion scheme) or arranged next to
+each other (sequential), see Fig. 1.
+
+16 Analepses (flashbacks), which create only temporal distance to the current story, and mental
+games (“what if ”-scenarios) are not considered new narrative levels.
+17 Cf. stream of consciousness in Arthur Schnitzler: “Leutnant Gustl”, Lahn and Meister, Einführung in die Erzähltextanalyse, 72.
+18 Lahn and Meister, Einführung in die Erzähltextanalyse, 83-84.
+
+7
+
+Nora Ketschik et al.
+
+Cultural Analytics
+
+Figure 1. Interlaced and sequential arrangement of narrative levels within a literary text.
+7. The location of the narrator (exegesis) in a first-degree narrative is not an independent narrative level. Aphorisms, mottos, comments, judgments, forms of address (fictitious recipient) and thoughts expressed by the narrator19 do not form
+a new narrative level. They are part of the instantaneous narrative level. This is
+also true for expressions of narrators in a second-, third-, … degree narrative, as
+long as they do not address an element of the superordinate level. Regardless, it
+is still possible to annotate such expressions (for further details see IV. 9).
+
+IV. Annotation Guidelines
+Before beginning the annotation process, the annotator has to read the entire text
+once. Following that, all narrative levels in the text are searched for as defined in
+the Premises (III. 1-7). They are annotated according to the following points:
+1. All narrative levels are annotated with square brackets (opening bracket at
+the start and closing bracket at the end of a narrative level).20
+19 Wolf
+
+Schmid, Elemente der Narratologie (Berlin, Boston, 2014), 7.
+
+20 The annotation may be done in another way, too (e.g., with different colors marking the belonging
+
+to a certain narrative level), depending on the annotation tool that is used.
+
+8
+
+Cultural Analytics
+
+Annotation Guideline No. 4
+
+2. The narrative levels are annotated with numbers (1, 2, 3 etc.) as a first and
+letters (a, b, c etc.) as a second differentiator.
+a. The numbers indicate the degree of the narrative level (inclusion
+scheme). E.g., level 2 refers to a narrative level that is embedded into
+a superordinate level. Level 2 is a second-degree narrative or, in other
+words, an embedded story. Max Frisch’s novel “Stiller” is one example:
+An embedded story (the fairytale of Rip van Winkle), is narrated by one
+of the novel’s characters and enclosed into the first-degree narrative or
+frame story (level 1).21
+b. Stories that are on the same narrative level (sequential arrangement) are
+identified by letters (a, b, c). Boccaccio’s “Il Decamerone” is an example
+of sequentially arranged stories, which contain several separate novellas
+on the same narrative level (series of embedded stories); see Fig. 1 (the
+arrangement of the individual novellas that are embedded in the frame
+story would correspond to the numbering 2a, 2b, 2c etc.)
+3. How to use the square brackets to separate the different narrative levels:
+a. The brackets are marked with the number and, if applicable, a letter on
+both, the opening and closing brackets. E.g., [1 … ]1
+b. Inclusion scheme: The superordinate narrative level (e.g., first-degree
+narrative) starts before the embedded level (e.g., second-degree narrative).
+The brackets of the superordinate level close after the brackets of the embedded level: [1 … [2 … ]2 … ]1 .
+c. Sequential arrangement: The square bracket of the first sequentially ordered narrative level (e.g., 2a) closes before opening the square bracket of
+the second sequentially ordered narrative level (e.g., 2b): [1 … [2a … ]2a
+… [2b … ]2b … ]1 .
+d. Punctuation is not separated from the preceding word.
+(1) [1 … [2 “On a march in the Rhine campaign”, ]2 began the officer, [2 “I
+noticed, after a battle we had had with the enemy …” ]2 ]1 (Heinrich
+von Kleist: “Improbable Veracities”)
+Note: Each text usually has at least one narrative level and a corresponding
+number [1]. Letters are only used to denote a sequential arrangement and
+therefore not always utilized.
+21 Jahn
+
+2017.
+
+9
+
+Nora Ketschik et al.
+
+Cultural Analytics
+
+4. As a rule, a narrative text starts with the first narrative level (level 1) and
+may have other narrative levels embedded (level 2 and so on).
+An exception to this rule are narrative texts with a projected teller role that
+requires its own narrative level. In this case, the projected teller role is
+annotated as a frame story (level 1), although this special case might only
+become visible at the end of the narrative text.
+(2) [1 The Editor believes the thing to be a just History of Fact; neither is
+there any Appearance of Fiction in it: And however thinks, because
+all such things are dispatch’d, that the Improvement of it, as well as
+the Diversion, as to the Instruction of the Reader, will be the same;
+and as such he thinks, without farther Compliment to the World, he
+does them a great Service in the Publication.
+The Life and Adventures of Robinson Crusoe
+[2 I Was born in the Year 1632, in the City of York, of a good Family, tho’
+not of that Country, my Father being a Foreigner of Bremen, who settled
+first at Hull. … ]2 ]1 (Daniel Defoe: “Robinson Crusoe”).
+
+(3)DECEMBER 6.
+[1 [2 How her image haunts me! Waking or asleep, she fills my entire soul!
+Soon as I close my eyes, here, in my brain, where all the nerves of vision are
+concentrated, her dark eyes are imprinted … ]2
+THE EDITOR TO THE READER.
+It is a matter of extreme regret that we want original evidence of the last
+remarkable days of our friend; and we are, therefore, obliged to interrupt the
+progress of his correspondence, and to supply the deficiency by a connected
+narration … ]1 (Johann Wolfgang von Goethe: “The sorrows of young
+Werther”)
+
+5. Paratexts22 such as book titles, chapter headings and genre indications
+must not be annotated. If the narrative level remains the same, the square
+bracket of the narrative level is closed before a chapter heading and reopened afterwards with the same label.
+22 Gérard
+
+Genette, Paratexts. Thresholds of Interpretation (Cambridge, 1997).
+
+10
+
+Cultural Analytics
+
+Annotation Guideline No. 4
+
+(4) [1 By reason of these things, then, the whaling voyage was welcome;
+the great flood-gates of the wonder-world swung open, and in the
+wild conceits that swayed me to my purpose, two and two there
+floated into my inmost soul, endless processions of the whale, and,
+mid most of them all, one grand hooded phantom, like a snow hill
+in the air. ]1
+CHAPTER 2. The Carpet-Bag.
+[1 I stuffed a shirt or two into my old carpet-bag, tucked it under my arm,
+and started for Cape Horn and the Pacific. Quitting the good city of old Manhatto, I duly arrived in New Bedford. It was a Saturday night in December.
+Much was I disappointed upon learning that the little packet for Nantucket
+had already sailed, and that no way of reaching that place would offer, till
+the following Monday. ]1 (Herman Melville: “Moby Dick”).
+
+6. Headings that belong semantically and syntactically to a narrative level are
+exceptions to this rule. Those are assigned to the particular narrative level
+(normally to the superordinate level).
+(5) [1 … [E After this, hear the true and graceful story of Lau, the beautiful
+water nymph.
+[2 In Swabia, on the Alb, near the little town of Blaubeuren, close behind
+the old monastery, you can see beside a sheer rock face the big round basin
+of a wondrous spring called the Blue Pool … ]2 ]1 (Eduard Mörike: “Das
+Stuttgarter Hutzelmännlein”, trans. by the authors).
+
+7. Narrative levels can be interrupted and thwarted by other narrative levels.
+E.g., in a second-degree narrative, inserts from the first-degree narrative
+might occur. In this case, level 2 will be closed at the beginning of the
+insert and reopened after the insert with the same numbering.
+(6)[1 The country gentleman was of the opinion that he knew how to choose
+well those stories that would verify his proposition.[2c “The third story,” ]2c
+the officer continued, [2c ”took place in the war of independence of the
+Netherlands, at the siege of Antwerp by the Duke of Parma. The duke had
+blocked the Schelde river by means of a bridge of ships and the Antwerpers
+were working on their side, under the leadership of a talented Italian, to
+explode the bridge by means of fire boats that they launched against it. In
+that moment, ]2c gentlemen, [2c in which the vessels float down the Schelde
+11
+
+Nora Ketschik et al.
+
+Cultural Analytics
+
+to the bridge, there stands, observe well, a cadet officer on the left bank of the
+Schelde right next to the Duke of Parma …” ]2c Go to the Devil! shouted the
+country gentleman … ]1 (Heinrich von Kleist: “Improbable Veracities”)
+
+8. In rare cases, a text does not allow for the annotation of narrative levels.
+This will be the case, for example, if the narrative levels cannot be
+separated logically, a phenomenon that is called metalepsis.23 In Italo
+Calvino’s “If on a winter’s night a traveler”, the world of the reader/narrator
+(exegesis) is so closely interwoven with the story (diegesis) that narrative
+levels can no longer be clearly distinguished from each other. In such
+cases, we do not annotate any narrative levels.
+
+(7) I am the man who comes and goes between the bar and the telephone
+booth. Or, rather: that man is called “I” and you know nothing else about
+him, just as this station is called only “station” and beyond it there exists
+nothing except the unanswered signal of a telephone ringing in a dark room of
+a distant city. I hang up the receiver, I await the rattling flush, down through
+the metallic throat, I push the glass door again, head toward the cups piled
+up to dry in a cloud of steam. The espresso machines in station cafés boast
+their kinship with the locomotives, the espresso machines of yesterday and
+today with the locomotives and steam engines of today and yesterday. It’s
+all very well for me to come and go, shift and turn: I am caught in a trap,
+in that nontemporal trap which all stations unfailingly set. A cloud of coal
+dust still hovers in the air of stations all these years after the lines have been
+totally electrified, and a novel that talks about trains and stations cannot
+help conveying this odor of smoke. For a couple of pages now you have been
+reading on, and this would be the time to tell you clearly whether this station
+where I have got off is a station of the past or a station of today; instead the
+sentences continue to move in vagueness, grayness, in a kind of no man’s land
+of experience reduced to the lowest common denominator. Watch out: it is
+surely a method of involving you gradually, capturing you in the story before
+you realize it’s a trap.(Italo Calvino: “If on a Winter’s Night a Traveler”).
+9. Sometimes, a narrator interrupts the story in order to comment on the
+story, such as to address the recipient (see III. 7). Aphorisms, mottos,
+23 John Pier, “Metalepsis,” in The Living Handbook of Narratology (2016b [2011]). http://www.lhn.
+uni-hamburg.de/article/metalepsis-revised-version-uploaded-13-july-2016 (06/15/2018).
+
+12
+
+Cultural Analytics
+
+Annotation Guideline No. 4
+
+comments, judgments, forms of address and thoughts24 expressed by the
+narrator are annotated as parts of the current narrative level and are not
+regarded as an independent narrative level. Since it may be beneficial for
+some cases (e.g., comparing judgments of the narrator to the plot), we nevertheless annotate those expressions as “non-narrative”:
+To annotate non-narrative parts, we use square brackets followed by the
+letter E. This indicates that they do not form a narrative level. Opening
+brackets are used to signal the beginning and closing brackets to signal the
+end of the expression.
+(8) [1 In the days when everybody started fair, [E Best Beloved ]E , the Leopard lived in a place called the High Veldt. [E ‘Member ]E it wasn’t the
+Low Veldt, or the Bush Veldt, or the Sour Veldt, but …’ ]1 (Rudyard
+Kipling: “How the Leopard got his Spots”).
+(9) [1 … [2 The old woman often went out in the morning, and did not return
+till evening, when I used to go out with the little dog to meet her … [E often
+and often as I must have repeated it, do what I will, I cannot call back again
+the singular name of the little dog. ]E … ]2 ]1 (Ludwig Tieck: “The white
+Egbert”).
+(10)[1 That puzzled the Leopard and the Ethiopian, but they set off to look
+for the aboriginal Flora, and presently, after ever so many days, they saw a
+great, high, tall forest full of tree trunks all ’sclusively speckled and sprottled
+and spottled, dotted and splashed and slashed and hatched and cross-hatched
+with shadows. [E (Say that quickly aloud, and you will see how very shadowy
+the forest must have been.) ]E … ]1 (Rudyard Kipling: “How the Leopard got
+his Spots”).
+
+Unless otherwise specified, all work in this journal is licensed under a Creative Commons Attribution 4.0 International License.
+
+24 Schmid,
+
+Elemente der Narratologie,7.
+
+13
+
+

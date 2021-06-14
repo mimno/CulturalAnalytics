@@ -1,0 +1,751 @@
+Annotation Guideline No. 1: Cover Sheet for
+Narrative Boundaries Annotation Guide
+Joshua Eisenberg and Mark Finlayson
+09.24.19
+Peer-Reviewed By: Meredith A. Martin
+Article DOI: 10.22148/16.051
+Journal ISSN: 2371-4549
+Cite: Joshua Eisenberg and Mark Finlayson, “Annotation Guideline No. 1: Cover
+Sheet for Narrative Boundaries Annotation Guide,” Journal of Cultural Analytics.
+November 20, 2019. doi: 10.22148/16.051
+
+1.
+
+Introduction
+
+1.1 Purpose of the Project
+Narratives and stories are found all over the world, in every culture, and they are
+used by every person every day. For computers to communicate with people in a
+natural and respectful manner, they need to understand stories. Unfortunately,
+computational understanding of stories is currently in its early stages: computers cannot yet identify even basic characteristics of a narrative, such as where
+it begins and ends. To train and test a computer’s ability to identify the beginnings and endings of narratives (what we call here narrative boundaries) we are
+collecting human judgments.
+
+1.2 What is Annotation?
+Annotation is the process of explicitly encoding information about a text that
+would otherwise remain implicit. For this study, annotation is the record of hu1
+
+Joshua Eisenberg and Mark Finlayson
+
+Cultural Analytics
+
+man judgments identifying where a narrative begins and ends, which are called
+narrative boundaries. You will be highlighting spans of text in PDF documents
+to explicitly mark the boundaries of each narrative.
+
+2.
+
+Narrative Boundaries
+
+A narrative is a discourse presenting a coherent sequence of events which are
+causally related and purposely related, concern specific characters and times, and
+overall displays a level of organization beyond the commonsense coherence of the
+events themselves, such as that provided by a climax or other plot structure.
+Narrative is a linguistic representation of a story. A story is a series of events
+effected by animate actors or characters. A story is an abstract construct, with
+two essential elements: plot (fabula) and characters (dramatis personae). The art
+of storytelling is much more complicated than merely listing events carried out by
+characters. There is great importance in the storyteller’s choice of which details
+are revealed to the reader, the order in which plot events are told, whether to
+embed stories within each other, and whether to interrupt the telling of one story
+to make space for a new one. Even the choice of what details (character traits,
+setting, history) the author reveals to the reader is important.
+Narrative is more concrete than story, in that narrative is made up of words,
+but a story is formed through the co-occurrence of characters who enact events
+which advance a plot forward. Narratives occupy spans of text, while stories are
+a more complex relationship involving characters and events. Throughout this
+document, we will say the narrative is the span of text that expresses the story, or
+simply narrative text.
+These spans can appear in multiple forms: a narrative can appear contiguously as
+one solid span of text, or it might be embedded in another narrative, or it might
+even interrupt the preceding narrative. Many novels and short stories contain
+multiple instances of embedded and interruptive narratives, often with intricate
+combinations of the two phenomena. This is also true of scripts of TV shows
+and movies and the transcripts of court cases. The main goal of this study is to
+find and mark these narrative boundaries to enable us to develop, train, and test
+algorithms for this phenomenon.
+Every narrative has at least two narrative boundaries: the start point—the position in text of the first character of the first word in the narration—and the end
+point—the position of the last character after the last word in the narration. The
+simplest kind of narrative is an uninterrupted one. The start point of such a nar2
+
+Cultural Analytics
+
+Annotation Guideline No. 1
+
+ration is the first character of the text, and the end point the last character of the
+text. This text’s narrative has only two boundaries.
+1. I woke up early in the morning, checked the weather app on my
+phone and decided it would be a perfect day to go to the beach. I
+grabbed a book, a towel, and sunglasses, got in my car, and drove
+to the beach. I read my book, watched the waves, and took a quick
+swim. I dried off and drove home. It was a great day, even though I
+forgot to bring sun screen and got a sunburn.
+(1) contains an uninterrupted narrative by a first-person narrator who tells the
+story of their trip to the beach. The narrator uses the first-person point of view
+to narrate. There are no shifts in time, and no interrupted narratives. The next
+three sections will define the different types of narrative boundaries. The texts
+that we will annotate in this study each have more than two narrative boundaries, and contain various arrangements of these boundaries. Both embedded
+and interruptive narrative can be found in any of the texts in this annotation
+study, including the TV and movie scripts, as well as the court transcripts.
+
+2.1 Embedded Narratives
+Narratives can be embedded in one another. An embedded narrative tells a story
+within a story. Before we discuss how embedded narratives occur in text, let’s
+define how we refer to the relationship between the layers. The original narrative
+is the narrative in which the embedded narrative is told, and the original narrative
+contains an event (explicit or implied) that signals the telling of an embedded
+narrative. The embedded narrative is the narrative that is embedded within the
+original narrative.
+Figure 1 contains a narrative boundary diagram for a text that contains an embedded narrative. The lower bar represents the span of text the original narrative
+appears in, while the upper bar represents the embedded narrative. The horizontal axis represents the text under consideration; the graph progressing from the
+left to the right represents the position in the text advancing from the first word
+to the last.
+3
+
+Joshua Eisenberg and Mark Finlayson
+
+Cultural Analytics
+
+Figure 1. Narrative boundary diagram for an embedded narrative.
+An embedded narrative occurs when there is a plot event in the original narrative that triggers the telling of another story in the story. The narrative that tells
+the second story is the embedded narrative. A typical example of this is when
+there is a conversation in the original narrative and in this dialogue one of the
+participants narrates a story. The plot event in the original narrative that signals
+the embedded narrative is the character telling a story.
+Recall (1), a story about a day at the beach. Example 2, is an altered version
+of Example 1, one with an embedded narrative inserted. The span of text that
+contains the embedded narrative is surrounded by a brackets with a subscript
+of 1.1 The narrative boundaries in Example 2 are graphically represented in the
+narrative boundaries diagram in Figure 1.
+2. I woke up early in the morning, checked my weather app on my
+phone and decided it would be a perfect day to go to the beach. I
+grabbed a book, a towel, and sunglasses, got in my car, and drove to
+the beach. I read my book, watched the waves, and took a quick
+swim. As I emerged from the water a disheveled looking pirate
+washed ashore, [1 “Aye Aye! I have just been washed ashore. I was the
+captain of the Shivering Sparrow, but there was a mutiny onboard.
+All of my crew including my parrot turned on me, and made me
+walk the plank. I clung onto a piece of driftwood for three days, and
+now I am here. Where am I?”]1 I didn’t believe the pirate’s story,
+so I ignored him and walked away. I dried off and drove home. It
+was a great day, even though I forgot to bring sun screen and got a
+sunburn.
+Example 2 contains a basic example of an embedded narrative. The story is al1[
+
+1…. ]1
+
+4
+
+Cultural Analytics
+
+Annotation Guideline No. 1
+
+most the same as Example 1’s, except when the narrator gets out of the water, he
+encounters a pirate, who tells him a story about being abandoned at sea, clinging
+to a piece of wood, and washing ashore. The pirate’s embedded narrative is surrounded by brackets with a subscript of 1, and is embedded in the narrative of
+the original narrator. The original narrative ends the same way in Example 1.
+In Example 2’s original narrative, the original narrator witnesses the pirate telling
+a story. The pirate’s narration is a plot event in the lower level. This plot event
+in the original narrative triggers the start of the embedded narrative. The plot
+events of the pirate’s story are a part of the embedded story, since they are told in
+the pirate’s embedded narrative. The embedded narrative contains a story with
+events that are separate from the events in the story from the original narrative.
+It is also possible for the original narrator to tell an embedded narrative in the
+narrative text.2 This type of narrative can occur via embedded flashbacks, which
+will be discussed in Section 2.3.
+3. Her mojito glass was empty. She signaled the bartender and asked
+for a wine list, and, after some deliberation, she chose a glass of Napa
+Cabernet Sauvignon. Tsukuru had only drunk half his highball. The
+ice had melted, forming droplets on the outside of his glass. The
+paper coaster was wet and swollen.
+[1 “That was the first time in my life that anyone had rejected me so
+completely,”]1 Tsukuru said. [1 “And the ones who did it were the
+people I trusted the most, my four best friends in the world. I was
+so close to them that they had been like an extension of my own
+body. Searching for the reason, or correcting a misunderstanding,
+was beyond me. I was simply, and utterly, in shock. So much so that
+I thought I might never recover. It felt like something inside me had
+snapped.”]1
+The bartender brought over the glass of wine and replenished the
+bowl of nuts. Once he’d left, Sara turned to Tsukuru.
+“I’ve never experienced that myself, but I think I can imagine how
+stunned you must have been. I understand that you couldn’t recover
+from it quickly. But still, after time had passed and the shock had
+worn off, wasn’t there something you could have done? I mean, it
+was so unfair. Why didn’t you challenge it? I don’t see how you
+could stand it.”
+2 Here narrative text means the text the narrator uses to narrate to the reader. Narrative text does
+not include text in quotes or direct speech.
+
+5
+
+Joshua Eisenberg and Mark Finlayson
+
+Cultural Analytics
+
+Example 3 is an excerpt from a novel (Murakami, 2014). This excerpt contains
+an embedded narrative, which is surrounded by brackets with the subscript of 1.
+In the original narrative, Tsukuru and Sara are at a bar, on a date, and Tsukuru
+is telling Sara a story about his past. The text surrounded in brackets with the
+subscript of 1 is part of the embedded narrative, since it contains Tsukuru telling
+a story about his previous rejection. This is a narration about his past; He is explaining how he felt, and why he acted a certain way. Note that only the bracketed
+text is part of the embedded narrative. The final paragraph is not part of the embedded narrative because it is not a telling of the embedded story. It is Sara trying
+to verbalize her empathy for Tsukuru and asking him a clarifying question.
+It is important to note that the phrase “Tsukuru said” in the second paragraph
+is not part of the embedded narrative because it is an action that occurs in the
+original narrative. Tsukuru is having his conversation within the frame of the
+original narrative where he is on a date with Sara.
+One final reminder, the entire span of text in Example 3 is part of the original narrative. Even the text of the embedded narrative, which is surrounded by brackets
+with subscript of 1, belongs to both the original and embedded narrative; it belongs to the original narrative because Tsukuru is saying these words to Sara in
+the bar while on his date. This is a part of the chain of events of the original narrative; it also belongs to the embedded narrative because the words he is saying tell
+a story that is separate and independent from the story in the original narrative.
+Before we move to interruptive narratives, let’s talk about a canonical example
+of an embedded narrative: Joseph Conrad’s Heart of Darkness 3 where there is a
+homodiegetic narrator on a boat, listening to a story told by his shipmate Marlow.
+Marlow’s story, which is told in dialogue, is the main story of the novel. The
+original narrator’s story is quite simple, he is just a passenger on a boat listening
+to Marlow. The real story of Heart of Darkness is the story that Marlow is telling
+the original narrator, about Marlow’s experiences in Africa.
+
+2.2 Interruptive narratives
+Narratives that interrupt the original narrator’s narration are called interruptive
+narratives, which are different from embedded narratives. This is common in
+books where each chapter has a different narrator. For example, in the majority
+of the novel 1Q84, 4 all the odd numbered chapters are narrated from the perspective of the heroine, Aomame, and the even numbered chapters are narrated from
+3 Joseph
+4 Haruki
+
+Conrad, Heart of Darkness (New York, NY: W. W. Norton & Company, 2016).
+Murakami, 1Q84 (New York, NY: Vintage International, 2011).
+
+6
+
+Cultural Analytics
+
+Annotation Guideline No. 1
+
+the perspective of the hero, Tengo. The boundaries at the end of each chapter in
+this novel mark interruptive narrative boundaries. For example, at the end of an
+odd numbered chapter, the narrator switches from the perspective of Aomame
+to Tengo, and at the end of each even numbered chapter, the narrator switches
+from the perspective of Aomame to Tengo.
+
+Figure 2. Narrative boundary diagram for the dual interruptive narrations from
+1Q84.
+Interruptive narratives can occur within chapters, or, for our purposes, within
+short stories, chapters of novels, or in the dialogue of a script. Sometimes the
+person narrating will change; at other times, the original narrator is a first-person
+narrator, and then the narrator will suddenly shift to a third person impersonal
+narrator, or vice versa. If the narrator changes, there is usually an interruptive
+narrative boundary.
+Sometimes there will be a section breakwhich denote the change of narrator. Section breaks are visual markers that separate text. Sometimes a section break is signaled by a series of special characters, like an asterisk (*) or a horizontal rule (a
+thin, horizontal line). Sometimes there will just be many blank lines in a section
+break. Note that the presence of a section break does not guarantee the presence
+of an interrupted narrative. For example, there can be a section break, and immediately after the break the narration is continued by the same narrator, from
+the same point in time that the narrative before the section break left off.
+The difference between interruptive and embedded narratives may seem subtle,
+but there is a difference. In an embedded narrative, a plot event occurs in the story
+of the original narrative, which triggers the telling of an embedded narrative. An
+interruptive narrative is triggered by the original narrative stopping. The trigger
+of an interruptive narrative is not a plot event in the original narrative, instead it
+is more of a meta-event, where something more structural, about how the story
+7
+
+Joshua Eisenberg and Mark Finlayson
+
+Cultural Analytics
+
+is being told, changes. Once the original narrative has stopped, the interrupting
+narrative begins to be told. The actual person narrating the story can changes, or
+the narrator remains consistent but the time in which the story is told changes. If
+you are questioning whether a narrative is interruptive, you should ask yourself:
+Is the telling of the span in question a plot event in the original narrative? If it is,
+then the span in question is embedded. If not, then it is interruptive.
+Let’s consider an example of a story with an interruptive narrative. Below is Example 4. It is again an altered version of Examples 1 and 2. The story is like
+Example 2, in that the narrator goes to the beach, reads, goes for a swim, and
+encounters a pirate upon exiting the water. After the original narrator observes
+the pirate washing ashore, there is a section break signaled by three asterisks. Surrounded by brackets with subscript 1 is the interruptive narrative of the pirate,
+told in first person. The pirate telling this story is not an event in the original narrative, which is what happened in the embedded narrative of Example 2. There
+is no event, in the original narrative of Example 4, where the pirate tells a story.
+Instead, there is an interruption of the original narrative, the pirate tells his story,
+and then the original narrator begins telling his story. Figure 3 contains a narrative boundary diagram for this generic interruptive narrative.
+4. I woke up early in the morning, checked my weather app on my
+phone and decided it would be a perfect day to go to the beach. I
+grabbed a book, a towel, and sunglasses, got in my car, and drove to
+the beach. I read my book, watched the waves, and took a quick
+swim. As I emerged from the water a disheveled looking pirate
+washed ashore.
+* * *
+[1 I have just been washed ashore. I was the captain of the Shivering
+Sparrow, but there was a mutiny onboard. All of my crew including
+my parrot turned on me, and made me walk the plank. I clung onto
+a piece of driftwood for three days, and now I am here.]1
+* * *
+The pirate looked like he just went through a tragic ordeal, but he
+was a pirate, so I decided it was best to ignore him. I dried off and
+drove home. It was a great day, even though I forgot to bring sun
+screen and got a sunburn.
+8
+
+Cultural Analytics
+
+Annotation Guideline No. 1
+
+Figure 3. Narrative boundary diagram for an interruptive narrative
+Next we will consider another excerpt from Murakami.5 Example 5 contains two
+narrative levels, one surrounded by brackets with subscript 1 and one surrounded
+by brackets with subscript 2. The first narrative, brackets with subscript 1, is a
+continuation of the original narrative from Example 3, when Tsukuru is on a
+date with Sara. The first narrative is interrupted by a third person narrator, who
+tells a story about Tsukuru’s adolescence. There is a narrative break punctuating
+the two narratives. This is narrative is surrounded by brackets with subscript 2
+and it is an instance of an interruptive flashback, which is discussed in the next
+section.
+5. [1 “You can hide memories, but you can’t erase the history that
+produced them.” Sara looked directly into his eyes. “If nothing else,
+you need to remember that. You can’t erase history, or change it. It
+would be like destroying yourself.”
+“Why are we talking about this?” Tsukuru said, half to himself,
+trying to sound upbeat. “I’ve never talked to anybody about this
+before, and never planned to.”
+Sara smiled faintly. “Maybe you needed to talk with somebody.
+More than you ever imagined.”]1
+•••
+[2 That summer, after he returned to Tokyo from Nagoya, Tsukuru
+was transfixed by the odd sensation that, physically, he was being
+completely transformed. Colors he’d once seen appeared completely different, as if they’d been covered by a special filter. He
+5 Haruki Murakami, Colorless Tsukuru Tazaki and his years of pilgrimage: a novel (New York, NY:
+Alfred A. Knopf, 2014).
+
+9
+
+Joshua Eisenberg and Mark Finlayson
+
+Cultural Analytics
+
+heard sounds that he’d never heard before, and couldn’t make out
+other noises that had always been familiar. When he moved, he felt
+clumsy and awkward, as if gravity were shifting around him.
+For the five months after he returned to Tokyo, Tsukuru lived at
+death’s door. He set up a tiny place to dwell, all by himself, on the
+rim of a dark abyss. A perilous spot, teetering on the edge, where,
+if he rolled over in his sleep, he might plunge into the depth of the
+void. Yet he wasn’t afraid. All he thought about was how easy it
+would be to fall in.]2
+
+2.3 Time shifts: Flashbacks and Flashforwards
+There are two types of time shifts in story telling: flashbacks, (also known as
+analepsis), and flashforwards (also known as prolepsis). Both flashbacks and flashforwards are recurrent in storytelling. A flashback occurs when the time of the
+events told in the narration shift from the present to a time in the past. Flashbacks
+might occur when the narrator remembers something that happened in the past.
+A flashforward is similar, except the events are from the future. Flashforwards,
+can come in the form of visions or prophecies. Other times, flashforwards foreshadow or reveal key events that will occur in the future, even though the narrator
+might not know that these events will occur. Both flashbacks and flashforwards
+are popular storytelling devices in both literature and film. There are two ways
+flashbacks can be narrated:
+Embedded Flashbacks are embedded in the original narrative.In the original narrative, the narrator is narrating a story about the present, and then the narrator
+will shift the subject of their narration to telling a story about events that happened in the past. Sometimes the retelling of past events will use verbs in the
+past tense. The narrator is telling a story about the past from the present time,
+in which the events of the original narrative are unfolding. This is similar to the
+case where an embedded narrative is told in dialogue (as in Example 2), except
+in flashbacks the embedded narrative is told in the narrative text; the audience of
+the flashback is the reader, not another character in the story. We will annotate
+this type of flashback in the same way as narratives embedded in dialogue.
+Interruptive Flashbacks interrupt or replace the original narrative.The original
+narrative ends, and a new narrative of events occurring at a time before the original narrative begins. The key characteristic of the interruptive flashback, is that
+the narrator also moves in time. The narrator of the original narrative and the
+flashback do not have to be the same narrator. Sometimes the person who is nar10
+
+Cultural Analytics
+
+Annotation Guideline No. 1
+
+rating the flashback will be a different character than the narrator of the original
+narrative. Sometimes the point of view of the flashback’s narrator will be different than that of the original narrator. Other times, the narrator of the flashback
+is identical to the original narrator, the only difference being the events in the
+flashback happened in a time before the original narrative. Interruptive flashbacks break the telling of the original narrative: they are not embedded in any
+other narrative. We will annotate this type of flashback in the same way as an
+interrupted narrative. Remember that the excerpt in Example 5 contains an interruptive flashback. The original narrative is interrupted by a new narrative,
+which takes place at a time before the original narrative.
+Flashforwards can also either be embedded or interruptive. Flashforwards tend
+to be interruptive though, since narrators typically do not know what will happen
+in the future, so the original narrative must be interrupted, to provide an account
+of events from a future time. Flashbacks can be embedded into speech, but this is
+usually either a telling of a vision, or it can be the telling of a hypothetical future.
+
+2.4 Dreams and Visions
+Many stories contain dreams. There are two types of dreams, and they are similar
+to the two types of flashbacks. Dreams are either embedded into the original narrative, or they interrupt it. Embedded dreams occur when the narrator is narrating about the memory of their experience of a past dream. Interruptive dreams
+occur when the narration is occurring from within the dream: the narrator is
+narrating as the dream unfolds.
+Visions are similar to dreams. A vision could be a telling of the future, like a
+prophecy. The events of the prophetic vision may or may not come true, but the
+actual telling of the vision is distinct from the original narrative. Other types
+of visions can be sudden recollections of images or events from the past. Like
+dreams, visions can be either embedded in the original narrative, or interruptive
+of the original narrative.
+6. [1 Haida got quite talkative when it came to music. He went on,
+delineating the special characteristics of Berman’s performance of
+Liszt, but Tsukuru barely listened. Instead, a picture of Shiro performing the piece, a mental image, vivid and three-dimensional,
+welled up in his mind. As if those beautiful moments were steadily
+swimming back, through a waterway, against the legitimate pressure
+of time.]1
+11
+
+Joshua Eisenberg and Mark Finlayson
+
+Cultural Analytics
+
+[2 The Yamaha grand piano in the living room of her house. Reflecting Shiro’s conscientiousness, it was always perfectly tuned. The lustrous exterior without a single smudge or fingerprint to mar its luster. The afternoon light filtering in through the window. Shadows
+cast in the garden by the cypress trees. The lace curtain wavering in
+the breeze. Teacups on the table. Her black hair, neatly tied back,
+her expression intent as she gazed at the score. Her ten long, lovely
+fingers on the keyboard. Her legs, as they precisely depressed the
+pedals, possessed a hidden strength that seemed unimaginable in
+other situations. Her calves were like glazed “porcelain, white and
+smooth. Whenever she was asked to play something, this piece was
+the one she most often chose.”Le mal du pays.” The groundless sadness called forth in a person’s heart by a pastoral landscape. Homesickness. Melancholy.]2
+[1 As he lightly shut his eyes and gave himself up to the music,
+Tsukuru felt his chest tighten with a disconsolate, stifling feeling,
+as if, before he’d realized it, he’d swallowed a hard lump of cloud.
+The piece ended and went on to the next track, but he said nothing,
+simply allowing those scenes to wash over him. Haida shot him an
+occasional glance.”]2
+The excerpt in Example 6 is also from Murakami (2014). The original narrative
+is surrounded by brackets with subscript of 1. This narrative is about Tsukuru
+talking to his friend Haida about classical music. Talking about classical music
+causes Tsukuru to have a vision, or a day dream, from his past. In Tsukuru’s
+vision, which is surrounded by brackets with subscript of 2, he sees his old friend
+Shiro masterfully playing the piano in a very dreamy and vivid setting.
+This vision interrupts the story told in the original narrative. The vision is not
+embedded because there is no action in the original narrative that triggers the
+telling of the vision. The last two sentences of the first paragraph inform the
+reader that Tsukuru is about to have a vision. These preparatory sentences are not
+part of the vision, since they describe events that are happening in the original
+narrative level, a “picture of Shiro…welled up in [Tsukuru’s] mind.” The actual
+vision is a departure from the original narrative. It describes what Tsukuru sees
+and feels when he is watching Shiro at the piano. This is not something that is
+happening at the time of the original narrative, it is something that Tsukuru is
+experiencing. The vision ends when the original third person narrator begins
+narrating about events that are actually happening in the present, “As he lightly
+shut his eyes and gave himself up to the music, Tsukuru felt his chest tighten
+with a disconsolate, stifling feeling…”. The music then continues to play, and
+12
+
+Cultural Analytics
+
+Annotation Guideline No. 1
+
+Haida shoots Tsukuru “… an occasional glance.” These are events happening in
+the frame of the original narrative, and they signal the switch back to the original
+narrative from the interruptive vision.
+
+3.
+
+Annotating Scripts
+
+In addition to short stories and novels, we are interested in annotation narrative
+boundaries from scripts. Specifically, we will focus on the scripts of TV shows,
+and the transcripts of court proceedings. There are two types of text in a script:
+dialogue and action. Dialogue contains the words that actors (or people) speak,
+and the action gives direction for what the actors do, how they do it, and what
+happens in the world that the script describes. Scripts can either be used to tell
+actors what to say and how they should act, which dictates how they should behave during a performance, or scripts can be a recording of things that happened
+in real life, like a transcription of the dialogue in a court case.
+
+3.1 Dialogue
+In the context of scripts, dialogue is a type of structured text. There are two components to dialogue: the character’snameand the character’s speech. In a script
+the character’s name will be stated. Typically, it will be bolded. Following the
+character’s name is the words that the character will speak. The character’s speech
+will not be in bold. Look at Example 7. This is an excerpt from the script of Star
+Trek: Deep Space 9 - The Visitor. 6 This excerpt portrays a conversation between
+two characters, Old Jake and Melanie. They are having a conversation about Old
+Jake’s writings and how Melanie enjoys his writing. In this excerpt, there are four
+utterances in the dialogue. Old Jake speaks first, Melanie speak speaks next, and
+then they each speak one more time.
+7. [1 OLD JAKE
+I didn’t realize people still read
+my books.
+MELANIE
+6 Taylor, M. (Writer), & Livingston, D. (Director). (1995, July 31) The Visitor. [Television series
+episode] In Berman, R. (Executive Producer), Star Trek: Deep Space 9. New York, NY: CBS Television
+Distribution.
+
+13
+
+Joshua Eisenberg and Mark Finlayson
+
+Cultural Analytics
+
+Of course they do. A friend
+recommended Anslem to me and I
+read it straight through, twice in
+one night.
+OLD JAKE
+Twice in one night… ?
+MELANIE
+It made me want to read everything
+you’d ever written, but when I
+looked, all I could find were your
+“Collected Stories.” I couldn’t
+believe it.
+I’d finally found someone whose
+writing I really admired, and he’d
+only published two books.]1
+Now let’s think about the script of this conversation with respect to the narrative
+boundaries it contains. There are two narratives. The original narrative, where
+Old Jake and Melanie are having a conversation. This narrative makes up the
+entire span of text in Example 7. The span of the original narrative has been
+surrounded by brackets with subscript of 1.
+It is important to note that the bolded character names have also been surrounded
+by brackets. The character names belong to the original narrative because this is
+a signal that a specific character will utter the proceeding text. The declaration
+of who is speaking in a script is like the phrase “He said…” or “Old Jake said…”
+in a novel or short story. The character names are included in the brackets of the
+original narratives since they mark the beginning of a character speaking, which
+is an action in the original narrative.
+The next excerpt, Example 8, is also from the same episode of Star Trek (Taylor,
+1995), and it contains an embedded narrative delivered by Melanie. The embedded narrative is surrounded by brackets with subscript of 1. Her narration is
+about her experience reading Old Jake’s books, and how she reacted to his writing. In this embedded narrative, the bolded character names are not surrounded
+14
+
+Cultural Analytics
+
+Annotation Guideline No. 1
+
+by brackets. This is because the action of Melanie speaking belongs to the plot of
+the original narrative, and they do not belong to the plot of the narrative about
+Melanie’s past. It is important to notice that Old Jake’s speech is not part of the
+embedded narrative: he is not adding any information to the story of Melanie’s
+past, he’s just asking a clarifying question.
+8. OLD JAKE
+I didn’t realize people still read
+my books.
+MELANIE
+Of course they do. [1 A friend
+recommended Anslem to me and I
+read it straight through, twice in
+one night.]1
+OLD JAKE
+Twice in one night… ?
+MELANIE
+[1 It made me want to read everything
+you’d ever written, but when I
+looked, all I could find were your
+“Collected Stories.” I couldn’t
+believe it.
+I’d finally found someone whose
+writing I really admired, and he’d
+only published two books.]1
+
+3.2 Action
+The action describes what is happening in the world that the script depicts. Typically, the action is written in present tense, since it describes what is happening
+in the present moment. Dialogue prescribes what each character says, and action
+15
+
+Joshua Eisenberg and Mark Finlayson
+
+Cultural Analytics
+
+dictates what each character does, including the way they speak. Consider Example 9, where the action is surrounded by brackets with subscript of 1. Typically,
+the action in a script will be bolded, but it is not a requirement.
+Now we will discuss the functions of each action sequence. The first sequence
+describes actions that Jake does before he speaks. The second action is during
+Jake’s dialogue. It is a note for the actor playing Jake to take a moment to consider what he is saying. If the script is being read, then this stage direction allows
+the reader to imagine the character considering their actions. The third action
+sequence describes how Melanie reacts to what Jake says, and how she responds
+to him. The fourth action sequence instructs Melanie’s next like to be said softly.
+The final action sequence describes an action Jake takes.
+All of five of these actions sequences describe actions that occur in the original
+narrative of this script. When considering the narrative boundaries for this excerpt, each action sequence is a part of the original narrative. In fact, the entire
+span of text in Example 9 belongs to the original narrative. There are no embedded or interruptive narratives in this excerpt.
+9. MELANIE
+So that I could read them again…
+like it was the first time.
+[1 Jake smiles, nods that he understands. As he sits down with the tray…]1
+OLD JAKE
+There’s only one “first time” for
+everything, isn’t there?
+[1 (considers)]1
+And only one last time, too. You
+think about that when you get to
+be my age. That today might be
+the last time you… sit in a
+favorite chair… watch the rain
+fall… enjoy a cup of tea.
+[1 Melanie looks at him, then cautiously asks the question that brought her
+here.]1
+16
+
+Cultural Analytics
+
+Annotation Guideline No. 1
+
+MELANIE
+[1 (softly)]1
+Can I ask you something… ?
+[1 He nods that she go ahead… ]1
+
+3.3 Structural Elements of Scripts
+Structural elements are a final component of scripts that are separate from action
+and dialogue. They allow the readers or actors to distinguish between scenes and
+acts, and they give notes about the technical production for the performance, like
+a change of a camera angle. For our study, we will not include structural elements
+in our narratives. These elements are not part of the story being told, they just
+instruct the actors and crew when a scene begins or ends, and tell the camera
+operators logistics for how the scene is shot.
+10. JAKE
+Dad… ?
+SISKO
+What… what happened… ?
+But before Jake can reply, Sisko’s body starts to FLICKER and DISSOLVE like
+it did in the Defiant’s Engineering room…
+Jake watches as the terrible moment repeats itself… until Sisko completely DEMATERIALIZES once again…
+Off Jake’s confused, pained expression we…
+[1 FADE OUT.
+END OF ACT ONE
+DEEP SPACE NINE: “The Visitor” - REV. 08/04/95 -
+
+ACT TWO
+
+20.
+
+ACT TWO
+FADE IN:]1
+20 INT. JAKE’S HOUSE (DISTANT FUTURE)
+Old Jake sits quietly, his thoughts far away in the past. Melanie watches him
+with great sympathy…
+17
+
+Joshua Eisenberg and Mark Finlayson
+
+Cultural Analytics
+
+After a quiet beat…
+OLD JAKE
+I told Dax about what’d
+happened…
+Example 10 is another excerpt from Star Trek: Deep Space 9 (Taylor, 1995), which
+has the structural elements surrounded by brackets with subscript of 1. In this
+example, the structural elements prescribe the camera fading out, the first act of
+the show ending, the second act beginning, and the camera fading back in. It
+is important to note that the action sequence ”INT. JAKE’S HOUSE (DISTANT
+FUTURE)” is not a structural element, because it is telling the reader that the
+current scene is set at Jake’s house. This is equivalent to author of a novel saying
+where the next scene occurs, which is an essential detail of the narrative, and not
+structural information. Following the location of the new scene, is a description
+of what is happening: Old Jake is sitting, and Melanie is watching him. Finally,
+the dialogue of the scene starts.
+
+4.
+
+Annotation Procedure
+
+Each text will be provided to you as a PDF file. First read the text without making any annotations, reading just to understand; you can print the text out if you
+prefer reading from paper. Second, reread the story, and make a list of all the
+narratives. Third, go back to the beginning of the story. For each of the narratives you found, make a copy of the original PDF file, and in the corresponding
+file highlight the spans of text that the current narrative is told in. For clarity, if
+you found five narratives, you should make five copies of the PDF, one for each
+narrative. Then highlight the spans each narrative occupies in the corresponding file. To keep track of which narrative is annotated in which PDF file, please
+record the names of each file in the annotation metadata sheet, explained in the
+next subsection.
+Note that in this annotation guide we talk about subscripted brackets surrounding narrative levels. When annotating texts, you should use the highlight function to distinguish which spans of text belong to a narrative level. Additionally,
+it is most important to annotate the spans of text that each narrative level belong to. The categories for Narrator and Type of Narrative are included just to
+help you think about narrative levels, and these characteristics will not be used
+to calculating agreement of narrative levels.
+18
+
+Cultural Analytics
+
+Annotation Guideline No. 1
+
+4.1 The Annotation Metadata Sheet
+For each short story, you will be provided with an Excel spreadsheet to fill out, in
+addition to the actual annotations that you will record by highlighting the PDFs.
+
+Figure 4. A screen shot from a blank narrative boundary annotation metadata
+spread sheet.
+Narrative ID number
+This is the ID of this row’s narrative. Each narrative has an ID number. Assign
+the ID numbers in ascending order, start at 1. We will use these numbers at the
+end of the annotation PDFs to identify what narrative boundaries are highlighted
+in which document.
+Narrative name
+In this column, come up with a name for each narrative. The name can be a
+phrase or a sentence. This is mainly for helping refresh your memory while you
+are annotating, or when we meet for adjudications.
+File name
+For each narrative, you will create a copy of the original PDF file containing the
+narrative boundaries encoded as highlighted spans of text. In this column, you
+will write the file names of the PDF annotation files that correspond to each narrative
+19
+
+Joshua Eisenberg and Mark Finlayson
+
+Cultural Analytics
+
+Narrator
+Each narrative is told by a narrator. In this column, please write who the narrator
+is. If the narrator has a name, write their name. If the narrator has no name, but
+annotates in first person point of view, write ”1st person unnamed“. If the narrator
+narrates from the third person point of view, write”3rd person“. See”Narrative
+Characteristics Annotation Guide” for more specifics on determining the point of
+view of a narrator. Although this is not an annotation study on narrative point of
+view, it is sometimes useful to be aware of the changes in point of view throughout
+the text.
+Embedded narrative ID
+If the narrative is embedded in an original narrative then put the ID number of
+the embedded narrative in this column. In Example 2, the pirate’s narrative is
+embedded in the main narrative. In the row for the pirate’s narrative, we write
+down the ID number “1” in the column for “embedded narrative ID”, because this
+is the ID of the original narrative. If the narrative in question is not embedded
+in any other narratives, write “none” in the “embedded narrative ID” column. If
+a narrative is interruptive, then the embedded narrative ID is also “none”.
+Color
+In this column please put the color that you used to highlight the boundaries
+of the corresponding narrative. If possible, please use different colors for each
+narrative.
+Type of narrative
+Put one of the following types of narrative that we have discussed in this guide:
+• original
+• Embedded
+• Interruptive
+
+• Embedded flashback
+• Embedded flashforward
+• Embedded dream or vision
+
+• Interruptive flashback
+• Interruptive flashforward
+• Interruptive dream/vision
+
+Note that these characteristics are not necessarily mutually exclusive, and they
+will not be used for calculating agreements. These categories are included so that
+you think about what type of narratives are being used.
+
+20
+
+Cultural Analytics
+
+Annotation Guideline No. 1
+
+4.2 Tips for Annotation
+Don’t do all the annotations in one sitting. Try to limit yourself to one to two
+hours at a time: more than that and you will become fatigued and the accuracy
+of your annotations will decrease. You should have this annotation guide handy
+while you are doing your annotations. This guide should serve as a reference and
+help you disambiguate tricky decisions.
+
+4.3 Adjudication Procedure
+Please do not speak to the other annotators about the specific annotations or the
+methods you use to make your decisions. This is because we are also trying to determine how clear the annotation guide and procedure are in and of themselves.
+We investigate this by measuring the agreement between different annotators,
+and if annotators talk with each other outside of the adjudication meetings about
+specific annotation decisions, then this results in artificially high agreement measures.
+
+Unless otherwise specified, all work in this journal is licensed under a Creative
+Commons Attribution 4.0 International License.
+
+21
+
+

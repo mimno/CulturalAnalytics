@@ -1,0 +1,194 @@
+Annotating Narrative Levels: Review of
+Guideline No. 7
+Gunther Martens
+01.15.20
+Article DOI: 10.22148/001c.11775
+Journal ISSN: 2371-4549
+Cite: Gunther Martens, “Annotating Narrative Levels: Review of Guideline No. 7,”
+Journal of Cultural Analytics. January 15, 2020. doi: 10.22148/001c.11775
+The guideline under review builds on the acquired knowledge of the field of narrative theory. Its main references are to classical structuralist narratology, both
+in terms of definitions (Todorov, Genette, Dolezel) and by way of its guiding principles, which strive for simplicity, hierarchy, minimal interpretation and a strict
+focus on the annotation of text-intrinsic, linguistic aspects of narrative. Most
+recent attempts to do “computational narratology” have been similarly “structuralist” in outlook, albeit with a stronger focus on aspects of story grammar: the
+basis constituents of the story are to some extent hard-coded into the language
+of any story, and are thus more easily formalized. The present guideline goes
+well beyond this restriction to story grammar. In fact, the guideline promises
+to tackle aspects of narrative transmission from the highest level (author) to the
+lowest (character), but also demarcation of scenes at the level of plot, as well as
+focalisation. Thus, the guideline can be said to be very wide in scope.
+The shared task to which this guideline responds focuses on identifying and
+reaching consensus on the demarcation of narrative levels. In standard narratological parlance, shifts in level correlate to shifts in the information distribution
+from one narrative agent to another. In keeping with film terminology, these
+acts, including of the act of taking charge of the narration itself, are taken
+to be acts of framing constitutive of distinctive levels: “We will define this
+difference in level by saying that any event a narrative recounts is at a diegetic
+level immediately higher than the level at which the narrating act producing
+1
+
+Gunther Martens
+
+Cultural Analytics
+
+this narrative is placed.”1 In Genette’s view, narrative levels lead to an intricate
+nesting or embedding effect of speakers and viewers.
+While the more comprehensive approach of the guideline will be more palatable
+to scholars trained in literary theory, it is to some extent undecided as to what it
+takes “levels” to mean. Though the guideline addresses a broad set of narrative
+features, it is ultimately geared towards annotating the most conspicuous shifts
+in narrative levels: the turn-taking in dialogues between characters and switches
+in voice from narrator to character and vice versa. This is certainly the part of
+the guideline most easily to be operationalized. It should be pointed out that
+the guideline chose to restrict its interaction with the shared task corpus to a
+minimum: only three of the texts are briefly cited, and the bulk of the examples
+stems from Sally Rooney’s novel Conversations with friends. It is stated that: “The
+main components of such narratives are dialogues”, which may help to explain
+why the annotation schema is more focused on reported speech than on reported
+thought.
+While the current guideline takes its cue mainly from the tried-and-trusted
+toolkit of (textual) narrative theory, it is also informed by Digital Humanities.
+This can be seen when aspects of the paratext (Genette’s short-hand notation
+for any extra-textual element that frames texts and guides their reception) are
+taken into account, for instance when the typographic make-up of chapters,
+paragraphs and quotation is considered as a machine-readable index of narrative
+levels. Likewise, aspects of the guideline go beyond structuralism when it undertakes to consider narratees and addressees. This extension of the narratological
+toolbox is in keeping with recent redefinitions of style in the area of Digital
+Humanities, as epitomized by the following definition:
+In Digital Humanities, ›style‹ is seen as anything that can be
+measured in the linguistic form of a text, such as vocabulary, punctuation marks, sentence length, word length, the use of character
+strings.2
+The adoption of this line of reasoning becomes evident when the guideline draws
+on the layout of the texts: “alternations between discourse levels are usually signalled by paragraph breaks.” It is certainly necessary and helpful to consider such
+material underpinnings of narrative structure. Yet, there is a wide variety in national and historical print cultures to be considered in this regard, so these apparently stable markers of narrative level should be handled with care and flexibility.
+1 Gérard Genette, Narrative Discourse: An Essay in Method (Ithaca: Cornell University Press,
+1983), 228.
+2 J. Berenike Herrmann, Karina van Dalen-Oskam, and Christof Schöch, “Revisiting Style, a Key
+Concept in Literary Studies,” Journal of Literary Theory 9, no. 1 (2015): 25-52.
+
+2
+
+Cultural Analytics
+
+Review of Guideline No. 7
+
+The guideline claims that it seeks to make the annotation amenable to machine
+learning so as to “predict narrative structure”. While this is certainly a laudable
+ambition, it remains to be seen whether the guideline’s heuristic focus actually allows for this. The current guideline is rather hybrid in nature. On the one hand, it
+caters to the hermeneutic strengths of human annotators. Especially the attempt
+to annotate the addressee(s) of specific utterances presupposes a lot of interpretation, as it hinges on implication and logical deduction rather than on actual
+mentions. Likewise, the guidelines for annotating focalisation strike me as undecided. The main reference here is Todorov, which is somewhat dated in view of
+the lengthy debates on various conceptualisations of focalisation and the question
+of its transferability to specific media. Focalisation is restricted to “perspective
+of the narrator”. It would seem that even more semantics would be required to
+demarcate other types of focalisation. The ambition to cover these areas may run
+counter to the manual’s declared adherence to structuralist tenets, as both rely
+on interpretation and semantics. Co-reference resolution of unstructured textual data (like fictional narratives) is notoriously difficult.3 Currently, automatic
+event detection on the basis of machine learning has proven most successful with
+regard to text genres that involve a lot of referential anchoring (e.g. news articles).4 The current state-of-the-art allows machine learning to predict structure
+“in the wild” only over a limited span of semi-structured text.5 Annotating the
+intricacies of implied audiences presupposes an even more extensive degree of
+co-reference resolution.
+I would like to take issue with another specific decision: The guideline argues in
+favour of handling tags as cleanly as possible, in order to provide a visual analogy
+to levels that it demarcates. For instance, it encloses the markers that attribute
+discourse to specific characters within the tags that demarcate that very content.
+These attributive markers typically involve verba dicendi in the so-called inquitformulae. The main rationale for “includ[ing] the speech-verb construction in
+the line tag” is “to avoid cluttering the annotation”. I am not convinced that this
+is a workable decision. This might seem to be an issue of lesser importance with
+regard to texts that keep this attributive marking to an absolute minimum, as is
+the case in the samples from the contemporary novel. Yet, if the focus of the
+shared task is indeed on identifying levels in a wide range of narrative texts, this
+decision is counterproductive. It undermines the attempt to identify levels and,
+3 ”R/ProgrammerHumor
+
+- When Do We Want What?,” reddit, accessed June 3, 2019.
+Harnessing the Crowd for Causal
+Relation Annotation,” in Proceedings of the Workshop Events and Stories in the News 2018, 2018, 44-54.
+5 Markus Krug et al., “Rule-Based Coreference Resolution in German Historic Novels.,” in CLfL@
+NAACL-HLT, 2015, 98-104; S. Malec et al., ”Landing Propp in Interaction Space: First Steps Toward
+Scalable Open Domain Narrative Analysis With Predication-Based Semantic Indexing,” in DIVA,
+2015.
+4 Tommaso Caselli and Oana Inel, “Crowdsourcing StoryLines:
+
+3
+
+Gunther Martens
+
+Cultural Analytics
+
+especially to extricate from sentences chunks that allow machines to identify patterns indicative of shifts in level. While the concatenation of discourse with discourse markers is in line with a fairly recent trend in postclassical narratology, as
+I discussed elsewhere, 6 it would seem that these tags are kept to a minimum for
+the sake of human readability. Chunking at higher-order levels such as scenes is
+not necessarily the way to go when aiming for machine readability. In order to
+annotate narrative levels, it is mandatory to provide tagging at the micro-level of
+words rather than of sentences, paragraphs or even scenes. This will inevitably
+lead to a cluttered view to the human eye, but such a nesting of annotations is
+much more likely to lead to transfer learning. Much more meta-information is
+needed with regard to the framing verbs. These tags could then be linked with existing tag-sets that deliberately aim to target and/or attenuate contextual ambiguity, such as PropBank and FrameNet. Similar efforts are under way. A brief look
+at www.redewiedergabe.net might suffice to illustrate what such micro-coding
+may afford in terms of the detection of narrative levels.7
+It is certainly laudable that the guidelines undertakes to emulate the structuralist
+annotation of complex aspects of narrative levels. It remains to be seen whether
+the textualist and bottom-up focus of this guideline warrants for a basis representative enough to provide a gold standard in order to extrapolate from. Granted,
+this is a dilemma that currently most attempts at doing computational narratology with roots in literary narrative theory are facing. While the adherence of
+the guideline to structuralist tenets can be lauded for its principled nature, there
+is much to be learned from the extension of the narratological toolkit in the direction of multimodality and paralinguistics. While references to time and coreference can be resolved with a high degree of confidence in formulaic genres
+like news articles or scientific articles, especially co-reference resolution in elliptic fictional texts like Virginia Woolf ’s can probably only be solved by looking at
+interactions of readers and other users with the text (e.g. through eye tracking8
+or the study of adaption in other media9 ). Notwithstanding the many conceptual challenges of doing transmedia comparisons, one may profit from compar6 Gunther Martens, “Narrative and Stylistic Agency: The Case of Overt Narration,” in Point of
+View, Perspective, and Focalization. Modeling Mediation in Narrative, ed. Peter Hühn, Wolf Schmid,
+and Jörg Schönert, Narratologia (Berlin: De Gruyter, 2009), 99-118.
+7 Annelen Brunner et al., ”Das Redewiedergabe-Korpus. Eine neue Ressource,” in Digital Humanities: multimedial & multimodal. 6. Tagung des Verbands Digital Humanities im deutschsprachigen
+Raum e.V. (DHd 2019), ed. Patrick Sahle (Frankfurt am Main, 2019), 103 - 106.
+8 Geert Brône and Bert Oben, Eye-Tracking in Interaction: Studies on the Role of Eye Gaze in Dialogue (Amsterdam: John Benjamins, 2018).
+9 Alexander Dunst, Jochen Laubrock, and Janina Wildfeuer, Empirical Comics Research: Digital,
+Multimodal, and Cognitive Methods (London: Routledge, 2018).
+
+4
+
+Cultural Analytics
+
+Review of Guideline No. 7
+
+ing with retellings10 and film adaptations11 to gauge more safely which words
+are imagined as spoken by what character (and to what music).12 The powers
+of machine learning can be harnessed more productively through learning from
+transfer and actual reception.
+Hence, I am under the impression that a purely text-based, bottom-up approach
+will not suffice to reach the declared goal of prediction. Narratology has already
+taken advantage of ongoing research in the fields of multimodality and paralinguistics. Also annotation schemata should go beyond purely text-intrinsic formalism and accommodate for drawing on the ways in which users process and
+interact with complex narratives.13 This may involve annotating for semantic
+properties in tandem with strictly formal properties. This is a dilemma faced by
+all of those seeking to reconcile with cultural analytics. High-profile advances in
+the study of large amounts of narrative text, however, have been achieved without
+any reference to narratology or to (at least a customary understanding of) narrative aspects of the texts at hand ( e.g. authorship attribution in the cases of J.K.
+Rowling and Elena Ferrante). These experiments do away with the nitty-gritty of
+conventional narratological analysis at the advantage of ruthless, yet highly principled reductions of complexity in order to make hidden patterns visible. At the
+same time, it should be clear that narratology’s toolkit has a lot in store to bring
+to the table of cultural analytics. Annotating for narrative structures of reported
+speech and variations in ontological modalities may help to reveal that apparently unstructured text is far more structured and/or narrative than has often
+been taken for granted. Narratologists should also be aware that a mere transposition of these tried-and-trusted methods onto large amounts of unlabelled
+data necessitates compromise and conceptual tweaking. Hence, this annotation
+guideline is a productive invitation to a much-needed continuation of the dialogue between narratology and Digital Humanities.
+
+10 Fritz Breithaupt et
+
+al., ”Fact vs. Affect in the Telephone Game: All Levels of Surprise Are Retold
+With High Accuracy, Even Independently of Facts,” Frontiers in Psychology 9 (November 20, 2018).
+11 Katalin Bálint and András Bálint Kovács, “Focalization, Attachment, and Film Viewers’ Responses to Film Characters: Experimental Design with Qualitative Data Collection.,” in Making Sense
+of Cinema: Empirical Studies into Film Spectators and Spectatorship, ed. CarrieLynn D. Reinhard and
+Christopher J. Olson (Bloomsbury Publishing USA, 2016), 187-210.
+12 Joakim Tillman, ”Solo Instruments and Internal Focalization in Dario Marianelli’s Pride & Prejudice and Atonement,” in Contemporary Film Music: Investigating Cinema Narratives and Composition, ed. Lindsay Coleman and Joakim Tillman (London: Palgrave Macmillan UK, 2017), 155-86.
+13 Susanna Salem, Thomas Weskott, and Anke Holler, “On the Processing of Free Indirect Discourse,” Linguistic Foundations of Narration in Spoken and Sign Languages 247 (2018): 143.
+
+5
+
+Gunther Martens
+
+Cultural Analytics
+
+Unless otherwise specified, all work in this journal is licensed under a Creative
+Commons Attribution 4.0 International License.
+
+6
+
+

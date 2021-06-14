@@ -1,0 +1,1995 @@
+Journal of
+Cultural Analytics
+
+March 30, 2021
+
+Imaginative Networks: Tracing Connec­
+tions Among Early Modern Book Dedi­
+cations
+John R. Ladd
+John R. Ladd. Northwestern University. jrladd@northwestern.edu.
+Peer­Reviewers: Natalie Houston, Lindsey Eckert
+Dataverse DOI: 10.7910/DVN/661FJF
+
+ABSTRACT
+This essay uses network metrics (centrality, density, clustering coefficients) to account for shifts in dedicatory practice
+resulting from political crises, religious turmoil, and changes in book production practices. It constructs a network from the
+names that appear in dedications of EEBO­TCP texts; names are detected using the linguistic markup from the EarlyPrint
+project. The essay argues that we learn more about early modern book history by constructing networks of all the names
+that appear in dedications, not just those of authors, printers, and patrons. The network includes a mixture of religious and
+political figures, literary personalities, fictional characters, and bookmaking professionals, because this is the full range
+of names that dedicatory practice covers in the period. By proceeding in this way, network metrics can account for a
+range of dedicatory phenomena, including Queen Elizabeth’s popularity on both sides of the political aisle long after her
+death and, especially, consolidation around non­contemporary names in dedicatory practice as a result of both the Civil
+War and the Restoration. The imaginative networks revealed by early modern dedications are organized mainly around
+untimely figures from the recent and distant past, but despite this the networks are sensitive to historical change, especially
+at moments of political and social crisis.
+
+In A Description of the Famous Kingdome of Macaria (1641), Samuel Hartlib
+begins his book with a dedication to the “High and Honorable Court of Parlia­
+ment,” but in the text of the dedication he saw fit to name a few people who
+have little do with the Parliament of the early 1640s:
+
+TO THE HIGH AND HONORABLE COURT OF PARLIAMENT
+WHereas I am confident, that this Honorable Court will lay the Cor­
+ner Stone of the worlds happinesse before the final recesse thereof,
+I have adventured to cast in my widowes mite into the Tresurie,
+not as an Instructer, or Counsellour, to this Honourable Assembly,
+but have delivered my conceptions in a Fiction, as a more man­
+nerly way, having for my pattern Sir Thomas Moore, and Sir Fran­
+Journal of Cultural Analytics 3 (2021): 64­101. doi: 10.22148/001c.21993
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+cis Bacon once Lord Chancellour of England; and humbly desire
+that this honourable Assembly will be pleased to make use of any
+thing therein contained, if it may stand within their pleasures, and
+to laugh at the rest, as a solace to my minde, being enclined to doe
+good to the publick. So humbly craving leave, that I may take my
+leave, I rest this 25. of October 1641.1
+
+This dedication follows the conventional form by including an elaborate header
+that addresses the dedicatee, in this case Parliament. But Hartlib names two
+other individuals, More and Bacon, in the body of the dedication, and he even
+labels them as his “pattern” or role models in this publishing venture.
+Neither More (who died in 1535) nor Bacon (who died in 1626) would show
+up in a network graph focused on reconstituting the lived early modern social
+world of 1641, nonetheless Hartlib mentions each of them at the book’s open­
+ing. Since he is putting forth a new utopian text, it makes sense that Hartlib
+would want to cite these two men as his “pattern,” making this a reference to
+both the authors and their books simultaneously. Hartlib uses his dedication to
+address his dedicatee but also to stake out some authorial territory by invoking
+his key influences. In this essay, I take advantage of the additional names that
+authors added to their dedications to create an expanded network of print re­
+lationships that includes contemporary social bonds alongside historical—and
+even fictional—associations. These networks show that (1) naming in dedi­
+catory practice is driven as much by untimely references to political and reli­
+gious figures as by contemporary authors and patrons, and (2) these references,
+citations, and addresses through naming are responsive to political and social
+change, e.g. when the mid­seventeenth­century political crises arrive, dedica­
+tory naming shifts markedly toward untimely references. As a further illustra­
+tion, Hartlib’s reference to his influences is far from the only kind of naming that
+takes place in early modern dedications. Samuel Drake’s dedication of his ser­
+mon Totum Hominis to Margaret Armitage also includes a number of additional
+names that belong to neither the author nor the dedicatee.
+65
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+TO THE TRULY VERTUOUS AND RELIGIOUS LADY, THE
+LADY MARGARET ARMITAGE, Wife to Sir JOHN ARMITAGE
+of Kirklees, Baronet. . . .
+In my Prayers I may not forget your Two vertuous Daughters, may
+Madam Margaret, and Madam Catharine deserve the stile of Jemima
+and Kesia (two of Holy Jobs Daughters) for the Light of Divine
+Truth in them, and the Perfume of Godliness. . . .
+And, if you will be so just to your own self, as to Peruse, and still
+Practise Gods Holy Precepts; so Merciful to Me, as to Pardon this
+Presumption, you Crown the Hopes and Desires of MADAM, Your
+Most Humbly Devoted Servant, S.D.2
+Armitage’s husband, John, is included in the header, but more importantly Drake
+includes his dedicatee’s two daughters, Margaret and Catherine, holding them
+up as examples of piety. Margaret and her daughters are each associated with
+the content of Drake’s sermon, as exemplars of the virtues (justice, mercy, and
+humility) on which he preaches. Drake takes this a step farther when he insists
+that Margaret and Catherine “deserve the stile of Jemima and Kesia, (two of
+Holy Jobs Daughters).” In addition to the contemporary figures that are invoked
+here, Drake associates Armitage’s daughters with biblical figures, further incor­
+porating them into the subject of his sermon and demonstrating his knowledge
+of scripture. For Drake, as for many writers of dedications, the contemporary
+and the biblical exist side­by­side.
+The habit of naming non­contemporary figures alongside living ones is repeated
+in the texts of many early modern dedications: some of the individuals men­
+tioned are living, some have died recently, others are writers, influences, and
+religious figures from another time entirely. The imaginative network of a text
+involves all of these figures together, and by considering them in a single net­
+work, I use network metrics—density, degree, strength, betweenness—to bet­
+ter understand the interlocking motivations that underlie text creation, includ­
+ing patronage, social and cultural aspiration, anxieties of influence, and social
+66
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+relationships. More specifically, by including names from the dedication body
+rather than just its heading, this study’s networks show that early modern dedica­
+tory practice is not mainly organized around present­day figures, as it is usually
+described. Instead the networks are tied together by a range of figures from the
+recent and distant past. And though these imaginative networks are not focused
+on contemporary figures, they are nonetheless responsive to contemporary poli­
+tics. Shifts in network structure and centrality measures from the 1630s through
+the 1660s account for changes in dedicatory practice that arise from the political
+crises of that period: the replacement of the monarchy with a republic followed
+by the Protectorate, the exile of large portions of the English nobility, sudden
+shifts in censorship laws and printing regulations, and ever­changing political
+and religious discourses. Rather than flattening the effects of political and so­
+cial change on dedicatory practice, the untimeliness of naming in dedicatory
+networks alerts us to key moments of discursive shift amid political change.
+
+Paratext, Dedications, and Naming Practices
+The two examples above emphasize the untimeliness of the print networks I’ve
+reconstructed: just as the landscape of reading is made up of recently published
+texts and texts that first appeared long before, the landscape of print is made
+up of actors who are not physically present in the social world but are nonethe­
+less crucial to understanding how the relation between persons and texts was
+constructed. The relationship between an author or text and a name mentioned
+in a dedication is an imaginative relation. When an author does not personally
+know the individual they are invoking in a dedication, or even when they do,
+the appearance of that name stakes out an intellectual and imaginative space for
+the idea of that person which could, but need not necessarily, fall back on any
+first­hand relationship with the individual. These imaginative relations abound
+during the creation of a text—we all carry the ideas of many people we may
+not currently know: public figures, deceased relatives, people we would like
+to meet. A dedication is one place where these imaginative relations can take
+form through naming, direct reference, and allusion. By recovering these rela­
+67
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+tions as networks, it is possible to both visualize and quantify the striking degree
+to which non­contemporary names play a key role in early modern dedicatory
+practice, overshadowing the role of contemporary patronage. Furthermore, dur­
+ing times of political and social upheaval, dedicatory mentions of figures from
+the distant past change radically, along with changes in patronage, censorship,
+and other social and economic shifts that underlie early modern bookmaking.
+My study of dedications comes at a moment of renewed interest in paratexts for
+both book historians and digital humanities scholars. Rather than being viewed
+as ancillary to the main text, paratextual material such as prefaces, tables of
+contents, indices, footnotes, and addresses to the reader have been studied as
+literary objects in their own right.3 Book historians over the past twenty years
+have drawn on paratexts to deepen our understanding of early modern printing
+and reading practices, showing that paratexts perform functions often central to
+the exchange between author and reader.4 And with the availability of EEBO­
+TCP and other digital resources coming at the same moment as this critical
+resurgence of paratext, opportunities for digital paratextual study abound.5
+In my work I often use network analysis to explore the ways in which social
+relations and collaborative writing practices shape literary forms and genres.
+I turn to paratext as a site of early modern relational thinking, combining my
+interest in abstract social networks with an attention to material texts. Many
+network projects that attempt to understand the world of early modern print use
+forms of metadata—information extrinsic to the text itself like titles, subject
+headings, and publication information—rather than the contents of the text or
+any part of the text. In “Metadata, Surveillance, and the Tudor State,” Ruth and
+Sebastian Ahnert’s network analysis of metadata from Tudor State Papers, the
+authors argue that “surprisingly deep insights can be gleaned from metadata by
+applying a range of easily available network analysis algorithms to a body of
+metadata.”6 In fact, as the Ahnerts show, metadata has often been deployed by
+governments, from the Tudor era to the present day, to surveil and abuse their
+citizens.7 Metadata is a potentially powerful source of information, especially
+when used as the basis for a network, and it must be handled carefully. But
+68
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+thanks to the efforts of the Ahnerts and others, there is a robust recent history of
+responsible uses of early modern metadata in network visualization and analysis
+projects.
+In fact there are so many examples I am unlikely to have cataloged them all. The
+Shakeosphere project is made from metadata: the information in the English
+Short Title Catalog.8 Another network project, Six Degrees of Francis Bacon,
+is derived from the metacommentary on social relationships available in the
+secondary sources of the Oxford Dictionary of National Biography—not quite
+a source of metadata per se, but a method that similarly deploys information
+about information.9 Even projects that derive their networks from EEBO­TCP
+texts directly, as I do, make use of metadata in various forms. Maciej Eder10 ‘s
+study of style variation in early modern Latin relies on metadata to label and
+categorize its networks’ texts even as its connections are drawn from text anal­
+ysis.11 Michael Gavin12 ’s Historical Text Networks are made from a combina­
+tion of EEBO­TCP metadata (specifically imprint information) and additional
+information from paratexts. And paratext is precisely where my study intersects
+with concerns about metadata.
+Paratexts occupy a liminal position between data and metadata. As part of
+the primary source, they can be considered data itself, but for the ways they
+comment on and relate to the main text, they are also a form of metadata. My
+project takes a specific paratextual form, the dedication, as its main source of
+(meta)data, leveraging its complex relationship to the text as a source of network
+information. By locating paratexts as a source of metadata, I do not intend to
+reinstitute the notion that paratext is only interesting insofar as it can tell us
+something about the main text. On the contrary, I hope to show that the liminal
+status of paratexts allows them to make meaning independent of the “main” text
+and that these meanings, taken in the aggregate, can productively complement
+our understanding of the networks of composition and book production.
+Given this background on the scholarship of paratext, it seems reasonable to as­
+sume that the best imaginative network of a text might include names from many
+69
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+different kinds of paratexts: prefaces, tables of contents, subscription lists, etc.
+However I have chosen to focus on dedications because of their unique position
+among paratexts and their distinctive relationship to the texts they accompany.
+Going back to Genette’s initial taxonomy of paratext, scholars have recognized
+that dedicatory epistles have a “direct (economic) social function” with respect
+to a patron or dedicatee, but that because they are textually expanded beyond the
+mention of a single individual, they can include many other messages, including
+“information about the sources of the work, or comments on the work’s form or
+meaning.”13 Genette acknowledges that while this function may seem to over­
+lap with the function of prefaces and introductions, these additional messages
+are an “inevitable” part of dedications. He uses examples such as Corneille’s
+Cinna and Pompee to show that authors “want to justify the choice of dedicatee
+by a statement relative to the work.”14 This is the same phenomenon I showed in
+the above examples from Hartlib’s Macaria and Drake’s Totum Hominis. Fol­
+lowing Genette, I maintain that unlike prefaces or other paratexts that comment
+on a work, dedications comment on a work with a specific eye toward the so­
+cial, economic, and political associations surrounding that work’s publication.
+Because of the dedication’s unique role in justifying the work’s existence within
+a social sphere, the names mentioned within it are particularly relevant to our
+understanding of the social networks of print culture, as well as an especially
+good part of the text in which to examine the political effects that I take up in
+this essay.
+Previous studies of dedicatory relations have implicitly acknowledged this dis­
+tinctive social aspect of dedications. Dustin H. Griffin15 ’s study of patronage
+and Michael Gavin16 ’s study of criticism, though they focus primarily on dedi­
+cators and dedicatees, see the dedication as a locus for social information about
+a text because it holds a specific—though expansive—social function. Though I
+could have collected names from different kinds of paratexts, such as subscriber
+lists or prefaces, the dedication is a particularly rich site for the combination of
+immediate social realities with the author’s commentary on the work. And by
+extending my scope to all of the names that appear in dedications, I show how
+
+70
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+dedicatory relations remain engaged with political and social events while not
+being tied to contemporary figures alone. This is why the imaginative networks
+of dedications are informative: they highlight a broad, trans­historical set of
+relations among books that nonetheless remains sensitive to social change.
+Even within dedications alone, naming practices vary widely. Some of the nu­
+ances of the names are tied to the part of the dedication in which they appear. In
+the header, where the dedicatee is addressed, names are highly formalized, often
+with multiple titles for each individual. In the signature, if the author chooses
+to include their name, it is often in an abbreviated or initialized form, even if
+the author’s full name appears on the title page or elsewhere in the book. Both
+dedicator and dedicatee names can appear in the body of the dedicatory epistle,
+but usually in a simplified form. I have kept track of where particular names
+appear in dedications in order to account for this nuance. And when possible I
+have disambiguated names, so that a mention of “Robert, Third Earl of Essex”
+in a header is recognized as the same person as “Robert Devereux” mentioned
+in the same dedication’s body text.17 Knowing where a name appears in a dedi­
+cation is a crucial clue to the relationship of that person to the book (particularly
+it can tell us whether the name refers to an author or dedicatee), and retaining
+this information allows for selecting subsets of nodes to compare networks of
+dedicatees and authors alone to those with all possible names. I do this, below,
+to highlight how the inclusion of names from the dedication body changes the
+network.
+But differences in naming practices aren’t limited to these larger name cate­
+gories. One­word names for well­known figures are common, and there’s little
+question about the referent of “Aquinas” or “Wycliffe.” But references simply
+to “John,” though usually naming the evangelist, are more difficult to disam­
+biguate (more on this in the section below on data collection). And some ref­
+erences to people, like a mention of “Virgil,” may actually refer to a text or set
+of texts, as a kind of citation. The “people” whose names I detect are not the
+people themselves but textual traces, sometimes associated with a specific text.
+The computational method for detecting names, outlined below, cannot differ­
+71
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+entiate a purely citational mention of Virgil from a more complex invocation
+of the man: though we should treat the notion that there is a clear distinction
+between these two categories with poststructuralist caution. In fact in these net­
+works I am never dealing with actual persons but always with textual proxies for
+those people. Ultimately this is a project that deploys textual evidence to take
+seriously the complex relation between people and texts, and the varied naming
+practices in dedications is a crucial, specialized vector for this relationship.
+
+Textual Evidence and Data Collection
+The data for this project comes from EarlyPrint, the digital project on which I’m
+currently a collaborator. EarlyPrint extends the Early English Books Online–
+Text Creation Partnership (EEBO­TCP) markup of a book’s features with lin­
+guistic markup that makes natural language processing (NLP) tasks easier and
+invites widely varied forms of analysis using the improved texts as a base. I used
+the “dedication” type attribute—added by EEBO­TCP at the earliest stages of
+markup—to locate the sections of the text from which I drew names. The Ear­
+lyPrint corpus contains linguistic markup for 52,149 of the 60,331 texts in the
+full EEBO­TCP corpus. The remaining texts are written in languages other than
+English or consist largely of tables and figures that are more difficult to anno­
+tate. Work at EarlyPrint is currently underway to annotate the approximately
+8,000 remaining texts, but this relatively small number of texts, if they have
+dedications at all, are unlikely to change the overall arc of the findings in this
+project. I collected data from the text sections marked up as dedications in the
+52,418 EarlyPrint texts (see tbl. 1 for more details).18
+From here the traditional approach would be to run named­entity recognition
+over the texts to detect personal names. But because contemporary NER tools
+are designed for modern language corpora, they are unreliable for highly vari­
+able early modern texts. Irregular orthography, non­standardized capitalization,
+initialism, pseudonymy, and anonymity all present distinct early modern chal­
+lenges to computer­assisted name recognition. For example, the default English
+72
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+model for Python NLP library spaCy, en_web_core_sm, has a precision score
+of 85.43% and a recall score of 85.72% when run on modern English text.19
+However, even after training the model on early modern examples, I struggled
+to get precision or recall above 70%. In some cases the model also struggled to
+identify proper nouns.
+The EarlyPrint XML provided a different way forward. In fig. 1 you can see
+the same names from Hartlib’s Macaria that I showed in the quote above, with
+the word­level markup that EarlyPrint added to EEBO­TCP texts. This markup
+provides lemma, part of speech, and regularized spellings for every word in a
+text. The linguistic markup was provided by MorphAdorner, a Java NLP library
+developed by Philip Burns and Martin Mueller specifically for historical texts,
+with extensive training data and specialized code for early modern English.20
+MorphAdorner’s part of speech tagging allowed me to collect proper nouns
+more accurately. From there I used custom rules to eliminate proper nouns that
+were not personal names and to capture parts of names that were not tagged as
+proper nouns. In a review of 100 texts, this method achieved 82.74% preci­
+sion and 94.84% recall, results comparable to spaCy’s performance on modern
+English text.21
+
+Figure 1: A sample of EarlyPrint XML from the dedication to Macaria, with the same two names highlighted, as
+in the page image above.
+
+73
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+While collecting names, I used other parts of the dedication markup to cate­
+gorize them. I kept track of where the name appeared: whether in the header,
+indicating it was probably the name of the dedicatee; in the signature, indicating
+it was the name of the author; or in the dedication body, indicating it could be the
+name of either author, dedicatee, or some other kind of person. I also matched
+names against a text’s metadata, to identify the name of the author no matter
+where it appeared in the dedication. As I will show in the next section, these
+categories are useful for understanding how including names from the dedica­
+tion body entirely changes the network. Here is a summary of the data broken
+down by decade and by type of name identified:
+Table 1: Counts of texts and names by decade, from the texts in the EarlyPrint corpus. The 52,077 total is a result
+of the different ways that EEBO­TCP and EarlyPrint divide a small number of texts into individual files. The
+“Dedications” column indicates the number of texts that have at least one dedication (a few texts have more than
+one). The “Author,” “Header,” and “Body” indicate the number of names in each category that appear in that
+decade’s dedications.
+
+Decade
+
+Total Texts Dedications Author Header Body
+
+1470­1479
+1480­1489
+1490­1499
+1500­1509
+1510­1519
+1520­1529
+1530­1539
+1540­1549
+1550­1559
+1560­1569
+1570­1579
+1580­1589
+1590­1599
+1600­1609
+1610­1619
+1620­1629
+
+17
+37
+48
+66
+64
+84
+240
+387
+371
+451
+609
+855
+1046
+1518
+1639
+1998
+
+1
+1
+1
+0
+0
+7
+22
+80
+90
+140
+298
+462
+539
+763
+910
+843
+74
+
+0
+0
+0
+0
+0
+2
+3
+17
+28
+29
+80
+139
+157
+221
+273
+236
+
+0
+3
+0
+0
+0
+12
+32
+139
+161
+250
+472
+662
+755
+1014
+1271
+1314
+
+6
+12
+14
+0
+0
+35
+202
+487
+525
+1366
+2009
+2519
+2591
+3530
+3405
+3332
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Decade
+
+Total Texts Dedications Author Header Body
+
+1630­1639
+1640­1649
+1650­1659
+1660­1669
+1670­1679
+1680­1689
+1690­1699
+1700­1709
+No date listed
+Total
+
+1773
+9355
+5909
+4980
+4674
+8168
+6797
+936
+55
+52077
+
+769
+1204
+1444
+960
+894
+1195
+1214
+149
+5
+11991
+
+204
+303
+377
+294
+262
+365
+309
+48
+1
+3348
+
+1221
+1180
+1717
+1069
+1133
+1538
+1520
+218
+8
+15689
+
+3099
+3374
+5019
+3922
+3124
+4510
+4331
+522
+165
+48099
+
+The names summarized above were cleaned and disambiguated by hand using
+OpenRefine. While doing this, I was also able to eliminate additional false pos­
+itives where my script misidentified a place name or other word as a personal
+name. Some ambiguities remain. For example, it is impossible to know whether
+references to “King Charles” refer to Charles I, Charles II, or a Charles of an­
+other nation. Some assumptions may be made before the accession of Charles
+II in 1660, but especially after that date, given that I will show how frequently
+names of dead public figures are mentioned, it is dangerous to assume that any
+mention of Charles is automatically of the living king. In these cases I have done
+my best to aggregate names as much as possible while remaining sensitive to
+possible ambiguities.
+I assembled the resulting names into a bipartite, or bimodal, network—a net­
+work with two node classes where nodes of one class can connect only to nodes
+of the opposite class. In this case the two node classes are names of people
+and the texts in which those names appear. As Gavin22 does, I could have
+represented texts as edges and left only one kind of node: people. However,
+the bipartite representation allows me to consider relations among both texts
+and people. This allows me to show how dedicatory practices shape both the
+75
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+groups of names mentioned and their relationships to one another, as well as
+how it both drives and reflects relationships among texts within early modern
+print culture. Which is to say, modeling the data as a bipartite network allows
+me to focus on the print relations intrinsic to this network rather than abstract
+those relations to a set of relationships among people alone.
+
+Results
+Untimeliness and Dedicatory Mentions
+The resulting full network, covering texts from the full EEBO­TCP range of
+1473 to 1700, has 54,679 nodes and 113,862 edges. Of those nodes, 42,687
+are unique names and 11,992 are texts with dedications in which those names
+appear. As I mentioned above, a major takeaway from this study is that these
+~40,000 names are not only the names of contemporary figures but the names
+of people from the recent and distant past, as well as fictional or legendary fig­
+ures. And further, the untimely names of historical figures account for far more
+connections in the network than present­day individuals. Past studies of dedica­
+tions at scale have focused on names of contemporary dedicators and dedicatees
+alone, but these data will show that, from a network analysis perspective, the
+most prominent names in the network refer to figures not living at the time of
+publication.
+This phenomenon is easiest to see when looking a discrete subset of the network—
+a subgraph—for a specific period in time. Here I use the example of 1660, which
+is also a crucial year for understanding how these networks change over time,
+which I will cover in the next section. The 1660 network has 1,496 nodes and
+1,972 edges. Of the nodes, 225 are texts and 1,271 are names. Below is a bi­
+partite layout of the 1660 subgraph, with blue nodes on top representing people
+and orange nodes on the bottom representing texts. Nodes are ordered left to
+right by their degree, and sized by degree centrality (fig. 2). To see individual
+names more clearly, fig. 3 shows a subdivision of the above with only the top
+
+76
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+ten names and the top 50 texts.
+
+Figure 2: Bipartite layout of 1660 subgraph
+
+Figure 3: Bipartite layout of 1660 subgraph with top 10 names and top 50 texts.
+
+To quickly get a sense of which names are most important in the network, we
+can rank them by a few basic centrality measures. In tbl. 2, I show the top twenty
+names ranked by degree (or number of connections), which in this network
+corresponds to the number of texts in which each name appears. I also show
+strength (or weighted degree), which corresponds to the number of times each
+name is mentioned, and bipartite degree centrality, the degree normalized by
+the number of names in the network.
+Table 2: Top 20 Names in 1660 by Degree
+
+Node ID Name
+
+Degree Strength Degree Centrality
+
+126033
+104495
+111734
+101427
+108610
+133188
+110832
+
+144
+65
+26
+20
+19
+18
+16
+
+God
+Jesus Christ
+David
+Charles II
+St Paul
+Moses
+St John
+
+77
+
+712
+225
+57
+21
+22
+27
+17
+
+0.64
+0.289
+0.116
+0.089
+0.084
+0.08
+0.071
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+Node ID Name
+
+Degree Strength Degree Centrality
+
+105361
+140498
+141874
+106647
+115297
+112509
+135589
+125390
+126796
+106425
+110709
+135309
+111645
+
+15
+14
+14
+13
+12
+8
+7
+7
+7
+7
+6
+6
+6
+
+King James
+King Charles
+Solomon
+Satan
+King Henry
+St Thomas
+Caesar
+Job
+Queen Elizabeth
+General Monck
+Abraham
+William Prynne
+St Peter
+
+19
+15
+23
+16
+13
+8
+12
+10
+7
+7
+8
+7
+6
+
+0.067
+0.062
+0.062
+0.058
+0.053
+0.036
+0.031
+0.031
+0.031
+0.031
+0.027
+0.027
+0.027
+
+Of the names above, only a few clearly refer to contemporary figures—General
+Monck, William Prynne—and only one in the top ten is contemporary—Charles
+II.23 The rest are names of saints, biblical and classical figures, and past monar­
+chs. Importantly for the year of the Restoration of the monarchy, names of bib­
+lical kings David and Solomon appear prominently, and I will say more about
+this resonance in the next section. The other names, John, Paul, Christ, Sa­
+tan, Caesar, Elizabeth, and God, are some of the most frequently named figures
+across the entire corpus. It should be noted that for seventeenth century re­
+ligious thinkers, Christ and God are very much contemporary living figures,
+but we would nonetheless put them in a different category from, say, a cur­
+rently reigning monarch. These highest­frequency, non­contemporary names
+also take up a disproportionate amount of the total edges in the network. This is
+most clear when we look at the network’s degree distribution for names (fig. 4).
+A degree distribution shows the number of nodes that have certain degree val­
+ues. We can see that the degree distribution for names follows a power law,
+78
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Figure 4: A histogram of degree distribution in the 1660 network, with y­axis on a log scale to account for a very
+steep drop­off in frequencies.
+
+with only a few nodes of very high degree, and the vast majority of nodes with
+extremely low degree. This degree distribution is to be expected: it is very
+common among networks dealing with people and was mostly famously used
+to characterize the “small­world network.”24 Not only are the most common
+names not from the present, but the frequent untimely names make up a much
+larger proportion of the network’s connections than contemporary names do.
+The degree distribution is also evidence that this graph exhibits preferential
+attachment, in which certain highly connected nodes tend to accrue more con­
+nections. And these highly connected nodes, the ones to which preferential
+attachment apply, are almost all names from the past.
+Of the 1,496 names in the 1660 network, only 429 refer to currently living
+people, less than a third. And these 429 names only account for 523 of the
+1,972 mentions recorded in the network as edges, barely over a quarter. That
+doesn’t mean that these names are insignificant or inconsequential. Not only
+does this list include the aforementioned Charles II, it also includes popular po­
+79
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+litical and military figures like George Monck, authors like John Milton and
+John Selden, and early scientists like Robert Boyle. But these contemporary
+names, while important to the dedicatory networks of 1660, are far from the
+full picture. The majority of the names in the network are figures from the bible
+like David, Solomon, and Achitophel; names from classical antiquity such as
+Cato, Socrates, and Tiberius; and (relatively) recently­deceased political and re­
+ligious figures including William Laud, Oliver Cromwell, and Queen Elizabeth.
+To understand just how much these names from the past affect the network, I
+compare different ways of assembling the network using the parts of the printed
+dedication as a guide. By limiting the network to only those names which appear
+in the header or signature of the dedication, I can construct a subgraph that is
+much closer to a traditional picture of a dedicator/dedicatee graph. fig. 5 shows
+a visualization of that graph.
+
+Figure 5: Bipartite layout of 1660 subgraph, showing only name mentions that appear in the header or signature
+of the dedication
+
+In some respects this graph is similar to the full 1660 graph. For instance its
+density—the ratio of the number of edges to the number of all possible edges—
+is almost identical, approximately 0.006 for both graphs, which is about 0.002
+more dense than random graphs of the same size.25 Density tells us how con­
+nected a network is, how close it is to being a complete graph, one in which
+all possible edges exist. In this case, both graphs are slightly more dense than
+would be expected for random graphs of their size, but neither is that much more
+dense than the other, even though the graphs are different sizes. This graph is
+a good deal smaller than the full 1660 graph: it has only 553 edges and 647
+nodes, and of those nodes 444 are names and 203 are texts. Notice that the 444
+name count in this graph is quite close to the count of total contemporary names
+80
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+in 1660: 429. And the difference is more apparent when you look at the top 20
+names in this graph (tbl. 3).
+Table 3: Top 20 Names in 1660 Graph of Only Names from Header/Signature
+
+Node ID Display Name
+
+Degree Strength Degree Centrality
+
+104495
+101427
+126033
+140498
+112509
+135309
+115297
+110832
+101782
+123321
+118957
+106863
+141705
+135637
+125505
+135861
+105361
+106425
+113701
+135252
+
+19
+17
+11
+6
+6
+5
+5
+4
+4
+4
+3
+3
+3
+3
+3
+3
+3
+3
+2
+2
+
+Jesus Christ
+Charles II
+God
+King Charles
+St Thomas
+William Prynne
+King Henry
+St John
+Edward Reynolds
+Thomas Aleyn
+John Robinson
+William Towers
+J Gauden
+Thomas Hall
+Richard Baxter
+Richard Brown
+King James
+General Monck
+John Earnly
+William Paston
+
+107
+18
+85
+6
+6
+6
+5
+4
+4
+4
+3
+3
+3
+3
+3
+3
+3
+3
+2
+2
+
+0.094
+0.084
+0.054
+0.03
+0.03
+0.025
+0.025
+0.02
+0.02
+0.02
+0.015
+0.015
+0.015
+0.015
+0.015
+0.015
+0.015
+0.015
+0.01
+0.01
+
+Some of the highest frequency non­contemporary names—Christ, God, Henry,
+St. John—still show up in this list, as expected. Limiting to the header and
+signature of a dedicatory epistle does not mean the network will only capture
+dedicators and dedicatees; sometimes names of neither appear in these sections.
+But the list has flipped from being almost entirely figures from the past, to al­
+81
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+most entirely people from the present. Prynne, for example, moved far up the
+list, even though he’s mentioned one fewer time when only counting mentions
+in the header or signature. Overall, this network gives us a much clearer sense
+of the present­day print networks, but it loses the texture of other references
+that are equally relevant to the ways authors are presenting their books. Both
+forms of the network are valuable, but having access to the many layers of non­
+contemporary naming highlights the extent to which early modern authors sit­
+uated their books within networks that stretch far beyond the contemporary.26
+And we need not stop at categorizing the names as simply contemporary and
+non­contemporary. As I’ve already suggested, the names fit into many over­
+lapping categories, particularly names of figures from the past: biblical names,
+classical figures, names of dead monarchs and politicians, dead authors and
+artists, etc. A detailed taxonomy of names is outside of the scope of this study
+but would likely be essential for any study that wishes to take up these methods
+for an analysis of names outside of dedications, in the full text. As an illus­
+tration of what such a taxonomy might do, and to demonstrate the significant
+amount of information added by searching for names in the body of the dedi­
+cation (rather than just the header or signature), I have created and labeled six
+basic categories for names in the 1660 graph: living people (L), historical people
+(H), religious/biblical figures (R), fictional characters (F), and unknown/unclear
+(U). These categories are by necessity fuzzy and only intended to give a rough
+overview of the terrain of naming.27 But by breaking down names in this way,
+it is easier to see the ways that names in the body of the dedication allow us
+to get a fuller picture of the untimeliness of dedicatory networks. First, tbl. 4
+shows the number of names in each category and the average degree of those
+names.
+Table 4: Count and Avg. Degree of Name Categories in 1660 Graph
+
+Category Total Count Average Degree
+F
+H
+
+50
+202
+
+1.420
+1.515
+82
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Category Total Count Average Degree
+L
+R
+U
+
+666
+216
+137
+
+1.240
+2.898
+1.044
+
+Most of the names in the network are early modern, but only narrowly so. Both
+the historical and religious/biblical categories are quite large, and with average
+degrees larger than the “living” category—which here includes persons alive
+at any point during the early modern period, roughly 1500­1700. The average
+degree for the religious category is much larger, because of a few names (God,
+Jesus) with a disproportionately high number of mentions. And because the
+living category includes the names of anyone alive at any point in the early
+modern period (not just in 1660), some of the highest frequency names in this
+category are from the recent past: Martin Luther, Queen Elizabeth, and King
+James, to name a few. The next question to ask is where certain types of names
+are coming from: whether from the header of the dedication or its body (tbl. 5).
+Table 5: Count for Name Categories and Section of Dedication in 1660 Graph
+
+Category Container
+
+Total Count
+
+F
+F
+H
+H
+L
+L
+R
+R
+U
+U
+
+49
+1
+191
+11
+259
+407
+210
+6
+118
+19
+
+body
+header/signed
+body
+header/signed
+body
+header/signed
+body
+header/signed
+body
+header/signed
+
+83
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+All but a handful of historical, religious, and fictional names appear only in the
+body of the dedication, as we might expect. Dedication body text is adding most
+of the information about relationships to the distant past, religion, or fictional
+abstractions, classes of relationships which add new valences to our understand­
+ing of dedicatory practice. Simply put, the dedication was a place where these
+influences and values were set out, alongside personal and economic relation­
+ships to living persons. But the body of the dedication also adds to our under­
+standing of how contemporary or near­contemporary names are deployed.
+More names of the living and recently deceased appear in the header or signature
+of the dedication, meaning that a little over two thirds of the names likely come
+from authors or patrons. But that leaves a sizable number in the living or recent
+category that only appear in the body. The body of the dedication adds lots of
+early modern names to the network, information about connection and associ­
+ation that wouldn’t be available if we looked only at authors and patrons. The
+average degree of names in this category that appear in the header or signature
+of a dedication is 1.29, while the average for “living” names in the body is 1.16.
+These figures being so close to each other (and so close to one) indicates that
+neither authors and patrons nor other individuals are disproportionately driving
+this part of the network: names that appear purely in the body of the dedication
+are only slightly less frequently­mentioned on average. Authors and patrons are
+only telling part of the story of connection among texts.
+Using these categories, we can easily construct a network that focuses exclu­
+sively on more immediate relationships, acknowledging that an author’s rela­
+tionship with God or with Cicero is different from a relationship to a living
+monarch or more contemporary writer. A visualization of the graph of names
+only from the “Living” category shows a network with fewer nodes and edges
+overall (fig. 6). The nodes have been rescaled by degree, but you can see a sim­
+ilar degree distribution to the other graphs. A few names received lots of men­
+tions, and the rest just one or two. But the highest degree names in the graph are
+markedly changed. Without religious and historical figures, the highest­degree
+node is the newly restored monarch, Charles II. Previous monarchs (James,
+84
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Charles I, Elizabeth) and prolific authors (William Prynne, Thomas Aleyn) also
+make the top twenty, as does Martin Luther. Though this list emphasizes the
+prominence of living figures, like Charles II and General Monck, even when fo­
+cused on “real” relationships the network remains less focused on timely names
+then one might expect. Even with the distant past taken out, the recent past has
+a strong hold on dedicatory relations.
+
+Figure 6: Bipartite layout of 1660 subgraph, showing only name mentions that are in the “L” category, meaning
+people who lived at any point in the early modern period, roughly 1500­1700.
+
+There are other revealing ways of categorizing nodes and understanding their
+impact on dedications. Comparisons of node­level metrics, especially central­
+ity measures, show how different kinds of names play different structural roles
+within the network. For example, the two lists above show both degree—the
+number of texts in which a name appears—and strength—the number of times
+a name appears. A ratio of these measures will show which names appear many
+times in just a few texts.28
+Table 6: Top 20 Names by Strength Over Degree in Full 1660 Network
+
+Node ID Display Name
+
+Degree Strength Strength/Degree
+
+108936
+119927
+113792
+107255
+104296
+128960
+105583
+126033
+
+1
+1
+3
+1
+1
+1
+1
+144
+
+Celsus
+Juvenal
+Jeroboam
+Jansenius
+Ephraim
+Therammenes
+Brounrig
+God
+
+85
+
+10
+6
+18
+5
+5
+5
+5
+712
+
+10.0
+6.0
+6.0
+5.0
+5.0
+5.0
+5.0
+4.944
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+Node ID Display Name
+
+Degree Strength Strength/Degree
+
+117031
+109028
+117768
+127113
+119399
+104495
+123518
+116693
+117265
+101079
+135617
+111052
+
+1
+2
+1
+1
+1
+65
+1
+1
+1
+1
+2
+1
+
+Critias
+Ambrose
+Jehoshaphat
+John Heydon
+Eve
+Jesus Christ
+Thomas White
+Henry Jeanes
+Orbis
+Avicen
+Suarez
+Camerwell
+
+4
+8
+4
+4
+4
+225
+3
+3
+3
+3
+6
+3
+
+4.0
+4.0
+4.0
+4.0
+4.0
+3.462
+3.0
+3.0
+3.0
+3.0
+3.0
+3.0
+
+Unsurprisingly, there are a lot of names in this table that appear in just one text,
+but multiple times—a figure with whom a certain author may be preoccupied.
+But a few figures—Jeroboam, St. Ambrose—appear in multiple texts but still
+have high strength­to­degree ratios. These names, of biblical figures and saints,
+are the kind of people whose writings one might discuss at length or about whom
+one might tell a story, as opposed to a person for whom a single reference may
+be enough.
+A different set of names can be discovered by examining ratios with between­
+ness centrality—a relative measure of the number of shortest paths that pass
+through a particular node in the network. Betweenness centrality, when com­
+bined with degree centrality, provides a way of seeing which nodes stand be­
+tween sections or communities in the network without themselves having many
+connections. These “bridges” are crucial for network cohesion. tbl. 7 shows
+names with high betweenness centrality and low degree centrality.
+
+86
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Table 7: Top 20 Names By Betweenness Centrality over Degree Centrality in Full 1660 Network
+
+Node ID
+
+Display Name
+
+Betweenness Degree
+Centrality
+Centrality
+
+132630
+104552
+126033
+137792
+113701
+132460
+133382
+134423
+112509
+112708
+136855
+139182
+112174
+114830
+137206
+137942
+105886
+104495
+134567
+108864
+
+Maecenas
+Vespasian
+God
+Thomas Bodley
+John Earnly
+Plato
+Hippocrates
+St James
+St Thomas
+Galen
+Mercury
+Plutarch
+Alexander
+John Calvin
+Nilus
+Urania
+Democracy
+Jesus Christ
+Phaeton
+Mars
+
+0.018
+0.009
+0.553
+0.006
+0.006
+0.008
+0.008
+0.01
+0.02
+0.005
+0.007
+0.007
+0.013
+0.004
+0.004
+0.004
+0.004
+0.115
+0.005
+0.004
+
+0.013
+0.009
+0.64
+0.009
+0.009
+0.013
+0.013
+0.018
+0.036
+0.009
+0.013
+0.013
+0.027
+0.009
+0.009
+0.009
+0.009
+0.289
+0.013
+0.013
+
+Betweenness/Degree
+1.366
+0.96
+0.864
+0.687
+0.687
+0.622
+0.616
+0.578
+0.558
+0.547
+0.52
+0.494
+0.492
+0.428
+0.413
+0.413
+0.413
+0.398
+0.357
+0.329
+
+These names are much more political than the religious and biblical names from
+the strength­to­degree list. Maecenas, counselor to Augustus, is at the top, along
+with Roman emperor Vespasian. Medical thinkers Hippocrates and Galen also
+make the list.29 The bridges in this network may be names that can be discussed
+differently depending on the context—an author on one end of the political spec­
+trum, a Royalist, might invoke Maecenas as an example of how well monarchy
+functions, while a Republican might invoke Maecenas to make the opposite
+87
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+point.
+The 1660 example shows that non­contemporary names make up a vast, impor­
+tant part of the dedicatory networks, which in turn emphasizes that dedications
+are about a lot more than simply who the patron was. In addition to these names
+being important within the context of a specific year, by tracking the network
+over time we can see the way non­contemporary names are consistently de­
+ployed across the period. fig. 7 is a stacked time series of the most common
+names in the whole network, and their degree centrality over time in networks
+grouped by five­year spans. I use bipartite degree centrality rather than raw
+degree here because it is normalized to account for the different sizes of the
+five­year networks.
+Except for the spikes caused by sparse data in the early part of the period, the
+relatively high degree centrality of these top nodes stays fairly consistent over
+time. The final name in this graph, King James, spikes in 1604 when James
+VI of Scotland takes the throne as James I of England. But after that, his pat­
+tern follows other popular names like Moses, Solomon and Augustine—James
+enters a rotation of popular names that authors use even though they are not
+contemporary figures.
+The same phenomenon is apparent if we look at a time series for Elizabeth I
+(fig. 8). Variations on her name appear throughout the corpus, beginning as
+Princess Elizabeth before her reign and hitting a high point of degree centrality
+(0.08) in the 1580­85 graph. Significantly, Elizabeth’s influence does not de­
+crease as much after her death as one might imagine: in the decade immediately
+following her death, her degree centrality stays at about the same levels as it did
+in the final years of her reign. Afterward, it expectedly drops off somewhat, but
+crucially Elizabeth’s influence in the network does not shrink to nothing. Her
+name seems to be invoked slightly more during periods of political transition:
+during the tumultuous final years of Charles I’s reign, during the first years of
+the Restoration of Charles II, and in the run up to the Glorious Revolution of
+1688. As a beloved political figure from the recent past, it seems that there is a
+88
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Figure 7: The ten nodes with the greatest overall degree centrality, tracked by degree centrality over time.
+
+89
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+Figure 8: Degree centrality for Elizabeth I over time.
+
+habit of invoking Elizabeth at moments of political uncertainty. Though these
+kinds of mentions aren’t as frequent as the mentions of her name during her
+reign, they nonetheless speak to the ways that non­contemporary naming is an
+important mode of dedicatory mention, driven as much by political and social
+concerns as by economic ones. The social concerns of dedicatory practice and
+the economic ones are inextricably linked—tracking dedicatory mentions over
+time gives a better sense of the way these two drivers for dedicatory naming
+overlap.
+Names from the distant past appear with more regularity across the corpus than
+contemporary figures almost as a rule. I see this as an important corrective to
+the practice of using dedications to tell us only about author­patron relations. It
+is now a commonplace in studies of reception to recognize that readers do not
+choose only from a crop of books newly published in a given era, but from a
+variety of books published before then. Reading practices are often backward­
+looking, and any one person’s reading can include books published across a
+long span of time.30 Likewise with dedicatory practice, while early modern
+books are almost always dedicated to a living person, the names that appear
+in dedications can include a range of influences, citations, and relations from
+across a very wide span. A dedication—whether written before or after the main
+text—works along with other paratexts to signal the reader to the book’s wide
+imaginative network. The invocation of names in the dedication allows readers
+to situate a book and its author within a network of influences, citations, and
+90
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+allusions, and that network is far broader than only contemporary figures.
+However, these findings do not suggest a flattening effect, where the same
+names are repeated over and over without differentiation. Though some very
+common names don’t vary much, there is quite a lot of variation over time
+even with non­contemporary names. A name like “Maecenas” or “King David”
+might suddenly surface in the network at a particular time for a particular reason.
+We see this with Elizabeth as well—though hers is a popular name to invoke,
+there are specific moments in which her name is used more often. In the next
+section I explore some of the political causes of this kind of change in dedicatory
+networks over time.
+
+Political Crisis and Change Over Time
+From the evidence above we can conclude that dedicatory networks are not
+bound by the relationships of the present day. On the contrary, one of the clear­
+est features of these networks is the high centrality of names from the distant
+past. However it would be incorrect to extend that conclusion to say that the
+historical context of a dedication doesn’t matter. Even though dedicators are
+invoking names from a wide swathe of history, they are doing so in response
+to the economic, social, and political concerns at the moment of publication.
+This is clear from Genette’s initial observation of dedicatory epistles—that they
+contain a justification for the book with respect to the dedicatee, the imagined
+reader, and a broader societal context. Though the networks in this study show
+high centrality for names from the past, the deployment of contemporary and
+historical names alike is very responsive to immediate social and political con­
+cerns. As I will demonstrate in this section, the networks that span the 1630s
+through the 1660s show a series of changes in network structure and name use
+that track with the tumultuous political and social landscape of those decades.
+In response to civil war, multiple changes in government, and shifts in the reg­
+ulation of print, dedication networks show shifts in name mention that respond
+to and comment on this period of political crisis.
+
+91
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+I divided the network into five­year time spans, beginning in 1630 and ending in
+1670. In testing I found this grouping to be more sensitive to changes over time
+than ten­year spans and without the artificial increases in degree for individual
+nodes caused by spans smaller than five years. To understand network size and
+structure over time, I calculated the number of nodes and edges in each graph,
+as well as the average degree for each node set, the number of components,
+bipartite density, and the average of the bipartite clustering coefficients.
+Table 8: Graph­wide metrics for networks in five­year spans
+
+Network
+
+Nodes Names Texts Edges Components
+
+1630­1634
+1635­1639
+1640­1644
+1645­1649
+1650­1654
+1655­1659
+1660­1664
+1665­1669
+
+3049
+2546
+3077
+3334
+4200
+4932
+4367
+2237
+
+2642
+2184
+2493
+2714
+3543
+4145
+3708
+1936
+
+407
+362
+584
+620
+657
+787
+659
+301
+
+3997
+3268
+4408
+5059
+6175
+7726
+6271
+2656
+
+56
+58
+71
+51
+66
+77
+95
+69
+
+Table 9: Graph­wide density and clustering for networks in five­year spans, with those metrics compared to aver­
+age of random networks of the same size
+
+Network
+
+Density
+
+Density
+vs. Average
+
+1630­1634
+1635­1639
+1640­1644
+1645­1649
+1650­1654
+1655­1659
+1660­1664
+
+0.004
+0.004
+0.003
+0.003
+0.003
+0.002
+0.003
+
+0.001
+0.001
+0.001
+0.001
+0.001
+0.001
+0.001
+92
+
+Avg.
+Clustering
+Coefficient
+
+Clustering
+vs. Average
+
+0.562
+0.567
+0.471
+0.448
+0.486
+0.465
+0.5
+
+0.011
+0.019
+0.056
+0.058
+0.024
+0.047
+0.036
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Network
+
+Density
+
+Density
+vs. Average
+
+1665­1669
+
+0.005
+
+0.001
+
+Avg.
+Clustering
+Coefficient
+
+Clustering
+vs. Average
+
+0.621
+
+0.022
+
+In addition to the raw calculations in tbl. 8, I also included comparisons for den­
+sity and average clustering coefficient against the average of five random graphs
+of the same size in tbl. 9. Because these metrics are dependent on network size,
+they can’t be directly compared across graphs of different size. Instead it is
+preferable to compare the difference between the metric and the average of the
+same metrics from same­size random graphs, which is what I’ve done here.
+However, before I discuss density and clustering coefficients, I want to empha­
+size changes in network size over time.
+
+Figure 9: The number of names and texts in each five­year graph.
+
+fig. 9 shows the number of names (in red) and the number of texts (in blue) in
+each graph. Notably the largest graphs are the 1650­54, 1655­59, and 1660­64
+spans. This may come as a surprise to book historians, who might expect to see
+a spike in the number of texts in the 1640s. The early days of the Civil War and
+Republic period saw a number of sudden changes to printing regulation, which
+caused an explosion in the production of cheap print, especially political tracts
+and pamphlets.31 And the proportion of these texts may be overrepresented
+in the EEBO­TCP corpus, as a result of the Thomason Tracts, a collection of
+political pamphlets collected by George Thomason that make up a large part
+93
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+of EEBO’s corpus in the 1640s. However, there’s no evident 1640s spike in
+this network. That is likely because most of the political pamphlets and other
+kinds of cheap print produced in the 1640s did not have dedications. Dedica­
+tions tend to appear more often in longer, more expensively­produced volumes.
+This graph suggests that the number of texts with dedications stays relatively
+consistent across this forty­year period.
+In addition to understanding the change in size of these networks over time, I
+use bipartite density and clustering coefficients to observe structural change in
+the networks. Bipartite density, as in a unipartite graph, is a ratio of the total
+edges in the graph to the number of all possible edges; it tells us how close the
+graph is to being complete. As you can observe in tbl. 9, all of these graphs
+are fairly sparse, but they are also of expected density when compared to ran­
+dom preferential attachment graphs. That is to say, these networks are about
+as dense as a typical graph with the same number of names and the same de­
+gree distribution. A bipartite clustering coefficient is a more local measure of
+density. In a unipartite network, it measures how often the neighbors of a node
+are connected to one another. In a bipartite network the measure is similar: it
+shows how often the second order neighbors of a node are connected to the same
+node. A clustering coefficient tells you how dense the immediate area around a
+single node is. Looking at the average clustering coefficient of a graph gives a
+sense of how closed a network’s loops are and how closely related its nodes. In
+networks with lots of disconnected components, density will register as sparse
+even if some individual components are more dense; average clustering coeffi­
+cient will register this local density. For both of these measures, we can chart
+how different each metric is from the expected average, over time.
+As I’ve already suggested, compared to average networks, the density of these
+networks does not change much over time (fig. 10). They all have a fairly high
+number of components, and are therefore all relatively sparse. And again, this
+is typical in preferential attachment graphs—the densities are not far off from
+the average for their size. There may be a slight rise in density in the late 1630s
+and 1640s, but it’s difficult to see from looking at density alone. However,
+94
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Figure 10: Density of five­year networks (compared to average random networks) during the mid­17th century.
+
+Figure 11: Average clustering coefficient of five­year networks (compared to average random networks) during
+the mid­17th century.
+
+the local density expressed by average clustering coefficient tells a different
+story. Graphs have significantly higher average clustering coefficients, relative
+to random graphs of the same size, in the two five­year spans of the 1640s.
+What shows up as a slight difference in density is much more pronounced in
+average clustering coefficient. This suggests that the graphs of the Interregnum,
+at least in its early years, have tighter­knit communities, with the same sets of
+names appearing together in the same texts more frequently. And while this
+change takes place during and immediately after the Civil War, it doesn’t seem to
+last: during the Protectorate and the Restoration, density and average clustering
+coefficient return to pre­war levels.
+To explain some of these structural changes, especially the increased density and
+clustering coefficients of the graph during the early part of the Interregnum, I
+looked at some of the most prominent names from the graphs of this period. The
+table in fig. 12 shows the top 20 names by degree for each half decade, with the
+95
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+degree of the nodes in parentheses.
+
+Figure 12: Top 20 Names by Degree in Each 5­Year Graph
+
+Observations from these degree rank lists are consistent with assumptions we
+might make based on historical facts. Names of monarchs, especially Charles
+but James and Elizabeth as well, have higher rank when there is a monarch
+on the throne, before 1640 and after 1660. In the 1645­49 graph, the years
+directly preceding the execution of Charles I, references to “King Charles” drop
+to number 8, nearly tied with “Thomas Fairax,” the leader of the Republican
+forces, at number 9. The lists are sensitive to changes in leadership, which is
+consistent with my findings about dedicatory practice in the previous section:
+whether or not an author dedicates their text to the leader of the nation, it is likely
+that leader will be mentioned at some point in the dedicatory epistle. Indeed, in
+the 1655­59, the final years of the Protectorate, the title “Protector” appears in
+the top 20 names at number 9, the only time it appears in any of these lists.
+But in the Interregnum graphs, monarch names are not simply replaced by Re­
+publican leaders. Even Fairfax and Cromwell never achieve the heights in these
+networks that monarchs do in the 1630s and 1660s. Instead, the networks further
+consolidate around the already prominent religious figures. Which is to say, the
+96
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+preferential attachment toward names like “St. Paul,” “St. John,” and “Moses”
+becomes more pronounced. This may explain why the Interregnum graphs see
+an increase in density and average clustering coefficient—references to the con­
+temporary political figures fall away somewhat, and references to names of pop­
+ular religious figures increase as a result. Where the split is more even before
+and after the Interregnum, the 1640s and 1650s see a moment where dedicatory
+practice strays even farther from the contemporary and clings to names from
+the distant past. With the court dissolved and many aristocrats living in exile
+during this period, such a shift makes sense. The normal social structures that
+govern dedicatory practice have been upended.
+Changes in other names on these lists, which do not correspond directly to
+changes in leadership, suggest shifts in discourse which also stem from political
+crises. References to King David are popular across the corpus, as we saw in the
+previous section, but those references get more central to the graphs during and
+after the Revolution. The name “David” could signify several things, including
+increased quotation of and commentary on the Psalms. But it could also con­
+note increasing interest in anointed kingship, taken up by both monarchy’s pro­
+ponents and its detractors. Indeed, the name David appears most frequently (in
+97 texts) in the five­year period leading up to Charles II’s Restoration, and the
+name has its highest degree rank (third, ahead of Sts. Paul and John, Solomon,
+Moses, and Charles II himself) in the five­year period immediately following
+the Restoration. Likewise, while “Satan” is a common name throughout the pe­
+riod, the name has a modest rank of 12th and 14th in the 1630­34 and 1635­39
+ranges, respectively. But from 1640 to 1660, “Satan” doesn’t rank lower than
+6th. Part of the name “Satan”’s popularity may be the consolidation around pop­
+ular religious figures in the absence of political ones that I mentioned above. But
+it is notable that Satan in particular rises in degree rank, as opposed to Moses,
+Abraham, or Augustine. This indicates that a particular kind of religious lan­
+guage, perhaps of an apocalyptic flavor, has taken hold during the period, and
+it will also no doubt intrigue Milton scholars to know of Satan’s increasing cen­
+trality in the years leading up to the publication of Paradise Lost.
+
+97
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+The dedication networks of the mid­seventeenth century change in both shape—
+the structure of the graph—and character—the kinds of names that are being
+mentioned. Though most of the most central names are from the distant past,
+the network changes in response to political events. During the Interregnum,
+with the monarchy and aristocracy significantly reduced, the network further
+consolidates around popular religious and biblical figures rather than attaching
+to many individual Republic and Protectorate officials.32 But this shift even
+further away from the contemporary still suggests a discourse of dedications
+that is responsive to contemporary politics, as the increased use of names like
+“David” and “Satan” suggest themes that would have been on the minds of
+authors of the 1640s and 50s.
+Broadening the networks of early modern dedications to include the names
+within the body of the dedicatory epistle shows the importance of non­contemporary
+names to an author’s framing of their work with respect to dedicatory practice.
+As William St. Clair reoriented our understanding of reception by showing that
+reading was centered not simply on current publication but around a library of
+books from the recent and the distant past; so these networks suggest that the
+imaginative worlds of early modern print, manifest in dedications, are consti­
+tuted of figures from a long history and not just the patrons and politicians of
+the day. And though the networks are filled with non­contemporary names,
+because the dedication is a genre invested in how a work will be perceived by
+its potential patron and by other readers, the networks change noticeably in re­
+sponse to current events. Indeed, during the mid­seventeenth century period of
+political crisis and revolution, dedicatory practice changes markedly as a result
+of shifts in social structure and political discourse. In terms of dedicatory prac­
+tice, the networks of the 1640s and 1650s were radically different from what
+came before and after. While we could certainly see those changes in terms
+of authors and patrons alone, casting a wider net for names produces networks
+sensitive to discursive shifts as well as social ones.
+
+98
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Notes
+1
+
+Samuel Hartlib, A Description of the Famous Kingdome of Macaria (London, England), A2r–A2v, accessed
+April 29, 2020, http://search.proquest.com/eebo/docview/2248511257/citation/65731BA7BC8348E9PQ/
+1.
+2
+
+Samuel Drake, Totum Hominis, or, the Decalogue in Three Words, Viz. Justice, Mercy and Humility (London,
+England), A2r–A2v, accessed April 29, 2020, http://search.proquest.com/eebo/docview/2264225388/
+citation/ACCBCEC2CFD74660PQ/1.
+3
+
+See Helen Smith and Louise Wilson, Renaissance Paratexts (Cambridge: Cambridge UP, 2011), James
+Daybell and Peter Hinds, eds., Material Readings of Early Modern Culture: Texts and Social Practices, 1580­
+1730, Early Modern Literature in History (New York: Palgrave Macmillan, 2010), and Elizabeth Sauer, ’Paper­
+Contestations’ and Textual Communities in England, 1640­1675, Studies in Book and Print Culture (Toronto: U
+of Toronto P, 2005).
+4
+
+Andie Silva’s new book The Brand of Print, which explores the role of paratexts in the marketing of books
+is especially salient here, as well as Seth Lerer’s essay on errata sheets in Reading, Society, and Politics in Early
+Modern England, and Ann Blair’s work on managing scholarly information in indices and tables of content. See
+Andie Silva, The Brand of Print: Marketing Paratexts in the Early English Book Trade (Brill, 2020), https:
+//brill.com/view/title/55831, Kevin Sharpe and Steven N. Zwicker, Reading, Society and Politics in Early
+Modern England (Cambridge: Cambridge UP, 1999), and Ann Blair, Too Much to Know: Managing Scholarly
+Information Before the Modern Age (New Haven: Yale UP, 2010).
+5
+
+In a new project at the Folger Shakespeare Library, Heidi Craig and Sonia Massai are working at the forefront
+of digital paratexts in drama, for example, as they digitize and extend Berger and Massai’s Paratexts in English
+Printed Drama to 1642. See Thomas L. Berger, Sonia Massai, and Tania Demetriou, eds., Paratexts in English
+Printed Drama to 1642 (New York: Cambridge University Press, 2014). And further on in this essay I discuss
+Michael Gavin’s use of paratexts in his Historical Text Networks.
+6
+
+Ruth Ahnert and Sebastian E. Ahnert, “Metadata, Surveillance and the Tudor State,” History Workshop Jour­
+nal 87 (April 2019): 1, doi:10.1093/hwj/dby033.
+7
+
+Ibid., 1–3.
+
+8
+
+Blaine Greteman, “Shakeosphere,” University of Iowa Libraries, accessed February 28, 2018, https://
+shakeosphere.lib.uiowa.edu/.
+9
+
+Christopher N. Warren et al., “Six Degrees of Francis Bacon: A Statistical Method for Reconstructing Large
+Historical Social Networks,” Digital Humanities Quarterly 10, no. 3 (2016), http://digitalhumanities.
+org/dhq/vol/10/3/000244/000244.html.
+10
+
+“A Bird’s Eye View of Early Modern Latin: Distant Reading, Network Analysis, and Style Variation,” in
+Early Modern Studies After the Digital Turn, ed. Laura Estill, Diane K. Jakacki, and Michael Ullyot, Medieval
+& Renaissance Texts & Studies (Series) ; V. 502 (Tempe, Arizona: Arizona Center for Medieval; Renaissance
+
+99
+
+I M A G I N AT I V E N E T W O R K S : T R A C I N G C O N N E C T I O N S A M O N G E A R LY M O D E R N B O O K
+D E D I C AT I O N S
+
+Studies, 2016), 61–88.
+11
+
+Though this is the main one to use network analysis, all of the essays in this volume provide excellent examples
+of the use of metadata and data in concert to produce insights for early modern studies. See Laura Estill, Diane K.
+Jakacki, and Michael Ullyot, eds., Early Modern Studies After the Digital Turn, Medieval & Renaissance Texts &
+Studies (Series) ; V. 502 (Tempe, Arizona: Arizona Center for Medieval; Renaissance Studies, 2016).
+12
+
+“Historical Text Networks: The Sociology of Early English Criticism,” Eighteenth­Century Studies 50, no. 1
+(October 2016): 53–80, doi:10.1353/ecs.2016.0041.
+13
+
+Gérard Genette, Paratexts: Thresholds of Interpretation, Literature, Culture, Theory 20 (Cambridge ; New
+York, NY, USA: Cambridge University Press, 1997), 123.
+14
+
+Ibid., 124.
+
+15
+
+Literary Patronage in England, 1650­1800 (Cambridge: Cambridge UP, 1996).
+
+16
+
+The Invention of English Criticism, 1650­1760 (Cambridge: Cambridge UP, 2015).
+
+17
+
+Unfortunately, though it’s possible to know when a name in the body is the name of a dedicatee, if there is a
+name in the header that is not of a dedicatee (as is true of Lord Armitage in the Drake example above), it’s difficult
+to differentiate that name from the names of the dedicatee(s) that appear alongside it.
+18
+
+The markup for dedications is not infallible, but it is quite accurate. In my review of 100 random EarlyPrint
+XML documents, 50 that contained dedications in my resulting dataset and 50 that did not, the dedication markup
+was correct in all but 2 documents. There were only two addresses to the reader (in the same document) that
+were incorrectly labeled as dedications, and just one dedication was not labeled as such. This 98% accuracy rate
+suggests that my extraction of dedications by type attribute captures the vast majority of available dedications in
+the EarlyPrint corpus.
+19
+
+“spaCy · Industrial­Strength Natural Language Processing in Python,” accessed August 27, 2020, https:
+//spacy.io/.
+20
+
+Philip R. Burns, “MorphAdorner,” August 2013, http://morphadorner.northwestern.edu/morphadorner/.
+
+21
+
+I was able to eliminate some of the false positives (which account for the lower precision score) through
+hand­curation at a later stage of the process.
+22
+
+“Historical Text Networks.”
+
+23
+
+Unspecified references to “King Charles” could just as easily refer to Charles II or his executed father, Charles
+I. See my comment on this ambiguity in the previous section.
+24
+
+Duncan J. Watts and Steven H. Strogatz, “Collective Dynamics of ‘Small­World’ Networks,” Nature 393, no.
+6684 (June 1998): 440–42, doi:10.1038/30918.
+25
+
+Because graph­wide metrics like density are highly dependent on a graph’s size, you can’t directly compare
+
+100
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+density measures for two graphs of the same size. Instead, best practice is to generate random graphs of similar size,
+and compare the network to the average metrics of those graphs. I’ve done that here by generated two 10­graph
+samples similar in size to the full 1660 graph and the header/signature 1660 graph, respectively, using NetworkX’s
+bipartite preferential attachment model.
+26
+
+Degree centrality in the headers and signatures alone is strongly but not perfectly correlated with degree
+centrality in the network taken from the full dedication (r=.674). Though degree centrality in the full network is
+similar to that in the header/signature only network for nodes that appear in both, there are only 444 names in the
+header/signature network compared to 1271 names in the full 1660 network. Though many of these nodes are low
+degree, they represent a large amount of information about naming that is added by looking at names beyond the
+header and signature alone. And a few are quite high in degree: the biblical king David, for instance, has a degree
+of 26 and a strength of 57 in the full 1660 graph, making his the third most frequent name overall. But his name
+only appears in the body of dedications, never in the header or signature.
+27
+
+“Living people” includes anyone who lived during the early modern period, roughly 1500­1700, i.e. it includes
+more than simply people alive in 1660 and encompasses both the living and what we might call the “recent past.”
+“Religious/biblical” includes deity names (God, Jesus) and saints and other figures that appear in the bible (Peter,
+Moses). (Phrases like “Grace of God” and “God willing” were filtered out at an earlier stage of the process.) Saints
+who do not appear in the bible but were real historical people (who usually wrote texts being cited in a dedication)
+appear alongside Greek and Roman philosophers and political leaders, as well as anyone who lived before ~1500,
+in the “historical people” category (Augustine, Anselm, Cicero, Tertullian, etc.). “Fictional characters” includes
+mythological figures (Athena, Apollo) alongside characters from literary works. Any names that could not be
+identified with a reasonable degree of certainty were labeled with a U.
+28
+
+This is nearly identical to document frequency/term frequency ratios commonly used in text analysis.
+
+29
+
+This table includes one item, “Democracy,” which is clearly not a personal name. I eliminated the majority
+of the highest frequency mistakes in name detection during hand curation, but a small number of low­frequency
+names terms like this remain in the data. Eliminating the rest of these low­frequency occurrences would take a
+great deal of time and wouldn’t change the overall trends in the data very much. They are infrequent, and I do not
+believe that they skew the overall trends in the networks. I remain satisfied by the precision and recall scores I
+cited in the last section, which are consistent with state­of­the­art named­entity recognition.
+30
+
+William St. Clair provides the now classic explanation of this phenomenon. See William St. Clair, The
+Reading Nation in the Romantic Period (Cambridge: Cambridge UP, 2004).
+31
+
+You can observe this spike in the count of texts available at EarlyPrint: https://earlyprint.org/lab/
+tool_eebo_estc_texts.html.
+32
+
+This study focuses on individual personal names rather than collective names. There are dedications to Par­
+liament throughout the period, and it could be useful to track how mentions of Parliament and other organizations
+changes during this period. But such inquiry is outside the scope of this essay.
+
+101
+
+

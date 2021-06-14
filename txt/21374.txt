@@ -1,0 +1,1468 @@
+Journal of
+Cultural Analytics
+
+March 3, 2021
+
+Images of the arXiv: Reconfiguring
+large scientific image datasets
+Kynan Tan, Anna Munster, and Adrian Mackenzie
+Kynan Tan. University of New South Wales. kynan.tan@unsw.edu.au.
+Anna Munster. University of New South Wales. a.munster@unsw.edu.au.
+Adrian Mackenzie. Australian National University. adrian.mackenzie@anu.edu.au.
+Peer­Reviewer: Richard Rogers, Greg McInerny
+Dataverse DOI: 10.7910/DVN/EAAG94
+
+ABSTRACT
+
+In an ongoing research project on the ascendancy of statistical visual forms, we have been concerned with the transforma­
+tions wrought by such images and their organisation as datasets in ‘re­drawing’ knowledge about empirical phenomena.
+Historians and science studies researchers have long established the generative rather than simply illustrative role of im­
+ages and figures within scientific practice. More recently, the deployment and generation of images by scientific research
+and its communication via publication has been impacted by the tools, techniques, and practices of working with large
+(image) datasets. Against this background, we built a dataset of 10 million­plus images drawn from all preprint articles
+deposited in the open access repository arXiv from 1991 (its inception) until the end of 2018. In this article, we suggest
+ways – including algorithms drawn from machine learning that facilitate visually ’slicing’ through the image data and
+metadata – for exploring large datasets of statistical scientific images. By treating all forms of visual material found in
+scientific publications – whether diagrams, photographs, or instrument data – as bare images, we developed methods for
+tracking their movements across a range of scientific research. We suggest that such methods allow us different entry
+points into large scientific image datasets and that they initiate a new set of questions about how scientific representation
+might be operating at more­than­human scale.
+
+Introduction
+In an ongoing research project1 on imaging and machine learning, we have been
+concerned with how the ascendancy of statistical visual forms – particularly
+from the 1990s on2 – has come to transform and re­organise images so as to ‘re­
+draw’ knowledge about empirical phenomena. Historians and science studies
+researchers have long established the generative rather than simply illustrative
+role of images and figures within scientific practice.3 More recently, the use
+of images within computer science specifically has garnered attention: “[they]
+often contain a crucial part of the information scholarly documents convey. Au­
+thors frequently use figures to compare their work to previous work, to convey
+the quantitative results of their experiments, or to provide visual aids to help
+Journal of Cultural Analytics 3 (2021): 1­41. doi: 10.22148/001c.21374
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+readers understand their methods.”4 One distinction that has run through this
+debate is the difference between scientific images used to authorise and con­
+solidate the truth claims and/or authority of experiments or data, which tend to
+be diagrammatic, and images that are reproductions of scientific evidence.5 A
+division is thus made between images that perform a transformation upon data
+and ones that are merely representations of that data.
+While this debate about the status of images in science has occurred over the last
+50 years, the deployment and generation of images by scientific research and the
+communication of research via publication has been more recently impacted by
+the tools, techniques and practices of working with large (image) datasets. The
+standout example here would be the release in 2009 of the ImageNet dataset
+along with the spawning of a culture of specific computer vision research in the
+form of object recognition challenges, which, up until 2017 when it ended, had
+students and staff, industry R&D teams as well as lone ‘self­employed’ chal­
+lengers participating.6 This shift, exemplified by the production of a large scale
+image dataset that quickly becomes the object of and for research in a field, is
+concomitantly accompanied by the techniques, technologies, and practices that
+are required to turn the data into knowledge about the empirical world. Advanc­
+ing in tandem with such image datasets are machine learning (ML) algorithms,
+processes of optimisation of the data that utilise ML, and indeed entire models
+that amass different statistical processes interfacing with ML for analysing and
+sometimes predicting from the dataset inputs. In everything from face recogni­
+tion in crowds, SARS­CoV­2 detection in chest X­rays, or in weapons targeting
+platforms, images themselves become the means through which ML models –
+the statistical arm of artificial intelligence – input ‘information’ about the world,
+vertiginously contouring and hence ‘re­drawing’, in the sense of reconfiguring,
+the landscape of ‘knowing.’ ML models have come to use large datasets such
+as ImageNet as training material, learning weights and biases that enable the
+model to then classify previously unseen images. At the same time, ML prac­
+tice relies on and is communicated through figures, especially since many of its
+statistical processes are ‘black­boxed.’7
+
+2
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+We set out using an empirical and exploratory approach by suspending the sep­
+aration of the performative from the reproductive scientific image. We track,
+instead, observable differences in how images circulate through scientific re­
+search. By treating all forms of visual material found in scientific publications
+– whether diagrams, photographs, or instrument data – as bare images, we devel­
+oped methods for tracking their movements across a range of scientific research.
+In many ways this is made possible by the labelling of images within scientific
+publications as ‘figures.’ Accordingly we treated all material appearing under
+the ‘figure’ caption as such ‘bare’ images. As we tracked these movements, we
+were better able to ask: what specific forms do the ‘output’ images, produced
+via a range of techniques, including statistical ones, assume? In what ways
+is the input (image) data transformed so as to become specific kinds of visual
+figures, newly configuring and indexing empirical phenomena? Moreover, we
+also sought to ask: how might we come to see the circulation of such visual
+figures across the vast corpus of scientific work? In this article, we detail the
+dataset and statistical exploratory methods deployed to trace this circulation of
+visual forms. We suggest that such methods allow us different entry points into
+large scientific image datasets and that they initiate a new set of questions about
+how scientific representation might be operating at more­than­human scale.
+Before we outline and discuss these methods, a couple of notes concerning the
+conceptual and theoretical background against which we have developed these
+methods. First, we think about scientific images in the context of the well­
+developed discussion of ‘inscriptions’ in science studies.8 Here images that
+are generated (and other techniques for inscribing scientific information includ­
+ing publishing), and that appear and circulate throughout all modes of scientific
+practice, do not simply represent data or ‘facts.’ Their visual nature or indexi­
+cal status is not what is primarily of importance. Instead inscriptions primarily
+perform two functions: the mobilisation of scientific objects among scientific
+communities of practice; and the consolidation and authorisation of the scien­
+tificity of such objects. This gives inscriptions a paradoxical status of being
+both mover­shakers and stabilisers of scientific research and practice. Much
+
+3
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+work has been done in visual science studies to look at how specific kinds of
+imaging techniques and technologies work to authorise claims about scientific
+data but, at the same time, destabilise and challenge knowledge formation.9 In
+our work, we similarly focus on what distributed circulation across platforms
+and networks, as a peculiarly contemporary mode of mobilisation, might tell us
+about the current status and recent history of a heterogeneous array of statistical
+visual forms. We are less concerned, then, with what these forms empirically
+represent than in what operations they perform in bringing empirical phenomena
+into the dispersed infrastructures of scientific knowing – repositories, preprints,
+formatting of image files, to name only a few.
+However, we are not primarily concerned with how images circulate within a
+specified community of scientific practice nor in how such images/inscriptions
+help to sustain such communities. In part, this is because in tracing the circula­
+tion of images across the sciences we enter an arena in which the vast quanti­
+ties of such images moving online and across platforms do so at a scale before
+and beyond specific institutional and lab­based communities of scientific prac­
+tice.10 This migratory massification of images had already been heralded by
+the production of large commercially available GIS datasets from the 1980s on­
+ward. But the scale and availability of public image datasets and their use in ML
+practices such as image recognition challenges really took off in the 2000s. Im­
+portantly, then, we are no longer talking about how inscriptions are mobilised
+but rather how an entire assemblage – the dataset – becomes an operative appa­
+ratus. In this contemporary situation, we look to a critical, even post­, digital
+humanities11 for experimental approaches to large scientific datasets. We de­
+ploy computational methods that draw on ML itself but that also allow us to
+develop a situated and interrogative perspective on the circulating, exchanging,
+and associative tendencies of large aggregations and flows of statistical image
+forms.
+
+4
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+(The making of) a large scientific image dataset
+A crucial prerequisite of this work has been to generate a dataset of images
+drawn from scientific research that manifests the knowledge claims about empir­
+ical phenomena. Such knowledge claims are now entangled with the authority
+that statistical approaches have found in sciences, which also deploy data meth­
+ods.12 How do these statistical approaches also make their way into images?
+We built a dataset of images drawn from all preprint articles deposited in the
+open access repository arXiv from 1991 (its inception) until the end of 2018.13
+ArXiv (pronounced “archive”) maintains over 1.5 million e­print articles across
+a diverse range of scientific fields. Created in 1991 by physicist Paul Ginsparg,
+arXiv provides a platform for authors to share articles prior to or during the pro­
+cess of peer­review.14 Researchers in many fields, such as high energy physics,
+rely on arXiv as their primary source for accessing current scholarship.15 The
+number of submissions to arXiv has been growing in recent years, with 140,242
+new articles added to the repository in 2018.16
+ArXiv stores papers across a range of knowledge domains from the sciences
+including but not limited to: physics, mathematics, statistics, computer science
+and subfields of biology and economics.17 Its development as a repository also
+maps many key developments for images and image­related tasks that use sta­
+tistical approaches, in particular ML. To name only a few: the shift within as­
+trophysics to data management and the classification, segmentation and recog­
+nition of objects across a new scale of image datasets enabled by the launch of
+the Hubble Telescope in 1990; the release of the MNIST handwriting dataset in
+1998; the creation of ImageNet in 2009; Google Brain’s 2012 deep neural net­
+work architecture for recognising cat images from unlabeled images taken from
+frames of YouTube videos; and the 2016 AlphaGo model, trained on millions
+of 19x19 pixel images of Go board states. The images of arXiv – as elements
+within the research papers of these and many more ML projects and develop­
+ments – document a growing statistical visuality, as a technical practice which
+is concerned with the statistical observation of something in data.
+
+5
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+ArXiv provides a relatively accessible bulk download procedure for its arti­
+cles.18 From this bulk download, we were able to access all papers (and as­
+sociated images) uploaded to arXiv from its inception to the end of 2018. Arti­
+cles uploaded to arXiv consist of either: solely a PDF file (7.69%); TeX/LaTeX
+source code only (21.95%); or TeX/LaTeX source code with figures as sepa­
+rate image files (70.32%).19 ArXiv provides multiple modes of accessing the
+repository: to the articles themselves via a web interface with download links;
+to their metadata via an OAI­2 interface; and to bulk source or PDF downloads
+via Amazon Web Services. We used the OAI­2 metadata and the bulk source
+data together to construct our dataset with metadata indexing. As an open access
+repository status within scientific publishing and research distribution – partic­
+ularly within fields that might have interest in source material for large datasets
+such as computer science and statistics – arXiv has not unsurprisingly already
+been used as source data. However, prior dataset engagement has almost exclu­
+sively used its text data, deploying this for citation tracking, natural language
+processing, or topic tracking and prediction.20 Across the arXiv dataset there
+is a mean average of over seven images per paper. Yet very little research has
+been conducted into using arXiv as a source for querying or analysing its image
+data.21
+Completing the download in January 2019 provided us with over 10 million im­
+ages for our arXiv image dataset. What could an image collection structured as
+a dataset comprising diagrams, photographs and other graphic elements drawn
+from the range of scientific fields present in arXiv tell us about how statistical
+computing practices such as ML reconfigure ways of seeing and knowing real
+world phenomena? How might we slice through a highly diverse and volumi­
+nous image dataset, engaging with its emergent forms of organising and cir­
+culating statistical image ‘types’ without simply classifying or segmenting the
+images according to an uninterrogated taxonomy of visual forms: photographs,
+scatterplots, feature maps, bar graphs and so forth? The rationale behind the
+decision to use arXiv was that it would provide us with a dataset that contained
+a recent historical record of the ways in which images have figured in scientific
+
+6
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Figure 1: Montage of 16 images sampled randomly from the arXiv image dataset. Images have been resized
+to fit within a 480x480 pixel square. Seen here are a number of plots, charts and graphs, as well as other data
+visualisations, processed sensor imagery and computer synthesised images.
+*
+
+Source materials uploaded to arXiv are either given a specific licence (such as creative com­
+mons) or use the standard arXiv distribution licence, which grants arXiv permission to dis­
+tribute the article/images but the creator retains copyright. This licence remains with the im­
+ages when downloaded and used by other parties. This is particularly important as the authors
+of a paper may not have the rights to distribute the images, such as in the case of photographs
+that are being processed by computer vision algorithms. In the interest of properly accrediting
+the creators of these images, we have created a website which provides accreditation for each
+image at https://github.com/re­imaging/re­imaging/blob/master/methods/credits.org.
+
+7
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+scholarship broadly, and ML research specifically. We posited that ML tech­
+niques, used in an exploratory and interrogative mode, might provide a means
+for experimenting with the tendencies and relations of scientific images during
+a recent historical period in which ML has itself widely affected the produc­
+tion of scientific knowledge in many fields. Additionally, we were interested in
+the availability of the metadata uploaded through the arXiv submission process.
+This included standard information about author, article abstract and so forth but
+also detailed information about the software used to create images. We posited
+that examining this metadata through dataset querying could unfold information
+about the situated knowledge contexts out of which these images arise.
+We queried the arXiv image dataset according to some of the categories under
+which preprints were submitted – for example, ‘cs.CV,’ arXiv’s abbreviation
+for computer vision. The purpose of this was to explore how over the 28 years
+of arXiv’s growth as a repository the images being used within an area of sci­
+entific research communication might reveal changes and continuities in the
+visual cultures of these scientific endeavours. As we have already noted, scien­
+tific imaging has undergone many changes over three decades. However these
+changes are not simply the result of new technological developments within a
+particular field of research. Rather, we have witnessed an entirely new approach
+to the organisation, deployment and operations of images in the sciences. While
+there has been a huge uptake of images as data within varied areas of scientific
+research, there has been little investigation by either STS or visual studies as
+to what sociotechnical relations or implications this might have.22 In our explo­
+ration of the arXiv dataset, we were especially drawn right from the start to the
+category of computer vision as an area of increased publication submission by
+arXiv authors, which historically tallies with both the rise of this as a research
+field; and as one concerned with and deploying statistical imaging processes
+and methods.
+It is clear that within articles communicating scientific research such as those
+found within arXiv, images cannot simply be understood instrumentally or illus­
+tratively.23 Specific images within our dataset circulate and are re­used across
+8
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+the period of arXiv’s development, perhaps suggesting that only partial ‘views’
+of the world may circulate throughout specific communities of practice. Look­
+ing at the images within categories of publication such as computer vision within
+arXiv gives some indications of imaging practices within the empirical sciences
+and mathematics that have steadily adopted statistical approaches over the last
+28 years. It certainly does not provide a definitive contouring of a singular vi­
+sual culture or mode of working with images as a generalised tendency within
+research that utilises statistical imaging. But it can highlight some of the ten­
+dencies, frictions, and commonalities across seemingly diverse research areas.
+The images within the bulk download of arXiv preprint manuscripts lack meta­
+data annotating their scientific function within the preprint. Although the preprint
+publications have been structured and organised in particular ways – according
+to the authors’ uploads, arXiv guides and requirements, subject categories, and
+discipline­specific customs, which we detail later in this article – the images
+within them yield a heterogeneous aggregate that renders their (scientific) func­
+tion opaque. They contain artifacts of experiments or observations, images cap­
+tured by sensors, images found in ML datasets and images that are the outputs
+of ML processing, diagrams and drawings conveying the methods and experi­
+mental results undertaken, and diagrams/images that are transformations of the
+data that convey the ‘results’ of research.
+We hope here to convey some sense of how a ‘workable’ image dataset can be
+generated from its source data. We want to give an account, too, of the prob­
+lems and frictions that present themselves when trying to access, organise and
+query this data. We also discuss our experiments with various ML techniques,
+repurposed here to map relations of proximity (similarity) and distance (differ­
+ence) in the arXiv image dataset. We are interested in whether these relations
+render clusters of images that can be associated with different imaging styles
+or forms that then map on to specific knowledge domains signalled by arXiv’s
+‘categories.’ This can then be used to compare with, for example, increases in
+quantities of images per article within a particular category of arXiv publication.
+It should be stressed that this only produces a correlation: increased quantities
+9
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+of images published in a particular category such as computer vision with a po­
+tential shift in kinds of images in that same category, for example more sensor­
+based images appearing in that category over time (this is further discussed be­
+low). But before getting to this point we paid attention to quantitatively and
+qualitatively relating the arXiv image dataset to the metadata accompanying
+the preprint articles. This allowed us to observe the formatting and generative
+software deployed in the production of images in the (hard) sciences. Further
+to this, we have been interested in the distribution of types of images across the
+entire preprints downloaded and the distribution of such types within particular
+arXiv knowledge/discipline categories. By types, we mean a pragmatic ternary
+classification we applied to the dataset using human visual analysis and ML pro­
+cesses. This process distinguished between: ‘diagrams,’ ‘sensor­based images,’
+and ‘hybrid diagram­sensor’ or ‘mixed’ images.
+We are proposing that this conjunction of data points and techniques produces
+potential amplifications, resonances, and disjunctions across a large scientific
+image dataset, suggesting tendencies in their distribution and circulation across
+domains of scientific knowledge and practice. In downloading, organising, con­
+verting, querying, and sampling from this dataset we also highlight the particular
+challenges and difficulties of working with any large dataset. By outlining the
+steps taken to work with and gain some understanding of the data, we hope to
+give an account of some dimensions of data research that may often be rendered
+invisible, opaque or even unworthy of attention in many domains producing
+knowledge through their use of ‘big data.’ We consider all aspects of dataset
+methods important contributors to data work, and are interested in elucidating
+the various exploratory data practices and processes that emerge when working
+with data from the bottom up.
+Without denying the significant communicative functions of scientific images,
+we also consider how images in aggregate, as a large collection, might do some­
+thing more. The dataset presents a number of characteristics that we believe
+inhibit widespread use or distribution as a dataset. First, the dataset is large (2.1
+terabytes across 1.5 million article folders) and requires a number of steps to
+10
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+acquire and organise, while also being difficult to sample data subsets. Second,
+the formats of its images are inconsistent. There are a wide variety of image
+formats ranging from standard photographic (TIFF, JPEG) and web formats
+(PNG, GIF) to vector graphics (SVG), postscript (EPS, PS). Third, images in
+the dataset have varying dimensions, ratios, and image quality. Lastly, not all
+images that are used in arXiv preprints are available in source form and cannot
+be consistently retrieved from PDF articles. We outline some steps we have
+taken to mitigate and/or work within these constraints.
+
+Structuring arXiv images as a dataset
+The resources, time, and effort required to generate and structure new large
+datasets from bottom up are frequently a barrier to the diversity of datasets
+in, especially, ML research. Hence certain standardised image datasets tend
+to become benchmarks by default.24 Instead of using a standard dataset, we em­
+barked on creating this dataset with the idea that by engaging with actual data
+practices and ML techniques for images, we would, step by step, learn more
+of the computational operations with which data science engages images and
+vision.25
+Table 1: Primary image file extensions, converted to lowercase, with similar extensions combined (e.g. .jpeg and
+.jpg).
+
+extension
+eps
+pdf
+png
+ps
+jpg
+pstex
+gif
+svg
+epsf
+
+total
+
+%
+
+4223083 42.00
+3299043 32.81
+1076731 10.71
+909314
+9.04
+485452
+4.82
+23922
+0.23
+19054 0.18
+12400 0.12
+4060 0.04
+
+total 10053059
+
+11
+
+100
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+We downloaded the full allotment of source files as of December 31, 2018 –
+a total download of approximately 1 terabyte in the form of 2150 compressed
+tar archive files.26 Using an exploratory approach, our data practices shifted in
+response to the particular structures and challenges of the dataset. This required
+a recursive approach to the dataset as something whose structuring required up­
+dating as we explored and analysed the image, text, and metadata. This required
+us to do some initial steps of downloading, organising, and exploring the data in
+order to ascertain the file formats that appear commonly across the bulk dataset
+before finalising how to organise and extract the images. For example, we ob­
+served that the ways that image data has been submitted and stored in arXiv
+diverges historically and in terms of topics of research within categories. A
+shift in image formats occurs from almost entirely PostScript vector graphics
+formats (.ps and .eps) until around 2006, to PDFs and web image formats (.jpg,
+.png) assuming the larger proportion of formatting by the mid 2010s and then
+dominating in the late 2010s (see figure 2). This tracks a change from formats
+utilised primarily for printing to those captured by digital cameras and/or dis­
+tributed via the internet. Although this shift in image formats may appear to be a
+minor issue for building a dataset – commonly understood as an aspect of data
+cleaning within data science research – for us it also converges with broader
+events in the surge in and spread of ML and its increasing dependence on image
+data to build algorithms and indeed entire models.
+The use of web image formats (.jpg and .png) for images embedded in preprints
+is particularly interesting since it might suggest that such images are already in
+online circulation prior to becoming figures in a scientific paper. This may sim­
+ply be because such images have already appeared in research blogs or online
+conference proceedings. But it also suggests that images that are on the web
+exist as scrape­ready for scientific research; that is, able to be downloaded en
+masse. The potential for web formatted images to become data resources is also
+aided by the fact that many social media platforms that use web formatting for
+their images also provide APIs that allow for external image collection matched
+to labels. The well known case of IBM’s 99.2 million webscrape of Flickr to
+
+12
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Figure 2: Stackplot of image file extensions for all arXiv preprint submissions by year.
+
+produce its facial image dataset ‘Diversity in Faces’ is a case in hand.27
+The PDF format also tells a story about the circulation and distribution of image
+data (or for that matter, text, fillable forms, pop­up comments, video and audio
+material, semantic tags and so on). The key characteristics of the PDF format in
+the context of this research is its standardisation, which makes it cross­platform
+reliable and queryable.28 What we would suggest, then, is that the shift in for­
+matting to both web­based and standardised formats for images in arXiv from
+2010 onwards indexes and contributes to a broader shift in the status of im­
+ages as potential data source. That is to say, while image content and its com­
+municative function retains a degree of importance for scientific publication,
+they by no means exhaust the productive capacity of arXiv’s images. Instead,
+arXiv’s image formats attest to images as vectors for mass collection, exchange,
+distribution, and storage. In another context, Jonathan Sterne has coined the
+13
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+term ‘perceptual technics’ to foreground how media channels and storage can
+be economised so as to grab corporate share of a perceptual modality such as
+hearing.29 The shift of image formatting to web­based and cross­platform also
+charts the transformation of seeing images from something that is human­based
+to a form of seeing that is now organised via operations of data processing. In
+our approach to structuring arXiv images as a dataset, we have spent time on
+aspects such as data extraction and sampling in order to see how data points
+might resonate with sociotechnical events.
+ArXiv bulk source data is separate from article metadata, requiring additional
+steps to link image data to article metadata such as author, category, or publi­
+cation date. In order to index the images with their associated article metadata,
+we created a SQLite database with three tables: metadata with rows for each
+article; images with rows for each image file (see table 2); and captions for
+text related directly to images. For metadata, we used a primary key of a unique
+number, and inserted the identifier, date created, categories, authors, title, ab­
+stract, and licence.
+Table 2: Example of metadata associated with individual image files.
+
+id
+identifier
+filename
+filesize
+path
+x
+y
+imageformat
+
+example 1
+
+example 2
+
+4876126
+cs0007002
+gouala05.eps
+145239
+./0007/cs0007002
+663
+300
+PS
+
+2209549
+0906.0725
+belleescan_b.eps
+842045
+./0906/0906.0725
+1450
+725
+PS
+
+The vast majority of image files within arXiv contain metadata relating to the
+software that created or last exported that image. For each image in the dataset,
+we ran a query using exiftool, which reads the EXIF (Exchangeable Image
+File Format) metadata. After some initial testing, it was found each image gener­
+ally had data written in either the “Creator,” “Software,” “Comment” or “Desc”
+14
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+field that related to software or applications used to edit or create the image and
+so this was also added. Once both tables have been created, it is possible to per­
+form SQL queries that pair the associated metadata with a given image. This
+allows us to create queries and perform analyses where the image data can be
+linked to subject categories or date.30
+
+Querying and analysing the image dataset
+ArXiv provides some interesting statistics concerning submission to the repos­
+itory over time and by category.31 We supplement these with statistics that are
+specifically about the images held in the repository (see table 3). We have also
+used arXiv user submission statistics in the choices we made in the image sam­
+pling. For example, noting the peak periods of publication dates across October
+and November in 2018, we used articles submitted in October 2018 from which
+to sample a larger range of images. At a later point in this project, it may be
+possible to correlate or compare data points across years and categories more
+widely.
+Table 3: Metadata statistics for arXiv image dataset. Calculated after filtering data for primary image formats.
+The given percentages refer to the proportion of this total number of images.
+
+Total articles
+Articles with at least one image
+PDF­only articles
+A
+TEX/LTEX source code only
+
+1, 476, 538
+1, 038, 305 (70.32%)
+114, 132 (7.72%)
+324, 101 (21.95%)
+
+Total number images 10, 053, 059
+
+Across the 1.47 million arXiv papers, 70.32% contain at least one image. Of
+these articles with at least one image, the average number of images is 9.68. Ta­
+ble 4 shows the “creator” field in the metadata of image files. The largest single
+result from this is 8.72% of images being created by some version of MAT­
+LAB, with Mathematica and Matplotlib also frequently used. The majority of
+the most commonly used software formats generate images programmatically,
+15
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+which suggests a direct connection between data processing and figure genera­
+tion. Of the top results, Adobe Illustrator (2.63%), GIMP (GNU Image Manip­
+ulation Program, 2.06%), Adobe Photoshop (0.76%), Inkscape (0.32%), and
+perhaps OmniGraffle (0.31%) suggest more manual image editing via a graph­
+ical user interface. PowerPoint (0.50%) and Keynote (0.38%) suggest using
+presentation software to either create or export images. The other results show
+a diverse mix of software applications, command line tools, and plugins that
+may be used to generate postscript files. Such metadata suggests software and
+data practices within specific knowledge communities in the sciences pointing
+toward increased usage of scripted or automated image generation, particularly
+through the use of scripting or programming languages.
+
+16
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Table 4: Top results for image metadata in the ”creator” field across all image files in the dataset. Metadata
+cleaned and collated. Percentage refers to the proportion of total number of images. Only entries with greater
+than 20k images shown. For full results of this data by year, see full creator table.
+”creator”
+
+total
+
+%
+
+none
+MATLAB
+Mathematica
+matplotlib
+IDL
+gnuplot
+cairo
+fig2dev
+SM
+ROOT
+Illustrator
+Grace
+dvips
+TEX
+GIMP
+Ghostscript
+OriginLab
+HIGZ
+R
+PGPLOT
+ImageMagick
+CorelDRAW
+jpeg2ps
+PScript5
+Photoshop
+Acrobat
+PowerPoint
+XV
+Ipe
+Keynote
+xmgr
+PSCRIPT
+inkscape
+OmniGraffle
+LATEX
+Preview
+GraphicConverter
+FreeHEP
+
+1997457
+876177
+492318
+491001
+404852
+396484
+388108
+349381
+268902
+265278
+263934
+237719
+232165
+209613
+207108
+199064
+168350
+144720
+143164
+128704
+123697
+91453
+87546
+77136
+76648
+72191
+50187
+47320
+43498
+37964
+37831
+36755
+32036
+30788
+30473
+24770
+24124
+23621
+
+19.87
+8.72
+4.90
+4.88
+4.03
+3.94
+3.86
+3.48
+2.67
+2.64
+2.63
+2.36
+2.31
+2.09
+2.06
+1.98
+1.67
+1.44
+1.42
+1.28
+1.23
+0.91
+0.87
+0.77
+0.76
+0.72
+0.50
+0.47
+0.43
+0.38
+0.38
+0.37
+0.32
+0.31
+0.30
+0.25
+0.24
+0.23
+
+17
+
+application type
+­
+computing system
+computing system
+plotting library
+programming language
+graphing utility
+graphics library
+conversion utility
+plotting program
+data analysis framework
+vector graphics editor
+plotting tool
+conversion utility
+typesetting system
+manual image manipulation
+postscript rendering software
+data analysis software
+graphics interface
+programming language
+graphics library
+image software suite
+vector graphics editor
+image conversion utility
+graphics renderer
+manual image manipulation
+PDF manipulation
+presentation software
+image manipulation
+vector graphics editor
+presentation software
+plotting tool
+postscript printer driver
+vector graphics editor
+manual diagram editor
+typesetting system
+image viewer and editor
+image viewer and editor
+vector graphics library
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+Figure 3: Relative number of articles per arXiv primary category, 1991­2018. Only categories with article
+counts > 1000 shown.
+
+Prior to thinking about the distribution of images across categories in arXiv, we
+18
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+wanted to get a sense of the overall rates and quantities of preprints being sub­
+mitted in different disciplines (categories) across the whole of arXiv’s life as
+a repository. Figure 3 shows the number of articles in each primary category,
+gleaned from querying the arXiv bulk download. There are four categories with
+significantly higher numbers of articles: hep­ph (Physics: High Energy Physics
+– Phenomenology), astro­ph (Physics: Astrophysics), hep­th (Physics: High
+Energy Physics – Theory), and quant­ph (Physics: Quantum Physics). This is
+unsurprising given the origins of arXiv, which began as a physics preprint repos­
+itory. ArXiv’s own statistics demonstrate the high participation of these disci­
+plines in submission to the platform. Paper submissions are primarily spread
+between physics, computer science, and mathematics, with the incoming rate
+for 2019 at 40.9% physics, 27.8% cs, and 22.5% math.32
+Figure 4 shows the relative percentage of publications submitted in a given cat­
+egory across years from 1991­2018. This figure shows how certain fields have
+remained relatively consistent, such as many of the math disciplines, whereas
+other fields spike or grow exponentially in recent years. Computer Science dis­
+ciplines appear to have the largest growth in the late 2010s, shown by cs.CV
+(Computer Science: Computer Vision), cs.LG (Computer Science: Machine
+Learning) or cs.RO (Computer Science: Robotics). Figure 4 shows only rel­
+ative growth and is of course highly dependent on a number of factors such
+as the overall use of arXiv and the specific discipline participation habits for
+sharing preprints via this platform. However, it indicates a trend of increased
+preprint publishing in several disciplines that deploy or target ML in and for
+their research.
+Figure 5 shows the average number of images per article for the top­16 cate­
+gories, ordered by largest number of images. There is significant growth in the
+number of images, particularly in recent years. The most striking subplot is
+the exponential increase in the number of images per article in preprints sub­
+mitted to cs.CV (Computer Science: Computer Vision), as well as a significant
+upwards trend for average number of images in preprints in cs.LG (Computer
+Science: Machine Learning). We could speculate that this is connected to the
+19
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+Figure 4: Percentage of articles published by year in a given category, 1991­2018. Top­60 categories by article
+count shown. For the full list of categories refer to http://arxitics.com/help/categories.
+
+20
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Figure 5: Average number of images per article by year in each category. Ordered by total images in a category,
+largest to smallest, top­left to bottom right. Top­16 categories only shown here. Total number of images in
+category indicated under category subtitle.
+
+ways in which image­related and based work have begun to feature more promi­
+nently in tasks such as classification, recognition, and analytics, part of the suite
+of computational and data operations that now permeate and define fields such
+as computer vision. There is also an upwards trend in categories such as astro­
+ph.GA (Astrophysics of Galaxies), which may also be related to an adoption of
+similar image processing practices.33 The most significant results shown here
+are large increases in image numbers in cs.CV, cs.LG and stat.ML, especially
+from 2013 onwards. More work would be required to trace the changes in im­
+age types and numbers of images, especially as they relate to ML within non­CS
+disciplines that may have adopted these practices.
+Overall, we gained two major insights from our querying of the arXiv image
+dataset. First, the formats and metadata associated with these images provide
+21
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+an awareness of what other computational processes images are subjected to,
+where they circulate across platforms and networks and what computational
+image practices are deployed by different scientific communities. Second, by
+looking at the quantities of image data in relation to the categories or knowledge
+domains in which they are submitted for preprint, together with information
+about formatting and software used to create images, we begin to get a sense
+of a meshwork that enfolds image production, exchange and circulation. This
+meshwork underpins the practices of sciences at the level of computational and
+platform infrastructure. Although not ‘located’ anywhere in the sense in which
+we ordinarily understand infrastructure, nonetheless this meshwork supports the
+increasing prominence of images as ‘data’ of and for scientific research.
+
+Tendencies of the image dataset
+In order to initially gain a sense of what broader image forms might be pop­
+ulating the arXiv image dataset, we randomly sampled subsets of 144 images
+from different categories and years. These were then analysed and compared
+for variations in image types and forms. As with any dataset of this scale, it
+is difficult and time­consuming to physically look at a large number of sam­
+ples. This presents an interesting challenge to an investigation of the aesthetic
+tendencies of such image forms. Our approach has been to look at a number
+of randomly sampled images from across the whole dataset and from category
+subsets of cs.CV, stat.ML, and cs.AI. These latter were chosen since preprints
+submitted to these categories use statistical computational imaging techniques
+such as machine and deep learning.
+The images in figure 6 demonstrate a wide variety of image formats and styles.
+While charts and graphs dominate, there is much diversity within these forms.
+For example, there are a number of bar graphs that use different colours, spatial
+arrangements, borders and layouts (such as the placement of a key). Scatter­
+plots similarly take many different forms. There are also a number of heatmaps
+that stand out in their use of strong gradations of intense colours. We broadly
+22
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Figure 6: Montage of 144 images sampled randomly from the entire arXiv image dataset, images have been
+resized to fit within a 240x240 pixel square. Here we see a diverse collection of images. Image credits.
+
+labelled these kinds of images: diagrams, thinking here of their demonstrative
+or illustrative functions. There are, on the other hand, several images captured
+with sensors. Some images appear to be computer­generated simulations of 3D
+objects or spatial data, as well as schematics and diagrams of technological ap­
+paratuses. A number of images composed of symbols and lines appear in this
+sample that could be describing experimental conditions or presenting mathe­
+matical formulas. There are also artifacts of ML computer vision processes, po­
+tentially produced at a particular neural network layer or perhaps vectors used
+23
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+for facial recognition, e.g. as found in eigenfaces.34
+
+Figure 7: Montage of 144 images taken from October 2018 with a primary category of cs.CV. Image credits.
+
+The images sampled from the primary category of cs.CV (Computer Science:
+Computer Vision, figure 7) display a different distribution of image forms.35
+Here we see many more photographic images, images of drawings or artworks,
+medical imaging, maps, satellite imagery, and segmentation maps. A number
+of the images appear to have been processed for edge detection, quality reduc­
+tion, or have overlays added. There are a number of diagrams (graphs, charts,
+plots, and heatmaps) although far less than in the random sample seen in fig­
+ure 6. Many of the images here appear to show images found in common ML
+24
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+datasets such as MNIST/Fashion MNIST.36 Images from MNIST show hand­
+written digits, while Fashion MNIST shows garments, both in low resolution,
+grayscale images. In this sample there is a handwritten number “2”, and images
+that appear to show sweaters, shirts, and shoes. These images are likely to have
+had some additional computer vision processing applied.37 Through manually
+labelling a training dataset and then using the trained classifier, we estimate that
+approximately 50% of the images in this subset from cs.CV could be conceived
+of as a diagram, compared with 91.9% across the entire dataset (we detail this
+further below). Overall the images appearing in this sample seem to indicate vi­
+sual practices specific to computer vision knowledge production, where source
+images are data inputs; and to its modes of knowledge communication, where
+image overlays are demonstrative of something being evidenced.
+The sample in figure 8 from stat.ML shows diagrams to comprise approximately
+80% of image types. The whole sample set features similar forms as cs.CV
+including graphs and charts, as well as photographic images with overlays. A
+number of images appear as multiples, such as the images of traffic intersections,
+which we have observed occurring across subject categories such as cs.CV and
+stat.ML. Compared to the cs.CV sample, there is a much higher proportion of
+diagrams and these appear to have more variation in their forms – bar graph,
+plot, flow chart, heatmap, tree diagram, scatterplot, 3d plot and so forth. The
+montage of images from cs.AI in figure 9 shows an even higher proportion
+of diagram images. From labelling each image in the montage manually and
+calculating totals, diagrams make up ~90% of the total images. There are only
+a few images that may have involved a (photographic) sensor. The diagrams are
+scatterplots, geometric schematics, bar graphs, heatmaps, 3d plots, flow charts
+and logic diagrams. In cs.AI, diagrammatic images could indicate the gathering
+of data into visually demonstrative forms; potentially suggesting a propensity
+to visually explain or communicate AI architectures.
+The majority of images across the dataset as a whole could be considered as
+some sort of diagram; that is, a set of lines that draw parts, whole, elements,
+and relations as processes, systems, apparatuses or other assemblages. Within
+25
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+Figure 8: Montage of 144 images taken from October 2012 with a primary category of stat.ML. Image credits.
+
+the diagram subset, there are a number of forms that stand out such as graphs,
+charts, scatterplots and heatmaps. Many of these forms gather and compress ex­
+perimental measurements or observations into a graphic form whose contours,
+spatial relations, labelling, and color indicate trends, correlations, groupings,
+or patterns. Drawing on other broadly pragmatic uses of the term from sci­
+entific literature we bring these under the umbrella of ‘diagram’: “Diagrams
+are graphic representations used to explain the relationships and connections
+between the parts they illustrate.”38 There is a smaller percentage of images
+within the dataset that appear to have been captured by a sensor such as a cam­
+26
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Figure 9: Montage of 144 images taken from 2012 with a primary category of cs.AI. Image credits.
+
+era. These include photographs or other kinds of sensor­produced images but
+also include overlays such as bounding boxes or motion arrows. A number
+of images within the dataset could be considered as mathematical formulae, pri­
+marily composed of symbols and equations. We assume that these appear where
+the authors did not choose to use TeX/LaTeX for their typesetting but instead
+created the images and inserted them into their documents separately. Finally,
+there are images such as 3D renderings, or images that are composite overlays
+of part­sensor and part­diagram that do not fall into either the diagram or sensor­
+based type. We call such images ‘mixed.’ For most subject categories in the
+27
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+arXiv, there are a large proportion of diagrams and a much smaller proportion
+of images that may have been produced by sensors and mathematical figures as
+we indicate in figures 6 to 9.
+To estimate the ratios of these different types of images, we trained a neural
+network classifier that would predict whether an image most closely resembled
+a ‘diagram,’ ‘sensor’ or ‘mixed.’39 To build a training dataset, we manually
+labelled 9748 randomly sampled images. The decision to create a ternary clas­
+sifier with a ‘mixed’ category was intended to capture and highlight the varied
+operations being performed by images across different kinds of knowledge do­
+mains. For example, in our initial querying of image distribution in the dataset,
+we noticed clusters of images that appeared to be somehow sensor­generated yet
+re­organised through graphic overlays that seemed to suggest they were being
+set within a diagrammatic schema. For our purposes, then, a ternary labelling
+and classification of the images allowed us to view the shifting ratios of image
+types across arXiv. Our training set produced: 8649 (88.7%) images as ‘dia­
+gram,’ 477 (4.89%) as ‘sensor’ and 622 (6.38%) images as ‘mixed.’
+We then trained a VGG­16 classifier using the labelled data.40 This model was
+then used on new data inputs in order to give a rough estimation of the chang­
+ing distribution of sensor­diagram images. Our ternary classifier achieves an
+accuracy of 92.07% on the cross­validation dataset. On unseen samples, the
+classifier predicts 91.9% of images to be diagrams, 2.1% of images to be sen­
+sor, and 6.0% to be mixed. This indicates that the classifier is getting similar
+results to our HIT labels, but the reduction in sensor images in a label with
+limited data may also point to overfitting the training data, with an increased
+tendency to predict either diagram or mixed. This process of classification was
+used to inform our choices of arXiv categories to look at more deeply and to
+query the features of images across time in specific fields of scientific research.
+Since this is all highly dependent on the labelling process, random image sam­
+pling, and training of the network, these results (shown in figure 10) are only a
+preliminary guide for further research and inquiry.
+
+28
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Figure 10: Ratio of diagram/sensor/mixed image classifications predicted using custom ternary classifier. Max­
+imum of 2000 images sampled from any given category­year combination. Categories shown are hand selected.
+Image with all categories.
+
+Interestingly for our concerns, the category of cs.CV shows an increasing trend
+in the last decade away from diagram­type images towards an almost even three­
+way split between diagram, sensor, and mixed, as seen in Figure 10. As such,
+cs.CV is moving towards a much higher ratio of sensor­based images than com­
+parative categories. The stat.ML category exhibits a similar trend, although not
+to the same degree. Categories such as astro­ph and related astrophysics fields
+are predicted to contain a majority of diagram images, remaining consistent
+across the time period sampled. Categories such as nlin.CG (Physics: Cellular
+Automata and Lattice Gases) and cs.GR (Computer Science: Graphics) are pre­
+dicted as containing a high proportion of ‘mixed’ images. The aforementioned
+cs.CV category is predicted as having the highest proportion of ‘sensor’ images,
+unsurprising given the content and source material that computer vision often
+works with.
+Due to the enormous number of images, we chose to limit our initial inquiry to
+29
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+only a few categories. Here, we specifically focus on looking at images from
+cs.CV (Computer Science: Computer Vision and Pattern Recognition), cs.AI
+(Computer Science: Artificial Intelligence), and stat.ML (Statistics: Machine
+Learning).41 We expected that cs.CV and stat.ML would have increased num­
+bers of images in the time following significant ML, deep learning, and image
+processing developments such as ILSVRC 2012, when a deep neural network
+was used to significantly improve upon previous results.42 The initial metadata
+statistics and image form analysis confirms this and shows that there is an in­
+crease in images being submitted in preprints in these categories. Additionally,
+there is a shift away from the use of diagrams in the preprints in these cate­
+gories and towards other image types (both sensor­based and ‘mixed’ images)
+becoming more prevalent.
+The montages and classifier results give us a sense of the quantities, types and
+proportions of images/types we might find in specific categories of arXiv im­
+ages, but they do not show us anything further about the relations of these im­
+ages to each other or their circulation throughout the corpus of research that
+comprises arXiv. We wanted to get a sense of how images, whether diagrams,
+sensor­based or hybrids of the two, move in and out of proximity and/or dis­
+tance to each other. We aimed also to explore preoccupations with a particular
+type of image within a category or domain of knowledge production. Querying
+and providing a 2­D mapping of the ML methods we have used to think about
+the images of arXiv shows the distribution of such images according to cate­
+gories – or domains of knowledge production in the sciences – via relations of
+image­centric proximity to and distance from each other. A classifier is used in
+data science to group members into separate classes in which the class denotes
+a consistent similarity of some particular thing. We have used a form of super­
+vised learning in which we initially trained our classifier according to a set of 3
+classes that were manually labelled: that is, the classes of images belonging to
+‘diagram’, ‘sensor­based’ or ‘mixed’. Once trained the classifier was then run
+over the publication submission history of particular arXiv categories. Another
+ML method for looking at spatial distribution of similarity and differences via
+
+30
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+clustering of data is the t­SNE algorithm. t­SNE does this by performing dimen­
+sionality reduction and placing all images in a 2­dimensional spatial mapping,
+which can then be analysed visually by human eyes.
+
+Figure 11: Visualisation of t­SNE dimensionality reduction run on 8381 images from cs.CV from 2012. Shows
+distribution of images according to the ML process. Grouping of the same “cameraman” image circled in red.
+Image credits.
+
+We ran a t­SNE algorithm across various subsets of images in order to look
+for patterns of similarity, without any explicit reference to disciplinary bound­
+aries.43 We took a VGG­16 CNN model, pre­trained on ImageNet and used the
+second last fully connected layer to obtain image features.44 This provides a
+4096­dimension feature vector for each image – much smaller than the original
+pixel data but embedded with specific features of the classifier network. Princi­
+ple component analysis, a standard process in ML dimensionality reduction, is
+then applied to this feature vector to reduce the size of the vector and remove
+redundancy. This allows us to convert the 4096­dimension vector to 300 di­
+mensions, while retaining almost all of the variance. t­SNE is then used to find
+31
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+two­dimensional coordinates for each of these image vectors, which can then
+be used to plot the original images in 2­dimensional space. It does this by iter­
+atively calculating the nearest neighbours for each data point (each image) and
+reorganising the two dimensional output until the data is placed optimally.45
+The results of this process create vectorised observations drawn from the fea­
+tures of the images such as textures, colours, and contours.
+
+Figure 12: Visualisation of t­SNE dimensionality reduction run on 2889 images with a primary category of
+stat.ML from 2012. Image credits.
+
+We can glean the distribution of image forms from the proximity and clustering
+of images across the particular categories/years/formats being queried. In the
+t­SNE mapping of cs.CV images in figure 11, there are small separate periph­
+eral image clusters that seem to group according to colour content or shapes
+within the image. Images with white backgrounds such as graphs and charts
+appear mainly in the upper half of the distribution, separated from the predom­
+inantly greyscale images that fall mainly across the lower half. A cluster of
+32
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+the same photograph of a man looking through a camera (a public­domain test
+image often used in MATLAB, titled “cameraman”46 ) appears at the centre of
+the left side as a distinct group (circled in figure 11). Two main vectors domi­
+nate the distribution of images here: the separation of some images into distinct
+groupings (or clusters) in which repeated image content or repeated dominant
+features are found; and the overall organisation of the larger group of images
+according to colour content. Here the central cluster moves top down from pre­
+dominantly white background images, to some distinct colours, to images that
+are largely gray, and then finally to images that are mostly muted colours. This
+also coincides with our quantitative findings on ratios of image types within
+stat.ML, shown in figure 10. In 2012, this category had a much higher propor­
+tion of diagram­type images, appearing in the t­SNE visualisation as the large
+spread of white­background images on the entire left­hand side. There is a much
+smaller proportion of photographic images, towards the centre­right, including
+the “cameraman” image at the far right edge.
+The clustering found in the t­SNE images shows that features acquired through
+the VGG­16 pre trained classifier are working to seriate images along specific
+vectors. Here larger image types that we have classified as diagrams, sensor­
+based, and hybridised diagram­sensors (or ‘mixed’) drive a macro­observation
+of such vectors. But zooming in on, for example, the stat.ML t­SNE and focus­
+ing on the diagram images (see figure 12), we can see other kinds of distribution
+relations emerging between the diagram forms themselves. In the figure 13 de­
+tail, features such as slope of lines, repetition and comparative repetition, small
+multiples, and colour have a generative effect on clustering. For example, the
+grouping of images in the top­right of this detail mostly involves small mul­
+tiples of comparative graphs, while the images towards the centre­left mostly
+show logarithmic curves. But also interestingly, the further one zooms in to
+the t­SNE, the more the distinctiveness of clustering as definitive diagram form
+falls off. Instead all the clusters tend toward all other clusters in their proximity.
+A patterning of diagram relations at the level of variable similarities emerges.
+From this, we propose that the ML and deep learning techniques we use func­
+
+33
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+Figure 13: Detail of stat.ML 2012 t­SNE shown in figure 12.
+
+tion to observe a transversal plane in the image arXiv dataset. Moving across
+this transversal plane affords a different way of seeing image relations, tenden­
+cies and potentially their associations with scientific communities of practice.
+t­SNE and VGG processes traverse the plane without predicating any represen­
+tational or indexical function. Yet they do more than act as simple quantitative
+segmentations of the image data. They offer us tendencies that images as forms
+might be following in relation to a large corpus of scientific research and how
+such forms might be moving in relation to each other and the epistemological
+endeavours in which they are engaged.
+34
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Conclusion
+Exploratory approaches to large image datasets can be of interest to data scien­
+tists and to transdisciplinary researchers in the postdigital humanities, software
+studies, and critical AI studies. They are especially resonant in contextualising
+the trans­contextual flows of changing visual techniques as they percolate across
+scientific fields and subfields. It is somewhat ironic that in aggregating a large
+image dataset, that incorporates images from the very sciences most focused
+on their labelling and recognition, we discover the lively ‘resistance’ of such
+images to classification. This ‘resistance’ lies not simply at the level of size and
+format – typically understood as data cleaning problems – but at the interlacing
+of image types found in preprint publishable scientific research. One lesson of
+the arXiv image dataset, a dataset rooted in epistemically privileged contem­
+porary sciences such as physics, computer science, mathematics, and statistics,
+is that categories do not necessarily map onto image form; indeed they might
+mask the meshwork of images. The endemic diagram­type images in arXiv con­
+founds current database ontologies that are maximised for specific ML and deep
+learning tasks such as face and object recognition, making ‘scientific images’
+in their heterogeneity themselves largely unclassifiable with current tools. Our
+explorations have led us someway down a path toward a rough ternary mode of
+classification of images of arXiv. But we have also discovered that there seems
+to be no standard statistical method for segmenting their image ‘forms’ because
+the forms present continuous variation across classificatory boundaries. If we
+have asked why no attention has been paid to such images then our explorations
+demonstrate that more attention is due.
+In making image formatting a point of interest in our exploration of the arXiv
+image dataset metadata, it has been possible to speculate about the relation of
+formatting to other recent trends in the relations of images to little remarked
+visual practices of ML and computation more generally: web­scraping for data
+collection and increased cross­platform circulation of images particularly stand
+out. Ongoing research in this project will continue to link aspects of the meta­
+
+35
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+data such as the ‘creator’ information to keyword searches performed on the
+image captions. We hope this might render some relations between the mode
+of generating images (programmatically or manually, for instance) and images
+that are direct outputs of ML­oriented research. This, we suspect, may begin to
+circumscribe what ML as a research practice ‘looks like.’
+An empirically exploratory approach to large (scientific) image datasets is not
+context­free, but addresses the challenge of crafting ways to engage with the
+circulatory visual cultures of the sciences, especially those that are ML­focussed
+or associated. Our research and approach is interested as much in the dataset
+relations ML techniques reconfigure as the ‘imagistic’ nature of contemporary
+science image data. Our ‘experiments’ in assembling a large image dataset and
+our visual/ML observations of it have been recursive, often involving a return
+to running a new process on earlier quantitative findings. This has allowed us
+to remain ‘open’ to the dataset itself, while acknowledging that each return is
+also a computational incursion into and reconfiguration of the image data itself.
+This is not so unlike any work on large datasets and the building of ML or
+deep learning models. Data work today involves: running many iterations or
+‘epochs’; constant tweaks and optimisations of data and parameters; and the
+inevitable discovery that predictions expose over and underfitting. We suggest
+that an experimental embrace of this recursivity might also facilitate knowledge
+of another kind of visuality for contemporary scientific images, that takes into
+account their immanent circulatory relations and the technical infrastructures
+and operation through which they circulate.
+
+Acknowledgments and disclosure of funding
+The authors thank the reviewers for their valuable feedback. The full title of this
+project is: ‘Re­imaging the Empirical: statistical visualisation in art and science’
+(2017–2021). Professor Anna Munster (University of New South Wales) is lead
+investigator and collaborating with Professor Adrian Mackenzie (Australian Na­
+tional University) and Dr Kynan Tan, Postdoctoral Fellow (University of New
+36
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+South Wales). This is a Discovery Project funded by the Australian Research
+Council.
+
+Notes
+1
+
+Further information about the broader project, especially concerning our aims and methods, is available at:
+https://github.com/re­imaging/re­imaging/wiki.
+2
+
+Michael Friendly, “A Brief History of Data Visualization,” in Handbook of Data Visualization, ed. Chun­houh
+Chen, Wolfgang Karl Härdle, and Antony Unwin (Springer Science & Business Media, 2007), 42ff.
+3
+
+Janet Vertesi, Seeing Like a Rover: How Robots, Teams, and Images Craft Knowledge of Mars (Chicago, IL
+and London: University of Chicago Press, 2015); Catelijne Coopmans et al., Representation in Scientific Practice
+Revisited (Cambridge, MA: MIT Press, 2014); Lorrraine Daston and Peter Galison, Objectivity (Brooklyn, NY:
+Zone Books, 2007).
+4
+
+Christopher Andreas Clark and Santosh Kumar Divvala, “Looking Beyond Text: Extracting Figures, Tables
+and Captions from Computer Science Papers” (2015), 2.
+5
+
+Figures, such as plots, graphs and charts, are “used to display trends and patterns of relationship, but they can
+also be used to communicate processes or display complicated data simply.” The Writing Centre UNC, “Figures
+and Charts,” 2020, University of North Carolina, accessed June 25, 2020, https://writingcenter.unc.edu/tips­and­
+tools/figures­and­charts/. See also, Scott Mogull and Candice Stanfield­Wiswell, “Current Use of Visuals in Sci­
+entific Communication,” Proceedings of the IEEE, July 2015, 1–6, https://doi.org/10.1109/IPCC.2015.7235818.
+6
+
+Olga Russakovsky et al., “ImageNet Large Scale Visual Recognition Challenge,” International Journal of
+Computer Vision 115, no. 3 (2015): 211–52, https://doi.org/10.1007/s11263­015­0816­y.
+7
+
+An entire subfield of ML research is now devoted to ‘explainability’ of the black boxes of, especially, neural
+networks. Visualisation is used in the form of diagrams, gifs, videos and interactive interfaces that attempt to
+demonstrate what is happening at the computational and statistical level of a model’s operations. See for example,
+Giuseppe Casalicchio, Christoph Molnar, and Bernd Bischl, “Visualizing the Feature Importance for Black Box
+Models,” in Machine Learning and Knowledge Discovery in Databases, ed. Michele Berlingerio et al. (Cham:
+Springer International Publishing, 2019), 655–70.
+8
+
+Bruno Latour, “Visualisation and Cognition: Drawing Things Together,” in Knowledge and Society: Studies
+in the Sociology of Culture Past and Present, ed. H. Kuklick, vol. 6 (Greenwich, CT: Jai Press, 1986), 1–40;
+Bruno Latour and Steve Woolgar, Laboratory Life: The Construction of Scientific Facts (Princeton, NJ: Princeton
+University Press, 1986), 45ff.
+9
+
+The diverse contributions that make up the anthology Representation in Scientific Practice Revisited are in­
+dicative of this doubled performativity of inscriptions. Coopmans et al., Representation in Scientific Practice
+Revisited.
+
+37
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+10
+
+The early approach to STS investigations of the use of visual materials in science was based in an ethnography
+of specific science laboratories and communities of practice. Some of this important work continues and also tries
+to contend with the highly distributed infrastructure of scientific practices and communications (for example in
+Janet Vertesi’s work already cited). We are suggesting that in looking at how images circulate across different
+fields of scientific practice and the mechanisms for such circulation, which include both preprint repositories and
+image datasets, we need to take into account a different form and mode of circulation. This is no longer the
+direct work of what images or scientists do but is part of an entire technical and platform infrastructure and set of
+operations, which surpass the ‘traditional’ representational work of images or the various ways scientists represent
+their findings.
+11
+
+James E. Dobson, Critical Digital Humanities: The Search for a Methodology (Champaign, IL: University
+of Illinois Press, 2019). We also draw on the spirit of Joanna Drucker’s approach here, when she makes a case
+for ambiguity and contradiction as key to graphical methods that are used to visualise data. See Johanna Drucker,
+“Graphical Approaches to the Digital Humanities,” in A New Companion to Digital Humanities (John Wiley &
+Sons, Ltd, 2015), 238–50.
+12
+
+See for example, Claus Weihs and Katja Ickstadt, “Data Science: The Impact of Statistics,” International
+Journal of Data Science and Analytics 6, no. 3 (2018): 189–94, https://doi.org/10.1007/s41060­018­0102­5.
+13
+
+arXiv is owned and operated by Cornell University as an online open access repository. “arXiv.Org e­Print
+Archive,” 2020, accessed October 16, 2019, https://arxiv.org/.
+14
+
+Colin B. Clement et al., “On the Use of ArXiv as a Dataset,” April 30, 2019, 1, arXiv: 1905.00075. We also
+acknowledge that there are other preprint repositories that act to disseminate scientific research and debate through
+online platforms. One example is bioRxiv, accessible at https://www.biorxiv.org/. However, arXiv is the largest
+open access repository which also provides access to the repository itself as a bulk data download. It was this latter
+aspect that made it suitable to our research interests.
+15
+
+Alessandro Delfanti, “Beams of Particles and Papers: How Digital Preprint Archives Shape Authorship and
+Credit,” Social Studies of Science 46, no. 4 (2016): 629, https://doi.org/10.1177/0306312716659373.
+16
+
+For statistics and analysis provided by arXiv.org, see “arXiv Submission Rate Statistics,” 2020, accessed
+March 13, 2020, https://arxiv.org/help/stats/2018_by_area/index.
+17
+
+Sergio Sismondo, “Sorting on arXiv: Introduction to an Ad Hoc Section:” Social Studies of Science, August 23,
+2016, https : / / doi . org / 10 . 1177 / 0306312716661429; Luis Reyes­Galindo, “Automating the Horae: Boundary­
+Work in the Age of Computers:” Social Studies of Science 46, no. 4 (2016): 586–606, https://doi.org/10.1177/
+0306312716642317; Kristrún Gunnarsdóttir, “Scientific Journal Publications: On the Role of Electronic Preprint
+Exchange in the Distribution of Scientific Literature,” Social Studies of Science, June 29, 2016, https://doi.org/10.
+1177/0306312705052358.
+18
+
+“arXiv Bulk Data Access,” 2019, accessed July 10, 2020, https://arxiv.org/help/bulk_data.
+
+19
+
+TeX/LaTeX is a document preparation and typesetting system that is widely used in science and mathematics to
+format papers. See “LaTeX ­ A Document Preparation System,” 2020, accessed July 16, 2020, https://www.latex­
+project.org/.
+
+38
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+20
+
+For examples, see Clement et al., “On the Use of ArXiv as a Dataset”; Alexander A. Alemi and Paul Ginsparg,
+“Text Segmentation Based on Semantic Word Embeddings,” March 18, 2015, arXiv: 1503 . 05543; Michał Ło­
+puszyński and Łukasz Bolikowski, “Tagging Scientific Publications Using Wikipedia and Natural Language Pro­
+cessing Tools. Comparison on the ArXiv Dataset,” 2014, 16–27, arXiv: 1309.0326; and Stefan Pohl, “Using Access
+Data for Paper Recommendations on ArXiv.Org,” April 23, 2007, accessed October 10, 2019, arXiv: 0704.2963,
+http://arxiv.org/abs/0704.2963.
+21
+
+Siegel et al. use the LATEX code describing image placements found in the arXiv bulk data download for
+detecting image placement. Noah Siegel et al., “Extracting Scientific Figures with Distantly Supervised Neural
+Networks,” Proceedings of the 18th ACM/IEEE on Joint Conference on Digital Libraries ­ JCDL ’18, 2018, 223–
+32, https://doi.org/10.1145/3197026.3197040. We are not aware of other research investigating the image content
+of this dataset.
+22
+
+A notable exception is David Ribes, “STS, Meet Data Science, Once Again,” Science, Technology, & Human
+Values 44, no. 3 (2019): 514–39, https://doi.org/10.1177/0162243918798899.
+23
+
+Edward Tufte on the other hand would argue: “Graphics are instruments for reasoning about quantitative
+information.” Edward R. Tufte, The Visual Display of Quantitative Information, vol. 2 (Cheshire, CT: Graphics
+press LLC, 2001), 11. Our research suggests that images including graphics play very different roles as they
+become constituent members of aggregates or collections, for example.
+24
+
+For example, the ImageNet dataset has become the de facto standard for visual recognition challenges, as
+well as being the primary dataset for training feature extractors. See Russakovsky et al., “ImageNet Large Scale
+Visual Recognition Challenge”; Pierre Stock and Moustapha Cisse, “ConvNets and ImageNet Beyond Accuracy:
+Understanding Mistakes and Uncovering Biases,” in Lecture Notes in Computer Science (Including Subseries
+Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics), vol. 11210 (Springer Verlag, 2018),
+504–19.
+25
+
+For full technical details, code, and step­by­step instructions for downloading and organising the dataset,
+please see our github: https://github.com/re­imaging/re­imaging.
+26
+
+Information regarding the downloading of bulk data can be found at https://arxiv.org/help/bulk_data_s3.
+
+27
+
+The collection was announced in January 2019 by IBM and caused an uproar due to the lack of consent by
+users who had uploaded facial images to Flickr. Michele Merler et al., “Diversity in Faces,” arXiv e­prints, January
+2019, arXiv:1901.10436.
+28
+
+Importantly the standardisation is a result of industrial regulation by the International Standards Organisation.
+2008 was a key turning point with the introduction of PDF/E (ISO standard 24517) introduced as a special PDF
+format for technical documents in the fields of engineering, architecture and geo information systems.
+29
+
+Jonathan Sterne, MP3: The Meaning of a Format (Durham, NC and London: Duke University Press, 2012),
+
+51.
+30
+
+The SQLite database file with both metadata and images tables is available to use at https://drive.google.
+com/open?id=1FlSX3DpSQmZr9BFexAei64vuoh6zKNE6 (847 MB compressed tar archive) or with additional
+
+39
+
+I M A G E S O F T H E A R X I V: R E C O N F I G U R I N G L A R G E S C I E N T I F I C I M A G E D ATA S E T S
+
+captions table at https://drive.google.com/file/d/1Gwllzb0Iv5bt9bGY8hrwki6Z8kZTuoNR (1.3 GB).
+31
+
+“arXiv Submission Rate Statistics.”
+
+32
+
+“arXiv Submission Rate Statistics.”
+
+33
+
+To see the statistics of images per article for all categories, see https://github.com/re­imaging/re­imaging/blob/
+master/statistics/stats_images_cat_year.org.
+34
+
+M.A. Turk and A.P. Pentland, “Face Recognition Using Eigenfaces,” in 1991 IEEE Computer Society Con­
+ference on Computer Vision and Pattern Recognition Proceedings (June 1991), 586–91, https://doi.org/10.1109/
+CVPR.1991.139758.
+35
+
+The images in Figure 7 are taken from 2018 as opposed to images in Figures 8 and 9 which are taken from
+2012. This was done to select images for cs.CV that articulated the types of images appearing as the number
+of images per article increased drastically. This also shows the changing ratios of image types in this particular
+category.
+36
+
+Fashion MNIST is available at https://github.com/zalandoresearch/fashion­mnist. MNIST can be found at
+http://yann.lecun.com/exdb/mnist/.
+37
+
+These images come from the same paper, which contained a total of 584 images, see https://arxiv.org/abs/
+1810.02340.
+38
+
+Muriah J Umoquit et al., “A Multidisciplinary Systematic Review of the Use of Diagrams as a Means of
+Collecting Data from Research Subjects: Application, Benefits and Recommendations,” BMC Medical Research
+Methodology 11, no. 1 (2011): 1, https://doi.org/10.1186/1471­2288­11­11.
+39
+
+This work was performed by the three researchers on this project and assigned independently to each as a
+human intelligence task or HIT. Our decisions are of necessity biased according to our individual and collective
+approaches to labelling these categories.
+40
+
+“Keras Documentation: VGG16 and VGG19,” 2020, accessed July 16, 2020, https://keras.io/api/applications/
+vgg/.
+41
+
+The cs.LG (Computer Science: Machine Learning) category is also significant to this research, however it is
+cross­posted to stat.ML and has much in common with cs.CV. Therefore we have not used it as one of our chosen
+categories in order to cover a greater breadth of ML research.
+42
+
+Alex Krizhevsky, Ilya Sutskever, and Geoffrey E. Hinton, “ImageNet Classification with Deep Convolutional
+Neural Networks,” in Advances in Neural Information Processing Systems 25, ed. F. Pereira et al. (Curran Asso­
+ciates, Inc., 2012), 1097–105.
+43
+
+Laurens van der Maaten and Geoffrey E. Hinton, “Visualizing Data Using T­SNE,” Journal of Machine Learn­
+ing Research 9 (Nov 2008): 2579–605 We used the CUDA accelerated implementation tsne-cuda, see David M.
+Chan et al., “GPU Accelerated T­Distributed Stochastic Neighbor Embedding,” Journal of Parallel and Distributed
+Computing 131 (2019): 1–13.
+
+40
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+44
+
+Karen Simonyan and Andrew Zisserman, “Very Deep Convolutional Networks for Large­Scale Image Recog­
+nition,” September 4, 2014, arXiv: 1409.1556. We used the implementation provided by the Keras library. “Keras
+Documentation.”
+45
+
+Thanks to Machine Learning for Artists (ML4A) for code examples for this process of feature extraction. See
+“image­tsne.ipynb” in Gene Kogan and James Oldfield, “Machine Learning For Artists,” 2019, accessed Octo­
+ber 16, 2019, https://github.com/ml4a/ml4a­guides.
+46
+
+“Public­Domain Test Images for Homeworks and Projects,” 2020, accessed October 16, 2019, https://homep
+ages.cae.wisc.edu/~ece533/images/.
+
+41
+
+

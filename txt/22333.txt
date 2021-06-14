@@ -1,0 +1,1482 @@
+Journal of
+Cultural Analytics
+
+April 20, 2021
+
+Feminist Bestsellers: A Digital History of
+1970s Feminism
+Michelle Moravec and Kent K. Chang
+Michelle Moravec, Rosemont College
+Kent K. Chang, University of California, Berkeley
+Peer-Reviewer: Ian Milligan
+Data Repository: 10.7910/DVN/K1OANO
+
+ABSTRACT
+Feminism of the 1970s remains among the most influential social movements within the United States.
+Bestselling texts played a crucial role in spreading feminism beyond early activists into the mainstream of
+American society. Contemporary scholars of feminism continue to rely on these works as pivotal historical
+sources. This paper utilizes quantitative methods to compare six feminist bestsellers from 1970. Our data
+consists of three subcorpora of digitized books published in 1970 found in the Hathi Trust: six feminist
+bestsellers, a sample of non-fiction, and a sample of writing about women. Computational textual analysis
+identifies each bestselling title's salient features and the contributions each text made at this key moment in
+the development of feminist thought. These results led us to propose a historiographical intervention that
+credits one bestseller, The Black Woman, with a more prominent role in the development of 1970s feminism.
+
+Academics have long recognized 1970 as a signal moment in feminism’s history. In
+the US, it has been labeled “Feminism’s Pivotal Year” when a “wave of press
+attention” moved women’s liberation into the mainstream.”1 Histories of Black
+feminism also date “the beginning of a clearly defined Black women’s liberation
+movement” to 1970.2 In Britain and Australia, the year serves as the origin point of
+the women’s movement.3 The year 1970, however, functions as more than a
+temporal marker. As Lisa Disch noted in a special issue devoted to 1970s feminisms,
+the year, conceived “as an adjective rather than an epoch,” connotes an ideological
+position: “politically naive, . . . essentialist in its aspiration toward (straight, white,
+middle-class) ‘sisterhood’ and unselfconsciously exclusionary.”4
+From the vantage point of fifty years later, this essay offers a historiographical
+intervention into 1970s feminism through computational text analysis of six
+bestsellers from the first year of the decade.5 Today these storied texts are among
+the most read and taught works of feminism. Inclusion among considerations of “the
+books that made us feminists” offers still another indication of their canonical status,
+yet scholars have tended to discuss some of these titles more than others, reflecting
+deeply-seated historiographical viewpoints about feminism during the 1970s.6 By
+employing a new methodology to analyze these texts, we hope to unsettle
+Journal of Cultural Analytics 4 (2021): 48-74. doi: 10.22148/001c.22333
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+conventional scholarly conclusions about them. After an overview of the six books,
+we provide a brief review of scholarship about 1970s feminism and introduce our
+approach drawn from the digital humanities.
+The press tended to treat these texts as representative of the same phenomenon, the
+emerging feminist movement.7 However, they encountered varying levels of critical
+and commercial successes. In July of 1970, a dissertation by a doctoral candidate in
+literature at Columbia University became an overnight bestseller.8 Kate
+Millett’s Sexual Politics: A Surprising Examination of Society’s Most Arbitrary
+Folly, presented the "sexual mythos of our era ... which must be explored if any
+radical social change is to come.”9 The next month, British novelist Eva
+Figes’s Patriarchal Attitudes, addressing “the factors which have helped place
+women in subservient roles in most societies,” received a more modest reception and
+was all but eclipsed by The Female Eunuch in September.”10 Australian Germaine
+Greer’s text described “the castration of women . . . carried out in terms of a
+masculine-feminine polarity.”11 It appeared just as Sexual Politics entered the New
+York Times bestseller list, a feat it would equal and then surpass by attaining the
+number one spot.12 Shulamith Firestone’s The Dialectic of Sex: The Case for
+Feminist Revolution decried “the division of society into two distinct biological
+classes for procreative reproduction and the struggles of these classes with one
+another.”13 By the time it appeared in print in October, the author had withdrawn
+from public life, and the book never attained the sales success of Millett’s or
+Greer’s.14
+In addition to these four monographs, two influential anthologies also made their
+debuts in 1970. Toni Cade Bambara conceived of The Black Woman: An
+Anthology as a mass-market paperback; the smaller, cheaply produced editions
+available at many retail outlets for around a dollar.15 Cade prioritized access over the
+prestige of hardback to get the “collection of poems, stories, essays . . .[that] reflect
+the preoccupations of the contemporary Black woman in this country” into as many
+hands as possible, proving that a market for Black women’s writing existed.16 She
+succeeded. The Black Woman had a run of at least 200,000, going to a second
+printing within a month of its August 1970 publication.17 Similarly, to increase
+access, Robin Morgan negotiated a simultaneous hardback and paperback release in
+September of 1970 for Sisterhood is Powerful: Writings from Women’s Liberation,
+“a sort of introduction to the movement . . . but told in our own words.”18
+In contemporary scholarship, descriptions like “classics of 1970s feminism” provide
+a convenient shorthand for referring to these foundational works. Yet the term
+“1970s feminism” is a scholarly invention. As Clare Hemmings persuasively
+
+49
+
+F E M I N I S T BE S T SE L L E R S : A D I G I T A L H I S T O R Y O F 1 9 7 0S F E M I N I S M
+
+demonstrates in Telling Feminist Stories, this periodization creates lasting
+historiographical narratives. Whether positioned as the good old days or the
+backwards past, invocations of 1970s feminism rely on sweeping generalizations
+which invariably occlude complexities.19 Hemmings’ conclusion that narratives of
+1970s feminism erase women of color has particular relevance for this study.
+Other scholars anticipated Hemings's description of this phenomenon. Janet R.
+Jakobsen observes that “repeated reference to the 1980s as the beginning of diversity
+produces a number of narrative implications,” pointing specifically to the erasure
+of The Black Woman’s significance.20 Chela Sandoval, discussing “1970s feminist
+theory,” documents the ways “hegemonic feminism of the 1980s” appropriated
+women of color’s theorizing.21 Many of these scholars note that the usage of
+temporal markers plays into these narrativizing tendencies. Lisa Marie Hogeland,
+for example, recognizes the exclusion of “enormous and important contributions of
+women of color in the 1970s.”22 Astrid Henry similarly concludes that wave
+metaphors “enable younger feminists to present their new wave as more progressive
+and inclusive.”23
+Subsequent scholars have amplified Hemmings’ conclusion. Victoria Browne
+critiques the linear, teleological, and totalizing models of feminist history.”24 Among
+the blockbusters of 1970 considered in this article, she focuses on Firestone and
+Millett. Activist-centered studies have complicated this version of feminism’s
+history, challenging the notion that a hegemonic 1970s feminism existed outside
+academia. Kristen Hogan’s oral history interviews with participants in the feminist
+bookstore movement did not recall “1970s feminism as straight and white."25 Maria
+Cotera notes that by focusing on academics, histories of 1970s feminism create a
+“lost generation” of Chicana feminism that, like Black feminism, emerged and
+developed not outside the academy but alongside it.26 Teresse Jonsson’s analysis of
+accounts by British women’s liberationists illustrates how “anti-racist critiques
+which were made in the past (and continue to be made) must be erased from the
+narrative” to support dominant periodizations of 1970s feminism.27 Jennifer Nash’s
+recent work points out that historical narratives of 1970s feminism inevitably reduce
+Black feminism to two functions: disciplining feminism or saving it.28 As Kathi
+Weeks has suggested, however, “standard critiques of 1970s feminism” have settled
+into “orthodoxies of their own.”29 She postulates that feminism’s histories require
+temporalities that remake the past rather than merely remembering it.
+Our goal is precisely that — to remake histories of 1970s feminism by emphasizing
+the signal year and the importance of Bambara’s text in relation to more frequently
+recognized feminist literature from this era.30 As Benita Roth notes, The Black
+
+50
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Woman “is rarely treated by scholars as a product of feminist social movement
+activism,” and, as we illustrate below, it rarely receives the same acknowledgment
+in broader discussions of the achievements of feminists.31
+
+Titles
+
+word count
+
+feminist corpus
+
+6
+
+771,403
+
+women corpus
+
+142
+
+1,0450,760
+
+sample corpus
+
+300
+
+3,410,9453
+
+Sisterhood is Powerful
+
+204,160
+
+Sexual Politics
+
+191,566
+
+The Female Eunuch
+
+122,145
+
+The Black Woman
+
+99,156
+
+The Dialectic of Sex
+
+84,678
+
+Patriarchal Attitudes
+
+69,698
+
+Table 1. Corpus overview.
+Our method for analyzing feminist bestsellers from 1970 draws on the digital
+humanities. This essay is not the first to apply such an approach to bestsellers, but
+our goal is not to reveal the core features of such works. Instead, we answer specific
+historical questions using a small, albeit highly influential, set of nonfiction feminist
+bestsellers. Small corpora are unusual in the digital humanities, but in this case, the
+research question makes them appropriate. The corpus of feminist bestsellers is
+juxtaposed again two contemporaneous reference corpora: a sample of general
+nonfiction and a corpus of nonfiction writing about women drawn from the
+HathiTrust (Table 1).32 This database contained a potential pool of over 40,000
+English-language books published in 1970. Further limiting this list to titles put out
+51
+
+F E M I N I S T BE S T SE L L E R S : A D I G I T A L H I S T O R Y O F 1 9 7 0S F E M I N I S M
+
+by the six large publishers of the era and their subsidiaries resulted in just over 1,500
+works.33 We hand eliminated any book that appeared to be fictional or about women
+based on its title, resulting in a potential pool of 1,023 books, of which 300 were
+sampled. We label this the sample corpus. Any title that appeared to be writing about
+women was reserved for the second corpus, referred to as the women corpus.
+We then derive the following information about the corpora using the HathiTrust
+Data Capsule.34 For named entity recognition, we used the 3-class model of Stanford
+NER to generate the labels.35 To assist the analysis process, we used two Python
+scripts. Results for n-gram frequencies, lists of keywords, and collocates of specific
+interested words, those selected by the researcher, used in this paper were produced
+with AntConc in the HathiTrust Data Capsule.36 Tokens are separated by space.
+Keyness is measured by log-likelihood ratio.37 Collocation analysis focuses on
+selected interested words (social, change, marriage, family, love, political, and
+revolution), and collocates are defined as words that co-occur within a 10-word
+context window (five to the left of the word, and five to the right), and those with
+higher association strengths, measured by mutual information, are especially
+considered.38
+The following analysis relies on two comparisons of the corpora. Each of the three
+corpora is compared to the other two. This analysis relies solely on results produced
+in the HathiTrust Research Capsule and the results offer the broadest comparison
+among the texts, helping to contextualize feminist authors’ arguments against
+contemporary concerns. To tease out what distinguishes feminist texts’ treatment of
+women from other works of 1970, interested terms from the feminist corpus are
+compared individually to their presence in the other two corpora, as in the feminist
+corpus to the women corpus or the feminist corpus to the sample corpus. These
+calculations were performed manually using the contingency tables produced in the
+HathiTrust Data Capsule.39 Results include log ratios, a simple measurement that
+allows normalized usages of individual words to be compared across the corpora.40
+While computational analysis in the humanities is often justified by the large number
+of texts, we use the method here for other reasons. This approach may circumvent
+the tendency to see only those text features that conform to existing historiographical
+assumptions. Computational analysis does things quite efficiently that the human
+mind cannot. In this case, computer software calculated mathematical relationships
+between words. While one could feasibly count the number of times a name appears,
+computational text analysis does more than count. Collocation strength, for example
+— the likelihood of words to follow particular patterns of association — would be
+quite complicated to determine manually.
+
+52
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+The use of the data capsule in the HathiTrust offers both benefits and limitations.
+The process of non-consumptive text analysis means that the entire texts are not
+made available for researchers to download to their machines, and instead they are
+asked to implement their own analysis in a remote desktop setting. The benefits
+include access to a very large body of machine-readable texts without violating
+copyright restrictions. The limitations include inability to verify optical character
+recognition (OCR) quality for the individual texts that may skew results. Because
+books are scanned in their entirety, when OCR’d texts are not further cleaned, results
+include analysis of words that appear in front and back matter as well as chapter
+headings, all of which influences calculations based on total word counts.
+Although it is obvious, we want to emphasize that data sets are subject to
+interpretation, and we freely confess that what follows is not a disinterested reading.
+The purpose of this article is to contribute to the ongoing effort by scholars to recenter Black women in the historiography of feminism. Although authors might shy
+away from the statement made by one historian that “Black feminism developed
+later than white feminism,” too much scholarship still relies on chronologies that
+reinforce that impression.41 Along with Benita Roth and many other scholars, we
+conclude that “Black feminism began when second-wave white feminism began. It
+was part and parcel of it.”42 Shifting the criteria for what counts as feminism from
+formal organizing to theorizing, as Kimberly Springer suggests, makes it clear that
+Black feminists participated in the development of feminist ideas now widely
+credited to white feminists active in the later 1960s and early 1970s.43 By extension,
+this essay positions The Black Woman as an integral part of feminism in the 1970s.44
+In each of the three sections that follow, we compare the corpora to highlight what
+is distinctive about the feminist bestsellers. We anchor these discussions in relevant
+historiography and then move to close readings of the six bestsellers. These iconic
+texts are some of the most studied works in 1970s feminism, and the idea that a
+digital humanities approach alone would reveal new and unexpected interpretations
+is an unrealistic relic of the novelty factor that continues to inhere to digital
+humanities. Instead, data guides particular juxtapositions to suggest how The Black
+Woman should be more extensively incorporated into histories of 1970s feminism.
+
+Feminism and Freudian Experts
+Corpus analysis highlights that feminist bestsellers disputed the prevalent
+assumption that psychology offered particularly relevant insights into contemporary
+issues. The centrality of psychology in the sample corpus, compared to the combined
+women and feminist corpus, reflects the prominence of “psychological experts
+
+53
+
+F E M I N I S T BE S T SE L L E R S : A D I G I T A L H I S T O R Y O F 1 9 7 0S F E M I N I S M
+
+[who] decisively shaped Americans’ understanding of what significant public issues
+were and what should be done about them.”45 The reliance on Freudian theories
+particularly angered many feminists, as reflected in keywords from this corpus,
+including Freudian, Freudianism, and Oedipal. Entity results further confirm
+Freud's centrality; he is the first or second most-mentioned person in the feminist
+corpus.46
+When separating the corpora, these distinctions become even more apparent. While
+the sample corpus is more likely than the woman corpus to
+include psychoanalysis and psychology (a two-fold difference for both), the feminist
+corpus is two times more likely than the sample to use psychology and almost eight
+times more likely to use psychoanalysis.47 This finding is consistent with how the
+literature depicts them. A 1990s overview of feminism and psychoanalysis credits
+authors of the four bestselling monographs of 1970 as the “first to fault Freud in the
+name of feminism.” A monograph on Freud’s critics repeats this interpretation
+almost 20 years later: “The year 1970 itself was particularly rough, when, in separate
+books, Kate Millett, Germaine Greer, Shulamith Firestone, and Eva Figes all
+took Freud to task for his reactionary views on women.” That 1990s text addresses
+Black matriarchy, without references to Black women's writings, in a chapter on
+1950s momism. Black feminists instead appear, through works published in 1970
+and 1971, as precursors to Nancy Chodorow’s 1979 efforts to rescue motherhood
+from Freud: “Angela Davis and Patricia M. Robinson provided a new narrative of
+African American history to accentuate the significance of matrifocal factors.”
+Corpus analysis suggests two ways writings in The Black Woman might better fit
+into this history. Contributors confronted experts and countered Freudian-inspired
+critiques of the Black family.
+As Figes notes in her introduction, “thousands of books have been written about
+women,” most of them reflecting male authors’ “bias,” “arrogance,” and
+“ignorance.”48 Still, Freudian influences were too strong to be ignored. As feminists
+attempted to dethrone Freudian thought, they relied on other experts. Both Millett
+and Greer mention the anthropologist Malinowski to contravene Freud’s patriarchal
+family model, but he receives the most extensive treatment in Figes, who places him
+in an imagined debate with Freud: “Everyone has to work their way through the
+Oedipal situation, declares Freud. Pardon me, answers Malinowski, but in the place
+where I work, families do not recognize the father figure, so the situation simply
+never arises in the first place. Exit Freud.”49 Authors also cited the work of
+contemporary psychiatrists who criticized the Freudian familial sexual drama.
+Firestone cites Andrew Salter’s The Case Against Psychoanalysis (1952) in her
+takedown of the Oedipal complex.50 Sexual Politics, The Female Eunuch, The
+
+54
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Dialectic of Sex, and Sisterhood is Powerful all rely on psychiatrist Robert Stoller’s
+1968 Sex and Gender On the Development of Masculinity and Femininity to
+contradict Freudian theories of normative gender.51
+Black women, even more than white feminists, felt the strictures of “the ideal woman
+of expert discourse,” which so often drew on Freudianism.52 There is a statistically
+significant difference in the usage of experts between authors in The Black
+Woman and other authors. They were eight times more likely to use experts than
+Millett and four times more likely than Firestone.53 Bambara’s preface methodically
+demonstrates that all the “experts” are “men, Black or White” and “white women.”54
+She derides “psychiatrists and the like” who collect “data . . . to reinforce rather than
+challenge societal expectations” and “breezily build their theories of
+masculine/feminine.”55
+Bambara’s disdain for psychiatry did not translate into an extensive discussion of
+Freud by the contributors to her volume. Freud appears by name only twice,
+mentioned both times by Bambara.56 From the perspective of computational text
+analysis, literature that ignores The Black Woman in discussions of feminist
+critiques of Freud may appear justified. However, from a more fundamental
+perspective, that would be an error. The writers may not have disputed key Freudian
+concepts in the same way that Millett zeroed in on penis envy, Figes on castration
+complex, or Firestone on Oedipal complex, all bigrams found in their books. But the
+results of computational analysis indicate where they aimed their critique: at the
+Freudian ideas embodied in the Moynihan Report. Moynihan is key to the feminist
+corpus (having almost an eightfold difference from the sample corpus and more than
+a thirty-twofold difference from the women corpus).57 Outside of the The Black
+Woman, only Sisterhood is Powerful and Dialectic of Sex name him.58
+Authors in The Black Woman addressed Freud through a surrogate popularizer.
+Entity recognition results indicate Moynihan is the fourth most mentioned nonfictional person in the anthology. Daniel Patrick Moynihan’s Department of Labor
+report on “The Negro Family” offered a damning indictment of its “matriarchal
+structure.” Moynihan drew on “psychoanalytic theory” and quoted extensively from
+psychologists’ studies.59 As Laura Dawkins has observed, the report betrayed an
+“implicitly Freudian basis” through the “equation of patriarchy and social
+progress.”60 The ensuing public controversy around the report further amplified its
+Freudian aspects as “many commentators, Black and white, viewed Moynihan
+through a Freudian lens of sexual psychodrama.61
+Bambara names “setting the record straight on the matriarch” as one of her anthology
+goals, and Keira V. Williams estimates that fully half the essays addressed
+55
+
+F E M I N I S T BE S T SE L L E R S : A D I G I T A L H I S T O R Y O F 1 9 7 0S F E M I N I S M
+
+Moynihan’s stereotype.62 While Adele Jones rejects Moynihan’s conclusions out of
+hand as “White sociological bullshit to shift the blame from the white system to the
+Black woman,” other authors relied on different strategies to refute his conclusions.63
+Bond and Peery question his quantitative evidence, the rather unimpressive “statistic
+that one-quarter — only one-quarter! — of all Black families are headed by
+women.”64 Patricia Murphy Robinson, writing on behalf of her Group, offers crosscultural examples to question the universality of gendered family dynamics: “In the
+Kalahari Desert in Southwest Africa . . . there is no strong matriarchal or patriarchal
+emphasis.65 Frances Beal quotes Sojourner Truth in support of her contention that
+the “middle-class white model” of femininity never applied to Black women.66
+Although the experts they invoked may have differed from those cited by Figes,
+Firestone, Greer, and Millett, authors in The Black Woman engaged in the same
+process to dispute the Freudian conclusions of the Moynihan report.67
+In addition to these direct challenges to Moynihan, authors in The Black
+Woman addressed
+coded
+references
+to
+his
+analysis.
+Terms
+like matriarch and emasculated, all key in The Black Woman, reflect an
+immediately recognizable “dog whistle” politics that emerged around the Moynihan
+report.68 Moynihan’s unquestioning acceptance that “males are dominant in family
+relationships” led him to update the old stereotype of the Black “matriarch” to
+describe a familial structure that “reversed [the] roles of husband and wife.”69 Bond
+and Peery contend that “the Black matriarch was a kind of folk character largely
+fashioned by whites.” Toni Cade Bambara concurs, encouraging Blacks to “reject .
+. . the opinions of outside ‘experts’ who love to explain ourselves to ourselves,
+telling the Black man that the matriarch is his enemy,” an unnamed but completely
+intelligible reference to Moynihan.70
+Essays in The Black Woman also took on the misrepresentation that Black women
+contributed to or benefited from Black men being emasculated.71 In Moynihan’s
+recasting of the psychosexual drama, Black women replaced the castrating father in
+a “matriarchal structure [that] . . . imposes a crushing burden on the Negro male”
+and only secondarily on “a great many Negro women as well.”72 Beal notes that “our
+husbands, fathers, brothers, and sons have been emasculated,” but denies that black
+women share the blame: “it is a gross distortion of fact to state that Black women
+have oppressed Black men.”73 Black women also argued against the idea that they
+were beneficiaries of this disempowerment. Abbey Lincoln acknowledges that black
+men have been “emasculated,” but points out this does not prove “the propaganda
+that the only free people in this country are the white man and the Black woman.”
+
+56
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Instead, in one of the most significant theoretical formulations of 1970s feminism,
+authors re-positioned Black women as embedded in multiple structures of
+oppression, rather than a single gender-based one. Beal’s formulation of the “double
+jeopardy” that results from being both Black and female is echoed by Kay Lindsey’s
+contention that “Black women are penalized on two counts” and Bond and Peery’s
+assertion that “Black women are victimized on two counts: they are women, and
+they are Black”74 By emphasizing Black women’s particular status, authors refuted
+Moynihan’s implication that Black men bore the more significant burdens of racism
+due to their frustrated masculinity.
+The Black Woman’s theorizing about women’s role in the family, the power
+dynamics of gender, and the restrictions of prescriptive femininity occurred
+alongside that by white feminists. The works discussed in The Black Woman date
+from 1966 to 1969, the same timeframe in which white feminists, whose writings
+are more often cited, developed their ideas.75 Furthermore, they belonged to the same
+evolving discourse. As Benita Roth indicates, “black feminist writing was being
+produced and read by both black and white women."76 Robin Morgan solicited work
+by Frances Beal for Sisterhood is Powerful and reprinted work by Patricia Robinson
+and her group that had appeared originally in the women’s liberation journal Lilith.77
+Computational text analysis highlights Black women’s greater challenge
+to experts expressed most forcefully in their refutation of the Moynihan Report’s
+depiction of the matriarch and emasculated men. This evidence places them, at a
+much earlier period, in a vital part of the story of feminism’s engagement with
+Freudian thought.
+
+Feminism and Love
+If comparison with the sample corpus stresses feminist opposition to Freudian
+psychology, then comparison to the women corpus reveals yet another distinctive
+dimension of the feminist corpus. The women corpus contains highly ranked key
+terms such as marriage and family. As Allison Lefkowitz observed, “a broad array
+of Americans identified marriage as a problem in the 1960s and 1970s,” while
+another scholar dates the origins of “the war over the family” to this era, beginning
+with the debate surrounding the Moynihan report that was quickly joined by “radical
+feminists . . . gays and lesbians . . . divorced people . . . [and] unwed mothers.”78
+Computational text analysis hints at both commonalities and divergences in this
+content across the corpora. The feminist corpus overlaps with the sample corpus in
+terms of the nuclear family as the most frequent family trigram. However, while the
+sample and women corpus share marriage’s trigram marriage and family, the
+
+57
+
+F E M I N I S T BE S T SE L L E R S : A D I G I T A L H I S T O R Y O F 1 9 7 0S F E M I N I S M
+
+feminist corpus shifts this to love and marriage. Comparing the corpora individually
+clarifies that a sustained interest in love is distinctive to the feminist corpus. While
+the feminist and women corpora show effect size divergences from the sample
+corpus in family, marriage, and love, the feminist corpus uses love twice as much as
+the women corpus.79 Collocations suggest a different context around love in the
+corpora. The sample corpus includes religious love, not just romantic love. Love is
+an ideal and a myth in the feminist corpus, while collocates such as glorious,
+ecstasy, sweetest in the women corpus indicate more positive connotations.
+Feminists’ hostility towards love has not gone unremarked upon. In the late 1990s,
+one scholar placed Millett, Firestone, and Greer within a tradition that “identifies a
+direct relationship between the practice of love and the reproduction of patriarchal
+power.” A strikingly similar analysis, pointing to the same three authors, appeared
+nearly 20 years later: “In the 1970s feminists condemned romantic love . . . they
+opposed and ridiculed romance because it led to domestic oppression for women.”
+Love is the third most key word in The Female Eunuch; it provides one of four
+governing concepts in Greer’s text.80 In various chapters, she explores a wide range
+of subjects from the platonic ideal to the love object. The chapter on “The MiddleClass Myth of Love and Marriage” is representative of her approach. It begins with
+Feudal literature and proceeds through the 18th-century novel. Only in the final few
+pages does she touch on the contemporary era. On the other hand, ad copy for The
+Dialectic of Sex, the title with the second most frequent use of love, promised that
+“the chapter on love will change your life!” — and Firestone did not disappoint.81
+She proclaims, “love . . . is the pivot of women’s oppression today” and suggests
+that women might have “to get rid of love.”82 For Firestone, romantic love is “love
+corrupted by its power context.”83 On this point, Millett concurs. Love is “emotional
+manipulation” that blinds women to their oppression.84
+But what of The Black Woman? As a recent history, Black Women, Black Love:
+America's War on African American Marriage, clarifies, Black romantic
+relationships were framed not by feudal practice, but by those of the federal
+government.85 Not only did the Moynihan Report depict “Black romantic
+relationships and sexuality . . . as pathological,” but racism created “crippling
+structural
+disparities”
+that
+impeded
+them.86 The
+Black
+Woman contains family, marriage, and love at the lowest rates, but does that justify
+its authors’ exclusion from feminist theorizing about these subjects? Visualizing the
+intersection of names extracted from the six feminist texts offered hints as to where
+the anthology fits into this discussion. Gail Stokes is a contributor to The Black
+Woman and the subject of Firestone’s analysis.
+
+58
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Black feminists have rightly criticized Firestone’s treatment of race, and her use of
+Stokes’ writing is equally deserving of condemnation.87 She quotes from Gail
+Stokes’ “Black Woman to Black Man,” published in the Liberator in 1968, as
+evidence that “the black woman has as much contempt for the black man as he has
+for her.”88 Firestone describes Stokes, cast as a modern-day Sapphire, as lobbing
+“accusations” at the Black man.89 But it isn’t just Black men and women Firestone
+pits against one another. She quotes from Edith Hambrick’s response to Stokes,
+positioning Hambrick, who offers love and unconditional support to Black men, as
+a dupe who has “fallen for” their “lines.”90 Letters to the Editor of
+the Liberator indicate that Black men took exception to Stokes’ writing as well. The
+Black Men’s Council of Boston issued a “decree in answer to sister Gail Stokes”
+informing “black sisters to get it together.”91 Given the likelihood that white
+feminists, Black men, and even other Black women might use Black feminists’
+words against them, it is not surprising that Millett, Greer, and Firestone are from
+two to almost eight times more likely to use love than contributors to The Black
+Woman.92
+There remains, however, an alternative reading of Stokes’s piece: she has given up
+on love.93 The speaker eulogizes her marriage — she has received “no love” from
+“the human being I thought I loved and that I thought loved me.”94 Furthermore, his
+rejection has come in the most injurious form possible, through an invidious
+comparison to white women: “how could I love you and want to be with you? . . .
+White women never open the door for their husbands [looking] the way you Black
+bitches do.”95 Like some white feminists, Stokes equates marriage with death. “I had
+been laid out in my coffin unknowingly the day I had married you.”96 Hers is not the
+civil death of couverture, but the end of the self that threatens to transform her into
+“a walking mummy.”97 The speaker also points out that racism, along with
+patriarchy, influences Black romantic relationships. She describes an endless cycle
+of subordination through unwanted pregnancies and violence that eventually
+destroyed the love and respect she felt for her partner. While she desires “black love
+and dignity,” she refuses it under the guise of Black Power or Black nationalistinspired endearments such as “my Black goddess.”98 The speaker has given up on
+her marriage, not because she lacks love for Black men, but because this specific
+Black man rejected her love.
+Stokes’s piece in The Black Woman bears a different title, “Black Man, My Man
+Listen!” but it still personally addresses a Black man. In this version, the speaker
+pleads with her man to listen instead of “calling” him out.99 Rather than indicting the
+Black man for his faults, she acknowledges his disempowerment: “I know how they
+have used and abused you.”100 This time, love exists: “you and me, loving each other
+
+59
+
+F E M I N I S T BE S T SE L L E R S : A D I G I T A L H I S T O R Y O F 1 9 7 0S F E M I N I S M
+
+in our blackness.”101 While the speaker still feels anger, her fears replace the detailed
+complaints of The Liberator piece. In the end, the speaker makes a heartfelt plea for
+“comfort” and “reassurance,” but the allusion, in the final line, to a lack of any
+commonalities suggests that he never offered them.102
+While other essays in The Black Woman do not deal with love at such length, some
+touch on the subject. Joanna Clark connects love to manipulation: “When my
+husband said ‘love,’ he meant whatever emotion he could generate in you that would
+sustain you enough to put up for and with him.”103 Bambara also rejects the female
+subordination Black nationalists sought to impose on romantic relationships: “Of
+course there are any number of women around willing to walk ten paces back . . . I
+happen to love my ole man, and I would be loathe to patronize him in that way.” 104
+Joyce Green’s essay also considers comparisons to white women: “some brothers
+are so busy being masterful that they have no time for a tender concept like love. . .
+. They say, look at how the white woman helps her man.”105 Abbey Lincoln,
+commenting on Black men’s application of white beauty standards to their mates,
+describes “the Black woman” as “hurt, confused, frustrated, angry, resentful, [and]
+frightened” an apt description of the speaker in Stokes’ articles.106
+While in the section on Freud, we argued that histories of 1970s feminism have too
+often disconnected what were once overlapping contributions, here we suggest that
+many accounts of feminism’s history have not considered sufficiently early Black
+feminists' perspectives on love.107 My reading indicates that Black feminists
+addressed the same issues — love as manipulation, love as subordination, love as
+oppression — as frequently as the white women who were more commonly credited
+with developing feminist critiques of love. Furthermore, rather than singularly
+focusing on patriarchy as the mechanism impinging on love, the essays in The Black
+Woman consider the consequences of racism — poverty, violence against women,
+and limited economic opportunities — in the process offering a broader structural
+critique of love.
+
+Proposing Solutions
+In the late 1960s, “everything became ‘political,’” as a volume on feminism, theory
+and politics has observed.108 Keyness results for all three corpora support this
+generalization. Each corpus contains a key word that alludes to politics: political in
+the sample corpus, rights in the women corpus, and revolution in the feminist
+corpus.109 The sample corpus uses political at a rate twofold that found in the women
+or the feminist corpus.110 The context appears to be quite traditional. Frequent
+bigrams, including political system, political power, and political parties, indicate
+
+60
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+that the political retained links to formal politics. Alternatively, political in the
+women corpus revolves around rights. The women corpus is over four times as
+likely and the feminist corpus twice as likely to use rights as the sample.111 Political
+rights is the most frequent bigram. The specific rights sought
+are equal and women’s instead of civil, the most common bigram of rights in the
+other corpora. As in the sample corpus, the methods for obtaining equal rights, such
+as amendment to the Constitution or from the civil rights act, reflect traditional
+politics.
+For feminists, “everything became ‘political’ ” in different ways. Keyword analysis
+indicates that instead of rights, authors in the six feminist bestsellers
+demand revolution and political power, the most common bigram. The feminist
+corpus is eight times as like to use revolution as the women and twice as likely as
+the sample.112 In the process of advocating for revolution, feminist authors
+transformed how the word political was understood.
+This achievement is among the most widely recognized of 1970s feminism. A 1990s
+feminist theory text proceeded to name all the bestsellers except The Black
+Woman when discussing "the substantial body of literature” about feminism’s “new
+ideas,” including the argument that "no aspect of life lacks a political dimension.”
+According to that author, “the articulation of Black feminist critique lay . . . in the
+future.” Over twenty years later, that same conclusion appears in a political science
+textbook that credits radical feminists — with Figes, Firestone, Greer, and Millett
+specifically singled out — for contributing to “a deliberate widening of the political
+sphere.” This author views Black feminism as “added on” to “early second wave
+feminism.”
+The reframing of the political is most evident in Kate Millett’s concept of sexual
+politics. According to Millett, a real sexual revolution would not merely lead to
+increased sexual freedom but “would bring the institution of patriarchy to an end.”113
+Authors in The Black Woman consider the black revolution, the top bigram
+for revolution, but they also propose that revolution must overturn gendered
+hierarchies. Gwen Patton concludes from Black women’s struggle to “define their
+role” in “the making of the Revolution” that the order of “men on top, women on
+bottom” must be abandoned.114 While The Black Woman does not contain the
+bigram sexual revolution, contributors were quite interested in the same issues
+Millett addresses in her well-known concept of sexual politics.
+This essay does not define the political as that relatively narrow and exclusive world
+of meetings, chairmen, and parties. The term “politics” shall refer to power-
+
+61
+
+F E M I N I S T BE S T SE L L E R S : A D I G I T A L H I S T O R Y O F 1 9 7 0S F E M I N I S M
+
+structured relationships, arrangements whereby one group of persons is controlled
+by another.”115
+Power, the key concept under sexual politics, is key in the feminist corpus compared
+to the sample corpus and the feminist corpus.116 It appears most in Dialectic of
+Sex and The Black Woman, with no statistically significant difference between the
+two texts.117 Firestone’s analysis parallels Millett’s by focusing on male power, the
+most frequent bigram in her book. The Black Woman references the power
+structure, the most common bigram of power after Black Power, not only the power
+of patriarchy.
+Just as Kate Millett coined the term sexual politics to refer to power dynamics in all
+interpersonal relationships, contributors to The Black Woman also proposed new
+terms to explain gendered and racialized power structures. Frances Beal’s phrase
+“bedroom politics” adds both nuance and specificity to Millett’s sexual politics.118
+The term refers to the intrusion by “political factors into the privacy of the
+bedchamber,” infringing upon Black women's “rights and responsibilities.”119 Beal
+uses the term in the context of forced sterilization of Black women, which she names
+an “act of oppression” designed to perpetuate the “power imbalance between the
+white haves and the non-white havenots.”120 The “ruling-class elite” uses the
+abhorrent practice to keep “itself in control.” Similarly, she points out that restrictive
+abortion laws provide yet another “means of subjugation.”121 Beal ends her essay by
+connecting the personal to power. “The Revolutionary cannot focus only on
+changing who is in a “position of power” but must also commit to “creating new
+institutions that will eliminate all forms of oppression,” including “traditional
+personal relationships between man and woman.”122
+Trigrams in The Black Woman point to yet another contribution to theorizing power
+hierarchies. A reprinted November 1968 speech given by Grace Lee Boggs
+addresses the white power structure.123 While Boggs uses personal in this speech to
+refer to the “concept of the individual,” her insistence that “social issues” can be
+“not only personally but socially relevant” relates her analysis to the reframing of
+the political.124 She offers a “new politics . . . developing in the Black movement.”
+“This sense of one's own personal-political value . . . has to be developed . . . in
+relationship with others,” and it must involve “struggle and conflict with those in
+power” to define concrete issues of consequence to the group.125 To anyone familiar
+with feminism of this era, Boggs’s formulation of the “personal-political” will recall
+the “the personal is political,” often cited as the defining insight of 1970s feminists.
+While white feminists have received credit for this formulation, it did not emerge in
+
+62
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+a vacuum.126 Like so much else in women’s liberation, it bears the imprint of writing
+about Black women’s experiences.
+The feminist re-framing of the political as power is a signal achievement of 1970s
+feminism at a time when other writing about women addressed rights.
+Computational text analysis indicates that The Black Woman has much to offer
+histories that trace the development of these ideas. The Black
+Woman uses power, revolution,
+and political more
+than The
+Female
+127
+Eunuch. Why then does Greer get cited along with these other works while The
+Black Woman gets ignored? Why has Beal’s “bedroom politics” or Boggs’
+“personal-political” not been incorporated along with “sexual politics” in accounts
+of feminist reconceptualizations of power?
+Here I’d like to suggest that this is a (bad) habit of citation. It has become customary
+to lump the four bestsellers of 1970 together when discussing some of their
+contributions to feminisms’ history. This tendency began in early responses to these
+books. Most notably, Juliet Mitchell treated all four monographs together to criticize
+feminism’s rejection of Freud.128 Subsequently, disciplinary histories or genealogies
+situated the texts together in framing the origins of the academic fields of women’s
+studies and feminist theory.129 Those works became the foundation for a “stock
+narrative” of feminism by authors whose work does not actually focus on these
+texts.130
+
+Which Books Made Us Feminists?
+Although author deaths and publishing anniversaries have inspired recent reflections
+on some of these titles as books that converted readers to feminism, the tendency has
+deeper roots. After publishing The Feminine Mystique, Betty Friedan titled an
+edited volume of letters she received It Changed My Life, so widespread was the
+transformative impact of her magnum opus.131 In 1990, the Modern Language
+Association annual meeting included a session called "Books That Changed Our
+Lives” with participant-remarks later published in Women’s Studies
+Quarterly.132 However, we have found no considerations of The Black
+Woman under this particular rubric. As Beverly Guy Sheftall notes, “The Black
+Woman was as important . . . as Kate Millett’s pioneering and more
+celebrated Sexual Politics, though Bambara’s work has rarely been seen in this
+context by white feminists.”133
+While high profile newspapers and magazines may not have published authors who
+considered The Black Woman among the texts that made women feminists, many
+
+63
+
+F E M I N I S T BE S T SE L L E R S : A D I G I T A L H I S T O R Y O F 1 9 7 0S F E M I N I S M
+
+prominent Black women have written about life-changing encounters with the
+anthology. Gloria T. Hull, who encountered the book in college, recalled that it
+“taught me how our position could be both thoroughly feminist and for-real
+Black.”134 As a child, Farah Jasmine Griffins saw the cover depicting “a beautiful
+brown woman with a large Afro” in a bookstore and knew “I had to have that
+book.”135 bell hooks has acknowledged the importance of The Black Woman on her
+development: “I was a senior in high school when TCB published The Black
+Woman: An Anthology (1970), and single-handedly the anthology placed Black
+women at the center of various feminist debates.”136
+The methods section conveyed a frank disavowal of disinterested readings and a
+defense of computational text analysis as a method for making historiographical
+interventions. It seems fitting then that my conclusion should sum up how these two
+factors shaped the ensuing discussion of results. To those who fear that computers
+will overtake our training as historians, our approach — historical interpretation
+assisted by computational analysis — might offer some reassurances. We are guided
+by the results, not driven by them. We began with a commitment to
+foregrounding The Black Woman.
+In challenging Freudianism, feminists of the 1970s receive at least partial credit for
+contributing to the decline of a major intellectual force. Concluding that Black
+women never addressed Freud because The Black Woman barely names him seems
+overly simplistic. Computational text analysis suggested how to read The Black
+Woman for Freudianism. The authors scoffed at penis envy and mocked the “white
+man’s penis hang up,” but they focused on the Freudian-influenced Moynihan
+Report.137 Keyness and entity recognition pointed to Moynihan. His report reflects a
+reliance on psychology similar to that seen in the sample corpus and in feminists’
+efforts to de-center psychoanalysis. Follow-up computational analysis highlighted
+important contributions in The Black Woman to these intellectual projects,
+including the greater frequency of experts and keywords used in opposing
+Moynihan's conclusions, including matriarch and emasculated.
+Looking for love relied on a totally different strategy. We suspect this element of the
+project is most vulnerable to the charge that computational text analysis proves
+unnecessary. Perhaps this is true, but we reached these conclusion with it
+nonetheless.
+Keyness
+results
+in
+the
+women
+corpus,
+such
+as marriage and family, indicated a point of departure for considering what feminist
+bestsellers added to the discussion of these very topical concerns. Firestone and
+Greer devoted entire sections of their books to love, while evidence for this concern
+in The Black Woman is scant; marriage, family, and love appear with the least
+
+64
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+frequency in The Black Woman. Naming the problem could never be as simple as
+indicting men for Black women. Furthermore, Black love, constrained since slavery,
+as Patricia Robinson’s essay reminds readers, remained a loaded topic for Black
+women who faced external criticism from white policy analysts and censure within
+their community.138 The reasons behind the silences and absences offered a way to
+relate the texts when entity recognition pointed to Firestone’s appropriation of
+Stokes’ writing. With the themes of her work in mind, I used AntConc’s
+concordance view to explore love throughout the anthology and confirmed she was
+not alone in her analysis.
+Feminists received the greatest recognition for interventions into political discourses
+and for the theoretical concepts they developed to replace those they
+dismantled. Power appeared in The Black Woman in ways that related quite directly
+to better-known formulations by white feminists. Computational text analysis
+identified at least two key terms related to reframing the political, Beal’s “bedroom
+politics” and Boggs’ “personal-political.” This analysis also provided the clearest
+example of where the habit of lumping the 1970 monographs together had given
+credit where it wasn’t quite due. Although examination of Greer’s book using
+different terms might have found her to be a more significant participant in dialogues
+around the political, in the terms used for this study, The Black Woman contributed
+to these discussions more than The Female Eunuch did.
+These results offer a new kind of counterpoint to a historiographical tradition that
+often dates Black feminism’s emergence to the late 1970s. Descriptions of The
+Black Woman as the “Black women’s equivalent of Sisterhood Is Powerful”
+unjustifiably prioritize one work over the other. The results shared in this essay are
+meant to inspire scholars to reconsider the texts they teach, the individuals they cite,
+and the genealogies they trace, as well as to demonstrate that methods adopted from
+the digital humanities may bring renewed attention to some of the authors that
+computational text analysis singled out.
+
+References
+Susan Magarey, Dangerous Ideas: Women’s Liberation – Women’s Studies – Around the World (Adelaide:
+University of Adelaide Press, 2014); Bonnie J. Dow, Watching Women’s Liberation, 1970: Feminism’s Pivotal Year
+on the Network News (Champaign: University of Illinois Press, 2014). It was also the year the first conferences on
+women’s liberation occurred in the UK in February and in May in Australia. See Howard Malchow, Special
+Relations: The Americanization of Britain? (Palo Alto: Stanford University Press, 2011).
+1
+
+65
+
+F E M I N I S T BE S T SE L L E R S : A D I G I T A L H I S T O R Y O F 1 9 7 0S F E M I N I S M
+
+2
+
+Beverly Guy-Sheftall, Words of Fire: An Anthology of African-American Feminist Thought (New York: The New
+Press, 2011), 14.
+3
+
+Magarey, Dangerous Ideas.
+
+4
+
+Lisa Disch, “Introduction,” South Atlantic Quarterly 114, no. 4 (October 1, 2015): 678.
+
+5
+
+No place is the lore of these texts clearer than in references to each of them as bestsellers. Every single one has
+been referred to in print, by both journalists and scholars, as bestsellers although only two titles appeared on
+bestseller lists. However, bestseller, despite the keeping of official lists, is an imprecise term. A book might be
+described as a bestseller if it topped sales for its publishing house. Random House considered Sisterhood is Powerful
+it among its “best sellers” in 1970. [“Paperback Bestsellers,” Publishers Weekly, February 8, 1971, 41.],
+Compounding the issue even further, such lists did not exist yet in 1970 for the UK as neither The Sunday Times or
+the Bookseller lists started until the mid-1970s. We refer to these texts as bestsellers for all these reasons, but most
+specifically because when compared to the literature put out by the movement itself, these books enjoyed
+significantly larger sales and circulation.
+Adams, “The Book That Made Us Feminists.” Adams argued for a collective stake in “foundational texts of second
+wave feminism,” by which she meant The Dialectic of Sex, Sisterhood is Powerful, The Female Eunuch but above
+all Sexual Politics. A similarly titled piece in The Guardian features a photo of Greer and considers her work and
+Millett’s. Margaret Atwood et al., “The Book That Made Me A Feminist,” The Guardian, December 16, 2017.
+6
+
+Marilyn Bender, “Books to Liberate Women,” The New York Times, book review section, March 8, 1970, 6; Mary
+Stott, “Is Marriage Worth Saving,” The Guardian, December 17, 1970, 9.
+7
+
+“Best Seller List,” Publishers Weekly, August 24, 1970, 90. Millett describes the publication history of Sexual
+Politics in the introduction to the 2000 edition. Kate Millett, Sexual Politics (Champaign: University of Illinois
+Press, [1970] 2000), ix.
+8
+
+9
+
+Millet, 22. A note on style, the reader will have no doubt observed that thus far title of books have been
+underlined. In this essay, italicized words refer to individual words user in or derived from computational analysis.
+Results that appear in quotations marks, such as multi-word expressions are verbatim from the text and thus they
+retain such punctuation.
+10
+11
+
+Eva Figes, Patriarchal Attitudes (New York: Fawcett Books, [1970] 1971).
+Germaine Greer, The Female Eunuch (London: Flamingo, 1970), 18.
+
+12
+
+Millett entered the New York Times Bestseller list on September 13, 1970, and September 28, 1970, for
+the Publishers Weekly list. Greer attained the number one spot in the Publishers Weekly August 1, 1971 issue.
+13
+
+Shulamith Firestone, The Dialectic of Sex: The Case For Feminist Revolution (New York: Bantam Books, 1971),
+20.
+Firestone’s publisher announced a full publicity campaign in Publishers Weekly including “Author appearances
+on radio and television” but I can find no evidence of Firestone doing either. “Morrow,” Publishers Weekly, August
+31, 1970, 220. Most sources indicate Firestone disappeared from public view shortly after the publication of her
+book as her mental health issues worsened. See Susan Faludi, “Death of A Revolutionary,” The New Yorker, April
+15, 2013.
+14
+
+15
+
+Toni Morrison, ed., Deep Sightings and Rescue Missions: Fiction, Essays, and Conversations (New York:
+Pantheon Books, 1996), 118.
+
+66
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Louis Massiah, “How She Came By Her Name: an Interview with Louis Massiah,” interview by Toni Cade
+Bambara, in Deep Sightings and Rescue Missions: Fiction, Essays, and Conversations, ed. Toni Morrison (New
+York: Pantheon Books, 1996).
+16
+
+“NAL has Reported New Printings on a Numbers,” Publishers Weekly, October 5, 1970, 45. Second printing date
+is referenced by Bambara in “How She Came By Her Name,” 230.
+17
+
+Robin Morgan, ed., Sisterhood Is Powerful: An Anthology of Writings from the Women’s Liberation (New York:
+Random House, 1970), 1. On the publishing history of Sisterhood is Powerful see Jennifer Gilley, “Feminist
+Publishing/Publishing Feminism: Experimentation In Second-Wave Book Publishing,” in This Book Is an Action:
+Feminist Print Culture and Activist Aesthetics, ed. Jaime Harker and Cecilia Konchar Farr (Champaign: University
+of Illinois Press, 2015), 23-45.
+18
+
+19
+
+Clare Hemmings, Why Stories Matter: The Political Grammar of Feminist Theory (Durham: Duke University
+Press, 2011).
+20
+
+Janet R. Jakobsen, Working Alliances and the Politics of Difference: Diversity and Feminist Ethics (Bloomington:
+Indiana University Press, 1998), 98.
+21
+
+Chela Sandoval, Methodology of the Oppressed (Minneapolis: University of Minnesota Press, 2000), 46.
+
+Lisa Maria Hogeland, “Against Generational Thinking, or, Some Things That ‘Third Wave’ Feminism
+Isn’t,” Women’s Studies in Communication 24, no. 1 (2001): 110.
+22
+
+Astrid Henry, Not My Mother’s Sister: Generational Conflict and Third-Wave Feminism (Bloomington: Indiana
+University Press, 2004), 33.
+23
+
+24
+
+Victoria Browne, Feminism, Time, and Nonlinear History (New York: Palgrave MacMillan, 2014).
+
+25
+
+Kristen Hogan, The Feminist Bookstore Movement: Lesbian Antiracism and Feminist Accountability (Durham:
+Duke University Press, 2016), 4.
+Maria Cotera, “‘Invisibility Is an Unnatural Disaster’: Feminist Archival Praxis After the Digital Turn,” South
+Atlantic Quarterly 114, no. 4 (2015): 782.
+26
+
+27
+
+Terese Jonsson, “White Feminist Stories: Locating Race in Narratives of British Feminism,” Feminist Media
+Studies 14, no. 6 (2014): 15.
+28
+
+Jennifer C. Nash, Black Feminism Reimagined: After Intersectionality (Durham Duke University Press, 2018).
+
+Kathi Weeks and Michèle Barrett, “Foreword,” in Women’s Oppression Today: The Marxist/Feminist Encounter,
+2014, xi.
+29
+
+Sisterhood is Powerful contained “three views” on “Women In The Black Liberation Movement.” See Brian
+Norman, “The Consciousness-Raising Document, Feminist Anthologies, and Black Women in Sisterhood Is
+Powerful,” Frontiers: A Journal of Women Studies 27, no. 3 (2006): 38–64. ))
+30
+
+Roth, “The Making of the Vanguard Center," 73. Black Woman is “not a Black feminist text as we have come to
+understand the term,” some of the essays “begin to theorize a Black feminist politics and praxis.” Farah Jasmine
+Griffin, “Conflict and Chorus: Reconsidering Toni Cade’s "The Black Woman: An Anthology,” in Is It Nation
+Time?: Contemporary Essays on Black Power and Black Nationalism, ed. Eddie S. Glaude (Chicago: University of
+Chicago Press, 2002), 121. Kimberly Nichele Brown considers it “the quintessential text of Black feminist thought
+of the second wave.” Kimberly Nichele Brown, Writing the Black Revolutionary Diva: Women’s Subjectivity and
+31
+
+67
+
+F E M I N I S T BE S T SE L L E R S : A D I G I T A L H I S T O R Y O F 1 9 7 0S F E M I N I S M
+
+the Decolonizing Text (Indiana University Press, 2010), 71. For the purposes of this study, we read The Black
+Woman as a feminist text.
+32
+
+The approach was suggested by Richard Jean So as a way to address a reviewer’s concerns about conducting
+analysis of a small corpus of texts. Richard graciously provided not only access to the HathiTrust Research center
+which Michelle Moravec, a researcher from a non-member institution, could not obtain, but also provided funding
+for Kent Kai-hsiung Chang to conduct the research.
+33
+
+The publishers were Random House, Penguin, Knopf, Pantheon, HarperCollins, Harper & Row Hatchette, Little
+Brown, Basic, Simon & Schuster, Scribner, MacMillan, FSG, Henry Holt, and Scholastic.
+34
+
+See “HTRC Analytics: About.”
+
+Jenny Rose Finkel, Trond Grenager, and Christopher Manning. “Incorporating Non-local Information into
+Information Extraction Systems by Gibbs Sampling.” Proceedings of the 43nd Annual Meeting of the Association
+for Computational Linguistics (2005): 363–370. See also The Stanford Natural Language Processing Group,
+“Stanford Named Entity Recognizer (NER).”
+35
+
+36
+
+Lawrence Anthony, AntConc Version 3.5.8, software, 2019.
+
+Ted Dunning, “Accurate Methods for the Statistics of Surprise and Coincidence,” Computational Linguistics 19,
+no. 1 (1993): 61–74.
+37
+
+As described in Kenneth Ward Church, and Patrick Hanks, “Word Association Norms, Mutual Information, and
+Lexicography,” Computational Linguistics 16, no. 1 (1990): 22–29.
+38
+
+39
+
+Paul Rayson, “Log-likelihood and effect size calculator.”
+
+40
+
+In the following analysis we provide log likelihood, a statistical measure for the probability of observed
+differences across corpora, but we also rely on log ratio to indicate effect size. As Andrew Hardie, who developed
+this metric explains, Log Ratio equals the binary log of the ratio of relative frequencies. Each increase of one
+indicates a doubling of the ratio as indicated in the chart below.
+•
+•
+•
+•
+•
+•
+
+A word has the same relative frequency in A and B – the binary log of the ratio is 0
+A word is 2 times more common in A than in B – the binary log of the ratio is 1
+A word is 4 times more common in A than in B – the binary log of the ratio is 2
+A word is 8 times more common in A than in B – the binary log of the ratio is 3
+A word is 16 times more common in A than in B – the binary log of the ratio is 4
+A word is 32 times more common in A than in B – the binary log of the ratio is 5
+
+Andrew Hardie, “Log Ratio – an informal introduction, Corpus Approaches to the Social Sciences,” April 28, 2014.
+41
+
+When providing examples from the historiography of 1970s feminism, we have followed Claire Hemmings
+approach in Why Stories Matter. Specific citations are not provided for quotations as the intent is to highlight
+prevalent patterns of interpretation rather than to call out specific authors.
+Benita Roth, “The Making of the Vanguard Center: Black Feminist Emergence in the 1960s and 1970s,” in Still
+Lifting, Still Climbing: Contemporary African American Women’s Activism, ed. Kimberly Springer (New York:
+New York University Press, 1999), 25.
+42
+
+43
+
+Kimberly Springer, Introduction, Still Lifting, Still Climbing, 3.
+
+44
+
+In addition to the works cited elsewhere in this essay, we are deeply indebted to other authors. Kimberly
+Springer, Living For The Revolution : Black Feminist Organizations, 1968-1980 (Durham: Duke University Press,
+
+68
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+2005); Kimberly Springer, ‘Black Feminists Respond to Black Power Masculinism,’ in Peniel E. Joseph ed, The
+Black Power Movement: Rethinking The Civil Rights-Black Power Era (New York: Routledge, 2006), 105-118;
+Stephen M. Ward, ‘The Third World Women’s Alliance: Black Feminist Radicalism and Black Power Politics,’
+in The Black Power Movement, 119-144; Dayo F. Gore, Jeanne Theoharis, and Komozi Woodward, eds, Want To
+Start A Revolution?: Radical Women In The Black Freedom Struggle (New York: New York University Press,
+2009); Ula Y. Taylor, ‘Black Feminisms and Human Agency’ in Nancy Hewitt. Ed. No Permanent Waves:
+Recasting Histories of U.S. Feminism (New Brunswick: Rutgers University Press, 2010): 61-76; Erik S.
+McDuffie, Sojourning For Freedom : Black Women, American Communism, And The Making Of Black Left
+Feminism (Durham: Duke University Press, 2011).
+45
+
+Ellen Herman, The Romance of American Psychology: Political Culture in the Age of Experts (Berkeley:
+University of California Press, 1996), 6.
+46
+
+We verified entity results for the six best sellers using the concordancing feature of AntConc with versions of the
+six bestsellers that have been stripped of this material.
+47
+
+Sample compared to women psychology LL 329.88 LR 1.1, psychoanalysis LL 26.56 LR 1.06, Feminist
+compared to sample psychology LL 69.84, LR 1.04, psychoanalysis LL 115.8, LR 2.9.
+48
+
+49
+
+Figes, Patriarchal Attitudes, 15.
+
+50
+
+Ibid., 11.
+Andrew Salter, The Case Against Psychoanalysis (New York: Henry Holt & Company, 1952).
+
+51
+
+Robert Stoller, Sex and Gender: On the Development of Masculinity and Femininity (New York: (Science House,
+1968).
+52
+
+Gearhard 13-14.
+
+Experts is a low frequency words across the texts. Figes doesn’t use it or any of its variants. The difference with
+Greer (n=5) and Sisterhood is Powerful (n=9) is not statistically significant. The Black Woman (n=10) compared to
+Firestone (n=2) LL 4.63 LR 2.09, Millett (n=2) LL 12.37, LR 3.27.
+53
+
+54
+
+Bambara, "Preface," 8–9.
+
+55
+
+Ibid., 7–8.
+
+56
+
+Ibid., 9; Toni Cade Bambara, “The Pill : Genocide or Liberation?” in The Black Woman: An Anthology, 165.
+
+57
+
+The Black Woman Moynihan (n=10). Feminist (=12 ) compared to sample (n=71) LL 426.06 LR 2.9, women
+(n=4) LL 46.83, LR 5.34.
+Roxanne Dunbar “Female Liberation as the Basis for Social Revolution,” in Sisterhood is Powerful, ed. Robin
+Morgan, 497, Firestone, Dialectic, 104.
+58
+
+59
+
+Daniel Patrick Moynihan, The Negro Family: The Case for National Action, Office of Policy Planning and
+Research United States Department of Labor, March 1965, 5.
+Laura Dawkins, “The Family Romance in Black and White: Paternal Abdication and the ‘Touch of the Mother’ in
+Marita Bonner’s ‘One Boy’s Story,’” in Psychoanalysis in Context, ed. Alvin Henry (Newcastle upon Tyne:
+Cambridge Scholars Publishing, 2020), 110.
+60
+
+69
+
+F E M I N I S T BE S T SE L L E R S : A D I G I T A L H I S T O R Y O F 1 9 7 0S F E M I N I S M
+
+61
+
+Robert O. Self, All in the Family: The Realignment of American Democracy Since the 1960s (New York:
+Macmillan, 2012), 30.
+Bambara, “Preface,” 1; Keira V. Williams, Amazons in America: Matriarchs, Utopians, and Wonder Women in
+U.S. Popular Culture (Baton Rouge: Louisiana State Press, 2019).
+62
+
+63
+
+Adele Jones and Group, “Ebony Minds, Black Voices,” in The Black Woman: An Anthology, 185.
+
+64
+
+Jean Carey Bond and Patricia Peery, “Is the Black Male Castrated?” in The Black Woman: An Anthology, 115.
+
+Pat Robinson and Group, “A Historical and Critical Essay for Black Women in the Cities, June 1969,” in The
+Black Woman: An Anthology, 199.
+65
+
+Frances Beal, “Double Jeopardy: To Be Black and Female,” in The Black Woman: An Anthology, 91. All citations
+are to this publication of the essay.
+66
+
+67
+
+Entity recognition indicates overlapping experts. Although that is beyond the scope of this project, one intriguing
+example is discussion of Robert Briffault’s evidence for matriarchy in The Black Woman, The Female
+Eunuch, Sexual Politics and Sisterhood is Powerful.
+68
+
+Ian Haney López, Dog Whistle Politics: How Coded Racial Appeals Have Reinvented Racism and Wrecked the
+Middle Class (New York: Oxford University Press, 2015), 94–97.
+69
+
+Moynihan, The Negro Family, 30.
+
+70
+
+Bambara, “On The Issues of Roles,” in The Black Woman: An Anthology, 109.
+
+Emasculated appears twice in Sisterhood is Powerful, once because of Beal’s essay and once in the contribution
+by Eleanor Holmes Norton.
+71
+
+72
+
+Moynihan, The Negro Family, 18.
+
+73
+
+Beal “Double Jeopardy,” 92.
+
+74
+
+Ibid.; Lindsey, 85–89; Bond and Peery, “Is the Black Male Castrated?” 117.
+
+The Black Woman provides dates for many of these works included. Scholars have dated Patton’s essay to at least
+a draft form in August 1968 (Roth, Separate Roads to Feminism, 95), Beal began what developed into “Double
+Jeopardy” in the fall of 1968.
+75
+
+76
+
+Roth, “The Making of the Vanguard Center,” 73.
+
+Beal’s named is misspelled Beale in The Black Woman. Frances Beal, “Double Jeopardy: To Be Black and
+Female,” in The Black Woman: An Anthology, ed. Toni Cade Bambara (New York: New American Library, 1970),
+95; Frances M. Beal, “Double Jeopardy: To Be Black and Female,” in Sisterhood Is Powerful: An Anthology of
+Writings from the Women’s Liberation, ed. Robin Morgan (New York: Random House, 1970), 340. Beal recalled
+that Morgan “wanted an essay on black women. And I said I would take a few of the things I had already started on
+and pull together kind of an overview.” Frances Beal, interview by Loretta Ross Beal, transcript, 38, Voices of
+Feminism Oral History Project, Sophia Smith Collection, Smith College.. In the Fall of 1969 she published a
+different version of this essay. On the publishing history of “Double Jeopardy,” see Ashley D. Farmer, Remaking
+Black Power: How Black Women Transformed an Era (Chapel Hill: University of North Carolina Press, 2017),
+165–66.
+77
+
+70
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Alison Lefkovitz, Strange Bedfellows: Marriage in the Age of Women’s Liberation (Philadelphia: University of
+Pennsylvania Press, 2018), 2; David Popenoe, War Over the Family (New York: Routledge, 2017).
+78
+
+79
+
+Family sample corpus to women corpus, LL 5178.71, LR 1.4, sample corpus to feminist corpus LL 1004.96, LR
+1.76. marriage sample corpus to women corpus LL 9087.33, LR 2.76, sample corpus to feminist corpus LL 1525.03,
+LR 3.08. love sample corpus to women corpus LL 4985.32, LR 3.71, sample corpus to feminist corpus LL 2381.85,
+LR 3.02. There is a statistically significant difference in use of marriage and family in feminist and women but the
+effect size is not as drastic. Family feminist corpora to women corpora LL 53.93 LR .36 and marriage feminist
+corpora to women corpora LL 26.06, LR .31. Love Feminist corpora compared to sample corpora, 2397.65, log ratio
+3.03. Feminist corpora compared to women corpora LL 448, log ratio 1.12.
+80
+
+The Female Eunuch to the five other bestsellers LL = 276.31.
+
+Firestone’s ideas about love have recently received more scholarly attention. See Kathi Weeks, “Down with Love:
+Feminist Critique and the New Ideologies of Work,” WSQ: Women’s Studies Quarterly 45, no. 3 (2017): 38. Alva
+Gotby, “Liberated Sex: Firestone On Love And Sexuality,” Mai: Feminism And Visual Cultures, April 18, 2018.
+Jacobin Magazine excerpted part of Firestone’s chapter on love in February 2019.
+81
+
+82
+
+Firestone, Dialectic, 121.
+
+83
+
+Ibid., 139.
+
+84
+
+Millett, Sexual Politics, 37.
+
+Dianne M. Stewart, Black Women, Black Love: America’s War on African American Marriage (New York: Basic
+Books, 2020).
+85
+
+86
+
+Brian G. Ogolsky, Sally A. Lloyd, and Rodney M. Cate, The Developmental Course of Romantic
+Relationships (New York: Routledge, 2013); emphasis ours. Stewart, Black Women, Black Love.
+Among the earliest and best known are Angela Davis, “Rape, Racism, and the Myth of the Black Rapist,”
+in Women, Race, and Class (New York: Random House, 1981), 172-201. Hortense J. Spillers, “Interstices: A Small
+Drama of Words,” in Pleasure and Danger: Exploring Female Sexuality, ed. Carole S. Vance (London: Pandora,
+1992), 73–100; [Scholar and Feminist IX Conference, “Towards a Politics of Sexuality”, Held at Barnard College
+in New York in 1982, ed. Carole S Vance (London: Pandora, 1992), 73–100. Margaret A. Simons, “Racism and
+Feminism: A Schism in the Sisterhood,” Feminist Studies 5, no. 2 (1979): 384–401. Hortense J. Spillers, Black,
+White, and in Color: Essays on American Literature and Culture (Chicago: University of Chicago Press, 2003).
+87
+
+88
+
+The original article is Gail A. Stokes, "Black Woman to Black Man", Liberator 8, no. 12 (1968): 21-22. Citation
+here refer to the reprint in Robert Staples, ed. The Black Family: Essays and Studies, (Belmont: Wadsworth
+Publishing Company, 1971), 159-161. Firestone, Dialectic, 112.
+89
+
+Firestone, Dialectic, 119.
+
+90
+
+Edith R. Hambrick, “Black Woman to Black Woman,” Liberator 9, no. 2 (February 1969): 8, 115; Firestone,
+Dialectic, 119. This conflict is discussed in Christopher M. Tinson, Radical Intellect: Liberator Magazine and Black
+Activism in the 1960s (Chapel Hill: University of North Carolina Press, 2017), 108.
+91
+
+Octavius Abou, letter to the editor, Liberator 9, no. 2 (February 1969): 22.
+
+92
+
+Love The Black Woman compared to Patriarchal Attitudes, LL 49.42, LR 1.02, The Black Woman compared
+to Sexual Politics, LL 34.79LR1.2, The Black Woman compared to The Dialectic of Sex LL 141, LR 2.4, The Black
+Woman compared to The Female Eunuch LL 241. 62, LR 2.8.
+
+71
+
+F E M I N I S T BE S T SE L L E R S : A D I G I T A L H I S T O R Y O F 1 9 7 0S F E M I N I S M
+
+Elizabeth F. Hood points out that Stokes’s piece is “a summation of a real tension recurring in relationships
+between black men and women.” Elizabeth F. Hood, “Black Women, White Women: Separate Paths To
+Liberation,” The Black Scholar 9, no. 7 (1978): 50. bell hooks, criticizes Stokes for buying into the male
+breadwinner ideal. bell hooks, Ain’t I a Woman: Black Women and Feminism (Boston: South End Press, 1981), 92–
+93.
+93
+
+Gail A. Stokes, “Black Woman to Black Man,” in The Black Family: Essays and Studies, ed. Robert Staples
+(Belmont: Wadsworth Pub. Co., 1971), 160.
+94
+
+95
+
+Ibid.
+
+96
+
+Ibid.
+
+97
+
+Ibid., 161.
+
+98
+
+Ibid., 160.
+
+Gail A. Stokes, “Black Man, My Man Listen!,” in The Black Woman: An Anthology, ed. Toni Cade Bambara
+(New York: New American Library, 1970), 111–12.
+99
+
+100
+
+Ibid., 111.
+
+101
+
+Ibid.
+
+102
+
+Ibid., 112.
+
+Joanna Clarke, “Motherhood,” in The Black Woman: An Anthology, ed. Toni Cade Bambara (New York: New
+American Library, 1970), 68.
+103
+
+104
+
+Bambara, “On The Issues of Roles,” 108.
+
+105
+
+Joyce Green, “Black Romanticism,” in The Black Woman: An Anthology, 138.
+
+106
+
+Abbey Lincoln, “Who Will Revere the Black Woman?,” in The Black Woman: An Anthology, 83.
+
+On the other hand, Patricia Hill Collins devotes an entire chapter to black women’s love and relationships, which
+considers many of the essays in The Black Woman. Patricia Hill Collins, Black Feminist Thought: Knowledge,
+Consciousness, and the Politics of Empowerment (New York: Routledge, 2000), 149-172.
+107
+
+Elizabeth Weed, “Introduction: Terms of Reference,” in Coming to Terms (RLE Feminist Theory): Feminism,
+Theory, Politics, ed. Elizabeth Weed (New York: Routledge, 1989), xv.
+108
+
+109
+
+political in the sample compared to women and feminist corpora LL 2489.14, rights in the women corpus
+compared to the sample and feminist corpora LL 7552.23, and revolution in the feminist corpus compared to the
+sample and women corpora LL 862.08.
+110
+
+political sample corpus compared to feminist corpus LL 1004.96, LR 1.76. Sample corpus compared to women
+corpus, LL 5178.71, LR 1.4. Feminist corpus compared to women corpus LL 49.43, LR 0.46
+111
+
+Rights women corpus compared to sample corpus LL 9072.52, LR 2.48. Feminist corpus compared to sample
+corpus LL 292.12, LR 1.64. Women corpus compared to feminist corpus LL 130.91, LR 0.84.
+
+72
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+112
+
+Revolution feminist corpora compared to women corpora LL 1406.51, LR 3.09. Feminist corpus compared to
+sample corpus LL 719.96, LR 1.86. Sample corpus compared to women corpus LL 838.78, LR 1.23.
+113
+114
+
+Millett, Sexual Politics, 61.
+
+Gwen Patton, “Black People and the Victorian Ethos," The Black Woman: An Anthology, 143, 148.
+
+115
+
+Millett, Sexual Politics, 63.
+
+116
+
+There is a statistically significant difference between the sample corpus and the women corpus with a very small
+effect size and between the feminist corpus and the sample corpus with a somewhat larger effect size although still
+less than 1. However the disparities between feminist and the women corpus indicate a difference of two
+fold. power sample corpus compared to women corpus, LL 711.56, LR 0.062. power feminist corpus compared to
+sample corpus, LL 132.85, LR 0.66. power feminist corpus compared to women corpus, LL 409.11, LR 1.28.
+117
+
+Power in The Dialectic of Sex 16 normalized to 10000 words, The Black Woman 13.6 normalized to 10000
+words. LL 1.85.
+118
+
+Beal, “Double Jeopardy,” 95.
+
+119
+
+Ibid., 95, 97.
+
+120
+
+Ibid., 95.
+
+121
+
+Ibid., 97.
+
+122
+
+Ibid., 100.
+
+123
+
+Grace Lee Boggs, “The Black Revolution in America,” in The Black Woman: An Anthology, 221.
+
+124
+
+Ibid.
+
+125
+
+Ibid.
+
+“The personal is political” first appeared appended to a memo by Carol Hanisch reprinted in Notes From the
+Second Year. Hanisch credits someone in the editorial process with formulating the title. That volume of Notes was
+edited by Firestone and Anne Koedt, published in April of 1970, but the theory that underlay of the slogan had been
+developing for years among both white and Black feminists. In a letter of January 1969, Gwen Patton reflects, “I am
+of the opinion that our problems, even on a day-to-day living basis, are political.” Quoted in Stephen M. Ward,
+“‘Ours Too Was a Struggle for a Better World’: Activist Intellectuals and the Radical Promise of the Black Power
+Movement, 1962-1972” (PhD dissertation, University of Texas, Austin, 2002), 234.
+126
+
+127
+
+The Black Woman compared to The Female Eunuch. political LL 6.96 LR 0.89. revolution LL 38.82 LR
+1.68. power LL 67.81, LR 1.89.
+128
+
+Juliet Mitchell, Psychoanalysis and Feminism (Basic Books, 1974).
+
+129
+
+Ellen Carol DuBois et al., Feminist Scholarship: Kindling in the Groves of Academe (Champaign: University of
+Illinois Press, 1985), 35; Dale Spender, For the Record: The Making and Meaning of Feminist Knowledge (New
+York: Women’s Press, 1985).
+
+73
+
+F E M I N I S T BE S T SE L L E R S : A D I G I T A L H I S T O R Y O F 1 9 7 0S F E M I N I S M
+
+Kelly Coogan-Gehr, “Origin Stories: A Critique of the Stock Narrative of Feminist Field Formation,” in The
+Geopolitics of the Cold War and Narratives of Inclusion (New York: Palgrave Macmillan, 2011), 1–33.
+130
+
+131
+
+Betty Friedan, It Changed My Life: Writings On The Women's Movement (New York: Random House, 1976).
+
+132
+
+Elaine Hedges selected Sexual Politics, Robin Morgan her own anthology, and Firestone got a shout out. The
+other three texts do not appear in the published remarks. See Florence Howe et al., “Books That Changed Our
+Lives,” Women’s Studies Quarterly 19, no. 3/4 (1991): 8–29.
+Beverly Guy Sheftall, “Toni Cade Bambara, Black Feminist Foremother,” in Savoring the Salt: The Legacy of
+Toni Cade Bambara, ed. Linda Janet Holmes and Cheryl A. Wall (Philadelphia: Temple University Press, 2007),
+115.
+133
+
+Gloria Hull, “History/My History,” in Changing Subjects: The Making of Feminist Literary Criticism, ed. Gayle
+Greene and Coppélia Kahn (New York: Routledge, 1993), 58.
+134
+
+Farah Jasmine Griffin, “Conflict and Chorus: Reconsidering Toni Cade’s The Black Woman: An Anthology,”
+in Is It Nation Time?: Contemporary Essays on Black Power and Black Nationalism, ed. Eddie S. Glaude (Chicago:
+University of Chicago Press, 2002), 113.
+135
+
+136
+
+bell hooks, Remembered Rapture: The Writer at Work (New York: Henry Holt and Company, 2013), 230.
+
+137
+
+Bambara, “On The Issues of Roles,” 104; Patton, “Black People and the Victorian Ethos,” 144.
+
+138
+
+Robinson and Group, “Essay for Black Women in the Cities.”
+
+74
+
+

@@ -1,0 +1,1086 @@
+Journal of
+Cultural Analytics
+
+April 20, 2021
+
+Squatter Regionalism: Postwar Fiction,
+Geography, and the Program Era
+Nicholas M. Kelly, Nicole White, and Loren Glass
+Nicholas M. Kelly, New Mexico Tech
+Nikki White, University of Iowa
+Loren Glass, University of Iowa
+Peer-Reviewer: Mark McGurl
+Data Repository: 10.7910/DVN/CQURIW
+
+ABSTRACT
+In this article we use computational methods to establish that the Program Era has altered the
+traditional understanding that a regionalist writer writes about the region in which they grew up.
+Using the Iowa Writers’ Workshop as an example, we prove that many writers now write about
+the region to which they moved to study and/or teach creative writing. Using a database of
+demographic information about faculty and students alongside computational analysis of place
+names in a curated corpus of work produced by prominent Iowa-affiliated writers, we map
+authorial career itineraries onto the geographic locations referenced in their fiction, visualizing
+the ways in which the relationship between writer and place has been inflected by the
+Midwestern location of the Workshop. We found that Iowa references are significantly higher
+than in a comparable corpus of postwar literature. They are also significantly higher in
+percentage terms than Iowa’s population as a proportion of the US population. Finally, we found
+that the works in our corpus most centrally focused on Iowa are, overwhelmingly, not authored
+by Iowa natives. Instead, we have identified a cohort of squatter regionalists, authors whose
+writings prominently feature the state in which they received their MFA, found faculty
+employment, or (frequently) both. This trend, we believe, may also be evident in works by
+authors from other MFA programs, which would confirm our larger hypothesis that the
+professional itineraries mandated by the Program Era have influenced the regional settings of
+postwar
+American
+fiction.
+
+The last chapter of Tom Lutz’s landmark study Cosmopolitan Vistas: American
+Regionalism and Literary Value (2004) is ambitiously titled “The New New
+Regionalism and the Future of Literature.” In it, Lutz reminds us that while
+conventional literary history confines classic regionalism to the turn of the twentieth
+century, a “large number of recent writers are also closely associated with the locales
+that are featured in their fiction and where they (usually) have a home.” Lutz lists
+some of these writers, and then designates Chris Offutt’s first short story collection,
+Kentucky Straight (1992), as an example of “classic literary regionalism.”1 What
+Lutz neglects to mention is that Kentucky Straight began as an MFA thesis at the
+University of Iowa Writers’ Workshop. While Offutt ended up writing about (and
+ultimately returning to) his home state, many of his colleagues at Iowa would choose
+to live in and write about their adopted state and region. Marilynne Robinson, Jane
+Journal of Cultural Analytics 4 (2021): 75-109. doi: 10.22148/001c.22332
+
+SQUATTER REGIONALISM
+
+Smiley, W.P. Kinsella, and John Irving are just a few examples of writers not from
+Iowa who nevertheless set much of their fiction in this hitherto neglected state.
+What constitutes or enables a “close association” with a place for an American
+writer? For traditional regionalism, it almost invariably meant that the author was
+born and grew up in the region featured in their fiction. And while Lutz concedes
+that recent regionalist writers may have more attenuated relations with the locales
+they write about, he nowhere mentions that many of the figures he lists—including
+Flannery O’Connor, Wallace Stegner, Ken Kesey, Wendell Berry, and Mary
+Swander—forged their regional sensibilities in association with their careers as
+students and teachers of creative writing. Is it possible that the Program Era has
+altered the traditional relation between writer and region, creating a new genre that
+could be called “squatter regionalism”? How might we use computational methods
+to prove the existence of such a genre?
+For the last few years the Program Era Project (PEP), a collaborative initiative
+supported by the University of Iowa’s Digital Scholarship and Publishing Studio
+(DSPS), has been gathering demographic information about Iowa-affiliated writers
+alongside textual metrics of their work. From a variety of sources both internal and
+external to the University, we have built a database of graduation dates; thesis titles,
+genres and advisors; and hometowns (and we’re working on publishers, agents,
+prizes, and employment history). With the invaluable assistance of a data capsule
+provided through an Advanced Collaborative Support (ACS) Award from the
+HathiTrust Research Center (HTRC), we have also curated an expansive corpus of
+work produced by approximately 300 University of Iowa-affiliated writers.
+Together, this data enables us to map the career itineraries of these writers onto the
+geographic locations referenced in their fiction, visualizing the ways in which the
+relationship between writer and place has been inflected by the Midwestern location
+of the Iowa Writers’ Workshop (IWW).
+Our findings, on the whole, support our hypothesis about the existence of a distinct
+phenomenon we’re calling squatter regionalism, though we will need further
+research to confirm its scale, scope, and significance. Using a custom-built text
+analysis tool, we have tracked location references in our corpus, determining which
+states are most frequently mentioned. We found that, while New York and, to a lesser
+extent, California predominate, Iowa references are significantly higher than in a
+comparable corpus of postwar literature collected through the TxtGeo project. They
+are also significantly higher in percentage terms than Iowa’s population as a
+76
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+proportion of the US population. Most telling, we found that the works in our corpus
+most centrally focused on Iowa are, overwhelmingly, not authored by Iowa natives.
+Instead, we have identified a cohort of squatter regionalists, authors whose writings
+prominently feature the state in which they received their MFA, found faculty
+employment, or (frequently) both. This trend, we believe, may also be evident in
+works by authors from other MFA programs, which would confirm our larger
+hypothesis that the professional itineraries mandated by the Program Era have
+influenced the regional settings of postwar American fiction.
+
+Background, Methods, Corpus
+To assess regional representation in our corpus, we built a text analysis tool that
+counts state-related toponyms, including state names, state capitals, the fifty most
+populous cities in the U.S., and the four most populous cities in each state.2 As
+previous scholarship documents, disambiguating terms that can refer to multiple
+places (Washington State or Washington, DC) or even multiple things (George
+Washington, University of Washington, The Washington Companies) poses a
+significant challenge for toponym tracking. Different studies have taken varying
+approaches to address this challenge. For his study of location representation in Civil
+War-Era American Fiction, Matthew Wilkens used named entity recognition to
+acquire his initial collection of place names. He then evaluated these extracted
+location references manually based on the context in which they appeared, excluding
+false positives or unclear references.3 For their study of geospatial semantics in the
+Scottish Poet Ossian, Eric Gidal and Michael Gavin4 used a technique developed by
+David A. Smith and Gregory Crane for the Perseus Project. This complex method
+involves mathematically representing known place references on a contextual grid
+of values and then connecting an ambiguous toponym to a place by assessing its
+location on this grid.5
+We use context to disambiguate place references in a way that we hope will be more
+transparent and comprehensible to students and scholars less familiar with
+computational analysis. Our tool works by first counting unambiguous place
+references, then using that information to assign the ambiguous place references to
+states. For instance, the tool will count unambiguous mentions of places in
+Washington State, Washington, D.C., or false positive instances of Washington used
+as a last name. Based on the representation of each unambiguous category (city,
+state, name), the tool then proportionally assigns ambiguous instances of just
+77
+
+SQUATTER REGIONALISM
+
+“Washington” to the appropriate category.6 Our aim with this disambiguation
+process is to employ a simple, transparent, and easy-to-understand heuristic that can
+account for the semantic ambiguities of place names.
+Because regionalism is primarily used to categorize fiction, we decided to limit our
+corpus to this genre. We then narrowed it down further to works that feature at least
+10 location references. Finally, the first and last five pages of all texts were removed
+to eliminate place mentions found in publication or biographical information. These
+criteria left us with a corpus of 500 works of fiction by approximately 150 authors.
+
+Mapping Corpus Data: Regionalist Test Cases
+Despite Wilkens’s legitimate challenge to regionalism as a literary historical
+category, the term continues to be associated with the period of its emergence in the
+late-nineteenth century, when it was canonized as a mode of literary realism.
+Wilkens’s significant findings complicate without undermining this traditional
+periodization. The regionalist writer during this era was invariably from the region
+they wrote about. A liminal figure, the classic regionalist straddled the distance
+between the peripheral location where they were raised and the metropole where
+they inevitably migrated to pursue a literary career.
+From a selection of classical regionalist texts that exhibit this traditional relationship
+between writer and place, we use our tool to establish a baseline for comparison and
+map the development of regionalist writing over the last century. For each author,
+we provide a pair of choropleth map visualizations, each based on a different method
+of measuring the location references in the author’s corpus. In the first method, we
+take each text in an author’s corpus separately and determine what percentage of the
+total location references each state represents. We then find the mean of each state’s
+percentage across texts, allowing us to see, on average, what percentage of total
+place references is made up by each state. This method, we believe, enables us to
+visualize location references with each text on an equal footing. Longer works (or
+works with more total location references) can’t outweigh shorter works (or works
+that are less location dense). For our second method, we take the author’s entire
+corpus and find what percentage of total state references each individual state
+represents. With this approach, we can register how consistently an author has
+mentioned a state or its locations across the entire body of writing available. An
+advantage of this method is that instances where a single text (or a small number of
+78
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+texts) have an extremely high percentage of references will not skew the overall
+measurement. This is particularly useful if these high percentages come from texts
+that have a lower overall number of location references. In most of the following
+examples, the results of each method differ little. Together, these methods measure
+both how often a state features prominently within each text in a corpus and how
+often a state appears throughout the entire corpus.
+
+79
+
+SQUATTER REGIONALISM
+
+Figure 1. Average, Total Mentions by State, Hamlin Garland (1860-1940)
+Born in Wisconsin. Raised in the Midwest.7
+
+We begin with Hamlin Garland, whose geographical trajectory and career arc can be
+considered representative of classic regionalist writers more generally. Born on a
+farm in Wisconsin, Garland was an avid reader and an ambitious writer, determined
+to escape from his humble origins and make a literary name for himself on the East
+Coast. He moved to Boston as a young man and promptly caught the attention of
+William Dean Howells, editor of The Atlantic Monthly and arbiter of literary realism
+in the United States at the turn of the twentieth century. Garland’s initial success
+came with the publication of his collection of semi-autobiographical short stories,
+Main-Traveled Roads, which focused on what he termed the “Middle Border,” the
+agricultural region that had been the West but was becoming what we now call the
+Midwest. Garland would continue to mine this region for literary gold over the
+course of his career, achieving particular recognition for his autobiography, A Son
+of the Middle Border. Like most regionalism of this era, Garland’s work is defined
+80
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+by its author’s simultaneous origins in and departure from the location upon which
+he focuses. This personal distance maps onto the geopolitics of the literary world
+and publishing industry of the time, which was based on the East Coast, a region that
+Garland wrote about later in his career after he had achieved recognition as a
+regionalist, accounting for the prominence of New York and Massachusetts on our
+maps.
+
+81
+
+SQUATTER REGIONALISM
+
+Figure 2. Average, Total Mentions by State, Sarah Orne Jewett (1849-1909).
+Born in Maine. Lived entire life in New England 8
+
+We now turn to Sarah Orne Jewett, a regionalist writer who never left New England,
+the region where she was born and about which she wrote. If Garland wrote about a
+region that was coming to prominence as an agricultural (if not cultural)
+powerhouse, Jewett wrote about a region that was passing away, as the shipping
+industry based in New England began to fade and populations dwindled. Jewett’s
+work is thus doubly nostalgic, marking a region that was not only lost to her but also
+vanishing from the modern socio
+economic order. Her family had lived in New
+England for generations, so she was documenting a culture she knew well. Based in
+the seaport town of South Berwick, Maine, Jewett was close to Boston, both
+geographically and professionally, where like Garland, she received crucial
+encouragement and patronage from William Dean Howells. Jewett’s regional
+affiliations were more proximate than Garland’s, but the same pattern of nostalgia
+and loss dominates her fiction.
+82
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+With these test visualizations of classic regionalism and the ones to follow, our tool
+essentially tells us what we already know. This is a good thing, confirming that we
+can reliably use it to explore regional trends and patterns in more recent texts.
+Moreover, we can later use this data to pull and examine macro level trends in
+regional representation, allowing us to explore the research questions raised by this
+project at a larger scale. To do this, we first need to briefly consider the period which
+intervenes between classical and squatter regionalism.
+Literary modernism in the United States explicitly disavowed the representational
+aspirations of regionalism and established its own cosmopolitan credentials over and
+against the seemingly parochial concerns of what was dismissively called “local
+color” writing. Indeed, many American modernists abandoned the United States
+altogether, emigrating to Paris to join the expatriate bohemian communities of
+interwar Europe, where liquor was legal and the dollar was strong. Many of them
+left the United States imaginatively as well, choosing to write about Americans
+abroad. The author who stood out as the foundational exception to this rule was
+William Faulkner, whose native modernism established the South as America’s
+region par excellence. Faulkner’s resistance to the North’s modernity would come
+to define the emergence of America’s literary identity as such under the powerful
+academic auspices of the New Critics, Southerners all.
+
+83
+
+SQUATTER REGIONALISM
+
+84
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Figure 3. Average, Total Mentions by State, William Faulkner (1897-1962).
+Born and raised in Mississippi.9
+
+85
+
+SQUATTER REGIONALISM
+
+86
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Figure 4. Average, Total Mentions by State, William Faulkner (1897-1962).
+(Jefferson and Yoknapatawpha included)
+
+William Faulkner famously situated his most significant works of fiction in the
+South generally and in Mississippi specifically, and this regional concentration is
+visibly evident in the figures above. Faulkner’s South, it’s worth emphasizing, is the
+Confederate South, concentrated in the Eastern section where the major battles of
+the Civil War were fought. Faulkner’s use of fictional names for key locations
+presents the first example of a common feature of modern regionalist texts. To reveal
+the degree to which these fictional names focalize location references in a corpus of
+this type, we have added Jefferson and Yoknapatawpha to our search for the second
+set of visualizations, bringing Mississippi into proper focus. The relative absence of
+New York and New England in Faulkner’s corpus is worth noting as a testimony to
+the degree to which these regions had lost much of their cultural authority during the
+87
+
+SQUATTER REGIONALISM
+
+interwar years. Boston came to be seen as hopelessly parochial and “genteel,” and
+New York, while still the capital of the American publishing industry, was perceived
+as more concerned with commerce than culture. Cultural authority had
+correspondingly shifted from commercial magazines such as the Atlantic and
+Harper’s to little magazines, frequently based in Europe and, increasingly,
+university-based journals such as the Kenyon Review.
+
+Figure 5. Total Mentions by State, Flannery O’Connor (1925-1964).
+Attends Iowa Writers’ Workshop, 1946-47.10
+
+Flannery O’Connor’s career marks the transition from Faulkner’s interwar South,
+and its regional identity based in its underdevelopment by the industrial North, to an
+emergent regionalism based in the rise of creative writing programs, initially in the
+Midwest and West. If O’Connor wrote almost exclusively about her native South,
+she honed her style at the Iowa Writers’ Workshop under Andrew Lytle, a Southern
+88
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Agrarian on loan from Vanderbilt. The alliance between the New Critics based at
+Vanderbilt and Kenyon College and the faculty at the Iowa Writers’ Workshop was
+exceptionally close during this formative period, and O’Connor’s institutional and
+regional straddling is representative of this proximity in the immediate postwar era.
+Robert Penn Warren and Robert Lowell were both visiting professors in the English
+Department in these early years, and Austin Warren and René Wellek wrote Theory
+of Literature at Iowa while
+Paul Engle, the proud Midwesterner who directed
+O’Connor’s thesis, was building the Workshop from an obscure experiment into a
+worldwide phenomenon. Engle’s extensive network helped stitch the New Critical
+bastions of Vanderbilt and Kenyon to Washington, DC, New York City, and, by way
+of those metropoles and their powerful cultural bureaucracies and deep-pocketed
+foundations, to the world.
+As Stephen Wilbers emphasizes, the Iowa Writers’ Workshop itself developed out
+of regionalist sensibilities, but Midwestern regionalism would come to adopt a more
+accommodating attitude toward the surrounding world than the Southern
+Regionalism championed by the New Critics.11 Mark McGurl affirms that
+“Midwestern regionalism, as exemplified in Engle, looked outward and sought
+prestige through expansion [while] the Southern regionalists insisted that the
+regionalist project must turn inward and achieve literary excellence through
+exclusion.”12 The intersection between these two regionalist sensibilities, one insular
+and exclusionary and the other open and inclusive, laid the groundwork for the
+squatter regionalism that would characterize the Program Era.
+It is important to situate squatter regionalism in the larger context of the GI Bill and
+the postwar boom in higher education in the United States. Louis Menand notes that
+between 1945 and 1975, “the number of American undergraduates increased by
+almost 500 percent and the number of graduate students by nearly 900 percent.” 13
+Before WWII, the experience of “going away to college” was restricted to a
+relatively narrow band of (mostly male) cultural and economic elites, and it was
+certainly not the best option for a young person with literary aspirations. English
+departments were primarily philological in method, focused on British as opposed
+to American literature (which was rarely acknowledged as such); young Americans
+who wanted to be writers looked for apprenticeship in Europe, not higher education
+in the United States.
+According to historian James Gregory, “World War II set off the greatest sequence
+of human migration in American History.”14 After WWII, demographically diverse
+89
+
+SQUATTER REGIONALISM
+
+access to postsecondary education expanded exponentially, making “going away to
+school” a national rite of passage for the American middle class, and graduates
+would frequently become as affectively attached to their college towns as their
+hometowns. Many of these college towns were in the Midwest, where massive
+(mostly public) multiversities began to draw students from the coasts, reversing the
+outward flow associated with classic regionalism. Indeed, mobility as such increased
+in the postwar era, so that Americans were less likely to have grown up in a single
+place for their entire childhood and also less likely to remain in a single place for
+their entire adulthood. In this more mobile environment, the college experience for
+many Americans supplemented or even replaced childhood as a period and place of
+sentimental attachment, generating the affective conditions of possibility for the
+creation and circulation of squatter regionalism.
+
+Squatter Regionalism
+“Squatter regionalism” designates those authors who write about the region in
+which they studied or taught creative writing, as opposed to the region in which they
+grew up. As initial examples, we offer a collection of authors associated with the
+Iowa Writers’ Workshop who, though not Iowans, came to adopt and embrace Iowa
+and the Midwest as focal points for their writing. We will use our visualizations to
+confirm the degree to which a selection of these authors mention Iowa specifically
+or the Midwest generally in their fiction.
+Our first example of squatter regionalism is Marilynne Robinson, recently retired as
+the F. Wendell Miller Professor of English and Creative Writing at the University of
+Iowa. Robinson was born in Sandpoint, Idaho, where her first novel, Housekeeping,
+takes place. After arriving in Iowa in her early forties, she became fascinated with
+the region and astonished by the relative absence of literary fiction representing it.
+She decided to write some herself, eventually publishing a series of celebrated
+novels with the
+fictional Midwestern town of Gilead, Iowa as their
+geographic and cultural focus. As with Faulkner, our second pair of visualizations
+include “Gilead” in the search terms.
+
+90
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+91
+
+SQUATTER REGIONALISM
+
+Figure 6. Average, Total Mentions by State, Marilynne Robinson Born in Idaho. Professor of English, Iowa Writers'
+Workshop (1991-2016)15
+
+92
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+93
+
+SQUATTER REGIONALISM
+
+Figure 7. Average, Total Mentions by State, Marilynne Robinson Born in Idaho. Professor of English, Iowa Writers'
+Workshop (1991-2016) (Gilead Included)
+
+The illustrations above map Robinson’s version of the Midwest, which shades over
+from Iowa into Missouri and Kansas, where episodes in her saga take place. Insofar
+as Robinson expressly seeks to do for Iowa what Faulkner did for Mississippi, it is
+worth noting that Missouri and Kansas are border states where the racial conflicts of
+the South came up against the predominantly white culture of the Midwest. In a
+sense, Robinson uses Faulkner’s South as a model for a culturally distinct region and
+imports it into a state whose regional identity has traditionally been vague and weak.
+
+94
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+95
+
+SQUATTER REGIONALISM
+
+Figure 8. Average, Total Mentions by State, John Irving (1942- ).
+Born and raised in New Hampshire. MFA, Iowa Writer’s Workshop (1967).
+Taught at Iowa Writer’s Workshop (1972-1975).16
+
+We now turn to John Irving who, in an increasingly common creative writing career
+arc, has been both a student and a teacher at the Iowa Writers’ Workshop. Irving was
+born in Exeter, New Hampshire, and much of his fiction takes place in New England.
+His work offers the first instance where our dual methods present notably different
+results, though both maps still indicate that Iowa, like New England, features
+prominently in his work. Indeed, many of his protagonists, like him, travel back and
+forth between the two locations. In our first map, which averages the proportions of
+location references by book, Iowa averages 14.5% of state mentions, second behind
+New York at 19.4%. In the second map, which totals location references across the
+author’s oeuvre total numbers, Iowa sits as the top spot with 17.6% of mentions,
+96
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+rising above New York, which has 16.8% of total references. We believe this
+variation is due to the density of location references in many of Irving’s works. In
+our fiction corpus, Irving’s novels often rank among the most location rich. Hotel
+New Hampshire has nearly 700 location hits, while
+Until I Find You and The
+Water-Method Man both have roughly 400 hits. In his most location-heavy works,
+Iowa references are dominant. For instance, in The Hotel New Hampshire, Iowa’s
+references are more than triple New York’s. And Iowa references are double New
+York’s in The Water-Method Man, a work which features a former University of
+Iowa graduate student as its protagonist. Collectively, such location-heavy, Iowaheavy works tip the balance when Irving’s averaged representation numbers are
+compared to state representation in the total corpus.
+Given Irving’s sustained popularity across the late twentieth century, it is not a
+stretch to say that many readers, both in the United States and around the globe, first
+come to know Iowa as a state and the Midwest as a region from this writer, New
+England born and bred. As with Robinson, we find a writer who bolsters the image
+of the Midwest by mapping it in terms of a more well-known and well-established
+regional identity. Its agricultural identity gets supplemented by an institutional
+itinerary associated with the postwar boom, where college towns loom large.
+Last, we consider W.P. Kinsella, a writer closely associated with Iowa, though he
+was born and raised in rural Alberta and didn’t arrive in Iowa City to attend the
+Writers’ Workshop until he was well into adulthood. Though he only spent a few
+years in the state, he dedicated a series of magical realist novels and short story
+collections to it.
+The Iowa Baseball Confederacy (1986) directly draws from
+(indeed parodies) Wilbers’s history of the Writers’ Workshop (Wilbers was working
+on his history as a doctoral dissertation when Kinsella matriculated). Shoeless Joe
+(1982) was adapted into the blockbuster film Field of Dreams (1989), which put
+Iowa on the cultural map, catapulting the little-known state to global prominence
+and enhancing its appeal as a tourist destination.
+Kinsella appropriated not only a region but a culture, as many of his characters are
+indigenous inhabitants of Iowa (itself an indigenous term, as are many places in the
+state), upon whom he bases the state’s folklore and cultural identity. While his
+decision to write fiction based in Iowa was uncontroversial, his representation of
+native voices has received frequent criticism as cultural appropriation. In a sense,
+indigenous voices do for Kinsella what race does for Robinson: they create a
+groundwork of cultural conflict out of which regional identity emerges.
+97
+
+SQUATTER REGIONALISM
+
+98
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Figure 9. Average, Total Mentions by State, W. P. Kinsella (1935-2016).
+% of Total Mentions from Full HTRC Corpus Collection.17
+
+With Kinsella, we again see a divergence between averaged and totaled maps. In the
+averaged visualization, New York maintains an edge at roughly 21%, though Iowa
+also has a notable degree of representation at 9%. These high New York averages
+come from a handful of Kinsella works that mention New York locations much more
+than other state locations (i.e. Born Indian, Dance Me Outside) but, compared to
+Kinsella’s Iowa writing, have a lower number of place name mentions. Kinsella’s
+investment in Iowa becomes truly apparent when we look at the percentages across
+his entire corpus. Here we see how Iowa becomes the center of Kinsella’s geographic
+imagination, even though he only lived there for a brief period.18
+
+99
+
+SQUATTER REGIONALISM
+
+Corpus Comparison and Demographic Data
+Wilkens found in his study of nineteenth-century texts that geographic reference
+counts are often tied closely to state population. Therefore, he suggests that a fruitful
+way to measure and explore the representation of states in a given corpus would be
+to “compare the fraction of all named-location occurrences that fall with a region to
+that region’s fraction of the overall population.”19 Along these lines, we compared
+recent census data on what percentage of the U.S. population lives in Iowa with the
+average percentage of state references to Iowa in our Workshop corpus to see if, and
+how much, the percentages differed. Current 2017 estimates of state and national
+population by the U.S. Census Bureau put Iowa’s population at approximately
+3,145,711 and the national population at approximately 325,719,178. This means
+Iowa currently represents about .97% of the U.S. population.
+This tracks well with TxtGeo’s numbers for Iowa. As the image below indicates,
+when the TxtGeo tool is asked to produce a state-based breakdown of place
+references found in books published between 1930 and 2015 and categorized under
+the Library of Congress Classification “Language and Literature,” TxtGeo finds that
+Iowa comprises 1.058% of references, about 1.10 times the population figure. By
+contrast, in our corpus the average Iowa Writers’ Workshop text references Iowa 3.2
+times, more than three times as often. If we count just the total mentions for each
+state, the number increases to approximately 4.2 percent, four times the population
+figure.
+
+100
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Figure 10. Total Mention by State, TxtGeo Corpus,
+Average, Total Mention by State HTRC/PEP Fiction Corpus
+
+While New York and California represent a large percentage of the location
+references found in our corpus, looking at the averaged and total mention
+percentages reveals some significant details. First, after the prominence of New
+York and California (which account for approximately 30% of total place
+references), there is a rapid drop off in how often states are mentioned. Illinois and
+Massachusetts average approximately 5%, about half of California (with 10% of
+total mentions) and a quarter of New York (with 20%). More significant for our
+purposes is Iowa’s location in the rankings of frequently-represented states; it ranks
+6th in terms of average percentage of total mentions and 5th in total mentions, much
+higher than its ranking of 27th in the TxtGeo corpus.
+We now turn to geographic trends in IWW graduation cohorts. Since the founding
+of the PEP, the team has worked to collect publicly available demographic data on
+Workshop students and faculty. Most significantly for this project, we collected selfdeclared hometowns from graduation ceremony programs held in the University
+Archives. When rankings of the top states listed by IWW graduates are first
+examined, the results initially suggest a surprisingly high representation of Iowa.
+
+101
+
+SQUATTER REGIONALISM
+
+State
+
+Graduates
+
+% of Total
+
+IA
+
+822
+
+29.89091
+
+NY
+
+266
+
+9.672727
+
+CA
+
+236
+
+8.581818
+
+IL
+
+148
+
+5.381818
+
+PA
+
+109
+
+3.963636
+
+MA
+
+106
+
+3.854545
+
+OH
+
+76
+
+2.763636
+
+NJ
+
+64
+
+2.327273
+
+TX
+
+58
+
+2.109091
+
+CT
+
+51
+
+1.854545
+
+Figure 11. Top 10 States Listed as Hometown, IWW Graduation Records
+
+We hypothesize that this prominence is caused by the considerable number of
+Workshop graduates who claim Iowa City as their hometown, even though many if
+not most of them were not born or raised there. Unlike undergraduates, graduate
+students frequently list their current location as their hometown, rather than the place
+in which they were raised. Furthermore, many of the early IWW cohorts were older
+than the average graduate student; they were returning to school after stints in the
+service or disappointments with their initial careers. Many were married with
+children and happy to call Iowa “home.” We can easily compare graduate records
+with external biographical information to find cases of hometown false positives
+attributed to Iowa City or Coralville (a city adjacent to Iowa City). For example,
+both Jane Smiley, who was born in Los Angeles and grew up in Missouri, and T.C.
+Boyle, who was born and raised in New York, listed Iowa City as their hometown.
+This very fact supports our hypothesis insofar as it indicates the frequency with
+which writers who come to Iowa City adopt it as their “home.” When we remove
+102
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Iowa City and Coralville from our list, we get a much more realistic picture of
+geographic representation in IWW graduate cohorts, shown below listing the top 10
+states (figure 12).
+State
+
+Graduates
+
+% of Total
+
+NY
+
+266
+
+12.79461
+
+CA
+
+236
+
+11.35161
+
+IA
+
+151
+
+7.263107
+
+IL
+
+148
+
+7.118807
+
+PA
+
+109
+
+5.242905
+
+MA
+
+106
+
+5.098605
+
+OH
+
+76
+
+3.655604
+
+NJ
+
+64
+
+3.078403
+
+TX
+
+58
+
+2.789803
+
+CT
+
+51
+
+2.453102
+
+Figure 12. Top 10 States Listed as Hometown, IWW Graduation Records
+(Iowa City and Coralville Removed)
+
+Through these figures, we get a clearer picture of where Workshop students come
+from. Iowa remains highly ranked, though some of this prominence could still be
+tied to students living in communities near Iowa City and listing their current
+locations as hometowns. It is, of course, worth noting the prominence of New York
+and California as 24% of graduates, nearly one in four, list either New York or
+California as their home state. Over one in eight graduates list New York as their
+home. This clearly demonstrates that there is an established pattern, tracing back to
+the origins of the Workshop, of coastal residents migrating to Iowa to acquire an
+103
+
+SQUATTER REGIONALISM
+
+MFA. A considerable number remain or return. Again, it is worth noting how
+dramatically this reverses demographic trends extending back to the era of classic
+regionalism, when American writers left the rural heartlands for the urban coasts and
+beyond.
+By combining our demographic information about hometowns with our textual
+metrics, we are able to confirm our hypothesis regarding “squatter regionalism” and
+the Program Era, at least as it concerns the Iowa Writers’ Workshop.
+Author Name
+
+Work Name
+
+IA % of Total
+Mentions
+
+Cassill, R. V.
+
+The happy marriage, and other stories 51.35135135
+
+McCracken, Elizabeth
+
+Niagara Falls all over again
+
+48.553054466
+
+Irving, John
+
+The water-method man
+
+46.678526
+
+Irving, John
+
+3 by Irving
+
+40.94853409
+
+Cassill, R. V.
+
+Three stories
+
+40
+
+Stuckey-French, Elizabeth The first paper girl in Red Oak, Iowa; 38.11881188
+and other stories
+Shields, David
+
+Heroes
+
+33.83806071
+
+Smiley, Jane
+
+At paradise gate
+
+31.94444444
+
+Kinsella, W. P.
+
+Shoeless Joe
+
+31.58414213
+
+Tiempo, Edilberto K.
+
+Finalities: a novelette and five short 28.88888889
+stories
+
+Irving, John
+
+The Hotel New Hampshire
+
+28.37671402
+
+Grumbach, Doris
+
+The spoil of the flowers
+
+28.12656956
+
+Yates, Richard
+
+Young hearts crying
+
+28.10110326
+
+Smiley, Jane
+
+A thousand acres
+
+27.7027027
+
+Wittinger, Ellen
+
+Lombardo’s law
+
+25.66666667
+
+Stefaniak, Mary Helen
+
+Self storage and other stories
+
+24.3902439
+
+Schramm, Wilbur Lang
+
+Windwagon Smith and other yarns
+
+22.64150943
+
+Godwin, Gail
+
+Evenings at five
+
+22.22222222
+
+104
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Irving, John
+
+The 158-pound marriage
+
+20.125
+
+Cheever, John
+
+Oh, what a paradise it seems
+
+20
+
+Haldeman, Joe W.
+
+Camouflage
+
+19.62616822
+
+Cassill, R. V.
+
+Collected Stories
+
+19.3043674
+
+Louie, David Wong
+
+The barbarians are coming: a novel
+
+18.57923497
+
+Grumbach, Doris
+
+The magician’s girl
+
+17.6744186
+
+Kinsella, W. P.
+
+The further adventures of Slugger 16.93693694
+McBatt: baseball stories
+
+Figure 13. Top 25 Works, Iowa % of Total Location Mentions
+
+The chart above starkly illustrates the degree to which most of the Workshop writers
+who focus on Iowa in their work are not from Iowa originally. It lists the 25 novels
+or short story collections in which Iowa has the highest percentage of location
+references. Other than R.V. Cassill (who ultimately left Iowa), none of these authors
+are Iowans. Rather than (or in addition to) writing about where they’re from, they’ve
+decided to write about where they’ve gone, where they ended up, permanently or
+temporarily, in pursuit of their careers in creative writing. Their focus has been
+sustained enough, we think, to transform the geographic imagination of the postwar
+era. Prior to the Program Era, Iowa was next to invisible in American literature, and
+the Midwest featured mostly as a place people left. Now, Iowa is a central node in a
+world literary network, and the Midwest has emerged as a location of extensive
+thematic and cultural interest.
+From our graduation data, we can see how the Workshop draws students from across
+the United States. Our analysis of Workshop fiction shows that while our authors
+often gravitate towards writing about the coasts, their location references to Iowa
+make up a significantly higher percentage of total location references than
+comparable corpora. When we look at the works that reference Iowa most
+frequently, we see that an overwhelming majority of those works were authored by
+Iowa visitors or transplants. Furthermore, Iowa has become, both nationally and
+internationally, a required stop on the professional itinerary of any creative writer of
+any reputational stature, enhancing its prominence in the regional imaginary of
+postwar fiction.
+
+105
+
+SQUATTER REGIONALISM
+
+The increasing precariousness of the academic job market has only enhanced this
+prominence. In 2011, Poets & Writers conducted a survey of 640 MFA program
+applicants, assessing which MFA programs the potential students applied to. Of the
+640 survey participants, 404 (63%) applied to the Workshop. The second highest
+ranked program in the survey (University of Michigan) saw only 221 applications
+from survey respondents.20 According to a 2015 New York Times article on MFA
+applications and employment, the Workshop received 1380 applications for 50 open
+spots that year. The piece goes on to note that about 20,000 applications would be
+sent to MFA programs in 2015, and that 3,000 to 4,000 MFAs would graduate. For
+those thousands of graduates, 112 tenure-track creative writing positions were
+available.21 In short, if a common creative writing maxim may be “write what you
+know,” socioeconomic and reputational forces dictate what places the most
+promising writers are likely to get to “know.” Add to this the increasing prominence
+of memoir and autofiction in the contemporary literary field and the expansion of
+writing programs at the University of Iowa (which currently includes the
+International Writing Program, the Nonfiction Writing Program, the Translation
+Program, and the Center for the Book, among others), it should not be surprising that
+Iowa appears with increasing frequency in literary fiction and nonfiction.
+We speculate that similar patterns in attendance and representation may be seen in
+work produced in other prominent programs, such as Stanford for the West, but
+that’s material for another study, a study to be drawn from corpora yet to be
+assembled. We hope that our initial exploration of the Iowa Writers’ Workshop and
+our collaboration with HathiTrust’s ACS program offer a model that other
+institutions could follow, should they be interested in exploring the potential
+significance of their own MFA programs on literary geographic representation.
+Additionally, it is our hope our collaboration with HathiTrust suggests a path
+forward for scholars of contemporary literature attracted to computational
+methodologies but stymied by the access difficulties of working with texts in
+copyright.
+It is for these reasons that we seek to analyze, with our technology and our
+computational methods, geographical representation in our corpus in a way that is
+as transparent and technically legible as possible. We deliberately strive to develop
+methods that could invite discussion from both technically sophisticated and
+traditionally trained literary scholars, methods that avoid, whenever possible, a
+perception that our visualizations emerge from a computational black box. We invite
+and welcome suggestions on methods and techniques, ways to rethink or improve
+106
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+our tool both computationally and in its statistical grounding. Particularly, we invite
+any suggestions
+regarding the disambiguation process, perhaps the thorniest
+component of any location-tracking technology. Our aim is to integrate what
+suggestions we can while, ideally, maintaining intelligibility.
+Simultaneously, we acknowledge the limitations, in terms of both corpus and
+technology, in this study. Our tool leans towards urban rather than rural locations.
+Our corpus, while the largest of its kind assembled, is not representative of
+Workshop writing as a whole. Indeed, given that none of the IWW theses have been
+(or are likely to be) digitized, the task of creating a truly representative corpus is
+perhaps impossible and certainly unlikely.
+Nevertheless, we believe that our analysis offers the most comprehensive mapping
+to date of the geographic imaginary of the Iowa Writers’ Workshop and could
+indicate larger geographic trends in postwar fiction. Both institutionally and
+aesthetically, there remains much to be examined, mapped, and better understood
+about the Program Era. We offer this exploration as one model of how future
+scholarship might chart a course into this literary territory.
+
+References
+1
+
+Tom Lutz, Cosmopolitan Vistas: American Regionalism and Literary Value (Ithaca: Cornell University Press,
+2004) 191-92.
+2
+
+In a few cases, some variations on these criteria were employed to help produce more accurate results. Our tool
+does not count “Washington” as referring to the state of Washington. It excludes references to geographic features
+that are also state names. City names that are common first names (Charlotte, Norman) are omitted. City names that
+are geographic features (Mesa, Butte) are omitted. Extremely common city names shared across states (Springfield,
+Columbus) are omitted. When a city in a state is omitted, the next most populous city in that state is included
+instead. The tool also tracks references to well-known city nicknames such as “Windy City,” “Sin City,” or “Big
+Apple.”
+See Matthew Wilkens, “The Geographic Imagination of Civil War-Era American Fiction,” American Literary
+History 25:4 (Winter 2013): 804.
+3
+
+See Michael Gavin and Eric Gidal’s “Scotland’s Poetics of Spcace: An Experiment in Geospatial Semantics” in
+Cultural Analytics at https://culturalanalytics.org/article/11072-scotland-s-poetics-of-space-an-experiment-ingeospatial-semantics .
+4
+
+107
+
+SQUATTER REGIONALISM
+
+5
+
+By gathering archives of place names from external sources, relying on unambiguous contextual place references,
+and weighing the overall likelihood of a place reference, Crane and Smith map the possible locations with which a
+given term might be associated on a grid. They then assign the ambiguous term to the location to which it most
+likely refers based on a combination score of its similarity to the last four location references in the text and the
+location reference that most closely aligns to the centroid of their weighted reference score map.
+6
+
+Such false positives are excluded from any state-related count as the disambiguation tool collects context. For
+instance, the tool simultaneously filters out and keeps count of any “Mr. Henderson” “Mrs. Henderson” “Sgt.
+Henderson” etc. while counting for potential references to Henderson, Nevada. The tool also employs a list of over
+8,000 first names collected by Stanford’s Natural Language Toolkit to track for any cases of a first name + city
+name combination to exclude these false positives from city counts.
+7
+
+Works Included: A Spoil of Office, The Captain of the Grey Horse Troop, Cavanagh, Forest Ranger, A Daughter
+of the Middle Border, The Eagle’s Heart, A Little Norsk, Main-Travelled Roads (Collection), The Moccasin Ranch,
+Money Magic, A Pioneer Mother, Prairie Folks (Collection), Rose of Dutchers Coolly, The Shadow World, A Son of
+the Middle Border, The Spirit of Sweetwater, The Light of the Star, They of the High Trails, The Trail of the Gold
+Seekers, The Tyranny of the Dark, Victor Ollnee’s Discipline, Wayside Courtships (Collection).
+8
+
+Works Included: A White Heron and Other Stories (Collection), An Arrow in a Sunbeam and Other Tales
+(Collection), Betty Leicester’s Christmas, Betty Leicester: A Story for Girls, A Country Doctor and Selected Stories
+(Collection), The Country of Pointed Firs, Deephaven and Selected Stories and Sketches, The Life of Nancy
+(Collection), A Marsh Island, Old Friends and New (Collection), The Queen’s Twin and Other Stories (Collection),
+Strangers and Wayfarers (Collection), The Tory Lover.
+Works Included: A Fable, Soldier’s Pay, The Hamlet, The Sound and the Fury, The Town, Absalom Absalom!, As I
+Lay Dying, Intruder in the Dust, Mosquitoes, Requiem for a Nun, Sanctuary, The Mansion, The Unvanquished, The
+Wild Palms.
+9
+
+10
+
+Works Included: Collected Works. Because this corpus consists of a complete, single collection, there is only one
+metric for percentage of total mentions.
+Stephen Wilbers, The Iowa Writers’ Workshop: Origins, Emergence, Growth (Iowa City: University of Iowa
+Press, 1980) 3-18.
+11
+
+12
+
+Mark McGurl, The Program Era: Postwar Fiction and the Rise of Creative Writing (Cambridge:
+University Press, 2009), 151.
+
+Harvard
+
+13
+
+Louis Menand, The Marketplace of Ideas: Reform and Resistance in the American University (New York: W.W.
+Norton, 2010), 64.
+James N. Gregory, “Internal Migration: Twentieth Century and Beyond,” in Oxford Encyclopedia of American
+Social History (New York: Oxford University Press, 2012), 542.
+14
+
+15
+
+Works Included: Gilead, Home, Housekeeping, Lila. Because only one work by Robinson was available from the
+HTRC corpus, we have used a separate corpus of Robinson’s works for this map.
+16
+
+Works Included: A Prayer for Owen Meany, A Son of the Circle, Three by John Irving (Collection), A Widow for
+One Year, Trying to Save Piggy Sneed (Collection), Until I Find You, The 158-Pound Marriage, The Cider House
+Rules, The Fourth Hand, The Hotel New Hampshire, Setting Free the Bears, The Water-Method Man, The World
+According to Garp.
+
+108
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+17
+
+Works Included: The Alligator Report (Collection), Born Indian (Collection), Box Socials, Brother Franks Gospel
+Hour (Collection), Dance Me Outside, The Further Adventures of Slugger McBatt (Collection), Red Wolf, Red Wolf
+(Collection), Scars (Collection), Shoeless Joe.
+At this point, our tool doesn’t track international location references, other than for disambiguation purposes, so
+we cannot include Kinsella’s Canadian locations in our visualizations. Our goal has been to determine the
+representation of Iowa compared to other U.S. states. In addition to tracking U.S. territories, a future version of the
+PEP tracking tool will include international representation and will hopefully offer new insights into the increasingly
+global scope of the IWW particularly and creative writing programs more generally.
+18
+
+19
+
+Wilkens, “Geographic Imagination,” 810.
+
+20
+
+Full survey results can be found at “2012 MFA Rankings: Top Fifty,” Poets&Writers.org, September 1, 2011.
+
+21
+
+See Cecilia Capuzzi Simon, “Why Writers Love to Hate the M.F.A.,”
+
+109
+
+

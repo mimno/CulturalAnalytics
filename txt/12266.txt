@@ -1,0 +1,1060 @@
+Journal of
+Cultural Analytics
+
+March 16, 2020
+
+What’s in a Face? Gender representation
+of faces in Time, 1940s-1990s
+Ana Jofre, Josh Cole, Vincent Berardi, Carl Bennett, Michael Reale
+
+ARTICLE INFO
+
+ABSTRACT
+
+Peer-Reviewed By: Lev Manovich & Elizabeth
+
+We extracted 327,322 faces from an archive of Time magazine containing 3,389 issues
+
+Maddock Dillon
+
+dating from 1923 to 2014, classified the gender of each extracted face, and discovered that
+
+Article DOI: 10.22148/001c.12266
+
+the proportion of female faces contained within this archive varied in interesting ways over
+
+Dataverse DOI: 10.7910/DVN/YAT5QK
+Journal ISSN: 2371-4549
+
+time. The proportion of female faces first peaked in the mid-to-late 1940s. This was
+followed by a dip lasting from the mid-1950s to the early 1960s. The 1970s saw another
+peak followed by a dip over the course of the 1980s. Finally, we see a slow and steady rise
+in the proportion of female faces from the early 1990s onwards. In this paper, we seek to
+make sense of these variations through an interdisciplinary framework drawing on
+psychology, visual studies (in particular, photography theory), and history. Through a close
+reading of our Time archive from the 1940s through the 1990s, we conclude that the visual
+representation of women in Time magazine correlates with attitudes toward women in both
+the historical context of the era and the textual content of the magazine.
+
+Beginning with its inception in 1923, Time magazine, perhaps more than any other
+comparable publication, has both reflected and influenced American popular
+attitudes toward domestic and global politics. This includes the changing ideas about
+women since the mid-twentieth century, which is the subject of this paper. Our
+approach was two-fold. We used supervised machine learning to extract visual
+images of faces from an archive of Time magazine, which contains 3,389 issues
+ranging from 1923 to 2014, and computationally classified the faces as male or
+female. We then closely read selected Time articles to make sense of this quantitative
+data against the background of postwar feminism and the history of the magazine
+itself. Our focus is on the period between the 1940s and the 1990s, which witnessed
+significant changes in attitudes toward women, and where our data of the proportion
+of female faces exhibits significant fluctuation.
+We found four clear phases in the visual representation of women in Time from the
+1940s to the 1990s: a peak in the mid-to-late 1940s, a dip from the mid-1950s to
+
+WHAT’S IN A FACE? GENDER REPRESENTATIONS OF FACES IN TIME, 1940-1990
+
+early 1960s, another peak in the 1970s, and another dip in the 1980s. The number of
+female faces depicted in Time has again risen steadily since the early-1990s.
+Through our combined quantitative and qualitative approach, we found that the
+percentage of female faces found in Time between the 1940s and 1990s correlates
+with attitudes towards women in both the larger historical context as well as within
+the textual content of the magazine.
+This paper is organized as follows: we begin with an examination of the
+psychological and historical import of visual and particularly photographic images
+of faces and then present our data-collection methodology and results. Finally, we
+provide an interpretation of the variations in the representation of female faces in
+Time from the 1940s to the 1990s.
+
+Why faces?
+What’s in a face? Why is this particular photographic subject so worthy of attention?
+The answer is at once psychological and historical. As contemporary psychologists
+have shown, our recognition of faces is intrinsic to our human identity. Cathy
+Mondloch demonstrated that a baby can identify a face -- “Two eyes, aligned
+horizontally, above a nose, above a mouth” – as early as seven minutes after birth,
+an innate sensitivity that only intensifies afterwards.1 We pick up basic social cues
+through faces, particularly the trustworthiness of others with whom we interact
+socially.
+The power of this pattern -- two eyes, above a nose, above a mouth – extends to
+images of faces as well. The art historian and psychologist Ernst Gombrich proposed
+a thought experiment to demonstrate this: he dares anyone who doubts the power of
+facial images to tear up a photograph of someone they admire. They will, he argues,
+find this a near impossible task.2 Faces, even in the form of photographic
+representations have an arguably primal hold over us.
+The power of facial images also bears on our consciousness of human history. As
+Tessa Morris-Suzuki notes, historical photographs of faces “evoke empathy,”
+pushing us towards novel understandings of others whom we have not met, and may
+never meet.3 Faces from the past transmitted through photographs charge our
+2
+
+JOURNAL OF CULTURAL ANALYTICS
+
+imaginations with “expressions of joy or terror … fleeting moments of triumph or
+disaster … projected through time into the present moment.”4
+The Vietnam War provides a striking example. As Susan Sontag reminds us, Trảng
+Bàng’s 1972 infamous photo of the child Phan Thị Kim Phúc OOnt, running towards
+the camera, covered in napalm and screaming in pain, did more to sour Americans
+on Cold War imperialism than the barrage of televisual images that flooded
+American homes from 1955 to 1975.5 In a phenomenon much like that described by
+Gombrich, we find it hard to look away from such a face, because we instinctively
+empathize with the agony conveyed through it. It could be our own face, were we
+subject to such extreme circumstances. The images we explore in our Time archive
+are less harrowing than this, but the same phenomenon holds: photographs of faces
+are powerful cultural symbols, transcending time and space.
+
+Methodology and Results
+Automatic Face Extraction and Gender Classification
+The Time magazine archive for this study consists of 3,389 issues, from 1923 to
+2014, which comprises approximately 500,000 .jpg files, with one file for each page
+of each issue.
+We used supervised machine learning to automatically extract all of the faces from
+the archive by creating a set of training data, where human labor was used to identify,
+extract, and classify the gender of faces. The training data consisted of two sets: 1)
+one issue, selected at random from each of the ten decades spanned by the archive,
+and 2) one randomly selected July issue from each year between 1961 and 1991 for
+a total of 39 issues. These issues were chosen to represent the range of the archive,
+while allowing us to concentrate on one period of historical interest. Crowdsourcing
+was used to extract and classify faces from this subset via a custom-built web
+application deployed within Amazon Mechanical Turk (AMT). The full details of
+our web application and our data verification procedures have been detailed
+elsewhere.6
+
+3
+
+WHAT’S IN A FACE? GENDER REPRESENTATIONS OF FACES IN TIME, 1940-1990
+
+Working in batches of 50 .jpg files, 87 AMT workers examined 3,772 pages and
+extracted 4,685 faces. A different set of 342 AMT workers reviewed the extracted
+faces and annotated them according to several characteristics, including gender,
+race, and image quality. Verification images with known outcomes were included in
+all AMT batches and multiple annotations for each face were aggregated. Our
+procedure is fully detailed and examined elsewhere.7 Described briefly, we
+calculated a proficiency rating for each coder by considering all images they
+annotated. Each image was annotated by two coders, and when annotations
+conflicted, we chose the one from the coder with the highest proficiency rating.
+These faces, extracted and classified by AMT workers, became the training data for
+the machine learning extraction and classification models.
+The AMT data was used to train a RetinaNet detector8 to automatically identify and
+extract faces from the remainder of the archive. The model was trained for twenty
+epochs9, since a greater number than this led to overfitting and poor generalization
+across different eras. An initial round of extractions was done using an accuracy
+threshold of only 50 percent in an attempt to collect possibly obscure faces, such as
+those found in illustrations. This produced 430,324 images; however, many were
+duplicates with different sized bounding boxes. Therefore, a second round of
+extractions was done with an accuracy threshold of 90 percent, yielding 327,322
+faces. These images were automatically classified according to their gender.
+A pre-trained face descriptor convolutional neural network VGGFace10 was then
+fine-tuned and used to classify each face as either male or female. The model was
+first trained for 100 epochs using the data gathered from AMT. Out of the 4,685
+images gathered, 4,405 were used, with 3,082 male and 1,323 female images. The
+remaining 280 images categorized as “unknown” gender were eliminated from this
+analysis, due to their relatively infrequent occurrence and the fact that many of them
+were not human faces. This data was then split 70/30% into a training set and a test
+set. The training set was then further split 70/30% into true training data and
+validation data. The first round of training resulted in a model with an accuracy of
+87 percent. From the test images, 909 of the 983 male faces were correctly classified
+as male, and 241 of the 340 female faces were correctly classified as female, as
+shown in the left-hand side of Figure 1.
+
+4
+
+JOURNAL OF CULTURAL ANALYTICS
+
+Figure 1: Confusion matrices for the respective testing sets after the first and second rounds of training. Row indicates
+true class membership, while columns indicate the predicted class. The first round used 4,405 training images, roughly
+75% of which were men. The second round used 17,698 with roughly an even proportion of men and women.
+
+Due to the large discrepancy between the number of male faces and number of
+female faces, the number of training and test images were increased in order to
+improve the training accuracy. Using the first model trained, all 327,322 faces were
+classified as male or female and then a random set was selected to expand the
+training data. These images were manually verified as male or female, and any that
+were incorrect were assigned the proper classification. For the second round of
+training, the dataset was expanded to 9,300 male faces and 8,398 female faces, which
+were then split into training and test sets using the same split (70/30%) used in the
+first round. The model was trained again for 100 epochs, resulting in a much higher
+accuracy of 95 percent. Out of the 2,790 male faces in the test set, 2,677 were
+correctly classified as male; out of the 2,520 female faces, 2,366 were correctly
+classified as female, as shown in the right-hand side of Figure 1. This more accurate
+model was then used to classify all 327,322 faces for analysis.
+To investigate whether the computational algorithm and the human AMT coders
+functioned differently, the proportion of faces that were classified as women
+(hereafter, “proportion of women” will be used) in each year was calculated for the
+data generated by both processes. We increased the volume of our AMT data by
+adding one additional July issue for each year, except for the 1961-1991 span already
+collected in the first set, so that our total AMT data set includes at least one issue per
+year. We note that the sample size is different for the AMT data set versus the
+computationally acquired data set: the AMT data consists of one issue (sometimes
+two issues) per year, while the automated data contains all of the issues in each year.
+5
+
+WHAT’S IN A FACE? GENDER REPRESENTATIONS OF FACES IN TIME, 1940-1990
+
+Nonetheless, as shown in Figure 2, similar patterns emerge from both data sets,
+including an increase in the proportion of female faces from the 1920s to 1945, a
+post-Second World War dip, a rebound beginning in the mid-1960s, followed by a
+decrease in the 1980’s, and a final rebound beginning in the early-1990s.
+
+Figure 2: The percentage of women aggregated per year for each data set. The data labeled MTurk consists of 1 to
+2 issues per year that were classified by human coders. The data labeled Auto consists of all the issues in our
+archive. The solid lines are a LOWESS smoothed version of the data.
+
+Since similar trend lines were found using the AMT and the automatic extraction
+data, our analysis focuses on the latter, more comprehensive data set. To investigate
+long-term, broad patterns in Time’s visual representation, the average number of
+faces per page in each year was calculated. Figure 3 indicates that the number of
+faces sharply increased from the early 1920’s through to about 1940, before
+oscillating with a slight increasing trend thereafter.
+
+Figure 3: The average number of faces per page in each year. The solid line is a LOWESS smoothed version of the
+data.
+
+6
+
+JOURNAL OF CULTURAL ANALYTICS
+
+The proportion of women in each issue was also calculated. Figure 4 provides a
+longitudinal summary of results. As expected, the variance on a per issue basis is
+much larger than the per year variance illustrated in Figure 2, but the same general
+trends hold. Charting the proportion of women in each issue was useful for
+identifying outliers for our close reading analysis. For example, we can immediately
+note that over 70% of the faces in the March 20, 1972 issue of Time magazine belong
+to women, compared to the averaged trendline, which peaks at around 30% in the
+1970s.
+
+Figure 4: The percentage of women’s faces in each issue. The solid line is a LOWESS smoothed version of the data.
+
+Ascertainment of Contextual Data
+In order to interpret the image data, we first situated it within the broader context of
+events in the 20th century and then analyzed Time itself to ascertain how it reflects
+this historical context. Our analysis consisted of a close reading of selected issues
+and articles, chosen based on the following criteria: 1) outlier issues from Figure 4
+defined as those between 1940 and 1990 with > 40% women, 2) issues and articles
+that were referenced in our secondary sources, and 3) results from EBSCO’s
+Academic Search Complete database, which we used to retrieve all articles in which
+the word ‘woman’ or ‘women’ or ‘housewife’ was mentioned in the article within
+our dates of interest.
+
+A Note on Gender
+While we acknowledge that gender is not binary, we note that this analysis assumes
+that gender falls into binary male and female categories. We justify this assumption
+based on the media portrayal of gender in our period of interest (1940s-1990s),
+
+7
+
+WHAT’S IN A FACE? GENDER REPRESENTATIONS OF FACES IN TIME, 1940-1990
+
+which, for the most part, did not include non-binary genders. We did not see any
+evidence of non-binary gender representation in Time magazine in our archive in
+those years. Our human-coded AMT data, ranging from 1923 to 2014, includes an
+‘unknown’ category for gender, but in a subset of this data that we analyzed, the
+‘unknown’ gender category accounted for only about 6% of the faces, and none of
+these were actually gender non-binary adult individuals: many were not faces at all
+(errors in the face extraction), many were very small low resolution images that were
+hard to read, some were non-gendered cartoon illustrations (a face drawn onto an
+object, for example), and some were infants or small children.
+
+Interpretation of Results
+Here we provide an interpretation of the temporal variations that we observed in our
+data, focusing on attitudes toward gender through the lens of Time magazine
+between 1940 and 1990.
+
+The Second World War and the Early Postwar Era 1941-1965
+Our data shows that the visual representation of women increased during the era of
+American involvement in the Second World War. As men went abroad to fight in
+the war, women’s role in the workforce expanded beyond traditional ‘feminine’
+occupations to fill the gap and to satisfy increased production in the defense
+industry,11 a situation that challenged the “prevailing wisdom that wedlock and
+motherhood” were the proper roles for mid-twentieth century women.12 Government
+and media alike encouraged women to take on these new roles, as exemplified by
+Rosie the Riveter on Norman Rockwell’s Memorial Day 1943 Saturday Evening
+Post cover (Figure 5).13
+
+8
+
+JOURNAL OF CULTURAL ANALYTICS
+
+Figure 5: Rosie the Riveter by Norman Rockwell. Saturday Evening Post cover May 29, 1943.
+
+Accordingly, Time magazine ran stories about women ably participating in the war,
+including the following examples. The November 2 1942 issue featured a very
+flattering profile on bomber pilot Jacqueline Cochran, the “No. 1 feminine flyer of
+the U.S.”14 In the February 22,1943 issue, there was a report about the US Marine
+Corps recruiting women, stating that Marine Corps officials had “noted with
+approval the quietly efficient job done by women in military service in Britain.”15
+The April 26, 1943 issue ran a story on equality for women doctors, raising concern
+that discrimination is leaving women doctors out of military service, where they are
+desperately needed.16
+In the August 9, 1943, issue, Time’s sister publication Life featured a photojournalistic piece by Margaret Bourke-White chronicling women working in steel
+factories (See Figure 6). The piece notes that in “1941 only 1% of aviation
+employees were women, while this year [1943] they will comprise an estimated 65%
+of the total”, and that these women “have proved that in time of crisis no job is too
+tough for American women.”17
+
+9
+
+WHAT’S IN A FACE? GENDER REPRESENTATIONS OF FACES IN TIME, 1940-1990
+
+Figure 6: August 9, 1943 cover of Life magazine
+
+As the war came to a close, concern arose that there would be few jobs available to
+men returning from the war. A women’s bureau survey reported that 75% of women
+wanted to continue working outside the home after the war18, a sentiment that was
+reflected in a report from Canada in Time magazine in the May 5, 1944 issue, which
+reported on Mrs. Dorise Neilsen (a member of Parliament) raising a point in question
+at the House of Commons. She wondered out loud what women’s “position will be
+when the war is over. Are the governments and employers going to say: 'Well, girls,
+you have done a nice job; you looked very cute in your overalls and we appreciate
+what you have done for us; but run along now; go home; we can get along without
+you?'”.19 Unfortunately, her fears were materialized as women were laid off in large
+numbers at the end of the war.20
+Here we can see the economic/political/cultural force of Fordism with particular
+clarity: as early as 1916, Henry Ford set social workers upon ‘Ford families’ to
+ensure that they were educated – or, rather disciplined – in the practices of “moral
+probity, family life, and the capacity for prudent [and] rational consumption”.21 In
+the post-WWII period, this corporate cultural innovation became national social
+policy, as women across North America were instructed by “social engineers, such
+as psychologists, that they needed to be good wives and mothers in order to fit
+normally into post-war life”.22 Time magazine reported in the October 8, 1951 issue
+that Mills College (a liberal arts college for women) in Oakland California, under
+10
+
+JOURNAL OF CULTURAL ANALYTICS
+
+their new president Lynn White Jr, would shift its focus to making students
+“successful housewives”. A new major in ‘family studies’ was created, which not
+only imparted skills in domestic duties and raising children, but, more importantly,
+inculcated the right ‘attitude’ toward it. White was concerned that many women who
+went to college felt that being a housewife was demeaning, and he set out to change
+that attitude.23 Of course, mass media would be another crucial site for such
+‘instruction’ (See Figure7 for an example).
+
+Figure 7: Advertisement from October 8, 1951 issue of Time magazine
+
+Our data reinforces this historical trend, as a decline in the proportion of female faces
+in the postwar issues of Time is clear, and we observe that the tone toward women
+often oriented them away from the workplace and toward the home. For example,
+an article in the July 2, 1956 issue of Time entitled ‘The Care and Feeding of
+Women’ provides tips on how to “handle” women in the workplace such as “don’t
+yield to a woman’s tears” and “bear in mind that women take things personally”.24
+But most interestingly, we observe that in this postwar 1950s era, when high-profile
+women were featured, they are often referred to as housewives, despite their
+professional accomplishments, and even if they weren’t actually housewives. For
+example, in 1951, Time reports on renowned artist Honoré Sharrer’s groundbreaking exhibition of Tribute to the American Working People with an article titled
+
+11
+
+WHAT’S IN A FACE? GENDER REPRESENTATIONS OF FACES IN TIME, 1940-1990
+
+“Hardworking Housewife”, where she is not referred to as an artist, but as a
+housewife and later as a painter-housewife. The article also makes a point of stating
+that she is pretty.25 World-record breaking Olympian Dorothy Tyler was featured in
+an August 1956 issue with an article entitled “High-jumping housewife”, which
+establishes her first and foremost as a housewife before going on to describe her
+many accomplishments, including her war-time participation in the air force.26 An
+article in 1958 featuring the influential business columnist Sylvia Porter is entitled
+“Housewife’s View”, despite the fact that she was always a full-time writer and
+never a housewife. The last paragraph in the article mentions that while she spends
+the weekends with her husband in Upper Westchester County, “every Monday
+Sylvia returns to an apartment on lower Fifth Avenue and to her office at the Post,
+where—puffing Philip Morris cigarettes and rattling off her sentences at a deadlineracing clip—she delights in making as many dollars and as much sense as she can
+out of the clutter of financial facts”.27
+The change in tone toward women between the Second World War era and the postwar era that accompanied the decrease in the proportion of images of women’s faces
+in Time is sometimes stark. It is interesting to contrast Time magazine’s ‘Woman’s
+Place’ feature from the July 19, 1943 issue, which presented a laudatory profile of
+the capable Anne Josephine Shofner, hands-on owner of a steel-casting plant,28 with
+the ‘Woman’s Place’ feature from the October 9, 1964 issue, which highlighted the
+work and doctrine of Phyllis McGinley, who believed that a woman’s place was in
+the home serving her husband.29
+
+The women’s liberation movement 1965-1979
+By the mid-1960s, a mass women’s liberation movement had begun to take shape.
+It was underpinned by social and technological innovations, including the
+breakdown of traditional patriarchal ideas of marriage and the invention and
+commercialization of the birth-control pill. These were accompanied by a revolution
+in attitudes, as women activated by Feminist ideas “fought to make space for
+woman’s authentic voice” across the whole of society.30
+These changing attitudes also brought about changes in American society’s structure
+and rules. During this time period, there were a series of landmark court cases
+
+12
+
+JOURNAL OF CULTURAL ANALYTICS
+
+reversing gender discrimination, including Weeks v. Southern Bell in 1965, which
+opened many previously male-only jobs to women;31 Reed v Reed in 1971, which
+marked the first time the US Supreme Court struck down a law that treats men and
+women differently;32 and Taylor v. Louisiana in 1975, which denied states the right
+to exclude women from juries.33 Throughout this process of emancipation, the
+profile of women in the public sphere rose.
+Our findings correlate strongly with this shifting role of women. In the pages of
+Time, we saw a clear uptick in the percentage of faces identified as female, peaking
+at the height of the women’s movement in the mid-1970s to about 30% per issue.
+Time magazine reported on the changes brought about by the women’s liberation
+movement. The August 31, 1970 issue of Time featured prominent feminist writer
+Kate Millett on the cover, and a woman, artist Alice Neel was commissioned to paint
+the cover portrait. The issue included an essay by Gloria Steinem, entitled “What it
+Would be Like if Women Win”, imagining a world in which men and women were
+considered truly equal,34 and a feature story entitled “Who’s Come a Long Way,
+Baby?”,35 dedicated to the diversity and strength of the women’s movement.
+Although this story provides fair coverage of the diversity of the movement and its
+aims, the tone (as exemplified by the title) is still clearly oriented toward an all-male
+audience, playing into fears of the changes gender equality would bring. Despite
+clearly stating women’s case, citing many examples of discrimination, the article
+opens with “These are the times that try men’s souls, and they are likely to get much
+worse before they get better”.36
+
+13
+
+WHAT’S IN A FACE? GENDER REPRESENTATIONS OF FACES IN TIME, 1940-1990
+
+Figure 8: August 31, 1970 cover of Time magazine
+
+Another Time magazine issue of note is the March 20, 1972 special issue entitled
+“The American Woman”, entirely devoted to exploring the notion of the American
+woman within the context of the women’s liberation movement (See Figures 9 and
+10). This particular issue is a significant anomaly in our data, with 70.5% of the
+faces in that issue belonging to women, compared with an average of under 30% for
+the total of that year. The cover story provides an in-depth view of the women’s
+movement, and other articles therein feature profiles of activist women. Again, as
+with the 1970 Kate Millet issue, the tone reveals the gender perspective of the
+writing. The introduction to the special issue wonders whether or not the feminist
+movement was just another 1960s fad, on par with Hippies, Yippies, and other
+relatively insignificant players produced by that decade.37 While this introduction
+notes that the women’s movement is characteristically American in its belief in selfreliance and desire to change old traditions, the overall tone of many of the articles
+in the issue is anthropological, as if women were not part of American society, but
+an ‘other’ to be examined and analyzed, which again, suggests that it was written for
+men by men.
+
+14
+
+JOURNAL OF CULTURAL ANALYTICS
+
+Figure 9: photograph featured in the introduction to the special issue entitled “The New Woman, 1972”, Time, March
+20, 1972 page 25.
+
+A gendered division of labor played an important part in Time’s barely-concealed
+animus toward the liberation of women. Until the 1970s, the job roles at Time
+magazine were strictly segregated by gender, where the men were the writers and
+editors, while the women were in the subjugated roles of researchers and factcheckers.38 Time co-founder Briton Hadden is credited with inventing the system,
+and believed that the quasi-adversarial roles of male writer versus female researcher
+would create a sexual dynamic that would energize the process.39 In reality, it was
+no more than a gender-based caste system, where women spent their entire careers
+relegated to the lower rank of ‘researcher.’ College-educated women with years of
+experience had little to no opportunity of moving up in the ranks, while men were
+hired directly into writing jobs fresh out of college and rapidly promoted to editor.40
+Furthermore, women were not being credited for their vital roles in the publication.41
+This situation shaped coverage of women and women’s issues – written and
+pictorially – at a fundamental level.
+
+15
+
+WHAT’S IN A FACE? GENDER REPRESENTATIONS OF FACES IN TIME, 1940-1990
+
+Figure 10: Photograph of liberationist group meeting at the Los Angeles women’s center, featured in the cover story
+entitled “Where She Is and Where She’s Going”, Time, March 20, 1972 page 27.
+
+In 1965, a year after the passage of the Civil Rights Act, Time’s personnel policies
+were reviewed and questioned for the first time. The findings of the internal review
+found the paucity of women in important jobs to be a management failure.42 Despite
+this damning report, little changed. In December 1969, the New York Times
+mentioned women’s situation at Time and made note of the fact that bright women
+were stuck as researchers throughout their career.43 It was at this time that the
+women’s liberation movement began to transcend beyond being a novel topic to be
+covered by the news magazine to something that affected the inner workings of the
+institution itself.
+Capitalizing on the attention that the New York Times article brought to the issue, a
+group of women employed at Time filed a complaint with the New York States
+Human Rights Commission in 1970, charging the company with “placing men in
+writing and managerial positions while placing college-educated women in lower
+positions where they can expect little or no upward advancement.”44 This action
+spurred management to begin to hire women as writers and editors, though it was
+not until 1972 that the policy began to have a significant effect.45
+After this point, Time’s coverage of women changed. More stories about women’s
+issues made it into print, and the editorial slant targeting men wary of feminism was
+steadily de-emphasized. The June 4, 1973 issue, for instance, featured an article
+entitled “Women Battle Bias” covering the discriminatory credit policies of
+16
+
+JOURNAL OF CULTURAL ANALYTICS
+
+American banks.46 A summary of a report by the Carnegie Commission on Higher
+Education entitled “Opportunities for Women in Higher Education,” which detailed
+systematic discrimination against female students, professors, and administrators in
+academia was featured in the October 1, 1973 issue.47 These stories were told fully
+and critically, avoiding the pandering to men that characterized Time’s coverage of
+feminism up to that point. Women’s accomplishments were no longer underrated.
+The recurring ‘A Woman’s Place’ feature in the October 21, 1974 issue is dedicated
+to Antonia Brico, the first woman to conduct the Berlin Philharmonic, and favorably
+reviews the biopic, Antonia: A Portrait of the Woman, directed by two women, Judy
+Collins and Jill Godmillow.48
+
+The backlash of the 1980s
+By the late-1970s, a backlash against the feminist movement had started to
+materialize.49 Important factors in this shift in public opinion included the
+conservative activist Phyllis Schlafly’s campaign against the Equal Rights
+Amendment (ERA) and, from the other end of the political spectrum, an erosion of
+the early-1960s universalist consensus spearheaded by leaders such as Betty Freidan,
+Kate Millett, and Gloria Steinem as “minority” women of color and lesbians
+challenged the character of the movement as white, heterosexual, and upper-middle
+class.50 Such critiques, although perfectly healthy for a counter-hegemonic
+movement as seismic as postwar Feminism, were seized upon as signs of weakness
+in the larger mainstream discourse.
+These fractures, divisions, and backlash were reflected in Time magazine. The
+September 26, 1977 issue featured a story entitled “Women’s Movement Under
+Siege”, which covered the biennial meeting of the National Women’s Political
+Caucus in San Jose, California51, and the multiple perspectives of the women therein.
+The tone was grim at the caucus as women foresaw trouble from anti-feminists at
+the upcoming Women’s Conference in Houston. The December 5, 1977 issue
+covered the conference with a long report entitled “What Next for US Women?”52
+In addition to covering the conference, the article also extensively covered the
+conference protestors and the anti-feminist women leading the “pro-family”
+movement, realizing one of the fears voiced by women at the caucus in San Jose –
+
+17
+
+WHAT’S IN A FACE? GENDER REPRESENTATIONS OF FACES IN TIME, 1940-1990
+
+that the media would indulge the public with a “women-against-women
+bloodbath.”53
+This reactionary drift was, as our quantitative analysis reveals, reflected in a
+decreased proportion of women in Time during the 1980s relative to the 1970s. This
+drop in the representation of women is consistent with the analysis in Susan Faludi’s
+well-known book Backlash,54 in which she describes the 1980s as a decade that
+rejected feminism. Here we describe this backlash, and how Time magazine both
+reflected and participated in it.
+Women’s issues in the 1980s were plagued by a concatenation of right-wing politics
+articulated with right-wing Christianity. In 1979, Jerry Falwell founded the ‘Moral
+Majority’, a right-wing Christian political organization that sought to restore what it
+considered a traditional family life. In 1980, Ronald Reagan, endorsed by the Moral
+Majority, was elected president. One important theme in Reagan’s political message
+was his opposition to feminist demands.55 A prime example of this was his vocal
+opposition against ratifying the Equal Right Amendment. The ERA did not pass by
+the 1982 deadline, which was a major setback to the women’s movement. Bolstered
+by this development, anti-feminist voices only grew louder. For example, in 1988,
+Rush Limbaugh’s national radio show began airing, through which he coined and
+popularized the term ‘feminazi’ to describe feminists.
+While the anti-feminism of the 1970s defended gender roles with traditionalist or
+religious beliefs, the anti-feminism that emerged in the 1980s falsely asserted that
+feminism was no longer necessary because women had already achieved equality,56
+and that the remaining discourse only duped women into being unnecessarily
+unhappy with their lot in life.57 These increasingly influential attitudes were reflected
+in the cover story of Time’s December 4, 1989 issue (see Figure 11).58 It depicted a
+beleaguered woman holding a baby in one hand and a briefcase in the other. The
+subtitle underlined that “In the 80s, [women] tried to have it all. Now they’ve just
+plain had it.” Driving the point home, Time asked: “Is there a future for feminism?”
+
+18
+
+JOURNAL OF CULTURAL ANALYTICS
+
+Figure 11: Cover of December 4, 1989 issue of Time magazine
+
+Popular media, as Faludi charged, played an active role in propagating narratives
+that subverted feminism in the 1980s, suggesting – evidence to the contrary – that
+feminist ideas had made women’s lives miserable. A striking example of this can be
+found in two 1980s studies on women’s issues.59 In 1987, Shere Hite released
+“Women and Love: A Cultural Revolution in Progress”, which examined survey
+data from 4,500 women about their personal relationships. It revealed that 80% of
+the women surveyed struggled to assert their independence and earn the respect of
+their male partners.60 Instead of highlighting the patriarchal social component of
+these findings, popular media coverage focused instead on Hite’s eccentric personal
+characteristics.61 Time made the study its cover story in its October 12, 1987 issue,
+characterizing it as a manifestation of “extreme views,” while dismissing the 4,500
+participants involved as “strident, “malcontent[ed]” women.62 The story gave more
+print space to Hite’s critics than to describing the work itself. While the voices in
+the book are forlorn, with many describing years of systematic emotional abuse at
+the hands of their husbands, Time magazine chose to illustrate the article about the
+book with images of women overpowering or attacking men (see Figure 12).63 In
+contrast, at the same time, Time was celebrating Dr. Srully Blotnick’s book
+“Otherwise Engaged: The Private Lives of Successful Women”, which concluded
+that success at work poisons the lives of women.64
+
+19
+
+WHAT’S IN A FACE? GENDER REPRESENTATIONS OF FACES IN TIME, 1940-1990
+
+Figure 12: Images used to illustrate Time’s coverage of the Hite report “Back off, Buddy: A new Hite report stirs up
+a furor over sex and love in the 1980s”, Time magazine October 12, 1987 pages 68-73
+
+As a larger number of women started entering the workforce and developing their
+careers in the 1970s, the average age at which women had their first child started to
+increase. Faludi notes that the media reaction to this development was to instill and
+propagate panic about the risk of infertility.65 The media attack was two-pronged:
+1) scare women with stories about infertility over age 30, and 2) highlight happy
+stories about young women having children.66 Time’s February 22, 1982 issue (see
+Figure 13) exemplifies both, with the cover story “The New Baby Bloom: Career
+women are opting for pregnancy and they’re doing it in style”,67 and a feature story
+inside about the "medical risks" of waiting after 30 to have babies.68
+
+Figure 13: Cover of February 22, 1982 Time magazine
+
+20
+
+JOURNAL OF CULTURAL ANALYTICS
+
+Meanwhile, movie and television portrayals of women in this era were often reduced
+to one dimension, featuring the gendered stereotypes of the unhinged independent
+woman and the saintly beautiful housewife. Faludi details the trend in late 1980s
+cinema to demonize independent women, with Fatal Attraction leading the charge.69
+While in television, the traditional patriarchal family was featured in hit sitcoms,
+with the Cosby show being most popular.70
+One of the most insidious ways in which popular media undermined feminism in the
+1980s – a template that persists to this day – is how it differentiates successful
+women from successful men. A clear example can be seen in Time’s August 7, 1989
+issue, which features the broadcast journalist Dianne Sawyer. Sawyer had just joined
+the ABC primetime show alongside a male co-anchor, Sam Donaldson. Time’s cover
+featured Sawyer’s image with a question in bold font, suggesting alarm: “Is she
+worth it?,” making reference to Sawyer’s salary. High profile male journalists,
+including Donaldson, were never questioned in this way in the pages of Time.
+
+The 1990s and beyond
+By the 1990s, the tide again shifted in favor of feminism. In 1991, Anita Hill testified
+in Congress, accusing Clarence Thomas – a jurist nominated by President George
+H.W. Bush for the Supreme Court – of sexual harassment. She was one of many who
+claimed such harassment by Thomas, but was the only one who agreed to testify on
+the issue. Despite her testimony, Thomas was confirmed.71 Sexual harassment
+became a national conversation, and Hill’s allegations and Thomas’ confirmation
+gave feminism and the issue of sexual harassment new life in the 1990s.72 A record
+number of women were elected to Congress the following year, spurred on by the
+controversy, almost doubling by 1992, from 28 to 47.73 The number of women in the
+Senate also tripled, from 3 to 9.74 Meanwhile, President Clinton appointed Madeline
+Albright as Secretary of State and Janet Reno as Attorney General,75 and had more
+women in cabinet positions than Bush 41 or Reagan. Our data derived from the Time
+archive magazine demonstrates that the number of women’s faces in the magazine
+rose accordingly by the mid-1990s.
+In 1995, the Global Media Monitoring Project76 began creating, for the first time, a
+quantitative measure of women’s representation in media. This project – an
+
+21
+
+WHAT’S IN A FACE? GENDER REPRESENTATIONS OF FACES IN TIME, 1940-1990
+
+inspiration for our own efforts – drew attention to the fact that by 1995, the
+representation of women hadn’t significantly changed since the 1970s.77 This
+observation is consistent with our own quantitative analysis of Time from the 1970s
+to the 1990s, in which the percentage of female faces, after climbing out of the dip
+in the 1980s, is about the same in the mid-1990s as it was at the height of the
+women’s movement in the 1970s. From the mid-1990s onward, we observe a small
+but steady rise in representation.
+
+Discussion and Conclusion
+In order to contextualize our Time archive, we must draw attention to the post-1940s
+explosion of increasingly powerful imagery in all areas of social life: a situation
+famously characterized by one author as the advent of the “Society of the Spectacle,”
+in which social relations between people are increasingly “mediated by images,”
+including images of faces utilized for myriad commercial and political ends.78
+Imagery took on a remarkable significance in the latter-half of the twentieth century,
+one which is more pressing than ever today (and reflected in social media sites such
+as Facebook, Instagram, Snapchat). Our data in Figure 3 reflects how images sharply
+rose in prevalence around mid-century, and have continued to slowly rise since. Ours
+is, in an important sense, a “post-literate” world of unprecedented “density of visual
+messages.” Images, beginning in the Second World War, and accelerating ever
+since, are used by politicians, bureaucrats, law enforcement, and capitalists to sort,
+control, and manipulate people.79 They have been used just as much by the masses
+to understand (through sorting, controlling, and manipulating) the dynamism of their
+own lives. As Susan Sontag put it in her 1977 classic, On Photography, our relations
+to pictures under the conditions of postmodernist culture put us into “a certain
+relation to the world that feels like knowledge – and therefore like power.”80 This is
+why our examination of gender from the 1940s to the 1990s is focused on imagery.
+Accordingly, we observed that the proportion of images of women’s faces printed
+in Time magazine within a time period tracks closely with the attitudes towards
+women in that era.
+We should note, however, that there are limitations to reading too much into a single
+statistically derived number, such as the proportion of images of women’s faces. It
+is not only the absolute number of images of women that may change as attitudes
+22
+
+JOURNAL OF CULTURAL ANALYTICS
+
+change, but also the way in which they are represented. An image of a woman does
+not necessarily reveal whether the context is empowering or disempowering, even
+in a news-story framework. For example, the media attention on Monica Lewinsky
+in the 1990s was, for the most part, sexist and humiliating. So, we caution against
+making too strong of a generalization from our findings. Another limitation of our
+method is that the machine classification of gender isn’t perfect: the error rate was
+about 6.5% for women and about 4.2% for men (see Figure 1). Furthermore, the
+algorithm cannot differentiate between someone who identifies as a woman and
+someone who presents as female. Our AMT data mitigates this problem by using
+human coders who see the context of the page, but that set of data is much smaller
+than our data collected with automated processes. However, the AMT data is much
+richer in terms of content as we had coders label other characteristics beyond gender,
+such as race, age (adult or child), the context in which the face appears
+(advertisement or feature story), and whether or not the face is smiling.
+In future work, we would like to examine all of the characteristics labeled in the
+AMT data, and perhaps try to automate some of these classifications as well. We
+are particularly interested in examining the context in which each face appears
+(whether it is in an advertisement or a feature story). We plan to separate the
+advertisements from our archive and examine how faces, in particular women, are
+represented in ads across the archive, and how this compares to images in feature
+stories.
+In conclusion, we found that a distant reading of the images of faces in Time
+magazine is consistent with a historical analysis of American socio-political trends
+and with a close reading of the magazine’s content. Specifically, we found that the
+percentage of faces that present as female peaks during eras when women have been
+more active in public life, and wanes in eras of backlash against women’s rights.
+This finding is particularly relevant in our contemporary post-literate world in which
+people absorb culture through images, and spend more time scanning images than
+reading print content.
+
+23
+
+WHAT’S IN A FACE? GENDER REPRESENTATIONS OF FACES IN TIME, 1940-1990
+
+Acknowledgements
+Thank you to John Parsons for giving this paper a good final edit. We also
+acknowledge generous support from our institutions. This research was generously
+supported in part by the SUNY Polytechnic Institute Research Seed Grant Program.
+
+Notes
+1
+
+Virginia Hughes, “How We Learn To See Faces,” National Geographic, September 9, 2013,
+https://www.nationalgeographic.com/science/phenomena/2013/09/12/how-we-learn-to-see-faces/;
+Catherine J. Mondloch, Terri L. Lewis, D. Robert Budreau, Daphne Maurer, James L. Dannemiller, Benjamin R.
+Stephens, and Kathleen A. Kleiner-Gathercoal, “Face Perception During Early Infancy,” Psychological Science 10,
+no. 5 (1999): 419–22.
+2
+
+Ernst H. Gombrich, The Story of Art, 13th ed. (New York: Phaidon, 1978), 20.
+
+3
+
+Tessa Morris-Suzuki, The Past Within Us: Media, Memory, History (New York and London: Verso): 118.
+
+4
+
+Ibid., 78.
+
+5
+
+Susan Sontag, On Photography (New York: Farrar, Straus and Giroux, 1977), 18.
+
+6
+
+Ana Jofre, Vincent Berardi, Carl Bennett, Michael Reale, Josh Cole, "Faces extracted from Time Magazine 19232014," Journal of Cultural Analytics. March 16, 2020. See also Ana Jofre, Vincent Berardi, Carl Bennett, Aisha
+Cornejo, John Harlan, and Kathleen P.J. Brennan, “Crowdsourcing Image Extraction and Annotation: Software
+Development and Case Study” In review.
+7
+
+Berardi et al. (in review)
+
+8
+
+Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Dollar, “Focal Loss for Dense Object
+Detection,” IEEE Transactions on Pattern Analysis and Machine Intelligence (2018): 1–1,
+https://doi.org/10.1109/TPAMI.2018.2858826; Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, and Piotr
+Dollár, “Focal Loss for Dense Object Detection,” ArXiv:1708.02002 [Cs] (August 2017),
+http://arxiv.org/abs/1708.02002.
+9
+
+Epoch is the number of times a learning algorithm works through the training dataset and updates its parameters.
+
+10
+
+P Omkar M. Parkhi, Andrea Vedaldi, and Andrew Zisserman, “Deep Face Recognition,” in Proceedings of the
+British Machine Vision Conference 2015, 41.1–41.12 (Swansea: British Machine Vision Association, 2015),
+https://doi.org/10.5244/C.29.41; Refik Can Malli, “VGGFace Implementation with Keras Framework. Contribute to
+Rcmalli/Keras-Vggface Development by Creating an Account on GitHub,” GitHub, [2016] 2019, accessed
+September 28, 2019, https://github.com/rcmalli/keras-vggface
+11
+
+Ellen Carol DuBois and Lynn Dumenil, Through Women’s Eyes: An American History with Documents, 2nd ed.
+(Boston: Bedford/St. Martin’s, 2009), 548–53.
+12
+
+Mona Gleason, Psychology, Schooling, and the Family in Postwar Canada (Toronto: University of Toronto Press,
+1999), 52.
+13
+
+“Rosie the Riveter––1943: Saturday Evening Post Cover, May 29, 1943,” Norman Rockwell Museum, accessed
+September 28, 2019, https://www.nrm.org/rosie-the-riveter/.
+
+24
+
+JOURNAL OF CULTURAL ANALYTICS
+
+14
+
+“Women in War,” Time Magazine, November 2, 1942.
+
+15
+
+“Women Wanted,” Time Magazine, February 22, 1943.
+
+16
+
+“Equality for Women Doctors,” Time Magazine, April 26, 1943.
+
+17
+
+Ben Cosgrove, “Women of Steel: LIFE with Female Factory Workers in World War II,” TIME, July 15, 2014,
+accessed September 28, 2019, https://time.com/3623449/women-of-steel-life-with-female-factory-workers-in-worldwar-ii/.
+18
+
+Dubois and Dumenil, Through Women’s Eyes, 554.
+
+19
+
+“Wondering Women,” Time Magazine, May 15, 1944.
+
+20
+
+Dubois and Dumenil, Through Women’s Eyes, 555.
+
+21
+
+David Harvey, The Condition of Postmodernity: An Inquiry into the Origins of Cultural Change (Cambridge and
+Oxford: Blackwell, 1990), 126.
+22
+
+Gleason, Psychology, 53
+
+23
+
+“For Happier Housewives,” Time Magazine, October 8, 1951.
+
+24
+
+“The Care and Feeding of Women,” Time Magazine, July 2, 1956.
+
+25
+
+“Hardworking Housewife,” Time Magazine, April 30, 1951.
+
+26
+
+“High-Jumping Housewife,” Time Magazine, August 27, 1956.
+
+27
+
+“Housewife’s View,” Time Magazine, June 16, 1958.
+
+28
+
+“Woman’s Place,” Time Magazine, July 19, 1943.
+
+29
+
+“A Woman’s Place,” Time Magazine, October 9, 1964.
+
+30
+
+Rodgers, Age of Fracture, 146.
+
+31
+
+“Timeline of Legal History of Women in the United States,” National Women’s History Alliance, accessed
+September 28, 2019, https://nationalwomenshistoryalliance.org/resources/womens-rights-movement/detailedtimeline/.
+32
+
+Ibid.
+
+33
+
+Ibid.
+
+34
+
+Gloria Steinem “What it Would Be Like if Women Win”, Time Magazine, August 31, 1970.
+
+35
+
+“Who’s Come a Long Way, Baby?”, Time Magazine, August 31, 1970.
+
+36
+
+Ibid.
+
+37
+
+“The New Woman, 1972” Time Magazine, March 20, 1972.
+
+25
+
+WHAT’S IN A FACE? GENDER REPRESENTATIONS OF FACES IN TIME, 1940-1990
+
+38
+
+Curtis Prendergast and Geoffrey Colvin, The World of Time Inc: The Intimate History of a Changing Enterprise
+1960 – 1980 (New York: Atheneum, 1986); Calvin Trillin, “This Story Just Won’t Write,” New Yorker, March 19,
+2013, https://www.newyorker.com/culture/culture-desk/this-story-just-wont-write.
+39
+Calvin Trillin, “This Story Just Won’t Write,” New Yorker, March 19, 2013,
+https://www.newyorker.com/culture/culture-desk/this-story-just-wont-write
+40
+Prendergast and Colvin, The World of Time, 457.
+41
+
+For example, art editor Rosemary Frank, who commissioned Alice Neel to paint Kate Millett, worked for Time
+Magazine from 1947 until 1984, but was not acknowledged on the mast head until October of 1970, though records
+show she had worked in the Art Department on covers since 1961. See “Guide to the Time Inc. Time Editorial
+Records 1938-2009 MS 3009-RG 7,” New York Historical Society Museum & Library, accessed September 2,
+2019. http://dlib.nyu.edu/findingaids/html/nyhs/timeincrg7/dscaspace_d448cb5c249750cb1bfc4d39ebcbe44e.html.
+42
+
+Prendergast and Colvin, The World of Time, 449.
+
+43
+
+Ibid., 454
+
+44
+
+Ibid., 456
+
+45
+
+Ibid., 459
+
+46
+
+“Women Battle Bias,” Time Magazine, June 4, 1973.
+
+47
+
+“Opportunities for Women in Higher Education,” Time Magazine, October 1, 1973.
+
+48
+
+“A Woman’s Place,” Time Magazine, October 21, 1974.
+
+49
+
+DuBois and Dumenil, Through Women’s Eyes, 735–37.
+
+50
+
+Rodgers, Age of Fracture, 151.
+
+51
+
+“Women’s Movement Under Siege,” Time Magazine, September 26, 1977.
+
+52
+
+“What Next for US Women,” Time Magazine, December 5, 1977.
+
+53
+
+“Women’s Movement Under Siege,” Time Magazine, September 26, 1977.
+
+54
+
+Susan Faludi, Backlash: The Undeclared War Against American Women (Anniversary edition) (New York:
+Broadway Books, 2006).
+55
+
+Françoise Coste, “‘Women, Ladies, Girls, Gals…’: Ronald Reagan and the Evolution of Gender Roles in the
+United States,” Miranda. Revue Pluridisciplinaire Du Monde Anglophone / Multidisciplinary Peer-Reviewed
+Journal on the English-Speaking World, no. 12 (February 2016), https://doi.org/10.4000/miranda.8602.
+56
+
+Françoise Coste, “Conservative Women and Feminism in the United States: Between Hatred and Appropriation,”
+Caliban, French Journal of English Studies, no. 27 (September 2010): 167–76, https://doi.org/10.4000/caliban.2111.
+57
+
+Nancy Gibbs, “The War Against Feminism,” Time Magazine, June 24, 2001,
+http://content.time.com/time/magazine/article/0,9171,159157,00.html; Faludi, Backlash.
+58
+
+“The Superwomen Are Weary; the Young are Complacent. Is There a Future for Feminism?” Time Magazine,
+December 4, 1989.
+59
+
+Faludi, Backlash, 20–23.
+
+60
+
+Shere Hite, Women and Love, A Cultural Revolution in Progress (1st ed.) (New York: Knopf, 1987).
+
+26
+
+JOURNAL OF CULTURAL ANALYTICS
+
+61
+
+Faludi, Backlash, 20–21.
+
+62
+
+Claudia Wallis, reported by Jeanne McDowell, “Back off, Buddy: A new Hite report stirs up a furor over sex and
+love in the 1980s,” Time Magazine, October 12, 1987.
+63
+
+Ibid
+
+64
+
+Faludi, Backlash, 22.
+
+65
+
+Ibid., 42–50.
+
+66
+
+Ibid., 118–21.
+
+67
+
+J.D. Reed, reported by Barbara Dolan and Alessandra Stanley, “The New Baby Bloom: Career women are opting
+for pregnancy and they’re doing it in style,” Time Magazine, February 22, 1982.
+68
+
+Claudia Wallis, reported by Adiranne Jucius, “The Medical Risks of Waiting,” Time Magazine, February 22,
+1982.
+69
+
+Faludi, Backlash, 125–40.
+
+70
+
+While the character Claire Huxtable, the Cosby Show’s wife and mother figure, is supposed to be a lawyer, Faludi
+points out that she is never shown leaving the house or engaging with her profession outside of litigating family
+disputes in the living room. Her character has a profession in name only, but in every other way is portrayed like a
+traditional housewife; ibid., 166.
+71
+
+See, for example, Timothy M. Phelps and Helen Winternitz, Capitol Games: Clarence Thomas, Anita Hill, and
+the Story of a Supreme Court Nomination (New York: Hyperion, 1992).
+72
+
+See, for example, Amy E. Black and Jamie L. Allen, “Tracing the Legacy of Anita Hill: The Thomas/Hill
+Hearings and Media Coverage of Sexual Harassment,” Gender Issues 19, no. 1 (2001): 33–52,
+https://doi.org/10.1007/s12147-001-0003-z; Catherine A. MacKinnon, Only Words (Cambridge, MA: Harvard
+University Press, 1993).
+73
+
+“Levels of Office: History of Women in the U.S. Congress,” Rutgers, Eagleton Institute of Politics, accessed
+September 28, 2019, https://cawp.rutgers.edu/history-women-us-congress.
+74
+
+Phillip Paolino, “Group-Salient Issues and Group Representation: Support for Women Candidates in the 1992
+Senate Elections,” American Journal of Political Science 39, no. 2 (1995): 294–313,
+https://doi.org/10.2307/2111614; Thomas P. Kim, “Clarence Thomas and the Politicization of Candidate Gender in
+the 1992 Senate Elections,” Legislative Studies Quarterly 23, no. 3 (1998): 399–418, https://doi.org/10.2307/440360
+75
+DuBois and Dumenil, Through Women’s Eyes, 734–48.
+76
+
+“The GMMP,” Who Makes the News (WMTN), accessed September 28, 2019, http://whomakesthenews.org/gmmp
+
+77
+
+Anna Turley, “Who Makes the News? Promoting Gender Equality in and through News Media,” Pacific
+Journalism Review 12, no. 1 (2006): 10–14.
+78
+
+Guy Debord, The Society of the Spectacle, trans. Donald Nicholson-Smith (New York: Zone Books, 1995), 12.
+
+79
+
+John Berger, Ways of Seeing (London: British Broadcasting Corporation and Penguin), 129; Sontag, Photography,
+21–22.
+80
+
+Sontag, Photography, 4
+
+27
+
+

@@ -1,0 +1,293 @@
+Annotation Guideline No. 8: Annotation
+Guidelines for Narrative Levels
+Adam Hammond
+01.15.20
+Article DOI: 10.22148/001c.11773
+Journal ISSN: 2371-4549
+Cite: Adam Hammond, “Annotation Guideline No. 8: Annotation Guidelines
+for Narrative Levels,” Journal of Cultural Analytics. January 15, 2020. doi:
+10.22148/001c.11773
+1. Rationale
+I first became aware of the SANTA project at the Digital Humanities conference
+in Montreal in the summer of 2017. I had just been assigned a 90-student secondyear undergraduate Digital Humanities undergraduate English Literature class,
+set to begin in January 2018,1 and I was looking for a group annotation project for
+my students. In previous iterations of the course, I had carried out several annotation projects focused on the narrative phenomenon of free indirect discourse
+(FID) in texts by Virginia Woolf and James Joyce.2 What made these projects
+successful, from my perspective, was that FID is a complex phenomenon (by definition, a passage in which it is difficult or impossible to say for certain whether a
+character or narrator is speaking certain words) which is however relatively easy
+to represent in machine language (for instance, with the TEI <said> element and
+a few value-attribute pairs). The challenge in the assignment, in other words,
+was literary rather than technical: while it was easy to learn the TEI tagging, it
+1 The syllabus for this class, ENG 287, “The Digital Text,” is available at http://www.
+adamhammond.com/eng287s18/
+2 See Adam Hammond, Julian Brooke, Graeme Hirst, “Modeling Modernist Dialogism: Close
+Reading with Big Data,” Reading Modernism with Machines: Digital Humanities and Modernist Literature, eds. Shawna Ross and James O’Sullivan (Palgrave Macmillan, 2016): 49-78 and Julian Brooke,
+Adam Hammond, Graeme Hirst, “Using Models of Lexical Style to Quantify Free Indirect Discourse
+in Modernist Fiction,” Digital Scholarship in the Humanities 32.2 (June 2017): 234-250.
+
+1
+
+Adam Hammond
+
+Cultural Analytics
+
+was hard to say for certain whether a passage from To the Lighthouse was in direct discourse or FID, or to identify who exactly was speaking. To my mind,
+this made the assignment a meaningful one for my students, teaching them a
+technical skill while also bringing them into closer contact with the sometimesirresolvable complexities of literary language.
+Listening to the SANTA presentation at DH2017, it struck me that the phenomenon of narrative levels would make for a similarly meaningful annotation
+project. On the one hand, narrative levels could be represented fairly easily
+with a single XML element and through XML’s nesting structure (its “ordered
+hierarchy of content objects”). On the other hand, definitions of what a
+narrative is, and what a “narrative level” might be, were sufficiently complex
+that the annotation even of a relatively simple text would present an interpretive
+challenge to my students. By the time that I had begun planning my course,
+the SANTA group had published a more detailed set of instructions on their
+website, including suggestions for theoretical readings on narrative levels.3 They
+organized these readings in three levels: Introductory, Basics, and Advanced.
+Reading through these texts, I was struck by three things. First, that the concept
+of narrative levels, relatively intuitive at first glance, becomes more complex the
+more one looks at it. Second, that there was significant disagreement among
+narratologists concerning even basic categories (such as the distinction between
+a “narrative level” and a “narrative frame”). Third, that many of my second-year
+undergraduate students would be deeply confused even by the recommended
+texts at the simplest, “Introductory,” level.
+In light of this, I decided to keep my definitions as simple as possible — as close as
+possible to the level of the “intuitive,” and free from explicit discussion of the theoretical disagreements that preoccupy narratologists who study the phenomenon.
+Since my motivation in preparing annotation projects is to find tasks that are simple technically but make my students reflect deeply about literary phenomena, I
+would keep my tagging scheme as simple as possible and restrict my definitions
+to the points on which all narratologists basically agree. This led to the very short
+guidelines that you see here — the shortest, by some margin, in this group. Although it could be argued that their brevity might lead to unnecessary disagreement among annotators — that by offloading so much of the literary work to
+my students, I was deliberately reducing the likelihood that the guidelines would
+produce annotations with useable levels of inter-annotator agreement — my suspicion from the beginning was that any greater detail would in fact simply confuse my student annotators and reduce inter-annotator agreement. (Analysis of
+the first round of SANTA annotation schemes confirms this suspicion to some
+3 See
+
+https://sharedtasksinthedh.github.io/levels/
+
+2
+
+Cultural Analytics
+
+Annotation Guideline No. 8
+
+extent.)
+My guidelines depend on annotators’ mastering three relatively simple concepts.
+The first is the concept of a narrative, which I define, drawing on Porter Abbott’s
+Cambridge Introduction to Narrative, as “a representation of a story (an event
+or series of events) by a narrator.”4 The next is the notion that a given text can
+contain more than one narrative, and that narratives can be embedded within
+one another. I provide a rule of my own devising for helping students to decide whether they have a reached a moment at which one narrative is embedded
+within another: if they could plausibly insert the phrase “Let me tell you a story”
+(a phrase which captures both sides of my simple definition of a narrative, the
+narrator [“me”] and the story itself) at the beginning of the proposed embedded
+narrative, then they should mark the beginning of a new narrative. The third concept is that of degrees of embeddedness, borrowing terminology from Shlomith
+Rimmon-Kenan via Manfred Jahn.5 In my original guidelines, the annotation is
+described in terms of XML tags, which makes the discussion of embedding somewhat simpler, in that I can simply import XML’s model of embedding and make
+the assumption that narrative levels also form an “ordered hierarchy of content
+objects.”6
+A further benefit of this simple annotation scheme is that it serves to focus the
+eventual computational task. Though annotations produced according my guidelines could not be used to train machine learning models in all narrative phenomena related to narrative levels, they could help to keep attention focused on three
+crucial and related tasks: identifying moments where one narrative yields to another; identifying the speaker of each; and placing these narratives in hierarchical
+relation to one another.
+I carried out my annotation project as follows. First, I assigned Henry James’s
+The Turn of the Screw, and presented a two-hour lecture focused in large part
+on how James’s complicated framing structure serves to complicate (rather than
+resolve) the text’s many “narrative gaps.” The next week, in another two-hour
+4 H. Porter Abbott, The Cambridge Introduction to Narrative, 2nd edn. (Cambridge: Cambridge
+UP, 2014). Abbott defines a narrative as “the representation of a story (an event or series of events)”
+(237). He excludes the necessity of a narrator from his definition of a narrative on the basis that this
+would exclude most drama and film. Since I was working exclusively with prose fiction, this exclusion
+was not necessary for my own schema.
+5 Manfred Jahn, “N2.4. Narrative Levels,” Narratology: A Guide to the Theory of Narrative (English
+Department, University of Cologne, 2017), http://www.uni-koeln.de/~ame02/pppn.htm#N2.4
+6 The actual guidelines distributed to students — which describe the annotation project in
+terms of XML — are available at http://www.adamhammond.com/wp-content/uploads/2018/10/
+narrative-frames-annotation-guidelines.pdf The main difference between these guidelines and the
+tool-agnostic version included here are the necessary addition of the “open” attribute, which is a less
+elegant method than the method described in note 8 below.
+
+3
+
+Adam Hammond
+
+Cultural Analytics
+
+lecture, I introduced the students to XML and to the project itself.7 In this lecture, I provided slightly more detail than I provide in the guidelines themselves.
+For example, I showed students Genette’s speech bubble doodle and discussed
+its implications. I introduced box diagrams for representing narratives within
+narratives, for instance in the Thousand and One Nights, as follows:
+
+I also provided corresponding diagrams emphasizing the stratified levels of narrative — the “degrees” of narrative — in such box diagrams:
+
+I provided additional diagrams for Hamlet, The Taming of the Shrew, and The
+Turn of the Screw. For the latter text, I emphasized that there were multiple valid
+ways of interpreting the text’s structure: for instance, the Governess’s tale could be
+7 The slides for this lecture are available at http://www.adamhammond.com/wp-content/uploads/
+2018/10/eng287_narrative_levels_lecture.pdf
+
+4
+
+Cultural Analytics
+
+Annotation Guideline No. 8
+
+envisioned as a third-degree narrative embedded within Douglas’s and the outer
+narrator’s, or could be seen as embedded only within that of the outer narrator;
+further, certain stories that the Governess tells Mrs. Grose could be marked as
+separate narratives, though one could argue that they are simply part of the Governess’s narrative, not independent of it. I also used Turn of the Screw to introduce
+the notion of “open frames.”8 I next explained “Mise-en-Abyme” or recursive
+narratives. I concluded the lecture by explaining the process students would use
+to annotate their assigned stories. I next posted an instructional video explaining the annotation procedure, which students accomplished with the Sublime
+Text editor.9 In practice, the project seems to have been a success in the context
+of undergraduate pedagogy. In the 74 annotations received in the project, there
+were only three coding errors — evidence that, as desired, the technical challenge
+was minimal. Although we have yet to perform detailed investigation of interannotator agreement among my students, informal evaluations performed in the
+context of grading students’ work revealed that disagreement occurred primarily
+in instances where literary interpretations might reasonably differ — evidence
+that the literary questions asked of students were meaningful ones. Going forward and revising these guidelines for use beyond my classroom, I would add
+more explicit and theoretically-grounded definitions and include diagrams like
+those depicted above.
+
+1. OVERVIEW
+A set of narrative texts are to be annotated for narrative levels. Any span of text
+containing a narrative is to be marked with the nframe category marker. For the
+purpose of our task, a narrative is defined as a representation of a story (an event
+or series of events) by a narrator. The texts in our annotation set may contain
+a single narrative (and thus a single nframe category) or may contain multiple
+narratives embedded within one another (nframe categories within nframe categories). If you come to a point in a text where you are uncertain whether to
+indicate a shift in narrative levels, imagine inserting the phrase “Let me tell you
+a story” right after the proposed division point. If the phrase fits, you should
+8 In my original guidelines, these open frames indicated by a deliberate XML error — withholding
+an end-tag — which is not practical but which I believe perfectly captures a reader’s feeling at the end
+of a story like The Turn of the Screw, where it is as if the author had made a coding error, omitting
+crucial information that allows us to properly process the conclusion of the story.
+9 The instructional video is available at https://www.youtube.com/watch?v=DsEEUlcYfSU The
+texts I assigned to students were mostly those proposed by the project, though I made several substitutions based on various factors, including stereotyped representations of racialized characters in
+certain supplied texts. For instance, I replaced Rudyard Kipling’s “Beyond the Pale” and “How the
+Leopard Got Its Spots” with Wallace Thurman’s “Cordelia the Crude” and an abridged version of
+Zora Neale Hurtson’s Their Eyes Were Watching God.
+
+5
+
+Adam Hammond
+
+Cultural Analytics
+
+likely mark a new narrative level. The nframe category has two necessary and
+one optional attribute.
+• level attribute
+The level attribute is used to express the degree of embedding of a narrative. If the
+narrative is not embedded within any others, it is a top-level or first-degree narrative and should be given the attribute value of “A”. A narrative embedded within
+an “A”-level narrative — a narrative within a narrative, or second-degree narrative
+— is given the attribute value of “B”. A narrative embedded within a “B”-level
+narrative — a narrative within a narrative within a narrative, or third-degree narrative — is given the attribute value “C”, and so on. Note that a text may contain
+multiple narratives at each level. For instance, the Thousand and One Nights contains hundreds (in some tellings, exactly1,001) of “B”-level narratives — some of
+which contain “C”-level narratives of their own.
+• narr attribute
+• open attribute
+The narr attribute keeps track of the narrator who conveys the narrative. We
+will represent these with numbers. The first narrator you encounter should be
+numbered “1”, the second “2”, the third “3,” and so on. If the narrator of a “B”level narrative is the same as the narrator of the “A” level, both are numbered
+“1”. If the narrator of a “B”-level narrative is different from the narrator at the
+“A” level, the first is numbered “1” and the second “2.” And so on. Some writers
+choose deliberately to leave frames “open.” For example, in Henry James’s The
+Turn of the Screw, the governess’s “C”-level tale is framed within a Christmas
+fireside storytelling session by two narrators, the “A”-level “I” and the “B”-level
+Douglas. Yet after the governess finishes her tale, James does not return to the
+“A” or “B” levels to explicitly close them. Instead, they are left hanging. Indicate
+“open” by setting the “open” attribute to “true” (if not indicated, it will be assumed
+that the frame is “closed”).
+
+2. SAMPLE ANNOTATIONS
+A simple text containing only one narrative might be annotated as followed,
+using XML markup as an example:
+
+<nframe level="A" narr="1">It was a dark and stormy night.
+The wind blew and the wolf howled. The wind blew open
+my window and the wolf entered. The wolf bit me and I
+died.</nframe>A text containing a single “B”-level narrative might be
+annotated as follows. (Since the narrator of the “B”-level narrative is different
+6
+
+Cultural Analytics
+
+Annotation Guideline No. 8
+
+from that of the “A”-level narrative, it is given the narrator attribute of “2”.)
+
+<nframe level="A" narr="1">It was a dark and stormy night.
+The wind blew and the wolf howled. The wind blew open my
+window and the wolf entered. The wolf opened his mouth and
+spoke. <nframe level="B" narr="2">"Once upon a time, when
+I was but a young pup, a wizard appeared before me and
+predicted my fate. He told me that one day, I would leap
+through a window and eat a man whole. After enduring many
+hardships, I have come to enact my fate."</nframe> He bit
+me and I died.</nframe>A text containing two “B”-level narratives and a
+single “C”-level narrative might be tagged as follows. (Since the narrator of
+the second “B”-level narrative is the same as the “A”-level narrative, they share
+the narrator attribute of “1”.)
+<nframe level="A" narr="1">It was a dark and stormy night.
+The wind blew and the wolf howled. The wind blew open my
+window and the wolf entered. The wolf opened his mouth and
+spoke. <nframe level="B" narr="2">"Once upon a time, when
+I was but a young pup, a wizard appeared before me and
+predicted my fate. The wizard told me, <nframe level="C"
+narr="3">'I was born in the east. My father was a plumber
+and my mother an auto mechanic. From a young age, it was
+clear that I had little talent for either profession, so
+I set off for the wizard academy. My expert wizardry has
+brought me here to you. You, dear wolf, will some day leap
+through a window and eat a man whole.'</nframe> And so here
+I am. After enduring many hardships, I have come to eat
+you."</nframe> Before he had a chance to eat me, I tried to
+distract him with a story. <nframe level="B" narr="1">"Once
+upon a time and a very good time it was there was a moocow
+coming down along the road and this moocow that was coming
+down along the road met a nicens little boy named baby
+tuckoo..."</nframe>. But he found the story boring and so
+he bit me and I died.</nframe>
+• Special Case: “Open Frames”
+In the following example, the “A”-level narrative is not explicitly closed by narrator 1 (presumably because he has been eaten and is unable to write) and thus
+the attribute “open” attribute has been set to “true”
+
+<nframe level="A" narr="1" open="true">It was a dark and
+7
+
+Adam Hammond
+
+Cultural Analytics
+
+stormy night. The wind blew and the wolf howled. The wind
+blew open my window and the wolf entered. The wolf opened
+his mouth and spoke. <nframe level="B" narr="2">"Once
+upon a time, when I was but a young pup, a wizard appeared
+before me and predicted my fate. He told me that one day,
+I would leap through a window and eat a man whole. After
+enduring many hardships, I have come to enact my fate.
+"</nframe></nframe>
+• Special Case: “Mise-en-Abyme” Narratives
+Some narratives, especially popular with postmodern writers, paradoxically
+embed a story within itself. This paradoxical situation can be represented by
+showing a series of “A”-level narratives embedded within one another:
+
+<nframe level="A" narr="1">It was a dark and stormy night.
+The band of robbers huddled together around the fire. When
+he had finished eating, the first bandit said, <nframe
+level="A" narr="1">"Let me tell you a story. It was a dark
+and stormy night and a band of robbers huddled together
+around the fire. When he had finished eating, the first
+bandit said: <nframe level="A" narr="1">'Let me tell you a
+story. It was a dark and stormy night and...' "</nframe></nframe></nfr
+
+3. OTHER NOTES
+If a shift in narrative level occurs around a chapter break and you’re unsure
+whether to put your nframe category marker before or after the chapter header,
+put it after.
+
+Unless otherwise specified, all work in this journal is licensed under a Creative
+Commons Attribution 4.0 International License.
+
+8
+
+

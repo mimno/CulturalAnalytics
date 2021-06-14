@@ -1,0 +1,436 @@
+Annotation Guideline No. 2: For Annotating
+Anachronies and Narrative Levels in Fiction
+Edward Kearns
+10.03.19
+Peer-Reviewed By: Tillman Köppe
+Article DOI: 10.22148/16.052
+Journal ISSN: 2371-4549
+Cite: Edward Kearns, “Annotation Guideline No. 2: For Annotating Anachronies
+and Narrative Levels in Fiction,” Journal of Cultural Analytics. November 20, 2019.
+doi: 10.22148/16.052
+
+0. Rationale
+The following annotation guidelines were created with both the SANTA project
+and my own PhD research in mind. Their purpose is to provide tags for encoding
+narrative features related to time and perspective, as well as narrative levels. These
+things can interact with each other; for example, a story occurring within another
+story could also constitute a move backwards in time. This introduction will
+briefly discuss the rationale for the creation of the guidelines, the selection of
+the tags, and how the SANTA workshop has made me reflect on them and how
+they can be improved in the future.
+My research project involves the use of a newly-created XML schema to encode
+analepsis, prolepsis (flashbacks and flashes forward in story time, respectively),
+instances of stream of consciousness and free indirect discourse narration, instances of extended or compressed time, changes in position of the narrator, and
+points in the text where the narrative level changes. I annotate these features
+in fiction texts, and will then use that encoded text to quantitatively compare
+those fictions to look for patterns, clusters, similarities, differences, and possible
+1
+
+Edward Kearns
+
+Cultural Analytics
+
+lines of influence of one genre on another. The narrative concepts represented
+by most of the tags have been used for centuries, allowing for comparisons between fictions from many genres and time periods. In the case of my project,
+the two genres being compared are modernist novels, from the early twentieth
+century, and hypertext fictions from the late twentieth and early twenty-first centuries. These two genres have been compared for their shared use of narrative
+fragmentation, and some hypertext works allude to modernist texts; one of the
+aims of this project is to determine whether those comparisons are visible quantitatively. However the more important and primary aim was simply to translate
+these narratological terms into XML.
+While the tag set was created in XML, it can be used in other formats as well.
+This has already been seen in the preparation for the first SANTA workshop,
+when the tag set was recreated in full in CATMA. The angle brackets from XML
+remain in these guidelines as a convenient way of designating a reference to a
+tag specifically rather than its corresponding narratological concept, but otherwise references to XML have been kept to a minimum in this version to maintain
+broader applicability. Excepting some small formatting changes and alterations
+in phrasing, these are the guidelines as they were circulated at the beginning of
+the SANTA workshop.
+A particular feature of this annotation scheme is the inclusion of tags for stream
+of consciousness and free indirect discourse narration. The concepts and names
+for the tags in the set come largely from Gérard Genette but also other narratologists such as Shlomith Rimmon-Kenan, and indeed earlier literary criticism - as
+the term stream of consciousness comes from May Sinclair discussing the work of
+Dorothy Richardson. Stream of consciousness and free indirect discourse could
+be categorised, with extended and compressed time, as tags that describe how the
+story is being told stylistically, whereas the tags for narrator position, narrative
+levels, and anachronies describe more functional features of how the narrative
+is structured. The latter category maintains the focus on narrative features that
+have been used for centuries. Stream of consciousness and free indirect discourse
+have not always been used—they have been used from the nineteenth century
+onwards—but they are relevant stylistic features (not least in modernist and hypertext fiction) because they can correspond with the structural features of a text;
+an analepsis can occur within stream-of-consciousness narration; a deeper narrative level can occur within a character’s mind.
+Participating in the shared task has dovetailed with my work, adding a focus on
+narrative levels as well as narrative time. The workshop provided me with some
+excellent feedback on my annotation system from the other participants. That
+feedback, and the process of reviewing the other tag sets, has made me reflect on
+2
+
+Cultural Analytics
+
+Annotation Guideline No. 2
+
+how my own schema can be improved. As my system was focused on time and
+stylistic features as well as narrative levels, there is scope for more nuance and
+detail in providing the user with options for how a narrative level is encoded; for
+example the ability to annotate what the function of a narrative level is, relative
+to the other levels. This would allow the user to describe a narrative level using
+more than just the integer that is part of the tag already. Further narratological concepts such as narratee, focaliser, and narrative world would also allow for
+the user to more comprehensively describe the intricacies of the way a piece of
+fiction is told. Narratee and focaliser describe somewhat related features of narrative style to the stream of consciousness and free indirect discourse tags, while
+annotating narrative worlds can combine with the structural focus of annotating
+narrative levels. Incorporating these things will allow my schema to be more versatile in its application, more able to facilitate description of unusual cases. With
+an increased focus on narrative levels there will be a need for an application of an
+overall narrative theory to tie together all of the tags in the set, in the way that the
+time theories of Genette bring together some of the existing tags. This rationale
+for this version however was to focus on time as much as narrative levels, and it
+serves that purpose.
+
+1. Introduction
+The purpose of this document is to explain the elements of the SANTA 2 tag
+set and how they should be used. The tag set is based on concepts of narrative
+time suggested by Gérard Genette and other narratologists, and is designed for
+annotating analepsis, prolepsis, stream-of-consciousness, free indirect discourse,
+and narrative levels, with facility also for annotating instances of extended or
+compressed time, and for encoding the identity of the narrator and their position
+with respect to the levels of a narrative.
+This annotation scheme is designed for XML, but can be used independently
+of that, for example if one is using CATMA to tag text. In the schema, the elements are nested inside one another in a way that allows the tags to be used in a
+manner that follows the way that the narrative constructs are used in fiction. For
+instance, analepsis and prolepsis often (but not always) occur within a character’s
+mind, as part of the thought-process that is captured in prose by the stream of
+consciousness or free indirect discourse techniques. Accordingly, the analepsis
+and prolepsis tags here can be nested inside stream of consciousness and free indirect discourse tags, which in turn can be nested inside tags which annotate the
+appropriate narrative level, if this part of the narrative contains or is contained
+by another story. These tags do not have to be used all together, or in that or3
+
+Edward Kearns
+
+Cultural Analytics
+
+der; there are several possible combinations. For example an analepsis tag can be
+used inside a narrative level tag without the need for a stream of consciousness
+tag; the schema is flexible to meet the narrative structure of a piece of fiction.
+All of this serves to allow the user to annotate changes in the temporal position of
+a narrative and changes in narrative levels, which can be related to one another; a
+character telling a story to the narrator about something that happened in the past
+would constitute both a move to a lower narrative level (because it is a story within
+a story) and an analepsis (because the telling of the story is a kind of flashback).
+These narrative techniques have been used for centuries, allowing for comparisons of fiction texts across many genres and time periods. Once the text is encoded, it and the tags can be quantitatively analysed to aid those comparisons
+and look for patterns or discrepancies in narrative structures. The rest of this
+document will illustrate how the various tags should be applied to fiction.
+
+2. <Text>
+This tag is a by-product of the annotation scheme’s initial focus on XML. It is a
+container for the rest of the encoded XML document. It is only opened at the
+beginning of the document, before any other elements, and then closed at the
+very end.
+The purpose of this tag is to allow XML documents encoded with the schema to
+be valid, and to act as a frame within which all the other tags, and plain text, can
+be placed. When using this tag set in a format that is not XML, it is not necessary
+to use this tag, as its function no longer applies.
+Once the text element is used, any other element from the schema can then be
+used, but there is no obligation to do this, as plain text will now be valid in XML,
+due to the fact that <text> is a complex type element with the mixed=“true” attribute enabled. All other elements in which other elements can be nested also
+have this attribute.
+
+3. <analepsis> and <prolepsis>
+Analepsis and prolepsis are ‘flashes’ backwards and forwards in story time, respectively. Despite the use of the term flash, they are not necessarily brief. They
+4
+
+Cultural Analytics
+
+Annotation Guideline No. 2
+
+can last for many pages or even entire sections of novels. They are deviations from
+the main temporal progression of the story, disruptions between story time and
+narrative time. Story time is the actual series of events that occur in the novel,
+and like time in the real world it is linear. Narrative time can be nonlinear; it
+incorporates analepsis and prolepsis.
+The terms were coined by Gérard Genette, who writes:
+to avoid the psychological connotations of such terms as ‘anticipation’ or ‘retrospection,’ which automatically evoke subjective phenomena, we will eliminate these terms most of the time in favor of
+two others that are more neutral, designating as prolepsis any narrative maneuver that consists of narrating or evoking in advance an
+event that will take place later, designating as analepsis any evocation
+after the fact of an event that took place earlier than the point in the
+story where we are at any given moment, and reserving the general
+term anachrony to designate all forms of discordance between the
+two temporal orders of story and narrative. 1
+So, an instance of analepsis or prolepsis occurs when the narrative makes an instantaneous jump to another point in time, deviating from the current moment
+of the story in order to inform the reader about something that happened before
+or after that moment.
+As such an analepsis or prolepsis tag should be opened at the point in the narrative where the narration jumps to another point in time, and closed when the
+story either returns to the moment left behind, or jumps again to another point in
+the story. The tags should not be used to merely annotate the regular, linear progression of time forwards in a narrative, because in that case there is a more proportional relation between narrative time and story time. The elements should
+only be used where there is a clear deviation of narrative time from a particular
+moment in the story.
+Example
+An example of how the analepsis tag can be used is in the following XML encoded
+segment of To the Lighthouse by Virginia Woolf2 :
+She turned the page; <soc PERS=“Mrs. Ramsay”>there were only
+a few lines more, so that she would finish the story, though it was
+past bed-time. It was getting late. The light in the garden told her
+1 Gérard
+
+Genette, Narrative Discourse: An Essay in Method (Cornell University Press, 1980), 39-
+
+40.
+2 Virginia
+
+Woolf, ”To the Lighthouse,” Project Gutenberg Australia, 2008.
+
+5
+
+Edward Kearns
+
+Cultural Analytics
+
+that; and the whitening of the flowers and something grey in the
+leaves conspired together, to rouse in her a feeling of anxiety. What
+it was about she could not think at first. Then she remembered; Paul
+and Minta and Andrew had not come back. She summoned before
+her again <analepsis>the little group on the terrace in front of the
+hall door, standing looking up into the sky. Andrew had his net
+and basket.</analepsis> That meant he was going to catch crabs and
+things. That meant he would climb out on to a rock; he would be
+cut off. Or coming back single file on one of those little paths above
+the cliff one of them might slip. He would roll and then crash. It was
+growing quite dark.</soc>
+Here the narration moves from regular omniscient narration to stream of consciousness from the perspective of Mrs. Ramsay, with the instance of analepsis
+occurring within the stream of consciousness section. The analepsis tag is opened
+when Mrs. Ramsay remembers the image of Paul, Minta and Andrew standing
+in the doorway earlier in the evening, and is closed when she moves on from the
+memory to speculation about what they might be doing, which is disconnected
+from narrative time because it is not a thing that we know is definitely happening,
+whereas the event in the analepsis tags definitely did.
+
+4. <soc> (Stream of consciousness)
+Stream of consciousness is a technique used to provide ostensibly subjective narration from the point of view of a character, rather than a detached omniscient observer. Its purpose is “to unfold the experience of a single mind . . . to emphasize,
+not the ego as such, but the moving, shifting, growing stream of consciousness
+confined within the walls of a single brain.” 3 The specific phrase is attributed to
+May Sinclair, who coined it almost exactly one hundred years ago while writing
+about Dorothy Richardson’s novels in The Egoist. Sinclair says about Pilgrimage
+that “in this series there is no drama, no situation, no set scene. Nothing happens.
+It is just life going on and on. It is Miriam Henderson’s stream of consciousness
+going on and on.” 4 Shirley Rose notes that William James had a hand in the
+phrase; in 1910 he does not quite put the words together in the order that Sinclair
+later does: “Consciousness . . . is nothing jointed; it flows. A ‘river’ or a ‘stream’
+are the metaphors by which it is most naturally described. In talking of it here3 Edith Rickert, “Some Straws in Contemporary Literature: Fiction in England and America,” The
+English Journal, vol. 12, no. 8 (1923), 509-10. JSTOR, doi:10.2307/801922.
+4 May Sinclair, “The Novels of Dorothy Richardson,” The Egoist, vol. 5, no. 4 (1918), 58.
+
+6
+
+Cultural Analytics
+
+Annotation Guideline No. 2
+
+after, let us call it the stream of thought, of consciousness, or of subjective life.”
+5 This helps to describe how the technique is used in fiction; it is the continuous
+reportage of thought, where one observation or memory flows into the next. It
+is meant to come directly from the character’s mind, without authorial intervention or translation into something more grammatical or contextually-informed;
+ironically it is one of the most contrived modes of narration used in fiction, such
+is its difference from the conventions of modern writing and grammar, and the
+effort the author must make to break from those conventions.
+The <soc> tag should be used to fully surround each passage where this technique
+is used, beginning at the moment where the narration changes from a more detached, descriptive narration to the intimate reporting of a character’s thoughts.
+We see this kind of transition often in Pointed Roofs by Dorothy Richardson,6
+where the first sentence or two of a paragraph establishes a situation or setting in
+relatively objective terms, before the narration delves much deeper and provides
+Miriam Henderson’s subjective thoughts on the matter.
+<analepsis> and <prolepsis> tags can be nested within <soc> tags.
+Example
+In the following paragraph from Pointed Roofs, the opening sentence is an objective statement about Miriam’s reaction to something her sister Harriett has
+just told her. Similarly the second sentence, a description of Miriam’s physical
+movement in the room, is objective and would be observable by anyone else. By
+contrast, the impressions that come in the succeeding sentences are known only
+to Miriam, and, through her stream of consciousness, to the reader:
+Miriam’s amazement silenced her. She stood back from the mirror.
+<soc PERS=“Miriam”>She could not look into it until Harriett had
+gone. The phrases she had just heard rang in her head without meaning. But she knew she would remember all of them. She went on doing her hair with downcast eyes. She had seen Harriett vividly, and
+had longed to crush her in her arms and kiss her little round cheeks
+and the snub of her nose. Then she wanted her to be gone.</soc>
+PERS
+This attribute is used to describe which character is currently providing the perspective for the stream-of-consciousness narration. The use of this attribute is
+technically optional, but it is recommended when the narration in one novel is
+5 Shirley Rose, “The Unmoving Center: Consciousness in Dorothy Richardson’s ‘Pilgrimage,”’
+Contemporary Literature, vol. 10, no. 3 (1969), 367. JSTOR, doi:10.2307/1207571.
+6 Dorothy Richardson, ”Pointed Roofs,” in Project Gutenberg, 2018.
+
+7
+
+Edward Kearns
+
+Cultural Analytics
+
+taken over by different characters’ consciousnesses at different times, as in To the
+Lighthouse, and it can of course still be used when the narrative perspective only
+comes from one character, as in Pointed Roofs.
+
+5. <fid> (Free Indirect Discourse)
+Free indirect discourse is another technique which is used for “representing
+speech, thought, and perception.” 7 . Brian McHale introduces indirect discourse
+(ID) as common narration where the narrator has a lot of control over what is
+being reported; they are, once again, detached and omniscient. Free indirect
+discourse is different however; it “handles person and tense as ID would . . .
+On the other hand, it treats deixis as DD [direct discourse] would, reflecting the
+character’s rather than the narrator’s position . . . Manifestly, it is contextual
+cues more than formal features that determine, in many cases, whether or not a
+sentence will be interpreted as a free indirect representation of speech, thought
+or perception.” 8 So, free indirect discourse shares features of more detached
+narration (including correct grammar), but it is coloured by the perceptions of
+a character, not to the radical extent of stream-of-consciousness, but in a more
+subtle way.
+As with <soc>, <analepsis> and <prolepsis> tags can be nested inside <fid> tags.
+Example
+The following paragraph from Tender is the Night by F. Scott Fitzgerald9 features
+objective, omniscient third-person description in its first two sentences, until the
+em dash, when we switch to narration that, while still grammatically correct, not
+breaking the sentence, and still describing externally visible features of the physical world, is coloured by the assumptions and evaluations made by the character
+Rosemary Hoyt.
+Rosemary swam back to the shore, where she threw her peignoir
+over her already sore shoulders and lay down again in the sun. The
+man with the jockey cap was now going from umbrella to umbrella
+carrying a bottle and little glasses in his hands; presently he and his
+friends grew livelier and closer together and now they were all under
+7 Brian McHale, “Speech Representation,” in The Living Handbook of Narratology, 10 June 2011, 4
+http://www.lhn.uni-hamburg.de/article/speech-representation.
+8 McHale, “Speech Representation,” 4.
+9 F. Scott Fitzgerald, ”Tender Is the Night,” in Project Gutenberg Australia, 2003.
+
+8
+
+Cultural Analytics
+
+Annotation Guideline No. 2
+
+a single assemblage of umbrellas–<fid PERS=“Rosemary”>she gathered that some one was leaving and that this was a last drink on the
+beach. Even the children knew that excitement was generating under that umbrella and turned toward it–and it seemed to Rosemary
+that it all came from the man in the jockey cap.</fid>
+PERS
+Similarly to its use in <soc>, in <fid> the PERS attribute is used to annotate which
+character is influencing the free-indirect-discourse narration.
+
+6. <level>
+This tag is used to annotate a change in narrative level, if the piece of fiction has
+stories within stories. The use of the DEGREE attribute, while technically not
+necessary for the XML to be valid, must always be used in order for this element
+to have meaning. The DEGREE attribute allows for any integer to be assigned to
+it, because in theory there can be as many stories within stories as the writer cares
+to create. In narratology the term degree is used to assign numbers to these levels
+of story, and it is an attribute of the <level> element here. A first degree narrative
+level is “a narrative that is not embedded in any other narrative; a second-degree
+narrative is a narrative that is embedded in a first-degree narrative,”10 and so on.
+A <level> tag with the attribute DEGREE=“1” should be opened when the toplevel narrative first appears in a text, and then closed when the narration changes
+to a lower level. At this point a separate <level> tag should be opened with DEGREE=“2”. If the narrative returns to the higher, framing level, the <level> with
+DEGREE=“2” should be closed and a new <level> with DEGREE=“1” should be
+opened. If instead a further story is created within the second-degree narrative,
+this will be a third-degree narrative, and should be encoded with a <level> tag
+and DEGREE=“3” attribute.
+An example of several degrees of narrative level can be seen in Frankenstein by
+Mary Shelley, where the novel begins with the narrative of the Arctic explorer
+Captain Walton (the novel’s first-degree narrative), who meets Dr Frankenstein,
+who tells Captain Walton his story (so Dr Frankenstein’s narrative is the seconddegree narrative), which includes a story told to Dr Frankenstein by the monster
+(the third-degree narrative). In theory the levels could keep going further down,
+allowing for fourth-degree narratives and more.
+<analepsis> and <prolepsis> can be nested inside <level> tags either on their own,
+10 Manfred Jahn, ”Narrative Levels,” in Narratology:
+
+9
+
+A Guide to the Theory of Narrative, May 2017.
+
+Edward Kearns
+
+Cultural Analytics
+
+or nested inside <soc> or <fid> tags which are in turn contained by the <level>
+element.
+Example
+In this excerpt from To the Lighthouse, one can see how the level tags are used
+to encode a story within a story, as Mrs. Ramsay reads to her child. That is the
+second-degree narrative; we then return to the first degree narrative, the main
+story. When we do, we see a characteristic of Woolf ’s prose: the switching of
+stream-of-consciousness perspective from one character to another in the same
+paragraph - in this case from Mrs. Ramsay to her husband - revealing what each
+character is thinking about the other. There is also a brief instance of analepsis
+as Mrs. Ramsay remembers something that her husband had said earlier.
+<level DEGREE=“2”>“The man’s heart grew heavy,”</level> <level
+DEGREE=“1”> she read aloud,</level> <level DEGREE=“2”>”and
+he would not go. He said to himself, ‘It is not right,’ and yet he went.
+And when he came to the sea the water was quite purple and dark
+blue, and grey and thick, and no longer so green and yellow, but it
+was still quiet. And he stood there and said—”</level>
+<level DEGREE=“1”>Mrs. Ramsay could have wished that her husband had not chosen that moment to stop. <soc PERS=“Mrs. Ramsay”>Why had he not gone as <analepsis>he said</analepsis> to
+watch the children playing cricket?</soc> But he did not speak; he
+looked; he nodded; he approved; he went on. <soc PERS=“Mr. Ramsay”>He slipped, seeing before him that hedge which had over and
+over again rounded some pause, signified some conclusion, seeing
+his wife and child, seeing again the urns with the trailing of red
+geraniums which had so often decorated processes of thought, and
+bore, written up among their leaves, as if they were scraps of paper on which one scribbles notes in the rush of reading–he slipped,
+seeing all this, smoothly into speculation suggested by an article
+in THE TIMES about the number of Americans who visit Shakespeare’s house every year . . . </soc> . . . </level>
+
+7. <extendedTime>
+The tag <extendedTime> is used when narrative time is extended relative to story
+time. For example this would occur if the reader is informed over several pages,
+10
+
+Cultural Analytics
+
+Annotation Guideline No. 2
+
+which take minutes to read, about a character’s thoughts which fly through their
+mind in a matter of seconds. The tag should be closed when the narration returns
+to a more steady flow of time.
+
+8. <compressedTime>
+By contrast, <compressedTime> should be used when narrative time moves
+much faster than story time, for example if a story leaves its normal flow of
+narration, where narrative time and story time are in closer proportion, and
+details the events that occur over the span of a number of years, before returning
+to its initial, regular narrative flow.
+
+9. <narrator TYPE= “extra”/“intra”/“meta”>
+This tag and its attribute (TYPE) describe the narrator, the person or entity telling
+the story, although it doesn’t describe them as an individual but instead their “relative situations and functions” 11 compared to other narrators on other levels.
+The terminology emanates from Genette, who states that the narrator of a firstdegree narrative is an extradiegetic narrator, the narrator of a second-degree narrative is an intradiegetic narrator (inside the diegetic story of the first narrator),
+and the narrator of a third-degree narrative is a metadiegetic narrator.12 The tag
+and attribute should be used only in a text where the narrator changes as the level
+changes, and the tag should be applied at the point in the text where this change
+occurs.
+While any string could be entered as the value for the attribute TYPE, it is recommended that the only options used are either TYPE=“extra”, TYPE=“intra” or
+TYPE=“meta”, as appropriate for the narrator of a given section of fiction text.
+The narrator tag should not be used when there is only one narrative perspective,
+even when there are multiple narrative levels. The narrative perspective must
+also change. For example, it would be appropriate to use the narrator tag to annotate Heart of Darkness by Joseph Conrad, for the first-level narrative is told
+by a crew member of the ship arriving in London, making him the extradiegetic
+11 Gérard
+12 Gérard
+
+Genette, Narrative Discourse, 229.
+Genette, Narrative Discourse, 228-9.
+
+11
+
+Edward Kearns
+
+Cultural Analytics
+
+narrator, outside the main story but providing the frame narrative. The secondlevel narrative, and the main part of the novel, is told by Marlow, speaking to
+the first crew member, making Marlow the intradiegetic narrator. This dynamic
+is also present in Wuthering Heights by Emily Brontë, where Lockwood is the
+extradiegetic narrator, and Nelly Dean tells most of the novel to him, as the intradiegetic narrator, before we once again return to Lockwood’s perspective for
+the final chapters. Pale Fire by Vladimir Nabokov may be quite a useful example,
+but only if one considers John Shade’s poem as a kind of narrative level, making
+Shade the intradiegetic narrator and Charles Kinbote the extradiegetic narrator,
+with his introduction and endnotes forming a higher narrative level than Shade’s
+poem. Indeed this annotation of the novel also only works if one considers Shade
+and Kinbote to be two different people, and that the whole story and Shade are
+not fabrications of Kinbote’s mind. The monster in Frankenstein is an example of
+a metadiegetic narrator: a figure whose tale is relayed to the reader through not
+one but two other narrators.
+
+Unless otherwise specified, all work in this journal is licensed under a Creative
+Commons Attribution 4.0 International License.
+
+12
+
+
