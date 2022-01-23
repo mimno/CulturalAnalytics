@@ -1,0 +1,194 @@
+Journal of
+Cultural Analytics
+
+December 15, 2021
+
+Annotation Guidelines for Narrative
+Levels
+Adam Hammond
+Adam Hammond, University of Toronto
+Peer-Reviewer: Tom McEnery
+Dataverse DOI: https:doi.org/10.7910/DVN/2YQVM6
+Article DOI: https://doi.org/10.22148/001c.30704
+
+ABSTRACT
+These guidelines present a minimalist set of instructions for annotating narrative levels. They strive for clarity and brevity,
+with a focus on clear examples and helpful rules of thumb. They present a one-sentence definition of a narrative and introduce
+the “Let me tell you a story” rule of thumb for determining whether a narrative level boundary has been crossed. Only four
+attributes are introduced: narrative number, narrative level, narrator ID, and whether a given narrative is left “open” or is
+closed.
+
+OVERVIEW
+A set of narrative texts are to be annotated for narrative levels. Any span of text
+containing a narrative is to be marked with the nframe category marker. For the
+purpose of our task, a narrative is defined as a representation of a story (an event or
+series of events) by a narrator.1 The texts in our annotation set may contain a single
+narrative (and thus a single nframe category) or may contain multiple narratives
+embedded within one another (nframe categories within nframe categories). If
+you come to a point in a text where you are uncertain whether to indicate a shift
+in narrative levels, imagine inserting the phrase “Let me tell you a story” right
+after the proposed division point. If the phrase fits, you should likely mark a new
+narrative level.
+The nframe category has three necessary and one optional attributes.
+Journal of Cultural Analytics 12 (2021): 187-193
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S
+
+num attribute
+The num attribute keeps track of the identity of distinct narratives. It is needed
+to indicate situations in which a particular narrative is interrupted and then later
+resumed. The identity of a narrative is indicated by numbers. The first narrative
+you encounter should be numbered “1”, the second “2”, the third “3,” and so on.
+
+level attribute
+The level attribute is used to express the degree of embedding of a narrative. If
+the narrative is not embedded within any others, it is a top-level or first-degree
+narrative and should be given the attribute value of “A”2 . A narrative embedded
+within an “A”-level narrative — a narrative within a narrative, or second-degree
+narrative — is given the attribute value of “B”. A narrative embedded within a “B”level narrative — a narrative within a narrative within a narrative, or third-degree
+narrative — is given the attribute value “C”, and so on.
+Note that a text may contain multiple narratives at each level. For instance, the
+Thousand and One Nights contains hundreds (in some tellings, exactly 1,001) of
+“B”-level narratives, some of which contain “C”-level narratives of their own. A
+simpler situation — with three “B”-level narratives, one containing a “C”-level
+narrative — is illustrated below:
+
+188
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+The narrative levels, or degrees of narrative, in the above structure can also be
+visualized as follows:
+
+narrator attribute
+The narrator attribute keeps track of the narrator who conveys the narrative. We
+will represent these with numbers. The first narrator you encounter should be numbered “1”, the second “2”, the third “3,” and so on. If the narrator of a “B”-level
+narrative is the same as the narrator of the “A” level, both are numbered “1”. If
+the narrator of a “B”-level narrative is different from the narrator at the “A” level,
+the first is numbered “1” and the second “2.” And so on.
+
+open attribute
+Some writers choose deliberately to leave frames “open.” For our purposes, an
+“open” frame is one that lacks “closure,” which in turn can be defined as a clear
+“sense of an ending.” As Barbara Herrnstein Smith elaborates, closure is a narrative situation in which “stasis, or the absence of further continuation, [is] the most
+probable event” (Poetic Closure 34). An “open” frame is one that lacks this sense
+of stasis.
+In Henry James’s The Turn of the Screw, the governess’s “C”-level tale is framed
+within a Christmas fireside storytelling session by two narrators, the “A”-level “I”
+189
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S
+
+and the “B”-level Douglas. Yet after the governess finishes her tale, James does
+not return to the “A” or “B” levels to explicitly close them. On these levels, stasis
+is not the most probable event: we want to know what happens to Douglas and
+to the first-person narrator, but we are not told. Each of these levels thus lack a
+“sense of an ending”; the situation is left hanging. They should thus be indicated
+as “open frames.” Make this indication by setting the “open” attribute to “true” (if
+an “open” attribute is not provided, it will be assumed that the frame is “closed”).
+
+SAMPLE ANNOTATIONS
+A simple text containing only one narrative might be annotated as followed, using
+XML markup as an example:
+(1) <nframe num="1" level="A" narrator="1"> It was a dark and
+stormy night. The wind blew and the wolf howled. The wind blew open
+my window and the wolf entered. The wolf bit me and I died. </nframe>
+A text containing a single “B”-level narrative might be annotated as follows. (Since
+the narrator of the “B”-level narrative is different from that of the “A”-level narrative, it is given the narrator attribute of “2”.)
+(2) <nframe num="1" level="A" narrator="1"> It was a dark and
+stormy night. The wind blew and the wolf howled. The wind blew open
+my window and the wolf entered. The wolf opened his mouth and spoke.
+<nframe num="2" level="B" narrator="2"> “Once upon a time,
+when I was but a young pup, a wizard appeared before me and predicted
+my fate. He told me that one day, I would leap through a window and eat a
+man whole. After enduring many hardships, I have come to enact my fate.”
+</nframe> He bit me and I died. </nframe>
+190
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+If the “B”-level narrative were interrupted briefly by the “A”-level narrative, indicate its continuation by marking separate nframe tags as both conveying narrative
+num=“2”:
+(3) <nframe num="1" level="A" narrator="1"> It was a dark and
+stormy night. The wind blew and the wolf howled. The wind blew open
+my window and the wolf entered. The wolf opened his mouth and spoke.
+<nframe num="2" level="B" narrator="2"> “Once upon a time,”
+</nframe> the wolf said, <nframe num="2" level="B"
+narrator="2"> “when I was but a young pup, a wizard appeared before
+me and predicted my fate. He told me that one day, I would leap through a
+window and eat a man whole. After enduring many hardships, I have come
+to enact my fate.” </nframe> He bit me and I died. </nframe>
+A text containing two “B”-level narratives and a single “C”-level narrative might
+be tagged as follows. (Since the narrator of the second “B”-level narrative is the
+same as the “A”-level narrative, they share the narrator attribute of “1”.)
+(4) <nframe num="1" level="A" narrator="1"> It was a dark and
+stormy night. The wind blew and the wolf howled. The wind blew open
+my window and the wolf entered. The wolf opened his mouth and spoke.
+<nframe num="2" level="B" narrator="2"> “Once upon a time,
+when I was but a young pup, a wizard appeared before me and predicted
+my fate. The wizard told me,
+<nframe num="3" level="C" narrator="3"> ‘I was born in the east.
+My father was a plumber and my mother an auto mechanic. From a young
+age, it was clear that I had little talent for either profession, so I set off for
+the wizard academy. My expert wizardry has brought me here to you. You,
+dear wolf, will some day leap through a window and eat a man whole.’
+191
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S
+
+</nframe> And so here I am. After enduring many hardships, I have come
+to eat you.” </nframe> Before he had a chance to eat me, I tried to distract
+him with a story. <nframe num="4" level="B" narrator="1"> “Once
+upon a time and a very good time it was there was a moocow coming down
+along the road and this moocow that was coming down along the road met
+a nicens little boy named baby tuckoo...” </nframe>. But he found the
+story boring and so he bit me and I died. </nframe>
+
+Special Case: “Open Frames”
+In the previous example, the phrase “But he found the story boring and so he bit me
+and I died” provides closure to the “A”-level narrative. In the following example,
+however, the “A”-level narrative is not explicitly closed by narrator 1 (presumably
+because he has been eaten and is unable to write). As such, the “open” attribute
+has been set to “true.”
+(5) <nframe num="1" level="A" narrator="1" open="true"> It was
+a dark and stormy night. The wind blew and the wolf howled. The wind
+blew open my window and the wolf entered. The wolf opened his mouth
+and spoke. <nframe num="2" level="B" narrator="2"> “Once upon
+a time, when I was but a young pup, a wizard appeared before me and
+predicted my fate. He told me that one day, I would leap through a window
+and eat a man whole. After enduring many hardships, I have come to enact
+my fate.” </nframe></nframe>
+
+Special Case: “Mise-en-Abyme” Narratives
+Some narratives, especially common among postmodern authors, paradoxically
+embed a story within itself. This paradoxical situation can be represented by showing a series of “A”-level narratives with the same num attribute embedded within
+192
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+one another:
+(6) <nframe num="1" level="A" narrator="1"> It was a dark and
+stormy night. The band of robbers huddled together around the fire. When
+he had finished eating, the first bandit said,
+<nframe num="1" level="A" narrator="1"> “Let me tell you a story.
+It was a dark and stormy night and a band of robbers huddled together
+around the fire. When he had finished eating, the first bandit said:
+<nframe num="1" level="A" narrator="1"> ‘Let me tell you a story.
+It was a dark and stormy night and…’ ” </nframe></nframe></nframe>
+
+OTHER NOTES
+If a shift in narrative level occurs around a chapter break and you’re unsure whether
+to put your nframe category marker before or after the chapter header, put it after.
+
+Notes
+1
+
+This definition is derived from Porter Abbott, The Cambridge Introduction to Narrative, 2nd ed. (Cambridge: Cambridge University Press, 2014), 237, where narrative is defined as “the representation of a story (an event or series of events)”.
+2
+
+The notion of degrees of narrative employed in this annotation derives from the work of Shlomith Rimmon-Kenan
+as discussed in Manfred Jahn, “N2.4 Narrative Levels,” in Narratology: A Guide to the Theory of Narrative (Köln, 2017).
+
+193
+
+

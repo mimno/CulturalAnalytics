@@ -1,0 +1,725 @@
+Journal of
+Cultural Analytics
+
+December 15, 2021
+
+Annotation Guideline No. 7 (revised):
+Guidelines for annotation
+of narrative structure
+Mats Wirén and Adam Ek
+Mats Wirén, Stockholm University
+Adam Ek, University of Gothenburg
+Peer-Reviewer: Gunther Martens
+Dataverse DOI: https://doi.org/10.7910/DVN/2YQVM6
+Article DOI: https://doi.org/10.22148/001c.30703
+
+ABSTRACT
+Analysis of narrative structure can be said to answer the question “Who tells what, and how?”. The key part of our annotation
+scheme is related to the “who?”, and to this end we distinguish between narration and fictional dialogue. Furthermore, with
+respect to the latter we keep track of turns, lines, identities of speakers and addressees, and speech-framing constructions,
+which provide the narrator’s cues about the circumstances of the speech. We also annotate voice, that is, whether the narrator
+is ever present in the story or not. Our annotation of the “what?” includes embeddings of narrative transmission levels to
+capture stories in stories, and embeddings of fictional dialogue to capture characters quoting other characters. Our annotation
+of the “how?” includes focalization, that is, the perspective from which the narrative is seen and how much information the
+narrator has access to.
+
+Rationale
+Analysis of narrative structure can be said to answer the question “Who tells what,
+and how?”1,2 The first part of the question thus concerns aspects such as who is
+narrating, whether it is a character in the story or not, and if it is in the first or third
+person. The second part is related to the story and its basic elements: characters
+and events, and how the sequence of events forms a plot. The third part concerns
+how the narrative text is constructed: ordering of the events, the perspective from
+which the story is seen, how much information the narrator has access to, etc.
+The key part of our annotation scheme is related to the “who?”, in other words,
+Journal of Cultural Analytics 12 (2021): 164-186
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+keeping track of who is doing the telling or speaking, and to whom. To this end,
+our annotation scheme is grounded in the basic levels of narrative transmission,
+specifically narrator–narratee and character–character.3 Typically, works of literary fiction consist of alternations between these two levels: narration (in the sense
+of a narrator speaking) and fictional dialogue (in the sense of fictional characters
+speaking to each other). With respect to narration, we annotate voice, which corresponds to the narrator’s relationship to the story, and specifically whether the
+narrator is ever present in the story or not. However, the most detailed part of
+our annotation concerns fictional dialogue, for which we keep track of turns, lines,
+identities of speakers and addressees, and speech-framing constructions, which
+provide the narrator’s cues about the circumstances of the speech.
+Our annotation of the “what?” is more rudimentary. In addition to keeping track
+of the characters taking part in fictional dialogue, we annotate embeddings of narrative transmission levels to capture stories in stories, and embeddings of fictional
+dialogue to capture characters quoting other characters. On the other hand, we do
+not distinguish events, let alone how timewise and causally related events form a
+plot.
+Our annotation of the “how?” is also rudimentary. We annotate focalization, that
+is, the perspective from which the narrative is seen and specifically how much
+information the narrator has access to.
+In developing our annotation scheme, we have adopted a hierarchical tagset with
+mutually exclusive tag categories within the same layers to increase the transparency of the scheme, and thereby hopefully inter-annotator agreement. For simplicity, we use embedded (in-line) annotation in the original text. A summary of
+the annotation is given in Summary of annotation layers.
+
+165
+
+G U I D E L I N E S F O R A N N O TAT I O N O F N A R R AT I V E S T R U C T U R E
+
+Revisions
+This section summarizes the changes relative to the first version of the guidelines,
+published in Cultural Analytics on January 15, 2020.
+1. We have removed the category <SCENE>.
+2. We have removed the category <AUTHOR>. We thus only annotate two levels
+of narrative transmission: <NARRATOR> and <CHARACTERS>. In addition,
+<CHARACTERS> is embedded into <NARRATOR> instead of iterating the two
+at the same level.
+3. We have added the category <NC> (for narrative construction) to tag speechframing constructions in lines in characters’ discourse, for example:
+(1)
+
+“He looks like a thief”, <NC> said Sellén, watching him from the
+window with a sly smile </NC>.
+
+Narrative transmission
+Our starting-point is the following levels of narrative transmission, from higher to
+lower;4 compare Figure 1:
+1. Transmission from the real (historical) author to any real reader of the text.
+2. Transmission from an implied author to an implied reader. The implied author is the “hypothetical individual who seems to be implied by the content
+of the text”.5 The characteristics and intentions of this are sometimes taken
+to differ from those of the real author as well as from the narrator.
+
+166
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Figure 1: Levels of narrative transmission, from Koivisto and Nykänen.6 The second-lowest level (narrator–
+narratee) and lowest level (FC, fictional characters) correspond to what is annotated according to this guideline.
+
+3. Transmission from a narrator to a narratee. We refer to this as narrator’s
+discourse.
+4. Transmission between characters in the story by means of direct speech. We
+refer to this as characters’ discourse, or sometimes (fictional) dialogue.
+As pointed out by Jahn,7 it is only in narrator’s and characters’ discourse that transmission occurs in the text (that is, at the fictional or intratextual level), whereas
+the transmission between author and reader occurs outside of the text (at the nonfictional or extratextual level). Since we are only concerned with annotating the
+intratextual level, we only include narrator’s and characters’ discourses in our annotation scheme. As stated in Dolezel,8 quoted in Jahn:9 “Every narrative text T
+is a concatenation and alternation of ND [narrator’s discourse] and CD [characters’ discourse]”. Instead of alternation, however, our annotation scheme involves
+embedding characters’ discourses in narrator’s discourses in accordance with Fig167
+
+G U I D E L I N E S F O R A N N O TAT I O N O F N A R R AT I V E S T R U C T U R E
+
+ure 1. The rationale for this is that we view characters’ discourses as renderings of
+dialogues made by the narrator.
+The reason for distinguishing narrator’s and characters’ discourses in our annotation is that they constitute different modes of story-telling, and that we assume
+that to some extent they require different forms of narrative analysis (whether automatic or manual). For example, while fictional dialogue is an independent narrative mode, its mimetic quality means that it is to some extent amenable to linguistic
+analysis using models aimed at human interaction, such as speech-act theory and
+Conversation Analysis.10
+To annotate characters’ and narrator’s discourses, we use opening and closing tags
+indicating the type of addresser and addressee at the respective level, namely,
+<NARRATOR--NARRATEE> and <CHARACTERS--CHARACTERS>.11 For convenience,
+we may abbreviate <NARRATOR--NARRATEE> as <NARRATOR> and <CHARACTERS-CHARACTERS> as <CHARACTERS>. Furthermore, since each of these levels can be
+embedded into each other (for example, to capture stories in stories; see Embeddings of narrative transmission levels), we use indexing, with 0 as the highest
+level, 1 for the next embedded level, and so on; for example, <NARRATOR_0>,
+<NARRATOR_1>, <NARRATOR_2>.
+Below is an example text which contains passages of what we annotate as narrator’s
+and characters’ discourses.12
+Melissa had her camera on the table and occasionally lifted it to
+take a photograph, laughing self-deprecatingly about being a ‘work
+addict’. She lit a cigarette and tipped the ash into a kitschy-looking
+glass ashtray. The house didn’t smell of smoke at all and I wondered
+if she usually smoked in there or not.
+I made some new friends, she said.
+Her husband was in the kitchen doorway. He held up his hand to ac168
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+knowledge us and the dog started yelping and whining and running
+around in circles.
+This is Frances, said Melissa. And this is Bobbi. They’re poets.
+He took a bottle of beer out of the fridge and opened it on the countertop.
+Come and sit with us, Melissa said.
+Yeah, I’d love to, he said, but I should try and get some sleep before
+this flight.
+Here is how the text would be annotated for narrator’s and characters’ discourses:
+(2) <NARRATOR_0>
+Melissa had her camera on the table and occasionally lifted it to take a
+photograph, laughing self-deprecatingly about being a ‘work addict’. She
+lit a cigarette and tipped the ash into a kitschy-looking glass ashtray. The
+house didn’t smell of smoke at all and I wondered if she usually smoked in
+there or not.
+<CHARACTERS_0>
+I made some new friends, she said.
+</CHARACTERS_0>
+Her husband was in the kitchen doorway. He held up his hand to
+acknowledge us and the dog started yelping and whining and running
+around in circles.
+<CHARACTERS_0>
+This is Frances, said Melissa. And this is Bobbi. They’re poets.
+</CHARACTERS_0>
+He took a bottle of beer out of the fridge and opened it on the countertop.
+<CHARACTERS_0>
+Come and sit with us, Melissa said.
+169
+
+G U I D E L I N E S F O R A N N O TAT I O N O F N A R R AT I V E S T R U C T U R E
+
+Yeah, I’d love to, he said, but I should try and get some sleep before this
+flight.
+</CHARACTERS_0>
+</NARRATOR_0>
+As illustrated above, characters’ discourse represents direct speech, that is, utterances that are rendered as quotations by the narrator. Other terms that have been
+used for this are direct discourse and quoted speech.13 The form of the speech can
+be dialogue, but other forms are spoken monologue (soliloquy) or interior monologue (thoughts). Direct speech is usually marked typographically with quotation
+marks or dashes and may involve paragraph breaks. In addition to quotations, passages of direct speech may include speech-framing constructions, which provide
+the narrator’s cues about the circumstances of the speech.14 Such a construction
+may include the identity of the speaker (and possibly the addressee), the narrator’s
+assessment of the speech, and information about events associated with the speech
+or that happen simultaneously. Here is an example:15
+“He looks like a thief”, said Sellén, watching him from the window
+with a sly smile.
+In this case, “said Sellén” provides the identity of the speaker and “watching him
+from the window with a sly smile” reports what the speaker does (and how) while
+speaking. In our annotation scheme, we tag speech-framing constructions using
+the tag <NC> (narrative construction), as shown below:
+(3) “He looks like a thief”, <NC> said Sellén, watching him from the
+window with a sly smile </NC>.
+Fictional speech can be rendered in many ways, of which direct speech is only one.
+Rimmon-Kenan16 distinguishes seven types of speech representation, ranging from
+170
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+the diegetic (where the speech of the characters is expressed through the narrator)
+to the mimetic (where the characters’ speech is rendered in quoted form). Five of
+these belong to indirect speech. Basically, indirect speech means that the narrator
+describes a speech event as seen from his or her point of view. A possible rendering
+of the example above as indirect speech is as follows:
+Sellén, watching Olle from the window with a sly smile, said that he
+looked like a thief.
+In the words of Genette,17 “the narrator takes on the speech of the character, or,
+if one prefers, the character speaks through the voice of the narrator, and the two
+instances then are merged”. In our annotation scheme, all kinds of indirect speech
+belong to narrator’s discourse.18
+
+Narrator’s discourse
+As mentioned above, narrators and narratees may be more or less overt, but this
+distinction is not annotated per se according to our scheme; rather, passages of narration are annotated as narrator’s discourse regardless of the degree of overtness.
+Here is an example of an narratee who is overt in the sense of being explicitly
+addressed, though not identified as in an epistolary novel:
+(4) <NARRATOR_0>
+You are about to begin reading Italo Calvino’s new novel, If on a winter’s
+night a traveler. Relax. Concentrate. Dispel every other thought. Let the
+world around you fade. Best to close the door; the TV is always on in the
+next room. [. . . ]
+</NARRATOR_0>
+171
+
+G U I D E L I N E S F O R A N N O TAT I O N O F N A R R AT I V E S T R U C T U R E
+
+Here is another example where the narratee is again overt in the sense of being explicitly addressed. In addition, the narrator is overt in the sense of appearing as an
+“experiencing I”, which would be annotated as a homodiegetic voice (<VOICE_1>,
+see Voice).
+(5) <NARRATOR_0>
+If you really want to hear about it, the first thing you’ll probably want to
+know is where I was born, and what my lousy childhood was like, and how
+my parents were occupied and all before they had me, and all that David
+Copperfield kind of crap, but I don’t feel like going into it, if you want to
+know the truth.
+[. . . ]
+</NARRATOR_0>
+
+Characters’ discourse
+A characters’ discourse consists of dialogue between characters, using one or more
+turns, each of which is associated with one speaker and one or more addressees.
+A characters’ discourse is thus a sequence of turns uninterrupted by narrator’s discourses. A turn is distinguished by having a single speaker (or possibly the same
+set of speakers in chorus). A turn consists of one or more lines, each of which
+consists of one or more utterances. In contrast to a turn, a line is distinguished by
+having a single addressee (or the same set of addressees, if the spoken message is
+intended for more than one person). In other words, different lines within a turn
+have the same speaker(s) but different addressees.19
+We annotate turns using the tag <TURN>, and lines with their speakers and addressees along with speech-framing constructions, as in the example below.20
+(6) <CHARACTERS_0>
+172
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+<TURN>
+We’re all on the same side here, <NC> Derek said </NC>.
+<Derek--ALL>
+Nick, you’re an oppressive white male, you back me up.
+<Derek--Nick>
+</TURN>
+<TURN>
+I actually quite agree with Bobbi, <NC> said Nick </NC>. Oppressive
+though I certainly am. <Nick--Derek>
+</TURN>
+</CHARACTERS_0>
+Here, the first turn is divided into two lines since there is a change in addressees.
+The second turn corresponds to one line consisting of two utterances.
+Here is another example:
+(7) <CHARACTERS_0>
+[. . . ]
+<TURN>
+‘It tastes like liquorice,’ <NC> the girl said and put the glass down </NC>.
+<Girl--Man>
+</TURN>
+<TURN>
+‘That’s the way with everything.’ <Man--Girl>
+</TURN>
+</CHARACTERS_0>
+A line in which the speaker addresses everybody present is annotated using the
+keyword ALL for the addressees, as in the example above. A line which has mul173
+
+G U I D E L I N E S F O R A N N O TAT I O N O F N A R R AT I V E S T R U C T U R E
+
+tiple addressees of which some or all are not identifiable is annotated using the
+keyword SEVERAL, as in the example below:21
+(8) <CHARACTERS_0>
+<TURN>
+“That was the first story,” <NC> said the officer, as he took a pinch of snuff
+and became silent </NC>. <Officer--SEVERAL>
+</TURN>
+</CHARACTERS_0>
+If there are multiple identifiable addressees, these are listed using parentheses as
+exemplified below:22
+(9) <CHARACTERS_0>
+<TURN>
+‘Four reales.’ ‘We want two Anis del Toro.’ <Man--Woman>
+</TURN>
+<TURN>
+‘With water?’ <Woman--(Man,Girl)>
+</TURN>
+[. . . ]
+</CHARACTERS_0>
+A line with several speakers who speak in chorus is treated analogously with addressees, using parentheses as illustrated below:23
+(10) <CHARACTERS_0>
+<TURN>
+
+174
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+‘Now watch,’ <NC> said the Zebra and the Giraffe </NC>. ‘This is the way
+it’s done. One–two–three! And where’s your breakfast?’
+<(Zebra, Giraffe)--Leopard>
+</TURN>
+</CHARACTERS_0>
+
+Embeddings of narrative transmission levels
+This section discusses how the two types of discourse can be embedded.
+
+Narrator’s discourse embedded in narrator’s discourse
+A narrator’s discourse embedded in a narrator’s discourse corresponds to what has
+been called narrative level24 , in other words, a story within a story. Our criterion
+for making this embedding is that there is a switch of narrator, as in the following
+example:
+(11) <NARRATOR_0>
+The story that I have to tell came to my knowledge more than half a
+century ago in the house of my great-grandmother, the wife of Senator
+Feddersen, when, sitting close up to her armchair one day, I was busy
+reading a number of some magazine bound in blue cardboard, either the
+Leipziger or Pappes Hamburger Lesefruchte, I have forgotten which. I still
+recall with a tremor how the old lady of more than eighty years would now
+and then pass her soft hand caressingly over her great-grandchild’s hair.
+She herself, and that day, have long been buried and I have sought in vain
+for those old pages, so I can just as little vouch for the truth of the facts as
+defend them if anyone should question them. Only one thing I can affirm,
+that although no outward circumstance has since revived them in my mind
+they have never vanished from my memory.
+175
+
+G U I D E L I N E S F O R A N N O TAT I O N O F N A R R AT I V E S T R U C T U R E
+
+<NARRATOR_1>
+On an October afternoon, in the third decade of our century
+</NARRATOR_1>
+— thus the narrator began his tale —
+<NARRATOR_1>
+I was riding in very bad weather along a dike in northern Friesland. For
+more than an hour I had been passing, on the left, a bleak marsh from
+which all the cattle had already gone, and, on the right, uncomfortably near,
+the marsh of the North Sea. [. . . ]
+</NARRATOR_1>
+<NARRATOR_0>
+Note that, by virtue of the embedding, “— thus the narrator began his tale —”
+belongs to the first level (<NARRATOR_0>).
+Here is an example illustrating what the annotation looks like if the narrator who
+appears first in the story does not belong to the first level:
+(12) <NARRATOR_0>
+<NARRATOR_1>
+In a village lying near Jena,
+</NARRATOR_1>
+the innkeeper told me, on one of my journeys to Frankfurt, that
+<NARRATOR_1>
+several hours after the battle, when the village had already been completely
+abandoned by the army of Prince von Hohenlohe and surrounded by the
+French, who considered it occupied, a single Prussian cavalryman had
+turned up in it; and he assured me that if all of the soldiers who had fought
+that day had been as courageous as he was, the French would had to have
+been defeated, even if they had been three times stronger than in fact they
+176
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+were. [. . . ]
+</NARRATOR_1>
+</NARRATOR_0>
+
+Characters’ discourse embedded in characters’ discourse
+The event of a character who is quoting the speech of another character is annotated
+as an embedding of a characters’ discourse representing the quotation in the present
+characters’ discourse. Analogously with embedded narrations, it is annotated as an
+additional opening of <CHARACTERS> with an incremented index inside the present
+characters’ discourse, as in the following example:25
+(13) <CHARACTERS_0>
+<TURN>
+Did you ever get that thing with the car sorted? <NC> Nick said to Evelyn
+</NC>. <Nick--Evelyn>
+</TURN>
+<TURN>
+No, Derek won’t let me talk to the dealership, <NC> she said </NC>.
+He’s
+<CHARACTERS_1>
+<TURN>
+‘taking care of it’ <Derek--Evelyn>
+</TURN>
+</CHARACTERS_1>
+. <Evelyn--Nick>
+</TURN>
+</CHARACTERS_0>
+Note that only the material inside the quotation marks is embedded, and that the
+177
+
+G U I D E L I N E S F O R A N N O TAT I O N O F N A R R AT I V E S T R U C T U R E
+
+speaker–addressee tag of the line in which the quotation is embedded (<Evelyn--Nick>)
+is put after that line. Similarly:26
+(14) <CHARACTERS_0>
+<TURN>
+I think your wife is a little on edge today, <NC> said Bobbi </NC>.
+She was not impressed with my linen-folding technique earlier. Also, she
+told me she didn’t want me
+<CHARACTERS_1>
+<TURN>
+‘making any snide remarks about rich people’ <Melissa--Bobbi>
+</TURN>
+</CHARACTERS_1>
+when Valerie gets here. Quote. <Bobbi--Nick>
+</TURN>
+</CHARACTERS_0>
+
+Narrative situation
+This section describes two notions related to the position and perspective of the narrator. We refer collectively to these as narrative situation, inspired by Genette,27
+but we do not use the term in the full meaning developed there.
+
+Voice
+The notion of voice concerns the narrator’s relationship to the story, and more
+specifically whether the narrator is ever present in the story or not.28 If the story is
+told by a narrator who appears as a character in the story at some point, we say that
+we have a homodiegetic narrative. Such narrators usually refer to themselves in
+the first person, but there are exceptions to this, such as Caesar’s De Bello Gallico
+178
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+in which the narrator refers to himself in the third person. In contrast, if the story
+is told by a narrator who is never present as a character in the story, we say that we
+have a heterodiegetic narrative. Such narratives thus do not have an “experiencing
+I”, and actions in the story (whether events or speech) are expressed in the third
+person.
+We annotate this binary distinction using <VOICE_1> for a homodiegetic narrator and <VOICE_3> for a heterodiegetic narrator, with corresponding closing tags
+</VOICE_1> and </VOICE_3>, respectively.
+
+Focalization
+We take focalization to correspond to the perspective from which the narrative is
+seen, and specifically how much information the narrator has access to; alternatively, in what ways this information is restricted.29 We distinguish the following
+types:
+1. Zero or unrestricted focalization. The story is narrated from a fully unrestricted or omniscient perspective. This often involves helicopter views of
+the story that no single character would be capable of, but it might also involve taking the perspectives or looking into the souls of the individual characters. As put by Todorov,30 cited in Genette,31 the narrator knows more than
+any of the characters, symbolized by Narrator > Character. We annotate
+this as <FOC_UNR> with a corresponding closing tag </FOC_UNR>.
+2. Internal focalization. The story is narrated from the inside perspective of a
+character in the story, limited by the perception and feelings of that character.
+As put by Todorov,32 the narrator knows only as much as this character,
+symbolized by Narrator = Character. We annotate this as <FOC_INT> with
+a corresponding closing tag </FOC_INT>.
+179
+
+G U I D E L I N E S F O R A N N O TAT I O N O F N A R R AT I V E S T R U C T U R E
+
+3. External focalization. The story is narrated from a perspective outside of the
+characters in the story, like using a camera, but without an omniscient perspective, as in <FOC_UNR>. Typically, the main components of such narratives are dialogues and neutral descriptions of events. As put by Todorov,33
+the narrator knows less than any of the characters, symbolized by Narrator
+< Character. We annotate this as <FOC_EXT> with a corresponding closing
+tag </FOC_EXT>.
+
+Summary of annotation layers
+Our tagset is hierarchically structured in four layers, ordered by an inclusion relation. From the top, these are voice, focalization, <NARRATOR> (narrator’s discourse) and <CHARACTERS> (characters’ discourse). The hierarchical inclusion relation means that a change of a higher-level tag affects all lower-level tags. For
+example, changing voice means that focalization and the other tags have to be reset
+even if their values do not change (see example below). (This is a price we pay for
+the hierarchical tagset.)
+A characters’ discourse, <CHARACTERS>, consists of one or more turns, each of
+which is associated with one speaker (or a chorus of several speakers) and one or
+more addressees (who may vary). Thus, whereas the speaker (or set of speakers) is immutable throughout a turn, this does not necessarily hold for the addressee(s). Each turn consists of one or more lines, each of which is associated
+with one speaker (or a chorus of several speakers) and one addressee (or a set of
+addressees). Lines may contain speech-framing constructions, which provide the
+narrator’s cues about the circumstances of the speech. In addition, a line consists
+of one or more utterances, that is, sentences or fragments typically distinguished
+by full stops in the text. Utterances are not part of the annotation, however.
+Note that only lines are tagged with speaker(s) and addressee(s). Note also that we
+180
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+make a differerence between addressees and listeners: addressees are the recipients of lines, whereas listeners overhear lines without being recipients. We only
+annotate addressees. In sum, a characters’ discourse is a sequence of turns uninterrupted by narrator’s discourses. A description of the layers and discourse levels
+is shown in Table 1.
+Table 1: Hierarchical structure of the annotation scheme.
+
+Layer
+1
+2
+3
+4
+4.1
+4.1.1
+
+Tag
+<VOICE_1>, <VOICE_3>
+<FOC_UNR>, <FOC_INT>,
+<FOC_EXT>
+<NARRATOR>
+<CHARACTERS>
+<TURN>
+<Speaker-Addressee>
+
+4.1.1.1 <NC>
+
+181
+
+Description
+Narrator’s presence in the story
+Perspective of the narrator
+Narrator’s discourse
+Characters’ discourse
+Turn = one or several lines with
+the same speaker
+Line = one or several utterances
+with the same speaker and the
+same addressee, and tagged
+with these
+Speech-framing construction
+
+G U I D E L I N E S F O R A N N O TAT I O N O F N A R R AT I V E S T R U C T U R E
+
+Below is an example involving all of the tags above.
+(15) <VOICE_1>
+<FOC_INT>
+<NARRATOR_0>
+The story that I have to tell came to my knowledge more than half a
+century ago in the house of my great-grandmother, the wife of Senator
+Feddersen, when, sitting close up to her armchair one day, I was busy
+reading a number of some magazine bound in blue cardboard, either the
+Leipziger or Pappes Hamburger Lesefruchte, I have forgotten which. I still
+recall with a tremor how the old lady of more than eighty years would now
+and then pass her soft hand caressingly over her great-grandchild’s hair.
+She herself, and that day, have long been buried and I have sought in vain
+for those old pages, so I can just as little vouch for the truth of the facts as
+defend them if anyone should question them. Only one thing I can affirm,
+that although no outward circumstance has since revived them in my mind
+they have never vanished from my memory.
+<VOICE_1>
+<FOC_INT>
+<NARRATOR_1>
+On an October afternoon, in the third decade of our century
+</NARRATOR_1>
+</FOC_INT>
+</VOICE_1>
+— thus the narrator began his tale —
+<VOICE_1>
+<FOC_INT>
+<NARRATOR_1>
+I was riding in very bad weather along a dike in northern Friesland. For
+182
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+more than an hour I had been passing, on the left, a bleak marsh from
+which all the cattle had already gone, and, on the right, uncomfortably near,
+the marsh of the North Sea. A traveler along the dike was supposed to be
+able to see islets and islands; I saw nothing however but the yellow-gray
+waves that dashed unceasingly against the dike with what seemed like
+roars of fury, sometimes splashing me and the horse with dirty foam ; in the
+background eerie twilight in which earth could not be distinguished from
+sky, for the moon, which had risen and was now in its second quarter, was
+covered most of the time by driving clouds. It was icy cold. My benumbed
+hands could scarcely hold the reins and I did not blame the crows and gulls
+that, cawing and shrieking, allowed themselves to be borne inland by the
+storm. Night had begun to fall and I could no longer distinguish my horse’s
+hoofs with certainty; not a soul had met me ; I heard nothing but the
+screaming of the birds, as their long wings almost brushed against me or
+my faithful mare, and the raging of wind and water. I do not deny that at
+times I wished myself in some secure shelter.
+It was the third day of the storm and I had allowed myself to be detained
+longer than I should have by a par- ticularly dear relative at his farm in one
+of the northern parishes. But at last I had to leave. Business was calling me
+in the town which probably still lay a few hours’ ride ahead of me, to the
+south, and in the afternoon I had ridden away in spite of all my cousin and
+his kind wife could do to persuade me, and in spite of the splendid
+home-grown Perinette and Grand Richard apples which were yet to be
+tried.
+<CHARACTERS_0>
+<TURN>
+“Just wait till you get out by the sea,” <NC> he had called after me from the
+door </NC> ,“you will turn back then; we will keep your room ready for
+you!” <Cousin--Narrator>
+183
+
+G U I D E L I N E S F O R A N N O TAT I O N O F N A R R AT I V E S T R U C T U R E
+
+</TURN>
+</CHARACTERS_0>
+[. . . ]
+</NARRATOR_1>
+</FOC_INT>
+</VOICE_1>
+</NARRATOR_0>
+</FOC_INT>
+</VOICE_1>
+
+Notes
+1
+
+Manfred Jahn, Narratology: A Guide to the Theory of Narrative, English Department, University of Cologne, Cologne,
+Germany, 2017, Section N2.
+2
+
+This corresponds to the distinctions between narration (associated with the “who?”), story (“what?”) and text (“how”?)
+in Shlomith Rimmon-Kenan, Narrative Fiction: Contemporary Poetics, 2nd, New Accents (Routledge, 2003), page 3.
+3
+
+Jahn, Narratology: A Guide to the Theory of Narrative, Section N2.4.
+
+4
+
+Jahn, Section N2.3.
+
+5
+
+Marisa Bortolussi and Peter Dixon, Psychonarratology: Foundations for the Empirical Study of Literary Response
+(Cambridge University Press, 2003), page 66.
+6
+
+Aino Koivisto and Elise Nykänen, “Introduction: Approaches to Fictional Dialogue,” International Journal of Literary Linguistics 5 (2016): page 3, https://doi.org/http://dx.doi.org/10.15462/ijll.v5i2.56.
+7
+
+Jahn, Narratology: A Guide to the Theory of Narrative, Section N2.3.1.
+
+8
+
+Lubomír Dolezel, Narrative Modes in Czech Literature (University of Toronto Press, 1973).
+
+9
+
+Jahn, Narratology: A Guide to the Theory of Narrative, Section N8.1.
+
+10
+
+Koivisto and Nykänen, “Introduction: Approaches to Fictional Dialogue.”
+
+184
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+11
+
+This notation also makes it possible to annotate transmission across levels, in the narratological literature referred
+to as metalepsis; see Gérard Genette, Narrative Discourse: An Essay in Method, Cornell paperbacks (Cornell University Press, 1983), page 234. However, we have chosen not to include this phenomenon in our guidelines for lack of clearcut
+examples.
+12
+
+Sally Rooney (2017), Conversations with Friends. Note that, unusually, this author uses neither quotes nor dashes
+to tag direct speech.
+13
+
+Jahn, Narratology: A Guide to the Theory of Narrative, Section N8.4.
+
+14
+
+The term is inspired by “speech framing expression” as used in the following work for slightly differing purposes:
+Rosario Caballero and Carita Paradis, “Verbs in speech framing expressions: Comparing English and Spanish,” Journal
+of Linguistics 54 (2018), pages 45–84, https://doi:10.1017/S0022226717000068.
+15
+
+From August Strindberg (1879), The Red Room.
+
+16
+
+Rimmon-Kenan, Narrative Fiction: Contemporary Poetics, page 110 f.
+
+17
+
+Genette, Narrative Discourse: An Essay in Method, page 174.
+
+18
+
+It would clearly be desirable to distinguish (different forms of) indirect speech as well, but the principles of this remain to be worked out.
+19
+
+We only annotate the intended recipient(s) of the utterance, whereas characters who only overhear a line are not annotated as addressees. In other words, we do not annotate listeners.
+20
+
+Sally Rooney (2017), Conversations with Friends.
+
+21
+
+Heinrich von Kleist (translated 1979), Improbable Veracities.
+
+22
+
+Ernest Hemingway (1927), Hills Like White Elephants.
+
+23
+
+From Rudyard Kipling (1902), How the Leopard got his Spots.
+
+24
+
+Genette, Narrative Discourse: An Essay in Method; Jahn, Narratology: A Guide to the Theory of Narrative, Section N2.4.
+25
+
+Sally Rooney (2017), Conversations with Friends.
+
+26
+
+Sally Rooney (2017), Conversations with Friends.
+
+27
+
+Genette, Narrative Discourse: An Essay in Method, page 188.
+
+28
+
+Genette, Chapter 5.
+
+185
+
+G U I D E L I N E S F O R A N N O TAT I O N O F N A R R AT I V E S T R U C T U R E
+
+29
+
+Burkhard Niederhoff, “Focalization,” in The Living Handbook of Narratology, ed. Peter Hühn et al., View date 13
+June 2018 (Hamburg: Hamburg University, 2013); Genette, Narrative Discourse: An Essay in Method, page 189 ff.
+30
+
+Tzvetan Todorov, “Les Catégories du récit littéraire,” Communications, no. 8 (1966).
+
+31
+
+Genette, Narrative Discourse: An Essay in Method, page 188.
+
+32
+
+Todorov, “Les Catégories du récit littéraire.”
+
+33
+
+Todorov.
+
+186
+
+

@@ -1,0 +1,1500 @@
+Journal of
+Cultural Analytics
+
+December 15, 2021
+
+Annotation Guidelines for Narrative
+Levels and Narrative Acts v2
+Florian Barth
+Florian Barth, Göttingen Centre for Digital Humanities (GCDH) / Göttingen State and University Library
+Peer-Reviewer: Jan Horstmann
+Dataverse DOI: https://doi.org/10.7910/DVN/2YQVM6
+Article DOI: https://doi.org/10.22148/001c.30701
+
+ABSTRACT
+The concept of narrative levels is widely applied in Literary Studies but often based on different theoretical foundations.
+To operationalise the concept with a reproducible category for a machine learning approach, these guidelines focus on two
+core definitions of narrative levels, namely Genette’s concept of a narrator change and Ryan’s proposal of illocutionary and
+ontological boundaries between levels. We separate the notions of “level” and “narrative” into dedicated subcategories
+for the narrative level, which reflects a vertical dimension, and the narrative act that encompasses horizontally aligned
+stories. Furthermore, supplementary aspects, like the boundary type between narrative levels or related phenomena like
+metanarration and metalepsis, are captured as attributes in conjunction with the annotation category to obtain additional
+knowledge that might be relevant as training data. The guideline is divided into a first part that discusses narratological
+theory to define the annotation category as well as the attributes and a second part that gives annotation instructions along
+with textual examples.
+
+Preface
+These guidelines are an update to the Annotation Guidelines for Narrative Levels and Narrative Acts v1 from 2019. They aim at a clarification of the strategy
+behind the concepts of narrative levels and narrative acts to reduce the complexity and to achieve a reasonable inter-annotator agreement.
+
+Concept
+Narrative levels, as proposed by Gérard Genette, aim to describe the relations
+between an embedded narrative and the diegesis,1 and indicate a clear hierarchical structure between these diegetic levels. Genette explicitly states his intention
+to systemize the existing notion of embeddings, which, according to him, lacks
+“the threshold between one diegesis and another” as well as the possibility to
+Journal of Cultural Analytics 12 (2021): 98-139
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+hierarchical structure a “second diegesis [. . . ] within the first diegesis.”2
+In these guidelines, the often co-occurring notion of embeddings and framed
+narratives is grouped under the term narrative act.3 Since narrative acts cannot always be considered in conjunction with vertical levels4 we distinguish
+between:
+• narrative level (in short: level)
+• narrative act (in short: narrative)
+
+To represent the vertical structure of narrative levels, each of which can include
+a limitless amount of narrative acts:
+• level 1
+– narrative 1
+– narrative 2
+– ...
+– narrative n
+• level 2
+– narrative 1
+– narrative 2
+– ...
+– narrative n
+
+To establish a single annotation category both concepts, level and narrative, are
+combined into:
+• level 1 narrative 1
+• level 1 narrative 2
+
+99
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+• ...
+• level 2 narrative 1
+• level 2 narrative 2
+• ...
+• level n narrative n
+
+In addition to the category, the annotator is encouraged to assign attributes,
+which capture supplementary information about the kind of the boundary between levels, the identity of the narrator and its presence in the story as well as
+metafictional elements or metaleptic intrusions. For example, when the narrator of a certain level is part of the story the attribute for his “diegetic presence”
+can be set to “homodiegetic” and if he is not part of the story it should be “heterodiegetic”:
+• level 1 narrative 1 | diegetic presence of narrator: heterodiegetic
+• level 1 narrative 2 | diegetic presence of narrator: heterodiegetic
+• ...
+• level 2 narrative 1 | diegetic presence of narrator: homodiegetic
+• level 2 narrative 2 | diegetic presence of narrator: homodiegetic
+• ...
+• level n narrative n
+
+How to mark annotation categories and enrich them with attributes is explained
+in detail within the annotation instructions in Annotation Instructions and Examples. But first, the following section Narratological Foundations aims at a
+clear reflection on narratological foundations for narrative levels and narrative
+acts as well as corresponding concepts that find their way into the attributes.
+
+100
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Narratological Foundations
+Even though narrative levels and narrative acts are subsumed into one annotation category, we describe the theoretical background in the separated subsections Category: Narrative Levels and Category: Relation of Narrative Levels
+and Narrative Acts. While section Category: Relation of Narrative Levels and
+Narrative Acts discusses the relations between levels and narrative acts, section
+Attributes addresses the background for the attributes.
+
+Category: Narrative Levels
+Typically, narrative levels arise “when a character in a story begins to tell a
+story of his or her own”, which creates a narrative act within a narrative act.5 The
+change of the narrator is the most basic characteristic of levels and obligatory in
+Genette’s terminology, where for each narrative act on a certain level a different
+narrator occurs:6 In Genette’s terminology, the narrating instance of a first level
+(narrator A in Figure 1) is “extradiegetic by definition,”7 therefore, his story on
+level 1 is intradiegetic. An intradiegetic narrator (B) then tells a metadiegetic
+story (level 2), a metadiegetic narrator (C) a metametadiegetic narration (level
+3), and so forth. Within the annotation, we only assign the level by a number as
+seen above, and for the identity of the narrator, we set a unique ID (cf. Narrator:
+Identity (n_id)).
+A very common example for the switch between narrators is Joseph Conrad’s
+novel Heart of Darkness, in which an unnamed sailor describes his impressions
+on a boat trip on the Thames while approaching the city of London. Within this
+brief first-level narration the character Marlow tells a story of his voyage up the
+Congo River on a second level, and only at the end of the novel, the unnamed
+sailor returns for a few sentences. This structure is depicted in Figure 2 and a
+textual illustration is given in example 1 in the annotation instructions (section:
+Annotation Instructions and Examples).
+Genette exclusively speaks of the narrator for his notion of the voice of the nar101
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+Figure 1: Narrative levels in conjunction with speech acts as proposed by Genette
+
+Figure 2: Narrative Levels in Joseph Conrad’s Heart of Darkness
+
+ration.8 Others, like Marie-Laure Ryan or Manfred Jahn,9 also apply the term
+speaker for the narrating instance, which accentuates the speaker-addressee relationship within a communication model between the narrator and the reader
+of a literary text.10 Since also Ryan highlights the significance and special usage
+of the phrase ‘narrator’ in a later study,11 we stick with that term and only apply
+‘speaker’ when it is directly used within a narratological theory.
+
+102
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Boundaries between Levels
+
+In addition to Genette’s fundamental concept, Marie-Laure Ryan focuses on the
+type of boundaries between narrative levels, which is why she describes the
+switch of speakers (narrators) as an illocutionary boundary. This boundary can
+be crossed actually when a new voice like a character reports a story on the
+second level within a direct speech act like in Heart of Darkness.12
+Moreover, level boundaries can be crossed virtually, when utterances of characters are presented by the narrator as in indirect discourse, like in character
+thoughts or indirect speech (see example 2 in the annotation instructions).13
+Furthermore, Ryan highlights that levels not only arise through the switch of
+speakers but also if a “new system of reality is introduced”, like in Alice’s Adventures in Wonderland by Lewis Carroll, where “the primary reality of an everyday world” switches to “the dream world of Wonderland [. . . ] in a continuous speech act” (example 3 in the annotation instructions).14 This establishes a
+whole new concept for the constitution of narrative levels and is defined as the
+crossing of an ontological boundary. While Alice’s Adventures in Wonderland
+mark an actually crossed ontological boundary (the fictional characters indeed
+enter another form of reality), virtual crossing occurs for ontological boundaries
+when the second reality “is anchored” in the primary one, e.g. if the plot of a
+movie is described from the perspective of the primary reality.15 An ontological border is also crossed virtually when the first-level narrator cites an existing
+fictional text, like the quote of Washington Irving’s Rip van Winkle in I’m not
+Stiller from Max Frisch (example 4). Both types of boundaries, illocutionary
+and ontological, can occur combined, and Ryan gives a tabular depiction for six
+possible combinations (Figure 3).16
+Ryan determines an actual crossed illocutionary and ontological boundary (4a in
+Figure 3) as “a fiction within a fiction”, e.g. the stories told by the intradiegetic
+narrator Scheherazade in One Thousand and One Nights (example 5).17
+Another example for this two-times crossed boundary is a prologue of a fictional
+103
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+Figure 3: Boundaries between narrative levels following Ryan
+
+editor, who is not part of the second-level narration. This happens, for example,
+in Boccaccio’s The Decameron, where a prologue explains how the 100 stories
+told by seven women and three men came to life (example 9). This is a common presentation technique, especially used in epistolary novels and in German
+literary discourse entitled Herausgeberfiktion (editorial fiction).18 For the combination of both boundaries (illocutionary and ontological), it is necessary that
+the editor is not part of the story. Otherwise, it would be only an illocutionary
+boundary like in Goethe’s The Sorrows of Young Werther, where the editor at
+least claims to know the main character and that he traced his actions in the
+diegetic world.
+Instead, virtual crossing for both boundaries (4b) would refer to a description of
+a metafictional story from the perspective of the first-level narrator but including
+the mention of a second-level narrator.19 This rare constellation occurs in Theme
+of the Traitor and the Hero by Jorge Luis Borges, where the primary narrator
+tells his plan to write a story, whose narrator will be “Ryan”, but the first-level
+narrator “never speaks as Ryan himself” (example 6).20
+These boundaries are considered as a requirement for a new narrative level in
+
+104
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+our guidelines and should be identified when descending to a subordinate narrative level.
+Ryan also indicates that each utterance of a new voice may create “its own semantic universe”, which potentially deviates from the primary reality of the narrative and therefore may establish a new narrative level.21 In our perspective,
+this would create a mixture between both boundary types and seems not appropriate for a clear, delimitable defintion. Therefore, these guidelines clearly
+separate illocutionary and ontological boundaries even if they can occur combined. A new speech act only marks an illocutionary boundary that leads to a
+subordinate level when it indeed creates a new narrative act. That means only if
+a character on a certain level tells directly (actually crossed) or indirectly (virtually crossed) a new story, his utterances open up a new level.22
+
+Category: Narrative Acts
+As Didier Coste states in a recent approach, “the very notion of ‘narrative’ has
+never been a consensual object of study.”23 He highlights the huge differences
+in approaches from literary studies, where the supposedly “classical” formalist and structuralist development has been superseded first by diversification
+in a so-called “post-classical” phase and beyond that by “the rise of cognitive
+theories and the impact of neuroscience.”24 While the definitions of ‘narrative’
+within literary theory already vary enormously, they furthermore remain incompatible with other fields of knowledge, like linguistics.25 Coste indicates that the
+formation of theory about narratives is heavily influenced by historical circumstances, particular ideological positions, and preliminary theoretical choices.26
+Especially for the latter, we need to be fully aware that our approach of describing narrative acts is affected by its purpose to establish a relation to narrative
+levels.
+In consideration of this, we aim at a definition of narratives that include textual
+verifiable elements on the one hand, and that sharpens the intuition of what a
+narrative act might be against the backdrop of a level structure.
+105
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+In an early approach, Eberhard Lämmert states that for the opening of a new
+storyline within a superordinate or horizontally aligned narrative a change of
+time, setting, or characters needs to be fulfilled.27 Examples for this, we already discussed: When Marlow in Heart of Darkness starts his narration on a
+second level, only he, the narrator, keeps constant as a character (example 1).
+Other characters, as well as time and setting, have changed. Furthermore, in
+Kleist’s Improbable Veracities (Figure 4 and example 7), three subordinate stories told by a first-level narrator differ in time, space, and characters (except for
+the intradiegetic storyteller), which illustrates that these are independent narrative acts on level 2 (see also the next paragraph Embedding and Framing in this
+section).
+We might add that also special events can indicate a new narrative. Peter Hühn
+emphasizes that the category of event corresponds with certain definitions of
+narrative, especially with the notion of “narration as the representation of changes
+with certain qualities”.28 Therefore, annotators are encouraged to watch out for
+unexpected changes, which might correspond with an event that contributes to
+the opening of a new narrative. For example, when Alice becomes aware that
+the rabbit is able to talk and takes a watch out of his waistcoat pocket, this marks
+an unusual, metaleptic event that rings the beginning of a soon following subordinate narrative act corresponding with an ontological boundary (example 3).
+We have to remark that the identification of such unusual events is already an
+interpretative process that goes beyond the detection of textual entities.29
+Both aspects, entities like time, space, or characters, as well as interpretative
+structures such as events, can indicate a narrative act, but they are not a prerequisite for it. Thus, annotators should generally look for narrative changes:
+A narrative act must be different from the superordinate or rather horizontally
+aligned one in terms of its narrator or the diegetic world, and there needs to be
+a punctual verifiable boundary between those different narrative acts as defined
+by Ryan.
+In addition to the several examples within the annotation instructions in section
+106
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+3, we might give a negative example at this point. In Kafka’s A Little Fable the
+extradiegetic narrator presents a mouse metaphorically describing her way into
+the current situation, where she is eaten by the interlocutor, a cat:
+“Alas,” said the mouse, “the world gets smaller every day. At first
+it was so wide that I ran along and was happy to see walls appearing
+to my right and left, but these high walls converged so quickly that
+I’m already in the last room, and there in the corner is the trap into
+which I must run.” “But you’ve only got to run the other way,” said
+the cat, and ate it.
+(Kafka, A Little Fable)
+Besides the literal understanding of the story, it is true that within one interpretation each described step (wide world, appearing and converging walls, last
+room) can symbolize phases of life, and therefore, some people might classify
+the mouse’s speech act as a subordinate narration. But for both views on the
+story, literal or metaphorically, the speech act of the mouse culminates into the
+present time set by the extradiegetic narrator, which doesn’t allow to determine
+any diegetic boundary, neither illocutionary nor ontological, between the end of
+the mouse’s speech and the extradiegetic narrator. Rather than exaggerate the
+speech act of the mouse as an own story, it seems more appropriate to regard the
+whole piece of work as a metaphorical statement and as one, singular narration.
+Embedding and Framing
+
+As proposed in the beginning, narrative acts cover both, embedded and framed
+narratives. Framing is more a “presentational technique”, where the rather short
+frame narration encloses an ampler inner tale like a painting.30 An example is
+the above-mentioned novel Heart of Darkness, for which frame and inner tale
+are marked in Figure 2.
+In contrast, embeddings can be thought of as smaller insertings “within a larger
+unit,”31 e.g. in Heinrich von Kleist’s short story Improbable Veracities an officer
+107
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+Figure 4: Multiple embeddings of independent narrative acts in Kleist’s Improbable Veracities
+
+tells three stories that appear as independent narrative acts on the second level.
+In Figure 4 can be seen that for each story on level 2 a new narrative act is
+opened. In our terminology, we count narrative acts separately on each level.
+Narrative acts 1 to 3 on the second level represent the embedded stories, while
+narrative act 1 on the first level marks the gathering, in which the officer tells
+these stories. An abridged version of the story can be found in example 7.
+Practically, the border between the dominance of an inner tale and a frame narrative is fluent, and these guidelines do not aim to identify framing or embedding
+techniques, their specific function,32 or a certain “main narrative” within several
+stacked narrative acts.33
+Horizontally embedded Narratives without Level Switch
+
+As opposed to the “vertical” arrangement of narrative acts within levels, Nelles
+describes the existence of “horizontally” embedded narrative acts on the first
+level.34 This happens either when narrative acts by different speakers are presented next to each other without an upper frame narrator (like the fictional
+editor in The Decameron). For example, in J. M. R. Lenz epistolary novel Der
+Waldbruder several letters by alternating characters are presented on the same
+diegetic level. Since the characters do not directly correspond with each other,
+each letter can be seen as an independent narrative act, where an own perspective of the narrated events is developed (as depicted in Figure 5).
+108
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Figure 5: First five letters of the epistolary novel Der Waldbruder
+
+Pierre and Coste also describe collections of stories without a superordinate editor as horizontally embedded narrative acts without level switch.35 An example
+of this could be Günter Grass’ novel My Century that contains 100 short stories
+for each year of the century (example 10), but in opposite to The Decameron,
+there is no superordinate editorial instance. Nevertheless, Grass’ short stories
+are connected, e.g. in the years of both world wars the narrator stays constant
+but tells different episodes, and furthermore, the whole piece of work seems to
+be arranged and inseparably interlinked through an instance that might bespeak
+of the existence of an implicit author.36
+Moreover, Pier and Coste describe digression as a form of embedding without the switch of levels.37 This includes excursus, e.g. if the narrator directly
+addresses the reader. In contrast to a fictional editor, which is set within a superordinate level, digression techniques such as excursus are located on the same
+level as the narrative act they are placed in. And furthermore, an excursus corresponds with metanarration and metafiction for which we additionally set an
+attribute (see “Metanarration and Metafiction” in section Attributes). The example par excellence is Laurence Sterne’s The Life and Opinions of Tristram
+Shandy, Gentleman, where the narrator even reflects on digression in a metafictional text passage (example 14).
+Additionally, Bernard Duyfhuizen describes intercalation as a form of digression.38 This includes intercalated apologues like in Aesop’s fable The Wolf and
+the Lamb that closes with a moral statement (example 11).
+
+109
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+Category: Relation of Narrative Levels and Narrative Acts
+The main focus of the annotation is to determine the relationship between narrative acts within their specific, vertically stacked level structure or their horizontal alignment. Therefore, no limits of inclusion exist, narrative acts can have
+multiple embeddings and on each level, several independent narrative acts can
+occur.
+In addition to our depiction of the level structure in section 1, Ryan illustrates
+inclusion and stacking of narratives by means of One Thousand and One Nights,
+where the framing narrative act with Scheherazade and the Sultan directly includes the stories of Ali Baba and The Three Ladies of Baghdad told by Scheherazade
+on level 2.39 Moreover, the latter story includes several independent narrative
+acts on level 3 like Amina’s tale (stories 4, 5, 7, 8 in Figure 6), which also contains The young Man’s Tale on level 4 (Figure 7).40
+
+Attributes
+As mentioned in the beginning, attributes capture supplementary information
+in conjunction with the annotation category. This can help the annotators to
+reflect on their classification decision, for example, by determining the type
+of boundary between levels or by detecting the relation of the narrator to the
+diegesis. Moreover, the attributes provide valuable data for developing features
+for the automatic classification of narrative levels and narrative acts.
+The abbreviation in brackets in the following headlines for each attribute is used
+in the annotation instructions to mark the attributes. The abbreviations for the
+attribute values are given in bold style within each of the following subsections.
+Narrator: Identity (n_id)
+
+Since stacked narrative levels can have multiple narrators, we capture the identity of each one. This is done by alphabetic ID’s for each narrator identity:41
+
+110
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Figure 6: Inclusion scheme for One Thousand and One Nights by Ryan
+
+Figure 7: Stacking of narrative levels in One Thousand and One Nights (adapted from Ryan)
+
+111
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+Figure 8: Different narrators in Frankenstein; or, The Modern Prometheus
+
+• narrator identity a
+• narrator identity b
+• narrator identity c
+• ...
+• narrator identity n
+
+For example, in Mary Shelley’s Frankenstein; or, The Modern Prometheus a
+different narrator occurs on nearly every level: Robert Walton recounts in his
+journal the meeting with Victor Frankenstein and quotes the oral narration of
+Frankenstein, who cites the metadiegetic narration of his creature (Figure 8 and
+example 8).42
+In contrast, when the reporting voice remains constant between levels, it should
+be annotated as the same narrator identity, like in the report of the De Lacey
+family history on level 4 that is again told by the creature.
+
+112
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Narrator: Diegetic Presence (n_d)
+
+As described in section 1, this attribute captures if a speaker is present in the
+story or not. We use the terms defined by Genette:
+• homodiegetic (ho): the narrator is part of the diegesis
+• heterodiegetic (he): the narrator is not part of the diegesis
+
+Text Type (t)
+
+For each narrative act, the text type should be indicated. Predefined are nine
+possibilities, but every annotator is free to add missing types.
+• undefined (undef; this applies to the most extradiegetic narrators on level 1)
+• direct speech act (dsa; cf. Heart of Darkness in Figure 2 and in example 1)
+• indirect discourse, like character thoughts (id, cf. the example of Chekhov’s An Avenger
+in example 2)
+• quotation of a literary work (q; e.g. the quote of Rip van Winkle in Max Frisch’s I’m
+Not Stiller, example 4)
+• letter (l; for example, the letters in Waldbruder (Figure 5) or Frankenstein; or, The Modern Prometheus (Figure 8))
+• notes (n; this captures notes or articles without a clear addressee, like the journal of
+Stiller,example 4)
+• transcribed speech (ts; this also occurs in Frankenstein; or, The Modern Prometheus,
+since Walton transcribes Frankenstein’s narration in his letters)
+• apologues (a; e.g. Aesop’s fable The Wolf and the Lamb in example 11)
+• prologue (p; cf. Boccaccio’s The Decameron in example 9)
+
+Boundary: Type (b_t)
+
+This attribute indicates the boundary between a selected narrative act and the
+superordinate narrative following Ryan (cf. Figure 3):
+113
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+• Illocutionary boundary, actual crossed (i/a)
+• Illocutionary boundary, virtual crossed (i/v)
+• Ontological boundary, actual crossed (o/a)
+• Ontological boundary, virtual crossed (o/v)
+
+As mentioned above, illocutionary and ontological boundaries can be combined,
+and in section Category: Level Boundary examples are given for the six combinations mentioned by Ryan. There are even more combinations possible since
+an actually crossed illocutionary boundary can also occur in conjunction with a
+virtually crossed ontological boundary and vice versa. For example, the quote
+of The Love Song of Har Dyal from One Thousand and One Nights in Rudyard
+Kipling’s story Beyond the Pale marks a virtual crossed ontological boundary
+and since the character Trejago recites the song, there is also an illocutionary boundary actually crossed. This example can be found in section Example
+Workflow
+Boundary: Superordinate Category (b_sc)
+
+The annotator should indicate the narrative act of the former level, in which the
+current narrative is embedded. For example, in One Thousand and One Nights
+the superordinate narration of Amina’s Tale is The Three Ladies of Baghdad,
+which is narrative act 2 on level 2 (cf. Figure 7). Another textual example can
+be found in Kleist’s story Improbable Veracities (example 7), where for each
+of the three second-level stories the superordinate narration is the gathering, in
+which the officer reports these stories.
+In the annotation, the annotators should provide the corresponding category for
+the superordinate level and narrative act, e.g. “b_sc:L2N2”
+Metanarration and Metafiction (m&m)
+
+Both, metanarration (mn) and metafiction (mf), address self-reflexive utterances. While metanarration covers “the narrator’s reflections on the act or pro114
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+cess of narration”, metafiction rather concerns “comments on the fictionality
+and/or constructedness of the narrative.”43 For both types, textual illustrations
+are given from Laurence Sterne’s The Life and Opinions of Tristram Shandy,
+Gentleman (example 12, 14).
+As mentioned in section Category: Narrative Acts on horizontally embedded
+narratives, metanarration and metafiction are supposed to be annotated on the
+same level, in which they occur, but they create a new narrative act. These
+narrative acts should be marked by the corresponding attribute value (“metanarration” or “metafiction”).
+Metanarration also occurs in Italo Calvino’s If on a winter’s night a traveler,
+where the narrator describes the reading process in second person. Each chapter
+contains another version of how the novel could have been written (each is a
+separate narrative act), but none of these stories gets finished (example 13).
+Metaleptic Intrusion (mi)
+
+We capture metaleptic intrusions of the upper or lower level.44 For example, if
+a character from level 2 appears in a narrative act on level 1 by violating ontological boundaries, we add the level and narrative act, from which the intrusion
+comes from, e.g. mi:L2N1.45
+A metalepsis was already shown in the example from Alice’s Adventures in
+Wonderland in conjunction with the ontological boundary (section Category:
+Narrative Levels) and the discussion of unusual events (section Category: Narrative Acts): When Alice meets the speaking rabbit, this marks an intrusion of
+the second-level world, which has a different ontological status with diverging
+factual rules than the primary one (cf. example 3).
+
+115
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+Annotation Instructions and Examples
+Annotators are encouraged to read the text in its entirety, and then, in a second
+round, start the annotation.
+The span for the annotation category can cover whole chapters, but also single
+paragraphs, complete sentences, or clauses. In these guidelines, beginning and
+end of an annotation are marked with square brackets and the annotation category itself is given with uppercase letters and numbers, for example, “L1N1” for
+the first level with its first narrative. Attributes are set after the category by use
+of minuscules. E.g., a short excerpt from Kleist’s story Improbable Veracities
+looks like this:46
+[ “Three stories,” said an old officer at a gathering, “are of the type that, although I myself completely believe them, were I to tell them, I would run the
+risk, nevertheless, of being taken for a windbag.
+Tell them, called several members of the gathering,
+tell them! ]L1N1|n_id:a,n_d:he,t:undef
+[ “On a march in the Rhine campaign,” ]L2N1|n_id:b,n_d:ho,t:dsa,b_t:i/a,b_sc=L1N1
+[began the officer, ]L1N1|n_id:a,n_d:he,t:undef [“I noticed, after a battle we had had
+with the enemy, a soldier who walked erect, with gun and pack, in rank and file
+(. . . )” ]L2N1|n_id:b,n_d:ho,t:dsa,b_t:i/a,b_sc=L1N1
+[“That was the first story,” said the officer, as he took a pinch of snuff and became
+silent. ]L1N1|n_id:a,n_d:he,t:undef
+
+Since we stressed out the inclusion scheme in Figure 6, one might ask why not
+annotate in that manner and use lesser individual annotations, like this:
+[ “Three stories,” said an old officer at a gathering, “are of the type that, although I myself completely believe them, were I to tell them, I would run the
+risk, nevertheless, of being taken for a windbag.
+Tell them, called several members of the gathering, tell them!
+[ “On a march in the Rhine campaign,” ]L2N1|n_id:b,n_d:ho,t:dsa,b_t:i/a,b_sc=L1N1 began the officer, [“I noticed, after a battle we had had with the enemy, a soldier
+who walked erect, with gun and pack, in rank and file (. . . )” ]L2N1|n_id:b,n_d:ho,t:dsa,b_t:i/a,b_sc=L1N1
+
+116
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+“That was the first story,” said the officer, as he took a pinch of snuff and became
+silent. ]L1N1|n_id:a,n_d:he,t:undef
+
+Even if the latter version looks straightforward in this example, the inclusion
+scheme becomes easily convoluted and less manageable for longer texts. Instead, the first scheme clearly depicts the beginning and end of each narrative
+sequence, and by that, it once more enhances the awareness of the boundaries
+in between.
+As mentioned at the end of section Category: Narrative Levels, a direct speech
+act is only regarded as a new narrative act, if indeed a story is told. In terms of
+the annotation, that means we open up a subordinate level with a new narrative
+act only if a first-level speaker begins his story, as seen in the example before.
+All textual insertions of the first-level narrator (“began the officer”) need to be
+assigned to him. To find a clear boundary, in which the subordinate narrative
+begins, is especially important for stories, where the level change is not easily
+detectable, even for the reader. For example, in Heart of Darkness, the character
+Marlow utters certain statements in presence of the other sailors, before he starts
+his narration.
+As seen above we use (. . . ) for omissions instead of square brackets, to prevent overlappings with the markers for the annotation. Furthermore, we assign
+interpunctuation to the current narrative act until the next narrative act starts:
+[“On a march in the Rhine campaign,”]L2N1 [began the officer,]L1N1 [‘ ‘I noticed
+(. . . )]L2N1
+
+In general, paratexts, such as book titles should not be annotated (like in example 10), unless they are included in the concept of levels or narrative acts like
+the chapter headings in One Thousand and One Nights (example 5) and Italo
+Calvino’s If on a winter’s night a traveler (example 13).
+Hereafter, we first give examples for the switch of levels and especially for
+every type of boundary (section Category: Level Boundary). Then, we see text
+117
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+excerpts, which show the stacking and horizontal alignment of narrative acts
+(section Category: Narrative Acts), before the use of the attributes is mentioned
+again (section Attributes). Finally, we explain the whole workflow for a short
+passage from Beyond the Pale, a story by Rudyard Kipling (section Example
+Workflow).
+Since levels, narratives, and their corresponding attributes are closely affected
+by each other, it is not always possible to present singular examples that only
+represent a specific phenomenon. E.g., when giving examples for the level
+switch, it is inevitable to mention the attribute type for the boundary. Therefore, all textual excerpts, including the first ones, already show the full annotation with all attributes.
+
+Category: Level Boundary
+Illocutionary Boundary, actually crossed
+(1) (Joseph Conrad, Heart of Darkness)
+[ The Nellie, a cruising yawl, swung to her anchor without a flutter of the sails, and was
+at rest. (. . . ) Between us there was, as I have already said somewhere, the bond of the
+sea. Besides holding our hearts together through long periods of separation, it had the
+effect of making us tolerant of each other’s yarns—and even convictions. (. . . ) The
+sun set; the dusk fell on the stream, and lights began to appear along the shore. (. . . )
+And farther west on the upper reaches the place of the monstrous town was still marked
+ominously on the sky, a brooding gloom in sunshine, a lurid glare under the stars.
+“And this also,” said Marlow suddenly, “has been one of the dark places of the earth.
+(...)
+We looked on, waiting patiently—there was nothing else to do till the end of the flood;
+but it was only after a long silence, when he said, in a hesitating voice, “I suppose you
+fellows remember I did once turn fresh-water sailor for a bit,” that we knew we were
+fated, before the ebb began to run, to hear about one of Marlow’s inconclusive
+experiences. ]L1N1|n_id:a,n_d:ho;t:undef
+[“I don’t want to bother you much with what happened to me personally,”
+]L2N1|n_id:b,n_d:ho;t:dsa,b_t:i/a,b_sc:L1N1 [he began, showing in this remark the weakness of
+many tellers of tales who seem so often unaware of what their audience would best like
+to hear; ]L1N1|n_id:a,n_d:ho;t:undef [“yet to understand the effect of it on me you ought to
+
+118
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+know how I got out there, what I saw, how I went up that river to the place where I first
+met the poor chap. It was the farthest point of navigation and the culminating point of
+my experience.
+(. . . )
+I was on the point of crying at her, ‘Don’t you hear them?’ The dusk was repeating
+them in a persistent whisper all around us, in a whisper that seemed to swell
+menacingly like the first whisper of a rising wind. ‘The horror! The horror!’
+‘His last word—to live with,’ she murmured. (. . . ) I pulled myself together and
+spoke slowly. ‘The last word he pronounced was—your name.’
+I heard her weeping; she had hidden her face in her hands. It seemed to me that the
+house would collapse before I could escape, that the heavens would fall upon my head.
+But nothing happened. The heavens do not fall for such a trifle. Would they have
+fallen, I wonder, if I had rendered Kurtz that justice which was his due? Hadn’t he said
+he wanted only justice? But I couldn’t. I could not tell her. It would have been too
+dark—too dark altogether. . . .“ ]L2N1|n_id:b,n_d:ho;t:dsa,b_t:i/a,b_sc:L1N1
+[ Marlow ceased, and sat apart, indistinct and silent, in the pose of a meditating
+Buddha. Nobody moved for a time. “We have lost the first of the ebb,” said the
+Director, suddenly. I raised my head. The offing was barred by a black bank of clouds,
+and the tranquil waterway leading to the uttermost ends of the earth flowed somber
+under an overcast sky—seemed to lead into the heart of an immense darkness.
+]L1N1|n_id:a,n_d:ho;t:undef
+
+Illocutionary Boundary, virtually crossed
+(2) (Anton Chekhov, An Avenger)
+[ SHORTLY after finding his wife in flagrante delicto Fyodor Fyodorovitch Sigaev
+was standing in Schmuck and Co.’s, the gunsmiths, selecting a suitable revolver. His
+countenance expressed wrath, grief, and unalterable determination.
+“I know what I must do,” he was thinking. “The sanctities of the home are outraged,
+honour is trampled in the mud, vice is triumphant, and therefore as a citizen and a man
+of honour I must be their avenger. First, I will kill her and her lover and then myself.”
+]L1N1|n_id:a,n_d:he,t:undef
+[ He had not yet chosen a revolver or killed anyone, but already in imagination he saw
+three bloodstained corpses, broken skulls, brains oozing from them, the commotion,
+the crowd of gaping spectators, the post-mortem. . . . With the malignant joy of an
+insulted man he pictured the horror of the relations and the public, the agony of the
+traitress, and was mentally reading leading articles on the destruction of the traditions
+of the home. ]L2N1|n_id:b,n_d:ho,t:id,b_t:i/v,b_sc:L1N1
+[The shopman, a sprightly little Frenchified figure with rounded belly and white
+
+119
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+waistcoat, displayed the revolvers, and smiling respectfully and scraping with his little
+feet observed:
+“. . . I would advise you, M’sieur, to take this superb revolver, the Smith and Wesson
+pattern, the last word in the science of firearms: triple-action, with ejector, kills at six
+hundred paces, central sight.
+(. . . )
+“And what price?” asked Sigaev.
+“Forty-five roubles, M’sieu.”
+“Mm! . . . that’s too dear for me.”
+“In that case, M’sieu, let me offer you another make, somewhat cheaper.
+(. . . )” ]L1N1|n_id:a,n_d:he,t:undef
+[ “Shouldn’t I challenge him to a duel?” [flashed through Sigaev’s mind.
+]L1N1|n_id:a,n_d:he,t:undef [“It’s doing him too much honour, though. . . . Beasts like that
+are killed like dogs. . .” ]L2N1|n_id:b,n_d:ho,t:id,b_t:i/v,b_sc:L1N1
+[The shopman, swaying gracefully and tripping to and fro on his little feet, still smiling
+and chattering, displayed before him a heap of revolvers. The most inviting and
+impressive of all was the Smith and Wesson’s. Sigaev picked up a pistol of that
+pattern, gazed blankly at it, and sank into brooding. ]L1N1|n_id:a,n_d:he,t:undef
+[His imagination pictured how he would blow out their brains, how blood would flow
+in streams over the rug and the parquet, how the traitress’s legs would twitch in her last
+agony. . . . But that was not enough for his indignant soul. The picture of blood,
+wailing, and horror did not satisfy him. He must think of something more terrible.
+“I know! I’ll kill myself and him,” ]L2N1|n_id:b,n_d:ho,t:id,b_t:i/v,b_sc:L1N1 [ he thought,
+]L2N1|n_id:b,n_d:ho,t:id,b_t:i/v,b_sc:L1N1 [ “but I’ll leave her alive. Let her pine away from
+the stings of conscience and the contempt of all surrounding her. For a sensitive nature
+like hers that will be far more agonizing than death.” ]L2N1|n_id:b,n_d:ho,t:id,b_t:i/v,b_sc:L1N1
+
+Ontological Boundary, actually crossed
+(3) (Lewis Carroll, Alice’s Adventures in Wonderland)
+[ Alice was beginning to get very tired of sitting by her sister on the bank, and of
+having nothing to do.
+(. . . )
+So she was considering in her own mind (as well as she could, for the day made her
+feel very sleepy and stupid), whether the pleasure of making a daisy-chain would be
+worth the trouble of getting up and picking the daisies, when suddenly a White Rabbit
+with pink eyes ran close by her.
+There was nothing so very remarkable in that, nor did Alice think it so very much out
+of the way to hear the Rabbit say to itself, “Oh dear! Oh dear! I shall be too late!” But
+
+120
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+when the Rabbit actually took a watch out of its waistcoat-pocket and looked at it and
+then hurried on, Alice started to her feet, for it flashed across her mind that she had
+never before seen a rabbit with either a waistcoat-pocket, or a watch to take out of it,
+and, burning with curiosity, she ran across the field after it and was just in time to see it
+pop down a large rabbit-hole, under the hedge. In another moment, down went Alice
+after it!” ]L1N1|n_id:a,n_d:he,t:undef,mi=L2N1
+[ The rabbit-hole went straight on like a tunnel for some way and then dipped suddenly
+down, so suddenly that Alice had not a moment to think about stopping herself before
+she found herself falling down what seemed to be a very deep well.
+Either the well was very deep, or she fell very slowly, for she had plenty of time, as she
+went down, to look about her. First, she tried to make out what she was coming to, but
+it was too dark to see anything; then she looked at the sides of the well and noticed that
+they were filled with cupboards and book-shelves; here and there she saw maps and
+pictures hung upon pegs.
+(. . . )
+“Off with her head!” the Queen shouted at the top of her voice. Nobody moved.
+“Who cares for you?” said Alice (she had grown to her full size by this time). “You’re
+nothing but a pack of cards!”
+At this, the whole pack rose up in the air and came flying down upon her; she gave a
+little scream, half of fright and half of anger, and tried to beat them off,
+]L2N1|n_id:a,n_d:he,t:undef,b_t:o/a,b_sc:L1N1 [and found herself lying on the bank, with her
+head in the lap of her sister, who was gently brushing away some dead leaves that had
+fluttered down from the trees upon her face.
+“Wake up, Alice dear!” said her sister. “Why, what a long sleep you’ve had!”
+“Oh, I’ve had such a curious dream!” said Alice. And she told her sister, as well as she
+could remember them, all these strange adventures of hers that you have just been
+reading about. ]L1N1|n_id:a,n_d:he,t:undef
+
+Ontological Boundary, virtually crossed
+(4) (Max Frisch, I’m Not Stiller)
+[ ‘You don’t know it?’
+‘What?’
+‘The story of Rip van Winkle?’
+Only by means of this trick—that’s to say by holding the lighter, which I relit every
+time it went out, and with the cigar in the other hand, all the time on the point of
+lighting the splendid cigar, indeed once setting the cigar aglow, so that all I had to do
+was to draw on it, but every time prevented—prevented by Rip van Winkle, whose
+story was obviously more acutely important than my cigar—only by means of this
+
+121
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+trick could I compel my busy defence counsel to listen at all.
+The story goes something like this. ]L1N1|n_id:a,n_d:ho,t:n
+[ Rip van Winkle, a descendant of that intrepid van Winkle who opened up the country
+of America while serving under Hendrik Hudson, was a born lazybones but at the
+same time, it seems, a thoroughly good fellow, who didn’t fish for the sake of the fish
+but in order to dream, for his head was full of so-called thoughts, which had little to do
+with his reality.
+(. . . )
+He lived on in the village for a few more years, a stranger in a strange world, and he
+didn’t ask them to believe him when he told them about Hendrik Hudson, the
+discoverer of the river and the country, and about his ship’s crew that gathered from
+time to time in the ravines and played skittles, and when he said that was where they
+should look for their old Rip van Winkle. They smiled. It was true that on hot summer
+days they sometimes heard a dull rumble from the other side of the hills, a thudding as
+of skittles; but the grown-ups always took it to be an ordinary storm, and no doubt
+that’s what it was. ]L2N1|n_id:b,n_d:he,t:q,b_t:o/v,b_sc:L1N1
+[ So much for the fairy tale.
+‘Well?’ asked my counsel when I had finished telling it and finally lit my cigar. ‘What
+has that to do with our matter? ]L1N1|n_id:a,n_d:ho,t:n
+
+Illocutionary & ontological Boundary, actually crossed
+(5) (One Thousand and One Nights)
+[ But when it was midnight Scheherazade awoke and signaled to her sister Dunyazade,
+who sat up and said, “Allah upon thee, O my sister, recite to us some new story,
+delightsome and delectable, wherewith to while away the waking hours of our latter
+night.” “With joy and goodly gree,” answered Scheherazade, “if this pious and
+auspicious King permit me.” “Tell on,” quoth the King, who chanced to be sleepless
+and restless and therefore was pleased with the prospect of hearing her story. So
+Scheherazade rejoiced, and thus, on the first night of the Thousand Nights and a Night,
+she began her recitations. ]L1N1|n_id:a,n_d:he,t:undef
+[ THE FISHERMAN AND THE JINNI
+It hath reached me, O auspicious King, that there was a fisherman well stricken in
+years who had a wife and three children, and withal was of poor condition. Now it was
+his custom to cast his net every day four times, and no more. On a day he went forth
+about noontide to the seashore, where he laid down his basket and, tucking up his shirt
+and plunging into the water, made a cast with his net and waited till it settled to the
+bottom. Then he gathered the cords together and haled away at it, but found it weighty.
+(. . . ) ]L2N1|n_id:b,n_d:ho,t:dsa,b_t:i/a&o/a,b_sc:L2N1
+
+122
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Illocutionary & ontological Boundary, virtually crossed
+(Jorge Luis Borges, Theme of the Traitor and the Hero)
+[ So the Platonic Year Whirls out new right and wrong, Whirls in the old instead; All men are dancers and their tread Goes to the barbarous clangour of a
+gong. — W. B. Yeats, The Tower ]L1N1|n_id:a,n_d:he,t:q
+[ Under the influence of the flagrant Chesterton (contriver and embellisher
+of elegant mysteries) and of the court counsellor Leibnitz (who invented preestablished harmony), I have imagined the following argument, which I shall
+doubtless develop (and which already justifies me in some way), on profitless
+afternoons. Details, revisions, adjustments are lacking; there are areas of this
+history which are not yet revealed to me; today, the third of January of 1944, I
+(6) dimly perceive it thus: ]L1N2|n_id:b,n_d:he,t:undef
+[ The action transpires in some oppressed and stubborn country: Poland, Ireland, the Republic of Venice, some state in South America or the Balkans.
+. . . Has transpired, we should say, for although the narrator is contemporary, the narrative related by him occurred toward the middle or beginnings of the nineteenth century. Let us say, for purposes of narration, that
+it was in Ireland, in 1824. The narrator is named Ryan; he is a greatgrandson of the young, heroic, handsome, assassinated Fergus Kilpatrick, whose
+sepulchre was mysteriously violated, whose name embellishes the verse of
+Browning and Hugo, whose statue presides over a gray hill amidst red moors.
+]L1N2|n_id:b,n_d:ho,t:undef,b_t:i/v&o/v,b_sc:L1N2
+
+Category: Narrative Acts
+Multiple subordinated Narrative Acts
+(7) (Heinrich von Kleist, Improbable Veracities)
+[ “Three stories,” said an old officer at a gathering, “are of the type that, although I
+myself completely believe them, were I to tell them, I would run the risk, nevertheless,
+of being taken for a windbag. For people demand of truth, as its primary requirement,
+that it be probable. And yet probability, as experience teaches us, is not always on the
+side of truth.” Tell them, called several members of the gathering, tell them!-for the
+officer was known as a bright and esteemed man who was never guilty of lies.
+]L1N1|n_id:a,n_d:he,t:undef
+(. . . )
+[ “On a march in the Rhine campaign,” ]L2N1|n_id:b,n_d:ho,t:dsa,b_t:i/a,b_sc:L1N1 [began the
+officer, ]L1N1|n_id:a,n_d:he,t:undef [“I noticed, after a battle we had had with the enemy, a
+
+123
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+soldier who walked erect, with gun and pack, in rank and file, although he had a shot
+through the middle of his chest: at least one saw the hole in front of the strap of his
+ammunition pocket, where the bullet had entered, and another in back, in his jacket,
+where it had left. (. . . ) That evening, when we had returned to the camp, the surgeon
+who had been called in examined his wounds and found that the bullet, having
+ricocheted from the breastbone that it had lacked the force to penetrate, had slid
+between the ribs and skin, that stretched in an elastic manner, around the entire body,
+and, in back, since it ultimately hit against the backbone, had gone back to its original
+perpendicular direction and had once again broken through the skin. Moreover, this
+small flesh wound gave the sick man nothing but a wound-fever, and, when a few days
+had passed, he once again stood in rank and file.” ]L2N1|n_id:b,n_d:ho,t:dsa,b_t:i/a,b_sc:L1N1
+[What? asked several members of the gathering, stunned, and they thought they had
+not heard correctly.
+The bullet? Around the entire body? In a circle?-The company had difficulty in
+repressing their laughter.
+“That was the first story,” said the officer, as he took a pinch of snuff and became
+silent. (. . . ) ]L1N1|n_id:a,n_d:he,t:undef
+[“Eleven years later,” ]L2N2|n_id:b,n_d:ho,t:dsa,b_t:i/a,b_sc:L1N1 [said the officer,
+]L1N1|n_id:a,n_d:he,t:undef [“in the year 1803, I found myself with a friend in the town of
+Konigstin in Sachsen, near to which, as is well known, about a half-hour away, at the
+edge of an extremely steep, perhaps three-hundred foot high benk of the Elbe river,
+there is an important stone quarry. The workers tend, in the case of large blocks, when
+they can no longer get to it with tools, to throw solid objects, especially pipe stems,
+into the fissure, and they leave the business of fully separating the block from the cliff
+to the wedge-shaped working force of these small objects. It so happened that just at
+this time an enormous block measuring several thousand cubic feet was ready at the
+quarry for its fall to the surface at the bank of the Elbe. And since this moment is so
+remarkable, because of the thunder that reverberates strangely in the mountains and
+many other phenomena that arise from the shock to the earth that cannot be calculated,
+we, my friend and I, along with many other inhabitants of the city, betook ourselves
+every day, evenings, to the quarry, in order to catch the moment when the block would
+fall. The block fell, however, in the noon hour, as we were sitting at the table in the
+K6nigstein inn, and it was only at five o’clock towards evening that we had time to
+walk out there and to make inquiries about the circumstances under which it had
+fallen. But what had been the result of this fall? First of all you have to know that
+between the rock wall of the quarry and the bed of the Elbe was located a considerable
+strip of land, taking up about fifty feet in width, such that the block (which is here the
+important thing) did not fall directly into the water of the Elbe but rather onto the
+sandy area of this strip of land. An Elbe barge, gentlemen, that was the result of this
+
+124
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+fall, was, by means of the pressure of the air that was thus produced, an Elbe barge was
+placed on dry land-a barge that was about 60 feet long and 30 wide, heavily laden with
+wood, lay on the other, opposite bank of the Elbe. These eyes saw it in the sand-what
+am I saying? The next day, they even saw the workers who were laboring with levers
+and cylinders to get it afloat once again and to get it down from the bank and back into
+the water. It is probable that the whole Elbe (the surface of it) overflowed for a
+moment, spilled over the other flat bank, and left the barge there, it being a’ solid
+object, just as a piece of wood remains on the edge of a flat vessel when the water on
+which it drifts is shaken.” ]L2N2|n_id:b,n_d:ho,t:dsa,b_t:i/a,b_sc:L1N1 [And the block, asked
+the company, did not fall into the water of the Elbe?
+The officer repeated: no!
+Strange cried the company.
+The country gentleman was of the opinion that he knew how to choose well those
+stories that would verify his proposition. ]L1N1|n_id:a,n_d:he,t:undef
+[ “The third story,” ]L2N3|n_id:b,n_d:ho,t:dsa,b_t:i/a,b_sc:L1N1 [the officer continued,
+]L1N1|n_id:a,n_d:he,t:undef [“took place in the war of independence of the Netherlands, at
+the siege of Antwerp by the Duke of Parma. The duke had blocked the Schelde river
+by means of a bridge of ships and the Antwerpers were working on their side, under
+the leadership of a talented Italian, to explode the bridge by means of fire boats that
+they launched against it. In that moment, gentlemen, in which the vessels float down
+the Schelde to the bridge, there stands, observe well, a cadet officer on the left bank of
+the Schelde right next to the Duke of Parma: now, you understand, now the explosion
+takes place, and the cadet, complete with flag and pack and without the slightest thing
+happening to him on this journey, stands on the right bank. And the Schelde is here, as
+you will know, a small cannon shot wide.” ]L2N3|n_id:b,n_d:ho,t:dsa,b_t:i/a,b_sc:L1N1
+[ “Did you understand?”
+Go to the Devil! shouted the country gentleman.
+I have spoken! said the officer, took his walking stick and hat and left.
+Captain! called the others laughing–Captain! - They wanted at least to know the
+source of this fantastic story that he claimed to be true.
+Let him go, said a member of the gathering: the story is in the appendix to Schillers
+History of the Revolt of the United Netherlands, and the author notes expressly that a
+poet should not make use of this fact, the history writer, however, because of the
+irreproachable nature of the sources and the agreement of the witnesses is compelled to
+take it up. ]L1N1|n_id:a,n_d:he,t:undef
+
+Stacked Narrative Acts
+(8) (Mary Shelley, Frankenstein; or, The Modern Prometheus)
+
+125
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+[(. . . )
+Letter 4
+August 5th, 17—
+To Mrs. Saville, England
+So strange an accident has happened to us that I cannot forbear recording it, although it
+is very probable that you will see me before these papers can come into your
+possession.
+(. . . )
+The stranger has gradually improved in health but is very silent and appears uneasy
+when anyone except myself enters his cabin. Yet his manners are so conciliating and
+gentle that the sailors are all interested in him, although they have had very little
+communication with him. For my own part, I begin to love him as a brother, and his
+constant and deep grief fills me with sympathy and compassion. He must have been a
+noble creature in his better days, being even now in wreck so attractive and amiable. I
+said in one of my letters, my dear Margaret, that I should find no friend on the wide
+ocean; yet I have found a man who, before his spirit had been broken by misery, I
+should have been happy to have possessed as the brother of my heart.
+I shall continue my journal concerning the stranger at intervals, should I have any fresh
+incidents to record.
+(. . . )
+August 19, 17—
+Yesterday the stranger said to me, “You may easily perceive, Captain Walton, that I
+have suffered great and unparalleled misfortunes. I had determined at one time that the
+memory of these evils should die with me, but you have won me to alter my
+determination. You seek for knowledge and wisdom, as I once did; and I ardently hope
+that the gratification of your wishes may not be a serpent to sting you, as mine has
+been. I do not know that the relation of my disasters will be useful to you; yet, when I
+reflect that you are pursuing the same course, exposing yourself to the same dangers
+which have rendered me what I am, I imagine that you may deduce an apt moral from
+my tale, one that may direct you if you succeed in your undertaking and console you in
+case of failure. Prepare to hear of occurrences which are usually deemed marvellous.
+Were we among the tamer scenes of nature I might fear to encounter your unbelief,
+perhaps your ridicule; but many things will appear possible in these wild and
+mysterious regions which would provoke the laughter of those unacquainted with the
+ever-varied powers of nature; nor can I doubt but that my tale conveys in its series
+internal evidence of the truth of the events of which it is composed.”
+(. . . )
+He then told me that he would commence his narrative the next day when I should be
+at leisure. This promise drew from me the warmest thanks. I have resolved every
+
+126
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+night, when I am not imperatively occupied by my duties, to record, as nearly as
+possible in his own words, what he has related during the day. If I should be engaged, I
+will at least make notes. This manuscript will doubtless afford you the greatest
+pleasure; but to me, who know him, and who hear it from his own lips—with what
+interest and sympathy shall I read it in some future day! Even now, as I commence my
+task, his full-toned voice swells in my ears; his lustrous eyes dwell on me with all their
+melancholy sweetness; I see his thin hand raised in animation, while the lineaments of
+his face are irradiated by the soul within.
+Strange and harrowing must be his story, frightful the storm which embraced the
+gallant vessel on its course and wrecked it— thus! ]L1N1|n_id:a,n_d:ho,t:l
+[Chapter 1
+I am by birth a Genevese, and my family is one of the most distinguished of that
+republic. My ancestors had been for many years counsellors and syndics, and my
+father had filled several public situations with honour and reputation. He was
+respected by all who knew him for his integrity and indefatigable attention to public
+business. He passed his younger days perpetually occupied by the affairs of his
+country; a variety of circumstances had prevented his marrying early, nor was it until
+the decline of life that he became a husband and the father of a family.
+(. . . )
+“Why do you call to my remembrance,” I rejoined, “circumstances of which I shudder
+to reflect, that I have been the miserable origin and author? Cursed be the day,
+abhorred devil, in which you first saw light! Cursed (although I curse myself) be the
+hands that formed you! You have made me wretched beyond expression. You have left
+me no power to consider whether I am just to you or not. Begone! Relieve me from
+the sight of your detested form.”
+“Thus I relieve thee, my creator,” he said, and placed his hated hands before my eyes,
+which I flung from me with violence; “thus I take from thee a sight which you abhor.
+Still thou canst listen to me and grant me thy compassion. By the virtues that I once
+possessed, I demand this from you. Hear my tale; it is long and strange, and the
+temperature of this place is not fitting to your fine sensations (. . . )”
+(. . . )
+My heart was full, and I did not answer him, but as I proceeded, I weighed the various
+arguments that he had used and determined at least to listen to his tale.
+„he air was cold, and the rain again began to descend; we entered the hut, the fiend
+with an air of exultation, I with a heavy heart and depressed spirits. But I consented to
+listen, and seating myself by the fire which my odious companion had lighted, he thus
+began his tale. ]L2N1|n_id:b,n_d:ho,t:ts,b_t:i/a,b_sc:L1N1
+[ Chapter 11
+It is with considerable difficulty that I remember the original era of my being; all the
+
+127
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+events of that period appear confused and indistinct. A strange multiplicity of
+sensations seized me, and I saw, felt, heard, and smelt at the same time; and it was,
+indeed, a long time before I learned to distinguish between the operations of my
+various senses.
+(. . . )
+What was I? The question again recurred, to be answered only with groans.
+“I will soon explain to what these feelings tended, but allow me now to return to the
+cottagers, whose story excited in me such various feelings of indignation, delight, and
+wonder, but which all terminated in additional love and reverence for my protectors
+(for so I loved, in an innocent, halfpainful self-deceit, to call them).”
+]L3N1|n_id:c,n_d:ho,t:ts,b_t:i/a,b_sc:L2N1 [
+Chapter 14
+Some time elapsed before I learned the history of my friends. It was one which could
+not fail to impress itself deeply on my mind, unfolding as it did a number of
+circumstances, each interesting and wonderful to one so utterly inexperienced as I was.
+The name of the old man was De Lacey. He was descended from a good family in
+France, where he had lived for many years in affluence, respected by his superiors and
+beloved by his equals.(. . . ) ]L4N1|n:id:c,n_d:he,t:ts,b_t:o/v,b_sc:L3N1
+[ Chapter 15
+Such was the history of my beloved cottagers. It impressed me deeply. I learned, from
+the views of social life which it developed, to admire their virtues and to deprecate the
+vices of mankind.
+(. . . ) ]L3N1|n_id:c,n_d:he,t:ts,b_t:i/v,b_sc:L3N1
+
+Horizontal Alignment of Narrative Acts on the First Level
+
+Prologue
+(9) (Giovanni Boccaccio, The Decameron)
+[ Here begins the book called Decameron, otherwise known as Prince Galahalt,
+wherein are contained a hundred stories, told in ten days by seven ladies and three
+young men.
+PROLOGUE
+To take pity on people in distress is a human quality which every man and woman
+should possess, but it is especially requisite in those who have once needed comfort,
+and found it in others. I number myself as one of these, because if ever anyone
+required or appreciated comfort, or indeed derived pleasure therefrom, I was that
+person. For from my earliest youth until the present day, I have been inflamed beyond
+
+128
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+measure with a most lofty and noble love (. . . ) I shall narrate a hundred stories or
+fables or parables or histories or whatever you choose to call them, recited in ten days
+by a worthy band of seven ladies and three young men, who assembled together during
+the plague which recently took such heavy toll of life. (. . . ) In these tales will be
+found a variety of love adventures, bitter as well as pleasing, and other exciting
+incidents, which took place in both ancient and modern times. ]L1N1|n_id:a,n_d:he,t:p
+FIRST DAY
+Here begins the First Day of the Decameron, wherein first of all the author explains
+the circumstances in which certain persons, who presently make their appearance,
+were induced to meet for the purpose of conversing together, after which, under the
+rule of Pampinea, each of them speaks on the subject they find most congenial.
+I say, then, that the sum of thirteen hundred and forty-eight years had elapsed since the
+fruitful Incarnation of the Son of God, when the noble city of Florence (. . . ) was
+visited by the deadly pestilence.
+(. . . )
+The more I reflect upon all this misery, the deeper my sense of personal sorrow; hence
+I shall refrain from describing those aspects which can suitably be omitted, and
+proceed to inform you that these were the conditions prevailing in our city, which was
+by now almost emptied of its inhabitants, when one Tuesday morning (or so I was told
+by a person whose word can be trusted) seven young ladies were to be found in the
+venerable church of Santa Maria Novella, which was otherwise almost deserted. (. . . )
+The whole company, ladies and gentlemen alike, were in favour of telling stories.
+‘Then if it is agreeable to you,’ said the queen, ‘I desire that on this first day each of us
+should be free to speak upon whatever topic he prefers.’ And turning to Panfilo, who
+was seated on her right, she graciously asked him to introduce the proceedings with
+one of his stories. No sooner did he receive this invitation than Panfilo began as
+follows, with everyone listening intently: ]L1N2|n_id:a,n_d:he,t:undef
+[ FIRST STORY
+Ser Cepperello deceives a holy friar with a false confession, then he dies; and although
+in life he was a most wicked man, in death he is reputed to be a Saint, and is called
+Saint Ciappelletto. It is proper, dearest ladies, that everything made by man should
+begin with the sacred and admirable name of Him that was maker of all things. And
+therefore, since I am the first and must make a beginning to our storytelling, I propose
+to begin by telling you of one of His marvellous works, so that, when we have heard it
+out, our hopes will rest in Him as in something immutable, and we shall forever praise
+His name. ]L2N1|n_id:b,n_d:ho,b_t:dsa,b_sc:L1N2
+
+129
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+Connected Short Stories
+(10) (Günter Grass, My Century)
+1900
+[ I, TRADING PLACES WITH MYSELF, was in the thick of things, year in and year
+out. Not always in the front lines, because there were wars going on all the time and a
+soldier’s better off in the rear, but in the beginning, when we were up against the
+Chinese and our battalion reported to Bremerhaven, I was in the front of the middle
+unit. We were volunteers, nearly all of us, but I was the only one from Straubing, even
+though I’ d just been engaged to Resi, my dear Therese.
+We were waiting to board ship, the North German Lloyd building at our backs and the
+sun in our eyes. The Kaiser stood on a platform high above us and gave a spirited
+speech out over our hats. We had these new broad-brimmed hats to keep the sun out.
+Sou’westers they were called. We looked real dapper. The Kaiser, though, he wore this
+special helmet with the eagle shining against a blue background. He talked about
+solemn duties and the cruel foe. We were all carried away. He said, “Keep in mind the
+moment you land: No mercy shall be shown, no prisoners taken . . . .”’ Then he told
+the story of King Attila and the Huns. He praised them to the skies even though they
+wreaked all kinds of havoc. Which is why the Social Democrats later published those
+shameless Hun letters and made nasty remarks about the Kaiser’s Hun speech. He
+ended with our orders for China: “Open the way to culture now and forever!” We gave
+three cheers.
+For someone like me from Lower Bavaria the long sea voyage was hell. When we
+finally landed in Tientsin they were all there: the British, the Americans, the Russians,
+even real live Japanese and small troop from minor countries. The British turned out to
+be Indians. There weren’t many of us to start with, but luckily we had the new
+five-centimeter rapid-fire cannons, the Krupp ones, and the Americans were trying out
+their Maxim machine gun, which was one hell of a weapon. So Peking fell in no time.
+In fact, by the time our company marched in, everything seemed over and done with,
+which was a pity. Though some of the Boxers were still making trouble. They were
+called Boxers because they had this secret society they called I Ho Ch’uan or
+“righteous fists” in our language. That’s why the English – and then everybody else –
+talked about the Boxer Rebellion. The Boxers hated foreigners because they sold the
+Chinese all kinds of stuff. The British particularly Jiked selling opium. That’s why
+things went the way the Kaiser ordered: There were no prisoners taken.
+For the sake of order the Boxers were rounded up in the square at Tienanmen Gate,
+right in front of the wall dividing the Manchu city from the ordinary part. Their pigtails
+were tied one to the other. It looked funny. Then theey were either executed in groups
+or had their heads chopped off one by one. But I didn’t write my fiancee a blessed
+
+130
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+word about the horrors; I stuck to hundred-year-old eggs and steamed dumplings
+Chinese style. The British and us Germans we liked using our guns, we wanted to get
+things over with, while the Japanese followed their time-honored tradition of head
+chopping. The Boxers liked being shot better because they were afraid of having to run
+around hell with their heads under their arms. Otherwise they were fearless. I saw
+somebody licking his chops over a rice cake dipped in syrup just before he was shot.
+There was a wind blowing through Tienanmen Square; it came from the desert, stirring
+up clouds of yellow du t. Everything was yellow including us. I wrote that to my
+fiancce and enclosed a little desert sand in the letter. And because the Japanese
+executioners got a clean cut by chopping the pigtails off the Boxers, who were just
+young fellows like ourselves, there were lots of little piles of them lying around in the
+dust, and I picked one up and sent it home as a souvenir. Back in Germany I wore it at
+Fasching and everybody was in stitches until my fiancee threw it in the fire. “It
+could’ve haunted the house;” Resi said two days before we were married. But that’s
+another story. ]L1N1|n_id:a,n_d:ho,t:undef
+[ SEEK AND YE SHALL FIND. I have always enjoyed rummaging in junk, and late
+in the fifties there was a Chamissoplatz dealer whose black-andwhite shop sign
+promised antiques, though the valuable pieces lay buried deep in junk. Since my
+interest was piqued by curios as well, I discovered three picture postcards bound with a
+string and depicting mosque, sepulchre church, and wailing wall through a dull sheen.
+Postmarked January ’45 in Jerusalem, they were addressed to a certain Doctor Benn in
+Berlin, but the post office had been unable to locate the addressee amid the city’s
+debris and had marked them undeliverable. I was lucky that Kurt Mühlenhaupt’s
+treasure trove in the Kreuzberg district had offered them shelter.
+The message – interspersed with curlicues and stick figures and continuous over the
+three cards – was difficult to decipher but ran as follows: “Truly the times are out of
+joint! Today, the first of March, with the burgeoning new century resplendent in its
+stiff-legged ‘one’ I and you, my barbarian and tiger, stalking the far-off jungles for
+prey, my father, Herr Schüler, took me by his Eulenspiegel hand and he, I, and my
+glass heart boarded the suspension railway on its maiden journey from Bannen to
+Elberfeld. Up over the black Wupper! It is a hard-steel dragon winding and wending
+its thousandfooted way over a river blackened by Bible-pious dyers with the effluents
+of their inks for little recompense. On, on the ship cruises, roaring through the skies,
+while the dragon advances on heavy ringed feet. If only you, dear Giselher, at whose
+sweet mouth I have shuddered with bliss, could float across the Styx, the other Wupper,
+with me, your Sulamith shall I be Jussuf the Prince?- until falling rejuvenated reunited
+we were consumed. But no, l have been saved here on holy ground and live only for
+the Messiah, while you are lost, apostate, my hard-faced betrayer, barbarian that you
+are. O lamentation! Can you see the black swan on the black Wupper? Can you hear
+
+131
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+my song playing plaintively on a blue piano? . . . But now we must disembark, Father
+Schüler says to his Else. On earth I was in the main his good little girl. . . . ”
+It is a known fact that on the day the opening of the first, four-and-a-halfkilometer,
+stretch of the Wuppertal Suspension Railway was celebrated Else Schüler was no child
+but a woman of thirty or more, wife to Berthold Lasker and mother of a two-year-old
+son, but age in her scheme of things was al ways flexible, which only makes the three
+signs of life from Jerusalem addressed to Doctor Benn and posted only weeks before
+her death that much more informative.
+I did not haggle long; I paid a collector’s price. And Kurt Mühlenhaupt, whose junk
+was always special, gave me a wink. ]L1N2|n_id:a,n_d:ho,t:undef
+
+Apolouge
+(11) (Aesop, The Wolf and the Lamb)
+[ A stray Lamb stood drinking early one morning on the bank of a woodland stream.
+That very same morning a hungry Wolf came by farther up the stream, hunting for
+something to eat. He soon got his eyes on the Lamb. As a rule Mr. Wolf snapped up
+such delicious morsels without making any bones about it, but this Lamb looked so
+very helpless and innocent that the Wolf felt he ought to have some kind of an excuse
+for taking its life. “How dare you paddle around in my stream and stir up all the mud!”
+he shouted fiercely. “You deserve to be punished severely for your rashness!” “But,
+your highness,” replied the trembling Lamb, “do not be angry! I cannot possibly
+muddy the water you are drinking up there. Remember, you are upstream and I am
+downstream.” “You do muddy it!” retorted the Wolf savagely. “And besides, I have
+heard that you told lies about me last year!” “How could I have done so?” pleaded the
+Lamb. “I wasn’t born until this year.” “If it wasn’t you, it was your brother!” “I have
+no brothers.” “Well, then,” snarled the Wolf, “It was someone in your family anyway.
+But no matter who it was, I do not intend to be talked out of my breakfast.” And
+without more words the Wolf seized the poor Lamb and carried her off to the forest
+]L1N1|n_id:a,n_d:he,t:undef
+[ “The tyrant can always find an excuse for his tyranny. The unjust will not listen to
+the reasoning of the innocent.” ]L1N2|n_id:a,n_d:he,t:a
+
+Attributes
+Since mostly all attributes were already used in the examples above, we only
+indicate their usage at this point:
+132
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+• A change of the identity of the narrator is best seen in example 8 (Shelley’s Frankenstein), where on level 1 to 3 a new narrator occours. The
+presence of the narrator within the diegesis is always indicated, we
+find, for example, the shift from a heterodiegetic to a homodiegetic narrator in Kleist’s Improbable Veracities (example 7).
+• Examples for the text type are already named in section 2.4.
+• The boundary type was explicitly shown in section 3.1, while the superordinate level is indicated in every example, except for the horizontal
+alignment of narratives on the first level.
+• A metaleptic intrusion appears in the excerpt from Alice’s Adventures in
+Wonderland (example 3).
+What’s missing so far, is metanarration and metafiction, which we show hereafter.
+Metanarration
+(12) (Laurence Sterne, The Life and Opinions of Tristram Shandy, Gentleman)
+[ —–If I was you, quoth Yorick, I would drink more water, Eugenius.–And, if I was
+you, Yorick, replied Eugenius, so would I.
+Which shows they had both read Longinus—– ]L1N1|n_id:a,n_d:he,t:undef
+[ For my own part, I am resolved never to read any book but my own, as long as I live.
+]L1N2|n_id:a,n_d:ho,t:undef,m&m:mn
+(13) (Italo Calvino, If on a winter’s night a traveler)
+[ You are about to begin reading Italo Calvino’s new novel, If on a winter’s night a
+traveler. Relax. Concentrate. Dispel every other thought. Let the world around you
+fade. Best to close the door; the TV is always on in the next room. Tell the others right
+away, “No, I don’t want to watch TV!” Raise your voice—they won’t hear you
+otherwise—“I’m reading! I don’t want to be disturbed!” Maybe they haven’t heard
+you, with all that racket; speak louder, yell: “I’m beginning to read Italo Calvino’s new
+novel!” Or if you prefer, don’t say anything; just hope they’ll leave you alone. [. . . ]
+So here you are now, ready to attack the first lines of the first page. [. . . ] Perhaps at
+
+133
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+first you feel a bit lost, as when a person appears who, from the name, you identified
+with a certain face, and you t ry to make the features you are seeing tally with those
+you had in mind, and it won’t work. But then you go on and you realize that the book
+is readable nevertheless, independently of what you expected of the author, it ’s the
+book in itself that arouses your curiosity; in fact, on sober reflection, you prefer it this
+way, confronting something and not quite knowing yet what it is.
+]L1N1|n_id:a,n_d:he,t:undef,m&m:mn
+[If on a winter’s night a traveler
+The novel begins in a railway station, a locomotive huffs, steam from a piston covers
+the opening of the chapter, a cloud of smoke hides part of the first paragraph. In the
+odor of the station there is a passing whiff of station café odor. There is someone
+looking through the befogged glass, he opens the glass door of the bar, everything is
+misty, inside, too, as if seen by nearsighted eyes, or eyes irritated by coal dust. The
+pages of the book are clouded like the windows of an old t rain, the cloud of smoke
+rests on the sentences. It is a rainy evening; the man enters the bar; he unbuttons his
+damp overcoat; a cloud of steam enfolds him; a whistle dies away along t racks that are
+glistening with rain, as far as the eye can see. (. . . ) ]L1N2|n_id:a,n_d:he,t:undef
+
+Metafiction
+(14) (Laurence Sterne, The Life and Opinions of Tristram Shandy, Gentleman)
+[ The learned Bishop Hall, I mean the famous Dr. Joseph Hall, who was Bishop of
+Exeter in King James the First’s reign, tells us in one of his Decads, at the end of his
+divine art of meditation, imprinted at London, in the year 1610, by John Beal, dwelling
+in Aldersgate Street, “That it is an abominable thing for a man to commend himself;”
+]L1N1|n_id:a,n_d:he,t:undef [—and I really think it is so.
+And yet, on the other hand, when a thing is executed in a masterly kind of a fashion,
+which thing is not likely to be found out;—I think it is full as abominable that a man
+should lose the honour of it, and go out of the world with the conceit of it rotting in his
+head.
+This is precisely my situation:
+For in this long digression which I was accidentally led into, as in all my digressions
+(one only excepted), there is a master stroke of digressive skill the merit of which has
+all along, I fear, been overlooked by my reader,— —not for want of penetration in
+him,——but because ’tis an excellence seldom looked for, or expected, indeed, in a
+digression;—–
+(. . . )
+I believe the greatest of our boasted improvements and discoveries have come from
+some such trifling hints: Digressions, incontestably, are the sunshine;—they are the
+
+134
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+life, the soul of reading; ]L1N2|n_id:a,n_d:he,t:undef,m&m:mf
+
+Example Workflow
+The short story Beyond the Pale by Rudyard Kipling begins with an apologue
+(text type: apologue) that is supposed to be annotated as the first independent
+narrative act on level 1. Additionally, the narrator of the apologue is not part
+of the story (heterodiegetic), and since this is the first narrator, it gets “narrator_identity: a”:
+[ “Love heeds not caste nor sleep a broken bed. I went in search of love and
+lost myself.” Hindu Proverb. A man should, whatever happens, keep to his
+own caste, race and breed. Let the White go to the White and the Black to
+the Black. Then, whatever trouble falls is in the ordinary course of things —
+neither sudden, alien, nor unexpected. This is the story of a man who wilfully
+stepped beyond the safe limits of decent every-day society, and paid for it heavily. ]L1N1|n_id:a,n_d:he,t:a
+
+In the next narrative act, the narrator switches to the main heterodiegetic narrator
+(“narrator_identity: b”) that introduces the character of Trejago. Since the first
+part was only an apologue, there is no level switch here, and it is supposed to
+be annotated as “narrative 2” on level 1:
+[ He knew too much in the first instance; and he saw too much in the second.
+He took too deep an interest in native life; but he will never do so again.
+Deep away in the heart of the City, behind Jitha Megji’s bustee, lies Amir Nath’s
+Gully, which ends in a dead-wall pierced by one grated window. At the head of
+the Gully is a big cow-byre, and the walls on either side of the Gully are without
+windows. Neither Suchet Singh nor Gaur Chand approved of their women-folk
+looking into the world. If Durga Charan had been of their opinion, he would
+have been a happier man today, and little Biessa would have been able to knead
+her own bread. Her room looked out through the grated window into the narrow
+dark Gully where the sun never came and where the buffaloes wallowed in the
+blue slime. She was a widow, about fifteen years old, and she prayed the Gods,
+day and night, to send her a lover; for she did not approve of living alone.
+
+135
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+One day the man — Trejago his name was — came into Amir Nath’s Gully on
+an aimless wandering; and, after he had passed the buffaloes, stumbled over a
+big heap of cattle food.
+Then he saw that the Gully ended in a trap, and heard a little laugh from behind
+the grated window. It was a pretty little laugh, and Trejago, knowing that, for
+all practical purposes, the old Arabian Nights are good guides, went forward to
+the window, and whispered that verse of “The Love Song of Har Dyal” which
+begins: ] L1N2|n_id:b,n_d:he,t:undef
+
+The first level switch arises when Trejago quotes The Love Song of Har Dyal
+from One Thousand and One Nights. The text type addresses this by setting it
+as a “direct speech act” (Trejago has “narrator identity: c”) as well as a “quotation” of a literary work. Trejago is not part of The Love Song of Har Dyal,
+therefore, he is a heterodiegetic narrator. Here, we additionally have to set the
+type of level boundary, which is illocutionary (actual crossed) and ontological
+(virtual crossed, because it is a quote of another fictional world). Moreover, it is
+necessary to select the corresponding narrative act of the former level, in which
+the current annotation is embedded (“level 1 narrative act 2”):
+[ Can a man stand upright in the face of the naked Sun; or a Lover in the Presence
+of his Beloved? If my feet fail me, O Heart of my Heart, am I to blame, being
+blinded by the glimpse of your beauty? ]L2N1|n_id:c,n_d:he,t:dsaq,b_t:i/a&o/v,b_sc:L1N2
+
+Trejago stops his recitation but The Love Song of Har Dyal is continued by the
+voice of the character Bisesa. She continues the quote (level 2 narrative act 1),
+but the voice is changing to “narrator identity: d”:
+[ There came the faint tchinks of a woman’s bracelets from behind the grating,
+and a little voice went on with the song at the fifth verse: ]L1N2|n_id:b,n_d:he,t:undef
+[ Alas! alas! Can the Moon tell the Lotus of her love when the Gate of Heaven
+is shut and the clouds gather for the rains? They have taken my Beloved, and
+driven her with the pack-horses to the North.
+There are iron chains on the feet that were set on my heart. Call to the bowman
+to make ready— ]L2N1|n_id:d,n_d:he,t:dsa&q,b_t:i/a&o/v,b_sc:L1N2
+
+136
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+Notes
+1
+
+Gérard Genette, Narrative Discourse: An Essay in Method (Ithaca, NY: Cornell University Press, 1980), 227–
+31; John Pier, “Narrative Levels (revised version; uploaded 23 April 2014),” in the living handbook of narratology,
+revised version; uploaded 23 April 2014, ed. Peter Hühn et al. (Hamburg: Hamburg University Press, August 2014).
+2
+
+Gérard Genette, Narrative Discourse Revisited (Ithaca: Cornell University Press, 1988), 88.
+
+3
+
+Conjunctions and delimitations between embeddings and frames are addressed in section Category: Narrative
+Acts within the corresponding subsection.
+4
+
+E.g. Nelles points out the possibility of horizontal embeddings, cf. subsection 3.2 and William Nelles, Frameworks: Narrative Levels and Embedded Narrative (New York: P. Lang, 1997), 132.
+5
+
+Silke Lahn and Jan Christoph Meister, Einführung in die Erzähltextanalyse [in ger], BA-Studium, OCLC: 254925822
+(Stuttgart: Metzler, 2008), 83; Manfred Jahn, Narratology: A Guide to the Theory of Narrative (nglish Department,
+University of Cologne, 2005).
+6
+
+Jahn, Narratology: A Guide to the Theory of Narrative.
+
+7
+
+Genette, Narrative Discourse: An Essay in Method.
+
+8
+
+Jahn, Narratology: A Guide to the Theory of Narrative.
+
+9
+
+Marie-Laure Ryan, Possible Worlds, Artificial Intelligence, and Narrative Theory (Bloomington: Indiana University Press, 1991).
+10
+
+Roman Jakobson, “Linguistics and Poetics,” in Style in Language (MA: MIT Press, 1960), 350–77.
+
+11
+
+Marie-Laure Ryan, Narrative as Virtual Reality: Immersion and Interactivity in Literature and Electronic Media (Johns Hopkins University Press, 2001).
+12
+
+Ryan, Possible Worlds, Artificial Intelligence, and Narrative Theory, 176.
+
+13
+
+Ryan, 176.
+
+14
+
+Ryan, 177.
+
+15
+
+Ryan, 177.
+
+16
+
+Practically, there are even more possibilities as stressed out in the paragraph Boundary: Type (b_t).
+
+17
+
+Ryan, 177.
+
+18
+
+Uwe Wirth, Die Geburt Des Autors Aus Dem Geist Der Herausgeberfiktion: Editoriale Rahmung Im Roman Um
+1800: Wieland, Goethe, Brentano, Jean Paul Und Eta Hoffmann (Wilhelm Fink Verlag, 2008), 151.
+
+137
+
+A N N O TAT I O N G U I D E L I N E S F O R N A R R AT I V E L E V E L S A N D N A R R AT I V E A C T S V 2
+
+19
+
+Ryan, Possible Worlds, Artificial Intelligence, and Narrative Theory, 177.
+
+20
+
+Ryan, 177.
+
+21
+
+Ryan, 176–77.
+
+22
+
+If all utterances of characters are of interest for potential narrative levels, this may lead to tasks like the detection of direct and indirect speech acts that have been done separately, cf. Annelen Brunner, “Automatic Recognition of Speech, Thought, and Writing Representation in German Narrative Texts,”Annelen Brunner, “Automatic Recognition of Speech, Thought, and Writing Representation in German Narrative Texts,” Literary and Linguistic Computing 28, no. 4 (2013): 563–75.
+23
+
+Didier Coste, “Narrative Theory” [in en], in Oxford Research Encyclopedia of Literature (Oxford University Press,
+June 2017), 3, https://doi.org/10.1093/acrefore/9780190201098.013.116.
+24
+
+Coste, 3.
+
+25
+
+Coste, 4.
+
+26
+
+Coste, 4.
+
+27
+
+Eberhard Lämmert, Bauformen des Erzählens (Stuttgart: Metzler, 1955), 44.
+
+28
+
+Peter Hühn, “Event and Eventfulness,” in Handbook of Narratology (De Gruyter, 2009), 80.
+
+29
+
+Hühn captures unusual and unexpected changes within his term event II, whereas event I integrates “every change
+of state explicitly or implicitly represented in a text”, cf. Hühn, 80. For our needs, only event II seems to be relevant.
+30
+
+Inner tale refers to the term Binnenerzählung in German literary discourse (Lahn and Meister, Einführung in die
+Erzähltextanalyse, 79; Pier, “Narrative Levels (revised version; uploaded 23 April 2014)”).
+31
+
+Pier, “Narrative Levels (revised version; uploaded 23 April 2014).”
+
+32
+
+Shlomith Rimmon-Kenan, Narrative Fiction: Contemporary Poetics (Taylor & Francis eLibrary, 2005), 95; Lahn
+and Meister, Einführung in die Erzähltextanalyse, 87–90.
+33
+
+Evelyn Gius, Erzählen über Konflikte: Ein Beitrag zur digitalen Narratologie, Narratologia, Band 46 (Berlin
+; Boston: De Gruyter, 2015), 164.
+34
+
+Nelles, Frameworks: Narrative Levels and Embedded Narrative, 132–33; Nelles also defines the term modal
+embedding for dream worlds in William Nelles, “Embedding,” in Routledge Encyclopedia of Narrative Theory, ed.
+David Herman, Manfred Jahn, and Marie-Laure Ryan (London; New York: Routledge, 2005), 134–35. In contrast
+to Ryan, he doesn’t see a level switch here, even though he states a shift in the ‘reality’ of the fictional world. Still,
+for our guidelines, the assumption of a subordinate level for crossing ontological boundaries seems more accurate.
+35
+
+Pier, “Narrative Levels (revised version; uploaded 23 April 2014).”
+
+138
+
+J O U R N A L O F C U LT U R A L A N A LY T I C S
+
+36
+
+Wayne C. Booth, The Rhetoric of Fiction (University of Chicago Press, 2010).
+
+37
+
+Pier, “Narrative Levels (revised version; uploaded 23 April 2014).”
+
+38
+
+Bernard Duyfhuizen, “Framed narrative,” in Routledge encyclopedia of narrative theory, ed. David Herman, Manfred Jahn, and Marie-Laure Ryan (London; New York: Routledge, 2005), 187.
+39
+
+Ryan, Possible Worlds, Artificial Intelligence, and Narrative Theory, 178; Marie-Laure Ryan, “Stacks, Frames,
+and Boundaries,” in Narrative Dynamics: Essays on Time, Plot, Closure, and Frames, ed. Brian Richardson (Ohio
+State University Press, 2002), 880.
+40
+
+Ryan, Possible Worlds, Artificial Intelligence, and Narrative Theory, 178; Ryan, “Stacks, Frames, and Boundaries,” 880.
+41
+
+We do not use Genette’s terminology (extradiegetic, intradiegetic, metadiegetic) since it only captures the level
+of a narrator, not his identity.
+42
+
+Duyfhuizen, “Framed narrative,” 187.
+
+43
+
+Birgit Neumann and Ansgar Nünning, “Metanarration and Metafiction,” in the living handbook of narratology,
+ed. Peter Hühn et al. (Hamburg: Hamburg University Press, December 2012), 204–11.
+44
+
+Lahn and Meister, Einführung in die Erzähltextanalyse, 90.
+
+45
+
+Originally, Genette’s concept of metalepsis includes “any intrusion by the extradiegetic narrator into the diegetic
+world” Genette, Narrative Discourse: An Essay in Method, 234–35. For example, if two intradiegetic characters on
+level 1 speak about the narrator, who writes the story (like in Flann O’Brians At Swim-Two-Birds), this refers to the
+extradiegetic point of view of the narrator and is captured within our guidelines by setting the attribute value “metanarration” (see above).
+46
+
+See also the longer version of the story in example 7.
+
+139
+
+

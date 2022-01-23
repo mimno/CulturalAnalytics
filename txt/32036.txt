@@ -1,0 +1,3140 @@
+Journal of
+Cultural Analytics
+
+January 18, 2022
+
+The Humanities in Public: A
+Computational Analysis of US National
+and Campus Newspapers
+Lindsay Thomas, Abigail Droge
+Lindsay Thomas, University of Miami
+Abigail Droge, Purdue University
+Peer-Reviewers: Tom McEnaney, Chad Wellmon
+Data Repository: https://doi.org/10.7910/DVN/BD9CE8
+Article DOI: https://doi.org/10.22148/001c.32036
+
+ABSTRACT
+Academic defenses of the humanities often make two assumptions: first, that the overwhelming
+public perception of the humanities is one of crisis, and second, that our understanding of what
+the humanities mean is best traced through a lineage of famous reference points, from Matthew
+Arnold to the Harvard Redbook. We challenge these assumptions by reconsidering the
+humanities from the perspective of a corpus of over 147,000 relatively recent national and
+campus newspaper articles. Building from the work of the WhatEvery1Says project (WE1S), we
+employ computational methods to analyze how the humanities resonate in the daily language of
+communities, campuses, and cities across the US. We compare humanities discourse to science
+discourse, exploring the distinct ways that each type of discourse communicates research,
+situates itself institutionally, and discusses its value. Doing so shifts our understanding of both
+terms in the phrase “public humanities.” We turn from the sweeping and singular conception of
+“the public” often invoked by calls for a more public humanities to the multiple overlapping
+publics instantiated through the journalistic discourse we examine. And “the humanities”
+becomes not only the concept named by articles explicitly “about” the humanities, but also the
+accreted meaning of wide-ranging mentions of the term in building names, job titles, and
+announcements. We argue that such seemingly inconsequential uses of the term index diffuse
+yet vital connections between individuals, communities, and institutions including, but not
+limited to, colleges and universities. Ultimately, we aim to show that a robust understanding of
+how humanities discourse already interacts with and conceives of the publics it addresses should
+play a crucial role in informing ongoing and future public humanities efforts.
+
+Michael Bérubé and Jennifer Ruth begin their 2015 book The Humanities, Higher
+Education, and Academic Freedom by identifying “an iron law of American
+journalism”: “no one is permitted to write the word ‘humanities’ in a sentence that
+does not also include the word ‘decline.’”1 This association in journalistic discourse
+of the humanities with crisis is deeply familiar to many humanists. The popular
+narrative of American higher education over the last fifty years, Bérubé and Ruth
+emphasize, is that “students have abandoned the humanities in droves.”2 While they
+
+Journal of Cultural Analytics 1 (2022): 1-45
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+go on to argue that the real crisis in the humanities is not declining undergraduate
+enrollments but rather a crisis in “graduate education and professional employment”
+within higher education, the point remains that the humanities are often portrayed in
+the news in the language of crisis.3 This framing affects how humanists view their
+own disciplines, too, and it has inspired many to pen both public and academic
+defenses of the humanities. Such pieces seek to advocate for the value of the
+humanities, but they also usually take the crisis framing for granted. As Edward L.
+Ayers puts it, “the language of crisis [has become] engrained in the self-perception
+of the humanities.”4
+As we will demonstrate, although this way of talking about the humanities is perhaps
+the most readily identifiable, it is not the most common. “Everyday” news articles
+reporting on the day-to-day activities of humanities faculty, celebrating students in
+humanities classes, and announcing humanities events are far more plentiful in US
+news discourse. Humanities scholars have a tendency to miss or ignore these kinds
+of articles when writing pieces about the crisis in the humanities or arguing for the
+relevance of the humanities. When Helen Small writes in The Value of the
+Humanities, for example, that “[t]he primary aim of the following pages is to
+examine the most commonly proffered reasons why the study of the humanities has
+distinctive purpose and value,” the phrase “most commonly proffered” refers mainly
+to the frequent surfacing of specific arguments advocating for the value of the
+humanities within the pages of “well worn” academic texts.5 Exchanging the
+traditional lineage of august defenses of the humanities often cited by scholars for a
+much larger corpus of relatively ordinary contemporary journalism, we focus instead
+on discussions of the humanities that emerge from a more expansive sense of the
+“common” – as in, quotidian and widely-circulating news articles.6 How might an
+emphasis on often unremarkable journalism not only alter our justifications for the
+humanities, but also expand our very understanding of what the humanities are?
+This article answers this question by examining newspaper articles containing the
+word “humanities” (as well as other select keywords for comparison purposes). This
+data is a subset of the data collected by the WhatEvery1Says: The Humanities in
+Public Discourse (WE1S) project, which was funded by the Andrew W. Mellon
+Foundation.7 Our corpus includes 147,204 documents from 624 unique mainstream
+and student newspapers from across the United States published during the years
+2
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+1998-2018.8 We see these sources as offering an important, though not exclusive,
+window on contemporary public discourse related to the humanities.9 As WE1S
+recognizes, other keywords, like the names of individual disciplines, figures, or
+texts, can also be markers of humanities discourse. But because “there is no
+predefined, bounded set of media documents for studying public discussion of the
+humanities,” it makes sense as an initial aim to study “a strategically chosen subset
+of materials mentioning the literal word ‘humanities.’”10 Indeed, as we will show,
+this method captures both “specialized academic discourse” around particular
+humanistic disciplines, concepts and ideas as well as “wider, fuzzier public
+discussion” of the humanities as part of everyday life and general culture.11 To get a
+handle on this discourse, we utilize methods in exploratory data analysis including
+simple counting, hypothesis testing, supervised and unsupervised forms of
+modeling, and comparisons of word frequency data. The claims we make rely on
+generalizations drawn from this analysis, but they also rely on close readings of
+many individual articles that our computational analysis brought to our attention as
+significant. Our methods are intended to investigate the diversity of ways of talking
+about the humanities that exist in public discourse.12
+We are thus concerned in this article, broadly speaking, with what is often called the
+“public humanities.”13 However, our approach destabilizes both terms in this
+phrase.14 We begin from the premise that any discussion of the humanities in public
+must take into account the many overlapping publics that interact with the
+humanities and with ideas about the humanities on an ongoing, daily basis. The
+construction of our corpus turns from the sweeping and singular conception of “the
+public” often invoked by calls for a more public humanities to the multiple, specific
+publics addressed by the sources we examine.15 These publics include those
+constituted by mainstream US newspaper discourse and by student newspapers
+located on college and university campuses across the United States.
+Additionally, the term “humanities” in our analysis turns protean. Humanities
+scholars and professionals often use the term to refer to particular administrative
+formations or academic disciplines (including English, history, philosophy, etc.),
+and thus the humanities are often viewed, especially in the United States, as distinct
+from the arts. However, in the news articles we examine, the humanities are
+associated with a wide range of things including interpretive and scholarly activities,
+3
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+institutional and administrative formations, pedagogical practices, artistic or creative
+endeavors, and, as we discuss in the article’s final section, traces of public life, or
+the implicit and often inchoate connections between individuals, communities, and
+institutions. We are interested not in adhering to or arguing for any one definition of
+the humanities, but rather in showing how the term operates in contemporary
+newspaper discourse. Our methods allow us to examine the words, ideas and
+practices with which the term “humanities” is commonly associated, associations we
+might miss if we were searching for a particular definition of the term or seeking to
+redefine it. For us, then, the phrase public humanities means an attempt to understand
+how the term “humanities” resonates in the daily language of communities,
+campuses, and cities across the US, albeit perhaps not in ways that scholars in the
+humanities always recognize.16
+In what follows, after describing our data in more detail, we explore two different
+groupings of public discourse related to the humanities. We call the first “public
+discourse about the humanities.” It centers on articles that take specific humanistic
+disciplines or the concept of the humanities more generally as their main topic. We
+pay particular attention to how such humanities discourse constitutes its own publics,
+either through explicit invocations of the humanities as a public good or through the
+embedding of public perceptions within an article’s structure. We find that while the
+crisis in the humanities is part of the explicit framing of articles detailing
+justifications for particular majors or bemoaning unwelcome administrative
+decisions, this framing fades substantially in articles about humanities events,
+classes, and accessible resources. To bring public discourse about the humanities
+into sharper relief, we compare articles about the humanities to articles about
+science.17 While discussions of the humanities and discussions of science share some
+common features, we find that articles about the humanities communicate research
+differently, invoke audiences associated with different institutions, and discuss
+values in more abstract ways than articles about science.
+We call the second grouping of public discourse related to the humanities
+“humanities public discourse.” The removal of the word “about” in our phrasing is
+important; the articles that constitute this category contain the word “humanities,”
+but they aren’t about the humanities per se.18 Instead, these articles include incidental
+mentions of this term in, for example, the name of a building, the title of a
+4
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+professorship, or the listing of an event. These kinds of articles outnumber articles
+about the humanities in our corpus by a factor of 11. Despite their relative
+prevalence, however, articles like this are often excluded from discussions of the
+humanities, for the obvious reason that they are not “about” the humanities. Yet, as
+we will see, such articles have a lot to tell us about how the concept of the humanities
+operates and is valued today. They provide a view of how the humanities – as an
+administrative formation, as a disciplinary tradition, as a set of interpretive and
+creative activities, as a group of pedagogical practices, and more – are embedded in
+everyday life, even when this embedding isn’t explicitly conceptualized as such.
+
+Humanities Publics: Our Data
+Table 1 displays breakdowns of the approximately 147,200 documents in our corpus
+by publication date and source distribution. As we can see there, most of the articles
+in our corpus were published between 2005 and 2018, and the distribution of articles
+among our sources is uneven. The top 20 sources overall account for nearly 40% of
+the total number of documents in the corpus, while the bottom 300 sources account
+for only 5% of the total number.
+Grouping
+
+Number of documents (percentage share of total
+documents)
+
+Total (all groupings)
+
+147,204 (100%)
+
+Published between 19982004
+
+13,593 (9%)
+
+Published between 20052018
+
+133,611 (91%)
+
+Top 20 sources
+
+57,051 (39%)
+
+Top 100 sources
+
+105,318 (72%)
+
+Bottom 300 sources
+
+7,795 (5%)
+
+Table 1: Numbers of documents grouped into categories corresponding to when they were published and to top or
+bottom contributing sources.
+
+Another way of understanding our data is to categorize it by source type. As we see
+in Table 2, our corpus includes articles from the 15 top-circulating newspapers in
+5
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+the United States as of 2019 and from 609 student newspapers from colleges and
+universities located mainly in the United States.19 We have significantly more data
+from student newspapers: just over 2/3 of the articles in our corpus are from this
+source type, while about 1/3 are from top-circulating newspapers. Viewing our
+corpus in this way highlights the two overlapping audience groups, or the two
+publics, the articles we have collected address and therefore constitute. Discussions
+of the public humanities often turn on distinctions between “academia” and “the
+public,” which are usually presented either implicitly or explicitly as mutually
+exclusive realms. As we mentioned above, however, the campus communities
+addressed by student newspapers are other kinds of publics; they are not somehow
+“not public” because they are composed of people who are enrolled in or who work
+for colleges or universities. Furthermore, faculty and administrators often write or
+contribute to articles that appear in mainstream newspapers.20 While these
+communities are distinct, the boundaries between them are more porous than
+discussions about the public humanities commonly assume. Table 2 also displays
+another way of dividing our data. We can separate it into 3 keyword categories:
+articles containing the words “humanities” or “liberal arts” (our humanities keyword
+data), articles containing the words “science” or “sciences” (our science keyword
+data), and articles that do not contain the word “humanities” (our comparison
+keyword data).21 These keyword categories cut across both source types described
+above.
+Grouping
+
+Number of documents (percentage share of
+total documents)
+
+Total (all groupings)
+
+147,204 (100%)
+
+Top newspapers (15 unique sources, all
+keywords)
+
+44,589 (30%)
+
+Student newspapers (609 unique sources,
+all keywords)
+
+102,615 (70%)
+
+Humanities keywords (both source types)
+
+34,744 (24%)
+
+Science keywords (both source types)
+
+96,846 (66%)
+
+Comparison keywords (both source types)
+
+15,614 (11%)
+
+Table 2: Numbers of documents by source type and keyword category
+
+6
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+However, as we mentioned in the introduction, the inclusion of a specific keyword
+does not guarantee that an article is about the concept that keyword appears to name;
+an article may include the word “humanities” but not actually be about the
+humanities, a point we describe in more detail in the article’s final section. To zero
+in on public discourse specifically about the humanities or about science, we built
+classifiers designed to predict if a newspaper article is about the humanities or about
+science. For our purposes, an article “about” the humanities or science was one in
+which the main topic or central focus of the article was either a specific humanistic
+or scientific discipline or the concept of “the humanities” or “science” itself.22 Our
+classifiers were able to detect differences between articles about the humanities and
+articles not about the humanities more easily than they were able to detect
+differences between articles about science and articles not about science, although
+they differentiated both categories with relatively high degrees of accuracy (Table
+3). As we can see in Table 4, our classifier predicted that our corpus includes over
+four times as many articles about science than articles about the humanities. Articles
+about the humanities constitute a small percentage not only of our corpus overall but
+also, perhaps more surprisingly, of our humanities keyword data. Of the over 34,700
+articles in our corpus that include humanities keywords, our humanities classifier
+predicted that only about 7% of these articles are about the humanities. This is also
+true of our science keyword data: about 10% of documents that contain science
+keywords were classified as being about science.
+Group A
+
+Group B
+
+F1 score
+
+Precision
+
+Recall
+
+Articles about the
+humanities
+
+Articles not about the
+humanities
+
+0.92
+
+0.97
+
+0.88
+
+Articles about science
+
+Articles not about science
+
+0.82
+
+0.89
+
+0.77
+
+Table 3: Pairwise comparisons of our classification models using a logistic regression classifier. Scores show how
+well Group A was predicted in comparison to Group B. Scores are averages over 10 runs.
+
+Grouping
+
+Number of documents (percentage share
+of specified grouping)
+
+Total classified as being about humanities, all
+keyword groupings
+
+2,815 (2% of all documents)
+
+7
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+Total classified as being about the humanities,
+humanities keyword grouping
+
+2,324 (2% of all documents, 7% of
+humanities keywords documents)
+
+Total classified as not being about the
+humanities, humanities keyword grouping
+
+32,420 (22% of all documents, 93% of
+humanities keywords documents)
+
+Total classified as being about science, all
+keyword groupings
+
+10,324 (7% of all documents)
+
+Total classified as being about science, science
+keyword grouping
+
+9,323 (6% of all documents, 10% of science
+keywords documents)
+
+Total classified as not being about science,
+science keyword grouping
+
+87,523 (59% of all documents, 90% of
+science keywords documents)
+
+Table 4: Number of documents by classification and keyword category. Classifications are not exclusive across all
+categories (percentages do not add up to 100%).
+
+While the articles we have collected address two overlapping publics – readers of
+campus newspapers and readers of top-circulating newspapers – our data also reveal
+fault lines between these publics. Table 5 shows that the majority of articles
+classified as being about the humanities are from student newspapers (91%), while
+only a small portion of articles classified as being about the humanities are from top
+newspapers (9%). Likewise, the majority of articles classified as being about science
+are also from student newspapers (79%), although a slightly larger portion of articles
+about science (as compared to those about the humanities) are from top newspapers
+(21%). These numbers suggest that student newspapers are more likely to publish
+articles about either science or the humanities than top newspapers; indeed, we might
+expect student newspapers to publish more articles about academic subjects of any
+kind than top-circulating newspapers. But when we compare the numbers of articles
+about the humanities and about science published in each type of source to one
+another, we see that articles about the humanities are disproportionately underrepresented in top newspapers and over-represented in student newspapers.23 When
+top newspapers do publish articles about either the humanities or science, these
+articles are even more likely than we might expect to be about science than about
+the humanities. And conversely, while student newspapers still publish more total
+pieces about science than they do about the humanities, they also tend to publish
+more pieces about the humanities than expected.
+
+8
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Grouping
+
+Number of documents (percentage share of documents in
+classification category)
+
+About humanities from top
+newspapers
+
+260 (9% of documents from all source types classified as
+being about the humanities)
+
+About humanities from student
+newspapers
+
+2,555 (91% of documents from all source types classified as
+being about the humanities)
+
+About science from top
+newspapers
+
+2,216 (21% of documents from all source types classified as
+being about science)
+
+About science from student
+newspapers
+
+8,108 (79% of documents from all source types classified as
+being about science)
+
+Table 5: Number of documents classified as being about the humanities and as about science by source type.
+
+Our data also reflect differences between campus communities. As Table 6 shows,
+the majority of articles classified as being about the humanities from student
+newspapers are from the newspapers of private institutions.24 Glancing at a list of
+the ten student newspapers that contribute the most articles to the humanities
+category (Table 7) reveals that these articles frequently appear not only in the
+newspapers of private institutions, but in the newspapers of some of the nation’s
+wealthiest and most elite private institutions: Stanford, Dartmouth, Harvard,
+Princeton, and Cornell all top the list.25 The situation is reversed when we examine
+articles that have been classified as being about science. The majority of these
+articles are from newspapers located at public institutions (Table 6), and the ten
+student newspapers that contribute the most articles to the science category include
+newspapers from many large public research universities (Table 8). This difference
+suggests a correlation between the institutional support and relative prestige of
+humanities disciplines at elite private institutions and the appearance of articles
+about the humanities in the student newspapers of those institutions. As Ayers
+emphasizes, “the more exclusive and expensive the college or university, by and
+large, the more established the relative position of the humanities.”26 Not all publics
+are equally accessible – or equally public. Our data reflect the extent to which even
+public discourse about the humanities is privatized, or at least centralized within the
+most exclusive campus communities in the United States. Like the humanities
+themselves, discussion of the humanities is, as Christopher Newfield writes, “a
+luxury good found mostly at wealthy private universities.”27
+9
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+Grouping
+
+Total
+Documents
+(percentage
+share of
+grouping)
+
+Documents from
+Student Newspapers at
+Private Institutions
+(percentage share of
+grouping)
+
+Documents from
+Student Newspapers at
+Public Institutions
+(percentage share of
+grouping)
+
+Documents from
+student newspapers
+
+102,615 (100%)
+
+36,833 (36%)
+
+65,005 (63%)
+
+Documents
+2,555 (100%)
+classified as being
+about the humanities
+from student
+newspapers
+
+1,610 (63%)
+
+939 (37%)
+
+Documents
+classified as being
+about science from
+student newspapers
+
+2,813 (35%)
+
+5,199 (64%)
+
+8,108 (100%)
+
+Table 6: Comparisons of 3 different groupings of our data: documents from student newspapers; documents
+classified as being about the humanities from student newspapers; and documents classified as being about science
+from student newspapers. The table lists the total number of documents in each category, the number of documents
+from student newspapers at private institutions, and the number of documents from student newspapers at public
+institutions. Numbers and percentages do not add up to 100% because some of our student newspaper data is not
+from the US (see note 19).
+
+Top 10 sources for documents
+about the humanities from student
+newspapers
+
+Number of Documents (percentage share of 2,555,
+or total documents about the humanities from
+student newspapers)
+
+The Stanford Daily (Stanford
+University)
+
+320 (13%)
+
+The Dartmouth (Dartmouth College)
+
+101 (4%)
+
+The Harvard Crimson (Harvard
+University)
+
+90 (4%)
+
+The Daily Princetonian (Princeton
+University)
+
+75 (3%)
+
+Cornell Daily Sun (Cornell
+University)
+
+60 (2%)
+
+The Brown Daily Herald (Brown
+University)
+
+47 (2%)
+
+10
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Daily Bruin (University of California
+Los Angeles)
+
+46 (2%)
+
+The Columbia Spectator (Columbia
+University)
+
+44 (2%)
+
+The Duke Chronicle (Duke
+University)
+
+31 (1%)
+
+Cavalier Daily (University of
+Virginia)
+
+29 (1%)
+
+Table 7: The top 10 sources from documents about the humanities published in student newspapers.
+
+Top 10 sources for documents
+about science from student
+newspapers
+
+Number of Documents (percentage share of 8,108,
+or total documents about science from student
+newspapers)
+
+The Stanford Daily (Stanford
+University)
+
+597 (7%)
+
+The California Aggie (University of
+California Davis)
+
+310 (4%)
+
+Daily Californian (UC Berkeley)
+
+231 (3%)
+
+The Kaleidoscope (University of
+Alabama Birmingham)
+
+190 (2%)
+
+Daily Bruin (University of California
+Los Angeles)
+
+179 (2%)
+
+The Tartan (Carnegie Mellon
+University)
+
+168 (2%)
+
+Michigan Independent (University of
+Michigan Ann Arbor)
+
+145 (2%)
+
+Colorado Daily (University of
+Colorado Boulder)
+
+127 (2%)
+
+The Daily Cardinal (University of
+Wisconsin Madison)
+
+122 (2%)
+
+The Daily Texan (University of Texas 122 (2%)
+Austin)
+Table 8: The top 10 sources from documents about science published in student newspapers.
+
+11
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+Public Discourse About the Humanities
+To examine the themes and keywords that surface in articles about the humanities,
+and to bring out the salient features of such discourse in comparison with discourse
+about science, we combined the documents our model predicted were about the
+humanities with those it predicted were about science to produce a collection of
+13,139 total documents. We have examined this collection in two ways. We
+compared articles about the humanities to articles about science by running a
+Wilcoxon rank sum test to discover the most distinctive words in each category. 28
+We also produced a 100-topic model of this data.29 To analyze this topic model, we
+first examined the top 100 articles associated with each topic and identified 12 topics
+as those with the highest concentrations of top articles that our classifier categorized
+as being about the humanities, 69 topics as those with the highest concentrations of
+top articles about science, and 19 topics as those that fall in the middle.30 We then
+created a label for each topic based on an assessment of each topic’s top keywords
+and on reading its top articles.
+This reading process suggested to us that throughout the 100 topics of our model run
+three distinct though interrelated modes of public discourse, or ways of talking about
+the humanities or science. We designate these modes here as the communicated, the
+infrastructural, and the debated. Articles that contribute to the “communicated
+mode” are often news items that convey the substance and content of humanities
+and/or science projects, practices, research, and results. Articles associated with the
+“infrastructural mode” tend to be informational and describe the systems, built
+environments, bureaucracies, people, materials, and resources necessary for the dayto-day operations of a variety of institutions, including but not limited to institutions
+of higher education. And articles in the “debated mode” detail controversial issues
+and often take the form of opinion pieces, editorials, or reports on specific debates.
+Such mode designations represent a human interpretation of machine learning; they
+provide another dimension through which to view a topic model by registering our
+understanding of how language resonates when the various components of a model
+– keywords, articles, and topics – come together. The modes we identify act as an
+interpretive framework for understanding our topic model rather than as exclusive
+categories, as modes crisscross and overlap. Articles communicating research or
+12
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+debating an issue will sometimes also presuppose particular institutions and
+infrastructures, for example, and single topics can easily contain articles that
+contribute to more than one mode. Even so, in the discussion that follows, we include
+tables representing the topics that we find to be most meaningfully associated with
+different modes in order to identify broad trends in public discourse about the
+humanities and the sciences.31
+As we discuss in greater detail below, we find that articles about science that
+contribute to the communicated mode report directly on the results of scientific
+research, whereas articles about the humanities that contribute to this mode mediate
+humanistic knowledge through descriptions of events and classes that foreground an
+audience of attendees or students in addition to the implied audience of newspaper
+readers. Articles about science contributing to the infrastructural mode reference
+institutions ranging from the workplace to governmental agencies, whereas articles
+about the humanities in this mode center institutions of higher education. And
+articles about science associated with the debated mode mobilize scientific
+knowledge in relation to specific issues in the public sector, suggesting concrete
+actions, whereas articles about the humanities associated with this mode are more
+abstract, often discussing the importance of the humanities in general without
+offering an account of how humanistic knowledge could be applied to issues of
+public concern.
+The articles about science in our topic model that contribute to the communicated
+mode convey scientific research results to their audience through a relatively
+straightforward act of reporting. Language in topics associated with such articles is
+concrete and specific (Table 9). The headlines of sample articles in each of these
+topics foreground scientific findings: “BU researchers unveil underground world
+where fungi fight climate change” (topic 80); “Study finds link between proteins,
+electroconversion therapy response” (topic 81); and “UMass researchers studying
+migratory patterns of bluefin tunas and other fish” (topic 84).32 In general, headlines
+of articles associated with the communicated science mode adhere to a remarkably
+formulaic pattern, with similar phrasing occurring in articles associated with topics
+related to astronomy, cancer, viral infections, neuroscience, zoology and botany,
+human ancestry and genetics, polar ice caps, cell biology, archaeology and
+paleontology, quantum physics, planetary geology, health, and robotics, among
+13
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+others.33 The language is that of discovery and investigation, and many pieces use
+headline templates such as “Researchers find…” or “Studies show…” to
+communicate results published in scientific papers. Such language reaches a pitch in
+topic 32, which we labeled as “Research Findings and Publications,” consisting of
+words such as “study,” “researchers,” “results,” “findings,” and “data.”34 We might
+characterize the discursive pattern common to the communicated sciences as a single
+act of communication: information follows a direct route from the reporter to the
+primary audience of a reading public.35
+Topic
+
+Our Topic
+Label
+
+80
+
+Plants and
+Microbes
+
+81
+
+84
+
+32
+
+Top Keywords
+
+Topic
+Weight
+
+plants, plant, carbon, soil,
+nitrogen, algae, oxygen,
+organisms, water, grow, species,
+dioxide, bacteria, blooms, fungi,
+photosynthesis
+Psychology,
+mental, people, stress, psychology,
+Psychiatry, and depression, anxiety, behavior,
+Mental Health disorder, emotional, social,
+therapy, treatment, disorders,
+meditation, symptoms
+Aquatic Life
+fish, sea, marine, species, ocean,
+water, coral, scientists, salmon,
+waters, bears, fishing, animals,
+food, sharks
+Research
+study, researchers, research, found,
+Findings and
+professor, published, results,
+Publications
+studies, findings, different, author,
+new, team, data, lead
+
+0.3
+
+Articles (of
+Top 100)
+Classified as
+About Science
+100
+
+0.5
+
+97
+
+0.5
+
+100
+
+4.1
+
+100
+
+Table 9: Sample Topics contributing to the “Communicated Science” mode.
+
+This mode of research communication is almost entirely absent from articles that
+our classifier tagged as being about the humanities. In comparison to the examples
+cited above, consider the topics shown in Table 10 that we have designated as
+contributing meaningfully to the communicated humanities mode. Headlines of
+sample articles associated with these topics show us a humanities in medias res,
+detailing events, projects, course programming, and accessibility efforts: “CLAS to
+offer new major in Arabic and Islamic Civilizations” (67); “Uruguayan poet’s
+campus visit includes reading” (18); “Panel Discussion at Dickinson College
+14
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Addresses Feminism Within Sororities” (61); and “UCLA professors digitize
+collections to allow greater access” (46).36 Most importantly, these articles operate
+through a double layer of communication. Science articles, as we saw above, relay
+research results directly to the reader. Humanities articles also present humanistic
+knowledge, but, in contrast to science articles, this knowledge is often described in
+the process of being conveyed to an audience. Such articles include discussion of the
+objects and outcomes of humanities research, but only in the context of an act of
+communication such as a class or a talk, which is then communicated again to the
+reader. Instead of simply conveying the results of literary analysis, for example, an
+article might convey such analysis as part of the context of a poetry reading.37 Instead
+of focusing exclusively on a faculty member’s research, an article might include a
+description of such research as part of a speaker’s biography that introduces a lecture
+or panel discussion.38 Furthermore, many articles participating in this mode
+explicitly thematize communication itself, particularly in relation to language
+learning or translation. The study of language and culture, for example, is described
+not only as providing students with “distinct communication skills” but also with
+encouraging “a deeper understanding of what it means to communicate.”39
+
+Topic
+
+Our Topic
+Label
+
+67
+
+Languages
+and Cultures
+
+18
+
+61
+
+Top Keywords
+
+Topic
+Weight
+
+language, languages, abroad,
+english, study, studies,
+spanish, french, foreign,
+culture, literature, history,
+classics, italian, german
+Literature
+english, writing, literature,
+book, read, poetry, reading,
+books, literary, write,
+humanities, creative, writers,
+poems, poem
+Diversity and studies, professor, diversity,
+Social Justice gender, black, race, american,
+ethnic, white, issues, social,
+women, history, justice, asian
+
+15
+
+0.5
+
+Articles (of Top 100)
+Classified as About
+Humanities
+94
+
+0.8
+
+94
+
+0.6
+
+93
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+46
+
+Digital
+Humanities
+
+humanities, digital, duke,
+brown, unl, projects,
+medieval, scholars, project,
+library, history, collection,
+dorm, new, books
+
+0.3
+
+89
+
+Table 10: Topics contributing to the “Communicated Humanities” mode.
+
+As a function of their doubled communication, articles about the humanities often
+foreground an embedded audience, particularly students, in addition to the implied
+audience of newspaper readership. Newspaper readers see “many students
+gathered...to listen” to a poetry reading, for example, and their own act of “listening”
+occurs in concert with students’ reactions, as they watch them “interacting with
+living poetry.”40 Similarly, academic fields come to life only through student
+participation. We learn key concepts in disability studies, for example, through the
+lens of students engaging with assigned texts in the classroom; likewise, discussion
+of an American Indian Studies minor, which seeks “to expose” students “to the
+experiences and history of American Indian folks,” also exposes the reader to this
+field, in turn.41 Readers of these articles take their place among layers of other
+readers – the “faculty and students...studying century-old documents such as...Emily
+Dickinson’s poetry and Thomas Jefferson’s journals” in a college library, the
+students who “go to [their] iPhone...as [they’re] walking back to [their] dorm room”
+and “start reading the letters of Ben Franklin,” and “a new generation of readers” in
+high school who are just beginning “to discover what literature can bring to their
+lives.”42 Such publics are thus not just invoked or thematized; rather, they are
+integral to the article’s structure. The reader accesses the humanities in these articles
+through the mediation of extant audiences.
+These articles are not only populated by publics already participating in the
+humanities; they also invite further, future publics to join them. Pieces on
+digitization efforts and the digital humanities often emphasize this invitation.
+Common refrains highlight the “benefits” of “allowing access to materials that
+otherwise wouldn’t be made public” and the “ability to share our resources
+worldwide” through digitization.43 At stake is a “radical democratization of
+knowledge” that resonates differently than articles about science associated with the
+communicated mode.44 Though outward facing, the relaying of scientific research
+tends to preserve a greater distance between the expert and the lay public. Such
+
+16
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+distance is somewhat collapsed in articles about the humanities when digital tools,
+for example, are described as “giving more power to the reader to make the
+decisions” by allowing literary artifacts to become “like a do-it-yourself kit.”45 The
+implication is that “anybody,” like the student of digital humanities, could learn to
+“tell meaningful stories with data,” adding their own acts of communication to those
+of scholars.46
+These articles make clear that one of the foremost acts of humanities communication
+is college teaching. This association of the humanities with teaching also appears in
+our second category of public discourse about the humanities, articles about the
+humanities associated with the infrastructural mode. The topics that we have
+identified as including many articles associated with this mode make the
+bureaucracy of higher education visible, as evidenced by the pedagogical,
+institutional, and procedural language listed in Table 11. What these examples make
+clear is that, in contrast to articles about science that participate in this mode, which
+we will detail shortly, articles about the humanities are associated almost exclusively
+with the language of college administration, and they are well-peopled with
+educational and administrative actors. Keywords such as “students,” “faculty,”
+“committee,” “professors,” and “dean” all appear in these topics, along with
+“courses,” “curriculum,” “departments,” “major,” “minor,” “teaching,” “semester,”
+“learning,” and “classroom,” which describe the building blocks of humanities
+infrastructure.47 Articles that contribute to this mode are not just “related” to
+institutions of higher education; rather, they are evidence of day-to-day functioning
+of these institutions, including announcements of new majors and minors, reports on
+meetings, and articles about new faculty members or administrators who have
+recently been hired.
+Topic
+
+Our Topic
+Label
+
+Top Keywords
+
+Topic
+Weight
+
+11
+
+General
+Education
+Requirements
+
+students, courses, core,
+requirements, curriculum,
+classes, education,
+requirement, course, general,
+new, required, student, class,
+college
+
+1.5
+
+17
+
+Articles (of Top
+100) Classified as
+About Humanities
+100
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+49
+
+College
+Bureaucracy
+
+38
+
+College Faculty
+and Leadership
+
+99
+
+College Courses
+and Enrollment
+
+15
+
+College
+Pedagogy
+
+faculty, proposal, committee,
+meeting, students, uw,
+proposed, changes, email,
+members, process, university,
+decision, change, college
+faculty, department,
+departments, tenure,
+professors, professor,
+members, teaching,
+university, college, dean,
+track, academic, dartmouth,
+position
+students, department, major,
+majors, courses, classes,
+minor, departments, year,
+studies, number, new,
+enrollment, program, student
+students, course, class,
+classes, courses, teaching,
+professor, semester, student,
+taught, teach, professors,
+learning, learn, classroom
+
+1.0
+
+96
+
+1.1
+
+92
+
+1.6
+
+88
+
+1.5
+
+82
+
+Table 11: Topics contributing to the “Infrastructural Humanities” mode.
+
+This language evidences the extent to which, as many scholars have argued, the
+concept of “the humanities” itself is primarily administrative. As Ayers writes, “the
+idea of the humanities developed simultaneously with the machinery of the
+humanities.”48 This entanglement with the language of university administration,
+however, belies a complex tension: in the articles that contribute to this discourse,
+the humanities are depicted as simultaneously embedded within the bureaucratic
+processes of academia – making decisions, holding meetings, and allocating
+resources – and as alienated from those structures, on unstable footing amidst larger
+infrastructural changes in higher education. Discussions of core courses, for
+example, provide evidence of, as Michael Meranze has emphasized, “the
+identification of the humanities with teaching and general education,” yet these
+articles also demonstrate a tense push-and-pull relationship between the humanities
+and curricular requirements.49 At stake is the extent to which the humanities factor
+into, as one article puts it, “what a…graduate should look like.”50 In contrast to the
+positivity and enthusiasm that characterize articles associated with the
+communicated mode, a sense of crisis often pervades articles associated with the
+infrastructural mode. In relation to enrollment patterns, for example, some directly
+18
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+name “the worsening economy” since 2008, and others address the impact of faculty
+labor conditions and university hiring policies on undergraduate teaching and course
+offerings.51 Articles detail sacrificed second language requirements and newly
+prioritized corporate values of success pushed by what one faculty member
+diagnoses as the agenda of “businessmen not educators.”52 Another faculty
+member’s assessment of her colleagues’ reactions to restructuring sums it up well:
+“panic in the humanities.”53
+Articles that our classifier categorized as being about the sciences reveal a different
+infrastructural topography. While both humanities and science articles demonstrate
+attention to teaching and educational institutions, the apparatuses of research align
+much more closely with articles about science, as seen in the topics listed in Table
+12. Article headlines associated with the topic we labeled “Research Methods,
+Infrastructure, and Administration” (26), for example, document the establishment
+of research centers and the launching of interdisciplinary initiatives. Articles
+associated with other topics listed in this table celebrate “the advantages of increased
+speed and power to researchers” provided by advanced computational equipment
+(94), showcase a vivid sense of the collaboration and teamwork necessary for
+scientific research (65), and emphasize that “research is for students, too” (45).54
+Topic
+
+Our Topic Label
+
+Top Keywords
+
+Topic
+Weight
+
+26
+
+Research
+Methods,
+Infrastructure,
+and
+Administration
+
+2.3
+
+94
+
+Data Science and
+Computational
+Infrastructure
+
+1.0
+
+99
+
+65
+
+Collaboration and
+Teamwork
+
+research, science, new,
+technology, world, field, work,
+scientific, knowledge,
+development, fields,
+engineering, technologies,
+approach, understanding
+data, information, computer,
+researchers, analysis, system,
+model, computing, models,
+large, systems, network, big,
+new, analyze
+project, team, work, working,
+professor, engineering, design,
+projects, research, create, group,
+worked, develop, goal, based
+
+Articles (of Top
+100) Classified
+as About
+Science
+82
+
+1.7
+
+97
+
+19
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+45
+
+Student Research
+
+research, lab, students, work,
+working, biology, student,
+graduate, science, project,
+experience, professor, labs,
+field, summer
+
+1.2
+
+97
+
+Table 12: Research-focused sample topics contributing to the “Infrastructural Science” mode.
+
+The differences we see between articles participating in the infrastructural
+humanities mode and those participating in the infrastructural science mode are also
+suggested by the results of our Wilcoxon rank sum test. The words that are most
+distinctive of articles about the humanities are associated with education, and
+specifically with education as it is situated within institutions of higher education
+(Table 13). Words like “students,” “courses,” “education,” “college,” “major,”
+“department,” “academic,” “university,” and “faculty” occur more frequently in
+articles about the humanities than they do in articles about science.55 In contrast, the
+list of words most distinctive of articles about the sciences includes “researchers,”
+“data,” and “lab” (Table 14).
+Term
+
+Frequency
+
+Percentage Increase
+
+Wilcoxon Statistic
+
+humanities
+
+4.39
+
+5246%
+
+21.7
+
+students
+
+6.52
+
+272%
+
+15.8
+
+english
+
+1.21
+
+7475%
+
+11.5
+
+courses
+
+1.83
+
+1249%
+
+11.4
+
+history
+
+1.42
+
+648%
+
+10.8
+
+education
+
+1.72
+
+320%
+
+10.7
+
+literature
+
+0.96
+
+2712%
+
+10.6
+
+college
+
+1.37
+
+621%
+
+10.5
+
+student
+
+1.3
+
+259%
+
+10.3
+
+majors
+
+1.23
+
+1177%
+
+10.0
+
+major
+
+1.88
+
+374%
+
+9.8
+
+faculty
+
+1.98
+
+474%
+
+9.6
+
+course
+
+1.78
+
+406%
+
+9.2
+
+20
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+arts
+
+0.97
+
+1566%
+
+8.4
+
+class
+
+1.23
+
+344%
+
+8.3
+
+academic
+
+0.77
+
+447%
+
+8.1
+
+classes
+
+1.29
+
+618%
+
+8.0
+
+university
+
+1.21
+
+287%
+
+8.0
+
+philosophy
+
+0.67
+
+2044%
+
+7.5
+
+department
+
+1.73
+
+539%
+
+7.3
+
+Table 13: A list of the top 20 most distinctive words in articles about the humanities compared to articles about
+science. “Frequency” refers to the term’s relative frequency per 500 terms in articles about the humanities;
+“Percentage Increase” refers to the percentage increase in use of that term in articles about the humanities as
+compared to articles about science; and “Wilcoxon Statistic” is a measure of how distinctive that term is to articles
+about the humanities (the higher the value, the more distinctive the term is to this set of articles). We tested a
+random selection of 500 documents from each category, only including words that appeared at least 5 times across
+all documents in at least 1 test set. All comparisons listed have p-values below 1 X 1012.
+
+Term
+
+Frequency
+
+Percentage Increase
+
+Wilcoxon Statistic
+
+scientists
+
+1.07
+
+96%
+
+10.97
+
+researchers
+
+0.94
+
+94%
+
+9.02
+
+science
+
+2.74
+
+56%
+
+7.81
+
+research
+
+2.23
+
+56%
+
+7.30
+
+team
+
+0.54
+
+91%
+
+5.56
+
+scientific
+
+0.58
+
+78%
+
+5.45
+
+health
+
+0.82
+
+82%
+
+5.27
+
+data
+
+0.90
+
+78%
+
+5.19
+
+found
+
+0.57
+
+64%
+
+4.54
+
+earth
+
+0.44
+
+93%
+
+4.30
+
+patients
+
+0.53
+
+97%
+
+4.29
+
+disease
+
+0.47
+
+96%
+
+4.28
+
+project
+
+0.61
+
+56%
+
+3.54
+
+developed
+
+0.25
+
+67%
+
+3.49
+
+21
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+lab
+
+0.43
+
+70%
+
+3.46
+
+cells
+
+0.53
+
+100%
+
+3.45
+
+technology
+
+0.79
+
+54%
+
+3.33
+
+humans
+
+0.28
+
+86%
+
+3.32
+
+cancer
+
+0.62
+
+98%
+
+3.25
+
+million
+
+0.24
+
+64%
+
+3.23
+
+Table 14: A list of the top 20 most distinctive words in articles about science compared to articles about the
+humanities. “Frequency” refers to the term’s relative frequency per 500 terms in articles about science;
+“Percentage Increase” refers to the percentage increase in use of that term in articles about science as compared to
+articles about the humanities; and “Wilcoxon Statistic” is a measure of how distinctive that term is to articles about
+science (the higher the value, the more distinctive the term is to this set of articles). We tested a random selection of
+500 documents from each category, only including words that appeared at least 5 times across all documents in at
+least 1 test set. All comparisons listed have p-values below .002.
+
+The different language that characterizes articles about the humanities and articles
+about science also implies different publics. Whereas the infrastructural language of
+the humanities aligns more closely with institutions of higher education, within
+articles about science associated with the infrastructural mode, the university
+registers in public discourse as one star among a constellation of many overlapping
+institutions (Table 15). Alongside the university setting of the topic we labeled
+“Campus Construction” (69), articles contributing to this mode mention many
+additional institutions and infrastructures that exceed the framework of higher
+education, such as the primary and secondary schools central to topic 76, labeled
+“K-12 STEM,” and the broader healthcare systems indexed by topic 64, labeled
+“Healthcare Research and Administration.” Top articles associated with the topic we
+labeled “Industry and Investment” (9) – many of which come from top-circulating,
+rather than student, newspapers – describe issues like venture capital, detail “the
+deployment of university research into the market,” and discuss the process of
+“securing commercial development deals for scientific discoveries.”56 Topic 56,
+labeled “Risk, Safety, and Standards,” gathers together articles that detail the
+relationships between scientific practice and accreditation bodies, legal systems, and
+governmental review processes at both state and federal levels.57 And articles
+associated with topic 8, which we labeled “Scientific Publishing and Research
+Integrity,” imply the dual publics of both the scientific community and the layperson.
+
+22
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+At stake are the professional standards of what it means to “do good science,” as
+well as how to avoid an outcome in which “the general public loses trust in us.”58
+Topic
+
+Our Topic Label
+
+Top Keywords
+
+Topic
+Weight
+
+69
+
+Campus
+Construction
+
+1.2
+
+76
+
+K-12 STEM
+
+1.1
+
+95
+
+64
+
+Healthcare
+Research and
+Administration
+
+1.0
+
+95
+
+9
+
+Industry and
+Investment
+
+1.1
+
+100
+
+56
+
+Risk, Safety, and
+Standards
+
+2.1
+
+100
+
+8
+
+Scientific
+Publishing and
+Research
+Integrity
+
+building, new, space, campus,
+students, facility, center,
+construction, science, facilities,
+labs, buildings, lab, project,
+floor
+students, science, school,
+education, learning, teachers,
+high, math, schools, stem,
+teaching, learn, teacher, teach,
+kids
+health, medical, care, patients,
+medicine, patient, doctors,
+clinical, doctor, physicians,
+hospital, physician, public, uab,
+treatment
+companies, company, industry,
+technology, business, tech,
+market, year, based, product,
+development, products, new,
+start, money
+report, agency, safety, officials,
+federal, public, year,
+government, state, law, risk,
+director, group, experts,
+including
+scientific, science, research,
+article, published, scientists,
+news, paper, journal, data, work,
+peer, journals, articles, editor,
+results
+
+Articles (of Top
+100) Classified
+as About
+Science
+90
+
+0.7
+
+91
+
+Table 15: Further sample topics contributing to the “Infrastructural Sciences” mode.
+
+Articles about the humanities contributing to our third category of discourse, the
+debated mode, solidify the connection between the humanities and higher education.
+This mode is the closest relative of the scholarly defenses of the humanities so
+common in academia; articles broadly associated with this category often include
+opinion pieces, letters to the editor, and reports on controversial issues that focus
+23
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+explicitly on why and how the humanities should be taught in college. Table 16
+identifies the topics that we find to be most meaningfully associated with the debated
+humanities mode. In articles contributing to these topics, the crisis in the humanities
+is explicitly and consistently named.59 Many pieces begin with a recognition of a
+post-2008 economic landscape; authors write “as one concerned with the perceived
+decline of the humanities” and situate themselves “at a time when support for the
+humanities continues to dwindle.”60 “The cost to receive an education in the United
+States has risen dramatically since our parents went to college,” one student writes,
+leading the current generation to evaluate rigorously whether a humanities education
+is “worth it.”61
+Topic
+
+Our Topic
+Label
+
+Top Keywords
+
+Topic
+Weight
+
+22
+
+Humanities
+Disciplines
+
+25
+
+History and
+Intellectual
+Traditions
+
+100
+
+Jobs and
+Degrees
+
+humanities, philosophy,
+1.3
+students, arts, education, history,
+english, university, college,
+disciplines, study, literature,
+fields, studies, sciences
+history, culture, western, world, 1.1
+cultural, century, historical,
+society, ideas, political, today,
+modern, social, intellectual,
+academic
+students, stem, skills, job,
+1.6
+education, career, majors,
+college, degree, jobs, major,
+fields, degrees, engineering,
+business
+
+Articles (of Top
+100) Classified as
+About Humanities
+100
+
+93
+
+87
+
+Table 16: Topics contributing to the “Debated Humanities” mode.
+
+Debates about the humanities in these articles quickly escalate into debates about the
+meaning of a college education at large. As Meranze has argued, the humanities have
+become “symbolically central to debates about the university’s place in
+contemporary society” even as such debates often serve to render humanities
+disciplines “structurally subordinate” to professional schools in particular.62 In these
+articles, the humanities often emerge as a kind of collegiate canary – the health of
+the humanities can be an indicator for the health of higher education more broadly,
+and to imagine an exemplary humanities education is also to imagine an ideal college
+experience. Student writers are particularly cogent in diagnosing “a gradual shift in
+24
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+the view of the purpose of higher education;” as one student writes, “focus is moving
+away from the pursuit of knowledge and acquiring a greater understanding of our
+place in the world, in favor of specific career training.”63 While recognizing past and
+ongoing sea changes, articles we associate with this mode also urge readers to
+rethink the future of education systems. In the face of objections that “the humanities
+are interesting but impractical,” one student argues, “the solution must not be to shun
+the humanities altogether, but to reform our expectations about what an education
+is.”64 Debates about the humanities in core curricula prompt assertions that “we must
+re-conceptualize the value systems that underlie liberal education” and spark
+questions about “the primary obligation of the university in America.”65
+Interestingly, however, some students are quick to dismantle such rhetoric,
+criticizing the impulse to “[conflate] the humanities with education in general” and
+insightfully differentiating that “the decline in humanities majors does not mean a
+decline in the humanities.”66
+Articles about the humanities that contribute to the debated mode often justify the
+humanities by pivoting from the immediate public of college students to larger, more
+general arguments about the public good. Many of these articles claim that studying
+the humanities is a pursuit that, by making people “historically and politically
+aware,” “prepares students to become citizens of the world” and forms a crucial part
+of a “healthy civic life.”67 By “developing social consciousness and our ideas of
+justice” and shaping voters and jurists “able to consider where other people are
+coming from,” the humanities emerge in these articles as central to citizenship.68 As
+one article puts it, “democracy is...dependent on a society that is informed by the
+humanities.”69
+Articles about science contributing to the debated mode also often invoke public
+engagement, but they do so in a way that mobilizes specific research content in
+relation to specific issues, referring to laws, bills, hearings, policies, and presidential
+agendas to provide context for their claims. Table 17 provides examples of topics
+that we associate with this mode. In a typical progression, an article on cloning (topic
+5) begins with a political frame (“President Bush is working with Congress on
+legislation that would outlaw human cloning in the United States”), then moves to
+an ethical claim (“As enlightened human beings, we have an ethical responsibility
+not to clone people”), then recounts the scientific process behind the debate in depth
+25
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+(“A clone is created when a cell’s genetic material is implanted into an egg cell that
+has had its genetic material removed”).70 Similar patterns and argumentative
+strategies occur in articles contributing to topics about stem cells (55), drug use (19),
+and genetically modified organisms (52).71 The topic we labeled “Science and
+Politics” (14) gathers together articles characterized by this language, as we can see
+from top keywords such as “science,” “president,” “political,” “policy,” and
+“government.” Articles associated with these topics advocate for a wide variety of
+relationships between science and the democratic process, ranging from the
+perspective that “federal and state legislators have no business tying scientists’
+hands” to arguing for “more scientists and engineers to leave their labs and
+universities and run for public office, including U.S. Congress.” 72 Authors also
+question the role of science in public education. Articles on evolution and intelligent
+design associated with topic 7, for example, ask the reader to consider what “a
+teacher of science” “should be responsible for” and what the “purpose” of “a science
+classroom” is.73
+
+Topic
+
+Our Topic
+Label
+
+Top Keywords
+
+Topic
+Weight
+
+5
+
+Cloning
+
+0.6
+
+55
+
+Stem Cell
+Research
+
+0.8
+
+100
+
+19
+
+Drugs
+
+0.7
+
+100
+
+52
+
+Genetically
+Modified
+Organisms
+
+human, cloning, ethical, embryos,
+scientists, ethics, cloned, embryo,
+technology, research, babies, egg,
+rights, clone, genetic
+stem, cells, cell, research,
+embryonic, human, embryos, life,
+scientists, researchers, bush,
+funding, diseases, potential, lines
+drug, drugs, marijuana, patients,
+medical, fda, effects, treatment, pain,
+addiction, people, trials, doctors,
+medications, pharmaceutical
+food, crops, genetically, modified,
+farmers, plant, agriculture, corn,
+gmos, foods, crop, production,
+plants, organic, genetic
+
+Articles (of Top
+100) Classified
+as About
+Science
+99
+
+0.6
+
+100
+
+26
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+14
+
+Science and
+Politics
+
+7
+
+Teaching
+Evolution
+
+science, president, political,
+scientific, administration, policy,
+bush, public, bill, scientists,
+government, obama, trump,
+congress, state
+evolution, science, theory,
+intelligent, design, scientific,
+creationism, god, school, schools,
+religious, theories, evidence,
+teaching, taught
+
+1.0
+
+98
+
+0.8
+
+100
+
+Table 17: Sample Topics contributing to the “Debated Science” mode.
+
+The specificity of articles about science participating in this mode differs markedly
+from the relative abstraction of articles about the humanities that contribute to the
+debated mode. The greatest degree of specificity in articles about the humanities
+associated with this mode emerges in those connected to topic 25 (Table 16), which
+we labeled “History and Intellectual Traditions,” about the status of the Western
+canon in debates around core curricula. Here, authors assess “books that have
+contributed to the great Western conversation” and grapple with the concrete
+composition of “an ideal humanistic education” that will create “global-minded and
+ethical citizens.”74 Other articles about the humanities associated with this mode
+gesture briefly towards opportunities for the application of humanistic knowledge,
+writing that “the demand for incorporating ethics, rhetoric, history or epistemology
+into topics like artificial intelligence, climate change, technological disruption or
+machine learning has increased dramatically,” and that the key is “to connect
+humanistic insight to other disciplines, from atmospheric sciences to informatics.” 75
+Yet there is little concrete description of how such processes of application to the
+public sphere would actually take place.76 Encounters with specific texts – like
+“expos[ure] to the anguish of Othello” – are quickly abstracted into values like
+“learning leadership” and “commit[ting] ourselves to the service of others” with
+little clear sense of the steps in between.77
+The word “humanities” itself thus often indexes a strange absence in these articles.
+Unlike in articles about science in the debated mode, there is often a lack of clarity
+about how specific conclusions drawn from humanistic research could be leveraged
+in service to specific facets of the public good.78 These articles are about the
+humanities in the sense that they directly name the humanities as a subject of debate,
+reflection, concern, and interest, but they are also about the humanities in the sense
+27
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+of skirting around a central focus. They often hold the humanities in their peripheral
+vision, focusing on the skills, values, social benefits, and flexible career paths to
+which the study of humanistic subjects might lead, but often substituting such
+aboutness for a concrete account of what humanistic knowledge actually entails. If
+a reader didn’t already have a conception of what the act of humanistic research is,
+then it would be difficult to construct such a conception from reading these articles.79
+Taken together, the discursive modes that we have explored here suggest an inverse
+relationship in public discourse about the humanities between the representation of
+specific humanistic practices and content and the justification of the humanities in
+response to economic crisis. Articles about the humanities associated with the
+communicated mode have a high degree of specificity: though we don’t see the same
+straightforward presentation of research findings that characterize articles about
+science associated with this mode, these articles still lay out concrete details of
+humanities courses, research projects, publications, and events. The humanities
+crisis is not a prominent frame in such articles. At the other end of the spectrum,
+articles about the humanities associated with the debated mode often discuss this
+crisis, but they also often discuss the humanities in a general way. While there is no
+single way of discussing the humanities in newspapers today, what is often missing
+from such discussions are articles that connect the concrete particulars of humanistic
+knowledge and practices to larger values and outcomes.
+
+Humanities Public Discourse
+Our above analysis focuses on articles about the humanities, but as Table 4 indicates,
+such articles constitute only a small portion of all the articles in our corpus, even
+among those articles that contain humanities keywords. How does the concept of the
+humanities appear in this larger portion of our corpus, and how might such
+appearances shift our understanding of what it means to talk “about” the humanities
+in newspapers today? To answer these questions, we turn to those articles that
+contain humanities or science keywords but that our classifiers did not categorize as
+being about the humanities or science. These articles comprise most of our data, and
+they generally feature seemingly incidental mentions of the words “humanities,”
+“liberal arts,” “science,” or “sciences.” As we might expect, articles that contain such
+
+28
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+incidental mentions of these words but that aren’t about the humanities or science
+are more broadly like one another than articles that have been classified as being
+about the humanities or science are to each other. When we compared articles that
+contain humanities keywords but that aren’t about the humanities to articles that
+contain science keywords but that aren’t about science using the Wilcoxon rank sum
+test mentioned in the previous section, we found many fewer statistically distinctive
+words for each category than we did when we ran this test comparing articles about
+the humanities to articles about science.80 This makes sense, given that articles
+belonging to these two categories are from the same kinds of sources and are not
+held together by anything other than the presence of specific keywords.
+There are some differences between these categories, however. For instance, as we
+can see in Table 18, articles that contain humanities keywords but that haven’t been
+classified as being about the humanities are still more likely to contain words
+associated with education, specifically with higher education, than articles
+containing science keywords but that haven’t been classified as being about science.
+Indeed, many of the words that are most likely to appear in these articles – including
+“professor,” “courses,” and “studies” – look similar to the most distinctive words in
+articles about the humanities (Table 13).
+
+Term
+
+Frequency
+
+Percentage Increase
+
+Wilcoxon Statistic
+
+humanities
+
+2.45
+
+1453%
+
+30.3
+
+arts
+
+2.01
+
+380%
+
+9.33
+
+art
+
+2.46
+
+228%
+
+6.6
+
+history
+
+1.82
+
+114%
+
+5.5
+
+professor
+
+2.58
+
+44%
+
+5.1
+
+english
+
+1.08
+
+142%
+
+5.1
+
+book
+
+1.62
+
+204%
+
+4.9
+
+program
+
+2.98
+
+65%
+
+4.6
+
+music
+
+1.49
+
+81%
+
+4.2
+
+29
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+cultural
+
+0.63
+
+159%
+
+4.1
+
+works
+
+1.08
+
+129%
+
+4.0
+
+work
+
+3.21
+
+40%
+
+3.9
+
+books
+
+0.90
+
+138%
+
+3.9
+
+director
+
+1.70
+
+49%
+
+3.8
+
+literature
+
+0.53
+
+177%
+
+3.8
+
+courses
+
+0.99
+
+96%
+
+3.6
+
+artists
+
+0.80
+
+435%
+
+3.6
+
+culture
+
+0.82
+
+69%
+
+3.4
+
+writing
+
+1.13
+
+182%
+
+3.3
+
+studies
+
+0.95
+
+72%
+
+3.3
+
+Table 18: A list of the top 20 most distinctive words in articles that contain humanities keywords but that our
+classifier did not categorize as being about the humanities compared to articles that contain science keywords but
+that our classifier did not categorize as being about science. “Frequency” refers to the term’s relative frequency per
+500 terms in articles containing humanities keywords; “Percentage Increase” refers to the percentage increase in
+use of that term in articles containing humanities keywords as compared to articles containing science keywords;
+and “Wilcoxon Statistic” is a measure of how distinctive that term is to articles containing humanities keywords
+(the higher the value, the more distinctive the term is to this set of articles). We tested a random selection of 1500
+documents from each category, only including words that appeared at least 5 times across all documents in at least
+1 test set. All comparisons listed have p-values below .001.
+
+But Table 18 also includes words that don’t appear in Table 13, such as “cultural,”
+“books,” “director,” and “program.” These words point us toward a salient feature
+of what we are calling humanities public discourse. When we used a Wilcoxon rank
+sum test to compare these articles to public discourse about the humanities, or
+articles our classifier categorized as being about the humanities, we found that
+articles containing the word “humanities” but that our classifier did not categorize
+as being about the humanities contain more frequent “event language” – words such
+as “day,” “family,” “week,” “children,” “city,” “local,” and “free” (Table 19). These
+words often occur in event announcements, particularly announcements about
+municipal and regional arts events, museum exhibits, and readings at local
+bookstores, indicating a broad range of inscribed humanities publics beyond the
+institutions of higher education.
+
+30
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Term
+
+Frequency
+
+Percentage Increase
+
+Wilcoxon Statistic
+
+day
+
+1.58
+
+66%
+
+7.8
+
+home
+
+1.12
+
+77%
+
+6.0
+
+family
+
+1.06
+
+79%
+
+5.3
+
+team
+
+1.08
+
+80%
+
+5.0
+
+president
+
+2.27
+
+51%
+
+5.0
+
+week
+
+1.0
+
+52%
+
+4.9
+
+state
+
+1.78
+
+66%
+
+4.7
+
+days
+
+0.61
+
+68%
+
+4.6
+
+children
+
+0.97
+
+83%
+
+4.3
+
+city
+
+0.81
+
+83%
+
+4.1
+
+friday
+
+0.59
+
+74%
+
+3.9
+
+months
+
+0.48
+
+70%
+
+3.9
+
+season
+
+0.61
+
+100%
+
+3.9
+
+company
+
+0.80
+
+88%
+
+3.8
+
+high
+
+1.62
+
+41.7%
+
+3.7
+
+house
+
+0.53
+
+84%
+
+3.7
+
+night
+
+0.60
+
+73%
+
+3.7
+
+local
+
+0.58
+
+65%
+
+3.7
+
+free
+
+0.99
+
+70%
+
+3.6
+
+saturday
+
+0.52
+
+91%
+
+3.5
+
+Table 19: A list of the top 20 most distinctive words in articles that contain humanities keywords but that our
+classifier did not categorize as being about the humanities compared to articles that our classifier categorized as
+being about the humanities. “Frequency” refers to the term’s relative frequency per 500 terms in articles not about
+the humanities; “Percentage Increase” refers to the percentage increase in use of that term in articles not about the
+humanities as compared to articles about the humanities; and “Wilcoxon Statistic” is a measure of how distinctive
+that term is to articles not about the humanities (the higher the value, the more distinctive the term is to this set of
+articles). We tested a random selection of 1500 documents from each category, only including words that appeared
+at least 5 times across all documents in at least 1 test set. All comparisons listed have p-values below .0005.
+
+31
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+To add more depth to our understanding of humanities public discourse, we
+examined a 150-topic model of 27,362 articles containing the word “humanities” but
+that our classifier did not categorize as being about the humanities.81 As with the
+topic model discussed in the previous section, we analyzed this model by creating a
+label for each topic based on examining each topic’s top keywords and top articles.82
+This model includes topics that focus on humanistic fields, experiences, and art
+forms, such as those we labeled “Dance” (11), “Languages” (72), and “Poetry” (87),
+as well as topics about additional fields or sectors like “Medicine” (124) or
+“Business” (115). Topics about a range of social issues appear as well, including
+those labeled “American Politics” (45), “Criminal Justice” (58), “Environment and
+Climate Change” (99), “Gender Equity” (23), and “Race and Civil Rights” (6). As
+the results of the Wilcoxon test described above suggest, we also found that many
+topics include event language. Topic 77, for example, includes keywords like
+“event,” “festival,” “day,” “week,” “annual,” “celebration,” and “community.” A
+typical article associated with this topic, titled “Why thousands of school children
+are on Fresno State’s campus,” describes a festival “created to help young people
+gain knowledge and appreciation of literature through oral interpretation and
+performance,” while another advertises a “Festival of International Books and Arts”
+that “highlight[s] the importance of literacy in the Hispanic community.”83
+Similarly, topic 48 includes the keywords “lecture,” “event,” “professor,”
+“discussion,” “conference,” “audience,” “students,” and “questions;” articles
+associated with this topic advertise events, conferences, symposia, and other kinds
+of public discussions, with some, like the one titled “University and city host book
+talk,” explicitly bridging the boundary between academia and broader publics.84
+Twelve further topics in this model gather together community calendar and event
+listings, articles that are often clustered into discrete topics by specific paper or
+geographical region.85 Furthermore, topics we labeled “Music” (65) and
+“Performing Arts” (98) consist mainly of advertisements and announcements for
+performances, while topics labeled “Literary Events” (37), “Film” (42), “Fine Arts,”
+(2) and “Museum and Gallery Listings” (10) announce readings, film festivals, and
+art exhibitions.86 This robust strain of humanities public discourse is outward-facing
+and participatory, continuing and intensifying trends that we observed in articles
+about the humanities associated with the communicated mode. Humanities public
+discourse centers on acts of communication, such as events, festivals, and talks, it
+
+32
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+invokes embedded publics of audience members, and it does not frame itself in terms
+of crisis.
+In contrast to public discourse about the humanities, then, humanities public
+discourse showcases the expansive range of institutions associated with the
+humanities.87 Many topics in this model still focus on the academic infrastructure
+and student experiences central to higher education, including those we labeled
+“Courses and Curricular Programs” (8), “Faculty Service and Committees” (32),
+“College Majors and Jobs” (44), and “Student Research” (25). However, many other
+kinds of institutions and community infrastructure also appear in these articles,
+including in articles associated with topics labeled “Libraries” (119), “Museums”
+(122), “Military” (7), “Summer Camp” (51), and “Primary and Secondary
+Education” (20).88 Articles associated with topics we titled “Community
+Volunteering” (126) and “Local Bureaucracy” (89) often reference regional
+humanities centers, and in articles associated with a topic labeled “City
+Government” (29), the word “humanities” appears in the biographies of candidates
+for local elections. Other topics, like those we titled “Housing and Real Estate” (75)
+and “Local Restaurants” (38), gather articles that reveal the humanities to be deeply
+rooted in the built environment. A humanities building or school, for example, can
+act as a community landmark mentioned in discussions of other neighborhood
+features. And in articles contributing to topic 66, labeled “Local Sports,” the term
+“humanities” occurs repeatedly in the name of a New York high school.
+These contexts are mundane, but they map the connections between the humanities
+and public life; the presence of the word “humanities” reveals how the humanities
+are embedded in local infrastructure, indexing a much longer lineage of past values
+and decisions. These instances mark the moments when an educational institution
+focused on the humanities becomes something to cheer for at a basketball game, a
+reference point that might influence the decision to buy a home, a factor in local
+governance, or part of a daily commute. Some articles also make clear the role that
+humanities institutions themselves play in shaping local environments by adding
+historic buildings to the register, for example, or by commissioning public art
+displays.89 This association of the humanities with a wide range of institutions
+emphasizes the humanities as public-facing, active, and engaged with local
+communities.
+33
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+Other strains of humanities public discourse include public commemorations of
+momentous life events like marriage and death. In articles contributing to a topic
+composed of wedding announcements (117), the word “humanities” indexes the
+educations and professions of couples and their families through the listing of
+degrees or job titles. In articles contributing to several topics comprised of obituaries,
+humanities organizations are often noted as a preferred recipient of donations made
+in honor of the deceased.90 Obituaries thus both act as a public record of the impact
+of the humanities on individuals’ lives and further galvanize the mourning publics
+addressed by such death notices. Importantly, the obituaries of scholars and writers
+(as seen in topic 112, for example) also act as key sites of direct communication of
+humanities knowledge when they describe these figures’ publications and
+influence.91 Given the relative absence of direct humanities research communication
+elsewhere in our corpus, this observation suggests that the impact of humanistic
+research is often conveyed in straightforward ways in the press when the person who
+conducted that research has died. Yet in this context, such research communication
+is also inseparable from the personal details that make up a life. In these obituaries,
+the humanities index the ways that personal experiences across a lifetime (family
+relationships, education, hobbies) and professional accomplishments across a career
+(teaching, publications, and access to academic resources) intertwine with local,
+regional, and national institutions of all kinds. Both the personal and the professional
+are therefore pivotal components of the public resonance of the humanities.
+While announcements and obituaries do not constitute the majority of articles
+containing humanities keywords but that aren’t classified as being about the
+humanities – most of the articles in this category, as in our corpus overall, are simply
+news articles – they are important for understanding what we mean by humanities
+public discourse.92 A History professor’s obituary and an announcement about a
+reading at a local bookstore are not “about” the humanities in the same way an
+editorial defending the value of the humanities is about the humanities. Yet it is also
+not correct to claim that these articles are not about the humanities. Broadly
+speaking, these articles register how the humanities are associated with the
+experiences of many different publics, from museum-goers to children participating
+in a summer camp to attendees of a wedding or a funeral. These kinds of “eventoriented” and “local” articles that document the “ordinary life and work happening
+in, through, and all around the humanities,” are evidence of how, as Tarika Sankar
+34
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+writes, “the humanities become part of the background of everyday life.” 93 Those
+advocating for the humanities to become more public-facing often miss this
+background. When they argue, for example, that humanities scholars need to
+emphasize “a regrounding of the humanities in the world around us,” they do not
+usually consider how unremarkable yet common news genres like obituaries and
+event announcements demonstrate the extent to which the humanities are already
+embedded in this world.94
+Considering such incidental mentions of the word “humanities” as indexing at least
+some of the public work of the humanities challenges perceptions of the humanities
+that view them as disconnected from the world beyond academia. As we’ve
+discussed in this article, as opposed to the wide range of institutions referenced by
+articles about science, articles about the humanities do often focus on institutions of
+higher education and undergraduate audiences. These articles are underrepresented
+in mainstream newspapers and overrepresented in student newspapers; what’s more,
+they are more likely to appear in newspapers located at some of the nation’s
+wealthiest and most elite private institutions. However, articles about the humanities
+also tend to relay ideas and discoveries developed through humanities research and
+teaching less directly than articles about science, operating through a double layer
+of communication that focuses on descriptions of classes or events humanists have
+organized or in which humanities scholarship has been discussed. Such articles
+foreground how the humanities come to life through the mediation of extant
+audiences both within and beyond university walls.
+But such articles explicitly about the humanities are not very common in either
+mainstream or student newspapers. Far more common are those articles discussed in
+this last section, articles that, in announcing a reading at a local bookstore or relaying
+the details of someone’s life or even reporting the score of a basketball game, trace
+the contours of individuals’ and communities’ relationships with an expansive set of
+activities, practices, and institutions associated with the humanities. Such articles
+provide a view of the humanities that, while more inchoate and diffuse than many
+understandings of the term, is also more oriented toward activities, events, and
+everyday life. The challenges confronting higher education in the United States
+today are substantial, to say the least, and advocates for the humanities, like those
+for both the natural and social sciences, will need to continue to make the case for
+35
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+their value in the years to come. Rather than resorting to talk of continual crisis, such
+advocates may wish to focus in part on the more expansive understandings of the
+humanities that we see in our corpus. Far from propagating a narrative of decline,
+many newspaper articles today inspire hope, conveying a sense of the humanities as
+engaged, energetic, and vital.
+
+Notes
+1
+
+Michael Bérubé and Jennifer Ruth, The Humanities, Higher Education, and Academic Freedom: Three Necessary
+Arguments (New York: Palgrave MacMillan, 2015), 1. We are grateful to the Mellon Foundation for their generous
+financial support, which made much of the research for this article possible. We also thank this article’s peer
+reviewers and editors, especially Andrew Piper, for their insightful feedback on earlier versions of this article and
+their work preparing the manuscript for publication.
+2
+
+Ibid., 2.
+
+3
+
+Ibid., 10. However, as Ben Schmidt argued in 2018, data gathered since 2014 show the number of students
+majoring in humanities disciplines has rapidly dropped since 2007. See Schmidt, “The Humanities Are in Crisis,”
+The Atlantic, August 23, 2018. https://www.theatlantic.com/ideas/archive/2018/08/the-humanities-face-a-crisisofconfidence/567565/.
+Edward L. Ayers, “Where the Humanities Live,” Daedalus 138. 1 (2009): 25. The scholarship on the “humanities
+crisis” is voluminous, and it is marked especially by the proliferation of special issues and edited collections on the
+value of the humanities that emerged in the wake of the 2008 recession. For example, see Michelle Ty, ed., “Higher
+Education on Its Knees,” Qui Parle: Critical Humanities and Social Sciences 20.1 (2011); and Eleonora Belfiore
+and Anna Rosser Upchurch, eds., Humanities in the Twenty-First Century: Beyond Utility and Markets (New York:
+Palgrave Macmillan, 2013). Recent books have also focused on the crisis in employment in the academic
+humanities. See Sidonie Smith, A Manifesto for the Humanities: Transforming Doctoral Education in Good Enough
+Times (Ann Arbor: University of Michigan Press, 2015); and Katina L. Rogers, Putting the Humanities PhD to
+Work: Thriving in and Beyond the Classroom (Durham: Duke University Press, 2020). Finally, in accordance with
+Ayers, Paul Reitter and Chad Wellmon argue in their recent book Permanent Crisis that crisis is integral to the “selfunderstanding of the modern humanities,” as “crisis has played a crucial role in grounding the idea that the
+humanities have a special mission.” See Reitter and Wellmon, Permanent Crisis: The Humanities in a Disenchanted
+Age (Chicago: University of Chicago Press, 2021), 3.
+4
+
+5
+
+Helen Small, The Value of the Humanities (Oxford: Oxford University Press, 2013), 2, 3.
+
+A trope employed by many academic histories and defenses of the humanities is to center the 1945 “Harvard
+Redbook,” a report written by Harvard faculty during WWII. This document outlined a vision of the humanities as
+central to the postwar world, and it is often considered, as Geoffrey Galt Harpham writes, “the single most important
+document in the history of ‘the humanities.’” See Harpham, The Humanities and the Dream of America (Chicago:
+University of Chicago Press, 2011), 153. This version of the history of the humanities not only ties the fate of the
+humanities to the American system of higher education overall; it also implicitly presents higher education as the
+only arena in which the meaning and value of the humanities is negotiated.
+6
+
+7
+
+We wish to acknowledge all of the participants who contributed to this project over many years. Our thinking was
+fundamentally shaped by this collaborative atmosphere. For a full list of participants See “Our Team,”
+WhatEvery1Says, accessed December 5, 2021, https://we1s.ucsb.edu/about/team/. We are especially grateful to
+Alan Liu, the project’s PI, co-PIs Jeremy Douglass and Scott Kleinman, and postdoctoral scholar Dan Costa Baciu.
+
+36
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+8
+
+WE1S collected these articles using the LexisNexis API, which requires the use of keyword searches to collect
+data. The conclusions we draw from our data are dependent not only on the decisions WE1S researchers made in
+how to collect this data, but also on the fact that the data LexisNexis owns is not a straightforward representation of
+“journalistic discourse” from this period. As a private company, the decisions LexisNexis has made about what to
+acquire and why are not transparent. It is therefore more accurate to say that our data reflect decades of corporate
+decisions that have determined what journalistic discourse is preserved in digital form. For more on the issue of
+representativeness in the WE1S corpus at large, see Giorgina Paiella, “Thoughts on Diversity in the Archive,”
+WhatEvery1Says, accessed May 2, 2021, https://we1s.ucsb.edu/research_post/thoughts-on-diversity-in-the-archive/;
+and Samina Ali, “Newspaper Corpus Design and Representativeness Report,” WhatEvery1Says, accessed May 2,
+2021, https://we1s.ucsb.edu/research/we1s-findings/reports/scoping-research-reports/newspaper-corpus-design-andrepresentativeness-report/.
+9
+
+Our timeframe is limited by the materials that we could collect in digitized, full-text form. Such materials are
+available primarily after 1998, and, in bulk, from around 2005 on. These years mark a period of contraction for
+journalism. Penelope Muse Abernathy has reported that from 2004-2019, more than one in five newspapers in the
+United States closed and the number of journalists employed by papers was cut in half. These losses have hit local
+and regional newspapers the hardest. See Abernathy, “The Loss of Local News: What It Means for Communities,”
+The Expanding News Desert, accessed May 1, 2021, https://www.usnewsdeserts.com/reports/expanding-newsdesert/loss-of-local-news/. While we treat journalistic media as an important window on how the public perceives
+and discusses the humanities, we recognize that newspapers are not the only venue for such discussion. Other parts
+of the WE1S project, for example, address social media and other kinds of materials, such as foundation reports, that
+are also part of this public discourse. For discussions of findings from this research, see WE1S key finding cards;
+“Research Key Findings,” WhatEvery1Says, accessed May 2, 2021, https://we1s.ucsb.edu/research/we1sfindings/key-findings/. For a discussion of research on Reddit in particular, see Raymond Steding, “A Digital
+Humanities Study of Reddit Student Discourse about the Humanities,” WhatEvery1Says, accessed May 2, 2021,
+https://we1s.ucsb.edu/research_post/a-digital-humanities-study-of-reddit-student-discourse-about-the-humanities/.
+Our analysis also complements other attempts to gather data about the public perception of the humanities, such as
+“The Humanities in American Life: Insights from a Survey of the Public’s Attitudes and Engagement,” A Report
+from the Humanities Indicators Project of the American Academy of Arts & Sciences (2020).
+10
+
+“Our Story and Our Results,” WhatEvery1Says, accessed May 1, 2021, https://we1s.ucsb.edu/.
+
+11
+
+Ibid.
+
+See this article’s supplementary data to download the data we discuss (prepared for non-consumptive use) and
+code that reproduces our analyses.
+12
+
+For recent discussions of the history of the term “public humanities” and a survey of many different projects in
+and approaches to the public humanities, see Paula Krebs, ed., “Public Humanities,” Profession (Spring 2019); and
+Susan Smulyan, ed., Doing Public Humanities (New York: Routledge, 2020).
+13
+
+Other scholars as well have sought to destabilize the phrase “public humanities.” Kristen Case, for example, asks
+us to consider “the other public humanities,” which starts not with “empowering elite students and faculty members
+to reach out to their communities,” but rather with dedicated pedagogy in the “classrooms of the public university.”
+See Case, “The Other Public Humanities,” The Chronicle of Higher Education, January 13, 2014.
+14
+
+As Michael Warner argues, such publics “do not exist apart from the discourse that addresses them.” Warner,
+Publics and Counterpublics (Durham: Duke University Press, 2002), 72.
+15
+
+Michael Levenson does something similar in his recent book The Humanities and Everyday Life, which seeks “to
+locate humanistic study within the wide field of everyday life and to consider how academic practices intersect with
+the aims and habits of those outside university walls.” Levenson focuses on the connections between the activities of
+professionally credentialed humanities experts working at colleges and universities and “daily practices” such as
+“the activities of book clubs, museum-goers, private collectors, domestic genealogists, historical re-enactors, editors
+16
+
+37
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+of Wikipedia.” See Levenson, The Humanities and Everyday Life (New York, NY: Oxford University Press, 2017),
+1, 1-2.
+17
+
+A rhetorical opposition to science is at the foundation of the history of the institutionalization of the humanities in
+the United States. As Reitter and Wellmon argue, during the early twentieth century, one rationale for the formation
+of humanities departments depended explicitly on the perceived opposition of the humanities to scientific
+instrumentalism. Advocates argued the humanities were necessary to provide “unity of knowledge, clarity of
+purpose, moral value, and a regeneration of the uniquely human in the face of the centrifugal pressures of science
+and technology.” See Permanent Crisis, 228. Comparisons to science thus have a long history in discussions of the
+humanities.
+Most of the articles included in this category contain the word “humanities,” but about 16% contain the related
+phrase “liberal arts.” A full discussion of the relationship between these terms is beyond the scope of this article, but
+significantly, there is little overlap between these keyword categories in our data. Only about 2% of articles in this
+category contain both “humanities” and “liberal arts.”
+18
+
+19
+
+The 15 top-circulating newspapers in the US as of 2019 included The New York Times, The Washington Post,
+Chicago Tribune, The Dallas Morning News, The Boston Globe, The LA Times, Newsday, Star Tribune, The
+Houston Chronicle, The Denver Post, The Seattle Times, Daily News, New York Post, USA Today, and Tampa Bay
+Times. A list of all 624 sources from which we have collected data is included in this article’s supplementary data in
+the “data/tables” folder (“sources_by_year.csv”). We say that our campus newspaper data are from sources located
+“mainly in the United States” because our data include about 500 documents from newspapers in Canada, Europe,
+and the UK.
+As Jamal Russell notes in a discussion of the construction of race in the media, for example, “articles by or
+quoting humanists…become sites where humanists directly influence public conversation” and, in turn, lend
+“authority and credibility” to news sources. See Russell, “Public discourse as represented in the media treats
+humanists as authorities on cultural discourses about race, racism, and ethics,” WhatEvery1Says, accessed May 2,
+2021, https://we1s.ucsb.edu/wp-content/uploads/KF-3-1.pdf.
+20
+
+21
+
+WE1S gathered the comparison data using keyword searches of 3 of the most common words in the English
+language (based on a well-known analysis of the Oxford English Corpus) that LexisNexis indexes and thus makes
+available for search: “person,” “say,” and “good.” We excluded the word “humanities” from our search in collecting
+these documents. For more information about our comparison data, see “WE1S Datasets,” WhatEvery1Says,
+accessed May 1, 2021, https://we1s.ucsb.edu/research/we1s-materials/datasets/.
+22
+
+We created training data for these classification experiments by manually identifying articles about the humanities
+and about science, as well as articles not about the humanities and not about science, from our two source types. We
+then used this data to test our classifiers on articles from our corpus that these classifiers had never seen.
+Transformed versions of this training data are included in this article’s supplementary data; see the “classification”
+module’s “README.md” file for more information. Of course, since there is no one way of defining what an
+“article about the humanities” or an “article about science” is, these experiments train our classifier to replicate our
+judgments regarding these categories. For a good explanation of concepts in machine text classification from the
+perspective of cultural analytics, see Chapter 3, “Recognition: Literary Distinction and Blackness” in Richard Jean
+So, Redlining Culture: A Data History of Racial Inequality and Postwar Fiction (New York: Columbia University
+Press, 2021).
+23
+
+We used a chi-square test for independence to compare these values. Our results indicate that we can reject the
+null hypothesis, meaning there is likely a relationship between the subject an article is about (science or the
+humanities) and source type (top-circulating or student newspapers). Based on the proportion of articles classified as
+being about the humanities out of the total number of articles classified as being about either the humanities or
+science, we could expect roughly 21% of articles from both top newspapers and student newspapers to be classified
+as being about the humanities if the distribution of articles about the humanities were uniform across source type.
+Instead, only about 11% of articles from top newspapers have been classified as being about the humanities, while
+about 24% of articles from student newspapers have been classified as being about the humanities. Meanwhile, if the
+distribution of articles about science were uniform across source type, we would expect roughly 79% of articles
+
+38
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+from both top newspapers and student newspapers to be classified as being about science; instead, 89% of articles
+from top newspapers and 76% of articles from student newspapers have been classified as being about science. The
+chi-square statistic for this test is 215.47, with a p-value of 8.81e-49. See the “README.md” file in the
+“data/tables” directory in this article’s supplementary data for a description of the contingency table used in this test.
+24
+
+WE1S collected metadata about each unique source in its datasets, allowing us to categorize student newspaper
+sources by type of institution. See “Metadata Tags for WE1S Document Sources,” WhatEvery1Says, accessed May
+1, 2021, https://we1s.ucsb.edu/research/metadata-tags/.
+25
+
+Because data collected from the LexisNexis API include so many duplicates, WE1S developed our own process
+for detecting and automatically deleting duplicates and near-duplicates in our data. See this article’s repository’s
+“README.md” file for more information about the de-duplication process. However, automatically de-duplicating
+articles from The Stanford Daily in particular proved challenging because of how articles from this source are
+formatted when downloaded from LexisNexis. This may be one reason why articles from The Stanford Daily so far
+outnumber articles from other student newspaper sources.
+26
+
+Ayers, “Where the Humanities Live,” 31.
+
+27
+
+Christopher Newfield, The Great Mistake: How We Wrecked Public Universities and How We Can Fix Them
+(Baltimore: Johns Hopkins University Press, 2016), 111. Other members of the WE1S team, such as Giorgina
+Paiella, Susan (Su) Burtner, Helen Foley, and Francesca Battista, have explored the relationship between the
+humanities and different kinds of educational institutions as well. See, for example, Burtner and Paiella, “Word
+Embeddings of College and University Mission Statements: Preliminary Findings,” WhatEvery1Says, accessed
+December 5, 2021, https://we1s.ucsb.edu/research_post/word-embeddings-of-college-and-university-missionstatements-preliminary-findings/. See also Droge, “The humanities help us to find the ‘meaning of life’; but such
+discourse belongs primarily to students in private institutions and doctoral universities,” WhatEvery1Says, accessed
+December 5, 2021, https://we1s.ucsb.edu/wp-content/uploads/KF-8-4.pdf.
+28
+
+The Wilcoxon rank sum test is a test of statistical significance. It is often used to determine which terms appear
+with greater consistency in one group of words as compared with another. For implementations of this test in literary
+studies, see Andrew Piper and Eva Portelance, “How Cultural Capital Works: Prizewinning Novels, Bestsellers, and
+the Time of Reading,” Post45 (May 10, 2016), http://post45.org/2016/05/how-cultural-capital-works-prizewinningnovels-bestsellers-and-the-time-of-reading/#identifier_27_7012; and Chapter 4 “Fictionality (Sense)” in Piper,
+Enumerations: Data and Literary Study (Chicago: University of Chicago Press, 2018). For a comparison of the
+Wilcoxon rank-sum test to other methods of significance testing for word frequencies, see Jefrey Lijffijt, Terttu
+Nevalainen, Tanja Säily, et al, “Significance testing of word frequencies in corpora,” Digital Scholarship in the
+Humanities 31.2 (2016): 375-397.
+To view this model using Andrew Goldstone’s dfr-browser, go to
+http://harbor.english.ucsb.edu:10002/collections/20200515_1455_us-classification-results-top-newspapersuniversitywire-hum-sci/dfr-browser/topics100/. This model includes transformed article content (i.e., not full-text
+data) prepared for public viewing. For more on dfr-browser, see Andrew Goldstone, “dfr-browser: Take a MALLET
+to disciplinary history,” accessed May 1, 2021, https://agoldst.github.io/dfr-browser/; and Goldstone and Ted
+Underwood, “The Quiet Transformations of Literary Studies: What Thirteen Thousand Scholars Could Tell Us,”
+New Literary History 45.3 (2014): 359-384.
+29
+
+30
+
+We identified the 100-topic model as the best fit for our data by comparing it to models of the same data with 25,
+50, 150, 200, and 250 topics. We used the top documents as displayed by Andrew Goldstone’s dfr-browser to
+categorize topics (Goldstone calculates this metric differently than MALLET does). Topics with high concentrations
+of top documents about the humanities are those in which at least 80 of the top 100 articles were categorized by our
+classifier as being about the humanities. We used the same metric to find topics with high concentrations of top
+documents about science (at least 80 of 100). Topics that fall in the middle are topics in which neither articles about
+the humanities nor articles about science dominate the list of top documents in this way.
+31
+
+See the dictionary we created for this topic model to view the number, manually assigned label, top 15 keywords,
+weight, ratio of top 100 articles classified as about the humanities/about science, and manually-assigned mode
+
+39
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+designation of each topic in the model. This dictionary is located in this article’s data repository (the “c33-100dictionary.xlsx” file located in the “data/tables” folder). Tables displaying information about sample topics in this
+section are drawn from this dictionary.
+See Minali Prasad, “BU researchers unveil underground world where fungi fight climate change,” The Daily Free
+Press: Boston University, September 5, 2018; Teddy Rosenbluth, “Study finds link between proteins,
+electroconversion therapy response,” Daily Bruin: University of California - Los Angeles, March 8, 2018; Alyssa
+Creamer, “UMass researchers studying migratory patterns of bluefin tunas and other fish,” Massachusetts Daily
+Collegian: University of Massachusetts - Amherst, September 20, 2012.
+32
+
+33
+
+These are topics 35, 33, 31, 43, 74, 72, 36, 59, 40, 66, 73, 96, and 41, respectively. See the collection 33
+dictionary in this article’s data repository for further examples.
+As Alan Liu has noted, US news media doesn’t just communicate about the sciences more concretely and more
+directly; it also tends to emphasize “catchy” scientific objects “like distant exoplanets, dwarf suns, black holes,
+spacecraft, or space telescopes.” “By contrast,” Liu notes, “the humanities seem to be object-poor,” often focusing
+on just one object in particular: books. See Liu, “The public likes to take its science with objects, the bigger or
+stranger the better,” WhatEvery1Says, accessed May 2, 2021, https://we1s.ucsb.edu/wp-content/uploads/KF-5-4.pdf.
+34
+
+35
+
+Our research does not include press releases and similar documents that are in many cases at the origin of this
+communication flow.
+Gabriella Debenedictis, “CLAS to offer new major in Arabic and Islamic Civilizations,” The Daily Campus:
+University of Connecticut, October 12, 2018; Lillian McGill, “Uruguayan poet’s campus visit includes reading,” The
+Observer: University of Notre Dame, November 20, 2013; Linh Nguyen, “Panel Discussion at Dickinson College
+Addresses Feminism Within Sororities,” The Dickinsonian: Dickinson College, November 2, 2018; Blake Deal,
+“UCLA professors digitize collections to allow greater access,” Daily Bruin: University of California - Los Angeles,
+January 12, 2016.
+36
+
+See, among others, Emma Baccellieri, “Professors honor Seamus Heaney at poetry reading,” The Duke Chronicle:
+Duke University, October 2, 2013.
+37
+
+See, for example, Lindsey Gapen, “Professor highlights disability issues,” Badger Herald: University of
+Wisconsin – Madison, November 11, 2012.
+38
+
+Greg Laudani, “Italian studies major newly available to UNH students,” The New Hampshire: University of New
+Hampshire, October 16, 2015. The second quotation is quoting Amy Boylan.
+39
+
+Morgan Hays, “‘Sailing to Babylon’: A visiting poet performs,” The Exponent: University of Wisconsin Platteville, November 28, 2018; the second quotation is from this article but quoting Zheniya Fager; McGill,
+“Uruguayan,” quoting Emma Wolff.
+40
+
+Olivia Mitchel, “Classy classes: Human rights class explores disabilities studies,” The Stanford Daily: Stanford
+University, June 18, 2018; Miranda Andrade-Ceja, “CSULB AIS minor program revised,” Daily 49er: California
+State University - Long Beach, August 30, 2016.
+41
+
+Lauren Brown-Hulme, “Center for Digital Research in the Humanities inspires students to study interests in
+collaboration,” Daily Nebraskan: University of Nebraska - Lincoln, February 4, 2015; Michael Gioia, “Q&A:
+Caroline Winterer discusses the digital humanities,” The Stanford Daily: Stanford University, June 4, 2015, quoting
+Caroline Winterer; Ellen Steinbaum, “Our lives, articulated by others,” The Boston Globe, March 16, 2008.
+42
+
+43
+
+Browne-Hulme, “Center”; Deal, “UCLA,” quoting Nancy Shawcross.
+
+44
+
+Gioia, “Q&A,” quoting Caroline Winterer.
+
+40
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Irina Teveleva, “Butler digitization transforms access to rare books,” The Columbia Spectator: Columbia
+University, January 30, 2015, quoting John Tofanelli.
+45
+
+Gioia, “Q&A,” quoting Caroline Winterer; Tony Moore, “Visualize: Students Bring Data to Life through the
+Digital Boot Camp,” The Dickinsonian: Dickinson College, February 11, 2015, quoting Chris Francese.
+46
+
+47
+
+We are building on the observations of Tarika Sankar and Alan Liu, who have emphasized that the media views
+the humanities “as primarily all about the university.” Compared to descriptions of science, which they note are not
+centered exclusively on “academic programs,” discussions of the humanities tend to isolate the humanities within
+the academy. See Sankar and Liu, “The humanities appear to the public to be siloed in universities (unlike the
+sciences),” WhatEvery1Says, accessed May 2, 2021, https://we1s.ucsb.edu/wp-content/uploads/KF-5-2.pdf.
+48
+
+Ayers, “Where the Humanities Live,” 25.
+
+49
+
+Michael Meranze, “Humanities Out of Joint,” The American Historical Review 120.4 (2015): 1313.
+
+Burke Bischoff, “Common curriculum changes,” The Maroon: Loyola University - New Orleans, August 22,
+2013.
+50
+
+Sona Mkrttchian, “Hispanic studies sees declining enrollments,” The Brown Daily Herald: Brown University,
+September 26, 2014; Yechiel Schwab, “Behind 2016’s Cross-Listing Craze: An Incomplete Solution to a Worrisome
+Trend,” The Commentator: Yeshiva University, December 28, 2015.
+51
+
+Bleah B. Patterson, “NVC faculty ask Coordinating Board to reject proposal to add EDUC 1300 to core,” The
+Ranger: San Antonio College, February 3, 2014, quoting Thomas Billimek. On cuts to language requirements, see,
+e.g., Hannah Helwig, “Chancellor makes gen. ed. decisions,” The Exponent: University of Wisconsin - Platteville,
+April 7, 2016.
+52
+
+Zack Demars, “College of Arts and Sciences to consider reorganization options,” The Daily Emerald: University
+of Oregon, January 22, 2019, quoting Eleanor Wakefield.
+53
+
+Pranav Kannan, “Terra cluster opens new computing possibilities,” The Battalion: Texas A & M University,
+November 29, 2016; Jordan Kercheval, “Research is for students, too,” Daily Evergreen: Washington State
+University, December 8, 2017. See also headlines that emphasize “researchers,” plural, such as Lydia Tuan, “UC
+Berkeley researchers take part in national effort to predict climate change,” Daily Californian: University of
+California – Berkeley, August 26, 2014. Dieyun Song emphasizes that when discussions of grant funding for the
+humanities do appear in the media, “humanities funding in higher ed” is positioned “as primarily a research rather
+than teaching priority.” Song, “The media covers funding for humanities research, but pays almost no attention to
+funding for humanities teaching,” WhatEvery1Says, accessed May 2, 2021, https://we1s.ucsb.edu/wpcontent/uploads/KF-7-4.pdf.
+54
+
+55
+
+We might assume that the prevalence of language about institutions, education, and research is because the
+majority of the articles classified as being about the humanities come from student newspapers. Interestingly,
+however, the general linguistic patterns we observe about these categories hold even if we only examine data from
+top-circulating US newspapers. If we look only at articles from top newspapers, the words most distinctive to
+articles about the humanities include “students,” “education,” “college,” and “courses,” while those most distinctive
+to articles about science include “scientists,” “researchers,” “found,” “effects,” and “journal.” Once again, words
+associated with education as it is situated within institutions of higher education are more likely to occur more
+frequently within articles about the humanities. See the “hum-sci-wilcoxon-min5-260-topnewspapers.xlsx” file in
+the “data/tables” directory in this article’s data repository to examine these results.
+Javier Saladich Nebot, “Director of Innovation Partnerships at Cornell Center for Technology Licensing Discusses
+Importance of Research Commercialization,” Cornell Daily Sun: Cornell University, November 12, 2018. See also
+Wendy Lee, “Venture funding hits highest level since 2009,” Star Tribune, July 20, 2011; Michael B. Farrell, “Startup funding falls across US,” The Boston Globe, January 18, 2013; and Robert Weisman, “Established Firms Step Up
+to Aid Start-Ups,” The Boston Globe, May 8, 2006.
+56
+
+41
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+See, for example, Marc Kaufman and Brooke A. Masters, “After Criticism, FDA Will Strengthen Drug Safety
+Checks,” The Washington Post, November 6, 2004; and Jordan Steffen, “State: Bias, training problems hurt lab,”
+The Denver Post, July 18, 2013.
+57
+
+David Bordelon, “Reproducibility of scientific studies vital to its usefulness, future research,” The Daily Texan:
+University of Texas - Austin, September 2, 2015, quoting Bill Swann; Roxanneh Mousavi, “Penn Professor Prevents
+Research Paper Plagiarism,” College Media Network, March 29, 2018, quoting Daniel Acuna.
+58
+
+For nuances of this point, see WE1S key finding cards written by Mauro Carassai, including “Top newspapers do
+not include the humanities within crisis discourse,” WhatEvery1Says, accessed May 2, 2021,
+https://we1s.ucsb.edu/wp-content/uploads/KF-1-1.pdf; and “Campus newspapers are much more focused on the
+‘crisis’ of the humanities (especially in economic terms) than mainstream media,” WhatEvery1Says, accessed May
+2, 2021, https://we1s.ucsb.edu/wp-content/uploads/KF-1-2.pdf. See also Raymond Steding, “Students and others on
+Reddit see not the ‘humanities crisis’ (the forest) but critical problems and issues (the trees),” WhatEvery1Says,
+accessed May 2, 2021, https://we1s.ucsb.edu/wp-content/uploads/KF-6-7.pdf.
+59
+
+John Sieracki, “Many hunger for humanities education,” The Boston Globe, June 30, 2013; Christopher Burns,
+“UMaine elevates humanities through community engagement,” The Maine Campus: University of Maine, March
+31, 2014. As Francesca Battista observes, after 2008, defenses of the humanities published in US news media outlets
+“increased significantly.” See Battista, “After 2008, academic humanities advocates rallied against a ‘crisis’ largely
+absent from public discourse,” WhatEvery1Says, accessed May 2, 2021, https://we1s.ucsb.edu/wpcontent/uploads/KF-4-3.pdf.
+60
+
+Nicole Felkins, “Editorial: Humanities are what makes us human,” The Pacifican: University of the Pacific,
+November 6, 2014. For further discussion of how students discuss the humanities in relation to employment, see
+Rebecca Baker, “Students writing about education value cognitive flexibility and ‘soft skills’ associated with the
+humanities and liberal arts,” WhatEvery1Says, accessed December 5, 2021, https://we1s.ucsb.edu/wpcontent/uploads/KF-8-1.pdf.
+61
+
+Meranze, “Humanities out of Joint,” 1313, 1326. Harpham has also argued that the humanities are often depicted
+as being “at the very center of…liberal education.” See Harpham, “From Eternity to Here: Shrinkage in American
+Thinking about Higher Education,” Representations 116.1 (2011): 45.
+62
+
+63
+
+Robbie Adler, “The Value of a Liberal Arts Education,” The Catalyst: Colorado College, April 11, 2016.
+
+Hayder Ali, “In an increasingly industrial world, humanities remain equally important to STEM,” The Daily
+Cougar: University of Houston, March 25, 2014.
+64
+
+Zach Rosenthal and Debnil Sur, “History not only by the victors,” The Stanford Daily: Stanford University,
+February 23, 2016; Sahr Singh, “Heather Mac Donald advocates for Core Curriculum, challenges identity politics at
+CUCR event,” The Columbia Spectator: Columbia University, November 14, 2018, quoting Heather Mac Donald.
+65
+
+Ellie Gardner, “‘The Heart of the Liberal Arts’ Speaker Series Kicks Off at Pomona,” The Student Life: Pomona
+College, September 20, 2013; Jonathan Mah, “Coping with decline in humanities majors,” The State Press: Arizona
+State University, November 7, 2013.
+66
+
+Burns, “UMaine elevates humanities;” Samantha McGirr, “Stanford launches effort to increase study of
+humanities,” The Stanford Daily: Stanford University, April 19, 2011; the final quotation is from Burns.
+67
+
+Anthony J. Greene, “Fields of Learning: Ignorance Is No Excuse,” The New York Times, December 8, 2005;
+Felkins, “Editorial.”
+68
+
+Felkins, “Editorial.” For a broader discussion of the values associated with the humanities in US news media, see
+Phillip M. Cortes, “The media assesses the value of the humanities both economically and intrinsically – but the
+69
+
+42
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Great Recession changed the balance of the discussion,” WhatEvery1Says, accessed May 2, 2021,
+https://we1s.ucsb.edu/wp-content/uploads/KF-4-1.pdf.
+George Deutsch, “Is it government’s business to regulate human cloning?”, The Battalion: Texas A&M, April 2,
+2001.
+70
+
+See, for example, Philip Chaney, “Somatic stem cells solve debate,” The Lariat: Baylor University, October 24,
+2007; Benjamin Weiner, “The medicinal alternative hoax,” Daily Titan: California State University, Fullerton,
+October 18, 2006; and Charlotte Rodina, “Genetically modified products leave consumers worried,” The Bullet:
+Mary Washington, April 18, 2013.
+71
+
+Editorial Staff, “New life for stem cells,” Michigan Daily: University of Michigan-Ann Arbor, January 10, 2007;
+Jonathan Patterson, “Congress needs more scientists and engineers,” The Johns Hopkins News-Letter: Johns
+Hopkins University, December 7, 2017.
+72
+
+U. Editorial Staff, “Does God equate to science,” The Daily Barometer: Oregon State University, September 27,
+2005.
+73
+
+Chris Herries, “Bring back Western Civ,” The Stanford Daily: Stanford University, June 25, 2018; Yanshuo
+Zhang, “Rethinking the values of a humanist education,” The Stanford Daily: Stanford University, February 29,
+2016; Alex Ramsey, “Some ideas for that Western Civilization requirement,” The Stanford Daily: Stanford
+University, February 24, 2016.
+74
+
+Richard Scheines, “Letter to the Editor: Humanities at CMU are healthy, and will grow,” The Tartan: Carnegie
+Mellon University, December 2, 2018; Samantha Jones Toal, “Major changes cause concern,” Daily Illini:
+University of Illinois at Urbana-Champaign, April 27, 2016, quoting Ted Underwood.
+75
+
+76
+
+For a more detailed discussion of this problem and of potential solutions, see Alan Liu, Abigail Droge, Scott
+Kleinman, Lindsay Thomas, Dan C. Baciu, and Jeremy Douglass, “What Everyone Says: Public Perceptions of the
+Humanities in the Media,” Daedalus, forthcoming (2022).
+77
+
+Joel Kirk, “Dear CMC: An Admonition,” The Student Life: Pomona College, September 20, 2013.
+
+Several articles that contribute to topic 61, which we label “Diversity and Social Justice” and associate with the
+communicated humanities mode, do detail the relationship between humanistic fields and concrete civic actions.
+Interestingly, in examining other WE1S data, project members have found that media discussions of specific social
+issues often fail to invoke the larger conceptual framework of the humanities. See, for example, sam goli,
+“Contributions of the academic humanities to thought on gender and sexual identity have little impact on media
+coverage of these issues,” WhatEvery1Says, accessed December 5, 2021, https://we1s.ucsb.edu/wpcontent/uploads/KF-3-5.pdf.
+78
+
+Similarly, Liu has observed how “humanities fields such as literary studies, history, or philosophy blur together in
+media coverage as interchangeable parts in the university.” See Liu, “The sciences stand out for the public as
+distinct fields (unlike the humanities, which blur together as just ‘academics’),” WhatEvery1Says, accessed May 2,
+2021, https://we1s.ucsb.edu/wp-content/uploads/KF-5-7.pdf.
+79
+
+80
+
+The test identified 82 words distinctive of articles containing humanities keywords but not classified as being
+about the humanities and 16 words distinctive of articles containing science keywords but not classified as being
+about science. When we compared articles classified as being about the humanities to articles classified as being
+about science, the test identified 159 words as distinctive of articles about the humanities and 72 words as distinctive
+of articles about science. See the “not-hum-not-sci-min5-1500-wilcoxon.xslx” and the “hum-sci-wilcoxon-500min5.xlsx” files in the “data/tables” folder in this article’s repo.
+81
+
+We identified the 150-topic model as the best fit for our data by comparing it to models of the same data with 25,
+50, 100, 200, and 250 topics. To view a public-facing topic model of this data using dfr-browser (without full-text
+data), go to http://harbor.english.ucsb.edu:10002/collections/20200522_1900_us-humanities-classification-results-
+
+43
+
+A COMPUTATIONAL ANA LYSIS OF US NATIONAL AND CAMPUS NEWSPAPERS
+
+top-newspapers-universitywire-not-hum/dfr-browser/topics150/. The total number of articles we modeled in this
+collection is different from the total listed in row three of Table 4 (32,420). This is because our topic model did not
+include articles containing the word “liberal arts” (but not “humanities”).
+82
+
+To see the number, manually assigned label, top 15 keywords, and weight of each topic in this model, see the
+collection 36 150-topic model dictionary in the supplementary data (the “c36-150-dictionary.xlsx” file located in the
+“data/tables” folder).
+Cresencio Rodriguez, “Why thousands of school children are on Fresno State’s campus,” The Collegian:
+California State University - Fresno, March 08, 2018; Lea Victoria Juarez, “Festival of Books and Arts at UTPA,”
+The Pan American: University of Texas - Pan American, March 28, 2012.
+83
+
+84
+
+Staff, “University and city host book talk,” Daily O'Collegian: Oklahoma State University, October 15, 2013.
+
+85
+
+These are topics 3, 47, 49, 60, 73, 76, 91, 92, 96, 103, 141, and 142.
+
+86
+
+This association of the humanities with public events dovetails with observations Tarika Sankar has made about
+how the concept of literature is discussed in mainstream US media. Sankar writes, “The media portrays [literature]
+both as a hermetic academic activity and as a robust milieu of everyday social activities related to books and reading
+– e.g., book talks, poetry readings, announcements of literary prizes, and obituaries of poets and writers.” See
+Sankar, “Literature has a split personality in the media. It is tied to the academy, yet bridges to public life in
+everyday book & reading events,” WhatEvery1Says, accessed May 2, 2021, https://we1s.ucsb.edu/wpcontent/uploads/KF-5-11.pdf.
+As Harpham puts it, the humanities are an “institutional concept.” See Harpham, The Humanities and the Dream
+of America, 80.
+87
+
+Christina Roberts notes the presence of terms such as “children,” “museums,” “nonprofits,” and “historical
+societies” in relation to discussions of federal funding. Roberts, “The media covers U.S. government funding for the
+humanities as a generalized mix of arts, humanities, and heritage funding,” WhatEvery1Says, accessed May 2, 2021,
+https://we1s.ucsb.edu/wp-content/uploads/KF-7-1.pdf.
+88
+
+See, for example, Jeffrey Gettleman, “Panel Wants Bowling Alley Preserved; Landmark: Holiday Bowl Should
+Be Given Historic Status For Bringing Japanese Americans And Blacks Together, City Council Is Told,” Los
+Angeles Times, January 01, 2000; and John Kelly, “Light artist’s sculpture brings color to Washington,” The
+Washington Post, January 22, 2017.
+89
+
+90
+
+Topics 21, 46, 61, 57, and 111 are strongly associated with obituaries.
+
+Obituaries of this kind also surface in topics about specific fields, such as those we labeled “Philosophy” (106)
+and “Western History” (149).
+91
+
+92
+
+This claim is based on experiments we conducted with training classifiers to identify event announcements and
+obituaries in our data. 1% of articles across our entire corpus were classified as announcements, while just under 2%
+were classified as obituaries. 80% of the articles classified as event announcements and 82% of the articles classified
+as obituaries came from top-circulating newspapers.
+Tarika Sankar, “The humanities are the art of ordinary life,” WhatEvery1Says, accessed May 1, 2021,
+https://we1s.ucsb.edu/wp-content/uploads/KF-5-3.pdf. See also Joyce Brummet, “Students on Twitter use
+‘humanities’ to talk about daily academic and campus activity,” WhatEvery1Says, accessed May 2, 2021,
+https://we1s.ucsb.edu/wp-content/uploads/KF-6-3.pdf; and Sankar, “The humanities are robustly public in everyday
+events and activities,” WhatEvery1Says, accessed December 13, 2021, https://we1s.ucsb.edu/wpcontent/uploads/KF-5-8.pdf.
+93
+
+44
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Mariët Westermann, “The Humanities in the World: A Field Report,” in Ignacio López-Calvo and Christina Lux,
+eds., The Humanities in the Age of Information and Post-Truth (Chicago: Northwestern University Press, 2019),
+114.
+94
+
+45
+
+

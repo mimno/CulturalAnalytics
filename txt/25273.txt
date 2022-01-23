@@ -1,0 +1,1207 @@
+Journal of
+Cultural Analytics
+
+June 30, 2021
+
+“Too isolated, too insular”: American
+Literature and the World
+Matthew Wilkens
+Matthew Wilkens, Cornell University
+Peer-Reviewer: Caren Irr, Cameron Blevins
+Data Repository: 10.7910/DVN/XXN1UE
+
+ABSTRACT
+Are American authors homers? Do they devote too much of their attention to American concerns
+and settings? Is American literature as a whole different from other national literatures in its
+degree of self-interest? We attempt to answer these questions, and to address related issues of
+national literary identity, by examining the distribution of geographic usage in more than
+100,000 volumes of American, British, and other English-language fiction published between
+1850 and 2009. We offer four principal findings: American literature consistently features
+greater domestic attention than does British literature; American literature is, nevertheless,
+significantly concerned with global locations; politics and other international conflicts are
+meaningful drivers of changing literary attention in American and British fiction alike; and prizenominated books are the only examined subclass of American fiction that has become
+significantly more international in the decades after World War II, a fact that may account for
+readers’ unfounded perception of a similar overall shift in American literature.
+
+In late September, 2008, shortly before that year’s Nobel prize in literature was
+awarded (to Jean-Marie Le Clézio), Horace Engdahl, permanent secretary of the
+Swedish Academy, gave an interview to the Associated Press in which he explained
+the scarcity of American laureates. The United States, he suggested, is “too isolated,
+too insular. They don’t translate enough and don’t really participate in the big
+dialogue of literature. That ignorance is restraining.”1 The public response to
+Engdahl’s remarks, in the US and elsewhere, was mostly indignant and entirely
+predictable. The whole kerfuffle was intense but short lived and, though it continues
+to be cited on occasion in connection with the Academy’s perceived failings or
+American literature’s purported narrowness of scope, has had little obvious impact
+on academic literary studies.2
+At the same historical moment -- that is, about a decade ago, during the early years
+of the new century -- American literary scholarship was coming to grips with a
+related problem. “For too long,” wrote Wai Chee Dimock in her influential Through
+Journal of Cultural Analytics 6 (2021): 52-84. doi: 10.22148/001c.25273
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Other Continents (2006), “American literature has been seen as a world apart,
+sufficient unto itself, not burdened by the chronology and geography outside the
+nation, not making any intellectual demands on that score.”3 The way in which
+Engdahl’s phrasing mirrored Dimock’s is striking, but the objects of their analysis
+were different. Dimock was describing the reception and analysis of American
+literature, not its content. Her point was that American literature had long been more
+internationally engaged than the critical traditions descending from F.O.
+Matthiessen, Sacvan Bercovitch, or the New Criticism -- traditions that emphasized
+the distinctively American character of U.S. writing -- could admit.
+In her reorientation of the field toward the global character of literature produced in
+the United States, Dimock was not alone. Caroline Levander and Robert S. Levine’s
+widely cited collection Hemispheric American Studies appeared a year later; Rachel
+Adams’ Continental Divides (2009) reimagined American fiction as part of a
+fundamentally integrated North American literary culture two years further on.4
+Hewing more closely to the issue Engdahl raised -- that is, to the global content of
+American literary texts rather than to their critical reception -- a slew of articles and
+books published near the turn of the decade examined the historical ebb and flow of
+American literature’s direct engagement with the wider world, finding recent “global
+turns” at points ranging from the early Reagan administration (Paul Giles, linking
+newer fiction to the “inchoate” national boundaries of the Revolutionary era), to the
+mid-1990s (Paul Jay), to the new millennium (Caren Irr, treating the “geopolitical”
+novel in particular), to 9/11 (Bruce Robbins).5
+There can be little doubt that, whatever the merits and historical determinants of the
+long-running nationalist critical understanding of American literature, the rise of
+more globally oriented scholarship in the twenty-first century has been a welcome
+and fruitful development. And while not all of this work has been even implicitly
+invested in an answer to Engdahl’s claim of cultural chauvinism, nearly all of it
+raises in one way or another the question of American literature’s collective attempts
+to balance domestic with international concerns. It would be useful, then, if it were
+possible to assess American literary attention within and beyond the nation, to
+compare such attention to that of other national literatures, to track changes in both
+facets over historical time, to measure the differences in global investment between
+elite and popular US texts, and to gauge the differences between models of national
+53
+
+“TOO ISOLATED, TOO INSULAR”: AMERICAN LITERATURE AND THE WORLD
+
+literature organized around readers and around writers. What follows is an attempt
+to produce new evidence on each of these fronts and to provide an interpretive
+framework through which that evidence can be integrated with existing criticism.
+Our principal findings are four:
+1. American literature favors American spaces. American authors and USpublished books direct a much larger fraction of their geographic attention to
+domestic locations than do British authors and UK-published books.
+2. US fiction is significantly international. Although the overall level of
+domestic attention in American fiction is high and stable over time, there is
+nevertheless a significant fraction (30-40%) of American literary attention
+directed to locations outside the US.
+3. Politics matter. The distribution of foreign locations appears to change most
+notably in response to political conflict, especially wars, rivalries, and
+decolonial struggles.
+4. Prize culture is (a little) different. Books nominated for high-status literary
+prizes in the period after World War II are the only subset of American fiction
+in which we observe a sustained shift toward greater international attention.
+This helps to explain the (mistaken) perception in select literary circles that
+American fiction as a whole has become more international in the postwar
+period.
+
+Measuring literary-geographic attention
+Scholars of literature lack any single, obvious, widely shared, and consistently
+applicable criterion by which to assess textual attention to, or investment in, global
+affairs. As a result, even facially straightforward cases are likely to provoke at least
+some dissensus. This issue, while productive of critical debate, complicates the effort
+to measure changes in internationalism across many books -- that is, in literary
+cultures -- over long time spans. What is wanted is a textual feature that provides a
+countable and consistent (if necessarily imperfect) proxy for what Engdahl called
+“insularity.” One such feature is named places; once identified and associated with
+geographic information, it becomes possible to measure the fraction of a text’s
+geographic attention devoted to locations within and beyond any given nation.
+
+54
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Repeated over many books of diverse origin, the result is a gauge of literary-cultural
+internationalism.
+The quantitative analysis of literary geography has become well established in recent
+years.6 In most cases, including the present study, researchers use named entity
+recognition (NER) algorithms to identify word tokens in a given text that refer to
+geospatial locations. The location references are then looked up in a gazetteer that
+provides hierarchically organized geographic information about them (“Trafalgar
+Square” refers to an area at a specific latitude and longitude, with a given spatial
+extent, located within London, England, United Kingdom). Some form of error
+correction is usually necessary to identify mistakes at the NER stage and to resolve
+geographic ambiguities.7 The result is an interpretive reduction of a text to its
+directly specified geographic references, as well as a new and explicit embedding of
+those references within a known (and typically static) matrix of geopolitical
+boundaries.8
+
+A worked example
+We and others have discussed at length in previous work the affordances and
+limitations of this method.9 But it may be helpful to examine its results in a wellknown instance. Consider Thomas Pynchon’s short novel The Crying of Lot 49
+(1966). How, in a readerly sense, is its geographic attention distributed? It is an
+American book, set in the United States -- in California, to be more specific, and
+split between the northern and southern halves of that state to be even more so. Its
+principal settings -- northern Kinneret-Among-The-Pines, southern San Narciso -are fictional but, while one would have a difficult time putting them on a map, their
+regional associations are clear enough.
+Despite the (almost) strictly domestic American setting of the book, its range of
+geographic reference is wider. In an important early scene, Oedipa recalls her time
+with Pierce Inverarity in Mazatlán, where she encountered a symbolically significant
+painting by Remedios Varo. The Courier’s Tragedy -- the embedded “ill, ill
+Jacobean revenge play,” the plot of which is recounted in minute detail and whose
+textual status consumes much of Oedipa's investigative efforts -- traverses western
+and central Europe, and may have been sourced from the Vatican library. The
+
+55
+
+“TOO ISOLATED, TOO INSULAR”: AMERICAN LITERATURE AND THE WORLD
+
+European origins of the Tristero and Thurn and Taxis networks are explored at some
+length. Dr. Hilarious, Oedipa’s psychiatrist and a former Nazi intern at Buchenwald,
+provides another European link. The Peter Pinguid Society is devoted to resisting
+Soviet influence; Mike Fallopian tells the story of its founding via a minor
+nineteenth-century naval conflict with Russia. The Paranoids are obsessed with the
+Beatles, with London, and with British pop culture in general. The lawyer, Metzger,
+starred in a movie about submarine warfare in the Dardanelles. Nefastis is aroused
+by China.
+These facts of geographic attention do not undo the Americanness of Pynchon’s
+novel. But they do indicate some of the ways in which that Americanness is framed
+and inflected: it is western in the small-‘w’ sense, reflecting the cultural rise of
+California in the postwar years, yet significantly invested in European history and
+conflict, with almost no use for either the US east coast or for the global south (both
+of which play larger roles in V. and Gravity’s Rainbow).
+How well is this readerly sense of the novel’s geography captured by our method?
+Consider the results. We find 189 total location mentions in the 1966 Lippincott first
+edition. Of these, 173 can be identified with a single nation, of which 112 (64.7%)
+fall strictly within the United States. (Non- and supra-national locations such as
+“Pacific” or “Europe” are excluded from our calculations of domestic ratios, since
+their status is often ambiguous; if we included them as non-domestic locations, the
+domestic fractions reported here and throughout this article would be a few points
+lower). Of the 112 domestic locations, 65 (58%) are in California. We miss Kinneret
+and San Narciso (matched as locations at the NER stage, but excluded at the
+geolocation stage, as is true of imaginary locations in general), which together occur
+20 times in the novel; if we retained them, the overall domestic fraction would rise
+to 69.8% and the California fraction would rise to 66.7%. Among the non-US
+locations, the most frequently occurring are Britain (9 times), Italy (9), Belgium (6),
+Mexico (6), Germany (5), and the Vatican City (5). All of these are correctly
+identified and geolocated, with the exception of “Beaconsfield” (a cigarette brand
+that is mentioned twice in the novel and that is erroneously counted in our data as
+the British town bearing the same name).
+
+56
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+The Crying of Lot 49 is near the American average in its domestic usage rate. As we
+will see in passing later, its use of western European locations is also broadly typical.
+The details, of course, are idiosyncratic, but Pynchon’s book is an example of what
+an American novel that’s measured to be about 65% domestic might feel like to a
+reader. Is this good enough? Is The Crying of Lot 49 really 65% domestic in some
+gut-level sense, and are the books that we measure to be 65% domestic in their
+geographic usage really about two-thirds domestic when measured on that same,
+impressionistic scale? I’m not sure that this is a generally answerable question, but
+it’s worth pointing out that our metric clearly captures more than first-order setting.
+The above caveat notwithstanding, the method does generally provide a reliable
+indication of setting in the sense that the single most frequently occurring nation
+aligns with the human-annotated primary national setting in over 96% of cases and,
+at the more detailed state or provincial level, with human annotations over 92% of
+the time. In The Crying of Lot 49, this is particularly clear: US locations occur over
+ten times more often than do those in any other single nation, and California (even
+without Kinneret or San Narciso) out-tallies New York by a similar margin. The
+method is thus generally robust to fictional locations (which are very often
+accompanied by nearby nonfictional ones) and to individual geocoding errors (which
+are much more likely to go undetected in low-frequency instances than in highfrequency ones). For these reasons, it is unlikely that the method might fail to capture
+the general geographic sense of a country’s aggregate literary output, even as it is
+possible to imagine cases in which it may miss or mistake details that are important
+to individual readings.
+
+The corpora
+To compare internationalism in novels over time, we assembled 13 Englishlanguage corpora as summarized in table 1. Together, these collections cover British
+and American fiction published between 1850 and 2009, subdivided to allow
+comparisons by critical and market success and by divergent definitions of national
+origin. The largest corpora are those that capture all fiction output between the
+relevant dates in the HathiTrust digital library. Depending on the working definition
+of national origin, these corpora (labeled “Hathi XX”) range from about 6,400 to
+91,500 volumes. The “Wright” and “Chicago” corpora include similarly broad
+
+57
+
+“TOO ISOLATED, TOO INSULAR”: AMERICAN LITERATURE AND THE WORLD
+
+representations of (solely) American fiction published between 1851-1875 and
+1880-1990, respectively. The remaining collections are smaller, each comprising
+hundreds of volumes that were bestsellers, nominated for US literary prizes,
+reviewed in prestigious journals, or written by prominent British authors.
+Identifier Description (Source)
+
+Natio
+n
+
+Years
+
+Vols
+
+Words
+
+Bestselle Bestselling fiction in the UK
+rs GB
+before 1950 (Underwood)
+
+GB
+
+18501949
+
+150
+
+21.3M
+
+Bestselle Bestselling fiction in the US
+rs US
+before 1950 (Underwood)
+Early
+
+US
+
+18501949
+
+189
+
+25.8M
+
+Bestselle Bestselling fiction in the US
+rs US
+after 1950 (So)
+Postwar
+
+US
+
+19501999
+
+367
+
+71.4M
+
+Chicago
+
+Twentieth-century American
+fiction (Chicago Text Lab)
+
+US
+
+18801990
+
+8,577
+
+897M
+
+Hathi
+GB
+
+Fiction published in the UK
+(Hathi)
+
+GB
+
+18502009
+
+31,071 3.49B
+
+Hathi PR Fiction with Library of
+Congress classification PR,
+British (Hathi)
+
+GB
+
+18502009
+
+6,417
+
+Hathi PS Fiction with Library of
+Congress classification PS,
+American (Hathi)
+
+US
+
+18502009
+
+13,141 1.54B
+
+Hathi US Fiction published in the US
+(Hathi)
+
+US
+
+18502009
+
+91,501 10.5B
+
+58
+
+800M
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Prizes
+US
+
+Fiction shortlisted for literary
+prizes in the US after 1950
+(So)
+
+US
+
+19502000
+
+336
+
+46.4M
+
+Promine Fiction by prominent British
+nt British writers of the modernist era
+(Evans and Wilkens)
+
+GB
+
+18801940
+
+576
+
+57.7M
+
+Reviewe
+d GB
+
+Fiction reviewed in British
+journals before 1950
+(Underwood)
+
+GB
+
+18501949
+
+338
+
+34.5M
+
+Reviewe
+d US
+
+Fiction reviewed in US
+journals, before 1950
+(Underwood)
+
+US
+
+18501949
+
+210
+
+24.0M
+
+Wright
+
+Civil War-era US fiction
+(Wilkens)
+
+US
+
+18511875
+
+1,045
+
+79.8M
+
+Table 1. Summary of the corpora.10
+
+There are several definitions of national origin that are operative across the corpora,
+though only one is applied within each corpus. The lists of bestsellers and of
+reviewed books, as well as the large Hathi US and Hathi GB collections, are defined
+by the geography of the book business, that is, by the nation in which a book was
+published, collected, or reviewed. The Hathi PR and PS, as well as the Wright,
+Chicago, and Prominent British corpora, are defined by the bibliographer-assigned
+national origin of each book’s author, regardless of where the volume was
+produced.11 The US prize-nominated corpus straddles this distinction, but hews
+closer to the later (author-based), since many US prizes are open only to American
+authors. Using these diverging criteria of national origin -- some author-based, some
+reception- and market-based -- allows the present study to test, indirectly, for
+differences in international attention between authors and readers.
+The variations in scope, archival sourcing, market orientation, and historical
+coverage across the corpora also allow for multiple perspectives on the most salient
+features of national literary cultures. That said, no superposition of perspectives -59
+
+“TOO ISOLATED, TOO INSULAR”: AMERICAN LITERATURE AND THE WORLD
+
+and no archive -- is complete. Note, in particular, two features of primarily Hathibased (and many other library-based) archives. First, these corpora are shaped by the
+decisions of the historical publishing industries in the United States and Great Britain
+and by the collecting practices of the university and research-oriented libraries from
+which Hathi volumes are drawn. Books that were never formally published or that
+were issued by less prestigious or non-academic presses are underrepresented in the
+Hathi digital library. Underrepresentation in publishing and collection
+disproportionately affected (and continues to affect) writing by members of
+marginalized groups, as well as books belonging to lower-status genres such as
+romance and detective fiction.
+Second, the collection practices of university libraries have changed over time, as
+has the international scope of major publishers. In particular, the quality of
+publication location as a predictor of author nationality is not constant across the
+period 1850-2009, as shown in figure 1. Volumes published in Britain and digitized
+by Hathi are almost always more likely to have been written by British authors than
+US-published volumes are to have been written by American authors. For both
+nations, the domestic-author fraction present in Hathi was highest at the beginning
+of the period under examination (that is, in the mid-nineteenth century), lowest
+around the middle of the twentieth century, and has moved upward again in recent
+decades. This effect is strong enough that publication location becomes an
+objectively poor proxy for author nationality in the Hathi corpora at some points,
+though publication location may remain a useful index of readership or of the
+composition of the literary marketplace.
+
+60
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Figure 1. Fraction of randomly sampled Hathi fiction volumes (n=941) for which author nationality matches nation
+of publication as a function of publication decade, with LOWESS fits.12 Marker area indicates number of volumes
+sampled.
+
+Are American authors homers?
+Three of the corpora (Wright, Chicago, and Hathi PS) comprise books by authors
+judged by scholars, bibliographers, or librarians to be American. Together, these
+corpora span the period 1851-2009, with modest overlap. They thus provide both a
+summary picture of US literary internationalism across the nineteenth, twentieth,
+and early twenty-first centuries, and an opportunity to correlate results from multiple
+sources and archives. Figure 2 depicts the mean fraction of place name mentions in
+each of these corpora that fall within the borders of the modern United States (that
+is, US borders as they stood in 2019), grouped by year of publication.
+
+61
+
+“TOO ISOLATED, TOO INSULAR”: AMERICAN LITERATURE AND THE WORLD
+
+Figure 2. Fraction of named locations that are domestic in three author-based US corpora, with linear fits. Values
+averaged by year. Marker area indicates number of volumes.
+
+The data shown in figure 2 suggest that American authors favored domestic
+locations, which accounted consistently for about 60-65% of all place mentions that
+can be associated with any single nation. The data also show little sign of sharp
+departures from this average over time in any of the corpora, nor do they indicate
+any significant incompatibilities in their levels of domestic geographic investment
+despite having been compiled by different hands from varying sources over a period
+of more than 60 years. (The upward slope of the linear fit for the Hathi PS corpus is
+mathematically accurate but conceptually misleading, since the underlying data are
+sparse before 1980.) This is an important result, one that begins to answer the
+question of whether or not American authors devote much of their attention to places
+within the United States. As a group, they do.
+
+62
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Perhaps most striking in this result is the stability of domestic attention over more
+than 150 years. Such stability is especially notable in light of the United States’
+shifting global prominence during the same century and a half. It is difficult to
+imagine any fully satisfactory measure of a nation’s worldwide importance; the
+purpose of the present article is certainly not to do so. But we have seen in previous
+work that the United States’ share of global GDP between 1850 and 2009 varied to
+a much greater extent than did American authors’ attention to locations outside the
+US, as shown in figure 3.13 It is possible to observe large changes in broad features
+of American culture over spans of years or single decades. US authors’ mean
+international attention appears not to be among them.
+
+Figure 3. Comparison of domestic attention in three author-based US corpora to US global GDP share, 1850-2009.
+GDP marker sizes represent the relative size of the global economy, by year.14
+
+63
+
+“TOO ISOLATED, TOO INSULAR”: AMERICAN LITERATURE AND THE WORLD
+
+Is American fiction unique in its consistent devotion to domestic locations? To begin
+to answer this question, we can compare the above result to the fraction of domestic
+literary attention in books by British authors.15 Figure 4 adds two author-based
+British corpora to those displayed in figure 2. Hathi PR is analogous to Hathi PS; it
+is a large, contemporary-leaning collection of volumes of fiction by authors
+classified as British. The Prominent British corpus, derived from Evans and Wilkens,
+is smaller, covers the period 1880 to 1940, and is limited to novels by writers
+included in a handful of literary anthologies and companions of explicitly canonical
+orientation.
+
+Figure 4. Domestic attention in American and British author-based corpora, plus attention to the US in the Hathi
+PR (British) corpus and to Britain in the Hathi PS (American) corpus.
+
+British authors (red markers) used domestic locations at lower average rates than did
+their American counterparts (blue) and the British corpora show meaningful change
+
+64
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+over time in ways that the American corpora do not. Comparatively high-status
+British writing of the modernist era was more domestically inclined than was (and
+is) the wider run of British fiction collected by American libraries, but both groups
+devoted well over half of their explicit place mentions to locations outside the United
+Kingdom. British authors registered the falling global prominence of Britain itself - and the rise of the United States -- via a noisy but steady exchange of locations in
+the United Kingdom for those in the United States across the full period, especially
+after the early twentieth century (compare the red and green series). American
+authors, although they did not devote notably more of their attention to domestic
+locations over time (their US fraction started high and stayed high over time), did
+devote less of their geographic usage to British places (yellow markers) after 1900,
+falling to well below 10% of overall location occurrences by mid-century.
+The data from author-based national corpora suggest that both British and American
+writers have consistently devoted a large fraction of their literary-geographic
+attention to locations within their home country. This effect is much stronger and
+more durable among American authors; where British authors have used fewer
+British locations over time, American authors have shown no such trend with respect
+to American locations (although they, too, have come to use markedly fewer British
+locations today than they did in 1850). While there is no normatively correct level
+of domestic literary-geographic attention, the British case shows that changes to that
+level are possible and, hence, that the geographic inertia characteristic of American
+fiction is not an inevitable feature of all national literatures.
+
+Are readers different?
+If it appears that American authors are homers -- or, at least, that an unspecified
+confluence of factors produced a mostly uniform, relatively high level of domestic
+attention in American fiction over more than 150 years -- is the same true of
+American readers? This is a difficult question to answer in the absence of detailed,
+large-scale information about historical patterns of readership and reception.16 But
+we do have ready access to two distinct proxies for the books that were available to
+readers and that some readers chose to read: library collection records and historical
+bestseller lists.
+
+65
+
+“TOO ISOLATED, TOO INSULAR”: AMERICAN LITERATURE AND THE WORLD
+
+Libraries, as a group, collect the books that librarians believe their patrons will find
+useful.17 While the definitions of “patrons” and “useful” at play in over 150 years of
+acquisitions practices in a large group of mostly research-oriented libraries vary
+widely and can represent only imperfectly the full range of literary output and
+consumption, the books that libraries hold -- and, hence, the books included in the
+HathiTrust digital library -- constitute one broad-based version of the literary works
+to which readers have had access between 1850 and today.
+Figure 5 adds two new, very large, library-based corpora to the author-based datasets
+examined above. These are labeled Hathi GB and Hathi US, the two letters indicating
+the country in which a volume of fiction held by Hathi was published, regardless of
+the nationality of its author or authors.
+
+Figure 5. Domestic attention in author-based and library-based corpora.
+
+66
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+With the reiterated caveat that the composition of these corpora is necessarily filtered
+through the acquisition practices of US-based libraries rather than reflecting directly
+the publishing output of each nation, note how different are the rates of domestic
+attention when considered from the perspective of what was available to readers
+rather than what was produced by national authors. The British case is the more
+straightforward of the two: British literature identified by publication location
+contains lower UK domestic usage on average than that among books by strictly
+British writers, but shows a similar decline over time.
+The American case is more complex and, perhaps, more interesting. The publicationbased corpus is much less domestically oriented in general, but it -- unlike the authorbased US corpora -- trends toward greater domestic US attention over the course of
+the twentieth century. If US authors have favored American locations more or less
+consistently, US publishing and library collections have shown much greater
+geographic variation, in part due to the shifting national composition of the authors
+they publish and collect (see figure 1). That said, there is little evidence in this data
+of any recent shift toward broad-based internationalism in American fiction. If
+anything, fiction published in the US over the last generation or so is more
+domestically oriented than at any point since at least the mid-nineteenth century. To
+the extent that an observation like Engdahl’s (that contemporary US fiction is “too
+isolated, too insular”) is meant to encompass developments across the whole of
+American publishing (an interpretation that is by no means certain), it finds its best
+support here.
+But perhaps scholars, critics, and ordinary readers mean something different when
+they talk about “American fiction.” Perhaps they care less about the whole of literary
+production -- which has long been much too voluminous for any single reader to
+grasp -- and more about the handful of books that they (and people like them) read.
+While large library collections help to characterize the shape of the literary
+marketplace, they offer a relatively weak proxy for readership, which is generally
+dominated by a small number of bestselling or “important” titles.18 To assess
+whether or not mainstream readers have encountered greater or lesser domestic
+attention in their texts, we can examine the data in American and British bestsellers,
+as shown in figure 6.
+
+67
+
+“TOO ISOLATED, TOO INSULAR”: AMERICAN LITERATURE AND THE WORLD
+
+Figure 6. Domestic attention in bestsellers and in publication-location–based corpora.
+
+The bestseller data are a bit tricky -- both to see in figure 6 and to assess -- since they
+are so few: in the Bestsellers US Early corpus, which covers the 100-year period
+from 1850 to 1949, there are just 188 volumes (fewer than two per year); there are
+367 in the Bestsellers US Postwar corpus (1950-1999) and 150 in the Bestsellers GB
+corpus (1852-1944). Because these corpora are small, the results are noisy. The
+noise, in turn, complicates the apparent discontinuity between the US corpora at
+1950. This break is more a matter of visual perception than mathematical certainty;
+the weighted least-squares fits drawn through the data have high uncertainties in
+both their true levels and their trends. But it is safe to say that bestsellers in both the
+US and British cases do not diverge sharply in their distribution of domestic attention
+from the behavior of the larger, author- and library-based corpora. The bestsellers,
+in fact, most closely resemble the author-based corpora (Hathi PR and Hathi PS, not
+
+68
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+included in figure 6): flat to slightly rising domestic attention in the US, steadily
+declining domestic share in the UK.
+As an aside, note that the congruence of the variously defined British corpora
+(bestsellers, prominent writers of the modernist era, librarian-identified British
+authors, and UK imprints; see figure 7) supports the hypothesis that the observed
+differences in levels of domestic attention between the US and UK are not driven
+primarily by Hathi library collection practices. To put it more plainly: if we were
+worried that American libraries collect British books that don’t properly represent
+British fiction (because American librarians don’t have access to parts of the British
+book market, or because American readers prefer an idiosyncratic kind of British
+writing, or for some other reason), the fact that the results in the bestseller and
+prominent corpora are very similar to the Hathi-based corpora should help to set our
+minds at ease, at least on this specific score.
+
+Figure 7. Domestic attention in four British corpora, showing broad convergence in level and trend.
+
+69
+
+“TOO ISOLATED, TOO INSULAR”: AMERICAN LITERATURE AND THE WORLD
+
+Is serious literature different?
+It appears that British and American authors, readers, and publishers did and do
+differ in their books’ attention to domestic locations. Their differences have been
+maintained across scales and periods and are larger -- in some cases, much larger -today than they were in the past. These results support Engdahl’s claim concerning
+the relatively parochial nature of American fiction. They also support in an indirect
+sense Dimock’s argument that US literary criticism nevertheless tends to
+overemphasize domestic concerns, because the level of international attention in US
+fiction, while lower than in the British case, is still substantial. And they undercut
+arguments from critics and readers alike that recent decades have seen a rise or
+revival of the globally engaged American novel as a dominant form.
+There remains, however, at least one case that is notably important to scholars,
+critics, and literary intellectuals, but that isn’t well captured in the data presented to
+this point. I mean, of course, “serious” (or “important” or “literary” or -- an oldfashioned word -- “high-brow”) literature. When Engdahl said that American
+authors “don’t really participate in the big dialogue of literature,” he almost certainly
+didn’t mean that American authors aren’t widely read outside the States or that J.K.
+Rowling didn’t find an American audience. He meant instead that American fiction
+(or American literary culture) is, at the high end of prestige, a system unto itself, one
+characterized by books and readers that mostly engage with one another and that, as
+a system, maintains comparatively high barriers to entry for non-American
+participants.
+To evaluate how domestic and international attention behave in high-prestige fiction,
+we require working definitions of prestige that can be applied across many decades
+and on both sides of the Atlantic.19 Two candidate definitions that have been widely
+used are nominations for (select) literary prizes and reviews in high-status literary
+journals. The latter is, in principle, more expansive than the former (because more
+books are reviewed than are nominated for prizes), but both criteria revolve around
+the allocation of a scarce resource (prize money, page space) within a small fraction
+of the literary field that has high impact among status-conscious participants.
+
+70
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Figure 8 shows the changes in domestic attention over time in British and American
+novels selected for review or nominated for high-status prizes. Though the corpora
+are of modest size and the data are noisy, the trends in the figure are suggestive. The
+fiction reviewed in high-status British journals before 1950 behaves similarly to
+British fiction as a whole (compare figure 7); it is closest in level and trend to the
+large, author-based Hathi PR corpus. Likewise, fiction reviewed in high-status US
+journals over the same period allocates its geographic attention in ways that broadly
+resemble US fiction overall, and that are perhaps closest to the behavior of US
+bestsellers.
+
+Figure 8. Domestic literary attention in American and British high-status volumes.
+
+It is the set of postwar books nominated for US prizes that suggests, finally, why
+Engdahl’s claim about the chauvinism of contemporary American fiction struck so
+many knowledgeable observers of US literary culture as implausible. In this case
+alone among the US corpora do we find a sustained rise in international attention.20
+71
+
+“TOO ISOLATED, TOO INSULAR”: AMERICAN LITERATURE AND THE WORLD
+
+If the books to which one pays special attention belong to a system of prestige
+organized by domestic literary prizes, and if one emphasizes changes in the observed
+level of internationalism over the absolute level itself, then it will appear that US
+fiction became significantly less US-centric in the decades leading up to the new
+millennium.21 This trend is in keeping with the international turn of high-profile
+prizes outside the United States, most notably the Booker, which has been the subject
+of extensive commentary both academic and popular.22
+But prize-nominated literature in the US, although it became more international over
+time in the postwar period, was never notably international in comparison to other
+writing. This is true even within the United States, where the mean domestic fraction
+in books published between 1980 and 2000 was lower than the prize-nominated set
+in every corpus but the (restrictively American) Hathi PS set. The British corpora,
+meanwhile, never rose above 30% domestic on average over the same two decades.
+There is, in short, little evidence of any fundamental reversal of relatively high
+domestic regard in books written, read, reviewed, and celebrated in the United States
+over the last century and a half. Engdahl was almost certainly wrong to assert that
+no (or very few) American authors today engage international themes or concerns in
+important ways, and Dimock was certainly correct to push American literary
+criticism circa 2000 toward greater awareness of global connection: after all, roughly
+a third of location mentions in American fiction, under multiple definitions of
+“American,” lie outside the United States. But American books do favor American
+locations and have done so at levels that have proven remarkably resistant to
+historical change.
+
+Specific attention does change
+Although American literature has consistently favored domestic locations, there
+have nevertheless been meaningful shifts over time in the detailed distribution of its
+international attention. The same is true of British literature. The simplest way to see
+these differences is to plot the fraction of location mentions that fall within each of
+several large countries by year, as shown in figure 9.
+
+72
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Figure 9. Literary attention to nine countries, by year, in two large, market-based corpora. (Top) Hathi US corpus,
+(bottom) Hathi GB corpus.
+
+73
+
+“TOO ISOLATED, TOO INSULAR”: AMERICAN LITERATURE AND THE WORLD
+
+The lower-rightmost subplot for each corpus reproduces the fraction of attention
+devoted to the United States in the relevant data set, as previously discussed. What
+figure 9 adds is information about attention to selected nations outside the US and
+UK, which were previously agglomerated as “foreign” or “non-domestic.”
+Three features stand out in figure 9. First, there was a notable decline over time in
+attention to several western European nations, including Italy, France, and Great
+Britain, that occupied significant narrative space early in the period. Second, there
+appears to have been a modest rise in attention to Japan and China in the second half
+of the twentieth century. Third, there was a detectable, if noisy and uneven, increase
+in attention to the major powers of the Second World War during the years
+surrounding that conflict, including the interwar period. This potentially conflictrelated redistribution is somewhat more easily seen in the British corpus than in the
+American one.
+It is unclear whether the geographic changes indicated in figure 9 accord with any
+standard view of twentieth-century literary geography. Previous work has found that
+the geography of war was linked to changes in literary attention, especially in the
+cases of the US Civil War and the Second World War, and there is certainly a rich
+critical tradition studying the literary effects of conflict, violence, and trauma.23 But
+the limited scope of traditional critical methods means that it has been difficult to
+generalize from the geography of individual texts to the collective features of
+national literatures. The same is true of the apparent partial shift from western
+European locations to Japan and China: the change is a plausible one under many
+theories of twentieth-century literary development, but it has not been previously
+documented at scale.
+
+Geographic redistribution in detail
+As important as are these selective nation-level developments of twentieth-century
+literary geography, they remain largely impressionistic and they do little to discern
+the specific geographic texture of the processes that gave rise to them. Decreased
+attention to Italy, for example, could have been driven by a shift away from general
+references to the country or by one or more specific sites within its borders that came
+to occupy less narrative space over time. Beyond the question of specificity versus
+
+74
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+generality, we also face the problem of weighing large proportional changes in
+relatively small values (a doubling of attention to locations in India, say) to smaller
+proportional (but larger absolute) changes in large quantities.
+To address these issues, we examine two statistical measures of the changes in
+attention to countries and to individual named locations in the periods before and
+after the Second World War (1900-1945 and 1946-2009, respectively) and before
+and after the fall of the Berlin Wall (1945-89 and 1990-2009). The first, Cohen’s d,
+is a measure of effect size. It calculates the number of standard deviations by which
+the means of the two groups, earlier and later, are separated with respect to the
+number of times a given location or country occurs (per 100,000 words) in each. The
+second, Welch’s t, is a hypothesis test. It measures the likelihood that the observed
+difference between the group means might arise by chance from populations that
+share the same true mean. Together, these two tests help to assess the importance
+(critically speaking) and the significance (statistically speaking) of the differences
+in geographic usage within each corpus across the twentieth century.
+Countries first. Recall that the count for each nation collects not only mentions of
+the nation itself, in whatever form (“United States,” “America,” “USA,” and so on),
+but also all references to places within that nation. Among books published in the
+United States, the biggest mover by effect size -- by far -- was Great Britain, which
+dropped to 9% of total mentions in the postwar period from almost 16% in prewar
+volumes. France and Belgium also fell by large amounts, as did Monaco.24 Austria
+and Germany dropped, too, by slightly smaller amounts. This result is in keeping
+with the claim that European locations played generally smaller roles in postwar
+American fiction than they had during the first half of the twentieth century, perhaps
+reflecting a larger turn away from Europe as the center of both high-cultural
+influence and US-bound emigration. Gaining importance after 1945, beyond the
+United States itself, were countries including Vietnam, Japan, China, Poland,
+Mexico, and Iran. Note that these countries didn’t necessarily become important,
+full stop, after 1945: only about 1% of postwar place mentions were in Mexico or in
+Japan, and less than 0.3% were in Iran. But those levels represented large increases
+relative to the amount of prewar attention devoted to each of those nations.
+
+75
+
+“TOO ISOLATED, TOO INSULAR”: AMERICAN LITERATURE AND THE WORLD
+
+Drawing on the observed changes in US-published literature before and after 1945,
+we make two notes. First, war or conflict appears to have been a major driver of
+literary-geographic attention. Many of the highest-ranking upward movers were
+nations with which the United States experienced major or sustained tension after
+1945.25 Among downward movers, friendly and allied European nations generally
+experienced larger drops than did former Axis powers or Russia.26 Second, the count
+of countries that gained attention after 1945 is greater than the count of those that
+lost attention. In other words, American international literary-geographic attention
+became somewhat more widely dispersed in the postwar period than it had been
+before the war.
+The second half of the twentieth century, splitting at 1989, shows similar trends. The
+United States rose in prominence. Western Europe became less important to
+American authors (the UK, Italy, France, Germany, and Spain all dropped). Russia
+dropped after 1989, too, while China and Latin American countries including
+Mexico, El Salvador, and Costa Rica all rose. Vietnam rose, as did Afghanistan and
+Iraq (the last below the level of statistical significance, although the effect size, about
+0.7, was large). Again, American literature seems to have redistributed its
+geographic attention after 1989 in ways that broadly reflected changes in the foreign
+political investments of the nation. Economic shifts of the early twenty-first century,
+especially the rise of BRICS nations other than China, do not appear to correlate
+strongly with literary attention, in keeping with previous findings.27
+Aspects of this American story were present in British literature as well, although
+the details sometimes diverged sharply, especially around the two nations’ different
+colonial histories. Among books published in the UK between 1900 and 2009,
+decreasing attention was allocated to Great Britain, Belgium, France, and Spain after
+1945. Gaining attention in the postwar decades were the United States, decolonizing
+nations including Nigeria and Jamaica, and newly created Israel.28 Between 1945
+and 2009, again splitting at 1989, the trends are a bit harder to read and statistical
+significance is rare, even as effect sizes remain moderate to large. France, Belgium,
+Russia, Italy, and Switzerland all fell in frequency (the latter two below the level of
+statistical significance), while former colonial possessions of the UK were largely
+absent from the list of top movers one way or the other, with the exceptions of
+
+76
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Pakistan and Jamaica (which rose substantially within a context of relatively sparse
+usage, to around 0.25% of all mentions; d ≅ 0.5, but not significant).
+Unlike American fiction, British literature did not move sharply toward a wider
+range of geographic reference in the second half of the twentieth century. There were
+about the same number of nations that gained attention in UK-published texts after
+1989 as there were that lost it. Examining the full century, there were only slightly
+more gainers than losers after 1945 in the British case.
+With the exception of large proportional fluctuations is rarely mentioned locations,
+the declining salience of Belgian locations is perhaps the biggest surprise among
+British texts (Belgian places also dropped significantly in American literature after
+1945, but their decline slowed later in the postwar period). One suspects this
+phenomenon has to do with Belgium’s dual role in the British literary imagination:
+at once the site of Great War battles, which became much less prominently featured
+after 1945 (mentions of “Flanders” dropped precipitously, for example), and the seat
+of European bureaucracy later in the century. The former, it seems, was a more
+appealing literary subject than the latter, but additional investigation is required to
+fully explain the case.
+Returning to American books and examining the much smaller corpora of bestsellers
+and high-status literature, we observe a handful of differences. War and political
+rivalry remained major predictors of changes in literary attention, with Japan,
+Russia, and Iraq all among the top risers in books that sold very well after 1945.
+Bestsellers also displayed a preponderance of risers overall, indicating a
+diversification of postwar literary-geographic reference. Unlike the broader US
+fiction case, however, bestsellers focused somewhat less attention on American
+locations in the second half of the twentieth century, and showed very little change
+in their overall use of British locations. Prestigious volumes -- those that were
+reviewed in high-status journals or nominated for major prizes -- turned more
+frequently to Japan and Mexico, as well as to Poland and Russia, while devoting less
+attention to the UK and other western European locations. We stop short of firm
+conclusions regarding these corpora, however, since their relatively small sizes
+produce noisy data, which in turn leads to smaller effect sizes and lower statistical
+significance.
+77
+
+“TOO ISOLATED, TOO INSULAR”: AMERICAN LITERATURE AND THE WORLD
+
+Finally, we note briefly the results of similar analyses performed not on countries in
+aggregate but on unique place names. On the whole, the patterns of change over time
+were similar: less Europe and more America, somewhat wider geographic
+dispersion, a move away from the sites of older conflicts and toward the sites of
+newer ones. Within the United States, literary attention appears to have followed
+population growth in the south and the west. In British literature, the regional terms
+“Africa,” “Caribbean,” and “Eastern Europe” were all major postwar gainers.
+American bestsellers and prize-nominated books followed patterns similar to their
+nation-aggregated results and to the directions of US fiction overall. In particular,
+“Africa” and “Mexico” (as well as “Atlantic” and Pacific”) were among the top
+rising geographic terms in high-status American novels after 1945, in keeping with
+the argument that the postwar literature of distinction contained more markers of
+global engagement than did less critically lauded writing.
+Taken together, these results suggest two nations at different stages of their imperial
+development. British fiction in the nineteenth century already engaged the
+geographic diversity of a global colonial power. By the early twentieth century,
+British literature had begun to devote less of its attention to the UK or to the core of
+western Europe, while giving more page space to the United States. After World
+War II, those trends continued, now shuffling an already diverse set of international
+investments and gradually continuing a long-established drift away from domestic
+attention. In the US, by contrast, we find a literary system the international
+orientation of which was modest and primarily European in the years before World
+War II, but that diversified its internationalism markedly during the second half of
+the twentieth century. What hasn’t happened yet in the American case is a decisive
+turn away from the geographic dominance of the United States itself.
+Will American fiction follow the British example in the decades ahead as American
+power and influence decline from their post-Cold War peaks? It might; if it does, we
+should expect to see, for the first time in American literary history, a drop in the
+overall level of investment in US locations and, eventually, an approach toward a
+steady state of diversity among international locations. There exists modest evidence
+of increasing diversification in the present data, but little as yet to suggest that the
+mechanisms by which the US might be even slightly decentered in its own literature
+
+78
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+(more internationalism in high-status books, a possible post-2000 dip in domestic
+share) have taken hold in the system of American literary production as a whole.
+
+Conclusions
+The results and analysis reported here constitute the first large-scale, comparative
+historical study of the literary geography of the United States and Great Britain.
+Collectively, they show that American literature from the mid-nineteenth through
+the early twenty-first centuries was consistently and significantly more domestically
+oriented than was British fiction of the same period. The stability of geographic selfregard among American-identified authors has also been striking: the fraction of
+domestic literary locations used by American writers started high, stayed high
+through two world wars, and remains high today. This is in marked contrast to
+British fiction, which was at almost every historical point more outwardly focused
+and became only more so over time. There is, in short, some justice in Horace
+Engdahl’s accusation that American literature has been “too isolated, too insular” in
+comparison to at least one other national literary tradition.
+But the story is more complicated than that, of course. For one thing, a large fraction
+of American literary-geographic attention has indeed been devoted to locations
+outside the United States: a third or more and, in some instances, as much as 4050%. There is no intrinsically correct level of international attention, but there are
+literally millions of references to international locations across American literature.
+One might note, too, that the level of domestic analysis appropriate to large,
+multicultural societies -- whatever value one considers appropriate -- is likely higher
+than the level appropriate to smaller or more homogeneous societies. The United
+States isn’t Sweden; what’s right for one probably isn’t right for the other.
+Even if we were to believe, contrary to contemporary critical practice and to a
+portion of the evidence presented here, that most US novels remain fundamentally
+American in their orientation and concerns, it is surely important that they explore
+those concerns through references that are very often international. It is also true
+that, in recent decades, the American fiction that garnered the most prestige and
+critical attention became more internationally oriented than it was in the late
+nineteenth and early twentieth centuries. While the same was not true of other
+
+79
+
+“TOO ISOLATED, TOO INSULAR”: AMERICAN LITERATURE AND THE WORLD
+
+corners of the US literary marketplace, the American books that were most nearly
+part of Engdahl’s contemporary “big dialogue of literature” were exactly the ones
+that were moving explicitly toward a more global outlook.
+When we consider the specific distributions of international attention, rather than the
+simple domestic/foreign split, we find that the geography of US literature became
+more diverse during the twentieth century. That is, while the total amount of
+geographic attention directed beyond the borders of the US stayed relatively constant
+(or, in some cases, decreased) between 1900 and 2009, that constant quantity of
+attention was dispersed more intensively across more nations after 1945 than it had
+been during the first half of the century. As seen in previous work, war and political
+rivalry appear to have been major drivers of literary attention. Traditional sites of
+cultural prestige (Great Britain, France, London, Paris, Rome, etc.) did not disappear
+-- on the contrary, they remained frequently invoked even into the twenty-first
+century -- but they received a smaller portion of attention than they had in earlier
+decades.
+The present study is also among the first explicitly to compare large national-literary
+corpora constructed according to divergent definitions of national belonging. These
+definitions include those based on author identity, on the sites of publication output,
+on the tastes of readers, and on the practices of critics. The goal has not been to
+identify a supposed best or truest version of American or British literature. There is
+obviously no such thing. But comparison across plausible versions of nationality has
+allowed the study to begin to identify features that do (and do not) differ depending
+on what one might emphasize as the bases of national literary affinity.
+Despite the scope of the datasets examined, there remain important limitations and
+opportunities for future work. It has not yet been possible to explore the results of
+these methods in other national or regional literatures beyond those of the United
+States and Great Britain, but there is no fundamental barrier to doing so; the findings
+would be of obvious value. A comparison of US literary output to that of Europe (as
+a whole) and to China would be especially useful, since they represent instances of
+population size, social complexity, and economic weight that would provide
+important counterpoints to the British case.
+
+80
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Nor do the current corpora fully capture the literary output of the nations they do
+include. In addition to the systematic exclusions from library corpora discussed
+above, we have made no effort in the present research to capture literature published
+in newspapers, periodicals, or other media, which were historically important outlets
+for both mainstream and marginalized writers. The same is true today with respect
+to online publications, which have radically lowered the barriers to publication and
+readership, but which are not included in our data. Facets of authorial identity
+beyond national affiliation are obvious areas of interest, as are the comparative
+historical dynamics of nonfiction writing in both long form (histories, biographies,
+essays, etc.) and shorter, faster-moving formats such as newspaper articles,
+pamphlets, and social media posts. All of these are areas to be explored.
+These limitations notwithstanding, the study has argued that American literature
+showed a preference for domestic locations compared to the British example over
+the last century and a half. This preference was largely and surprisingly stable over
+time, but its overall stability ought not to mask important shifts in its international
+attention that aligned with the coarse features of American foreign political
+engagement. While British literature was consistently more international in its
+geographic usage, it, too, responded in easily measurable ways to the politics of war,
+rivalry, and decolonization in the twentieth century.
+With these results in hand, we possess not only a widely informed response to the
+critical and cultural reorientation of American literary studies in the twenty-first
+century, but also a new background against which to compare the literary geography
+of other national traditions, of other subsets of American and British writing, and of
+new directions in US literary output in the years ahead.
+
+References
+Engdahl’s remarks were widely reported at the time. See, for instance, the original AP story, the Guardian’s
+follow-up, and the New York Times’ coverage.
+1
+
+2
+
+The MLA bibliography contains not a single reference to Engdahl in connection with the Nobel, apart from an
+article of Engdahl’s own.
+3
+
+Wai Chee Dimock, Through Other Continents: American Literature across Deep Time (Princeton: Princeton UP,
+2006), 2-3.
+
+81
+
+“TOO ISOLATED, TOO INSULAR”: AMERICAN LITERATURE AND THE WORLD
+
+4
+
+Caroline F. Levander and Robert S. Levine, eds, Hemispheric American Studies (New Brunswick, NJ: Rutgers UP,
+2007); Rachel Adams, Continental Divides: Remapping the Cultures of North America, (Chicago: U of Chicago P,
+2009).
+5
+
+Paul Giles, The Global Remapping of American Literature (Princeton: Princeton UP, 2011); Caren Irr, Toward the
+Geopolitical Novel: U.S. Fiction in the Twenty-First Century (New York: Columbia UP, 2013); Paul Jay, Global
+Matters: The Transnational Turn in Literary Studies (Ithaca, NY: Cornell UP, 2010); Bruce Robbins, “The
+Worlding of the American Novel.” The Cambridge History of the American Novel (Cambridge, Cambridge UP,
+2011), 1096–1106.
+6
+
+Examples of quantitative geographic analysis of literary texts include David Cooper, Christopher Donaldson, and
+Patricia Murrieta-Flores, eds., Literary Mapping in the Digital Age, (Burlington, VT: Ashgate, 2016); David Cooper
+and Ian N. Gregory, “Mapping the English Lake District: A Literary GIS,” Transactions of the Institute of British
+Geographers 36, no. 1 (2011): 89–108; Elizabeth F. Evans and Matthew Wilkens, “Nation, Ethnicity, and the
+Geography of British Fiction, 1880-1940,” Journal of Cultural Analytics, 2018; Ryan Heuser, Franco Moretti, and
+Erik Steiner, “The Emotions of London,” Pamphlets of the Stanford Literary Lab (Stanford, CA: Stanford
+University, 2016); Matthew Wilkens, “The Geographic Imagination of Civil War-Era American Fiction,” American
+Literary History 25, no. 4 (2013): 803–40.
+7
+
+For details of the present method, see Evans and Wilkens, op. cit., and the code supplement to this article. Note
+that, in the present work, the threshold for predicted fiction probability has been raised to 0.8; in previous work, we
+used a lower threshold (0.5). In effect, we now exclude some volumes that we are less confident contain primarily
+narrative fiction. See the linked article for a discussion of the systematic differences in geographic usage across
+fiction and narrative nonfiction texts.
+8
+
+As in previous work, we use contemporary (circa 2019) national boundaries in all cases. For the US corpora, this
+means that a tiny fraction of domestic references are to locations or territories that were not under US control at the
+time of a source work’s publication. One might also consider a slightly larger fraction (about 1%) of such references
+to pre-statehood territories as only ambiguously domestic. In either case, an alternate treatment would have no
+material impact on the present results.
+In addition to the sources cited in note 6, see also the thoughtful treatment by Cameron Blevins in “Space, Nation,
+and the Triumph of Region: A View of the World from Houston,” Journal of American History 101, no. 1 (2014):
+122–47.
+9
+
+10
+
+For additional information, see the code supplement to this article, as well as chapter 3 of Ted Underwood,
+Distant Horizons: Digital Evidence and Literary Change (Chicago, 2019); Elizabeth Evans and Matthew Wilkens,
+op.cit.; and Matthew Wilkens, op. cit. For genre determination in the Hathi datasets, see Ted Underwood, Boris
+Capitanu, Peter Organisciak, Sayan Bhattacharyya, Loretta Auvil, Colleen Fallaw, J. Stephen Downie (2015),
+“Word Frequencies in English-Language Literature, 1700-1922 (0.2)” and associated work in progress. An overview
+of the Hathi fiction corpora is provided in Ted Underwood, Patrick Kimitus, and Jessica Witte, “NovelTM Datasets
+for English-Language Fiction, 1700-2009,” Journal of Cultural Analytics, 2020. Lists of bestselling and prizenominated novels by American authors were supplied by Richard Jean So and Teddy Roland from publicly released
+records. Hathi PS contains a small number (<1%) of volumes by Canadian authors.
+11
+
+Assignments of author national origin follow the guidelines of the Library of Congress, which rely on accepted
+scholarly use. In practice, there are relatively few difficult cases over most of the period in question, though this fact
+does not diminish the potential complications in any individual instance.
+12
+
+Excludes volumes by authors of unknown or ambiguous national origin.
+
+Matthew Wilkens, “The Perpetual Fifties of American Fiction,” in Neoliberalism and Contemporary Literary
+Culture, ed. Mitchum Huehls and Rachel Greenwald-Smith (Baltimore: Johns Hopkins UP, 2016), 181–202.
+13
+
+14
+
+GDP values are harmonized and calculated in inflation-adjusted dollars. US GDP share calculated relative to nine
+other major economies. For details of the GDP measurement method, see Wilkens, “Perpetual Fifties,” op. cit. Data
+
+82
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+are derived from the Maddison Project Database, version 2013. Bolt, J. and J. L. van Zanden (2014); see also “The
+Maddison Project: collaborative research on historical national accounts,” The Economic History Review, 67, no. 3
+(2014): 627–651.
+15
+
+Domestic British locations are those that fall within the present-day borders of the United Kingdom of Great
+Britain and Northern Ireland. The so-called Home Nations (England, Scotland, Wales, and Northern Ireland) are
+first-level administrative units within the UK. Thus “Britain,” “UK,” “England,” and “Wales,” for example, are all
+counted as British domestic locations for our purposes. All former British colonial possessions are counted as nonBritish, even if they were under British rule at the time a book was published. In general, British literary references
+to “Britain” and to locations in England significantly outnumber those to other British and (conceptually or
+historically) British-linked places. For more on the status of former British colonial territories in particular, see
+Evans and Wilkens, op.cit., and references therein.
+16
+
+Reception-oriented book-historical scholarship of the type practiced by Janice Radway, Priya Joshi, and others has
+proven valuable at micro- and meso-scales and might be extended profitably toward market-wide scope in the
+future. More strictly business-oriented studies of the publishing industry, such as Albert Greco, Clara Rodríguez,
+and Robert M. Wharton, The Culture and Commerce of Publishing in the 21st Century (Stanford, CA: Stanford UP,
+2006), are useful, but tend not to emphasize problems of readership.
+The motto of the American Library Association, adopted in 1892, is “the best reading, for the largest number, at
+the least cost.” On the historical practices of librarians and on their self-identified role as “apostles of culture,” see
+Dee Garrison, Apostles of Culture: The Public Librarian and American Society, 1876-1920 (New York, Free P,
+1979) and Lynne Tatlock, Matt Erlin, Douglas Knox, and Stephen Pentecost, “Crossing Over: Gendered Reading
+Formations in the Muncie Public Library, 1891-1902,” Journal of Cultural Analytics, 2018.
+17
+
+18
+
+On the role of bestsellers and blockbusters in American publishing, see Joel Waldfogel, Digital Renaissance:
+What Data and Economics Tell Us about the Future of Popular Culture (Princeton, NJ: Princeton UP, 2018); Alan
+Sorensen, “Bestseller Lists and Product Variety,” Journal of Industrial Economics, 55, no. 4 (2007): 715-738; and
+Greco, Rodríguez, and Wharton, op. cit.
+19
+
+The academic literature on literary prestige is too voluminous to cite in detail. For that reason, I note only that I
+am grateful to James English for insightful comments pointing in this direction and for his important work in The
+Economy of Prestige (Harvard, 2005). For attempts to work with large-scale quantitative data concerning literary
+prestige, see especially Mark Algee-Hewitt et al., “Canon/Archive: Large-Scale Dynamics in the Literary Field”
+(2016); J. D. Porter, “Popularity/Prestige” (2018); and chapter 3 of Underwood, Distant Horizons, op. cit.
+20
+
+The rise in international attention is here visible as a decline in its inverse, domestic attention.
+
+21
+
+To quantify the trend, the fraction of domestic locations in prize-nominated fiction in the US decreased by about
+0.3 percent per year between 1945 and 2009 (p=0.02), or more than 10 percentage points overall.
+22
+
+On the relationship between the Booker and the geographic expansion of British fiction after 1980, see especially
+Kara Donnelly, “The Booker Prize: Literature, Britain, and the World, 1968-1999,” PhD dissertation, (University of
+Notre Dame, 2015) and Graham Huggan, “Prizing ‘Otherness’: A Short History of the Booker,” Studies in the Novel
+29.3 (1997), pp. 412-33.
+23
+
+On conflict and literary geography at scale, see Wilkens, “Geographic”; and Wilkens, “Perpetual,” both op.cit.
+
+24
+
+Unless otherwise noted, all results are significant at the (adjusted) p < 0.05 level after applying the BejaminiHochberg procedure to account for multiple comparisons. See code supplement for details of the adjustment and for
+tables of results.
+25
+
+We might note further that the list of countries with which the United States has experienced some form of tension
+or rivalry over the last 75 years is long, indeed.
+
+83
+
+“TOO ISOLATED, TOO INSULAR”: AMERICAN LITERATURE AND THE WORLD
+
+26
+
+A note on Russia: The present study uses 2019 boundaries for Russia. Locations in former Soviet republics are
+assigned to their present-day nations. We resolve instances of “Soviet Union” to Russia and translate Soviet-era
+place names, so far as possible, into their contemporary Russian equivalents.
+27
+
+Wilkens, “Perpetual,” op.cit.
+
+28
+
+Israel also gains in the US case, though it falls further down the list of risers, likely due to the more pervasive use
+of biblical locations in religiously themed American fiction during the first half of the century.
+
+84
+
+
