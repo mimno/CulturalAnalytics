@@ -1,0 +1,1318 @@
+Roller, Ramona. “Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls
+and a Practical Guide by the Example of the Reformation.” Journal of Cultural Analytics,
+vol. 7, no. 4, Jan. 2023, https://doi.org/10.22148/001c.57764.
+
+ARTICLE
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls
+and a Practical Guide by the Example of the Reformation
+Ramona Roller1
+1 ETH Zurich
+
+Keywords: DH theory, hypothesis testing, statistical models, European Reformation, operationalization, social sciences
+https://doi.org/10.22148/001c.57764
+
+Journal of Cultural Analytics
+Vol. 7, Issue 4, 2022
+
+The Digital Humanities face the problem of multiple hypothesis testing:
+Evermore hypotheses are tested until a desired pattern has been found. This
+practice is prone to mistaking random patterns for real ones. Instead, we should
+reduce the number of hypothesis tests to only test meaningful ones. We address
+this problem by using theory to generate hypotheses for statistical models. We
+illustrate our approach with the example of the European Reformation, where
+we test a theory on the role of opinion leaders for the adoption of
+Protestantism with a logistic regression model. Given our specific setting,
+including choice of data and operationalisation of variables, we do not find
+enough evidence to claim that opinion leaders contributed via personal visits
+and letters to the adoption of Protestantism. To falsify or to support a theory, it
+has to be tested in different settings. Our presented approach helps the Digital
+Humanities bridge the gap between the qualitative and quantitative camp,
+advance understanding of structures resulting from human activity, and
+increase scientific credibility.
+
+1. Introduction
+The question of how to incorporate theory into research has been a recurring
+narrative in the Digital Humanities (DH). Critics at one end of the opinion
+spectrum disavow theory (Anderson). They argue that methodological
+debates are more easily resolved than theoretical ones and that practitioners
+require guidance based on positivist rather than theoretical ideas (Scheinfeldt;
+Raab). At the other end of the spectrum, critics condemn the lack of
+theory, i.e., humanistic values, such as deconstructionism, relativism, and
+poststructuralism, in the usage of DH tools, like maps and topic models
+(Drucker; Hall; Liu). In between these two extremes, critics argue for a
+combination of theory and method to improve the interpretability of
+findings (Berry et al.).
+Interestingly, such a debate about theory does not exist in the Social Sciences.
+The sister-discipline of the DH has agreed on a specific usage of theory
+within the scientific method to test hypotheses in a statistical model. How
+can the DH profit from this theory usage and how can they help to address
+drawbacks of this usage? This article addresses both questions, first, by
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+showing that theory usage with a statistical model improves the quality of
+data-driven analyses, and second, by encouraging the DH to use narratives to
+find a balance between theory-driven and exploratory analyses.
+The DH and Social Sciences overlap in important areas. They are both
+interested in structures resulting from human activity, such as societies,
+cultures, texts, and paintings, and they both use a data-driven approach
+resulting in several shared tools, such as sentiment analysis, topic modeling,
+and social networks (Pedersen; Rosenbloom). However, this data-driven focus
+1
+makes both disciplines susceptible for data mining : the unscientific practice
+of looking for patterns in the data until a desired one has been found. In this
+article, we address a particular but crucial case of data mining: the problem
+of multiple hypothesis testing (MHT). MHT carries the danger that spurious
+results are published, which decreases their credibility (Shalizi, “Confidence
+Sets for Multiple Coefficients”; Bretz et al.). We explain how the Social
+Sciences address MHT by using theory and argue that the DH could not
+only copy this successful mechanism but also improve it by balancing it with
+exploratory approaches.
+In the Social Sciences, the usage of theory is restricted to the application of
+the scientific method (Popper, The Logic of Scientific Discovery). Based on an
+observation capturing a phenomenon of interest, one formulates a hypothesis
+(induction), tests it empirically with a model, and uses the result to infer new
+insights about the phenomenon of interest (deduction). Within the scientific
+method, a theory is used to derive a hypothesis. Formally, a scientific theory
+is a universal statement to explain, predict, and generalise outcomes resulting
+from an initial condition beyond the singular case (Popper, Theories).
+Scientific theories are falsifiable, meaning that if new experimental
+observations are incompatible with theoretical expectations the theory is
+either dismissed or modified (Popper, Falsifiability).
+For example, the theory of opinion leaders states that social change is brought
+about by important individuals (Rogers; Katz and Lazarsfeld). This theory
+is falsified if one finds that social changes can occur without the support
+of opinion leaders. To provide a use case of how theory-driven analyses can
+prevent MHT, this article applies the theory of opinion leaders to the example
+of the European Reformation. By testing to what extent famous reformers
+(the opinion leaders) affected the adoption of Protestantism in 16th century
+Europe (the social change), this article exemplifies the benefits of theorydriven statistics.
+
+1 Data mining is also known under several other names, including data dredging, data fishing, data snooping, data butchery, significance
+
+chasing, significance questing, selective inference, p-hacking or data piñata; (Wasserstein and Lazar; Davey Smith) (Lindgren; Garcia)].
+
+Journal of Cultural Analytics
+
+2
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+This article invites the DH and Social Sciences to learn from each other
+and adopt each other’s methods when faced with similar problems. Theorydriven statistical analyses from the Social Sciences can help the DH to prevent
+unscientific data mining, and exploratory approaches from the DH can help
+the Social Sciences to account for data that are not readily available as a whole.
+
+2. Previous Research on Testing Scientific Theories
+Previous research in the Social Sciences has used theories to generate
+hypotheses in various subfields. The aim of the following overview is to
+provide exemplary cases of theory-driven research that may inspire future
+analyses of practitioners. We do not intend to provide a complete overview of
+the literature for theory-driven analyses.
+For example, Box-Steffensmeier et al. used structural and interactionist
+theories of social roles to define roles of interest groups in lobbying coalitions
+(Biddle). Iyengar and Westwood used social identity theory to motivate their
+investigation of polarisation in the electorate along party lines (Turner).
+Matthieß used mandate theory to study the effect of pledge fulfilment of
+political parties on electoral outcomes (Mansbridge). Buggle used a theory
+of individualism and collectivism to study how differences in societal
+collaboration have led to divergences in culture and technology (Triandis
+et al.; Triandis and Gelfand). Leal used migration systems theory to study
+migration flows between countries (Mabogunje). Nelson used token theory
+and racial domination theory to study the use of social capital among
+ethnographic groups in settings where they represent the minority (Kanter;
+Desmond and Emirbayer). Light used a theory of legal decision making to
+study discrimination in court based on citizenship (Black). These examples
+can guide similar research in other disciplines, such as historiography.
+With data and computational power now readily available, an opportunity
+has arrived for the DH to test scientific theories of the classic humanities.
+For example, in historiography, a subfield of the DH, there is substantial
+interest in applying statistical methods to existing problems, often trying to
+test theories concretely (Rawat et al.; Cantoni, “The Economic Effects of
+the Protestant Reformation: Testing the Weber Hypothesis in the German
+Lands”). Famous theories include the theory of confessionalisation,
+describing the impact of the European Reformation on the formation of
+the modern state (Schilling, “Die reformierte Konfessionalisierung in
+Deutschland. Das Problem der »Zweiten Reformation«”; Reinhard);
+domino theory, relating the fall of the Roman Empire to pressure spreading
+from peoples outside the empire to those at its borders, which resulted in
+migration to the empire (Heather); and Sonderweg (German for ‘special
+path’) theory, arguing that an authoritarian government in Germany was
+inevitable after the Weimar Republic because of the nation’s unique history
+and development (Llewellyn and Thompson; Fischer; Wehler; Vermeil;
+Taylor; Shirer).
+Journal of Cultural Analytics
+
+3
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+3. The Scientific Theory in Practice
+How do we test theories with quantitative methods ideally? We formulate a
+research question, connect it to an existing theory, and translate aspects of
+this theory into a testable hypothesis. Suppose our research question states:
+‘Why did peasant revolts in 16th century Europe occur?’, and our specific
+driving factor of interest is the occurrence of famines. To statistically test
+how famines affected peasant revolts, we start with a conservative assumption:
+Famines do not affect the probability of revolts. This assumption of the lack
+of an effect is called the null hypothesis and is tested in a statistical model at a
+certain confidence level.
+Two outcomes are possible: First, if the model provides enough evidence for
+the effect of famines on peasant revolts, we reject the null hypothesis. If the
+effect is positive (negative), we infer that famines make peasant revolts more
+(less) likely. Second, if the model does not provide enough evidence for an
+effect of famines on peasant revolts, we fail to reject the null hypothesis. We
+infer that famines did not affect peasant revolts. Importantly, failing to reject
+the null hypothesis does not mean that we proved that the effect of interest
+does not exist. It only means that we did not find enough evidence to claim
+that the effect exists. With respect to the famine-revolt example, this means
+that famines may have affected revolts in reality, but our model did not detect
+this connection.
+Both conclusions (famines affect or do not affect peasant revolts) are not
+absolute because we test the null hypothesis at a certain confidence level. This
+means that we have a certain probability of drawing the wrong conclusion
+for each case, i.e., to make an error. In the first case, the error means that
+we think that famines affected peasant revolts, although they did not (type I
+error). In the second case, the error means that we think that famines did not
+affect peasant revolts, although they did (type II error).
+
+4. The Problem of Multiple Hypothesis Testing
+Conducting many hypothesis tests is problematic because it undermines the
+definition of statistical significance. Statistical significance indicates whether
+an effect can be attributed to a factor of interest or chance. If we attribute an
+effect to chance, we fail to reject the null hypothesis. If we attribute an effect
+to a real pattern, we reject the null hypothesis.
+In statistical models, significance is represented by the p-value. It represents
+the confidence level of the statistical test, i.e., the probability of finding a
+pattern in the data when in fact, this pattern does not exist. In statistics
+jargon, the p-value is the probability of conducting a type I error or finding
+a false positive, which is equivalent to rejecting the null hypothesis when
+it is true. The counterpart of the type I error is the type II error or false
+
+Journal of Cultural Analytics
+
+4
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+2
+
+negative, where one fails to reject the null hypothesis when it is false. In
+statistical models, we try to reduce the probabilities to commit type I and type
+II errors as much as possible, e.g., by increasing the sample size. However, the
+probabilities of type I and type II errors are always larger than zero (Banerjee
+et al.).
+To illustrate the problem of multiple hypothesis testing (MHT), we return to
+our previous example of peasant revolts. Suppose we have potential driving
+factors available whose effect on the probability that a peasant revolt occurs
+we can statistically test, such as the socio-economic situation of peasants, the
+type of rule of their feudal lord, and the influence of famines. If we test the
+factors separately, we test hypotheses, one for each driving factor. Suppose
+that, in reality, each of these factors does not affect peasant revolts (null
+hypothesis is always true). Of course, this information would be unknown
+in real-world analyses. The hypothesis test aims to reveal this actual pattern
+from our data.
+For each of the
+hypothesis tests, we choose an acceptable significance
+level ( ). is the maximum probability with which we allow ourselves to
+commit a type I error. For this example, we choose
+for each test,
+meaning that we accept a
+chance to commit a type I error. Assuming all
+hypothesis tests are independent, the significance level over all hypothesis
+tests combined (called ‘experimentwise significance level’) will be given by
+(Ryan). In this equation, is the acceptable significance level
+of an individual hypothesis test, i.e.,
+, and is the number of hypothesis
+tests, i.e., . So, with
+hypothesis tests being conducted, we have a
+(
+) chance of observing at least one significant
+result, even if all the individual tests are not significant. The experimentwise
+significance level under MHT represents a drastic increase from the accepted
+, which we chose initially. MHP increases the probability of getting a
+significant result simply due to chance. The large experimentwise significance
+level falsely indicates to us that some of the significant driving factors affected
+peasant revolts.
+The problem of MHT is not specific to the study of culture and history but
+a problem in all empirical research relying on statistical inference. One falls
+into the trap of thinking that the real pattern can be found with an exhaustive
+trial and error procedure and that every result of this procedure reveals a
+valid pattern, i.e., is interpretable. The following three unscientific practices
+are commonly used and illustrate this trap. First, one looks for patterns in
+visualisations without statistical testing whether these patterns are random or
+
+2 An engraving example to distinguish type I from type II error is to determine whether a person is pregnant. The null hypothesis states that
+
+the tested person is not pregnant. If we test a man and claim that he is pregnant, we have falsely rejected the null hypothesis, i.e., conducted
+a type I error. If we test a pregnant woman and claim that she is not pregnant, we fail to reject the null hypothesis, i.e., conduct a type II
+error.
+
+Journal of Cultural Analytics
+
+5
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+Figure 1. Schematic approach to address multiple hypothesis testing.
+Green: Interpretation of model
+
+likely to be real. Second, one optimises the parameters of models without
+being able to interpret the ‘optimal’ parameter value, such as accepting a
+value of zero years for the parameter ‘age of a person’. Third, one tests the
+effect of as many variables as possible on an outcome measure and chooses
+the variables that explain the outcome best, without correcting for multiple
+hypothesis testing.
+The challenge is to reduce the number of hypothesis tests while testing
+meaningful hypotheses. That is, if we test a hypothesis, we have to be
+convinced that it is an interesting one to check. This approach increases the
+chances that the patterns we find are likely to be real and not random, which
+boosts science’s credibility.
+
+5. Turning Theories into Hypothesis Tests
+Figure 1 shows how we can use theory to address the problem of multiple
+hypothesis testing. Theories that can be tested statistically are conceptual
+tools that interrelate measurable concepts of interest. Concepts of interest
+may be the adoption of Protestantism, socio-economic status, hegemonic
+structures, or the climate. A theory specifies under which circumstances these
+concepts occur and can be falsified when tested empirically.
+Based on a research gap, we formulate a research question and select a theory
+that deals with this question. This theory can be a historiographical one or
+one from a related field. With the theory, we formulate specific hypotheses
+by which we restrict the number of tested variables in the model. So we
+test the available hypotheses and do not continue testing if we do not find
+an effect for the formulated hypotheses. Usually, one generates more than
+one hypothesis from the theory, so we still have to account for multiple
+hypothesis testing. We can use established statistical correction procedures
+such as Bonferroni or Benjamini and Hochberg.
+
+Journal of Cultural Analytics
+
+6
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+Like a theory, a hypothesis connects measurable concepts but defines the
+connection more precisely. For example, whereas a theory would state that the
+Reformation drove the formation of the modern state, a related hypothesis
+would state that if a territorial ruler adopts Protestantism, he is more likley to
+establish institutions in the territory.
+Operationalisation translates abstract concepts into measurable quantities,
+which can be included as variables in the statistical model. The result of
+the model indicates whether we reject or fail to reject the null hypothesis.
+Based on this finding, we can answer our initial research question and provide
+evidence or counterevidence for the theory. By testing a theory in different
+settings, we can falsify it, which helps to differentiate the theory further.
+
+6. Example: Reformation
+To illustrate how to integrate theory into a statistical analysis in
+historiography, we apply the approach from the previous section to a use
+case of the Reformation. The following analysis is a case study to exemplify
+the usage of theory-driven statistical models in the DH. It does not provide
+a comprehensive historiographical study about the Reformation but rather
+deliberately simplifies historical concepts and the statistical approach to be of
+interest to a broader DH audience and to offer a template for practitioners.
+The Reformation was a socio-transformative movement in 16th century
+Europe, which overthrew the catholic church, established protestant
+denominations (e.g. Lutheranism), and initiated political changes.
+Understanding the Reformation better is relevant because the Reformation
+is associated with various developments that shaped our modern life, such
+as the formation of the national state (Schilling, “Die reformierte
+Konfessionalisierung in Deutschland. Das Problem der »Zweiten
+Reformation«”; Reinhard), justification of communist policies in East
+Germany (Walinski-Kiehl), and its impact on economic growth, which was
+first hypothesised by Max Weber is still highly debated among researchers
+today (Becker and Woessmann; Cantoni, “The Economic Effects of the
+Protestant Reformation: Testing the Weber Hypothesis in the German
+Lands”; Bryan et al.).
+Research gap. The question of why the Reformation took hold in some
+places but not in others has been addressed by many generations of historians
+(“Religious History beyond Confessionalization”; Becker, Pfaff, et al.). Often,
+the adoption of Protestantism was associated with the confessional decision
+of a territorial ruler. In the 16th century, central Europe was politically
+divided into many territories, each governed by a prince who decided for
+his subject which denomination to adopt, i.e., whether his territory should
+become Protestant or remain Catholic.
+
+Journal of Cultural Analytics
+
+7
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+Previous research has used this policy to investigate driving factors for the
+adoption of Protestantism in territories. Qualitative historiographical research
+has analysed individual territories in isolation (Schilling, “Konfessionskonflikt
+und staatsbildung,” chap.2). Quantitative historiographical research has
+examined several driving factors across territories (Becker, Pfaff, et al.).
+However, when focusing on the effect of human individuals, quantitative
+research has often taken a Luther-centric view. For example, studies have
+analysed the impact of territories’ distances to Wittenberg (Luther’s place
+of residence) and the impact of Luther’s students on the adoption of
+Protestantism (Cantoni, “Adopting a New Religion: The Case of
+Protestantism in 16th Century Germany”; Kim and Pfaff; Becker, Hsiao, et
+al.). However, Luther was not the only person spearheading the Reformation.
+Thousands of other reformers exchanged ideas via letters and personal visits.
+We lack a perspective that studies the combined influences of all these
+reformers on the adoption of Protestantism in the territories.
+Research question. How did reformers drive the adoption of Protestantism
+in territories?
+Theory. To address the research question, we rely on a theory of the role
+of opinion leaders for behaviour change (Rogers; Katz and Lazarsfeld). The
+theory describes the importance of selected individuals for the adoption of
+ideas or products among a larger group of people. To our knowledge, the
+theory has not been applied in a historical context.
+The definition of ‘opinion leaders’ as well as their identification differ based
+on the research context (Valente and Pumpuang; Bamakan et al.). Opinion
+leaders are individuals who leverage their reputation to convince others to
+adopt an idea. Reformers embody this role. They were primarily theologians,
+like Martin Luther, but also included noblemen, like Philip of Hesse, and
+other scholars, who supported the Reformation and had a high social
+standing because they occupied important offices. For example, Georg
+Spalatin was the secretary of the Saxon Elector Frederick the Wise, Joachim
+Vadian was Dean of the University of Vienna, and Martin Bucer was the
+pastor of the largest gild in Strasbourg. Given these influential positions,
+we assume that reformers had substantial means to spread their confessional
+convictions.
+However, not all characteristics of reformers match those of opinion leaders
+from the theory. Reformers varied in their commitment to spread the
+Reformation. Some were fanatic, even willing to die for their faith
+(martyrdom was especially common among Baptists, a protestant
+denomination); others were more moderate. Some were leaders, setting the
+first steps, others were more reluctant, waiting to spread the Reformation
+until the political situation was calmer. Due to this variety, reformers fulfilled
+the role of opinion leaders to different extents. We test the theory of opinion
+
+Journal of Cultural Analytics
+
+8
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+leaders in the context of the Reformation by assuming that, mostly, reformers
+are opinion leaders. Specifically, we analyse how these reformers affected the
+adoption of Protestantism in the territories.
+Hypothesis. The higher a territory’s exposure to reformation ideology
+through reformers, the larger its chance to become Protestant.
+Operationalisation. We consider reformers to represent opinion leaders
+who spread their ideas in the territories. This spread of ideas can happen
+via several mechanisms, and we limit our attention to two of those. First,
+reformers can physically visit the territory to preach, advise the ruler, attend
+disputations, or inspect whether protestant rules are implemented correctly
+(so-called ‘visitations’). Second, reformers can send letters to individuals living
+in a territory and convey their ideas via the letter text.
+To operationalise the impact of visits and letters, we use a data set of letter
+3
+correspondences. It consists of the letter editions of nine notable reformers
+and comprises
+individuals and
+letters. We use the sending date
+and the sending and receiving locations of letters to infer the time reformers
+have stayed in a territory and to which territory a letter was sent.
+We operationalise the impact of physical visits as the number of days a
+reformer spent in a territory before it became protestant. Since we assume
+that the impact of visits decreases over time (individuals forget whom they
+met
+years ago), we time-weigh each visit. That is, we walk over the years
+from the foundation year of the territory until it either becomes protestant
+or ceases to exist. For every year after a reformer had visited a territory, we
+assume that the impact of the visit decreases. This decrease of impact is
+modelled with an exponential decay function with a half-life of years. This
+half-life means that after
+years (a generation), a visit has become half as
+influential compared to the day where the visit happened.
+As a result, we obtain a series of values for each visit a reformer conducted.
+Each series runs from the day a reformer visited a territory to the day the
+territory either became protestant or ceased to exist. The first value in the
+series is always one because we assume the impact of the visit to be most
+prominent on the day the visit occurred. As the series proceeds, the values
+decrease according to the exponential decay function. So if a reformer visited
+a territory on January 1st 1520, the impact of the visit is more considerable
+on that day than a day later on January 2nd 1520. To summarise the impact
+of physical visits across reformers and time, we merge the values from all series
+and take the mean. We call the resulting variable visits.
+
+3 Martin Luther (ProQuest-LLC), Philipp Melanchthon (Mundhenk), Martin Bucer (Friedrich), Huldrych Zwingli (Moser), Heinrich
+
+Bullinger (Bodenmann), Andreas Karlstadt (Kaufmann), Myconius Oswald (Wallraff), Joachim Vadian (Burnett), Johann Oekolampad
+(Burnett). The letters were crawled from public databases.
+
+Journal of Cultural Analytics
+
+9
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+To operationalise the impact of letters, we count the number of letters a
+reformer sent into a territory before that territory became protestant. As
+for the visits variable, we assume that the impact of a letter decreases over
+time, which is why we apply the same time-weighing as for visits. For every
+day after a letter was sent to a territory, the impact of the letter decreases
+according to an exponential decay function with a half-life of
+years. For
+each letter a reformer sent to a territory, we obtain a series of values, similar
+to visits. To summarise the impact of letters across reformers and time, we
+merge the values from all series and take the mean. We call the resulting
+variable letters.
+To construct the dependent variable, whether or not a territory adopted
+Protestantism, we manually collected the denominational adoptions of
+territories in the 16th century using a historiographical book series on
+territories that were relevant during the Reformation (Schindling and
+Ziegler). To simplify the analysis, we only track the first switch from
+Catholicism to Protestantism of territories. This data set comprises
+territories, of which
+became protestant and remained catholic.
+We map the conceptual hypothesis from above to the proposed independent
+variables and generate two variable-related hypotheses. We formulate each
+of these variable-related hypotheses in two versions: as null hypothesis ( )
+which is tested in the model and as alternative hypothesis ( ) which specifies
+the outcome that we try to infer from the model.
+H10 The number of days reformers spend in a territory does not
+affect its chance to become Protestant.
+H1a The more days reformers spend in a territory, the larger its
+chance to become Protestant.
+H20 The number of letters reformers send to a territory does not
+affect its chance to become Protestant.
+H2a The more letters reformers send to a territory, the larger its
+chance to become Protestant.
+Model. For this example, we chose a logistic regression. This model estimates
+a binary outcome (becoming protestant vs remaining catholic) from a set
+of independent variables (visits and letters). Logistic regression is an
+established model for inferential statistics and has been widely used in many
+fields (Verhulst; Cramer; Tolman and Weisz; Chuang; Janik and Kravitz;
+Mobasseri; Lewis and Ferguson; Fox and Lawless; Ferrali et al.; Fryer and
+Levitt; Akcigit et al.; Chandra and Staiger; Katz and Krueger; Filsinger et al.;
+Harnois; Nelson et al.).
+
+Journal of Cultural Analytics
+
+10
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+Note that for the example at hand, logistic regression is not the optimal
+model. Logistic regression does not take into account temporal changes in
+the territories before they became protestant. Moreover, the model makes
+assumptions that do not capture the situation in the 16th century, e.g., the
+model assumes that a territory’s decision to become Protestant happened
+independently of other territories, which was not the case. Last, our model
+ignores control variables, such as whether a territory was involved in a military
+conflict (Angrist and Pischke 64). Since our aim is not to ‘proof a theory’
+but rather to present a testbed for theory-driven statistics, we use logistic
+regression without control variables for this example. For our example, the
+formal definition of the model is:
+
+is the probability that a territory becomes protestant.
+is the
+probability that a territory remains catholic.
+is the odds ratio and
+indicates how much more likely a territory is to become Protestant than
+to remain Catholic.
+corresponds to the natural logarithm, and
+is called the log odds. By using the logarithm, the right-hand side of the
+4
+equation is linearised, which facilitates parameter estimation.
+The s are the coefficients that the model estimates.
+and
+indicate
+how large the effects of the independent variables on the dependent variable
+are. Hence, how important visits and letters are for the adoption of
+Protestantism.
+is called the intercept and indicates, in this particular
+setting, how likely territories are to become Protestant when all other
+variables are set to zero, i.e., reformers neither visited territories nor sent
+letters to them. The s indicate the average change in the dependent variable
+if the respective independent variable changes by one unit, and the other
+independent variables are held constant. We can interpret the s as odds
+ratios by exponentiating them ( ). For example, if
+, then
+. This result means that for every additional day a reformer
+spends in a territory, a territory is
+times more likely to become Protestant
+than remain Catholic.
+is the model’s error term and captures the variance in the data that the
+model does not explain. The smaller , the better visits and letters explain
+the adoption of Protestantism, i.e., the model is good. Last, for all hypothesis
+tests in this example, we choose an acceptable significance level of
+,
+meaning that we accept a
+chance to commit a type I error.
+
+4 Specifically, through linearisation established estimators for parameter estimation can be used, such as ordinary least squares and maximum
+
+likelihood estimation.
+
+Journal of Cultural Analytics
+
+11
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+Table 1. Logistic regression results to explain the first switch to Protestantism of territories. Letters represent the mean time-weighted
+number of letters sent by reformers to a territory before it became protestant or ceased to exist. Visits represent the mean time-weighted
+number of days reformers spent in a territory before it became protestant or ceased to exist. Left: no correction for multiple hypothesis
+testing. The significance level is set to . Right: Bonferroni correction. The significance level is reduced to
+, i.e., the uncorrected
+significance level of
+is divided by , the number of tested hypotheses. With the Bonferroni correction, letters is no longer significant.
+No correction
+sig. level = 0.1
+
+Bonferroni
+sig. level = 0.05
+
+Intercept
+
+0.8806 (0.1481)***
+
+0.8806 (0.1481)***
+
+Letters
+
+1.8542 (1.0755)*
+
+1.8542 (1.0755)
+
+Visits
+
+-0.0090 (0.0069)
+
+-0.0090 (0.0069)
+
+AIC
+
+300.8645
+
+300.8645
+
+BIC
+
+311.5695
+
+311.5695
+
+Log
+Likelihood
+
+-147.4322
+
+-147.4322
+
+Deviance
+
+294.8645
+
+294.8645
+
+Num. obs.
+
+262
+
+262
+
+*** p < 0.01; ** p < 0.05; * p < 0.1
+
+Interpretation. Before we interpret the effect of visits and letters on the
+adoption of Protestantism, we test whether the overall model is good. For
+this, we run a global F-test (Shalizi, “F-Tests, R2, and Other Distractions”;
+Hahs-Vaughn and Lomax). The F-test compares the residuals of the tested
+model, to the residuals of the model where only the intercept term is
+included, i.e. a horizontal line is used to describe the data. Residuals measure
+the difference between the adoption of Protestantism predicted by the model
+and the real-world adoption which is captured in the data. The corresponding
+null hypothesis of the F-test states: the tested model is no better (in terms
+of likelihood) than a model fit with only the intercept term. The p-value of
+the F-test is
+. This result means we have a 0.97% chance of falsely
+thinking that the intercept model is better than the tested model. Since this
+percentage is smaller than the chosen
+, we are confident to assume that
+our tested model is overall useful.
+Table 1 shows the results of the logistic regression. The numbers outside the
+brackets refer to the estimates of the s for the independent variables visits
+and letters. The numbers in brackets correspond to the standard error of the
+5
+estimates. The columns represent the results of the same model but differ in
+whether they correct for multiple hypothesis testing. Hence, the estimates are
+the same (numbers), but their statistical significance changes (stars).
+We see that the estimate for visits is
+. This result corresponds to
+the average effect a day spent by a reformer in a territory has on the log
+odds of becoming protestant vs remaining catholic. Since it is easier to
+
+5 Each standard error indicates how different the real adoption of Protestantism is, on average, from the adoption which was predicted by the
+
+corresponding . The smaller the standard error, the better the corresponding variable predicts the adoption of Protestantism.
+
+Journal of Cultural Analytics
+
+12
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+interpret the odds ratio, rather than the log odds, we remove the logarithm by
+exponentiating the estimate:
+. An odds ratio of indicates
+that, on average, a territory is as likely to become Protestant as to remain
+Catholic for each additional day a reformer spends in a territory. This result
+means that, according to the model, physical visits of reformers did not affect
+the adoption of Protestantism in territories.
+The estimate for letters is
+. This result means that a territory is
+times (
+) more likely to become Protestant than to remain
+6
+Catholic if a reformer sends a letter to a territory. Translated into
+probabilities, this means that if the reformer sends one letter to a territory, the
+7
+territory has a
+(
+) probability to become Protestant.
+This may seem a lot, however, to correctly interpret the effect, we have
+to compare it to the baseline, i.e., the probability of a territory to become
+Protestant if reformers send no letters to the territory. The baseline
+probability is
+(
+) and can be computed from the intercept
+term in Table 1. So for every letter reformers send to a territory the
+probability of the territory to become Protestant increases by
+(
+).
+In the first column, we see that letters is significant at the
+level (one
+star), whereas
+is not (no stars). The star is missing because the
+chance to falsely think that visits affects the adoption of Protestantism is
+larger than
+(probability to commit type I error). Since we consider a
+probability to commit a type I error above
+too large for a correct analysis,
+we conclude that insufficient evidence is provided to conclude that visits
+affects the adoption of Protestantism.
+Since we test two independent variables in the model, visits and letters,
+we test two hypotheses. If we test multiple hypotheses without correction,
+we increase the probability of finding an effect, even if it does not exist.
+This is why we have to reduce the significance level, which is what we do
+with the Bonferroni correction (2nd column). The corrected significance level
+is the old one divided by the number of hypotheses (Shalizi, “F-Tests, R2,
+
+6 A closer analysis could reveal whether this effect is driven by some famous reformers, such as Martin Luther, or whether all reformers
+
+contributed to this effect to a similar extent. This could be done with marginal effects.
+7 Using odds ratio to compute probability. The actual computation of the probability is more complicated than presented here, because the
+
+other independent variables of the model need to be fixed at a certain value, which is ignored in the calculation below. The calculation
+below is correct, if only one independent variable was tested in the model. To compute the correct probabilities, ‘marginal effects’ have to be
+calculated, which account for the remaining independent variables in the model. Marginal effects are implemented in all major statistics
+software.
+
+Journal of Cultural Analytics
+
+13
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+and Other Distractions”). In our case, this would be
+. In the
+second column,
+, rather than
+, is used as significance level. We see
+that the star for letters disappears, indicating that letters is not significant
+at the
+level. This result means that the observed effect is too small to be
+considered different from random. At the
+level, the accepted difference
+between random and real effect was allowed to be smaller.
+This result shows that we fail to reject the null hypothesis after applying
+multiple hypothesis testing with Bonferroni correction. Neither the time
+reformers spent in territories nor the number of letters they sent to territories
+affect the adoption of Protestantism in territories. This result does not
+provide support for the theory of opinion leaders in our specific setting.
+To prevent wrong conclusions from these results, we rebut some common
+misinterpretations of statistical models. Our results do not show that physical
+visits and letters of reformers were irrelevant for the adoption of
+Protestantism. In contrast, the results indicate that, given our data set and
+our chosen operationalisation, the model does not provide sufficient evidence
+to conclude that physical visits and letters affected the adoption of
+Protestantism. Had we included different letters in our data or measured
+the presence of opinion leaders differently, we might have received different
+results. Moreover, our results do not show that the theory of opinion leaders
+is wrong. In contrast, we show that our specific model did not find support
+for this theory. So in our chosen setting, we did not find evidence for this
+theory, whereas, in other settings, it may still hold. These remarks show that
+hypotheses and theories are tested in particular settings defined by the model
+specifications. To support or to falsify a theory, several models should be
+tested, which allows for generalisation of the results.
+We can draw three major conclusions from our results: First, we showed that
+it makes sense to test the proposed model. As the F-test showed, the proposed
+model is better than the intercept model, which indicates that the chosen
+independent variables carry value. Second, we see that letters were more
+important for the adoption of Protestantism than personal visits because the
+for letters is larger than the one for visits. This may indicate that different
+communication media contribute to the spread of ideas to different extents.
+Third, our results provide new research questions and testable hypotheses.
+For example, we may ask whether the large effect of letters was driven by
+all or a subset of reformers. We could hypothesise that representatives of
+different protestant denominations affected the adoption of Protestantism in
+territories to different extents. For example, Baptists were more radical in their
+views than Lutherans because they also wanted to change the worldly order,
+not just the inner faith (Fast). Baptist claims would have decreased the power
+of territorial rulers who, in order to keep their position, might have rather
+
+Journal of Cultural Analytics
+
+14
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+supported Lutherans. One testable hypothesis could state: Lutherans have
+a larger impact on the probability that a territory becomes protestant than
+Baptists.
+
+7. Addressing Doubts against a Theory-driven Statistics
+Approach
+We address major concerns against theory-driven statistics, which qualitative
+researchers often put forward. To illustrate these concerns, we refer back to
+the Reformation example from the previous section.
+Imprecision. Allegation: Abstract historiographical concepts are too
+imprecise to be operationalised. For example, the ‘adoption of Protestantism’
+has many different meanings (among rulers, laypeople, and scholars; public vs
+private behaviour; etc.), which cannot be put into numbers.
+Counterargument: The aim of operationalisation is neither to capture all
+meanings of a concept nor its correct meaning. It is to capture one meaning of
+a concept and to justify why this specific meaning and the specific translation
+into a measure are useful for the analysis at hand. If others reject this
+justification, a new operationalisation of the same concept can be proposed
+and compared to the existing one. This comparison is highly valuable because
+it indicates whether different treatments of the same concept affect the results.
+Exceptions. Allegation: The testable theories presented in this paper are too
+general to capture all the historical exceptions. For example, eastern Europe
+was not affected by the same dynamics of the adoption of Protestantism as
+core lands of the Holy Roman Empire (Gordon).
+Counterargument: As presented in this paper, the aim of a theory is to
+generalise findings across multiple settings. Using theories facilitates
+understanding since individual cases do not need to be studied in isolation
+but can be interrelated via the theory. If a theory is too general, it falsely
+claims to generalise a finding from one setting to another. That is, the
+scope of the theory had not been determined correctly. Statistics measures
+external validity, which indicates how generalisable the findings are to other
+settings, namely from the data sample at hand to the population of interest.
+Whether or not a theory is too general can only be known after the theory
+is tested. In theory-driven statistics, the theory serves as a starting point and
+is differentiated into sub-theories accounting for exceptions in the data that
+require a different explanation.
+Oversimplification. Allegation: The presented model cannot consider all
+relevant explanatory factors; hence, it is oversimplified. For example, in the
+model of this paper, migration flows and climate (cf. small ice age) also
+contributed to the adoption of Protestantism of the territories but are not
+included.
+
+Journal of Cultural Analytics
+
+15
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+Counterargument: The omission of critical explanatory factors in statistical
+models is a well-known problem, called ‘omitted variable bias’ (Angrist and
+Pischke 59–64). Since omitted variables violate the assumptions of a model,
+the induced bias can be detected when these assumptions are tested. For
+8
+example, simple regression assumes that the explanatory variable and the
+9
+error terms are unrelated. Once a systematic relation between error terms and
+explanatory variable exists, the model is misspecified, indicating that a variable
+was omitted. However, this check does not indicate which variable is missing.
+Omitted variable bias addresses the consequences if a model leaves out
+relevant variables. However, it does not pick up the omission of less relevant
+variables, i.e., variables which still explain an outcome, but only to a small
+extent. Statistical modelling aims to deliberately exclude these minor variables.
+Important explanatory factors rather than all of them have to be captured.
+Historical determinism. Allegation: By explaining a historical event or
+process with precisely defined factors, statistical models imply clear causeeffect chains without uncertainties. This practise is historical determinism,
+which is wrong.
+Counterargument: No, statistical models do not support a deterministic view
+of history. These models test to what extent a selection of factors affects a
+precisely defined outcome. In addition, other factors, including chance, also
+affect that outcome. These factors are included in the error term of the model
+( ). The error term indicates how much variance in the data persists, which
+cannot be allocated to the tested factors.
+Moreover, the existence of uncertainties does not mean that all events are
+equally likely. We live in a world of tailed, not uniform, probability
+distributions. For example, it is more likely that a revolt was caused by famine
+than by choice of shoe colour of some individuals. The model aims to capture
+factors which correspond to high probabilities because they capture the broad
+patterns which shape history.
+Causation vs effect. Allegation: It is impossible to disentangle causation
+from effect, so statistical models cannot do it either.
+Counterargument: Everyday examples show that we can disentangle causation
+from effect. If a person accidentally breaks a glass, we know that touching the
+glass caused it to break, rather than the other way round, although the two
+events seemingly occurred together. In historical contexts, cause and effect are
+also distinguishable, they are only difficult to identify. Many statistical tools
+have been developed to investigate causal relations in observational data, such
+
+8 Ordinary least squares estimator
+9 That is, the amount of unexplained variance in the data (error) does not systematically differ between low and high values of an explanatory
+
+variable (e.g., low and high socio-economic status of inhabitants).
+
+Journal of Cultural Analytics
+
+16
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+as difference in differences (Dittmar and Meisenzahl; Cantoni et al.; Becker
+and Pascali), event history models (Green et al.; Golub; Box-Steffensmeier and
+Jones), propensity score matching (Heckman et al.; Galiani et al.; Lavy), and
+instrumental variables (Cantoni, “Adopting a New Religion: The Case of
+Protestantism in 16th Century Germany”; Angrist and Keueger; Acemoglu
+and Angrist), as well as comparisons of them (Freedman; Nichols; Gangl).
+We can use these tools to enrich simpler correlation-based models. These
+correlation-based models only claim that there is an association between
+an explanatory factor and an outcome but do not make claims about the
+direction of causality between the two. For example, a territorial ruler
+becoming protestant may have attracted more theologians into the territory.
+Alternatively, the visits of theologians may have convinced the ruler to
+become Protestant. To understand why the ruler became protestant in our
+example, we analysed the visits of theologians over time up until the point
+where the ruler became protestant, so his confessional switch cannot affect
+later visits.
+Populist. Allegation: Researchers only develop theories to become famous.
+Since a theory distils something complex to something simple, individuals
+understand it better and like it more. Hence, theories are populist
+instruments.
+Counterargument: Yes, a theory is a tool for simplification, but in the sense
+of revealing the structure behind complexity in the world. This simplification
+is subject to bounding assumptions and is only valid in specific situations.
+Making these assumptions and situations transparent is essential to create
+complementary theories and develop old theories further once new insights
+are available. Using any scientific insights as gatekeeping tools to prevent
+others from accessing that knowledge or to show off to others does not help
+anyone and should not be done.
+
+8. Conciliating theory-driven and exploratory research
+The focus on theory-driven research in the Social Sciences has lead to various
+measures to further reduce the chance of spurious results. The preregistration of hypotheses has become an accepted standard to prevent MHT
+(Schumann et al.; Kaplan and Irvin; Prochazka et al.). Rigorous justification
+of tested explanatory variables is supposed to strengthen theoretical
+foundations (Cantoni, “Adopting a New Religion: The Case of
+Protestantism in 16th Century Germany”; Box-Steffensmeier et al.;
+Mazumder). Simpler models are preferred over complex ones which should
+reduce the ambiguity of model results (cf. Occam’s Razor) (Duignan;
+Gauch). Strict criteria for sampling help counteract selection bias. Whereas
+these measures tend to increase the confidence of social scientists in their
+results, they constrain research in the DH.
+
+Journal of Cultural Analytics
+
+17
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+Data in the DH is usually observational rather than collected in experiments
+making the pre-registration of hypotheses obsolete. Sampling restrictions are
+rather a question of availability than of theory since data are scarce and
+the underlying databases grow slowly over time due to resource intensive
+digitisation and editing steps. The tight rules of theory-driven research in
+the Social Sciences tend to contradict relativist values of the DH, where one
+adheres to alternative explanations long into the analysis.
+To satisfy the needs of the DH, exploratory research could be given more
+room within data-driven analyses. However, since the Social Sciences consider
+the dangers of exploratory research to outweigh its benefits, they tend to stick
+to a strictly theory-driven approach and are unlikely to address the needs
+of the DH (Armstrong). The DH are required to decide on their optimal
+relation between theory-driven and exploratory research that is compatible
+with their research setting and goals. The established culture of theory
+narratives within the DH could provide a useful tool to engage in this debate.
+
+9. Conclusion
+The Digital Humanities (DH), like other data-intensive disciplines, face
+the problem of multiple hypothesis testing: Multiple hypotheses are tested
+until a desired pattern is found. Without correction, this approach is prone
+to mistaking random patterns for real ones. By using theory to formulate
+hypotheses, we restrict the number of hypothesis tests. By using statistical
+corrections, such as Bonferroni, we account for the remaining hypothesis
+tests.
+As an example, we tested a theory on the role of opinion leaders for the
+adoption of Protestantism in territories during the Reformation in 16th
+century Europe. This theory is testable because it interrelates measurable
+concepts, the impact opinion leaders have on others via their communication
+and the adoption of Protestantism. Due to this testability, we can falsify this
+theory with statistics. Based on the assumption that reformers, such as Martin
+Luther, represent opinion leaders, we have operationalised their presence
+in territories with their number of days spent there (visits) and with the
+number of letters they sent to the territory (letters). After having corrected
+for the two tested hypotheses (visits and letters), none of the tested variables
+was significant. We failed to reject the corresponding null hypotheses and
+therefore did not find enough support for the theory in our specific setting.
+On the one hand, our example illustrates the importance of theories of
+statistical analyses in the DH. First, theory enables us to test specific
+hypotheses and to distinguish random from real patterns. Through this
+process, theories are either supported or falsified which advances our
+understanding of the phenomenon of interest. Second, theory enables us
+to compare studies systematically. We could use a different data set,
+operationalisation and model to test the theory of opinion leaders on the
+Journal of Cultural Analytics
+
+18
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+adoption of Protestantism and compare the results with those of this paper.
+This process increases the robustness of results and hence their credibility.
+Third, theory guides research through establishing a basis of knowledge that
+can be taken for granted by future research, which does not have to establish
+that basis again.
+On the one hand, our analysis has shown that a complete theory-driven
+focus may constrain the DH in their relativist approach. Building on their
+established narrative culture, we argue that the DH posses a promising tool
+to modify the theory-driven focus borrowed from the Social Sciences to their
+needs. Specifically, the DH could look for a new balance between theorydriven and exploratory research to account for characteristics of the data and
+to give more value to alternative explanations of results.
+As a future outlook, we argue that theory can bridge the gap between
+qualitative and quantitative camps in the DH, which emerged due to the
+digitisation wave. Representatives of the quantitative camp tend not to
+believe case studies because the selected case may not mirror the broad
+lines of the phenomenon of interest, which they consider to be necessary.
+Representatives of the qualitative camp tend not to believe numbers because
+they oversimplify cases and only reveal what is already known. This blame
+in both directions does not advance the DH. The two camps should join
+efforts and focus on their common aim: understanding human activity and
+the resulting structures better. We discussed theory-driven statistics as one
+concrete methodological step towards this aim.
+Data Repository: https://doi.org/10.7910/DVN/LJRHXY
+Submitted: June 15, 2022 EDT, Accepted: June 30, 2022 EDT
+
+This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0
+International License (CCBY-4.0). View this license’s legal deed at http://creativecommons.org/licenses/
+by/4.0 and legal code at http://creativecommons.org/licenses/by/4.0/legalcode for more information.
+
+Journal of Cultural Analytics
+
+19
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+works cited
+Acemoglu, Daron, and Joshua Angrist. How Large Are the Social Returns to Education? Evidence
+from Compulsory Schooling Laws. National Bureau of Economic Research, Dec. 1999,
+https://doi.org/10.3386/w7444.
+Akcigit, Ufuk, et al. “Taxation and Innovation in the Twentieth Century.” The Quarterly Journal of
+Economics, vol. 137, no. 1, June 2021, pp. 329–85, https://doi.org/10.1093/qje/qjab022.
+Anderson, Chris. “The End of Theory: The Data Deluge Makes the Scientific Method Obsolete.”
+Wired Magazine, vol. 16, no. 7, 2008, pp. 16–07.
+Angrist, J. D., and A. B. Keueger. “Does Compulsory School Attendance Affect Schooling and
+Earnings?” The Quarterly Journal of Economics, vol. 106, no. 4, Nov. 1991, pp. 979–1014,
+https://doi.org/10.2307/2937954.
+Angrist, Joshua D., and Jörn-Steffen Pischke. Mostly Harmless Econometrics: An Empiricists’s
+Companion. Princeton, 2009.
+Armstrong, J. Scott. “How to Avoid Exploratory Research.” Journal of Advertising Research, vol.
+10, no. 4, 1970, pp. 27–30.
+Bamakan, Seyed Mojtaba Hosseini, et al. “Opinion Leader Detection: A Methodological Review.”
+Expert Systems with Applications, vol. 115, Jan. 2019, pp. 200–22, https://doi.org/10.1016/
+j.eswa.2018.07.069.
+Banerjee, Amitav, et al. “Hypothesis Testing, Type i and Type II Errors.” Industrial Psychiatry
+Journal, vol. 18, no. 2, 2009, p. 127, https://doi.org/10.4103/0972-6748.62274.
+Becker, Sascha O., Steven Pfaff, et al. “Causes and Consequences of the Protestant Reformation.”
+Explorations in Economic History, vol. 62, Oct. 2016, pp. 1–25, https://doi.org/10.1016/
+j.eeh.2016.07.007.
+Becker, Sascha O., Yuan Hsiao, et al. “Multiplex Network Ties and the Spatial Diffusion of Radical
+Innovations: Martin Luther’s Leadership in the Early Reformation.” American Sociological
+Review, vol. 85, no. 5, Sept. 2020, pp. 857–94, https://doi.org/10.1177/0003122420948059.
+Becker, Sascha O., and Luigi Pascali. “Religion, Division of Labor, and Conflict: Anti-Semitism in
+Germany over 600 Years.” American Economic Review, vol. 109, no. 5, May 2019, pp. 1764–804,
+https://doi.org/10.1257/aer.20170279.
+Becker, Sascha O., and Ludger Woessmann. “Was Weber Wrong? A Human Capital Theory of
+Protestant Economic History.” Quarterly Journal of Economics, vol. 124, no. 2, May 2009, pp.
+531–96, https://doi.org/10.1162/qjec.2009.124.2.531.
+Benjamini, Yoav, and Yosef Hochberg. “Controlling the False Discovery Rate: A Practical and
+Powerful Approach to Multiple Testing.” Journal of the Royal Statistical Society: Series B
+(Methodological), vol. 57, no. 1, Jan. 1995, pp. 289–300, https://doi.org/10.1111/
+j.2517-6161.1995.tb02031.x.
+Berry, David M., et al. “No Signal without Symbol: Decoding the Digital Humanities.” Debates in
+the Digital Humanities 2019, Apr. 2019, pp. 61–74, https://doi.org/10.5749/j.ctvg251hk.8.
+Biddle, B. J. “Recent Developments in Role Theory.” Annual Review of Sociology, vol. 12, no. 1,
+Aug. 1986, pp. 67–92, https://doi.org/10.1146/annurev.so.12.080186.000435.
+Black, Donald. The Behavior of Law. Academic Press, 1976.
+Bodenmann, Reinhard. Heinrich Bullinger’s Correspondence. 2016, http://www.arpa-docs.ch/
+SedServer/SedWEB.cgi.
+Bonferroni, Carlo Emilio. “Teoria statistica delle classi e calcolo delle probabilità.” Encyclopedia of
+research design, 2010, https://doi.org/10.4135/9781412961288.n455.
+
+Journal of Cultural Analytics
+
+20
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+Box-Steffensmeier, J. M., et al. “Role Analysis Using the Ego-ERGM: A Look at Environmental
+Interest Group Coalitions.” Social Networks, vol. 52, Jan. 2018, pp. 213–27, https://doi.org/
+10.1016/j.socnet.2017.08.004.
+Box-Steffensmeier, Janet, and Bradford S. Jones. Event History Modeling: A Guide for Social
+Scientists. Cambridge University Press, 2004.
+Bretz, Frank, et al. Multiple Comparisons Using R. Taylor & Francis, 2011.
+Bryan, Gharad, et al. “Randomizing Religion: The Impact of Protestant Evangelism on Economic
+Outcomes.” The Quarterly Journal of Economics, vol. 136, no. 1, June 2020, pp. 293–380,
+https://doi.org/10.1093/qje/qjaa023.
+Buggle, Johannes C. “Growing Collectivism: Irrigation, Group Conformity and Technological
+Divergence.” Journal of Economic Growth, vol. 25, no. 2, June 2020, pp. 147–93, https://doi.org/
+10.1007/s10887-020-09178-3.
+Burnett, Amy. Letter Correspondence of Oekolampad and Vadian. 2019.
+Cantoni, Davide. “Adopting a New Religion: The Case of Protestantism in 16th Century
+Germany.” The Economic Journal, vol. 122, no. 560, Apr. 2012, pp. 502–31, https://doi.org/
+10.1111/j.1468-0297.2012.02495.x.
+---. “Religious Competition and Reallocation: The Political Economy of Secularization in the
+Protestant Reformation.” The Quarterly Journal of Economics, vol. 133, no. 4, June 2018, pp.
+2037–96, https://doi.org/10.1093/qje/qjy011.
+---. “The Economic Effects of the Protestant Reformation: Testing the Weber Hypothesis in the
+German Lands.” Journal of the European Economic Association, vol. 13, no. 4, Aug. 2015, pp.
+561–98, https://doi.org/10.1111/jeea.12117.
+Chandra, Amitabh, and Douglas O. Staiger. “Identifying Sources of Inefficiency in Healthcare.”
+The Quarterly Journal of Economics, vol. 135, no. 2, Jan. 2020, pp. 785–843, https://doi.org/
+10.1093/qje/qjz040.
+Chuang, Hwei-Lin. “High School Youths’ Dropout and Re-Enrollment Behavior.” Economics of
+Education Review, vol. 16, no. 2, Apr. 1997, pp. 171–86, https://doi.org/10.1016/
+s0272-7757(96)00058-1.
+Cramer, J. S. “The Origins of Logistic Regression.” SSRN Electronic Journal, 2003, https://doi.org/
+10.2139/ssrn.360300.
+Davey Smith, G. “Data Dredging, Bias, or Confounding.” BMJ, vol. 325, no. 7378, Dec. 2002, pp.
+1437–38, https://doi.org/10.1136/bmj.325.7378.1437.
+Desmond, Matthew, and Mustafa Emirbayer. “What Is Racial Domination?” Du Bois Review: Social
+Science Research on Race, vol. 6, no. 2, 2009, pp. 335–55, https://doi.org/10.1017/
+s1742058x09990166.
+Dittmar, Jeremiah E., and Ralf R. Meisenzahl. “Public Goods Institutions, Human Capital, and
+Growth: Evidence from German History.” The Review of Economic Studies, vol. 87, no. 2, Feb.
+2019, pp. 959–96, https://doi.org/10.1093/restud/rdz002.
+Drucker, Johanna. “Humanistic Theory and Digital Scholarship.” Debates in the Digital
+Humanities, vol. 150, Jan. 2012, pp. 85–95, https://doi.org/10.5749/minnesota/
+9780816677948.003.0011.
+Duignan, Brian. Occam’s Razor. Encyclopedia Britannica, 2021, https://www.britannica.com/topic/
+Occams-razor.
+Fast, Heinold. Der linke flügel der reformation: Glaubenszeugnisse der täufer, spiritualisten,
+schwärmer und antitrinitarier. Carl Schünemann Verlag, 1962.
+
+Journal of Cultural Analytics
+
+21
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+Ferrali, Romain, et al. “It Takes a Village: Peer Effects and Externalities in Technology Adoption.”
+American Journal of Political Science, vol. 64, no. 3, Oct. 2019, pp. 536–53, https://doi.org/
+10.1111/ajps.12471.
+Filsinger, Maximilian, et al. “Surfing to Help? An Empirical Analysis of Internet Use and
+Volunteering in 27 European Societies.” European Societies, vol. 22, no. 3, Sept. 2019, pp.
+368–89, https://doi.org/10.1080/14616696.2019.1663895.
+Fischer, Fritz. Griff nach der weltmacht: Die kriegzielpolitik des kaiserlichen deutschland 1914-1918.
+Droste, 1961.
+Fox, Richard L., and Jennifer L. Lawless. “To Run or Not to Run for Office: Explaining Nascent
+Political Ambition.” American Journal of Political Science, vol. 49, no. 3, May 2005, pp. 642–59,
+https://doi.org/10.1111/j.1540-5907.2005.00147.x.
+Freedman, D. A. “Linear Statistical Models for Causation: A Critical Review.” Encyclopedia of
+Statistics in Behavioral Science, Oct. 2005, https://doi.org/10.1002/0470013192.bsa598.
+Friedrich, Reinhold. Bucer briefkorrespondenz. 2018, https://www.theologie.fau.de/lehrstuhlkirchengeschichte-ii-neuere-kirchengeschichte/bucer-forschungsstelle/.
+Fryer, Roland G. Jr., and Steven D. Levitt. “Hatred and Profits: Under the Hood of the Ku Klux
+Klan.” The Quarterly Journal of Economics, vol. 127, no. 4, Nov. 2012, pp. 1883–925,
+https://doi.org/10.1093/qje/qjs028.
+Galiani, Sebastian, et al. “Water for Life: The Impact of the Privatization of Water Services on Child
+Mortality.” Journal of Political Economy, vol. 113, no. 1, Feb. 2005, pp. 83–120, https://doi.org/
+10.1086/426041.
+Gangl, Markus. “Causal Inference in Sociological Research.” Annual Review of Sociology, vol. 36,
+no. 1, June 2010, pp. 21–47, https://doi.org/10.1146/annurev.soc.012809.102702.
+Garcia, David. Data Piñata. urban dictionary, 2015, https://www.urbandictionary.com/
+define.php?term=data%20pi%C3%B1ata.
+Gauch, Hugh G., Jr. Scientific Method in Practice. Cambridge University Press, 2002,
+https://doi.org/10.1017/cbo9780511815034.
+Golub, Jonathan. “In the Shadow of the Vote? Decision Making in the European Community.”
+International Organization, vol. 53, no. 4, 1999, pp. 733–64, https://doi.org/10.1162/
+002081899551057.
+Gordon, B. “Konfessionalisierung, Stände und Staat in Ostmitteleuropa (1550–1650).” German
+history, vol. 17, no. 1, Jan. 1999, pp. 90–94, https://doi.org/10.1191/026635599674233424.
+Green, David Michael, et al. “The Price of Peace: A Predictive Model of UN Peacekeeping Fiscal
+Costs.” Policy Studies Journal, vol. 26, no. 4, Dec. 1998, pp. 620–35, https://doi.org/10.1111/
+j.1541-0072.1998.tb01936.x.
+Hahs-Vaughn, Debbie L., and Richard G. Lomax. An Introduction to Statistical Concepts.
+Routledge, 2020, https://doi.org/10.4324/9781315624358.
+Hall, Gary. “Toward a Postdigital Humanities: Cultural Analytics and the Computational Turn to
+Data-Driven Scholarship.” American Literature, vol. 85, no. 4, Dec. 2013, pp. 781–809,
+https://doi.org/10.1215/00029831-2367337.
+Harnois, Catherine E. “Race, Ethnicity, Sexuality, and Women’s Political Consciousness of Gender.”
+Social Psychology Quarterly, vol. 78, no. 4, Nov. 2015, pp. 365–86, https://doi.org/10.1177/
+0190272515607844.
+Heather, Peter. The Fall of the Roman Empire: A New History of Rome and the Barbarians. 1st ed.,
+Oxford university Press, 2005.
+
+Journal of Cultural Analytics
+
+22
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+Heckman, James J., et al. “Matching As An Econometric Evaluation Estimator.” Review of Economic
+Studies, vol. 65, no. 2, Apr. 1998, pp. 261–94, https://doi.org/10.1111/1467-937x.00044.
+Iyengar, Shanto, and Sean J. Westwood. “Fear and Loathing across Party Lines: New Evidence on
+Group Polarization.” American Journal of Political Science, vol. 59, no. 3, Dec. 2014, pp.
+690–707, https://doi.org/10.1111/ajps.12152.
+Janik, James, and Howard M. Kravitz. “Linking Work and Domestic Problems with Police Suicide.”
+Suicide Life-Threatening Behavior, vol. 24, no. 3, 1994, pp. 267–74.
+Kanter, Rosabeth M. Men and Women of the Corporation. Basic, 1977.
+Kaplan, Robert M., and Veronica L. Irvin. “Likelihood of Null Effects of Large NHLBI Clinical
+Trials Has Increased over Time.” PLoS ONE, vol. 10, no. 8, Aug. 2015, p. e0132382,
+https://doi.org/10.1371/journal.pone.0132382.
+Katz, E., and P. E. Lazarsfeld. Personal Influence: The Part Played by People in the Flow of Mass
+Communication. Free Press, 1955.
+Katz, Lawrence F., and Alan B. Krueger. “The Role of Unemployment in the Rise in Alternative
+Work Arrangements.” American Economic Review, vol. 107, no. 5, May 2017, pp. 388–92,
+https://doi.org/10.1257/aer.p20171092.
+Kaufmann, Thomas. Kritische gesamtausgabe der schriften und briefe andreas bodensteins von
+karlstadt, teil i (1507–1518). 2012, http://diglib.hab.de/edoc/ed000216/start.htm.
+Kim, Hyojoung, and Steven Pfaff. “Structure and Dynamics of Religious Insurgency: Students and
+the Spread of the Reformation.” American Sociological Review, vol. 77, no. 2, Feb. 2012, pp.
+188–215, https://doi.org/10.1177/0003122411435905.
+Lavy, Victor. “Evaluating the Effect of Teachers’ Group Performance Incentives on Pupil
+Achievement.” Journal of Political Economy, vol. 110, no. 6, Dec. 2002, pp. 1286–317,
+https://doi.org/10.1086/342810.
+Leal, Diego F. “Network Inequalities and International Migration in the Americas.” American
+Journal of Sociology, vol. 126, no. 5, Mar. 2021, pp. 1067–126, https://doi.org/10.1086/713877.
+Lewis, Michael A., and Kristin M. Ferguson. “Predicting Methamphetamine Use of Homeless
+Youths Attending High School: Comparison of Decision Rules and Logistic Regression
+Classification Algorithms.” Journal of the Society for Social Work and Research, vol. 5, no. 2, June
+2014, pp. 211–31, https://doi.org/10.1086/676830.
+Light, Michael T. “Punishing the ‘Others’: Citizenship and State Social Control in the United
+States and Germany.” European Journal of Sociology, vol. 58, no. 1, Apr. 2017, pp. 33–71,
+https://doi.org/10.1017/s0003975617000029.
+Lindgren, Simon. “Beyond Method.” Data Theory, polity, 2020, p. 23.
+Liu, Alan. “The State of the Digital Humanities: A Report and a Critique.” Arts and Humanities
+in Higher Education, vol. 11, no. 1–2, Dec. 2011, pp. 8–41, https://doi.org/10.1177/
+1474022211427364.
+Llewellyn, Jennifer, and Steve Thompson. THE HISTORIOGRAPHY OF THE WEIMAR
+REPUBLIC. 2019, https://alphahistory.com/weimarrepublic/historiography-weimar-republic/.
+Mabogunje, Akin L. “Systems Approach to a Theory of Rural-Urban Migration.” Geographical
+Analysis, vol. 2, no. 1, Sept. 2010, pp. 1–18. Crossref, https://doi.org/10.1111/
+j.1538-4632.1970.tb00140.x.
+Mansbridge, Jane. “Rethinking Representation.” American Political Science Review, vol. 97, no. 4,
+Nov. 2003, pp. 515–28, https://doi.org/10.1017/s0003055403000856.
+
+Journal of Cultural Analytics
+
+23
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+Matthieß, Theres. “Retrospective Pledge Voting: A Comparative Study of the Electoral
+Consequences of Government Parties’ Pledge Fulfilment.” European Journal of Political Research,
+vol. 59, no. 4, Feb. 2020, pp. 774–96, https://doi.org/10.1111/1475-6765.12377.
+Mazumder, Soumyajit. “The Persistent Effect of u.s. Civil Rights Protests on Political Attitudes.”
+American Journal of Political Science, vol. 62, no. 4, Aug. 2018, pp. 922–35, https://doi.org/
+10.1111/ajps.12384.
+Mobasseri, Sanaz. “Race, Place, and Crime: How Violent Crime Events Affect Employment
+Discrimination.” American Journal of Sociology, vol. 125, no. 1, July 2019, pp. 63–104,
+https://doi.org/10.1086/703883.
+Moser, Christian. Huldreich zwinglis sämtliche werke. 2016, http://www.irg.uzh.ch/static/zwinglibriefe/?n=Main.Overview.
+Mundhenk, Christine. Melanchthons briefwechsel – regesten online. 2019, https://www.haw.uniheidelberg.de/forschung/forschungsstellen/melanchthon/mbw-online.de.html.
+Nelson, J. Ron, et al. “Which Risk Factors Predict the Basic Reading Skills of Children at Risk for
+Emotional and Behavioral Disorders?” Behavioral Disorders, vol. 33, no. 2, Feb. 2008, pp. 75–86,
+https://doi.org/10.1177/019874290803300202.
+Nelson, Jennifer L. “How Organizational Minorities Form and Use Social Ties: Evidence from
+Teachers in Majority-White and Majority-Black Schools.” American Journal of Sociology, vol. 125,
+no. 2, Sept. 2019, pp. 382–430, https://doi.org/10.1086/705158.
+Nichols, Austin. “Causal Inference with Observational Data.” The Stata Journal: Promoting
+Communications on Statistics and Stata, vol. 7, no. 4, Dec. 2007, pp. 507–41, https://doi.org/
+10.1177/1536867x0800700403.
+Pedersen, David Budtz. “Integrating Social Sciences and Humanities in Interdisciplinary Research.”
+Palgrave Communications, vol. 2, no. 1, July 2016, pp. 1–7, https://doi.org/10.1057/
+palcomms.2016.36.
+Popper, Karl. Falsifiability. Routledge, 2005.
+---. The Logic of Scientific Discovery. 2nd ed., Routledge, 2005.
+---. Theories. Routledge, 2005.
+Prochazka, Jakub, et al. “A Field Experiment on Dishonesty: A Registered Replication of Azar et al.
+(2013).” Journal of Behavioral and Experimental Economics, vol. 90, Feb. 2021, p. 101617,
+https://doi.org/10.1016/j.socec.2020.101617.
+ProQuest-LLC. Luthers Werke on the World Wide Web. 2015, http://luther.chadwyck.co.uk/.
+Raab, Nigel A. “The End of Theory in the Humanities.” The Humanities in Transition from
+Postmodernism into the Digital Age, May 2020, pp. 70–88, https://doi.org/10.4324/
+9781003020493-4.
+Rawat, Nagendra Singh, et al. “Networked Medieval Strongholds in Garhwal Himalaya, India.”
+Antiquity, vol. 95, no. 381, Feb. 2021, pp. 753–72, https://doi.org/10.15184/aqy.2021.4.
+Reinhard, Wolfgang. “The Catholic Historical Review.” The Catholic Historical Review, vol. 85, no.
+4, 1999, p. I–xxii, https://doi.org/10.1353/cat.1999.0218.
+“Religious History beyond Confessionalization.” German History, vol. 32, no. 4, Oct. 2014, pp.
+579–98, https://doi.org/10.1093/gerhis/ghu104.
+Rogers, Everett. Diffusion of Innovations. 5th ed., Free Press, 2003.
+Rosenbloom, Humanities Paul. “Toward a Conceptual Framework for the Digital Humanities.”
+Defining Digital Humanities, Routledge, 2016, pp. 235–50.
+
+Journal of Cultural Analytics
+
+24
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+Ryan, Thomas H. “Significance Tests for Multiple Comparison of Proportions, Variances, and
+Other Statistics.” Psychological Bulletin, vol. 57, no. 4, July 1960, pp. 318–28, https://doi.org/
+10.1037/h0044320.
+Scheinfeldt, Tom. “Why Digital Humanities Is ‘Nice.’” Found History, vol. 26, 2010.
+Schilling, Heinz. “Die reformierte Konfessionalisierung in Deutschland. Das Problem der »Zweiten
+Reformation«.” Francia, vol. 17, Nov. 2018, https://doi.org/10.11588/FR.1990.2.54173.
+---. “Konfessionskonflikt und staatsbildung: Eine fallstudie über das verhältnis von religiösem und
+sozialem wandel in der frühneuzeit am beispiel der grafschaft lippe.” Quellen und forschungen zur
+reformationsgeschichte, edited by Gerd Mohn, Gütersloher Verlagshaus, 1981, pp. 419–52.
+Schindling, Anton, and Walter Ziegler, editors. Die territorien des reichs im zeitalter der reformation
+und konfessionalisierung: Land und konfession 1500-1650, bände 1-5 (südosten, nordosten,
+nordwesten, mittleres deutschland, südwesten). Aschendorff, 1989–1995.
+Schumann, Sandy, et al. “Towards Open and Reproducible Terrorism Studies: Current Trends and
+next Steps.” Perspectives on Terrorism, vol. 13, no. 5, 2019, pp. 61–73, https://www.jstor.org/
+stable/26798578.
+Shalizi, Cosma Rohilla. “Confidence Sets for Multiple Coefficients.” The Truth about Linear
+Regression, unpublished manuscript, 2019, p. 290, http://www.stat.cmu.edu/~cshalizi/TALR/.
+---. “F-Tests, R2, and Other Distractions.” The Truth about Linear Regression, unpublished
+manuscript, 2019, pp. 165–71, http://www.stat.cmu.edu/~cshalizi/TALR/.
+Shirer, William L. Rise and Fall of the Third Reic: A History of Nazi Germany. Simon & Schuster,
+1960.
+Taylor, Alan J. P. The Course of German History. Hamish Hamilton, 1945.
+Tolman, Richard M., and Arlene Weisz. “Coordinated Community Intervention for Domestic
+Violence: The Effects of Arrest and Prosecution on Recidivism of Woman Abuse Perpetrators.”
+Crime & Delinquency, vol. 41, no. 4, Oct. 1995, pp. 481–95, https://doi.org/10.1177/
+0011128795041004007.
+Triandis, Harry C., et al. “Individualism and Collectivism: Cross-Cultural Perspectives on SelfIngroup Relationships.” Journal of Personality and Social Psychology, vol. 54, no. 2, Feb. 1988,
+pp. 323–38, https://doi.org/10.1037/0022-3514.54.2.323.
+Triandis, Harry C., and Michele J. Gelfand. “A Theory of Individualism and Collectivism.”
+Handbook of Theories of Social Psychology, pp. 498–520, https://doi.org/10.4135/
+9781446249222.n51.
+Turner, John C. “An Integrative Theory of Intergroup Conflict.” The Social Psychology of InterGroup Relations, edited by William G. Austin and Stephen Worchel, Brooks-Cole, 1979, pp.
+33–34.
+Valente, Thomas W., and Patchareeya Pumpuang. “Identifying Opinion Leaders to Promote
+Behavior Change.” Health Education & Behavior, vol. 34, no. 6, July 2006, pp. 881–96,
+https://doi.org/10.1177/1090198106297855.
+Verhulst, Pierre-François. “Notice sur la loi que la population suit dans son accroissement.”
+Correspondance Mathématique et Physique, vol. 10, 1838, pp. 113–21.
+Vermeil, Edmond. L’allemagne Contemporaine: Sociale, Politique, et Culturelle, 1890-1950. Aubier,
+1952.
+Walinski-Kiehl, Robert. “Reformation History and Political Mythology in the German Democratic
+Republic, 1949-89.” European History Quarterly, vol. 34, no. 1, Jan. 2004, pp. 43–67,
+https://doi.org/10.1177/0265691404040008.
+
+Journal of Cultural Analytics
+
+25
+
+Theory-Driven Statistics for the Digital Humanities: Presenting Pitfalls and a Practical Guide by the Example of the Reform…
+
+Wallraff, Martin. Erschließung des briefwechsels von oswald myconius. 2016, https://
+myconius.unibas.ch/briefdb.html.
+Wasserstein, Ronald L., and Nicole A. Lazar. “The ASA Statement on p-Values: Context, Process,
+and Purpose.” The American Statistician, vol. 70, no. 2, Apr. 2016, pp. 129–33, https://doi.org/
+10.1080/00031305.2016.1154108.
+Weber, Max. The Protestant Ethic and the Spirit of Capitalism. Translated by Talcott Parsons,
+Routledge, 1930.
+Wehler, Hans-Ulrich. “Das Deutsche Kaiserreich 1871-1918: Einleitung.” Histoire, Sept. 2010, pp.
+255–62, https://doi.org/10.14361/9783839415214-011.
+
+Journal of Cultural Analytics
+
+26
+
+

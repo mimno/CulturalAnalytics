@@ -1,0 +1,1390 @@
+Gilkison, Aaron, and Maciej Kurzynski. “Vectors of Violence: Legitimation and
+Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao),
+1956-1989.” Journal of Cultural Analytics, vol. 9, no. 1, May 2024,
+https://doi.org/10.22148/001c.115481.
+
+ARTICLE
+
+Vectors of Violence: Legitimation and Distribution of State Power in
+the People’s Liberation Army Daily (Jiefangjun Bao), 1956-1989
+Aaron Gilkison1, Maciej Kurzynski2
+1 Stanford University, 2 Lingnan University
+
+Keywords: PRC, violence, soldier, People's Liberation Army Daily, computational criticism, distribution of the sensible, China
+https://doi.org/10.22148/001c.115481
+
+Journal of Cultural Analytics
+Vol. 9, Issue 1, 2024
+
+From personal memoirs and cooking recipes to revolutionary agitation and war
+coverage, the People’s Liberation Army Daily offers a wealth of insights into the
+sociopolitical and affective realities of post-1949 China. One of the few major
+periodicals that continued publication during the Cultural Revolution
+(1966-1976), the journal has received relatively scant attention from scholars,
+except for political science studies devoted to the PRC propaganda system.
+Combining close reading and historical analysis with quantitative conceptuality
+and text mining, we demonstrate how the PLA Daily legitimizes state violence
+differently through its representation of various soldier figures, the zhanshi, the
+junren, and the minbing. We also use a large language model to show how the
+journal distributes violent sentiments to international topics in times of
+domestic turmoil.
+
+「杀人有两种，一种是用枪杆子杀人，一种是用笔杆子
+杀人。」
+“There are two ways to kill people: one is with the barrel of a
+gun, the other is with the pen.”
+– Mao Zedong 毛泽东
+
+Introduction
+How state violence acquires legitimacy within a given political order is a
+question that occupied major philosophers and political thinkers of the
+twentieth century. Grappling with this question has yielded some of the
+key concepts in modern violence studies, including “state of exception”
+(Schmitt; Agamben), “monopoly on violence” (Weber), and “distribution
+of the sensible” (Rancière), which together lay the groundwork for
+understanding how states normalize the use of force and manufacture
+affective compliance. The present article integrates these theoretical insights
+with existing historical scholarship to probe the processes of legitimation of
+state violence in the People’s Republic of China (PRC). Sociologists and
+political scientists have identified full-scale war mobilization as the primary
+means through which the Chinese Communist Party grasped power and
+ultimately took over the country in 1949 (Perry; Shambaugh, “The Soldier
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+and the State”; Walder; Xun). Literary scholars and art historians, while
+certainly recognizing the power of the gun, have lent more focus to formal
+and cultural mechanisms which harnessed political energy for the dual
+purpose of proletarian revolution and nation making (B. Wang, The Sublime
+Figure; Ji; Pang; Mittler; Lee, Revolution of the Heart). In this context, our
+study takes a novel approach which combines close reading and historical
+analysis with quantitative conceptuality and text mining. We focus on one of
+the most important official publications of the PRC, the People’s Liberation
+Army Daily or Jiefangjun Bao 解放军报 (hereafter PLA Daily), to explore
+three major questions: what was the journal’s role in legitimizing state
+violence, how was the Chinese soldier imagined and institutionalized in this
+important official publication, and how were violent sentiments distributed
+discursively across different topics in the aftermath of the communist
+takeover. A conventional reading of the PLA Daily over the course of
+four decades would be a massive and prohibitive undertaking; the growing
+computational resources available to humanistic scholarship allow us to
+examine the representations of violence at a macroscopic scale beyond the
+reach of traditional methodologies.
+Before we proceed, it is important to point out that ours is not a historical
+study of violence per se but rather of its discursive-affective legitimation.
+While we do draw extensively upon existing definitions of violence (Ganesan
+and Kim's formulation (3), “the state’s utilization of its apparatus—the
+military, the police, and security agencies—in order to maintain the
+unilaterally defined order of the society in question,” is particularly relevant
+to our discussion), our focus is on the vocabulary distribution in a major
+PRC journal and how this distribution legitimated the use of physical force in
+the specific historical context of post-1949 China. The violent language used
+in the PLA Daily carries official approval, since everything that was published
+1
+must have first passed reviews and censorship. This makes the PLA Daily
+a nonpareil resource for a historically-informed exploration of how violence
+and the language of violence have been mutually implicated in a feedback
+loop, a loop that more than once spiraled out of control, with devastating
+consequences.
+
+To Serve the People: Modeling the Chinese soldier
+From personal memoirs and cooking recipes to revolutionary agitation and
+war coverage, the PLA Daily offers a wealth of insights into the sociopolitical
+realities of the People’s Republic of China. One of the few major periodicals
+that continued publication during the Cultural Revolution (1966-1976), the
+paper has received relatively scant attention from scholars, aside from political
+
+1 Likewise, the choice of the journal as our primary source delimits the scope of violent actors considered in this article. We are not dealing
+
+with thugs for hire, for example, as they are not part of the state apparatus; we are not dealing with police either, as the PLA Daily is about
+the military, not police.
+
+Journal of Cultural Analytics
+
+2
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+science studies devoted to the PRC propaganda system (Wang and Brady;
+Luo; Wu and Yu; LaRocca). The establishment of the journal was part and
+parcel of the aggressive post-1949 drive by the Chinese Communist Party to
+standardize communication channels. Organized in November 1954 by order
+of Luo Ronghuan, the Vice-Chairman of the China Military Commision
+(CMC), the creation of the PLA Daily was formally approved by Mao
+Zedong after request by Peng Dehuai, then China’s defense minister, in
+the middle of 1955. It was to be a single newspaper under the auspices of
+the CMC to ensure ideological consistency and loyalty to the Party’s core
+principles across the various branches of the PLA (Zhang). Commenting on
+the paper’s influence, Marshal Lin Biao stated that the journal “has not only
+been highly influential in revolutionizing and educating the military, but has
+also played a major role in revolutionizing the entire country” (quoted in Lu
+2).
+Lin Biao’s assessment speaks to the impact exerted by the PLA Daily on
+the Chinese public since its first official issue on January 1, 1956. How
+a newspaper originally intended for the armed forces could play such a
+crucial role can be explained by the special position of the PLA in both
+the political system and the social structure of the PRC. This position
+crystallized when the Red Army was rebuilding in the communist capital
+of Yan’an during the war against Japan and then developed to systematically
+involve the military throughout society (Gittings, The Role of the Chinese
+Army 79). The systematic involvement expanded the PLA’s image and its
+influence while extensive political work internal to the PLA burnished the
+military’s revolutionary credentials (Gittings, The Role of the Chinese Army
+255). Commentaries in the PLA Daily, the official army journal, were central
+to several political movements, including the publication of the Quotations
+from Chairman Mao Zedong (the Little Red Book), the “Study the PLA”
+initiative, and the controversy surrounding the theater piece Hai Rui
+Dismissed from Office, which Mao interpreted as a thinly veiled critique
+of his leadership (Lu). Likewise, in their article “Media, Environment of
+Quotations, Cult of Personality,” Ting-Jun Wu and Pin-Lian Yu emphasize
+the journal’s significance in promoting Mao Zedong’s cult of personality and
+inciting the Red Guards’ violence. In particular, they refer to an article from
+August 29, 1966, which appealed to the Red Guards to learn from the PLA
+and to “study Chairman Mao’s books, listen to Chairman Mao’s words, to
+act in accordance with Chairman Mao’s instructions, and to be Chairman
+Mao’s good soldiers” (55, emphasis added).
+But what exactly does it mean to be a good soldier in the PRC? We highlight
+the word “soldiers” in Wu and Yu's quote because the image of the soldier
+is one of the most ubiquitous in PRC culture. Yet, aside from the term’s
+circumstantial appearance in scholarly studies of revolutionary aesthetics,
+there has been little treatment of the PRC soldier qua soldier; that is, as
+
+Journal of Cultural Analytics
+
+3
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+2
+
+an agent of violence. “Soldiers” in the preceding quote is a translation of
+the Chinese term zhanshi (战士), the preeminent term in the PLA Daily
+referring to violent actors. There are several other terms carrying similar
+connotations to zhanshi, including junren (军人), bing (兵), shibing (士兵),
+and minbing (民兵), as well as terminological combinations, such as geming
+junren (革命军人) or renmin zhanshi (人民战士). Rather than lumping
+all of them together under one single translation, “soldier,” we acknowledge
+the semantic and political tensions between such official and semi-official
+designations.
+For the subsequent analysis, we have selected three of the most prominent
+soldier figures in the PLA Daily: zhanshi, junren, and minbing. As illustrated
+in Figure 1, which shows normalized frequencies of these terms in the articles
+published during the years 1956-1989, the three figures claimed the textual
+space of the journal to different degrees of success and stability. As there
+was only a limited number of pages and characters that could be printed in
+each issue, these varying trajectories reflect the evolving economy of violence
+3
+in the early PRC. In this context, Giorgio Agamben's theory of violence
+proves especially illuminating. One among many other mechanisms of what
+Agamben refers to as the “sovereign power,” the legitimation of violence
+upholds the state of exception which separates bare life, Greek zōe, from
+the politically meaningful way of life proper to men, bios (Agamben 191).
+Who can kill and who can be killed depends upon the soldier positionalities
+identified in the official state discourse. If we think of these positionalities
+as vectors in a politically defined space, then what counts is not only which
+vector is the largest but also how closely it is aligned with the officially
+recognized dimensions along which violence can be legitimately performed
+at any given time. The division between “the People” and “people,” or the
+agents and the subjects of the sovereign power, is not fixed but constantly reestablished and re-negotiated on the discursive battlefield as different soldier
+figures vie for legitimacy.
+To explore the differences between the three soldier figures, we first identified
+words and expressions occurring in a statistically significant manner around
+them. We segmented the PLA Daily articles (218,494 texts) into individual
+
+2 In addition to the numerous studies of model soldiers such as Lei Feng and Ouyang Hai, treatments focusing specifically on the image of
+
+the soldier or the PLA in PRC culture are rare. Some recent examples include Haiyan Lee’s studies “The Charisma of Power” and “The Soft
+Power of the Constant Soldier”; Yizhong Gu's dissertation “The Myth of Voluntary Death,” which deals with sacrifice and martyrdom in
+Maoist films; Xiaomei Chen’s chapter “Worker-Peasant-Soldier Literature,” which surveys several Maoist literary works written by and/or
+about communist soldiers; and Ban Wang’s chapter “Art, Politics, and Internationalism in Korean War Films.” While these latter studies
+address the image of the soldier or the PLA, none of them focus on the relationship between this image and the management of violence.
+While Yan Xu's work The Soldier Image and State-Building in Modern China, 1924-1945 addresses the relationship between state ideology
+and the soldier, Xu's focus is less on the question of violence than the model for conceptualizing the sociopolitical structure of modern
+China embodied in the military. Other recent works, such as Diana Lary's China’s Civil War, Xiaobing Li's A History of the Modern Chinese
+Army, and Neil Diamant's Embattled Glory also address the relationship between the PLA soldier and broader PRC culture and society, yet
+they do not directly concern the relationship between the Chinese soldier and the management of violence.
+3 In this sense, our argument is comparable to Alex Woloch's analysis of how narratives distribute limited textual space attention among
+
+literary characters (Woloch 2004).
+
+Journal of Cultural Analytics
+
+4
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+Figure 1. Stack plot showing the distribution of soldier terms as a fraction of all words published each year in the PLA
+Daily, 1956-1989.
+
+words and sentences using the spaCy pipeline zh_core_web_lg for Python. We
+then used the Fisher’s exact test to identify statistically significant collocates
+4
+of each soldier term (p < 0.01). By considering different context sizes (5-word
+window, sentence, document), we aimed to cover the entire syntax-semantics
+spectrum. To generate the final lists of collocates, we filtered out words
+that co-occurred with the target terms less than 1,000 times and sorted the
+remaining words in decreasing order according to the ratio of the actual
+number of occurrences to the expected number of occurrences (r-exp), the
+latter calculated given the overall frequency of words in the corpus.
+Although we will explore the results in more detail in the following sections,
+a few basic differences become evident already now from Table 1, which
+displays the top five terms for each category. Zhanshi conveys a romanticized
+and idealized image, often associated with Lei Feng 雷锋 (1940?-1962?), a
+model soldier revered in the PRC for his selflessness and dedication. With a
+deep connection to familial and rural roots, the zhanshi is deeply intertwined
+with communal ethos, drawing from the concepts of “Five Virtues” and “Five
+Togethers,” which emphasize moral excellence and solidarity, respectively.
+Junren leans more towards the structural and functional aspects of the
+military and is characterized by terms such as “demobilized,” “retired,” or
+“active duty,” which all carry the administrative and bureaucratic tones of
+
+4 The test determines the statistical significance of an event: the less likely the event (the lower the p value) the more significant its occurrence.
+
+For instance, if an otherwise highly frequent term appears together only with the junren, this will count as a statistically unlikely, and hence
+significant, event, since the null hypothesis assumes that all words are distributed randomly across the corpus. This technique has been
+successfully employed in DH projects (Algee-Hewitt et al. 2020). To reduce the amount of memory required to generate the co-occurrence
+matrices, we have considered only the words that appear at least 10 times in the whole corpus.
+
+Journal of Cultural Analytics
+
+5
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+the military life cycle. Minbing, finally, is grounded in the idea of a civilian
+militia and emphasizes collective responsibility and grassroots participation in
+defense matters. As illustrated in Figure 1, these three soldier positionalities
+are not granted equal importance. When contrasted with junren, which refers
+specifically to the individuals associated with the military institution that is
+the PLA, the much more dominant zhanshi is a floating figure burgeoning
+with revolutionary meaning and endowed with a higher degree of social
+mobility: while a junren can be a zhanshi, the opposite is not always the case.
+In other words, almost anyone with correct political characteristics and will
+to revolutionary action, from women workers in civilian militias (minbing)
+to teenage Red Guards and even literary figures, could be designated as a
+zhanshi. They thereby become implicated in the apparatus of state violence
+and acquire a mandate to engage in violence on behalf of the People. As such,
+the term zhanshi serves as a univocally positive marker which the journal
+utilizes to distribute the mandate for violence to its designated agents in the
+PLA and beyond.
+
+Between Junren and Zhanshi
+Some of the earliest usages of junren can be traced back to the late nineteenth
+century and occur in the context of military westernization/modernization
+(Lo 5). The term is generally seen in similar contexts throughout the
+Republican Era, both in the nationalist Kuomintang (GMD) and
+Communist Party (CCP) military milieus. In the 1950s, junren appears in the
+context of the PLA’s attempts to professionalize along the lines of the Soviet
+Union’s armed forces (Li 114), which can be also seen in many PLA Daily
+articles published during this time:
+“The more advanced technology and weaponry become, and
+the greater its power, the greater the demands on every military
+member’s understanding, and the more solidarity is needed;
+5
+every soldier [junren], no matter what job they do, needs to be
+more aware of the responsibilities they themselves have toward
+the entire enterprise and understand their role in the larger
+system” (“The Development of Military Technology and the
+Role of Humans in Modern Warfare,” PLA Daily, No. 8-29,
+6
+1958).
+Junren appears also in the context of the rational management of the military
+and current and former military service-members; most common are texts
+related to the systematic incorporation of the various formal, semi-formal,
+
+5 The Chinese for “military member” here is jundui quanti renyuan 军队全体人员; this is terminologically not the same as junren, but the
+
+equivalence is implied in the context of the subsequent lines.
+6 Here and in the following quotations from PLA Daily, we provide the article’s title together with the date of publication for easier
+
+identification, as we do not have the exact page numbers. The texts have been acquired from the digitized version of the journal available
+through the East View library (https://dlib.eastview.com).
+
+Journal of Cultural Analytics
+
+6
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1956-1989
+
+Table 1. Top five most significant collocates of the three major soldier designations.
+Term
+
+5-word window
+
+nObs
+
+r-exp
+
+sentence
+
+nObs
+
+r-exp
+
+战士
+zhanshi
+
+雷锋式 (Lei Feng-style)
+五好 (Five Virtues)
+超期 (extended service)
+退伍 (demobilized)
+警卫 (guard)
+
+1398
+11642
+1144
+7140
+2332
+
+24.964
+19.403
+16.113
+13.864
+13.48
+
+五好 (Five Virtues)
+退伍 (demobilized)
+探家 (home visit)
+家长 (parents)
+入伍 (to enlist)
+
+7784
+5906
+1490
+2945
+1004
+
+9.779
+7.992
+7.641
+6.913
+6.877
+
+军人
+junren
+
+残废 (disabled)
+复员 (retired)
+现役 (active duty)
+退伍 (demobilized)
+军属 (family dependents)
+
+4042
+7548
+1642
+6058
+1468
+
+336.833
+260.276
+149.273
+123.633
+112.923
+
+残废 (disabled)
+复员 (retired)
+现役 (active duty)
+军属 (family dependents)
+退伍 (demobilized)
+
+2697
+4851
+1237
+1288
+4244
+
+基干 (core cadres)
+三落实 (Three
+Implementations)
+预备役 (reserve duty)
+大办 (to organize big-scale)
+武装部 (Armed Departments)
+
+2906
+2696
+1348
+1250
+1338
+
+193.733
+179.733
+61.273
+33.784
+23.474
+
+三落实 (Three
+Implementations)
+基干 (core cadres)
+全民皆兵 (Everyone’s a
+Soldier)
+武装部 (Armed Departments)
+预备役 (reserve duty)
+
+2737
+2738
+1132
+11668
+1409
+
+民兵
+minbing
+
+Journal of Cultural Analytics
+
+document
+
+nObs
+
+r-exp
+
+爱兵 (love for soldiers)
+五同 (Five Togethers)
+尊干 (respect for officers)
+同乐 (Joy Together)
+农村籍 (rural hukou)
+
+25405
+5435
+11396
+2001
+2201
+
+6.291
+6.169
+6.15
+6.027
+5.933
+
+128.42
+107.8
+65.105
+61.333
+55.117
+
+复退 (retired)
+残废 (disabled)
+复员 (retired)
+抚恤 (compensation)
+优抚 (preferential treatment)
+
+1729
+27928
+61112
+2398
+12370
+
+82.333
+57.822
+53.326
+52.13
+51.116
+
+97.75
+70.205
+43.538
+38.508
+31.311
+
+三落实 (Three
+Implementations)
+整组 (reorganization)
+劳武 (labor and military)
+民兵营 (militia battalion)
+民兵团 (militia regiment)
+
+57576
+10133
+20975
+4927
+12572
+
+75.658
+71.865
+61.152
+57.291
+55.628
+
+7
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+and informal groups of fighters from World War Two, the Civil War, and the
+Korean War, into the PLA or into civilian work units, a process in which
+7
+these soldiers were known as fuyuan junren (复员军人). Furthermore, many
+of the articles referencing junren from the 1950s and early 1960s deal with
+the dependents of servicemembers. For example, an article from January 14,
+1956, focuses on the family life of military officers. While it is concerned
+predominantly with ensuring that the families of officers adhere to socialist
+family values, what is of particular importance here is the recognition of
+the “military officer [junguan 军官] as a long-term professional [changqi
+zhiye 长期职业] working in the armed forces” (“Effectively Supporting the
+8
+Families of Military Officers,” PLA Daily, No. 1-14, 1956). Mentions of
+junren in articles during the 1950s generally follow this trend of increasing
+professionalization and rational management of the PLA.
+As noted by Li, however, during the 1950s a “widening gap” emerged
+between “an increasingly radicalized society and a gradually regularized
+military” (114). While junren was primarily associated with the
+modernization and professionalization of the military during the 1950s, the
+appearance of the affectively charged zhanshi in the same period reveals the
+radicalization that Li refers to but also the mounting tensions within official
+discourse as to who can be considered the legitimate agent of state violence
+(Figure 1). While Shambaugh (“The Soldier and the State” 533) argued that
+“[p]rofessionalism and politicization are not necessarily mutually exclusive in
+any army, including the Chinese,” the divergence of the professional junren
+and the romanticized zhanshi becomes increasingly palpable during the most
+radical decades of the 1960s and 1970s. This radicalization was partly the
+result of the gradual takeover of the PLA by Mao Zedong’s allies, most
+prominently the ascension in 1959 of Lin Biao to Minister of Defense in
+place of Peng Dehuai, the latter of whom had consistently advocated for
+9
+professionalization.
+Zhanshi (战士) is a much more venerable term than junren, appearing
+notably in the frontier poems of the Tang Dynasty, where it invoked a
+10
+varied pathos of bravery, virtue, and sacrifice on behalf of the country.
+In modern times, the term begins to appear in a similar romanticized and
+politicized context toward the end of the nineteenth century. News reports
+on the First Sino-Japanese War (1894-1895), for example, refer to soldiers
+
+7 In his study Embattled Glory, Neil Diamant translates this latter term as “retired veterans” (Diamant; Vogel 54–59). For an example of this
+
+process in the PLA Daily, consider the title of an article from April 6, 1957: “All Provinces and Municipalities Actively Prepare
+Reintegration Work - Welcome Retired Veteran [fuyuan junren] Participation in Rural Construction.”
+8 While the terms used here, junguan, is not junren, the military officer (junguan) is the managerial stratum of the junren-based military
+
+apparatus.
+9 For a more detailed discussion of the internal political mechanisms by which the PLA was slowly radicalized at the end of the 1950s and
+
+during the early 1960s, see (Shambaugh, “The Soldier and the State” 538–39) and (Walder 196–97).
+10 For an overview of Tang Dynasty frontier poetry in English, see the discussion in Owen 1996, 459–77.
+
+Journal of Cultural Analytics
+
+8
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+11
+
+fighting on behalf of the Chinese nation as zhanshi. The term takes on
+revolutionary connotations during the nationalist uprisings in the first decade
+of the twentieth century and after the establishment of the Republic in 1912.
+While both junren and zhanshi exemplified an ideal citizenry, a distinctive
+feature of the zhanshi was its emphasis on romanticized death in the service
+of the revolution and the nation.
+The intertwining of romanticized death with the zhanshi, and the veneration
+of martyrs in general, found resonance within Mao Zedong’s eschatological
+Communist ideology, exemplified most prominently in his eulogy to the
+soldier Zhang Side 张思德 (1915-1944). Titled “Serve the People,” Mao’s
+celebrated speech from September 8, 1944 “marked the inception of the cult
+of the red martyr in the history of the CCP” (Hung 280). In the PLA Daily,
+the association between the Chinese zhanshi and martyrdom on behalf of
+the nation and revolution is clear for the period of the late 1950s through
+the end of the 1970s. For example, an article from April 30, 1959 quotes
+Mao’s eulogy and commemorates the martyr An Yemin 安业民 (1938-1958),
+who had sacrificed himself to save an artillery piece during the Second Taiwan
+Strait Crisis in 1958, as “the figure of a truly sublime communist soldier
+12
+[zhanshi].” The author is quick to add, however, that An was also a farmer’s
+boy with an elementary school education; he was a “normal” person and an
+“everyday” zhanshi, and as such could be emulated by virtually anyone. This
+agrees with Louise Edwards's argument that “China’s contribution to the
+socialist realist theory of exemplars was to bring the exemplar directly into
+the present world of the consumers of the narrative… close to the people”
+(26). The celebration of An Yemin conveys the intention of the PLA Daily’s
+editors to create a tangible relationship between the zhanshi and the reader,
+whether that be a soldier in the PLA or a commoner.
+As the distance between the martyr and the average person closed, model
+soldiers became only the most conspicuous and well-respected zhanshi. On
+the back of this highly mobile figure, the mandate for legitimate violence
+spread beyond members of the regular state military apparatus. For example,
+one article uses the term in reference to the writer Lu Xun (“Learning
+from Mr. Lu Xun’s Fighting Spirit,” PLA Daily, No. 10-20, 1956). Another
+relates the story of a mother and a sister who “not only lost their own
+family members in the long and arduous revolutionary struggle, but also were
+zhanshi in their own right,” since they served various civilian roles during the
+
+11 A March 16th, 1895 article from the influential Shenbao titled “Remembering Aid for the Troops [zhanshi]” points out that the “valiant”
+
+soldiers wounded on the battlefield are “loyal and righteous members of the Chinese nation” and that monetary contributions to provide
+medical services for the wounded guarantee “that the vast expanse of China… can be preserved” 戰士銘恩," "…我兵奮勇直前多有受傷之
+人… 查此受傷之人皆我華忠義之士… 我中國幅之廣人物之多茍能似此存心何患不能挽回…
+12 “…Comrades, from here we witness the figure of a truly sublime communist soldier [zhanshi]!… Placing the interests of the Party and the
+
+People above one’s own, caring for the revolution, the collective, and comrades more than for oneself, these are the fine virtues instilled in
+the People’s soldiers [zhanshi] by the Party’s teachings; valiant and unyielding, with an indomitable spirit, aiming to overpower all enemies
+and never submitting to any enemy, this is the glorious tradition of the People’s army under the leadership of the Party” (“The Figure of a
+Sublime Communist Soldier,” PLA Daily, No. 4-30, 1959).
+
+Journal of Cultural Analytics
+
+9
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+communist revolution (“Glorious Mothers,” PLA Daily, No. 11-13, 1956).
+PLA Daily also uses the term to refer to members of the people’s militias,
+as in an article which portrays the stalwart minbing zhanshi as “loyal to the
+motherland and loyal to the revolutionary enterprise” (“Exemplary Figures in
+Militia Battalions,” PLA Daily, No. 8-13, 1964).
+Yet the increasingly prominent label was available not only to those coming
+from the ranks of the educated elite, those who had lost loved ones in
+military conflict, or the junren members of the PLA. Ultimately, anyone
+who sacrificed themselves on behalf of the nation could be described as
+and, perhaps most crucially, describe themselves as a zhanshi. A paean from
+September 10, 1958 glorifies an entire zhanshi nation:
+“…Should an enemy invade the Motherland, the zhanshi of the
+Steel Army will emerge from beside the blast furnaces, from
+the cotton mills, from the fields, from the millstones, from
+schools, from shops… from every corner of the Motherland.
+They will unite into a powerful fighting force and, from all
+directions, pierce the hearts of the enemy with their deadly
+bullets!” (“Everyone’s a Soldier,” PLA Daily, No. 9-10, 1958)
+Here, virtually everyone fighting on behalf of the Motherland is a soldier,
+military member or not. As the Cultural Revolution gets underway, the
+zhanshi’s mobility combines with the increasing concentration of command
+over the legitimate use of force within the person of Chairman Mao to give
+rise to many of the violent mass movements of the era, including that of the
+Red Guards (hongweibing 红卫兵), the zealous teenage adherents of Mao
+Zedong Thought who answered his call to violently attack class enemies
+allegedly still lurking among the People (Thurston, Enemies; Yang). In an
+article entitled “Always Following Chairman Mao to Wage Revolution” from
+September 2, 1966, Red Guards are quoted as stating that “[w]e must hold
+high the great banner of Mao Zedong Thought, study the PLA in great
+earnest, become Red Guard zhanshi who live up to the title bestowed by
+the great Commander-in-Chief Chairman Mao, and forever serve as faithful
+13
+servants of the People.”
+During the period that the zhanshi was in the ascendant, from the increasing
+politicization of the PLA in the late 1950s to the end of the Mao era in the
+late 1970s, there are also articles dealing with the junren, albeit they are much
+less frequent. Different from the focus in the 1950s on the management of
+retired veterans and/or military families, or the reincorporation of veterans
+into new military units, the emphasis on junren in the 1960s and 1970s is on
+reinforcing the glorious image of veterans, their families, and, by association,
+
+13 “Always Following Chairman Mao to Wage Revolution; Implementing the Sixteen Points Unswervingly and Fully,” PLA Daily, No. 9-2,
+
+1966.
+
+Journal of Cultural Analytics
+
+10
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+the PLA and its revolutionary accomplishments of the past. This was done
+through mass campaigns, referred to variously as “embrace the military and
+privilege military dependents” (yongjun youshu 拥军优属) and “privilege and
+care work” (youfu gongzuo 优抚工作), among other terms (Table 1). At
+the same time that the PLA Daily led these mass campaigns to burnish
+the revolutionary image of junren, the military dependents, and the PLA
+in general, it viewed junren and other elements of the PLA bureaucracy as
+14
+potential sources of revolutionary force in and of themselves. Yet even in
+the midst of heated revolution and attempts to mobilize the junren and its
+associated groups, the term appears to maintain its association with military
+organization and lacks strong affective connotation; in other words, during
+this era junren remains for the most part professional as opposed to political.
+As we move to the late 1970s and 1980s, there are still a large number of
+articles relating the term junren to the topics commonly associated with it in
+previous eras, such as military dependents and veterans. The junren is also still
+associated with military professionalization and modernization. Noteworthy
+during this period, however, is the junren’s increasing politicization, as it
+begins to take on some of the romantic characteristics of zhanshi from
+the Mao era. In what is a solid confirmation of Shambaugh’s statement
+that professionalization and politicization are not mutually exclusive in the
+PLA (Shambaugh, “China’s Military”), there are a large number of articles
+from this period focused on the spirit and character of the junren and the
+role that they are to play in and for society. For example, an article from
+September 1980 calls on soldiers and cadres to avoid using foul language
+(“Be Civilized, Polite Soldiers,” PLA Daily, No. 9-1, 1980). No longer is the
+figure of the junren simply an individual in a military bureaucracy. Here, at
+the beginning of “Reform and Opening Up,” junren is also taking on a new
+moral function in society. This moralized figure of the junren is apparent in
+many other articles as well, such as one which references the ongoing military
+conflict between the PRC and Vietnam: “Sacrificing Oneself in the Interest
+of the People is a Soldier’s Most Sublime Moral Precept” (No 12-10, 1985).
+Quoting Sunzi’s The Art of War, the text lays out the essence of what the
+“soldier of the new era” (xin shiqi junren 新时期军人) is supposed to be:
+“The profession of the soldier [junren] is warfighting. War is
+an act of violence. It is ‘the realm of life or death, the path of
+being or nonbeing.’ War has always been closely linked to valor.
+As such, from the first day He joins the military, a soldier must
+be mentally prepared to bravely sacrifice himself to protect the
+Motherland.”
+
+14 “Calling on the Families of Martyrs and Demobilized Soldiers to Eagerly Study Chairman Mao’s Works,” PLA Daily, No. 7-31, 1966.
+
+Journal of Cultural Analytics
+
+11
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+And yet, despite this new ethical content of the junren in the 1980s and
+its thrust toward nationalized sacrifice, its affective potential still pales in
+comparison with the zhanshi. This is particularly striking in the articles
+dealing with the Tiananmen Square massacre of 1989. When mentioning
+members of the PLA who fought against the demonstrators and/or who were
+injured or killed during the conflict, the journal commonly refers to those
+soldiers not as junren, a figure close at hand and imbued with the necessary
+politicized connotations, but as zhanshi:
+“…a small group of heartless and fanatical criminals, along with
+rioters… brazenly intercepted and destroyed over a hundred
+military vehicles, setting fire to and burning thirty-one of them.
+Several young zhanshi were burned alive” (“Martial Law Troops
+Suffer Savage Attacks from Malicious Assailants; Forced to Take
+Decisive Measures after Bearing the Unbearable,” PLA Daily,
+No. 6-4, 1989).
+Considering the dynamic landscape of violent agency from the founding of
+the PLA Daily in 1956 to the Tiananmen Square massacre of June 4th, 1989,
+it becomes evident that the legitimation for this violent agency is closely tied
+to the shifting positionalities of the figures of the junren and the zhanshi
+within the PLA Daily. In this context, the journal emerges as a key player in
+legitimizing a spectrum of violent actors, all fervently dedicated to the cause
+of the People and their struggle against perceived adversaries. One can see
+how the PLA Daily’s legitimation of the zhanshi, with its social mobility and
+its more radical violent potential, stimulated the excessive civil violence of the
+Cultural Revolution years: anyone could take on the mantle of the People’s
+zhanshi and mete out fury on those people deemed enemies. It is here, in an
+almost total state of exception, that Agamben's civil war between “people”
+and “the People” reaches its apogee. No wonder, then, that the PLA Daily
+attempts in the 1980s to walk back its legitimation of the zhanshi in favor
+of the junren as the bearer of the PRC state’s mandate for violence. With
+the ascent of the junren, violence on behalf of the People is safely sequestered
+within the ranks of the PLA, a bureaucratic military organization under the
+Party’s control. The zhanshi, that infinitely more volatile figure of the soldier,
+is thereafter kept on reserve, to be unleashed whenever the simple patriotism
+and professional ethic of the junren prove insufficient to spur soldiers and
+civilians into violent action.
+
+The Rise and Fall of the People’s Militia
+Having outlined a genealogy of the two major soldier designations, junren
+and zhanshi, we now move on to the enigmatic figure of the People’s Militia
+(minbing). Here, we focus only on the militia’s accession to the status of
+legitimate agents of violence during the late Cultural Revolution as well as
+
+Journal of Cultural Analytics
+
+12
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+their subsequent fall from grace in the immediate post-Mao period, as seen
+in Figure 1; the militia’s role in the PRC’s revolutionary history calls for an
+independent, full-length examination.
+June Dreyer's remains one of the few scholarly treatments of the subject
+available to date. As she puts it, although in theory “the militia member is
+both civilian and soldier – a productive member of society in peacetime and a
+valiant warrior in time of hostilities,” in fact the militia’s role has been much
+more complex in China (71). Located between people and the People, the
+liminal status of the militia was epitomized in party slogans describing militia
+members as striding forward “with a shovel on one shoulder and a rifle on
+the other” (quoted in Dreyer 71). Despite his initial misgivings about the
+local militias as remnants of the Nationalist regime, Mao Zedong’s concept
+of the People’s War (renmin zhanzheng 人民战争), the “everyone’s a soldier”
+campaign (quanmin jiebing 全民皆兵), and the “three implementations”
+directive (san luoshi 三落实) emphasized the militia’s role in increasing
+domestic production and military matters (J. C. F. Wang 542). According
+to some estimates, approximately one-third of China’s entire population
+enrolled in militia organizations (McCord 125). The “sea of militiamen”
+was supposed to protect the country against nuclear attacks from the West
+(Powell; Gittings, “China’s Militia” 104–06). These developments enhanced
+the role of the militia, albeit not in a way that emphasized professional
+training, thus placing them in tension with the regular armed forces (Gittings,
+“China’s Militia” 107–09). Already in 1960, Ralph Powell noticed that “since
+the militia is an ‘organization of the masses’ rather than a professional army,
+the use of military ranks, uniforms, and salutes is frowned upon” (104).
+Similarly, Dreyer argues that “the greater the defense role given to an armed
+citizenry, the less the prestige of the regular army – in particular, the less the
+prestige of a professionally oriented, highly specialized army equipped with
+modern weapons” (74).
+The rapid increase of the militia’s presence in the PLA Daily (Figure 1)
+in the 1970s speaks to the editors’ recognition of the militia’s importance,
+but also the militia’s own growing claims to legitimacy as agents of violence
+blessed by Mao Zedong’s official endorsements (da ban minbing 大办民兵),
+which could be traced back to his celebrated report on Hunan peasantry
+praising the outbursts of revolutionary violence among the rural poor as
+“necessary and liberating” (Walder 43). The militia’s growth posed a challenge
+to the PLA, however. Close reading of the minbing-related articles published
+between 1970 and 1976 reveals that the PLA Daily’s editors were at pains
+to distinguish between the militia and the regular army, as in the following
+Tibet-focused excerpt:
+“The militiaman Tsering Dorje found an uninhabited
+mountain pass [in the Kailash Mountain Range], over 60
+kilometers away from his home. He encouraged seven families
+
+Journal of Cultural Analytics
+
+13
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+of freed serfs to settle there. One early morning, his wife was
+alerted by a dog’s bark. With her two sons, she followed the
+sound and discovered a deep footprint near a mountain spring.
+Soon, all mountain passes and critical routes were secured by
+border troops [zhanshi] and militia [minbing]. After a relentless
+24-hour search, they captured a counter-revolutionary hiding in
+a rock crevice.” (“Promote the Militia, Every Citizen a Soldier,”
+PLA Daily, No. 9-29, 1973)
+In such quasi-novelistic passages, the official zhanshi designation is clearly
+separated from the minbing, despite the overall emphasis placed on the
+collaboration between the two groups, united against a common enemy, and
+despite the occasional labeling of the militia as zhanshi, which we explored in
+the previous section.
+In addition to the patronizing distinctions, which implicitly emphasized the
+higher status of the regular armed forces, the PLA also employed more direct
+means to bring the violent minbing under control. Already in November
+1964, a PLA Daily editorial warned that “if political implementation is
+not fulfilled […] we will not be able to ensure that the guns are entirely
+in the hands of reliable workers and poor and middle peasants” (“Three
+Implementations for Enhancing Militia Work During the Socialist Education
+Movement,” PLA Daily, No. 11-17, 1964). Similar announcements had next
+to no effect in the midst of revolutionary turmoil, however. The rebel leaders
+in major cities declared that the local militias were ready to seize military
+control from the army (Walder 297). The tug of war continued for another
+decade (J. C. F. Wang 544–47); an editorial published jointly on September
+29, 1973 in the People’s Daily and the PLA Daily called again for local party
+committees to reassert direct control over the armed civilians: “to properly
+establish the militia, the key is to get the policy right” (“Organizing the Militia
+Well,” PLA Daily, No. 9-29, 1973), but soon afterwards Wang Hongwen,
+Zhang Chunqiao, and other party radicals’ support for the People’s Militia
+regained momentum; based on various trade union federations and municipal
+party committees in which they were personally involved, “a command
+structure somewhat independent from the PLA” (J. C. F. Wang 550) was
+established and a change in the PRC constitution elevated the militia to
+parity with the PLA. Specifically, Article 15 of the PRC Constitution of
+1975 reads: “The Chinese PLA and the militia [minbing] are the workers’
+and peasants’ own armed forces led by the Communist Party of China.”
+This officially acknowledged militia was instrumental in suppressing the
+Tiananmen demonstrations in April 1976 sparked by the death of Premier
+Zhou Enlai 周恩来 (Dittmer 53; J. C. F. Wang 553).
+The trajectory of the militia’s prominence in the PRC’s socio-political sphere,
+particularly as narrated in the PLA Daily, underscores the tension and the
+balance of power between grassroots mobilization and centralized authority
+
+Journal of Cultural Analytics
+
+14
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+in the Chinese Communist narrative. The frequent distinctions between the
+militia and the PLA in official publications reflect a cautious endorsement
+of the former (supported, after all, by none other but Mao Zedong), while
+simultaneously keeping them distinct from the regular army. The sheer
+fact that the militia could be considered legitimate agents of violence did
+not diminish but rather increased the potential for tensions between the
+armed civilians and the professionally trained soldiers. With the growing
+professionalization of the PLA’s armed forces and the ascent of the junren
+as the recognized agent of violence in the 1980s, Mao Zedong’s passing also
+marked the decline of the minbing.
+
+Distribution of violence: topic modeling the PLA Daily
+If the foregoing discussion focused on different soldier figures as agents
+of violence competing for legitimacy, this final section proceeds to analyze
+the larger discursive-affective contexts in which those figures necessarily
+participated. Here again, the concept of distribution remains crucial. Jacques
+Rancière has coined the term “distribution of the sensible” (partage du
+sensible) to emphasize the aesthetic dimensions of political power; the
+organization of sensory experiences determines what is visible, audible, and
+thinkable within the social sphere and thereby shapes the possibilities for
+action and participation (Rancière 12). The term refers at once to the
+“conditions for sharing that establish the contours of a collectivity (i.e.,
+‘partager’ as sharing) and to the sources of disruption or dissensus of that
+same order (i.e. ‘partager’ as separating)” (Panagia 103). This echoes
+Agamben's notion of “civil war” between the included “People” and the
+excluded “people,” which both divides society and yet “keeps it united and
+constitutes it more securely than any identity” (Agamben 191). The following
+analysis operationalizes this dual perspective, identifying themes in the PLA
+Daily which designated the legitimate objects of violent actions and thereby
+yielded themselves to violent participation.
+Our first step was to collect a list of terms indicative of whether a given
+text could be considered violent or not. We were interested above all in state
+power and military-related violence, thus in vocabulary related to skirmishes,
+battles, and full-fledged army operations, such as 屠殺 (“to slaughter”), 攻打
+(“to assault”), 灾难 (“disaster”), 烧毁 (“to burn down”), 毒死 (“to poison to
+15
+death”). In the next step, we identified articles in which such vocabulary was
+particularly prominent (at least one violent word per ten words on average)
+and labeled them as “violent.” One representative passage reads as follows:
+
+15 We have further augmented this list with semantically-proximate words identified through static word embeddings (word2vec) trained on our
+
+corpus. The final list includes 815 unique terms.
+
+Journal of Cultural Analytics
+
+15
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+Under the command of the right-wing military authorities in
+Indonesia, fully armed army troops, together with thousands
+of rioters armed with knives, axes, clubs, and other weapons,
+brutally beat, tortured, and bloodily massacred innocent and
+unarmed Chinese expatriates. Not even the elderly, weak,
+women, and children were spared. The atrocities of right-wing
+soldiers and rioters raping Chinese women continue to occur
+everywhere. In October last year, right-wing soldiers and rioters
+in Qibili [齐必力, Kabil?] forced all overseas Chinese who had
+once hung the flag of the People’s Republic of China to gather
+together. They beat them, stole all their possessions, and cruelly
+murdered local Chinese community leaders (“Indonesian
+Right-Wing Forces Owe the Chinese People a Heavy Blood
+Debt,” PLA Daily, No. 5-19, 1966).
+We randomly selected 100 violent articles from each year and transformed
+them into vector representations (embeddings) with the help of a large
+encoder model. These representations were then averaged into “vectors of
+16
+violence” through k-means clustering. In the next step, we computed cosine
+similarities between the vectors of violence and the individual embeddings of
+17
+all articles published between 1956 and 1989.
+As shown in Figure 2, the 34 years in question are characterized by cycles of
+“repression and relaxation” (He), the graph bearing witness to PRC society’s
+painful journey through a series of movements, mobilizations, and purges.
+We see a steady growth of violent language from 1956 all the way to the
+Cultural Revolution beginning in 1966, and then a series of peaks in the years
+that follow. The intra-party conflicts surrounding Deng Xiaoping’s “three
+18
+directives” (san xiang zhishi 三项指示) in the early months of 1976, the
+protests in Tiananmen Square in April 1976, the Sino-Vietnamese conflict
+(1979), and the June Fourth demonstrations in 1989 are also strongly marked
+by violent discourse. On average, the 1980s are charged with militaristic
+language much less than the preceding decades. That the model can identify
+the relevant periods in conformity with existing historiography is reassuring;
+on the other hand, the fact that both the years of 1976 and 1979 are marked
+
+16 The semantic content of each article labeled “violent” was transformed into a 768-dimensional vector representation by accessing the [CLS]
+
+special token in the top layer of the pre-trained Chinese BERT model (bert-base-chinese, 110M parameters). Prior to generating the
+embeddings, the model has been fine-tuned for one epoch on a binary classification task (violent/non-violent). By taking an average of all
+such representations (embeddings), we arrived at a single vector of violence, which, in theory, could be used to quantify how violent a given
+text is: the higher the similarity between this violence prototype and the vector representation of some other text, the more violent the text.
+Since violence appears in many forms and shapes, however, such an approach would necessarily lose nuance. We adopted the multiple
+prototypes approach, clustering similar embeddings with the help of elbow method and using the centroids of these clusters as
+representative vectors (prototypes) for each cluster.
+17 For each article, we calculated the cosine similarities between its vector representation and the violence prototypes, selecting only the highest
+
+score, which then contributed to the average violence for any given month. We averaged the vector representations for each article longer
+than 510 characters (the maximum input for bert-base-chinese, with two special characters added by the tokenizer).
+18 While couched in Marxist-Leninist terms, the so-called “three directives” was a set of policy guidelines launched by Deng Xiaoping in May
+
+1975 to steer the country away from the ideology of class struggle in the interest of economic modernization.
+
+Journal of Cultural Analytics
+
+16
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+Figure 2. Monthly average of cosine similarities between the vector representations of PLA Daily’s articles and the
+vectors of violence.
+
+with violent sentiments on a par with, and at times exceeding, the intensity of
+the Cultural Revolution has been rarely acknowledged in literature and calls
+for further research.
+We decided to probe further behind this familiar narrative. Although two
+texts produced at different times might be equally violent according to their
+placement in the vector space, the violent charge might be in fact distributed
+unevenly among different themes. In the next step, we took inspiration from
+topic modeling, a text mining technique which considers a text or a set of
+texts as an assemblage of discourses, each of which is essentially a group
+of words that tend to occur together. As such, topic modeling is a way of
+partitioning the textual space and aligns with the distributional perspectives
+of Rancière and Agamben. We used the MALLET implementation of LDA
+(Latent Dirichlet Allocation) to train a topic model on the selected preprocessed PLA Daily articles (150,988 documents containing 60,029,332
+words in total), with 200 topics, 1,500 iterations, and default
+19
+hyperparameters. After training, we calculated the contribution of each
+
+19 The pre-processing involved removing Chinese stopwords and monosyllabic words from the corpus and selecting only articles containing at
+
+least 100 words. For topic modeling, we did not split the articles into smaller chunks as we considered each article as a thematically-coherent
+entity.
+
+Journal of Cultural Analytics
+
+17
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+Figure 3. Temporal analysis of violence-related language by topic (1956-1989). The color intensity in each cell indicates
+the weighted average violence score of a specific topic for a particular month, normalized against the total presence of
+the given topic in the given month. Only selected topics are displayed.
+
+topic to the total amount of violence illustrated in the previous figure. The
+color intensity in each cell of the resulting heatmap (Figure 3) signifies the
+20
+weighted average violence score of a specific topic for a particular month.
+
+20 The violence score was derived by multiplying the topic’s presence in each article with the corresponding cosine similarity calculated
+
+beforehand (see notes 16 and 17), leading to the aggregate weighted scores for each topic and month. The scores were then normalized using
+the total topic presence in each month. The normalization assures that the high presence of a topic in many non-violent articles does not by
+itself lead to a high weighted average. In other words, the topic must be present in highly violent texts to contribute significantly. Only the
+top three terms for each topic are shown.
+
+Journal of Cultural Analytics
+
+18
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+Table 2. Examples of high-violence, mid-violence, and low-violence topics with the top 10 most representative terms.
+High-Violence Topics
+103
+
+敌人 (“the enemy”), 战斗 (“combat”), 阵地 (“position”), 战士 (“warrior”), 高地 (“high ground”), 手榴弹 (“grenade”), 炮弹
+(“shell”), 炮火 (“artillery fire”), 消灭 (“eliminate”), 同志 (“comrade”)
+
+132
+
+敌人 (“the enemy”), 武装 (“armed”), 人民 (“people”), 力量 (“power”), 解放 (“liberation”), 地区 (“area”), 军民 (“military and
+civilians”), 敌军 (“enemy army”), 伪军 (“puppet army”), 进攻 (“attack”)
+Mid-Violence Topics
+
+87
+
+印度 (“India”), 中国 (“China”), 政府 (“government”), 边界 (“border”), 巴基斯坦 (“Pakistan”), 领土 (“territory”), 尼赫鲁
+(“Nehru”), 地区 (“area”), 进行 (“conduct”), 照会 (“inquiry”)
+
+122
+
+老挝 (“Laos”), 爱国 (“patriotic”), 泰国 (“Thailand"), 政府 (“government"), 日内瓦 (“Geneva”), 万象 (“Vientiane”), 战线党
+(“Pathet Lao”), 民族 (“national”), 中立 (“neutral”), 集团 (“group”)
+Low-Violence Topics
+
+12
+
+技术 (“technology”), 革新 (“innovation”), 成功 (“success”), 试验 (“test”), 设计 (“design”), 设备 (“equipment”), 提高 (“improve”),
+创造 (“create”), 试制 (“trial production”), 制造 (“manufacture”)
+
+155
+
+全国 (“nationwide”), 中央 (“central”), 副主席 (“vice chairman”), 中共 (“Communist Party of China”), 委员 (“member”), 政协
+(“Political Consultative Conference”), 代表 (“representative”), 今天 (“today”), 人民 (“people”), 委员会 (“committee”)
+
+Our visualization demonstrates that violence, represented as a single line
+in Figure 2, is in fact a distribution across different topics and different
+time scales. Most prominent are themes with long-standing connection to
+violence, which can be recognized in the graph as long, horizontal stripes
+of red and black. Such themes converge around general terms related to
+war making (topic 15), strategic and combative activities (197), military
+equipment and exercises (15, 103, 191), as well as ideological and political
+conflicts (194). The space of violence is also claimed by more ephemeral,
+semi-violent topics, such as the Vietnam War (61) and the Arab-Israeli (137)
+conflicts. During the mid-phase of the Cultural Revolution (1968-1973), one
+observes a surge in violent discourse revolving around armed confrontations
+in Laos, Indonesia, Cambodia, the Korean peninsula, India, Latin America,
+Western Europe, and the Eastern Bloc. Violence is redistributed by attaching
+militaristic descriptions to the international and global themes and removing
+such vocabulary from the more local ones (12, 22, 57, 155, 171, 172,
+177). Such a pattern of distribution might indicate a strategic redirection
+of narrative focus: by highlighting international conflicts and lessening the
+emphasis on internal strife, the PLA Daily portrays the internal revolutionary
+discourse as being under the protective and guiding hand of the military
+leadership. The consistent violent associations with terms like “the People”
+and “the enemy,” by contrast, reinforce the notion of external threats and
+further validate the need for a unified internal front (Table 2).
+Another important insight from Figure 3 is the totalization of violence
+observable during the Cultural Revolution, as nearly all topics detected by
+the model become violent and contribute to the high overall score of that
+period. This can be seen in the form of red vertical columns traversing the
+entire graph. In such violent circumstances, virtually anything that can be
+talked or even thought about acquires violent connotations and becomes
+surrounded with violent vocabulary. While apparently in agreement with the
+Journal of Cultural Analytics
+
+19
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+Maoist paradigm of “continuous revolution,” this all-encompassing upsurge
+in violence paradoxically reflected the CCP leadership’s decreasing ability to
+control how violence was distributed (Ji 139–50).
+
+Internationalization of violent discourse during the Cultural
+Revolution
+The expediency of the attention shift away from the local developments
+towards the international stage has not been sufficiently emphasized by
+scholars. It has been often assumed that from its very inception the CCP was
+“internationalist in premise and in promise” (Kirby 874), in accordance with
+the Marxist-Maoist ideology and the CCP’s push for “Eastern revolution”
+meant to redefine the rules of international relations (Dirlik; Levenson 1–18;
+Volland 9–15; B. Wang, “Art”). As noted by Jian Chen (11), however,
+“revolutionary foreign policy helped to make Mao’s various state and societal
+transformation programs powerful unifying and national themes supplanting
+many local, regional, or factional concerns.” The idealized accounts of
+socialist internationalism as a “global struggle against capital” (Tyerman 7,
+36) and an attempt to build “a socialist world economy stretching from
+Berlin to Canton” (Kirby 870) frequently overlook the pragmatic aspects
+of internationalist imagination. We suggest that in addition to its welldocumented role in furthering domestic mobilization, internationalism
+served also as a rhetorical-distributional move that pushed the images of
+destabilizing violence towards remote lands located far from the center, not
+unlike the more recent Wolf Warrior 2 imagery contrasting domestic safety
+with overseas violence. This strategy was all the more important given that
+China’s armed forces were increasingly beset by factionalism in the late 1960s,
+the main line PLA forces and the local militia-driven PADs (People’s Armed
+Departments, or renmin wuzhuang bu 人民武装部) finding themselves at
+odds with each other (Guoqiang and Walder 5–6, 83; Dreyer 67–68).
+For example, in mid-1967 an “unprincipled civil war” (Bridgham 18)
+engulfed the PRC and the antagonism and hostility increased between the
+PLA and the revolutionary left. Instead of supporting army commanders,
+revolutionary mass organizations in the provinces and major cities violently
+attacked local military control committees. On May 7, Mao launched an
+intensive rectification campaign within the army; clashes between rival
+factions disrupted several major rail lines, and the Wuhan Incident unfolded
+in mid-July, where the PLA-backed “Million Heroes” (bai wan xiongshi 百
+万雄师) and the Red Guards-backed “Wuhan Workers” (gongren zongbu 工
+人总部), both counting hundreds of thousands of members, engaged in an
+intense propaganda war and military confrontations; Red Flag editorial on
+July 31 fueled military sentiments, appealing to “bring down the capitalist
+roaders” in the PLA. Large-scale conflicts occurred in Beijing, Chongqing,
+Hangzhou, and other big cities (Thurston, “Urban Violence”). Such violent
+circumstances at home seemed of little importance to the PLA Daily’s
+
+Journal of Cultural Analytics
+
+20
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+editors, however. According to our model, some of the most violent articles
+published between May and July 1967 focus on events happening far from
+major PRC agglomerations, denouncing US imperialism and the Western
+incursions into PRC territory. In the following years, there are also hundreds
+of articles related to significant victories and developments in the military
+engagements in Southeast Asia and Palestine:
+“Following the teachings of our great leader Chairman Mao, we,
+the young Red Guards, vow to be the strong backing for the
+people of the three countries of Indochina, firmly supporting
+the people of Cambodia and other Indochina countries in their
+war of resistance against America to save their nations, firmly
+supporting the American people in their revolutionary struggle
+against the Nixon administration, and firmly supporting the
+righteous struggle of the people all over the world against
+American imperialism!” (“Chairman Mao’s Solemn Declaration
+is the Highest Order to the Red Guards,” PLA Daily, No. 5-22,
+1970).
+Such internationalist coverage was disconnected from the developments
+within the PRC, however, where local, unofficial outlets brimmed with
+uncompromising denunciations of opposing factions. Writing about the
+revolution in Chongqing, Guobin Yang in his Red Guard Generation notes
+that “factional battles were intense and deadly in many places, […] involving
+the use of rifles, heavy artillery, and even tanks and military battleships” (41).
+The rebels would seize machinery factories to produce makeshift weapons
+and vehicles and then deploy them against their enemies. Across the country,
+different military groupings engaged in public accusations of their opponents
+and commemorated their own dead through public memorial services and
+newspaper pages devoted to the martyrs (Ji 180–218). Condemning the
+cruelty of their enemies, Red Guards would intersperse violent accounts of
+battles with Mao’s quotations, vying to prove their revolutionary credentials.
+The violence typical of such texts, however, comes from a completely
+different distribution than the one that characterizes official publications such
+as the PLA Daily.
+Thus, while propagating an anti-colonial ethos and championing global
+justice, the official narratives published in the PLA Daily simultaneously
+served an important rhetorical purpose at odds with the happenings inside
+the country. A computational analysis which allows for the observation of
+shifts in the topical distribution of violence over time makes such narrative
+strategies more easily identifiable when combined with traditional
+historiographical approaches.
+
+Journal of Cultural Analytics
+
+21
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+Conclusion
+In this article, we use quantification as an exploratory and conceptual tool;
+not to arrive at a final conclusion as to which day and which hour in modern
+China’s history was most violent, but rather to suggest a distributional way
+of thinking about state violence and its legitimation. Quantitative approaches
+to texts such as the PLA Daily offer unique perspectives on the distribution
+of violence as a way of legitimizing distinct forms, agents, and targets of state
+power. We show how the three different soldier vectors: junren, zhanshi, and
+minbing acquired political legitimacy to engage in violence on behalf of the
+People: whereas the junren in the 1950s conveyed a focus on professional
+violence, it was relegated to a secondary role by the romanticized zhanshi
+during the Cultural Revolution, only to regain prominence after Mao
+Zedong’s death and the rise of new nationalism in China. Minbing, on the
+other hand, vacillated precariously between the two in an uneasy relationship
+with the regular armed forces. In addition to tracing such changes
+genealogically, we also show that violence in the PLA Daily has been
+distributed hierarchically: the “people vs. the People” narrative concentrated
+military sentiment throughout the analyzed period, whereas international
+topics manifested only intermittently. The selective reportage in the PLA
+Daily during the Cultural Revolution was not merely a reflection of global
+events but a distributional maneuver to shape domestic perceptions. Further
+big data research is necessary to examine similar narrative strategies in other
+sources.
+Peer reviewers: Marilyn Levin, Henrike Rudolph
+Dataverse repository: https://doi.org/10.7910/DVN/DLKIAC
+Submitted: January 08, 2024 EDT, Accepted: February 08, 2024 EDT
+
+This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0
+International License (CCBY-4.0). View this license’s legal deed at http://creativecommons.org/licenses/
+by/4.0 and legal code at http://creativecommons.org/licenses/by/4.0/legalcode for more information.
+
+Journal of Cultural Analytics
+
+22
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+works cited
+Agamben, Giorgio. Homo Sacer: Sovereign Power and Bare Life. Translated by Daniel HellerRoazen, Stanford University Press, 1998.
+Algee-Hewitt, Mark, et al. “Representing Race and Ethnicity in American Fiction, 1789-1920.”
+Journal of Cultural Analytics, vol. 5, no. 2, 2020, pp. 28–60, https://doi.org/10.22148/
+001c.18509.
+Bridgham, Philip. “Mao’s Cultural Revolution in 1967: The Struggle to Seize Power.” The China
+Quarterly, vol. 34, June 1968, pp. 6–37, https://doi.org/10.1017/s0305741000014417.
+Chen, Xiaomei. “Worker-Peasant-Soldier Literature.” Words and Their Stories, edited by Ban Wang,
+Brill, 2010, pp. 65–83, https://doi.org/10.1163/ej.9789004188600.i-342.22.
+Diamant, Neil J. Embattled Glory: Veterans, Military Families, and the Politics of Patriotism in
+China, 1949-2007. Reprint edition, Rowman & Littlefield Publishers, 2010, https://doi.org/
+10.5771/9780742557680.
+Dirlik, Arif. The Origins of Chinese Communism. Oxford University Press, 1989.
+Dittmer, Lowell. “Bases of Power in Chinese Politics: A Theory and an Analysis of the Fall of the
+‘Gang of Four.’” World Politics, vol. 31, no. 1, 1978, pp. 26–60, https://doi.org/10.2307/
+2009966.
+Dreyer, June Teufel. “The Chinese Militia: Citizen-Soldiers and Civil-Military Relations in the
+People’s Republic of China.” Armed Forces & Society, vol. 9, no. 1, 1982, pp. 63–82,
+https://doi.org/10.1177/0095327x8200900105.
+Edwards, Louise. “Military Celebrity in China: The Evolution of ‘Heroic and Model Servicemen.’”
+Celebrity in China, edited by Louise Edwards and Elaine Jeffreys, Hong Kong University Press,
+2010, pp. 21–44, https://doi.org/10.5790/hongkong/9789622090873.003.0002.
+Ganesan, Narayanan, and Sung Chull Kim. State Violence in East Asia. University Press of
+Kentucky, 2013.
+Gittings, John. “China’s Militia.” The China Quarterly, no. 18, 1964, pp. 100–17, https://doi.org/
+10.1017/s0305741000041904.
+---. The Role of the Chinese Army. Royal Institute of International Affairs, Oxford University Press,
+1967.
+Gu, Yizhong. The Myth of Voluntary Death: The Representation of Sacrifice and Martyrdom in the
+Maoist Films (1949-1976). 2017. Thesis. digital.lib.washington.edu,
+https://digital.lib.washington.edu:443/researchworks/handle/1773/40007.
+Guoqiang, Dong, and Andrew G. Walder. A Decade of Upheaval: The Cultural Revolution in Rural
+China. Princeton University Press, 2021, https://doi.org/10.1515/9780691214979.
+He, Henry Yuhuai. Cycles of Repression and Relaxation: Politico-Literary Events in China,
+1976–1989. N. Brockmeyer, 1992.
+Hung, Chang-tai. Mao’s New World: Political Culture in the Early People’s Republic. Cornell
+University Press, 2011.
+Ji, Fengyuan. Linguistic Engineering: Language and Politics in Mao’s China. University of Hawaii
+Press, 2003.
+Jian, Chen. Mao’s China and the Cold War. University of North Carolina Press, 2001.
+Kirby, William C. “China’s Internationalization in the Early People’s Republic: Dreams of a
+Socialist World Economy.” The China Quarterly, no. 188, 2006, pp. 870–90, https://doi.org/
+10.1017/s0305741006000476.
+
+Journal of Cultural Analytics
+
+23
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+LaRocca, Andrew. A Dangerous Game: China’s State Media Perceptions of Strategic Competition
+with the United States. 2023. M.A. Dissertation. Stanford Digital Repository,
+https://purl.stanford.edu/cb005fs3386.
+Lary, Diana. China’s Civil War: A Social History, 1945–1949. Reissue edition, Cambridge
+University Press, 2015, https://doi.org/10.1017/cbo9781107294417.
+Lee, Haiyan. Revolution of the Heart: A Genealogy of Love in China, 1900-1950. Stanford University
+Press, 2007, https://doi.org/10.1515/9780804768078.
+---. “The Charisma of Power and the Military Sublime in Tiananmen Square.” The Journal of Asian
+Studies, vol. 70, no. 2, 2011, pp. 397–424, https://doi.org/10.1017/s0021911811000040.
+---. “The Soft Power of the Constant Soldier: Or, Why We Should Stop Worrying and Learn to
+Love the PLA.” Chinese Visions of World Order, edited by Ban Wang, Duke University Press,
+2017, pp. 237–66.
+Levenson, Joseph. Revolution and Cosmopolitanism: The Western Stage and the Chinese Stages. 1st
+ed., University of California Press, 2018.
+Li, Xiaobing. A History of the Modern Chinese Army. University Press of Kentucky, 2007,
+https://doi.org/10.2307/j.ctt2jcq4k.
+Lo, Winston W. “The Self-Image of the Chinese Military in Historical Perspective.” Journal of
+Asian History, vol. 31, no. 1, 1997, pp. 1–24.
+Lu, Hong 盧弘. Junbao Neibu Xiaoxi: “Wenge” Qinli Shilu [The Inside Story of PLA Daily]. Shidai
+guoji chuban youxian gongsi, 2006.
+Luo, Zhifan. “Politicalization or Professionalism? A Case Study of the Military’s Discourse in
+China.” Armed Forces & Society, vol. 48, no. 1, 2022, pp. 185–204, https://doi.org/10.1177/
+0095327x20906848.
+McCord, Edward A. “Militia in Modern China: Lessons for Contemporary Conflicts.” American
+Journal of Chinese Studies, vol. 15, no. 2, 2008, pp. 123–36.
+Mittler, Barbara. A Continuous Revolution: Making Sense of Cultural Revolution Culture. Harvard
+University Press, 2013.
+Owen, Stephen. An Anthology of Chinese Literature: Beginnings to 1911. W. W. Norton, 1996.
+Panagia, Davide. “‘Partage Du Sensible’: The Distribution of the Sensible.” Jacques Rancière: Key
+Concepts, edited by Jean-Phillipe Deranty, Cambridge University Press, 2010, pp. 95–103,
+https://doi.org/10.1017/upo9781844654727.008.
+Pang, Laikwan. The Art of Cloning: Creative Production During China’s Cultural Revolution. Verso
+Books, 2017.
+Perry, Elizabeth. Anyuan: Mining China’s Revolutionary Tradition. University of California Press,
+2012, https://doi.org/10.1525/9780520954038.
+Powell, Ralph L. “Everyone a Soldier: The Communist Chinese Militia.” Foreign Affairs, vol. 39,
+no. 1, 1960, pp. 100–11, https://doi.org/10.2307/20029468.
+Rancière, Jacques. The Politics Of Aesthetics: The Distribution of the Sensible. Bloomsbury Academic,
+2013, https://doi.org/10.5040/9781350284913.
+Schmitt, Carl. Political Theology: Four Chapters on the Concept of Sovereignty. Translated by George
+Schwab, University of Chicago Press, 2006, https://doi.org/10.7208/chicago/
+9780226738901.001.0001.
+Shambaugh, David. “China’s Military in Transition: Politics, Professionalism, Procurement and
+Power Projection.” The China Quarterly, no. 146, 1996, pp. 265–98, https://doi.org/10.1017/
+s0305741000045033.
+
+Journal of Cultural Analytics
+
+24
+
+Vectors of Violence: Legitimation and Distribution of State Power in the People’s Liberation Army Daily (Jiefangjun Bao), 1…
+
+---. “The Soldier and the State in China: The Political Work System in the People’ Liberation
+Army.” The China Quarterly, vol. 127, Sept. 1991, pp. 527–68, https://doi.org/10.1017/
+s0305741000031052.
+Thurston, Anne F. Enemies of the People: The Ordeal of the Intellectuals in China’s Great Cultural
+Revolution. Harvard University Press, 1988.
+---. “Urban Violence during the Cultural Revolution: Who Is to Blame?” Violence in China: Essays
+in Culture and Counterculture, edited by Jonathan N. Lipman and Stevan Harrell, Harvard
+University Press, 1990, pp. 149–74.
+Tyerman, Edward. Internationalist Aesthetics: China and Early Soviet Culture. Columbia University
+Press, 2021.
+Vogel, Ezra F. “From Revolutionary to Semi-Bureaucrat: The ‘Regularisation’ of Cadres.” The
+China Quarterly, no. 29, 1967, pp. 36–60, https://doi.org/10.1017/s0305741000047901.
+Volland, Nicolai. Socialist Cosmopolitanism: The Chinese Literary Universe, 1945-1965. Columbia
+University Press, 2017, https://doi.org/10.7312/voll18310.
+Walder, Andrew G. China Under Mao: A Revolution Derailed. Harvard University Press, 2017.
+Wang, Ban. “Art, Politics, and Internationalism in Korean War Films.” China in the World: Culture,
+Politics, and World Vision, Duke University Press, 2022, pp. 80–100, https://doi.org/10.1215/
+9781478092452-005.
+---. The Sublime Figure of History: Aesthetics and Politics in Twentieth-Century China. Stanford
+University Press, 1997.
+Wang, James C. F. “The Urban Militia as a Political Instrument in the Power Contest in China in
+1976.” Asian Survey, vol. 18, no. 6, 1978, pp. 541–59, https://doi.org/10.2307/2643225.
+Wang, Juntao, and Anne-Marie Brady. “Sword and Pen: The Propaganda System of the People’s
+Liberation Army.” China’s Thought Management, edited by Anna-Marie Brady, 2012, pp.
+122–45.
+Weber, Max. From Max Weber: Essays in Sociology. Oxford University Press, 1946.
+Woloch, Alex. The One vs. the Many: Minor Characters and the Space of the Protagonist in the
+Novel. Princeton University Press, 2004, https://doi.org/10.1515/9781400825752.
+Wu, Ting-Jun, and Pin-Lian Yu. “Media, Environment of Quotations, Cult of Personality:
+Research Based on People’s Liberation Army Daily (1960-1969).” Mass Communication
+Research, no. 127, 2016, pp. 39–73.
+Xu, Yan. The Soldier Image and State-Building in Modern China, 1924-1945. University Press of
+Kentucky, 2019, https://doi.org/10.5810/kentucky/9780813176741.001.0001.
+Xun, Zhou. “Violence in Revolutionary China, 1949–1963.” The Cambridge World History of
+Violence: Volume 4: 1800 to the Present, edited by Jay Winter et al., vol. 4, Cambridge University
+Press, 2020, pp. 408–26. Cambridge University Press, https://doi.org/10.1017/
+9781316585023.021.
+Yang, Guobin. The Red Guard Generation and Political Activism in China. Columbia University
+Press, 2016, https://doi.org/10.7312/columbia/9780231149648.001.0001.
+Zhang, Chi 张弛. “‘Jiefangjun Bao’ Chuangkan Chuqi de Bianweihui [The Editorial Board at the
+Inception of the ’People’s Liberation Army Daily’].” Junshi Jizhe, no. 5, 2019, pp. 65–67.
+
+Journal of Cultural Analytics
+
+25
+
+

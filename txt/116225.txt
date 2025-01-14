@@ -1,0 +1,1666 @@
+Ryad, Umar, and Emad Mohamed. “A Topic Modelling of Muslim Religious Reform in
+the Colonial Age: A Computational and Digital Study of al-Manār (1898-1935).” Journal
+of Cultural Analytics, vol. 9, no. 3, June 2024, https://doi.org/10.22148/001c.116225.
+
+ARTICLE
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A
+Computational and Digital Study of al-Manār (1898-1935)
+a
+
+Umar Ryad1, Emad Mohamed2
+1 KU Leuven, 2 Nazarbayev University
+
+https://doi.org/10.22148/001c.116225
+
+Journal of Cultural Analytics
+Vol. 9, Issue 3, 2024
+
+The present paper is a test case of how far computational sciences and Islamic
+and Arabic studies can be “partners” in answering cultural-religious and
+historical questions related to the Arab and Muslim world. The paper mainly
+discusses methods that could help us computationally track, quantify, and
+explain the development of religious concerns of reform as reflected in the wellknown Muslim reformist journal al-Manār (Lighthouse), published by the
+Muslim reformer Muḥammad Rashīd Riḍā (1865-1935) from 1898 until 1935
+in Cairo. We employ quantitative and qualitative methods based on alManār-corpus by using morphological processing, topic modeling in order to
+examine the thematic co-occurrences of the topics and lexemes pertaining to
+Muslim thinking and societies in Riḍā’s time.
+
+In recent years, the field of Digital Humanities has become a challenge and
+profit at the same time for history and cultural studies. The integration of
+applied methods, encompassing inclusive distant and exclusive close reading
+can provide multifaceted views of existing vast amounts of cultural and
+historical data. Coined by Franco Moretti, computational distant reading
+2
+facilitates a broader perspective and visualization of vast quantities of data.
+However, the validation of accuracy, contextualized within historical events,
+necessitates a closer analysis of the associated texts and their historical context.
+To clarify, distant reading provides an abstract overview by processing
+digitized results in graphs and diagrams, requiring refinement through close
+examination against the corpora and their historical backgrounds. Reading
+and analyzing data, the research questions posed by computational scientists
+and historians may not always align. Nevertheless, collaboration between
+these fields is essential in the quest for novel answers to longstanding
+3
+questions and the development of mutually beneficial methodologies.
+
+a The paper is part of the research “Computational Study of Culture: Cultural Analytics for Modern Arab and Islamic
+
+Studies” at Doha Institute for Graduate Studies. We are very grateful to the Qatar National Research Fund (QNRF) for
+funding the project under number (NPRP10-0115-170163)
+
+2 Franco Moretti, Distant Reading (Verso Books, 2013), id. Graphs, Maps, Trees: Abstract Models for a Literary History. Verso, 2005.
+3 S. Jänicke (et al), “On Close and Distant Reading in Digital Humanities: A Survey and Future Challenges”, in R. Borgo, F. Ganovelli, and I.
+
+Viola (eds.), Eurographics Conference on Visualization (EuroVis) (2015) https://pdfs.semanticscholar.org/20cd/
+40f3f17dc7d8f49d368c2efbc2e27b0f2b33.pdf. Katherine Bode, Reading by Numbers. London: Anthem, 2014; Matthew L. Jockers,
+Macroanalysis: Digital Methods and Literary History. Urbana: University of Illinois Press, 2013. Stephen Marche, “Literature Is Not Data:
+Against Digital Humanities.” Los Angeles Review of Books. Oct 28, 2012; Brendan O’Connor, David Bamman, and Noah Smith,
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+The current paper should not be construed as part of the ongoing debate
+regarding the effectiveness of distant reading versus close reading per se.
+Instead, this study serves as a test case to explore the extent to which
+computational sciences and Islamic and Arabic studies can collaborate in
+addressing cultural, religious, and historical inquiries related to the Arab
+and Muslim world. The paper primarily delves into methods that could
+computationally track, quantify, and investigate concerns related to religious
+reform as reflected in the prominent Muslim reformist journal, al-Manār
+(The Lighthouse), published by Muḥammad Rashīd Riḍā (1865-1935) in
+Cairo from 1898 to 1935. Our approach employs both quantitative and
+qualitative methods, utilizing the al-Manār corpus. We employ
+morphological processing and topic modeling to scrutinize thematic cooccurrences of topics and lexemes associated with Muslim thought and
+societies during Riḍā’s era.
+This distant digital reading will be complemented by a qualitative historical
+close analysis to contextualize these topics in relation to the events that
+prompted them. In this case study, we will explore disciplinary connections
+by experimenting with computational quantitative models alongside the
+backdrop of historical qualitative evidence. Our objective is to uncover
+overarching narratives through a combination of quantitative data, focusing
+on recurring topics in al-Manār, and interpreting them through qualitative
+micro-histories that offer a deeper understanding. This collaborative effort
+seeks to evaluate the results of digital history against the traditional
+interpretative reading of historical sources, using al-Manār as a case study.
+Through this endeavor, we aim to bring statistics and algorithms closer to
+human historical interpretations.
+It is essential to situate this paper within the recent academic landscape of the
+intellectual digital history of the Arabic renaissance (nahḍa). In his research,
+Till Grallert explored digital history applied to the study of the late Ottoman
+Eastern Mediterranean periodical press (1906-1918). Grallert uses the term
+‘ideosphere’ as a spatial metaphor for understanding the periodical press,
+referencing the realm of human ideas. This involves transcending individual
+periodicals and engaging in a systematic study of the periodical press at
+scale. Grallert’s essay is not limited to the specific case study but makes
+use of early Arabic periodicals such as Buṭrus al-Bustānī’s al-Jinān (Beirut,
+1876–1886), Yaqūb Ṣarrūf, Fāris Nimr, and Shāhīn Makāriyūs’s al-Muqtaṭaf
+(Beirut and Cairo, 1876-1952), Muḥammad Kurd ʽAlī’s al-Muqtabas (Cairo
+and Damascus, 1906–1918/19), or Rashīd Riḍā’s al-Manār (Cairo,
+1898–1941). In his method, Grallert focuses on (social) network analysis and
+
+“Computational Text Analysis for Social Science: Model Assumptions and Complexity,” Second Workshop on Computational Social Science
+and Wisdom of the Crowds (NIPS 2011), December 2011; Hanna Wallach, “Computational Social Science: Toward a Collaborative Future,”
+Data Science for Politics, Policy, and Government, Cambridge: Cambridge University Press, 2015.
+
+Journal of Cultural Analytics
+
+2
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+4
+
+stylometric authorship. When establishing a network of authors and texts in
+these journals, he analyzes bibliographic data, not primarily focusing on the
+contents of articles. The present work extends the analytical scope to include
+the application of topic modeling on al-Manār. We use al-Manār as a case
+study by employing topic modeling, which is mostly concerned with the
+contents of the journal rather than the network of authors. Boğaç Ergene and
+Atabey Kaygun produce a semantic mapping of Ottoman Fetva collections
+by the Ottoman Chief Mufti Ebyssuud Efendi (1490-1574) by using topic
+modelling as a tool. As a systemized compilation, the authors have a priori
+knowledge of the ‘thematic categories’ included in the fatwas. Then they used
+a modeling algorithm to identify ‘topics’ based on the relative proximities of
+words and phrases that constitute the text. The method also provided clues to
+5
+broader semantic concentrations in the corpus. The authors stress that their
+“article is methodological in nature. It proposed computational techniques
+and approaches that successfully capture the substantive constituents of an
+6
+important Ottoman fetva collection.”
+Normally speaking, topic modelling aims to “discover” issues in collections
+of texts without requiring knowledge beforehand what topics might exist in
+them. Also there is a challenge in the method of distant and close reading that
+the reading of everything in the latter method seems impossible. However,
+al-Manār has been closely studied and the frequent salient topics which
+were discussed by its founder are highlighted in scattered secondary studies
+that provide us with formal in-depth analysis. This knowledge will help
+us experiment with the computational results of topic modelling, which
+is actually meant to unearth evidence that already exists in the texts. In
+this research, we therefore take a reverse approach to the standard historical
+reading of al-Manār by first automatically clustering the data into topics;
+and then trying to study the context for the results by narrowing the scope
+to focus on the individual patterns or probably unexpected topics that can be
+found in the dataset.
+Why al-Manār? The al-Manār magazine was one of the most significant
+reformist publications in the colonial age. It was founded in 1898 and
+continued till the death of Riḍā in 1935. In his magazine, Riḍā wrote on
+the Qur’an, Islamic reform, politics, as well as hosted other topics that rose
+and fell with the ebb and flow of political, religious, and social events in
+Egypt, his birthplace Syria and the wider Muslim world. During these years,
+the magazine dominantly represented the trend of “Islamic modernism” or
+“Islamic reformism” in its time. Historically al-Manār is thus a rich mine of
+
+4 Till Grallert, “Catch Me If You Can! Approaching the Arabic Press of the Late Ottoman Eastern Mediterranean through Digital History”,
+
+Geschichte und Gesellschaft 47 (2021), pp. 58–89.
+5 Boğaç Ergene and Atabey Kaygun, “Semantic Mapping of An Ottoman Fetva Compilation: EBUSSUUD Efendi’s Jurisprudence through a
+
+Computational Lens”, Journal of Islamic Studies 32/1 (2021), pp. 62-115.
+6 Ergene and Kaygun, “Semantic Mapping”, p. 103
+
+Journal of Cultural Analytics
+
+3
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+information and a good historical window about the Muslim world in Riḍā’s
+age on various religious, cultural, political, social and literary issues. In its
+general mission, al-Manār called for the preservation of Islamic beliefs and
+religious practices without ignoring challenges of modernity. In other words,
+his religious tactics were part and parcel of a broader reformist discourse that
+tried to urge Muslims to accept specific tools of modernity without losing the
+grip on their religious core beliefs and practices.
+Around the magazine Riḍā gathered a plenty of associate writers who shared
+with him similar reform ideas from North Africa to Indonesia and China to
+Russia and Europe. In addition, it was one of the early Muslim magazines
+that published Qur’anic exegesis and fatwas which made Islamic knowledge
+accessible to many generations up till nowadays. In 1940 and at the request
+of Riḍā’s family four issues of al-Manār were published under the editorship
+of Hasan al-Bannā (1906-1949), the founder of the Muslim Brotherhood
+in Egypt, despite the fact that neither al-Bannā nor the Brotherhood are
+nowhere mentioned in Riḍā’s magazine.
+Much has been written about al-Manār, but two recent works should be
+mentioned here. Florian Zemmin uses al-Manār as a case study in order to
+see how modernity developed in Islamic tradition in the colonial age. For this
+end, he used the concept of ‘society’ and how it was defined and mobilized in
+7
+Riḍā’s magazine against its socio-political and intellectual contexts. Zemmin
+made use of the computational tool PowerGrep in order to count the terms
+related to the concept of ‘society’ and the ‘social’ (such as, mujtamaʿ, alhayʾa al-ijtimāʿiyya, ijtimāʿ, ijtimāʿīyya) in al-Manār . He recorded his
+quantitative findings in order to see how these terms significantly increased
+or decreased in their usage over the lifespan of Riḍā’s journal. Zemmin noted
+that the frequency of the usage of specific terms are sometimes obvious
+when it is connected to significant historical events, such as the controversial
+8
+abolishment of the Ottoman caliphate in 1924. While studying individual
+lexical terms is useful, topic modelling, which we examine in this article, adds
+another layer of complexity, and usefulness, by clustering words together,
+similar to collocation analysis, which helps discover connected terms and
+topics. Associating themes with time stamps helps track thematic changes
+beyond the single lexical items.
+In another study, Leor Halevi studied diverse fatwas by Riḍā in which
+he answered many questions raised by Muslims from all over the world
+dealing with then modern things, such as gramophone records, brimmed
+hats, tailored trousers, lottery tickets, paper money, gigantic gongs, and toilet
+paper, and how they (as mostly western) “crossed cultural and political
+
+7 Florian Zemmin, Modernity in Islamic Tradition: The Concept of ‘Society’ in the Journal al-Manār (Cairo, 1898–1940), Berlin & Boston:
+
+Walter de Gruyter GmbH, 2018.
+8 Zemmin, Modernity, p. 482
+
+Journal of Cultural Analytics
+
+4
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+frontiers” in the colonial age. Halevi put al-Manār and its founder under
+what he calls “laissez-faire Salafism,” by which he described Riḍā’s “good
+tidings, which he spread far and wide, that adherence to the sharia’s original
+spirit would empower modern Muslims to overcome hardship and rise to
+9
+affluence.” In that sense, al-Manār tried to provide Muslims with “a
+common ethical framework” by which they could perceive their “local
+10
+entanglements with modern things.” He studied Riḍā’s fatwas as an “history
+from below,” by employing “microhistorical investigations of particular
+religious or legal questions in a local context and ends with reflections on
+11
+broader global patterns.”
+The present approach will see how digital tools will help us understand
+how al-Manār reacted to a globalized Muslim world by figuring out the big
+historical picture of events and questions of modernity. By the use of topic
+modelling, the paper will not produce a microhistorical top-down historical
+investigations to Riḍā’s religious reform, but will offer a macro-historical
+down-top approach; and through which close reading will follow in order
+to examine the historical details of such automated topics. By this we will
+apply the topic modelling as a method for studying modern intellectual
+history of the Muslim world and the challenges the Arabic language poses to
+computational methods. How far do graphical representations of the topic
+modelling speak to a proxy to the historical social, political and religious
+reality or to capture discursive change in al-Manār?
+
+Data and Methods: Frequent topics and issues
+Data Properties of al-Manār
+For the purpose of this study, we have used the Shamela version of al-Manār
+(https://old.shamela.ws/index.php/book/6947 ). This version of al-Manār
+exists as an epub file comprising 4552 xhtml files. Not all of these have
+textual content. We have preprocessed the magazine through extracting the
+text from the xhtml using the Python BeautifulSoup library. The resulting
+corpus has some very useful properties as a corpus: (1) it is large enough for
+computational tools to glean insights. The magazine contains 3980 textual
+files and 6.740.567 words, with an average of 1693.6 per document, and
+(2) the documents are chronologically ordered, which makes it possible to
+examine and track the historical changes in the dataset in a way that helps
+historians see which events became prominent at certain points of time and
+which faded away. Also the nature and availability of al-Manār in print and
+digitally therefore make the magazine a unique historical source by which
+
+9 Leor Halevi, Modern things on trial : Islam’s Global and Material Reformation in the age of Rida, 1865–1935 New York, NY : Columbia
+
+University Press, 2019, 8-9.
+10 Halevi, Modern things on trial, 17.
+11 Halevi, Modern things on trial, 22
+
+Journal of Cultural Analytics
+
+5
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+we can reconstruct scattered information by analyzing its founder’s ideas and
+major topics of religious Islamic reform on the basis of measuring patterns
+of word (co)occurrence throughout the years of its publications. Although
+the available digital version of al-Manār allows keyword search, this tool
+cannot manually read and analyse the quantity of evidence for topics as topic
+modelling.
+12
+
+In our examination of the al-Manār-corpus, we exclude Tafsīr al-Manār
+for two reasons (1) Tafsīr is a category in its own right, and does thus not fit
+naturally within our historical analysis framework, and (2) while the Tafsīr
+is available in a digital format, it is not available as part of the Shamela
+version. Also it does not have date information, which makes it hard to track
+the influence of the political and social events on the tafsir. This may be a
+worthy study of its own, and we plan to explore the possibility of such an
+investigation in the future.
+
+Throughout its 37 years of existence, al-Manār received contributions by
+370 writers with Rashīd Riḍā himself contributing over 70% of the content,
+which makes al-Manār more of a personal commentary by Riḍā on the
+then current affairs. Other notable contributors include a certain ʿAbdul-Azīz
+Muḥammad (72 articles), the Egyptian medical doctor Muḥammad Tawfīq
+Ṣidqī (see below) (68 articles), extracts of famous works by the medieval
+Muslim scholar Aḥmad ibn Taymiyya (37 articles), the Lebanese Prince
+Shakīb Arsalān (1869-1946) (36 articles) and Rashīd Riḍā’s brother Sāliḥ
+Mukhlis Riḍā (1884-1922) (29 articles). The inclusion of content by Ibn
+Taymiyya indicates that Al-Manār had to recycle some old material with the
+writing of Ibn Taymiyya being the most used outside of direct and indirect
+quotations.
+
+Topic Modeling for Arabic
+Probabilistic Topic Modeling is a way of summarizing a collection of
+documents into clusters of keywords, usually called themes. It uses cooccurrence statistics and the principles of distributional semantics to find the
+13
+14
+most relevant words. In their research, Eid Mohamed and Emad Mohamed
+used topic modeling to examine whether Egyptians still care about the Arab
+Spring. They first collected a large corpus of Facebook comments, performed
+morphological analysis and topic modeling. They then built a regression
+model in which the independent variables were the probabilities of the topics,
+and the dependent variable was the number of shares. Based on a ranking
+of the themes based on the importance produced by the regression model,
+
+12 Muḥammad ʿAbduh & Rashīd Riḍā, Tafsīr Al-Manār, 12 vols., Beirut: Dār al-Kutub al-ʿIlmiyya, 1999.
+13 David M. Blei., “Probabilistic topic models”, Commun. ACM 55, 4 (April 2012), 77–84. https://doi.org/10.1145/2133806.2133826
+14 Emad Mohamed and Eid Mohamed. “Do Egyptians still care about the Arab Spring? Computational cultural assessment of online and
+
+offline activism”. In E. Mohamed, and A. Douai, (Eds.), New Media Discourses, Culture and Politics after the Arab Spring Case Studies from
+Egypt and Beyond, London: Bloomsbury, 37-53.
+
+Journal of Cultural Analytics
+
+6
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+they also ranked the various topics of interest in Egypt and found out
+the Arab Spring ranked 16. In this article, we follow the same pipeline of
+preprocessing, but without the use of regression analysis.
+While topic modeling has been in common use for English language material,
+Arabic poses special challenges to language processing in general. One main
+reason for this is the rich morphology of Arabic, which leads to large
+vocabularies, where many surface forms are various realisations of the same
+word in different conjugations. Consider, for example, the word ‫فسنستخدمها‬
+in Figure 1. The word translates into the English word “then we shall use
+it” among other things. It is made of the conjunction f, the future prefix s,
+the verb nstxdm, and the third person feminine singular object pronoun hA.
+The vern nstxdm itself is made up of the prefix n (we) and the verb stem
+stxdm (to use). It becomes now obvious that it may not be a good idea to use
+these words as is in topic modeling since fsnstxdmhA and wsnstxdmhA will
+be treated as two different words while they differ only in the conjunction
+used. Conjunctions are normally discarded in building topic models. For this
+reason, we perform morphological stemming before doing topic modeling
+whereby we get rid of all the prefixes and suffixes, and maintain only the
+lexical stem of lexical words (nouns, verbs, and adjectives)
+In order to maximise the benefit of the automatic processing of al-Manār we
+use a computational linguistics pipeline as follows:
+First we use the al-Manār version distributed by Al-Shamlila library. This
+is an epub version which is basically made of compressed xhtml files having
+a clean and simple navigational structure. After uncompressing the files,
+we extract the texts from the xhtmls through removing the boilerplate and
+15
+the markup tags using the Python Beautifulsoup library . The text files
+come in lines matching the print version, which means that line breaks
+are not representative of sentence boundaries. We use heuristics to detect
+sentence boundaries to make the files ready for processing. Although sentence
+boundaries may not be significant for topic modeling, the information
+contained in these boundaries are useful for the morphological analysis
+component.
+Then Morphological Segmentation comes next. We have already established
+the nature of Arabic words and the importance of segmentation above. We
+use stems for building the topic models. Stems are produced by the Arabic-
+
+15 https://beautiful-soup-4.readthedocs.io/en/latest/#
+
+Journal of Cultural Analytics
+
+7
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+Figure 1. Workflow
+
+Journal of Cultural Analytics
+
+8
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+16
+
+SOS tools. Arabic-SOS uses Gradient Boosting Machine Learning algorithm
+to perform word segmentation, and it achieves accuracy of 98.8%. on Modern
+and pre-Modern Arabic.
+The morphologically segmented texts are then passed to the stage of Topic
+Modeling, which is a statistical method by which themes in a corpus can
+17
+be discovered. We use the Mallet topic modelling toolkit. Mallt is useful
+for handling large amounts of data and for its ease of use in the Unix
+command line terminal. In addition to the themes, Mallet also produces
+detailed information about each document that we use for historical tracking
+and probabilistic topic membership. The method recognizes distributions
+across all words in the corpus of al-Manār. While each topic technically
+comprises proportions of every word in that corpus, the tool features the
+words with significantly higher frequency than others. It is assumed that
+these words are thematically related; and this results in a list of its highestfrequency words as clustered under a probable topic. Given a large number
+of documents, the Topic Modeling algorithm, which is a form of clustering,
+produces groups of keywords that together represent a theme. For example,
+the cluster {dog, cat, lion, tiger, fox} may indicate the topic ANIMAL
+while {headache, fever, stomachache, joint_pain} may represent ILLNESS.
+Each document in the corpus can have several topics ranked probabilistically
+according to higher frequency of the main themes of the document. We can
+say document A belongs to topic 1 with a probability of 17%, and to topic 2
+with a probability of 14%. Given the dates of these documents, we can easily
+track topics through time, which we do in this paper.
+Having performed segmentation, author extraction, and topic extraction, we
+can now associate dates with topics and also authors with topics. We can
+now see which topics which authors took an interest in and at what time this
+interest went up or down. We can thus have a computational history of alManār.
+
+Detection of Topics and Trends
+Combining the topics extracted by topic modeling and the information on
+the dates of publication, we can now infer what topics pre-occupied the
+editor(s) of al-Manār at a certain time. In order to make a balance between
+digital methods and historical interpretation, we will contrast the digital
+results with al-Manār content of topics that are more strongly associated
+with Riḍā’s concerns of reform and his debates. We closely look at the
+
+16 Emad Mohamed & Zeeshan Ali Sayyed, “Arabic-SOS: Segmentation, Stemming, and Orthography Standardization for Classical and pre-
+
+Modern Standard Arabic”, DATeCH2019: Proceedings of the 3rd International Conference on Digital Access to Textual Cultural Heritage
+(May 2019), pp. 27–32
+17 McCallum, Andrew Kachites. “MALLET: A Machine Learning for Language Toolkit.” http://mallet.cs.umass.edu. 2002.
+
+Journal of Cultural Analytics
+
+9
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+automated output in order to determine for each topic if it was pertinent to
+the period of time under consideration, and to see if these results propose a
+high degree of accuracy in highlighting leading themes in the corpus.
+
+Categorization of topics
+Choosing a bigger or smaller number of topics will give a greater or lesser
+degree of granularity. The clusters below can provide a clear outline of the
+corpus contents, its themes and proportions based on a qualitative inspection
+of the distributions that were generated by a model of 50 topics. We should
+note the terms seem unremarkable in isolation, but it is assumed that they
+have significance when we recognise their repetitious presence as a series of
+more specific genres and subjects:
+Topic
+
+Weight
+
+Terms
+
+Gloss
+
+0
+
+0.08243
+
+‫جمع سفر قصر صلي وقت صوم‬
+‫ركع رمضان ظهر صيام فطر صل‬
+‫جماع أصحاب مسافر ترك ثبت‬
+‫عرف واجب عباد‬
+
+Religious obligations and rituals
+
+1
+
+0.11445
+
+‫قرآن تفسير كتاب آي سور نسخ‬
+‫قراء إسالم دين قرأ حفظ وحي نزل‬
+‫بقر جزء أصول مفسر منار أنزل‬
+‫معجز‬
+
+Qur’anic sciences, revelation and exegesis
+
+2
+
+0.086
+
+‫أزهر أستاذ جامع ديني معاهد طلب‬
+‫علوم مدرس مشيخ أزهري إصالح‬
+‫امتحان درس طالب إدار مجلس‬
+‫شهاد قسم تدريس قضاء‬
+
+Reform of religious education, Al-Azhar and judicial
+system
+
+3
+
+0.14745
+
+‫دين أرض مؤمن دنيا جعل كتاب‬
+‫قرآن آي خلق عباد قوم آمن صالح‬
+‫أيها سبيل باطل ظلم أنفس عز شاء‬
+
+Creation, earth, scriptures, faith and injustice
+
+4
+
+0.11836
+
+‫دين إسالم أستاذ كتاب إصالح ديني‬
+‫جديد تاريخ مدني عصر رأي منار‬
+‫عالم تجديد رجال دكتور سياسي‬
+‫إلحاد أورب هداي‬
+
+Religious reform, renewal, civilization, Al-Manār,
+politics, atheism, Europe, guidance
+
+5
+
+0.10918
+
+‫مؤتمر مجلس ماد لجن حكوم قانون‬
+‫أعضاء نظام رئيس إدار محاكم‬
+‫وضع طلب قرر جمعي عمومي‬
+‫تقرير هيئ قرار رأي‬
+
+Congresses, councils, committees, governments,
+associations, law, reports
+
+6
+
+0.18333
+
+‫نفس عرف جعل إذ رأي عبار‬
+‫كتاب خبر وقع مخالف ثبت صدق‬
+‫حق جمل ظن واقع ظهر إلخ خالف‬
+‫خطأ‬
+
+Other views, proof, doubt, certainty, error
+
+7
+
+0.12389
+
+‫دول ترك عربي بالد عرب شعوب‬
+‫دين إسالم جعل جنسي تركي جامع‬
+‫عثماني ديني اتحاد لغ شعب جمعي‬
+‫سياسي سياس‬
+
+Turks, Arabs, Ottomans, religious Islamic citizenship,
+unity, political associations
+
+8
+
+0.0776
+
+‫سوري حكوم استقالل بريطاني‬
+‫بالد فلسطين فرنس عربي اتفاق‬
+‫شعب معاهد مؤتمر أمم سياسي وفد‬
+‫فرنسي شعوب عظمى حلفاء عراق‬
+
+Syrian, government, Britain, France, independence,
+congress, nations, Palestine, Iraq, treaty, allied, great
+(war)
+
+9
+
+0.13332
+
+‫دار رأي سيد أمير نفس ساع طلب‬
+‫كلم وقت بلد أخذ مر بلغ صديق‬
+‫جمع حضر طرابلس رئيس كبير‬
+‫ترك‬
+
+Prince, friend, Tripoli, leader, Turk
+
+10
+
+0.12713
+
+‫جمعي خطب احتفال مشروع‬
+‫حضر رئيس صاحب شكر بالد‬
+‫مصر أفندي مصري سعاد مدرس‬
+‫جامع خطاب جمع مساعد شريف‬
+‫خيري‬
+
+Association, preaching, projects, celebrating, school/
+teacher, gathering, Egypt, noble and charitable
+
+Journal of Cultural Analytics
+
+10
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+11
+
+0.16928
+
+‫أمم أعمال حيا نفس تربي أخالق‬
+‫إنسان دين أفراد عقل سعاد حاج‬
+‫نفوس اجتماع إصالح كمال حفظ‬
+‫علوم أسباب اجتماعي‬
+
+Nations, life, upbringing, morality, human group, mind
+and reason, happiness, society, reform, perfection,
+preservation, sciences and society.
+
+12
+
+0.19993
+
+‫نفس عرف هؤالء رأي ظن سوء‬
+‫صدق حب جهل عتقد ريد أنفس‬
+‫طلب ظهر أجل أشد حقيق كذب عد‬
+‫شيئ‬
+
+Doubt, faith, truth, love, ignorance, reality and lie
+
+13
+
+0.08756
+
+‫أرض شمس رؤي سماء قمر نور‬
+‫سمو نهار حساب هالل فلك كواكب‬
+‫سيار ساع خلق عرش جبال معراج‬
+‫سحاب حول‬
+
+Earth, sun, heaven, moon, light, day, crescent,
+universe, planets, mountains, clouds, calculation,
+ascension, circulation
+
+14
+
+0.11272
+
+‫كفر إيمان قتل مؤمن شرك إسالم‬
+‫مشرك عباد ترك توب كافر كفار‬
+‫هؤالء قاتل حق جعل عذاب طاع‬
+‫نار عرف‬
+
+Faith, unbelief, worship, abandoning, murder,
+repenting, truth, punishment, hellfire, knowledge.
+
+15
+
+0.12389
+
+‫كتاب تقليد أئم دين اجتهاد مسائل‬
+‫مقلد أخذ مذاهب مجتهد فقه رأي‬
+‫أصول ترك مصلح أقوال خالف‬
+‫اتباع حنفي أصحاب‬
+
+Book, fiqh, schools of law, taqlid (imitation), ijtihad
+(independent interpretation), rulings, reform, legal
+opinion, differences
+
+16
+
+0.10903
+
+‫فقيد فضل كريم حيا موت جزء‬
+‫كاتب فقد صبر عرف عين بدل‬
+‫مصاب حزن هكذا دهر قلب مات‬
+‫عظيم حسين‬
+
+Death, life, loss, sorrow, age, great, calamity, writer,
+Ḥusayn.
+
+17
+
+0.09762
+
+‫كتاب جمع صحاب هرير محدث‬
+‫كذب رجال كعب مرفوع بكر حفظ‬
+‫سنن حاكم بيهقي أئم أنس إلخ تابع‬
+‫مسند رحمن‬
+
+Book, hadith, collection, companions, men,
+trasitionists, lie, Abu Hurayra, Kaʿb, Anas, Bayhaqī,
+Abū Bakr, sunan, musnad, al-Ḥākim,
+
+18
+
+0.13112
+
+‫سيد منار صاحب أستاذ حضر‬
+‫رضا رشيد فضيل إسالم عالم جزء‬
+‫صفح كاتب فضل إمضاء دين كتاب‬
+‫موال برك مجل‬
+
+Al-Manār, Rashīd Riḍā, part, page, signature, religion,
+book.
+
+19
+
+0.08821
+
+‫ملك أمير بكر قتل قريش أمي مؤمن‬
+‫تاريخ إسالم خليف سير عرب‬
+‫صفح زيد قوم معاوي أخذ دول‬
+‫فرس دخل‬
+
+King, prince, Abū Bakr, Quraysh, illiterate, history,
+Islam, caliph, Arabs, states, nations, Persian, Muʿāwiya
+
+20
+
+0.05822
+
+‫جسم ميكروب إنسان مرض مواد‬
+‫سمى حيوان ماد حرار حمى حقن‬
+‫جلد هواء مصاب جزء أعراض‬
+‫قليل بول نوع كثر‬
+
+Body, microbe, human, disease, substances, animal,
+materials, temperature, injection, skin, air, symptoms,
+urine.
+
+21
+
+0.11666
+
+‫خلق إنسان عالم روح عقل عرف‬
+‫بشر وحي أنبياء حقيق نفس كرام‬
+‫غيب حيا اعتقاد ظهر أرواح معجز‬
+‫إيمان خوارق‬
+
+Creation, human, world, soul, mind, knowledge,
+revelation, prophets, truth, unseen world, miracles,
+belief, spirits, supernatural
+
+22
+
+0.09175
+
+‫شعر شاعر شعراء نظم بيت نفس‬
+‫قصيد معاني بالغ كأن خيال وصف‬
+‫مدح أنشد أدب هوى حين تمام إذ‬
+‫أبيات‬
+
+Poetry, poet, poems, stanza, meaning, eloquence,
+imagination, description, literature, eulogy, love, (Abū)
+Tammām
+
+23
+
+0.14537
+
+‫منار مجل جريد جزء مقال صاحب‬
+‫جرائد كاتب رشيد صفح انتقاد‬
+‫رضا قراء رأي كتاب صدر‬
+‫اشتراك مجلد قيم رسال‬
+
+Al-Manār, journal, issue, article, volume, writer,
+Rashīd Riḍā, critique, opinion, subscription, value,
+message
+
+24
+
+0.11748
+
+‫تعليم مدارس مدرس علوم تربي‬
+‫معلم دين معارف تعلم طلب ديني‬
+‫درس فنون بالد متعلم دروس‬
+‫عربي تالمذ إصالح عرف‬
+
+Education, school, teacher, sciences, upbringing,
+religion, arts, reform, students, knowledge
+
+25
+
+0.1298
+
+‫حكوم مصر مصري بالد باشا‬
+‫إصالح سياس جرائد رأي مصلح‬
+‫حزب إنكليز وطني رجال جعل‬
+‫أمير سياسي دول لورد مقال‬
+
+Government, Egypt, Pasha, reform, politics,
+newspapers, opinion, party, English, nationalist, men,
+prince, states, Lord, article
+
+26
+
+0.08836
+
+‫عقل صف خلق ذات تأويل سلف‬
+‫واجب معتزل مخلوق نفس إراد‬
+‫إثبات خالق عرش متكلم جهمي نفي‬
+‫موجود عالم فرق‬
+
+Reason/mind, creation, duty, Taʾwīl, Salaf, Muʿtazlī,
+Jahmī, creation, self, will, verification, denial, throne,
+theologian, existence, world, religious factions
+
+27
+
+0.10224
+
+‫مال بيع ربا أموال نفق أخذ دين‬
+‫أجل وقف ثمن جنيه زياد دفع شرط‬
+
+Money, purchase, usury, debt, endowment, price,
+pound, increase, payment, condition, commerce,
+
+Journal of Cultural Analytics
+
+11
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+‫تجار قرض زكا مالي فضل ربح‬
+
+zakat, profit
+
+28
+
+0.0723
+
+‫مسيح يهود إنجيل نصارى كتاب‬
+‫عيسى إله تورا صلب ملك عهد‬
+‫إسرائيل أرض مسيحي قديم أناجيل‬
+‫عبار سفر مريم أنبياء‬
+
+Jesus, Jews, Gospel, Torah Christians, god, crucifixion,
+kind, Israel, land, ancient, biblical book, Mary,
+prophets
+
+29
+
+0.16438
+
+‫عالم حيا عظيم أخذ فكر نفس ريد‬
+‫حرك غاي أصبح كبير واجب‬
+‫حقيق أفكار سبيل وقت تقدم أحوال‬
+‫رجال إذ‬
+
+Scholar, life, thought, ideas, self, movement, objective,
+way, great, duty, real, progress, men, conditions
+
+30
+
+0.13419
+
+‫يد نفس خرج بيت أخذ جعل قوم‬
+‫رأس قيل ضرب أتي ريد دخل أكل‬
+‫رأي مر قتل صاحب إذ نعم‬
+
+Hand, self, home, community, head, killing, seeing
+
+31
+
+0.09072
+
+‫عثماني دول باشا آستان حكوم‬
+‫سلطان والي جمعي حميد تركي‬
+‫دستور مجلس اتحادي ترقي‬
+‫مبعوث إدار إصالح اتحاد عسكري‬
+‫جريد‬
+
+Ottoman, Turk, states, Pasha, Asitane (Istanbul),
+government, unity, (Sultan Abdul-)Ḥamid,
+constitution, council, union, progress, administration,
+Meclis-i Mebusân, reform, military, newspaper
+
+32
+
+0.08782
+
+‫قبور مسجد قبر مساجد عباد صالح‬
+‫بدع بناء توسل زيار تعظيم طلب‬
+‫اتخاذ نهي منكر شرك نفع جعل هدم‬
+‫أولياء‬
+
+Tomb, mosque, worship, innovation, building, Tawassul
+(intercession), visit, glorification, seeking, prohibition,
+Munkar (detested) unbelief, benefit, destruction, Wali
+
+33
+
+0.1023
+
+‫عربي كلم لغ حروف لسان عرب‬
+‫اسم كتاب ألفاظ استعمال وضع‬
+‫أسماء معاني قياس حرف رسم‬
+‫نطق ملك مصري مفرد‬
+
+Arabic, word, language, phrase, usage, meaning,
+names, analogy, letter, expression, singular, king, Egypt
+
+34
+
+0.08539
+
+‫ملك حجاز عرب جالل بالد عربي‬
+‫نجد حكوم سعود شريف حسين‬
+‫أمير جزير سلطان بريطاني عراق‬
+‫مك دول إنكليز عزيز‬
+
+King, Ḥijāz, Najd, peninsula, Arabs, majesty, Saudi,
+government, Sharif Ḥusayn, prince, sultan, British,
+Iraq, states
+
+35
+
+0.12473
+
+‫دين بدع إسالم شيع كتاب فرق‬
+‫هؤالء صوفي منكر ظهر زعم‬
+‫ضالل عقائد صار اسم سلف جماع‬
+‫رسال أئم نسب‬
+
+Religion, innovation, Shīʿī, book, religious faction, Sufi,
+detested, allegation, going astray, Salaf, consensus,
+error, lineage
+
+36
+
+0.12196
+
+‫كتاب طبع مؤلف صفح عربي‬
+‫مصر تاريخ جزء أفندي نسخ مكتب‬
+‫ثمن تأليف مطبع مطبوع طلب أدب‬
+‫مقدم عصر وضع‬
+
+Book, printing, author, copy, price, Arab, Egypt,
+literature, history, effendi, age
+
+37
+
+0.08641
+
+‫ماء أمراض أكل مرض شرب‬
+‫أطباء جسم طبيب عالج مريض‬
+‫هواء طعام غذاء استعمال أدوي نفع‬
+‫موت ستعمل معالج نفس‬
+
+Water, food, disease, body, medical, treatment, death,
+self
+
+38
+
+0.10653
+
+‫دين إسالم مسيحي ديني نصراني‬
+‫مبشر نصارى تعصب كنيس‬
+‫أوربي كتاب تبشير مدني جامع‬
+‫جمعي بالد وثني ديان عقيد أديان‬
+
+Religion, Islam, Christianity, mission, fanaticism,
+church, Europe, civilization, unity, pagan, doctrine,
+religion
+
+39
+
+0.17271
+
+‫نفوس قلوب قوم أيدي لقد كاد كلم‬
+‫سبيل بالد مجد عقول يد جمع شأن‬
+‫أثر نهض صفح روح أخذ نعم‬
+
+Soul, spirit, heart, speech, nation, state, glory, mind/
+reason, unity, progress
+
+40
+
+0.10011
+
+‫نفس أميل طفل تربي أطفال ولد‬
+‫إنسان قرن تاسع رأي عزيز‬
+‫ضروب تعلم بحر شيئ سفين تال‬
+‫تبع كاتب ناشئ‬
+
+Self, Emile, child, upbringing, education, human,
+nineteenth century, opinion, young
+
+41
+
+0.09975
+
+‫أرض ماء باب قطع بحر حديد دار‬
+‫جانب كبير وضع جمع رأس‬
+‫صغير صنع عين شجر سمى كأن‬
+‫صخر مختلف‬
+
+Earth, water, sea, steel, house, big, small, head,
+industry, eye, tree, rock
+
+42
+
+0.11586
+
+‫قلب نفس حب محب خلق كمال‬
+‫عين ذات اسم توكل أعظم قلوب‬
+‫صف فصل منزل مقام درج حق‬
+‫أسباب جمع‬
+
+Heart, self, love, creation, name, great, stage, causes,
+truth, unity
+
+43
+
+0.08339
+
+‫مك هند بيت حجاج عرف شريف‬
+‫كعب هندي مدين إبراهيم حرام حج‬
+‫حجاز منى مكرم ركن جماع خان‬
+‫ندو محمل‬
+
+King, India, pilgrim, home, Abraham, Ḥijāz, Minā,
+Maḥmal, Mecca/medina
+
+44
+
+0.0953
+
+‫ألماني فرنسا روسي حكوم روسيا‬
+
+German, French, Russian, English, Chinese, Japanese,
+
+Journal of Cultural Analytics
+
+12
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+‫إنكلترا إنكليزي بالد مليون والي‬
+‫إنكليز أوربا صين يابان أوروبا بلغ‬
+‫سودان فرنسوي ألمانيا مد‬
+
+Europe, Sudan, government, states
+
+45
+
+0.09211
+
+‫نساء زوج مرأ رجال امرأ تزوج‬
+‫طالق زواج أوالد نكاح ولد بنت‬
+‫بيوت زوجي عقد أزواج بيت‬
+‫حجاب تعدد عاد‬
+
+Women, men, marriage, daughter/son, contract,
+house, veiling, polygamy
+
+46
+
+0.08226
+
+‫عرب بالد عربي تاريخ جزير يمن‬
+‫مصر قبائل مغرب أمم دول آثار‬
+‫قديم لغ عراق شام أرض مؤرخ‬
+‫قرن هؤالء‬
+
+Arab, history, peninsula, Yemen, tribes, Maghreb,
+nations, ancient, archeology, Iraq, Syria, century
+
+47
+
+0.08842
+
+‫تحريم خمر أكل محرم لبس شرب‬
+‫حرام حل دين نجاس طعام ذبح نهي‬
+‫عاد استعمال حالل تشبه ترك سماع‬
+‫إباح‬
+
+Prohibition, wine, eating, drinking, halal/permission,
+impurity, slaughtering, imitation
+
+48
+
+0.11445
+
+‫دول حرب بالد قو جيش حربي‬
+‫قتال إيطالي ثور أورب إنكليز‬
+‫عسكري قتل أرض خطر صلح‬
+‫سالح غرب نفوذ عثماني‬
+
+Nation, war, army, fighting, Italian, Europe, English,
+revolution, land, danger, compromise, weapon, west,
+Ottoman, authority
+
+49
+
+0.11166
+
+‫حكوم شريع دين إسالم عدل سلطان‬
+‫خليف سلط طاع جعل ملك قوانين‬
+‫ظلم قضاء أمراء خلفاء حقوق‬
+‫وضع حاكم نظام‬
+
+Government, sharia, religion, justice, sultan, caliph,
+authority, king, laws, injustice, judicial, prince, rights,
+system
+
+Historical analysis of topic distribution
+The method has captured various topics which are mostly related in a
+meaningful way to religious, societal and political situation of al-Manār’s
+worldview. By Glossing the salient themes as reflected in the individual
+words, we observe reasonably coherent topics in various cases. We notice
+that there are similar words and terms that are generated together under
+different sets of topics words. By combining such multiple topics that are in
+most cases semantically related, we can observe six general overlapping areas
+in the fifty topics where al-Manār showed strong interest 1) Reform and
+progress: Topic models 2 (0.086), 4 (0.11836), 11 (0.16928), 15 (0.12389),
+24 (0.11748), 25 (0.1298), 31 (0.09072), 39 (0.17271); 2) government,
+caliphate, its political form and functions: Topic models 5 (0.10918), 8
+(0.0776), 19 (0.08821), 25 (0.1298), 31 (0.09072), 34 (0.08539), 44 (0.0953),
+49 (0.11166, 3) Europe and colonialism: topic models 4 (0.11836), 38
+(0.10653), 44 (0.0953), 48 (0.11445); 4) Christianity and missions: Topic
+28 (0.0723), topic 38 (0.10653), 5) Education and upbringing: Topic
+models 11 (0.16928), 24 (0.11748), 40 (0.10011), 6) Creation, cosmos and
+natural sciences: topic models 13 (0.08756), 20 (0.05822), 21 (0.11666), 37
+(0.08641), 41 (0.09975).
+
+High Spikes in historical perspective
+In this following experiment we try to check the formal internal validity
+evaluation of the topics against the historical background of al-Manār and
+its writers. In the following chart, we will try to plot the occurrence of
+the selected topics over time. We closely look at 16 graphs where spikes are
+highest in specific years, which indicate that the topics become more frequent
+in this period. By close reading we shall see how al-Manār’s interest in
+these topics was triggered by specific historical, religious, political or societal
+Journal of Cultural Analytics
+
+13
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+discussions or events. It will be clear that the timeline and tokens of the
+topics show solid lines indicating each topic’s contribution to the corpus in
+these specific years. Against the historical background of the corpus, we shall
+see if the dotted line or spike, which indicates the topic’s contribution to
+the highest level, would match with contextual reality of Riḍā’s interests and
+worldviews. As we shall see, to unpack these patterns, we shall use a closer
+reading by surveying the temporal structure of each topic reflected in the
+following graphs.
+
+Figure 2. Topic 40 (0.10011)
+
+Topic model 40 (0.10011): Al-Manār’s project of religious reform was
+closely connected with the question of education and upbringing. In the early
+years of its publication, we notice in the graph that there is a high spike
+showing this topic. In this period, Riḍā published the Arabic translation of
+L’Émile du dix-neuvième siècle by the French far-left politician and writer
+Alphonse Esquiros (1812-1876) which was a response to Jean-Jacques
+Rousseau’s Emile, ou de l’éducation and the latter’s ideas about childhood
+18
+and physical education. The translation was prepared upon the suggestion
+of Sheikh Muḥammad ʿAbduh by the above-mentioned ʿAbd al-ʿAzīz
+Muḥammad, a prosecutor at the Tribunal of the town of Zaqāzīq in the
+
+18 Alphonse Esquiros, L’Emile du dix-neuvième siècle, Paris: Librairie Internationale, 1869; Jean-Jacques Rousseau, Emile, ou de l’éducation, in:
+
+Oeuvres, A Paris : chez Defer de Maisonneuve : de l’imprimerie de Didot le Jeune, 1793–[1800], 18 t. in-4°. Frontispiece of vol. 4.
+Bibliothèque de Genève, Hf 1286/4.
+
+Journal of Cultural Analytics
+
+14
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+Egyptian Delta. Esquiros’ work was successively published in a series in alManār under the Arabic translation of the French title “Amīl al-qarn al-tāsiʿ
+19
+ʿashar,”, and was later published as a book by al-Manār Press.
+
+Figure 3. Topic 5 (0.10918)
+
+Topic model 5 (0.10918): The two high spikes in this graph refer to 1911
+and 1919. By glossing a general topic we see that the key-words refer to
+“congresses” and their committees and resolutions. In both cases, we note
+that in 1911, Riḍā was reacting to the Coptic Congress which was convened
+at Asyūṭ (Southern Egypt) asking for equal rights of citizenship after the
+assassination of the Coptic Prime Minister Buṭrus Ghālī Pasha in 1910 by a
+member of the National Party, Ibrahīm Naṣīf al-Wardānī (1886-1910). This
+period was one of the most critical points in the history of the MuslimCoptic relations in Egypt under the British colonial power. The Copts had
+seen his assassination as the culmination of the anti-Christian propaganda by
+Muslims. The Congress resulted in a petition summarizing Coptic demands,
+20
+which was presented to the Khedive and the British. In response Muslims
+
+19 See, Zemmin, Modernity in Islamic Tradition, p. 129. Esquiros, Alphonse. 1899–1906. “Amil al-qarn al-tāsiʿ ʿashar [translated by ʿAbd al-
+
+ʿAzīz Muḥammad],” al-Manār 2/38, 598–603, al-Manār 2/42, 666–670, al-Manār 2/43, 679–682, al-Manār 3/11, 253–257, al-Manār
+3/13, 294–301, al-Manār 3/11, 253–257, al-Manār 3/15, 345–351, al-Manār 3/18, 416–422, al-Manār 3/26, 607–610, al-Manār 3/30,
+737–743, al-Manār 4/17, 659–668, al-Manār 4/23, 905–910, al-Manār 9/8, 626–628. Alphonse Esquiros, al-Tarbiya al-istiqlāliyya aw
+Amīl al-qarn al-tāsiʿ ʿashar; translated by ʿAbd al-ʿAzīz Muḥammad, Cairo: Maṭbaʿat al-Manār, 1913.
+20 See, Umar Ryad, Islamic Reformism and Christianity: A Critical Reading of the Works of Muḥammad Rashīd Riḍā and His Associates
+
+(1898-1935), Leiden & Boston: Brill, 2009, pp. 67-115. Kyriakos Mikhail, Copts and Moslems under British Control, London, 1911; S.
+Sheikaly, ‘Prime Minister and Assassin: Butros Ghalī and Wardani,’ Middle Eastern Studies 13/1, 1977, pp. 112-123; Moustafa El-Fikī, Copts
+in Egyptian politics (1919-1952), General Egyptian Book Organization, 1991, pp. 38-45; Muḥammad Ṣāliḥ al-Murrākishī, Tafkīr
+Muḥammad Rashīd Riḍā min Khilāl Majallat al-Manār (1898-1935), Tunisian Press: Tunisia and Algeria, 1985, pp. 181-183; Jacques
+Tagher, Christians in Muslim Egypt: An Historical Study of the Relations between Copts and Muslims from 640 to 1922, Altenberge: Oros
+Verlag, 1998.
+
+Journal of Cultural Analytics
+
+15
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+organized a congress under the name al-Muʾtamar al-Miṣrī ( The Egyptian
+Congress) in Cairo. As a Muslim thinker, Riḍā immediately embarked on
+responding to the Coptic demands in a series of articles in his journal by
+which he also supported the Egyptian Congress. Riḍā later collected these
+articles in his work, al-Muslimūn wā al-Qibṭ aw al-Muʾtamar al-Miṣrī
+21
+(Muslims and Copts or the Egyptian Congress). In 1918-1919 and in the
+wake of the end of the First World War, al-Manār shed light on the Paris
+Peace Conference and the Treaty of Versailles and their impact on the future
+22
+of Arab and Syrian independence.
+
+Figure 4. Topic 43 (0.08339)
+
+Topic model 43 (0.08339) contains keywords related to Mecca and hajj
+sites and rituals. This reflects Riḍā’s Pilgrimage journey in 1916 which
+Rainer Brunner correctly described as one of Riḍā’s ways of “conscious selfpromotion, against the backdrop of the First World War and the caliphate
+23
+discussion.” From October 1916 to May 1918, Riḍā published 10 serialized
+
+21 Rashīd Riḍā, al-Muslimūn wā al-Qibṭ aw al-Muʾtamar al-Miṣrī, Cairo: Maṭbaʿat al-Manār, 1st ed., 1329/1911.
+22 See among others, Rashīd Riḍā, “Mustaqbal Sūrya wā sāʾir al-bilād al-ʿarabiyya”, two articles, al-Manār 21/1 (December 1918), pp. 33f;
+
+21/2 (March 1919), 91f; “Muʿāhadat al-Ṣulḥ”, five articles, 21/3 (May 1919), 138f; 21/4 (June 1919), 189f; 21/5 ( August 1919), 257f; 21/6
+(October 1919), 291f; 21/7 (April 1920), 371f. More about this see, for example, Elizabeth Thompson, “Rashid Rida and the 1920 Syrian
+Arab Constitution: How the French Mandate Undermined Islamic Liberalism,” in Cyrus Schayegh and Andrew Arsan (eds.), The Routledge
+Handbook of the History of the Middle East Mandates, New York: Routledge, 2015, pp. 244-57; id. How the West Stole Arab Democracy: The
+Syrian-Arab Congress of 1920 and the Destruction of its Historic Liberal-Islamic Alliance, New York: Atlantic Monthly Press, 2020
+23 Rainer Brunner, “The Pilgrim’s Tale as a Means of Self-Promotion: Muḥammad Rashīd Riḍā’s Journey to the Ḥijāz (1916)”, in Michael
+
+Kemper and Ralf Elger (eds.), The Piety of Learning: Islamic Studies in Honor of Stefan Reichmuth, Leiden & Boston: Brill, 2017, 270–291;
+̣ ijā z”, al-Manār 19/5 (Oct. 1916), 307–10; 19/8 (Jan. 1917), 466–72; 19/9 (Feb. 1917), 563–74;
+Muḥammad Rashī d Riḍā , “Riḥlat al-H
+20/2 (Aug. 1917), 108–26; 20/3 (Oct. 1917), 150–59; 20/4 (Nov. 1917), 192–98; 20/5 (Jan. 1918), 236–45; 20/6 (Feb. 1918), 276–88;
+20/7 (Apr. 1918), 316–28; 20/8 (May 1918), 352–63. Cf. the collected travelogues by Yūsuf Ībish, Riḥalā t al-imā m Muḥammad Rashī d
+Riḍā (Beirut, 1971), 92-210. See also, Richard van Leeuwen, “Islamic Reform and Pilgrimage. The Hajj of Rashid Rida in 1916”, in
+Luitgard Mols and Marjo Buitelaar (eds.), Hajj. Global Interactions through Pilgrimage, Leiden: Sidestone Press, 2015, 83–93. About his
+
+Journal of Cultural Analytics
+
+16
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+articles about the journey which were mixed of his personal religious
+experience with his political views on the Arab Revolt, the Meccan Sharī f,
+̣ usayn ibn ʿAlī , the Arab question of independence under the
+Prince H
+Ottoman Empire and colonial powers and the end of the First World War.
+
+Figure 5. Topic 8 (0.0776)
+
+This topic model 8 (0.0776) reflects a similar topic as the previous one.
+The difference is that it captures other key-terms specifically showing Riḍā’s
+specific treatment of the independence of Syria, Iraq and Palestine form the
+British and French colonial yoke. The spike is also still somehow high in
+1920-1921, which are the years when Riḍā became the vice-president of the
+Syrian-Palestinian Congress (founded in 1918). This congress commissioned
+a delegation to travel and represent their political case before the League
+of Nations in Geneva in the summer of 1921. This should be highlighted
+against Riḍā’s concept of the ‘Greater Syria’ which sharpened his longing for
+Pan-Arabism and struggle against the imposition of the French Mandate in
+24
+Syria.
+
+views of the First World War, see Umar Ryad, “A German ‘Illusive Love’: Rashid Rida’s Perceptions of the First World War in the Muslim
+World” in Erik-Jan Zürcher (ed.), Jihad and Islam in World War I, Leiden University Press: LUCIS: Debates on Islam & Society, pp. 305 –
+328.
+24 Marie-Renée Mouton, "Le Congrès syrio-palestinien de Genève (1921), " Relations Internationales 19, 1979, pp. 313-328. About Riḍā’s
+
+political ideas and activism, see, for example, Eliezer Tauber, “Three Approaches, One Idea: Religion and State in the Thought of ʿAbd alRaḥman al-Kawākibī, Najīb ʾAzūrī and Rashīd Riḍā,” British Journal of Middle Eastern Studies 21/2, 1994, pp. 190-198; id., “Rashīd Riḍā
+and Faysal’s Kingdom in Syria,” The Muslim World 85, 1995, p. 235-245; id., “Rashīd Riḍā as Pan-Arabist before the World War I,” The
+Muslim World 79/2, 1989, pp. 102-112; id., “The Political Life of Rashīd Riḍā,” Arabist: Budapest Studies in Arabic 19-20, 1998, pp.
+261-272. Cf. Philip S. Khoury, Syria and the French Mandate: The Politics of Arab Nationalism 1920-1945, Princeton University Press,
+1987. Philip S. Khoury, “Factionalism among Syrian Nationalists during the French Mandate,” International Journal of Middle East Studies
+13/4, 1981, pp. 441-469.
+
+Journal of Cultural Analytics
+
+17
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+Figure 6. Topic 49 (0.11166)
+
+Figure 7. Topic 34 (0.08539)
+
+Topic model 34 (0.08539) and topic model 49 (0.11166) reproduce
+a similar political category about the turbulent political situation in the
+Ottoman Empire after the First World War ending with the abolition of
+the Caliphate. Both topics gain similar keywords, such as “government,”
+“justice,” “sultan”, “caliph”, “authority”, “king”, “Ḥijāz,” “Najd,”
+“peninsula”, “Syria”, Iraq", “Saudi,” and “Sharif Ḥusayn”. By the end of
+the First World War, Riḍā became active in stirring Arab independence,
+opposing any form of European colonial control over Syria and Iraq. In
+Journal of Cultural Analytics
+
+18
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+1922-1923, Rida wrote extensively about the caliphate, which Mahmoud
+Haddad considered as “the culmination of Rida’s political and religious
+thought” on his issue. All related articles in this period focused on the
+subsequent dismantlement of the Ottoman caliphate by the Turkish
+republican government and the re-imagination of the return of Caliphate
+in Arabia. In Riḍā’s general view, the caliph should be a mujtahid and
+a Qurayshite because it was the Arabs who spread the message of the
+25
+“Arabic Quʾrān” and defended Islam with their “swords.” In the same
+period, al-Manār became a platform for many Muslim writers and political
+thinkers who sympathised with the Caliphate, especially the well-known
+Indian intellectual Abul Kalam Azad (1888–1958), also leader of the Khilafat
+Movement, who also shared with Riḍā the belief in the necessity of the
+caliphate as an institution that enforces Islamic law and protects the
+26
+boundaries of the Islamic community.
+
+Figure 8. Topic 20 (0.05822)
+
+Topic model 20 (0.05822) shows al-Manār’s interests in medical scientific
+issue, the human body and health. In 1912-1916, the journal provided
+most extensive discussions about modern sciences, written by Riḍā’s private
+medical doctor Muḥammad Tawfīq Ṣidqī (1881-1920). Ṣidqī achieved
+considerable prominence in al-Manār due to his writings on various subjects,
+
+25 Mahmoud Haddad, “Arab Religious Nationalism in the Colonial Era: Rereading Rashīd Riḍā’s Ideas on the Caliphate”, Journal of the
+
+American Oriental Society 117/2 (1997), pp. 253-277. Muḥammad Rashīd Riḍā, al-Khilāfa aw al-imāma al- ʿuẓma, Cairo: Matbaʿat alManār, 1923. See also, Henri Laoust, Le Califat dans la doctrine de Rashid Rida, Beirut: Institut francais de Damas, 1938; Malcolm Kerr,
+Islamic Reform: The Po-litical and Legal Theories of Muhammad Abduh and Rashid Rida, Berkeley and Los Angeles: Univ. of California
+Press, 1966.
+26 John Willis, “Debating the Caliphate: Islam and Nation in the Work of Rashid Rida and Abul Kalam Azad”, The International History
+
+Review 32/4 (2010), pp. 711-732.
+
+Journal of Cultural Analytics
+
+19
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+especially those related to the reliability of the Sunna, Christianity, and the
+27
+application of modern medical and scientific discoveries to Islamic concepts.
+Besides, Ṣidqī became a lecturer at Riḍā’s Muslim missionary school of Dār
+al-Daʿwa wā al-Irshād (the Society of Islamic Mission and Guidance). It
+was a boarding school, which was primarily entitled to train two missionary
+groups of people: the murshids (guides) for Muslims, and the duʿāh
+(propagators) to defend Islam against missionary attacks. Ṣidqī was
+authorized to teach the students in sciences, medical topics and biology, the
+study of the Bible and the history of the Church. In 1914-1915 12 articles
+were serialized in al-Manār under the title “Durūs sunan al-kāʾināt” ( Lessons
+28
+on the Habits of Created Beings).
+
+Figure 9. Topic 37 (0.08641)
+
+Topic model 37 (0.08641) is also related to health and diseases. However,
+the spike goes high in 1926-1928 due to al-Manār’s interests in M. K.
+Gandhi’s (d. 1948) and his thoughts on health. In these years, al-Manār
+provided a serialized Arabic translation of Gandhi’s work, A Guide to Health,
+prepared by the Indian-born intellectual Abdur Razzaq Malihabadi (d. 1959)
+under the title “Kitāb al-ṣiḥḥa (Book of health).” As one of Gandhi’s most
+
+27 Umar Ryad, Islamic Reformism, pp. 234-275; G. H. A. Juynboll, The Authenticity of the Tradition Literature: Discussions in Modern Egypt,
+
+Leiden: E. J. Brill, 1969, pp. 23-30; see also, Daniel Brown, Rethinking Tradition in Modern Islamic Thought, Cambridge University Press,
+1999, pp. 67-68.
+28 Muḥammad Tawfīq Ṣidqī, “Durūs sunan al-kāʾināt”, 12 articles, vol. 17/11 (October 1914), 17/12 (Nov. 1914); 18/1 (February 1915), 18/2
+
+( March 1915), 18/3 ( April 1915), 18/4 (May 1915), 18/5 (June 1915), 18/6 (July 1915), 18/7 (August 1915), 18/8 (September, 1915),
+18/9 (October 1915), 18/10 (November 1915). The series was published in 1930 by Al-Manār Press.
+
+Journal of Cultural Analytics
+
+20
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+popular works, it contained “his thoughts on issues concerning health, such
+as celibacy, diet, and his complete rejection of modern medical practices of
+29
+consulting doctors and vaccination.”
+
+Figure 10. Topic 28 (0.0723)
+
+29 For more analysis, see, Roy Bar Sadeh, “Debating Gandhi in al-Manār during the 1920s and 1930s.” Comparative Studies of South Asia,
+
+Africa and the Middle East 38, no. 3 (2018): 491–507.
+
+Journal of Cultural Analytics
+
+21
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+Figure 11. Topic 38 (0.10653)
+
+Topic model 28 (0.0723) and topic model 38 (0.10653) capture themes
+related to Christianity, Christian missions, the Bible, the church and religious
+fanaticism, which have become dominant between 1911-1915 according to
+the two graphs. The reason for this historical fact is again the emergence of
+the above-mention Tawfīq Ṣidqī on the stage of al-Manār and his prolific
+contributions to Muslim polemics against Christianity and Christian
+missionary activities of his time. In his response to missionary writings
+on Islam, Ṣidqī used western works on Biblical criticism, and introduced
+them to the readers of al-Manār. He referred to western writers, such
+as the Englishmen Walter Richard Cassels (1826-1907), John Mackinnon
+30
+Robertson (1856-1933) and many others.
+
+Figure 11. Topic 17 (0.09762)
+
+Topic 17 (0.09762), which is related to the position and authenticity of the
+Ḥadīth, jumps higher in 1920 and in 1925-1926, although it was relatively
+present in the previous years. The prominence in 1920-1921 can be explained
+that the young Egyptian Ḥadīth scholar and orator Muḥammad ʿAbd al-ʿAzīz
+al-Khūlī (1892-1931) had published five long articles in a serial format under
+the title “Tārīkh funūn al-Ḥadīth (the history of the sciences of Ḥadīth)” in
+which he discussed the meaning, position, scholars, canons and history of
+
+30 All his polemical contributions were published in separate treatises by Al-Manār Press. See, for example, Muḥammad Tawfīq Ṣidqī, Dīn
+
+Allāh fī kutub anbiyāʾih, Cairo, 1912; Muḥammad Tawfīq Ṣidqī, “Naẓariyyatī fī ʿaqidat ṣalb al-masīḥ wa-qiyāmatih,” al-Manār, 16/2
+(February 1913) 113-29 & 16/3 (March, 1913) 193-216 (in two parts). Muḥammad Tawfīq Ṣidqī, “Naẓra fī kutub al-ʿahd al-jadīd wa-lkutub al-naṣrāniyya,” al-Manār, 16/1-8 (1913); Muḥammad Tawfīq Ṣidqī, Naẓra fī kutub al-ʿahd al-jadīd wa-ʿaqāʾid al-naṣrāniyya, Cairo,
+1913; Rashīd Riḍā & Muḥammad Tawfīq Ṣidqī, ʿAqīdat al-Ṣalb wa-l-Fidāʾ wa-yalīhā Naẓariyyatī fī ʿaqidat ṣalb al-masīḥ wa-qiyāmatih,
+Cairo, 1935, pp. 83-160.
+
+Journal of Cultural Analytics
+
+22
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+31
+
+the Prophetic traditions in Islam. As for the second high spike marked in
+1925, we closely read that a critical note was sent to Riḍā by a certain ʿAbd
+al-Raḥman al-Jamjamūnī, a habitual reader of Riḍā’s journal from Egypt,
+blaming Riḍā for his suspicion of the traditions narrated by the Muslim
+Yemeni traditionists Wahb ibn Munabbih and Kaʿb al-Aḥbār, who were
+considered to be the earliest authorities on Israʾiliyyāt narratives in Islam.
+This triggered a debate between al-Jamjamūnī and Riḍā on al-Manār’s pages
+on these historical figures and their authority in Ḥadīth. On the basis of
+the branch in Ḥadīth traditional studies known as al-Jarḥ wā al-Taʿdīl (the
+criticism and declared acceptance of hadith narrators), Riḍā classified their
+historical narratives as weak. Jamjamūnī was, on the other hand, of the view
+that their status in Islam should be firmly maintained due to their piety, since
+any discredit to them would endanger the authenticity of Ḥadīth in general.
+In addition to the continuous debate in that year, Riḍā allowed Jamjamūnī
+to spell out his views on the issue in details in two serialized articles under the
+32
+title “Mabḥath fī al-Jarḥ wā al-Taʿdīl.”
+
+Figure 12. Topic 32 (0.08782)
+
+Topic model 32 (0.08782) deals with the visitation and veneration of holy
+shrines and tombs which became dominant in 1927-1928 on the basis of
+serialized articles containing a debate between the Iraqi Shiʿi scholar Sayyid
+Mahdī al-Kāẓimī al-Qazwīnī (1865-1940) and the Sunni salafī Moroccan
+
+31 Muḥammad ʿAbd al-ʿAzīz al-Khūlī, “Tārīkh funūn al-Ḥadīth” 5 articles, vol. 22/1 (December 1920), 22/2 (January 1921); 22/3 (February
+
+1921), 22/4 ( March 1921), 22/5 ( April 1921).
+32 ʿAbd al-Raḥman al-Jamjmūnī, “Mabḥath fī al-Jarḥ wā al-Taʿdīl,” al-Manār, two articles, 27/5 (August 1926), pp. 377- & 27/6 (September
+
+1926), pp. 459-.
+
+Journal of Cultural Analytics
+
+23
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+33
+
+scholar Taqī al-Dīn al-Hilālī (1894-1987) about the erecting of shrines and
+mosques on the sites of the tombs of family members of the Prophet or pious
+venerated figures, where people commemorate or observe prayers besides. In
+general, Ridā was a fierce opponent of the visitation of the tombs and the
+34
+cult of saints in Islam.
+
+Figure 13. Topic 0 (0.08243)
+
+Topic model 0 (0.08243): In 1926- 1927, where the spike is highest,
+the topic focuses on the religious ritual question of shortening the daily
+obligatory prayers and the exemption of fasting the month of Ramadan
+during travel. Riḍā started publishing a series of elven articles containing a
+treatise by the well-known medieval Muslim scholar Aḥmad Ibn Taymiyya
+(1263-1328) under the title: “Qāʿida jalīla fīmā yatʿlaq bi-aḥkām al-safar
+wa-l-iqāma (A Gloriuos base in what is related to the rulings of travel
+35
+and dwelling),” which is the second volume of the author’s famous work
+Majmūʿat al-Rasāʾil wa-l-masāʿil which Riḍā edited and published in his
+36
+Manār Press in five volumes.
+
+33 About Taqī al-Dīn al-Hilālī, see for example, Umar Ryad, “A Salafi Student in Orientalist Scholarship in Nazi Germany: Taqi al-Din al-Hilali
+
+and His Experience in the West”, in Götz Nordbruch and Umar Ryad (eds.), Transnational Islam in Interwar Europe: Muslim Activists and
+Thinkers, New York: Palgrave Macmillan, 2014, pp. 107-156
+34 Yitzhak Nakash, “The Visitation of the Shrines of the Imams and the Shi’i Mujtahids in the Early Twentieth Century”, Studia Islamica 81
+
+(1995), pp. 153-164. -313; “Masʾalat al-qubur wa al-mashāhid ʿind al-shīʿa: munāẓara bayna ʿālim shīʿī wā ʿālim sunnī”, al-Manār, 7 articles,
+28/5 (June 1927), 349-67, 28/6 (August 1927), 439-49, 28/7 (September 1927), 516-33, 28/8 (October 1927), 593-601, 28/9 (November
+1927), 684-92, 28/10 (January 1928), 776-81, 29/1 (March, 1928), 57-62.
+35 Aḥmad Ibn Taymiyya “Qāʿida jalīla fīmā yatʿlaq bi-aḥkām al-safar wa-l-iqāma”, al-Manār, 11 articles, 27/5 (August 1926), 347f; 27/6
+
+(September 1926), 427f; 27/7 (October 1926), 513f; 27/8 (November 1926), 593f; 27/9 (December 1926), 663f; 27/10 (January 1927),
+755f; 28/1 (march 1927), 41f; 28/2 (April 1927), 121f; 28/3 (May 1927), 186f; 28/ 4 (May 1928), 272f; 28/5 (June 1927), 334f.
+36 Aḥmad Ibn Taymiyya, Majmūʿat al-Rasāʾil wa-l-masāʿil, edited by Rashīd Riḍā, 5 vols., Cairo: Al-Manār, 1922-1930.
+
+Journal of Cultural Analytics
+
+24
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+Figure 14. Topic 14 (0.11272)
+
+This topic 14 (0.11272) focuses on the question of unbelief (shirk and kufr)
+and faith in general. This topic is dominant in the corpus, but the spike
+jumps higher in 1924. We assume that it is connected to Riḍā’s debating,
+among others, about the question of mixed marriage between Muslims and
+37
+non-Muslims, and the above discussions about the Shīʿī veneration of saints,
+as well as the critical views by Ibn Taymiyya about the Sufi’s and their
+religious practices and behaviour.
+
+37 Al-Manār, “Taḥrīm al-Muslimāt ʿalā ghayr al-muslimīn”, 25/3 (March 1924), 222f; 25/4 (May 1924), 314f.
+
+Journal of Cultural Analytics
+
+25
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+Figure 15. Topic 42 (0.11586)
+
+Topic model 42 (0.11586) contains such keywords as “heart”, “self/soul”,
+“love”, “creation”, “status/ rank”, “causes”, “truth”, and “unity,” which all
+have spiritual-psychological as well as physical meanings. We observe that
+the spike gets higher roughly in the years between 1913-1916. Studying the
+articles in al-Manār closely, we can conclude that many of these combined
+terms are broadly used in two serialized sets of articles: 1) the abovementioned article series, Durūs fī sunan al-kāʾināt, by the Egyptian medical
+doctor Muḥammad Tawfīq Ṣidqī, and 2) serialized articles containing extracts
+from the well-known classical work Madārij al-Sālikīn (Ranks of the Divine
+Seekers) by the medieval Damascene religious scholar Ibn Qayyim al-Jawziyya
+(d. 751/1350). Ṣidqī focuses on biological issues related to the body,
+heartbeats and blood circulation. Madārij al-Sālikīn, on the other hand,
+contains as a critical commentary on an earlier Sufi classic by the spiritual
+master and scholar Abū Ismāʿīl ʿAbdullāh al-Anṣārī of Herat (1006–1088).
+Madārij al-Sālikīn aims to revitalize spiritual Qur’anic foundations from a
+Sufi point of view by means of a hundred stations that could help the aspiring
+38
+seeker on the path to God. Few examples of these spiritual stations include
+“fear,” “repentance,” “sincerity”, “purification”, “trust,” “submission”,
+“gratitude,” “will”, “certainty”, “knowledge,” “wisdom”, “purity”, “life”, and
+“love”, which come close to the core meaning of the topic model.
+
+38 Ibn Qayyim al-Jawziyya, Ranks of the Divine Seekers: A Parallel English-Arabic Text, Translated, annotated and introduced by Ovamir
+
+Anjum Leiden & Boston: Brill, 2020; Ovamir Anjum, “Sufism Without Mysticism? Ibn Qayyim al-Ğawziyyah’s Objectives in Madāriǧ alSālikīn”, Oriente Moderno 90/1, 2010, pp. 166–188.
+
+Journal of Cultural Analytics
+
+26
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+Figure 15. Topic 13 (0.08756)
+
+Topic model 13 (0.08756) combines keywords that are related to the
+cosmos and nature including sun, sky, moon, mountains, clouds, universe,
+planets as well as the Prophet’s miʿrāj (Ascension to Heavens). We see that
+the subject is dominant throughout the corpus with the spike getting higher
+roughly during 1908-1911, 1931 and 1935. By 1908 Ṣidqī had published four
+serialized articles under the title “al-Qurʾān wā al-ʿIlm (Qur’an and Science)”
+in which he tried to interpret the Qur’an from the perspective of language,
+history, geography and medicine, and also to answer what he saw “allegations”
+of Europeans against the Qur’an and some of its verses related to nature and
+39
+cosmos. In 1931-1935, we can observe these keywords in various contexts.
+For example, in the summer of 1930 a huge debate was triggered by the
+publication of the materialist glossed exegesis of the Qur’an by the Azhari
+Sheikh Muḥammad Abū Zayd, a former student of Riḍa, under the title AlHidāya wā al-ʿIrfān fī Tafsīr al-Qurʾān bil-Qurʿān (Guidance and Abundant
+40
+Knowledge in the Exegesis of the Qur’an by means of the Qur’an), in which
+Abū Zayd strongly maintained that the cosmic and natural laws are fixed, a
+view by which he would reject the miracles mentioned in the Qur’an. In three
+serialised articles Riḍā vehemently attacked Abū Zayd as an “atheist” and a
+“neo-Bāṭinī,” polemically belittling him for using excessive esoteric (bāṭin)
+
+39 Muḥammad Tawfīq Ṣidqī, “al-Qurʾān wā al-ʿIlm,” al-Manār, 11/3 (May, 1908), 208f, 11/4 (May 1908), 281f , 11/5 (June 1908), 361f; 11/6
+
+(July, 1908), 441f. See, Daniel A. Stolz, The Lighthouse and the Observatory: Islam, Science, and Empire in Late Ottoman Egypt, Cambridge:
+Cambridge University Press, 2018.
+40 Muḥammad Abū Zayd, Al-Hidāya wā al-ʿIrfān fī Tafsīr al-Qurʾān bil-Qurʿān, Cairo: al-Bābī al-Ḥalabī, 1349 A.H. /1930.
+
+Journal of Cultural Analytics
+
+27
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+41
+
+interpretation of the Qur’an. 1932 Riḍā had another fierce controversy with
+the anti-Wahhābi Azharī Sheikh Yusūf al-Dijwī (d. 1946) regarding many
+religious issues, including Riḍā’s critical approach to the ḥadith [narrated by
+al-Bukhārī (3199), and Muslim (250)] maintaining that before sunset the
+sun “prostrates beneath the Throne of God” and waits for permission to
+come back again to rise the next day. Riḍā was of the view that this ḥadīth
+was not in common sense with the scientific fact that the sun rotates on
+its own self; and that this hadith has been also critically studied by many
+Muslim traditionists, such Ibn Ḥajar al-ʿAsqalānī (1371-1449) and Ibn Ḥajar
+42
+al-Haytamī (1503-1566).
+
+Conclusion
+Al-Manār’s topics were automatically generated based on patterns of word
+(co-)occurrence, accompanied by a close interpretation of the model results.
+Our experimentation with topic modeling on al-Manār, a well-defined
+corpus with abundant historical background details available in secondary
+sources, focused on studying fluctuating topics over time, particularly those
+experiencing higher prominence during specific periods. We examined
+keywords not solely as isolated words but as broader religious and political
+topics, revealing clear thematic debates within the world of al-Manār. The
+experiment yielded historical patterns that aligned with digital results,
+providing robust observations of various religious, political, and intellectual
+concerns within Muslim reform during Riḍā’s life.
+Notably, high spikes in topic prominence demonstrated a temporal
+dimension in the corpus, indicating alignment with specific periods and
+increased interest in the discussed issues. Given our reliance on prior
+knowledge of al-Manār as a homogeneous corpus, the unique results of the
+study are closely tied to the quantitative computational method, rather than
+presenting surprising factual reconstructions of Riḍā and his worldviews.
+While the distant reading approach confirmed known topics, it also
+uncovered new subjects that merit further research, such as Riḍā’s debates
+with al-Jamjamūnī on Ḥadīth and Abū Zayd on his Qur’anic exegesis.
+The study affirmed that, when used correctly and in conjunction with closer
+reading, topic modeling can serve as a valuable tool for researching the history
+and contents of the Arabic press. This method allows for the exploration of
+a broader range of corpora from other Arabic newspapers and magazines,
+which should undergo preprocessing for distant digital research and
+automated content analysis before undergoing in-depth close reading.
+
+41 Rashīd Riḍā, “Ilḥād jadīd fī al-Qurʾān wā dīn jadīd bayna al-Bāṭinyya wā al-Islām”, al-Manār, 3 articles, 31/9 (June, 1931), 673f; 31/10
+
+(July 1931), 753f; 32/1 (October 1931), 33f.
+42 Al-Manār, 32/11 (December 1932), 785f
+
+Journal of Cultural Analytics
+
+28
+
+A Topic Modelling of Muslim Religious Reform in the Colonial Age: A Computational and Digital Study of al-Manār (18…
+
+Data repository: https://doi.org/10.7910/DVN/T0X9UX
+Submitted: January 15, 2024 EDT, Accepted: February 12, 2024 EDT
+
+This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0
+International License (CCBY-4.0). View this license’s legal deed at http://creativecommons.org/licenses/
+by/4.0 and legal code at http://creativecommons.org/licenses/by/4.0/legalcode for more information.
+
+Journal of Cultural Analytics
+
+29
+
+

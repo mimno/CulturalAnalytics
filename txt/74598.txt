@@ -1,0 +1,630 @@
+Fischer, Frank, et al. “Preface: World Literature in an Expanding Digital Space.” Journal
+of Cultural Analytics, vol. 8, no. 2, May 2023, doi:10.22148/001c.74598.
+
+ARTICLE
+
+Preface: World Literature in an Expanding Digital Space
+Frank Fischer1 , Jacob Blakesley2 , Paula Wojcik3 , Robert Jäschke4
+1 Freie Universität Berlin, 2 University of Leeds, 3 Universität Wien, 4 Humboldt-Universität zu Berlin
+
+Keywords: Wikipedia, Wikidata, world literature, canon, digital humanities
+https://doi.org/10.22148/001c.74598
+
+Journal of Cultural Analytics
+Vol. 8, Issue 2, 2023
+
+Wikipedia, the world’s largest encyclopedia, and Wikidata, the rapidly growing
+knowledge graph, are not yet widely used in literary studies, but their scale and
+multilingualism make them particularly suitable as new means for the study of
+world literature. This is the hypothesis at the heart of this special issue. Our
+preface provides a research overview of the topic, briefly summarizes the articles
+that constitute this issue, and focuses on overarching aspects and common
+challenges.
+
+New kinds of sources and tools
+This special issue on "Wikipedia, Wikidata, and World Literature" revolves
+around encyclopedic data and interlinked facts that can provide novel sources
+and tools for studying the reception of world literature. It brings together five
+contributions that offer new insights into canons and counter-canons, but also
+address systematic gaps.
+Using Wikipedia and Wikidata as resources allows us to reshape current
+scholarship on literary canonicity and popularity, which is too often blinkered
+by abstract notions of influence and implicit bias. Despite the longstanding
+debate over the canon, what Wikipedia and Wikidata show us is that there is
+no monolithic canon, but many canons, depending on the data you choose to
+examine. Is Shakespeare canonical? Yes, unless your corpus is the more than
+100 Wikipedia language editions without an entry on Shakespeare.
+Since Goethe’s famous words on world literature in his conversation with
+Eckermann on January 31, 1827, the concepts of “world” and “literature”
+have been investigated and argued over. The Eurocentrism embedded in
+comparative and world literature studies – what Franco Moretti famously
+referred to as work that is “fundamentally limited to Western Europe, and
+mostly revolving around the river Rhine (German philologists working on
+French literature)” (Moretti 54) – has given way to broader perspectives and
+different contexts. Important, in this regard, has been the development of the
+concept of “worlding” (as summed up in D’haen 12–27), which exposes the
+putative objectivity of the scholar of world literature.
+At the same time, the advent of digital humanities has helped to find new ways
+of approaching the entire debate, through large-scale literary analyses that tap
+into online resources like Google Books, the HathiTrust Digital Library and
+other full-text corpora, as well as reader-oriented platforms like Goodreads,
+
+Preface: World Literature in an Expanding Digital Space
+
+library catalogs and, more recently, Wikipedia, the world’s largest encyclopedia,
+started in 2001, and Wikidata, the immensely growing knowledge graph,
+launched in 2012.
+The first attempt at a large-scale examination of the reception and
+representation of world literature through Wikipedia was a 2017 article by
+Hube et al., a team of scholars (two of whom are among the guest editors of
+this special issue): the main author, data scientist Christoph Hube, was joined
+by the computer scientist Robert Jäschke, scholars of digital humanities Frank
+Fischer and Gerhard Lauer, and world literature scholar Mads Rosendahl
+Thomsen. It was indicative that this team comprised specialists from different
+disciplines, all working together towards opening up this research field.1
+Their approach was to focus on 15 Wikipedia editions, which they
+comprehensively analyzed using DBpedia, a community project which aims
+to extract and provide structured information from Wikipedia. Wikidata was
+still at an early stage at that time and could not have been used to design their
+study in the same way. Working with DBpedia data from 2014, they ranked the
+most prominent authors using quantitative and network metrics (page length,
+number of in-links, PageRank writers, PageRank complete, and page views
+during 2012, 2013 and 2014). The article paved the way for other articles on
+the topic as well as this special issue of the Journal of Cultural Analytics.
+A simpler approach was used in a 2017 monograph on Finnish writer Aleksis
+Kivi (using Wikipedia data collected in 2015) by Douglas Robinson. Here, the
+number of Wikipedia language versions of an entry on an author or literary
+text was introduced as part of the “Metrics of World Literature” (Robinson
+43–83). Since then, counting the number of Wikipedia language versions on
+a literary text has been established as “a simple measure of canonicity”
+(Kukkonen).
+Around the same time, smaller projects were presented at digital humanities
+conferences approaching the new possibilities from other angles. In a
+contribution to the DH2016 conference, Miller et al. set out to identify a
+subset of significant works of world literature and mine the corresponding
+Wikipedia articles including their discussion pages to obtain material for
+comparative studies. Their idea is showcased by a comparison of ten topics
+extracted via topic modeling from the discussion pages of the English and
+Italian Wikipedia articles on Homer’s Odyssey.
+
+1 Unfortunately, the publication of Hube et al.'s article did not go as planned. It was submitted to the newly founded journal Digital Literary
+
+Studies (https://journals.psu.edu/dls), whose first issue had just been published (vol. 1, no. 1, 2016). The article was successfully peer-reviewed
+and accepted for publication. However, a second issue of the journal never appeared, and the journal closed after the first issue. In order not to
+let any more time pass, the authors decided to publish the article as a pre-print on the arXiv repository, and to date this is the only citable
+version.
+
+Journal of Cultural Analytics
+
+2
+
+Preface: World Literature in an Expanding Digital Space
+
+Another paper presented at the EADH2018 conference concentrates on
+Dutch literature. Lucas van der Deijl and Roel Smeets collected outlinks from
+the 2,286 articles in the Dutch Wikipedia at the time that were labeled with
+the category “Dutch author” (“Nederlandse schrijver”). The outlinks were
+then used to build a graph to determine which Dutch authors were canonical
+based on network centrality metrics. They found that “the crowd in many
+cases merely reproduces the preference for authors that have featured [on] the
+reading lists of ‘our teaching institutions’ for decades.”
+Studies that followed these initial attempts mainly built on the approach of
+Hube et al. – Paula Wojcik and Sophie Picard’s commentary on this paper
+provided theoretical reflections on the core literary concepts of “classics” and
+“canon.” They highlighted the potential of Wikipedia studies to shed light on
+the habits of Wikipedia authors and non-writing users and in this way to gain a
+differentiated picture of canon formation.
+Along those lines, Mads Rosendahl Thomsen characterized Wikipedia as “a
+prominent example of a source for peeking into the wisdom of the masses,
+rather than the preferences of a few,” when describing the processes of
+canonization within discourses of world literature (Thomsen, “Changing
+Spaces” 57; see also Thomsen, “Media and Method”).
+Meanwhile, in a series of articles, Jacob Blakesley drew from Hube et al. to carry
+the research forward in a number of different case studies: from the Wikipedia
+reception of Shakespeare and Dante, to Joyce and modern Italian poets. Unlike
+Hube et al., Blakesley directly queried 300-some Wikipedia language editions,
+and aimed to show the lack of global popularity of these authors (Blakesley,
+“The Global Popularity of William Shakespeare in 303 Wikipedias”; Blakesley,
+“World Literature According to Wikipedia Popularity and Book Translations”;
+Blakesley, “The Global Popularity of Dante’s Divina Commedia”; Blakesley,
+“The Wikipedia Popularity of James Joyce”).
+In their forthcoming paper “Circulation and value creation using the example
+of literary characters”, Sophie Picard, Paula Wojcik, and Sina Zarrieß
+conducted a preliminary study for the article included in our issue. The
+authors compared different types of literary value by using literary characters
+as an example. In particular, they compared a list of characters from a lexicon
+of literary characters, lists from popular books that rank characters according
+to their significance in readers’ lives, and the ranking of characters according
+to Wikipedia. They thereby showed how canonical, popular, and collaborative
+types of valuation relate to each other.
+The increasing importance of knowledge graphs is highlighted in two recent
+papers. The first one is a review of the role of Wikidata in digital humanities
+projects. There are three main applications: as a content provider, as a platform,
+and as a technology stack (Zhao). Out of the 50 projects referenced in the
+paper, 45 use Wikidata as content provider, much the same as some papers
+
+Journal of Cultural Analytics
+
+3
+
+Preface: World Literature in an Expanding Digital Space
+
+featured in this special issue. This will hopefully encourage literary scholars to
+discover the possibilities of Wikidata for their research because, as stated in the
+aforementioned article, “the greater a domain’s usage of Wikidata, the more
+likely its breadth and depth will increase on Wikidata” (Zhao 20).
+The second recent paper we would like to mention introduces the UnderRepresented Writers Knowledge Graph (URW-KG), a discovery tool
+addressing the underrepresentation of non-Western writers. The project seeks
+to align data from Wikidata with three other resources, namely Goodreads,
+Google Books, and Open Library (Stranisci et al.).
+As we can gather from this brief literature review, there are certainly examples
+of research using Wikipedia and Wikidata as sources and tools for world
+literature studies. However, we felt that the potential has not begun to be fully
+realized. This prompted us to propose this special issue to discover whether
+there is more interest in this new theoretical paradigm. We were pleased to have
+a number of scholars from different international backgrounds contribute to
+our issue, which shows that this paradigm is slowly making its way in the field.
+The five articles presented in this special issue share important commonalities,
+but also point to different ways of analyzing literary reception through
+Wikipedia, as our brief summaries will show.
+
+Overview of this special issue
+Melanie Conroy examines the notorious gender gap in Wikipedia from a new
+perspective in her article “Quantifying the Gap: The Gender Gap in French
+Writers’ Wikidata.” In recent years, attention has been drawn to the few female
+Wikipedia editors (in particular in admin positions) and the harassment they
+face, as well as to the representation of topics considered typically female and
+to biographies of women: their number, length, neutrality, quality, and the risk
+of being deleted. With a particular focus on French women writers, Conroy
+not only analyzes their representation on Wikipedia, but also sheds light on
+the “ways in which women are integrated, or not, into Wikidata’s knowledge
+graph.” Using Wikidata sitelinks and statements, Wikiquote and Wikipedia
+links, she measures the impact of about 5,000 writers “in ways that contribute
+to world-historical narratives like national literatures, periodization, and spatial
+influence.” Conroy’s research shows that the historically given gender gap in
+printed encyclopedias is echoed in the Wikidata graph. There are only a few
+writers, like George Sand, who are represented on a scale that can be described
+as “global.” These articles are written individually and are not merely
+translated, and the writer’s pseudonyms are linked properly. Most Frenchlanguage writers are represented in only one or a few language editions.
+Moreover, Conroy’s data confirms previous research on Wikipedia, which
+shows that historical topics are underrepresented in the online encyclopedia:
+only French women writers who were active after 1800 are adequately
+represented. The article concludes with some pragmatic recommendations on
+how to close the gap.
+Journal of Cultural Analytics
+
+4
+
+Preface: World Literature in an Expanding Digital Space
+
+Paula Wojcik, Bastian Bunzeck, and Sina Zarrieß, in their study “The
+Wikipedia Republic of Literary Characters,” explore how the world of
+literature presents itself when it is viewed through the lens of literary
+characters, or rather their representation in Wikipedia. By referring to Pascale
+Casanova’s groundbreaking work La République mondiale des lettres (1999)
+and working with a network of 7,000 characters featured on more than 19,000
+independent character pages, this article demonstrates the transcultural
+entanglement of languages by means of literary characters. It points to the fact
+that key concepts of world literature studies in general and Casanova’s model
+of the world in particular, are in need of adjustment. It also challenges the
+presumed center–periphery opposition and/or the canonical status of authors,
+works, and genres by means of an approach that is double-focused on users:
+through the collaborative platform and through the choice of characters – the
+literary unit with which readers most frequently identify with. Additionally,
+this shift in perspective demonstrates the relevance of nationally and
+transnationally organized fan communities and so-called minor language
+editions for the representation of literature in Wikipedia.
+Matylda Figlerowicz and Lucas Mertehikian, in their article “An EverExpanding World Literary Genre: Defining Magic Realism on Wikipedia,”
+contribute to the discussion of what world literature is or what it means
+through the lens of magic realism as represented on Wikipedia. Magic realism
+is a disputed genre which oscillates between narrow (focused on its cultural
+and geographical origins) and broad (focused on aesthetics) definitions. The
+authors explore how Wikipedia articles from 56 different languages and
+cultural traditions represent magic realism as a genre of world literature.
+Specifically, they perform a close reading of definitions of magic realism in
+those articles to identify main themes and implicit premises. They also analyze
+lists of writers and works, their mentions in articles, as well as similarities
+between articles in terms of the writers they mention. This reveals that “narrow
+and broad definitions of magic realism compete and overlap in Wikipedia”
+and that articles draw upon a variety of (scholarly) references, often including
+(or even focusing on) writers from the articles’ language, even if they are not
+generally considered representatives of magic realism. The authors argue that
+the concept “glocal” shows similarities to magic realism in how it is defined and
+discussed and that it can also be used to frame the circulation of magic realism.
+In her paper “Italian Nostalgia: National and Global Identities of the Italian
+Novel,” Anna Sofia Lippolis sets out to compare the importance of
+contemporary Italian literature between 1980 and 2021 in local and global
+contexts. Her starting point is the realization that the nationally declared canon
+and the global perception of Italian literature appear to be at odds with each
+other. She applies easy-to-follow metrics like counting language versions of
+articles, number of in-links and average ratings to measure the popularity of
+Italian novels on Wikidata, Wikipedia and Goodreads and compares these
+results to the rankings of traditional national literary awards. User-driven
+Journal of Cultural Analytics
+
+5
+
+Preface: World Literature in an Expanding Digital Space
+
+digital platforms function as mediating instances which broaden the debate
+around the national literary canon and reflect the significance of contemporary
+Italian literature in a more international framework. The workflow underlying
+her paper is readily transferable to literature in other languages and countries.
+In his article “Escritor / Qillqaq: The Representation of Peruvian Literature
+in the Spanish and Quechua Wikipedias,” Daniel Carrillo Jara investigates
+the immense differences in the representation of Peruvian writers in these two
+Wikipedia editions. He shows that heavily-populated and well-off Peruvian
+regions are better represented in both Wikipedia editions, namely that socioeconomic status influences representation online. But, he also finds that there
+is no strong correlation between digital accessibility and literary representation.
+At the same time, he shows that both the Spanish and Quechua Wikipedia
+editions reflect academic biases, such as the exclusion of Amazonian writers.
+However, he also discovers that the representation of writers in the Quechua
+Wikipedia edition is far different from that of the Spanish one, including two
+dozen Quechua writers absent from the Spanish edition, whose most popular
+authors are not identical. In short, both Wikipedia editions “propose different
+narratives of Peruvian literature.” This case study illustrates that the Quechua
+Wikipedia edition, made up of “the participation of diverse communities,” is
+busy “constructing a national literary tradition.” While we must not forget
+the structurally unequal elements undergirding Wikipedia, the online
+encyclopedia is nonetheless an important means for minority and regional
+language communities to build up their online presence and shape their literary
+traditions.
+
+Transversal aspects
+In the following discussion, we highlight four transversal aspects of the world
+literature debate addressed in the articles.
+
+Literature and the world
+The first aspect concerns the bigger picture. There are a variety of (sometimes
+contradictory) concepts on how to define and structure world literature. Some
+– like Goethe, who coined the term Weltliteratur – highlight its heterogeneity,
+while others – like Erich Auerbach and Franco Moretti – rather point to a
+homogenization of literary standards. Some – like David Damrosch, Venkat
+Mani, Ankhi Mukherjee, and Sandra Richter – focus on dynamics such as
+exchange, circulation, dissemination, and/or appropriation, while others – like
+Harold Bloom and Pascale Casanova – favor rather predetermined concepts
+which oppose center and periphery or address universal canonicity. The
+evaluations and thus the answers to questions of whether the respective
+concepts are future-oriented or reactionary, whether they testify to high moral
+standards, to a cultural imperialism, or to “epistemic violence” (Spivak 155),
+whether they depict a desirable or a fundamentally unjust world, whether they
+connect or separate the world also vary depending on the position. The articles
+in our issue confirm that the world of literature in Wikipedia and Wikidata
+Journal of Cultural Analytics
+
+6
+
+Preface: World Literature in an Expanding Digital Space
+
+does not present a greatly improved version of reality. Accessibility, censorship,
+economic conditions, etc. determine which literatures are represented and to
+what extent. According to the status quo of the world literary field (Sapiro
+488), African literatures are hardly represented (with the exception of globally
+acknowledged writers such as Wole Soyinka, Chinua Achebe, Ngũgĩ wa
+Thiong’o, or Abdulrazak Gurnah). This issue reflects on divisions and
+inequalities between the global North and South, between economically better
+and worse developed regions, some of which are reinforced by a digital divide:
+see, for example, Daniel Carrillo Jara’s article on Peru, which notes a significant
+digital divide among regions. Among other aspects, this issue also discusses
+how the marginalization of literatures and literary languages is reflected in
+Wikipedia and it also addresses a marginalization that, although well-known
+and mitigated by numerous efforts, persists: the underrepresentation of female
+writers, as exemplified in Melanie Conroy’s article.
+
+Canon
+Canonicity, then, is the second aspect repeatedly addressed in our issue.
+Considering the long history of canon debates and even wars, Wikipedia can
+provide some relief. As a collaborative and bottom-up-oriented encyclopedia it
+presents a plurality and diversity of canons, the absence of which is lamented
+in many analyses of world literature. It unites the perspective of advocates of
+so-called high-brow culture with that of fans of different genres. The articles
+we gather in this issue discuss how Wikipedia mirrors the hegemony of a canon
+of white European males and at the same time how it presents localized world
+literary canons. They show that Wikipedia challenges the rather monolithic
+idea of genre in canon debates, and how, for instance, fandom culture works
+as the “invisible hand” (Winko) in processes of canon formation. But again,
+we must emphasize that Wikipedia does not radically correct the conditions of
+the literary world as it persists in the educational and academic system. New
+entries in Wikipedia must meet the notability requirement,2 and notability is,
+at some level, a measurement of value. This requirement limits the amount
+and breadth of items included in Wikipedia but some younger contributors
+may also partially define popularity as indicative of value. The cultural capital
+gathered in both Wikipedia and Wikidata reflects awards and prizes, academic
+scholarship, translations, textbooks, historical-critical editions, reviews, etc. on
+the one hand, and media adaptations, blogs, fan cons, fan wikis, commodity
+culture, etc. on the other. At the same time, an underrepresentation of
+historical authors and literature can be observed. In her 1985 essay on the
+question of literary value, Gayatri Spivak pessimistically comments “a full
+undoing of the canon-apocrypha opposition, like the undoing of any
+opposition, is impossible” (154). By looking at the shift in canonicity which
+is performed in Wikipedia and Wikidata we can be at least a little bit more
+
+2 https://en.wikipedia.org/wiki/Wikipedia:Notability
+
+Journal of Cultural Analytics
+
+7
+
+Preface: World Literature in an Expanding Digital Space
+
+optimistic: if there is no unifying canon, there is no static idea of what is
+canonical or apocryphal. In other words, Wikipedia reveals that a “Western
+canon” or global canon simply does not exist, at least for Wikipedia users.
+
+National literature vs. world literature
+The third aspect concerns the role of nationality in the world literature debates.
+It is one of the presumably irresolvable paradoxes that with the category of
+world literature, the category of national literature has experienced a peculiar
+revival. The various re-mappings of national literatures seem to be a delayed
+answer to Erich Auerbach’s apocalyptic vision:
+Should mankind succeed in withstanding the shock of so mighty
+and rapid a process of concentration – for which the spiritual
+preparation has been poor – then man will have to accustom
+himself to existence in a standardized world, to a single literary
+culture, only a few literary languages, and perhaps even a single
+literary language. And herewith the notion of Weltliteratur
+would be at once realized and destroyed. (Auerbach 3)
+Auerbach’s vision responds to the experience of having witnessed the effects of
+rabid nationalism in Germany, leading to Nazism. He registers a paradox that
+we know all too well in the post-national, globalized, planetary age: if nation
+as a category disappears, subsumed within the global, then national literature
+as a category risks disappearing, too. Were this to happen, however, the very
+concept of world literature would be emptied. In contrast, Wikipedia allows
+for a less apocalyptic view because it represents languages, not nations. The
+language editions, the small languages, their respective authors reveal a rich
+world of literature that the focus on national authors has so far obscured,
+and that are often elided from histories of national literatures. At the same
+time, and this is the opposite movement, the online encyclopedia strengthens
+and shapes national perception. Among other aspects, our special issue
+demonstrates that the representation of marginalized literary languages or
+groups does not depend necessarily on the size of the nation or language
+edition. It also examines how the image of a national literature is created
+through circulation in local and global markets and how this national branding
+is reflected in Wikipedia. Last but not least, it points to how Wikipedia articles
+highlight or obscure the relevance of the national or regional for a certain genre,
+as is the case with magic realism, described by Matylda Figlerowicz and Lucas
+Mertehikian in their article. Following Gisèle Sapiro, we can conclude that “the
+national is not systematically at odds with the international, the transnational,
+the supranational, or the cosmopolitan” (500) – in both the real world and the
+virtual world of the encyclopedia.
+
+Journal of Cultural Analytics
+
+8
+
+Preface: World Literature in an Expanding Digital Space
+
+Challenges for research
+Analyzing Wikipedia, neighboring projects like Wikidata, and other websites
+brings several challenges. Some of these challenges can be summarized under
+the rubric of accessibility. Some sources are difficult to access because they
+are neither available in standardized formats nor centrally listed. Even projects
+like OpenSyllabus do not provide data equally suited for all purposes. Anna
+Sofia Lippolis states that in her case study (Italian literature), she does not have
+access to syllabi that would help to draw a more complete picture, nor can she
+automatically process scholarly articles due to access limitations on publishers’
+websites and difficulties in automatically linking them to other content (e.g.,
+Wikipedia pages).
+Understanding (and correctly leveraging) the complex relationships between
+the different Wikimedia projects (e.g., Wikidata or Wikipedia) is another
+challenge. For instance, finding out which information is available in (or
+derived from) which project, or how up-to-date information is can be quite
+arduous. Wikipedia and Wikidata category and class systems are particular
+obstacles. In both systems, the objects of interest are not necessarily assigned
+the same class (or category). In Wikidata, literary works could be linked via
+the “instance of” property3 to the class “literary work,” but often they are
+also classified as “book” or just “written work,” as noted by Paula Wojcik,
+Bastian Bunzeck, and Sina Zarrieß in their article: “the internal categorization
+in Wikidata is sometimes spurious. For example, the Holy Bible is classified
+as a literary work, while its parts (e.g., the New Testament) are not. These
+categorizations are at the choice of individual contributors, which can have
+wide-ranging repercussions for a computational analysis.”
+Furthermore, both systems are hierarchical, having categories with many
+subcategories, and all of them are rarely relevant for the task at hand. This
+frequently requires manual work to include missing articles (or exclude
+irrelevant ones) and complicates the extraction of relevant data (sub)sets. Other
+systems, like the “shelves” in Goodreads, pose similar challenges. Another
+challenge for research is the changing nature of the Web, as described by Daniel
+Carrillo Jara: “a Wikipedia article could have one thousand words today, but
+three thousand the next week.” However, as he concludes, the analysis and the
+conclusions are valid because they “explain a concrete moment in the digital
+representation of Peruvian literature.”
+Accounting for and processing changes (e.g., the Wikipedia revision history)
+is quite tedious, as shown by a 2018 dissertation that closely scrutinizes each
+and every individual edit between 2003 and 2015 in the German Wikipedia
+entry on the writer Walter Höllerer (Bronner). Yet a selective description of
+an article’s revision history can already be useful for tracing the evolution of
+
+3 https://www.wikidata.org/wiki/Property:P31
+
+Journal of Cultural Analytics
+
+9
+
+Preface: World Literature in an Expanding Digital Space
+
+an author’s reputation within Wikipedia, as demonstrated in a volume on
+Chinese-Sinophone literatures using the example of Taiwanese writer Li Ang.
+It is pinpointed that she “was lifted to the rank of ‘world literature writer’ on
+October 19, 2010” (Chiu 227).
+Another complication is that pages in Wikipedia language editions may be
+translated wholly or in part from other language editions. It can be difficult
+at first glance to understand the provenance of each page, although many of
+the pages created through translation in recent years contain a tag to that
+effect. Finally, from the point of view of reception studies, it is challenging to
+understand how long visits to Wikipedia pages last, and whether they are read
+in toto, in part, or simply clicked on and then exited: while visits indicate access,
+they do not necessarily indicate reading.
+Having successfully acquired a suitable dataset for analysis, its content can pose
+challenges as well. Some contributions focus on those challenges, particularly
+bias and representation. For example, little is known about how readers of
+literary works participate as writers of Wikipedia articles or contributors to
+Wikidata.
+Melanie Conroy specifically focuses on the gender gap in terms of editors,
+numbers of articles, and length of articles dealing with female writers in
+Wikipedia and Wikidata. The problems with using the data for an analysis are
+the subject of the analysis itself. She also discusses other issues, for example,
+the “preference for the new and technological” which leads to an overrepresentation of “popular literature and science fiction”. Meanwhile, Daniel
+Carrillo Jara discusses reasons for the unequal representation of particular
+groups on Wikipedia, for example, their “capacity to engage in voluntary labor,
+economic conditions to spend time writing on Wikipedia, and digital literacy”.
+He cites previous findings that online encyclopedias reproduce biases and
+preferences, but he also notes that Wikipedia can provide different views from
+different communities on the same topic (in his paper, the Quechua Wikipedia
+and the Spanish Wikipedia on Peruvian literature), which can be both a
+challenge and an opportunity.
+Other challenges include the large percentage of data that is ingested (or
+produced) by bots and typically not checked by humans, inconsistencies in
+spelling, for example, in birthplaces or dates, the understanding and analysis
+of articles in many different languages, and the proper assessment of the
+“relevance” of a Wikipedia page – an issue that has been discussed before
+(Hube et al.) but always needs to be reconsidered for the research question at
+hand.
+The contributions to this special issue not only raise our awareness about
+these challenges but, most importantly, they also greatly expand our knowledge
+about them. At the same time, this issue is meant to stimulate the field, and
+suggest new paths forward. Wikipedia and Wikidata are constantly changing,
+
+Journal of Cultural Analytics
+
+10
+
+Preface: World Literature in an Expanding Digital Space
+
+and we are aware that these articles have ‘expiration dates’ at least in terms of
+the statistics they present. The data might change considerably, the system itself
+might change parameters, censorship might play a role in specific countries,4
+altering reception and contributor data. In other words, the data relied on here
+is not intended to be valid sub specie aeternitatis: chances are it may be quite
+changed even in the space of a decade, or even by the time you read this preface.
+However, the research questions and critical analyses included in these articles
+show us a number of ways of investigating Wikipedia and Wikidata.
+
+Conclusion
+The five articles assembled in this issue offer a prelude to further research
+on what is probably the most ambitious encyclopedic project since Diderot
+and D’Alembert’s Encyclopédie. They are a status report, fixed in time, on the
+content of a rapidly changing digital environment. Far from exhausting the
+possibilities for analyzing the representation of world literature in Wikipedia
+and Wikidata, they are intended to provide an impetus, a stimulus, and a
+motivation for future projects. We hope this special issue highlights what a
+promising source Wikipedia and Wikidata are for literary studies, and we hope
+to see more applications, especially some that make it possible to monitor how
+things change in real time.
+
+Acknowledgments
+We would like to thank the authors for their contributions and close
+cooperation, especially in the last weeks before completion of this issue.
+Another big thanks goes to our five peer reviewers, Fabio Ciotti, César
+Domínguez, Sandra Folie, Evelin Heidel, and Mads Rosendahl Thomsen, who
+helped to make this issue what it is. We are very grateful to Andrew Piper for
+giving us the opportunity to publish this special issue of the Journal of Cultural
+Analytics and managing editor Katrin Rohrbacher for guiding us through the
+process. Special thanks go to Jonah Lubin and (again) to Evelin Heidel and
+Mads Rosendahl Thomsen for their critical comments and the continuous
+conversation during the completion of this issue.
+
+Funding
+Funded by the Deutsche Forschungsgemeinschaft (DFG, German Research
+Foundation) under Germany’s Excellence Strategy in the context of the Cluster
+of Excellence Temporal Communities: Doing Literature in a Global Perspective
+– EXC 2020 – Project ID 390608380.
+Submitted: February 07, 2023 EDT, Accepted: February 20, 2023 EDT
+
+4 https://en.wikipedia.org/wiki/Censorship_of_Wikipedia
+
+Journal of Cultural Analytics
+
+11
+
+Preface: World Literature in an Expanding Digital Space
+
+This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0
+International License (CCBY-4.0). View this license’s legal deed at http://creativecommons.org/licenses/
+by/4.0 and legal code at http://creativecommons.org/licenses/by/4.0/legalcode for more information.
+
+Journal of Cultural Analytics
+
+12
+
+Preface: World Literature in an Expanding Digital Space
+
+references
+Auerbach, Erich. “Philology and Weltliteratur.” The Centennial Review, translated by Maire and
+Edward Said, vol. 13, no. 1, Winter 1969, pp. 1–17, https://www.jstor.org/stable/23738133.
+Blakesley, Jacob. “The Global Popularity of Dante’s Divina Commedia: Translations, Libraries,
+Wikipedia.” Bibliotheca Dantesca: Journal of Dante Studies, vol. 5, 2022, pp. 115–44,
+https://repository.upenn.edu/bibdant/vol5/iss1/8.
+---. “The Global Popularity of William Shakespeare in 303 Wikipedias.” Memoria di Shakespeare. A
+Journal of Shakespearean Studies, vol. 5, Dec. 2018, pp. 149–71, doi:10.13133/2283-8759/14509.
+---. “The Wikipedia Popularity of James Joyce.” James Joyce Quarterly, vol. 59, no. 2, Jan. 2022, pp.
+289–313, doi:10.1353/jjq.0.0164.
+---. “World Literature According to Wikipedia Popularity and Book Translations: The Case of
+Modern Italian Poets.” Comparative Critical Studies, vol. 17, no. 3, Oct. 2020, pp. 433–58,
+doi:10.3366/ccs.2020.0373.
+Bloom, Harold. The Western Canon. The Books and School of the Ages. Papermac, 1995.
+Bronner, Friedrich Georg. WHWP - Walter Höllerer bei WikiPedia. Technische Universität Berlin,
+2018, https://doi.org/10.14279/depositonce-6865.
+Casanova, Pacale. The World Republic of Letters. Translated by Malcolm D. DeBevoise, Harvard UP,
+2007.
+Chiu, Kuei-fen. “World Literature in an Age of Digital Technologies: Digital Archive, Wikipedia, and
+Goodreads.com.” The Making of Chinese-Sinophone Literatures as World Literature, edited by
+Kuei-fen Chiu and Yingjin Zhang, Hong Kong University Press, 2022, pp. 217–36, doi:10.2307/
+j.ctv2j6xdjn.16.
+Damrosch, David. What Is World Literature? Princeton UP, 2003.
+D’haen, Theo. World Literature in the Age of Geopolitics. Brill, 2021, doi:10.1163/9789004468078.
+Hube, Christoph, et al. World Literature According to Wikipedia: Introduction to a DBpedia-Based
+Framework. arXiv, 2017, https://arxiv.org/abs/1701.00991.
+Kukkonen, Karin. “Does Cognition Translate? Predictions, Plot, and World Literature.” Poetics
+Today, vol. 41, no. 2, June 2020, pp. 243–59, doi:10.1215/03335372-8172556.
+Mani, Venkat. Recoding World Literature: Libraries, Print Culture, and Germany’s Pact with Books.
+Fordham UP, 2017.
+Miller, Ben, et al. “Contextualizing Receptions of World Literature by Mining Multilingual
+Wikipedias.” Digital Humanities 2016: Conference Abstracts, Jagiellonian University & Pedagogical
+University, Kraków, pp. 282–85, https://dh2016.adho.org/abstracts/83.
+Moretti, Franco. “Conjectures on World Literature.” New Left Review, no. 1, 2000, pp. 54–68.
+Mukherjee, Ankhi. What Is a Classic? Postcolonial Rewriting and Invention of the Canon. Stanford
+UP, 2014.
+Picard, Sophie, et al. “Zirkulation und Wertschöpfung am Beispiel literarischer Figuren.” Der Wert
+der literarischen Zirkulation / The Value of Literary Circulation, edited by Michael Gamper et al.,
+Metzler, 2023, pp. 431–53.
+Richter, Sandra. Eine Weltgeschichte der deutschsprachigen Weltliteratur. Beck, 2017.
+Robinson, Douglas. Aleksis Kivi and/as World Literature. Brill, 2017, doi:10.1163/9789004340268.
+Sapiro, Gisèle. “The Transnational Literary Field between (Inter)-Nationalism and
+Cosmopolitanism.” Journal of World Literature, vol. 5, no. 4, Nov. 2020, pp. 481–504,
+doi:10.1163/24056480-00504002.
+
+Journal of Cultural Analytics
+
+13
+
+Preface: World Literature in an Expanding Digital Space
+
+Spivak, Gayatri Chakravorty. “Scattered Speculations on the Question of Value.” In Other Worlds.
+Essays in Cultural Politics, Routledge, 1988, pp. 154–76.
+Stranisci, Marco Antonio, et al. The URW-KG: A Resource for Tackling the Underrepresentation of
+Non-Western Writers. arXiv, 2022, https://arxiv.org/abs/2212.13104.
+Thomsen, Mads Rosendahl. “Changing Spaces: Canonization of Anglophone World Literature.”
+Anglia, vol. 135, no. 1, Mar. 2017, pp. 51–66, doi:10.1515/ang-2017-0004.
+---. “Media and Method: The Digitized Library of Babel.” Literature and the World, edited by Stefan
+Helgesson and Mads Rosendahl Thomsen, Routledge, 2019, pp. 109–30, doi:10.4324/
+9781351203678-6.
+van der Deijl, Lucas, and Roel Smeets. “The Canon of Dutch Literature According to Wikipedia: A
+Network Analysis of 2286 Wikipedia-Entries on Dutch Authors.” Proceedings of EADH2018:
+“Data in Digital Humanities,” National University of Ireland, 2018,
+https://eadh2018.exordo.com/files/papers/104/final_draft/
+Abstract_Long_Paper_EADH_2018_Van_der_Deijl___Smeets_final_version.pdf.
+Winko, Simone. “Literatur-Kanon als invisible hand-Phänomen.” Text+Kritik, Sonderband:
+Literarische Kanonbildung, edited by Heinz Ludwig Arnold and Hermann Korte, 2002, pp. 9–24.
+Wojcik, Paula, and Sophie Picard. “Klassiker@wikipedia. Klassikforschung und Digital Humanities.
+Ein Kommentar zur Studie World Literature According to Wikipedia.” Klassik als kulturelle Praxis:
+Funktional, intermedial, transkulturell, edited by Paula Wojcik et al., De Gruyter, 2019, pp.
+151–66, doi:10.1515/9783110615760-010.
+Zhao, Fudie. “A Systematic Review of Wikidata in Digital Humanities Projects.” Digital Scholarship
+in the Humanities, Dec. 2022, doi:10.1093/llc/fqac083.
+
+Journal of Cultural Analytics
+
+14
+
+

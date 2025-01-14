@@ -1,0 +1,2741 @@
+Leontyeva, Xenia, et al. “Gender (Im)Balance in the Russian Cinema: On the Screen and
+behind the Camera.” Journal of Cultural Analytics, vol. 9, no. 1, May 2024,
+https://doi.org/10.22148/001c.116142.
+
+ARTICLE
+
+Gender (im)balance in the Russian cinema: on the screen and behind
+the camera
+Xenia Leontyeva1 , Olessia Koltsova2 , Deb Verhoeven3
+1 Saint Petersburg State University of Cinema and Television, 2 National Research University Higher School of Economics, 3 University of Alberta
+
+Keywords: women in cinema, Bechdel-Wallace test, gender equity, cinema attendance, Russian film industry
+https://doi.org/10.22148/001c.116142
+
+Journal of Cultural Analytics
+Vol. 9, Issue 1, 2024
+
+The relationship between on-screen and off-screen inequality in film industries
+and the relative impact of these on movie attendance is widely discussed but
+not necessarily empirically demonstrated. This article examines the binary
+gender composition of film project teams and the gendered representation of
+film characters as factors for cinema attendance. We collected a unique dataset
+(N=1285) of all films released during the pre-pandemic decade (2008-2019) in
+Russia – at that time the largest European cinema market. A marked-up subset
+of 243 films was used to calculate a novel version of the Bechdel-Wallace test
+that accounts for the proportion of all non-stereotypical dialogues in the film
+narration, as opposed to the classical binary test. Our test proves very
+informative, revealing a strikingly high proportion of dialogues with
+stereotypical portrayals of women even among the films that pass the BechdelWallace binary threshold. We also undertook a social network analysis (SNA) of
+the characters’ communications. This analysis demonstrate that women
+predominantly occupy a peripheral position in film plots. Both stereotyping
+and marginalization of women are positively related to the proportion of men
+in the film crew, especially in the role of screenwriter. Simultaneously, having
+more men in key positions is also correlated with access to larger budgets and
+better distribution, thus effectively impeding films with stronger women
+characters from wider audiences. These audiences, however, show no prejudice
+towards films with such characters: after 2015, films featuring central women
+protagonists have the same level of attendance as movies without them.
+Although Russia exemplifies a large non-Western cinema market, the trends we
+identify, particularly the “gatekeeping” effect of male filmmakers, is notably in
+line with those observed in Western democracies.
+
+1. Introduction
+Issues of skewed gender representation in screen media, including advertising,
+film, and television, have been the focus of attention of the feminist
+movement and media scholars since the 1970s (see for example, Johnston;
+Mulvey). Recently, these issues have attracted wider attention due in part to
+the #metoo social movement in which notable producers, directors, actors,
+and other stars were alleged to have sexually abused or harassed their junior
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+or dependent colleagues (Liddy). In addition to gender inequality, increasing
+attention is being paid to its intersections with race, age, and other forms of
+discrimination (both on and off-screen) (Conor).
+The increasing attention to on-screen gender imbalance and the stereotypical
+representation of characters is also related to the growing understanding
+of its social consequences. Most important is the possible effect of media
+images on human behavior and in particular, on wider instances of gender
+discrimination (Aley and Hahn; 21st Century Fox and The Geena Davis
+Institute on Gender in Media, et al.). As a response to these concerns, some
+film industries have made small gestures to gender equality, for example
+backing films with stronger than previous female protagonists. Hollywood
+studios, for instance, have modified traditional franchise plots to enable
+greater diversity in their cast such as the more recent Star Wars movies (Lopez;
+Vainikka). However, a recent aggregate report on the top 100 grossing films
+in Hollywood sounds a note of caution. In 2021 the Centre for the Study
+of Women in Film and Television identified that women accounted for only
+35% of major characters in the top 100 grossing films, down slightly from
+38% in 2020 and 37% in 2019 (Lauzen 6). Women comprised only 34% of
+all speaking characters, also down slightly from 36% in 2020 (Lauzen 7).
+Although the percentage of films featuring women protagonists increased
+by 2 percentage points to 29% in 2021, this is well below the high of 40%
+achieved in 2019. The Centre’s report found that after two years of promising
+gains, 2021’s percentage of women protagonists was the same as in 2016
+– the year before the start of the #MeToo movement (Lauzen 4–5). What
+seems on the surface to be an increase of women in substantial screen roles
+is not necessarily supported by the quantitative evidence. This paper similarly
+develops a quantitative approach to the problem of gender discrimination on
+screen with a unique focus on the Russian film industry.
+To address on-screen gender imbalance and its dynamics quantitatively,
+several measurements have been offered (Kagan et al.; Kapoor et al.; Jones
+et al.) and their relation to film success has been estimated (Treme et al.;
+Lindner et al., “Million Dollar Maybe?”). The most popular index, the
+Bechdel-Wallace (BW) test (Bechdel), is a simple binary indicator (yes/no)
+of the presence of at least one conversation between two or more women
+touching on non-stereotypical topics. However, being binary, it provides no
+information about the actual proportion of non-stereotypical conversations
+or characters in the films. To address this limitation, in this paper, we propose
+a BW test modification (BWL) that scores films according to the share of
+conversations between women characters on qualified topics.
+In its current form, the BW test has been widely used to study on-screen
+gender balance both in films from Western democracies (Agarwal et al.;
+Garcia et al.; Lindner et al., “Million Dollar Maybe?”; Lindner and Schulting)
+and, a lesser extent, beyond (Kapoor et al.). Likewise, as the collection
+
+Journal of Cultural Analytics
+
+2
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+of gender statistics on filmmakers is becoming a common practice of
+government agencies worldwide, behind-the-camera gender balance is also
+being increasingly studied with a variety of quantitative approaches based on
+the number of women in key positions in film crews, their access to large
+budgets and financial state support (Dean; Follows et al.; Liddy).
+The study of gender in Russian cinema predominantly focuses on cinematic
+rather than sociological questions. The most notable study is Lynne
+Attwood’s 1993 edited collection, Red Women on the Silver Screen. In the
+first parts of this volume, both international and local researchers analyze
+the changing image of women in Soviet films from the standpoint of the
+perestroika era on the eve of the collapse of the USSR. The articles in
+the collection trace the evolution of the “woman question” from prerevolutionary femmes fatales to the strong, joyful, purposeful, and confident
+workers of socialist realism in the 1930s and the various images of women
+in decades following. In the 1940s, selfless home front workers, and faithful
+wives awaiting their husbands from the war, appeared on the screens. In the
+1950s, women acquired the everyday attractiveness of the “girl next door”.
+In the 1960s, they were reimagined as refined companions and even the
+occasional antagonists of men protagonists. In the 1970s, there were echoes
+of the Western second wave of feminism in Soviet films, with the conflict
+of the emancipated woman caught between career and personal life: either
+unsettled in love or overburdened with domestic duties, and typically caught
+in a vicious spiral of double exploitation. (Bulgakova) The ambiguity of
+women’s position in the Soviet Union was particularly evident during this
+time, especially in the comedies of Eldar Ryazanov (Rojavin and Harte). By
+the end of the 1980s and the beginning of the 1990s, the screens were flooded
+with sex and violence that had long been restrained by censorship.
+The various authors of the perestroika anthology critically evaluate the
+cinema’s representation of women as a political proxy, a continuation of a
+long tradition of symbolically portraying the motherland through women.
+and extended in the Soviet era to exemplification of the state’s relationship
+with its citizens. The authors describe this portrayal as cynical and
+duplicitous, reflecting contempt for “woman-motherland” and the desire to
+humiliate her as a sublimation of the suppressed Soviet society over many
+years. (Drozdova; Attwood, “Part 1. Women, Cinema and Society’”)
+Since this important publication, very little substantive research on women
+and the cinema has been available for Russia. One exception is a publication
+from 2021 that covers crossover art-mainstream films of the 2010s and
+observes that women’s cinema in this period shifted towards romanticizing
+traditional values as a general basis for its narratives. These films exploit the
+legitimacy of “female power in powerlessness” in the increasingly entrenched
+patriarchal discourse of the country. (Артюх).
+
+Journal of Cultural Analytics
+
+3
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+For the most part, however, the Russian film-making community is broadly
+indifferent to the global gender agenda. Furthermore, a properly inclusive
+understanding of gender-related practices in the global film industry is only
+possible by analyzing large non-Western markets of which Russia is an
+important representative.
+As of 2020, the first pandemic year, the Russian film industry amounted
+to approximately 360 feature film production companies (Леонтьева et al.)
+which released 110-186 films per year (Kanzler and Simone, “Focus 2022
+World Film Market Trends”) and employed about 26,000 professionals
+(Leontyeva and Danilov). Russian audiences were enthusiastic film
+consumers. In 2017, Russia, with 212 million tickets sold, took first place
+in terms of cinema attendance in Europe, beating the previously permanent
+leader – France (209 million admissions) (Kanzler and Simone, “Focus 2022
+World Film Market Trends”). Two years later, in 2019, Russia established a
+European record with around 220 million cinema tickets sold (Kanzler and
+Simone, “Focus 2020 World Film Market Trends”).
+Given this, the absence of research on gender balance in Russian movies
+presents an obvious gap. This paper seeks to close it by offering a rigorous
+and comprehensive examination of gender inequality both on and off the
+screen in the Russian film industry in the pre-pandemic period (2008-2019).
+Specifically, we seek to establish the relationship between the gender
+composition of “key creative” crew members (producer, writer, and director),
+on-screen female representation (measured with a number of proposed
+methods, including BWL), and the theatrical admissions of the films. We
+also trace the dynamics of several gender-related processes in the Russian film
+industry. To do so, we use a complete database of all the Russian feature
+films shown on the big screen in Russia and in the Commonwealth of
+Independent States (CIS) between 2008 and 2019. Different subtasks employ
+different subsets of this database, including the sample of 243 films manually
+marked up using our BWL test.
+The paper consists of six sections, including this introduction. The next
+section reviews the relevant literature and develops our hypotheses. The third
+section describes data and methods used in this article for measuring onscreen and behind-the-camera gender inequality. The fourth section presents
+the results of the analysis and their discussion. The paper ends with the
+Limitations and Conclusion sections.
+
+2. Literature review and hypotheses
+2.1. Measuring gender inequality in the production crew
+Existing theories and practices of studying gender inequality in the film
+industry globally have been largely shaped by the respective research done by
+various non-government organizations promoting gender equality, including
+the Annenberg Foundation (S.L. Smith et al., “Inequality in 1,200 Popular
+Journal of Cultural Analytics
+
+4
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+Films: Examining Portrayals of Gender, Race/Ethnicity”; S.L. Smith et al.,
+“Inequality in 1 ,300 Popular Films : Examining Portrayals of Gender”), the
+Geena Davis Institute (Stacy L. Smith et al.), the New York Film Academy
+(Perrone), the Center for the Study of Women in Television and Film
+(Lauzen), the International Federation of Actors (Dean), and the European
+Audiovisual Observatory that, unlike others, focuses on international
+comparisons (Fontaine; Simone). These various organizations produce both
+reports and databases that are subsequently widely reused by the academic
+community.
+The focus of these reports is on the proportion of women among producers,
+directors, screenwriters, and sometimes composers and directors of
+photography (with the two latter professions demonstrating fewer women)
+(Simone). Among the three major film types, documentary film production
+was found to be the easiest for women to enter in all three “key creative” film
+crew roles (producer, writer, and director), followed by live-action fiction and
+animation films in the second and third positions, respectively (Simone). This
+effect is closely related to film budgets: the more expensive the production is,
+the smaller the share of women. Thus, the budget difference between fiction
+and documentary films in Austria in 2011-2013 was revealed to be especially
+important, with the gender gap higher in the former (Hetherington Raveney
+et al. 523). In Sweden in 2013-2017 films with men directors, producers,
+and writers were found to have budgets that were higher than those available
+for women by four, seven, and six million SEK, respectively (Wikstrand J.
+11). British data from 2008-2014 showed that only 3.3% of films budgeted
+above 30 million GBP were directed by women, while among low and microbudget films (under 500,000 GBP) women-directed works comprised 16%
+(Follows et al. 20). A French study has revealed that in 2008-2017 the average
+budget of women-directed films used to be 3.33 million EUR, against 5.7
+million EUR for films directed by men (Piccon et al.). Moreover, Centre
+national du cinéma et de l’image animée found out that distribution budgets
+for women-directed films were lower by 34.4% (Piccon et al.). Verhoeven
+et al. using the data from 40 countries and 3.4 thousand films distributed
+between 2012 and 2015, proved poor access of women not only to funding
+but also to the screening infrastructure: in their sample, films directed solely
+by women accounted for only 3% of international screenings (Verhoeven et al.
+140) (simultaneously, the number of screens for films made by mixed teams
+was 3-4 times higher than for those made solely by women (Verhoeven et al.
+143–44)).
+In the third part of the volume by Lynne Attwood, mentioned in the
+introduction, the behind-the-camera situation in Russian cinema was
+revealed via a historical perspective and a series of interviews with key Russian
+filmmakers from the perestroika era. Attwood and her co-authors pondered
+the concept of “women’s cinema” and traced the history of Russian female
+directors from Olga Preobrazhenskaya, who directed her first film in 1916,
+Journal of Cultural Analytics
+
+5
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+to Esther Shub, Darya Zhukova, Yulia Solntseva, and Margarita Barskaya,
+to Dinara Asanova, Larisa Shepitko, and Kira Muratova, many of whom
+were skeptical of the concept of “women’s cinema” per se and tried not
+to emphasize their gender. (Turovskaya) The following interviews testify to
+the blatant discrimination against women applying to study at the VGIK
+(the main Soviet film institute in Moscow) and the subsequent need to
+continually prove their worth during and after their education not only as
+professionals but also as women. The publication makes for dismal readings
+as women directors, cinematographers, and screenwriters reveal misogyny,
+survivor bias (some of them try to ignore discrimination against themselves
+or their colleagues), adaptability (using both professional and personal
+collaborations such as marriage to ensure an acting or screenwriting career),
+and stereotypical thinking (“Children must be born!”). They acknowledge
+the industry’s unsuitability for women who bear the burden of household
+chores and motherhood and yet show no signs of a feminist view of the
+problems. During a period of heightened instability and hopes, they were
+primarily concerned with the then-recent reform of the film industry, which
+abolished censorship and proclaimed the commercial freedom of film
+production and distribution (Vizitei; Attwood, “‘Some Interviews on
+Personal Questions...’: Soviet Women Talk About Their Experiences in the
+Film Industry’”).
+Given how little emphasis has been placed on feminist interventions in
+Russian cinema neither the filmmaking community nor any respective
+institutions have been yet involved in the regular gathering of gender
+statistics. The first-ever statistical analysis of the share of women producers,
+directors, screenwriters, and directors of photography (DOP) in Russian
+cinema was carried out by the European Audiovisual Observatory. An
+especially small number of women has been revealed among DOPs: women
+dominated the creative teams of DOPs in less than 3% of films that were
+released theatrically in 2013-2017 (a female-dominated team was defined as a
+team with 50% or more of women on the position of DOP) (Leontyeva et
+al.). The proportion of films shot under the direction of women during the
+same period was 15.9%, while film crews dominated by women scriptwriters
+and producers comprised the largest share – about 22% each. The analysis
+of the extended version of this dataset spanning from 2009 to 2019 (Артюх
+236–42) shows that women’s teams make cheaper films and receive less direct
+state support; it is not surprising that their films are less popular among the
+audiences.
+As these studies use descriptive statistics only, in this paper we seek to test
+the revealed trends with inferential statistics by proposing the following
+hypotheses:
+H1. The higher the proportion of women among filmmakers in
+key creative positions, the smaller the film budget is.
+
+Journal of Cultural Analytics
+
+6
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+H2. The higher the proportion of women among filmmakers in
+key creative positions, the lower a film distributor’s power is.
+H3. The higher the proportion of women among filmmakers in
+key creative positions, the lower the attendance of Russian films
+in the CIS is.
+Additionally, we seek to test our Russia-specific assumptions concerning the
+changes in the Russian film community that took place around 2015. As
+we see a certain rise in attention to gender equality after 2015, we anticipate
+a decrease in the strength of the influence of men filmmakers on film
+popularity.
+H4. After 2015 the (positive) effect of the proportion of men
+among filmmakers on theatrical attendance is smaller than
+before.
+
+2.2. Measuring on-screen gender inequality – the BechdelWallace test
+As noted above, a popular simple method for examining gender bias on
+the screen is the Bechdel-Wallace test. It asks whether there are at least two
+women characters in the film, preferably with names, who talk to each other
+about something other than men (Bechdel). Shockingly, as much as 44% of
+Hollywood films fail to overcome this low threshold while only 56% meet one
+to three requirements (Bechdel Test Movie List). For Russia, the only available
+data for running this test has been on 75 films and TV shows collected
+in a journalism project by Konstantin Zarubin and Elizaveta Soldatova (А
+Бабы Здесь Тихие. Тестом Бехдель По Нашему Кино). Of these 75 films,
+37% passed the test, and additionally, 20% were borderline – together they
+comprise a proportion similar to 56% that found for Hollywood films.
+Several studies have pointed out the limitations of the BW test, which
+originated in a cartoon strip and was never intended to be a scholarly method.
+Amongst them is its inability to account for central or even non-stereotypical
+women characters who are not involved in dialogues with other women
+(Agarwal et al.). The test does not allow us to determine whether women
+characters are equally strong throughout the narrative or whether they are
+presented as atypical outliers (Jones), or even whether they simply talk more
+than once (Kagan et al.). Despite these shortcomings, the BW test is used not
+only in academic research but in industry practice as well. Thus, Eurimages, a
+European cinema support fund, is employing this test for monitoring gender
+bias in scripts submitted to its competition (“Eurimages’ Gender Equality
+Strategy (2021-2023): Equal Voices for Equal Talent”).
+As a response to the criticism of the BW test, new methods for measuring
+gender centrality and marginality based on social network analysis (SNA)
+have been developed. Agarwal et al. propose 43 SNA features to classify films
+Journal of Cultural Analytics
+
+7
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+as gender balanced. Kagan et al. introduce the Gender Degree Ratio (GDR)
+indicator calculated as a ratio of the total female characters’ degree centrality
+to that of the male characters:
+
+The authors propose films with 0.8> GDR> 1.2 to be considered balanced
+(Kagan et al. 8). Pete Jones (Jones; Jones et al.) criticizes static network
+metrics as unable to reflect the focus of viewer attention on the heroines
+in the context of the storyline. He suggests methods of dynamic network
+analysis accounting for the communication of characters during the entire
+film by calculating character centralities in each dialogue and by further
+plotting them as graphs of centrality by time.
+The relationship between the gender of onscreen characters and the gender
+of the filmmaking teams that produce them is another fruitful area of
+analysis with calls for close attention to this phenomenon (Lindner et al.,
+“Million Dollar Maybe?”). Researchers have previously noted that the gender
+of the filmmakers is directly related to the visibility of the female characters
+they portray (Smith and Choueiti; Linke and Prommer; S.L. Smith et al.,
+“Inequality in 1,100 Popular Films: Examining Portrayals of Gender, Race/
+Ethnicity”). Based on these considerations our next hypothesis is:
+H5. The higher the proportion of women among filmmakers, (a)
+the higher the centrality of female characters, and (b) the less
+stereotypical their representation is.
+The benefits of increasing the number of women onscreen are manifold.
+From the social point of view, media images are influential in shaping people’s
+gender beliefs and behavior, for example, inspiring gender identifications
+from childhood (Aley and Hahn), and limiting the choice of career paths
+for girls (21st Century Fox and The Geena Davis Institute on Gender in
+Media, et al.). There are also debates on the economic benefits of enhancing
+the profile of women on screen. Shift7 and Creative Artists Agency (Shift7
+and CAA), based on an analysis of 350 most popular studio films from
+2014-2017, showed a positive relationship between passing the BechdelWallace test and film box office, whereas Treme et al. have argued that the
+presence of a male star increased the box office in the home market by 12%,
+and a female star had no effect on the success of films from 1990 to 2010.
+Lindner and Schulting and Lindner et al. examine the relation between
+Bechdel-Wallace test results and film performance among critics and
+audiences. They find that for wide audiences this relationship, initially
+negative, is rendered insignificant when film genre and budget size are
+introduced in the model. Consequently, according to Lindner, this initial
+negative relationship is explained not by the audience’s prejudices, but by
+the work of “gatekeepers” who protect the industry from expensive projects
+Journal of Cultural Analytics
+
+8
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+Figure 1. Conceptual model. Dependent and independent variables are in squares, and control variables are in circles.
+Hn next to the arrow marks the hypothesis number. Blue arrows signify interactive effects (moderation).
+
+with strong female characters. Perhaps more surprisingly, Lindner notes that
+the critics’ assessments of films free from stereotypical female images are not
+hostile.
+Developing the ideas of Lindner, we propose the following two additional
+hypotheses:
+H6. (a) The higher the degree centrality of female characters and
+(b) the lower their stereotyping in dialogues is, the higher the
+attendance of Russian films in the CIS is.
+H7. After 2015, the (positive) effect of (a) female centrality and
+(b) female character non-stereotyping on attendance is higher
+than before 2015.
+A conceptual model of the hypotheses and variables relationships is presented
+in Fig. 1.
+
+3. Method and data
+3.1. Datasets and mark-up
+We use a dataset (N=1285) that includes all Russian films produced between
+2008 and 2019 and theatrically released between December 1, 2008, and
+December 31, 2019 (referred to as the full dataset). Distribution statistics
+cover the territory of the CIS of which the Russian Federation is the biggest
+market. Budget information is available for 644 films, and BWL test markup – for 243 films (further referred to as the marked-up dataset). Both of
+the latter subsamples are relatively evenly distributed through period the 12
+Journal of Cultural Analytics
+
+9
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+Figure 2. Number of films by the year of production: (a) all films; (b) all films with budget information; (c) marked-up
+films; (d) marked-up films with budget information.
+
+years of our analysis (Fig. 2). The datasets alongside the detailed description
+of all variables are available in the supplement to the article at https://doi.org/
+10.7910/DVN/GDKOSR.
+The sample for BWL markup was constructed to represent three types of
+films: blockbusters, moderately popular, and films of festival appeal, and
+additionally included 21 films that could not be categorized. Within this
+sample, a team of 94 volunteers chose the films for mark-up. The coders
+developed a contingency matrix of characters by scenes where the role of
+the former in the latter was coded as either speechless participation,
+communication on a qualified topic, or communication on one of the
+disqualified topics (about relationships between men and women, beauty,
+fashion, or about children and housekeeping).
+The matrix was used as the input data to calculate the BWL score.
+
+3.2. Variables
+Main dependent variable
+Attendance: the number of cinema tickets sold.
+
+Other variables tested in hypotheses
+Behind-the-scenes gender balance. DirMaleShare, ProdMaleShare, and
+ScrMaleShare are calculated as the proportion of males among all people
+in the position of director, producer, and screenwriter, respectively, for each
+film. The aggregated variable maleshare is an accumulated proportion of
+Journal of Cultural Analytics
+
+10
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+men in all three positions together. Binary sex (male or female) was identified
+automatically based on a list of male and female first names and the endings
+of surnames; it was also checked manually if needed.
+Female representation on the screen is measured with BWL and gender degree
+ratio (Kagan et al.) calculated for two kinds of networks.
+BWL (Bechdel-Wallace test modified by Leontyeva): proportion of dialogues
+among female characters on qualified topics in the total number of the
+film dialogues (formula 2). Being an extension of the initial Bechdel-Wallace
+(Lindner et al., “Million Dollar Maybe?”), BWL differs both from the
+classical binary variant and the four-point scale proposed by Agarwal et al.
+and Bechdel Test Movie List (https://bechdeltest.com/).
+
+The disqualified topics were not only about men, as in the classical test,
+but also about women, beauty, fashion, attractiveness, children, and
+housekeeping. This definition of the set of stereotypical themes associated
+with women is based on a stream of prior research (Kapoor et al.). Mixed
+conversations, in which both disqualified and general topics were mentioned,
+were considered qualified. Only characters who participated in more than one
+scene (or in one, but important, according to the coder) and had at least one
+line of dialogue were marked up. Monologues were excluded.
+The gender degree ratio (GDR) of a film is calculated from the bimodal
+network of characters and dialogues in which they participate throughout
+the entire movie. For this purpose, an unimodal weighted projection of this
+network is constructed where the vertices are characters only, and the arcs
+between each pair of vertices represent the number of dialogues in which
+both characters in the pair have participated. Once, based on this data, the
+weighted centrality for each character is obtained, the sum of centralities of
+all female characters is divided by the respective sum for males. Gender degree
+ratio total (GDRT) differs from GDR with the input data only: instead
+of dialogues, all scenes are used, including those where a given character is
+participating silently. Unlike the BW test which aims to assess stereotyping
+of women, these network measures evaluate women’s overall importance in a
+film, as compared to men.
+The film budget (BudgetALL) and the amount of state support (StateSup)
+were measured in rubles and adjusted for inflation. The power of the
+distribution company which is its capability to book film widely was
+evaluated via a proxy parameter – company type (DistrType). It is a nominal
+variable with four levels, where 4 is assigned to representatives of Hollywood
+major studios that possess the highest power; 3 – to representatives of
+
+Journal of Cultural Analytics
+
+11
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+Russian leading producers; 2 – to independent distributors; 1 – to selfdistributors (producers who release their films without the mediation of a
+distribution company and possess the lowest power).
+Threshold is a binary variable that assigns each film to one of the two
+categories based on its year of release in CIS, either before or in and after
+2015. This year was chosen based on ad-hoc tests and qualitative movie
+industry analysis. This was the year when the attention of the professional
+cinema community to the gender of filmmakers experienced a shift. Among
+other things, a special out-of-competition program appeared at the Moscow
+International Film Festival, and women’s films began to win at Kinotavr, the
+most prestigious film festival of Russian cinema.
+
+Control variables
+Data for determining film genre was retrieved from (КиноПоиск)
+https://www.kinopoisk.ru/ where each film usually gets multiple genre
+assignments. Based on factor analysis (see details in the supplement available
+at https://doi.org/10.7910/DVN/GDKOSR) we created enlarged groups of
+genres to reduce the dimensionality of the indicator. Six numeric variables
+express the proportion of each genre in a film: drama (Drm), comedy (Cmd),
+family (Fml), suspense (Ssp), dynamic (Dyn), and prestige (Prs). Some of
+them were excluded from some models due to multicollinearity. The film
+genre is distinct from the film type that represents four categories (top,
+average, festival, and undefined) used to compile our sample for BWL markup, as described above.
+Russian film age rating (AgeRateRu) is a nominal variable with four
+categories: 0/6+, 12+, 14/16+, and 18+ which unites two ranking systems
+that existed in Russia before and after the reform of 2012, respectively.
+The season factor is controlled by two variables: the number of days off in
+the Russian Federation on the week of the film release (VacDays) and the
+number of films that were released in the same week (Competitors).
+As the Russian cinema market was fast growing in terms of the number of
+screens through the period under investigation, their average number as of the
+beginning and the end of the month, when the film was released (ScrRU), is
+controlled for. It is being done to compensate for the lack of information on
+the number of screens booked for every film.
+
+3.3. Data analysis
+All data analysis was carried out in R version 3.6.1 (2019-07-05). The main
+method for testing hypotheses was linear regression. Confirmatory factor
+analysis (CFA) was applied for genre aggregation. Structural equation
+
+Journal of Cultural Analytics
+
+12
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+Table 1. Proportions of males in key film crew positions and film budgets; full dataset (N=1285)
+Variables
+
+N
+
+Mean
+
+St. Dev.
+
+Min
+
+Pctl(25)
+
+Pctl(75)
+
+Max
+
+Share of males
+in crew among:
+•
+
+directors, %
+
+1,259
+
+0.831
+
+0.365
+
+0
+
+1
+
+1
+
+1
+
+•
+
+producers, %
+
+1,218
+
+0.787
+
+0.311
+
+0
+
+0.667
+
+1
+
+1
+
+•
+
+screenwriters,
+%
+
+1,224
+
+0.793
+
+0.354
+
+0
+
+0.667
+
+1
+
+1
+
+•
+
+overall male
+share, %
+
+1,266
+
+0.793
+
+0.258
+
+0
+
+0.667
+
+1
+
+1
+
+Film budget,
+adjusted rubles
+
+644
+
+190,406,098
+
+382,583,808
+
+118,022
+
+59,277,415
+
+190,289,619
+
+6,927,029,154
+
+modeling (SEM) for the theoretical model as it is presented in Fig. 1 was not
+applicable as different samples were used for the research of different parts of
+the scheme.
+
+4. Results and Discussion
+4.1. Descriptive statistics
+Descriptive statistics of the datasets used for the analysis are presented in
+Table 1 (full dataset) and Table 2 (marked-up dataset).
+In terms of unique persons working on the projects included in the full
+sample, the overall female share is 19.7%; female producers make up 20.6% of
+the sample, screenwriters – 19.8%, and directors – 17.5% (Table 3).
+
+4.2. Women behind the camera and their access to resources
+The results of the study show that, like in other countries, men dominate
+among the key creators of Russian films (Fig. 3). Single-gender film crews
+with men in all three key creative positions (producers, directors, and
+screenwriters) produced 575 movies out of 1285 during the studied decade;
+all producers were men in 723 movies, all writers – in 849, and all directors –
+in 1023.
+Regression analysis demonstrates a positive linear relationship between the
+log-transformed film budget and the proportion of men in the team (Table
+4). In other words, men have access to higher budgets in the Russian film
+industry thus fully confirming H1. However, at the same time, the amount
+of state support is not related to the gender composition of the key film crew
+members. Male producers, but not directors or screenwriters have access to
+the strongest distributors on the market: representatives of Hollywood majors
+and the leading Russian studios. Formally, this means that H2 is only partially
+confirmed, however, producers are generally more important for access to
+resources than either directors or screenwriters. Overall, these results are in
+line with those received for other countries (e.g. Follows et al.; Piccon et al.;
+Verhoeven et al.).
+Journal of Cultural Analytics
+
+13
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+Table 2. Proportion of males in key film crew positions and major film features; BWL dataset (N=243)
+Variables
+
+N
+
+Mean
+
+St. Dev.
+
+Min
+
+Pctl(25)
+
+Pctl(75)
+
+Max
+
+Attendance,
+tickets
+
+243
+
+1,267,886
+
+1,780,832
+
+68
+
+205,318
+
+1,857,989
+
+12,443,898
+
+Share of males
+in crew among:
+•
+
+directors, %
+
+243
+
+0.889
+
+0.303
+
+0
+
+1
+
+1
+
+1
+
+•
+
+producers, %
+
+243
+
+0.847
+
+0.245
+
+0
+
+0.8
+
+1
+
+1
+
+•
+
+screenwriters,
+%
+
+243
+
+0.841
+
+0.296
+
+0
+
+0.75
+
+1
+
+1
+
+•
+
+overall male
+share, %
+
+243
+
+0.857
+
+0.19
+
+0.167
+
+0.8
+
+1
+
+1
+
+Film budget,
+adjusted rubles
+
+193
+
+264,754,867
+
+549,412,730
+
+324,420
+
+89,404,300
+
+241,374,858
+
+6,927,029,154
+
+VacDays, days
+
+243
+
+2.626
+
+1.427
+
+1
+
+2
+
+3
+
+10
+
+Competitors,
+films
+
+243
+
+8.444
+
+2.649
+
+2
+
+7
+
+10
+
+16
+
+ScrRU, screens
+
+243
+
+3,655
+
+1,047
+
+1,842
+
+2,707
+
+4,639
+
+5,47
+
+BWL, %
+
+243
+
+0.057
+
+0.095
+
+0
+
+0
+
+0.07
+
+0.76
+
+GDR
+
+242
+
+0.626
+
+0.748
+
+0
+
+0.27
+
+0.718
+
+7
+
+GDRT
+
+243
+
+0.595
+
+0.674
+
+0
+
+0.27
+
+0.66
+
+7.44
+
+Other (see
+note)
+
+Note: VacDays – number of days off in a film release week (the maximum number of days off in week 10 is explained by counting the number
+of non-working days in a row during the New Year holidays). Competitors – number of competing films released during the same week.
+ScrRU – the average number of screens in Russia for the month of release. BWL – the proportion of dialogues among female characters on
+qualified topics in the total number of film dialogues. GDR – gender degree ratio of characters participated in dialogues. GDRT – gender
+degree ratio of characters appeared in the same scenes.
+Table 3. Unique people in key film crew positions, full dataset (N=1285)
+Number of people
+male
+
+Share of people in the position
+
+female
+
+male
+
+female
+
+Producers
+
+2884
+
+746
+
+79.4%
+
+20.6%
+
+Screenwriters
+
+1954
+
+483
+
+80.2%
+
+19.8%
+
+Directors
+
+1227
+
+261
+
+82.5%
+
+17.5%
+
+All three key positions
+
+6065
+
+1490
+
+80.3%
+
+19.7%
+
+4.3. Women behind the camera and film theatrical attendance
+Linear regression analysis of film crew gender composition effects on logtransformed film attendance (Table 5) shows that the proportion of men
+among screenwriters was not significant in any models. When the budget is
+controlled for, the significance of the proportion of males in the other two
+key roles decreases with only the effect of the producers’ gender sustaining in
+all models. This renders H3 partially confirmed. An explanation for this may
+lie in the fact that men producers have access not only to larger budgets but
+most importantly, to stronger distributors.
+
+Journal of Cultural Analytics
+
+14
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+Figure 3. Distribution of Russian films by the proportion of males in the team: (a) – among crew members in all three
+key positions, (b) – among producers, (c) – among screenwriters, (d) – among directors.
+Table 4. Results of the regression analysis of the relationship between access to resources and the share of men in key film crew positions
+Dependent
+variables
+
+overall male
+share
+
+male share
+among
+producers
+
+male share
+among
+directors
+
+male share
+among screenwriters
+
+Film budget (log-transformed)
+
+0.054***
+
+0.028**
+
+0.086***
+
+0.069***
+
+State support (log-transformed)
+
+-0.0004
+
+0.0001
+
+-0.001
+
+-0.002
+
+Independent Variables
+
+Distribution type (baseline: selfdistribution)
+•
+
+independent distributors
+
+0.025
+
+0.017
+
+-0.011
+
+0.025
+
+•
+
+leading Russian producers’
+representatives
+
+0.106***
+
+0.142***
+
+0.040
+
+0.049
+
+•
+
+Hollywood representatives
+
+0.107***
+
+0.133***
+
+0.052
+
+0.039
+
+-0.257
+
+0.198
+
+-0.764**
+
+-0.475
+
+Constant
+Observations
+
+514
+
+510
+
+514
+
+512
+
+R2
+
+0.113
+
+0.070
+
+0.072
+
+0.049
+
+Adjusted R2
+
+0.105
+
+0.061
+
+0.063
+
+0.039
+
+Residual Std. Error
+
+0.218 (df = 508)
+
+0.272 (df = 504)
+
+0.343 (df = 508)
+
+0.322 (df = 506)
+
+F Statistic
+
+12.986*** (df = 5;
+508)
+
+7.603*** (df = 5;
+504)
+
+7.705*** (df = 5;
+508)
+
+5.187*** (df = 5;
+506)
+
+Note: *p<0.1; **p<0.05; ***p<0.01.
+
+The influence of the changes in the Russian film industry occurring in
+and after 2015 on the relationship between the proportion of men among
+filmmakers and attendance (H4) has been tested with three respective
+interaction terms. As it can be seen, H4 has to be entirely rejected, which
+means that after 2015 films, on average, got as much gain in attendance from
+producers being men as before 2015.
+Journal of Cultural Analytics
+
+15
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+Table 5. Linear regression models of Russian films attendance and key crew members’ gender composition
+Independent variables
+
+Dependent variable: Attendance (log-transformed)
+(1)
+
+(2)
+
+(3)
+
+(4)
+0.868**
+
+Male share in crew among:
+•
+
+producers
+
+0.827***
+
+0.726***
+
+0.757**
+
+•
+
+directors
+
+0.612***
+
+0.438*
+
+0.628**
+
+0.582
+
+•
+
+screenwriters
+
+0.182
+
+-0.005
+
+0.096
+
+-0.222
+
+Distribution type (baseline: selfdistribution)
+•
+
+independent distributors
+
+1.919***
+
+1.298***
+
+1.922***
+
+1.269***
+
+•
+
+leading Russian producers’
+representatives
+
+3.938***
+
+2.893***
+
+3.938***
+
+2.857***
+
+•
+
+Hollywood representatives
+
+5.070***
+
+4.020***
+
+5.074***
+
+3.998***
+
+Film age rating
+(baseline: 0+/6+)
+•
+
+12+
+
+-0.937***
+
+-0.689***
+
+-0.929***
+
+-0.679***
+
+•
+
+14+/16+
+
+-1.252***
+
+-0.875***
+
+-1.250***
+
+-0.860***
+
+•
+
+18+
+
+-1.499***
+
+-1.040***
+
+-1.486***
+
+-1.032***
+
+0.635***
+
+Film budget (log-transformed)
+
+0.636***
+
+Other (see note)
+ScrRU
+
+-0.0001
+
+0.0001
+
+-0.0001
+
+-0.0001
+
+VacDays
+
+0.308***
+
+0.301***
+
+0.308***
+
+0.297***
+
+Competitors
+
+-0.037
+
+-0.029
+
+-0.036
+
+-0.026
+
+Threshold (baseline: before 2015)
+
+-0.133
+
+0.535
+
+Threshold:ProdMaleShare
+
+0.153
+
+-0.396
+
+Threshold:DirMaleShare
+
+-0.034
+
+-0.256
+
+Threshold:ScrMaleShare
+
+0.177
+
+0.474
+
+7.225***
+
+-4.041***
+
+7.438***
+
+-3.765**
+
+Observations
+
+915
+
+634
+
+915
+
+634
+
+R2
+
+0.534
+
+0.545
+
+0.534
+
+0.548
+
+Adjusted R2
+
+0.527
+
+0.536
+
+0.526
+
+0.535
+
+Residual Std. Error
+
+1.875 (df = 902)
+
+1.786 (df = 620)
+
+1.878 (df = 898)
+
+1.787 (df = 616)
+
+F Statistic
+
+86.010*** (df =
+12; 902)
+
+57.148*** (df =
+13; 620)
+
+64.295*** (df =
+16; 898)
+
+43.873*** (df =
+17; 616)
+
+Constant
+
+Note: *p<0.1; **p<0.05; ***p<0.01. ScrRU – the average number of screens in Russia for the month of release. VacDays – number of days off
+in a film release week. Competitors – number of competing films released during the same week. Threshold: date of release, either before 2015
+(baseline) or after 2015. Interaction terms: interaction of threshold (before/after 2015) and the share of males in the crew in the positions of
+producers, directors, and screenwriters, respectively.
+
+4.4. The representation of women on the screen
+Based on the BWL test results of 243 Russian films it turns out that only
+161 films or 61% pass it in terms of the binary approach – passed/not
+passed (Fig. 4 a): in these films, there were two women who talked to each
+other about something other than men (or such disqualified topics as beauty
+practices, housekeeping, children, and other women). Moreover, if we look
+at the proportion of conversations between women, the result is even more
+shocking: among those 61% that do pass the test, 69 films (28% of the
+
+Journal of Cultural Analytics
+
+16
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+Figure 4. BWL test results for 243 Russian films: (a) classical approach and (b) test score based on the proportion of
+qualified dialogues.
+
+Figure 5. Gender ratio of character centralities (a) GDR – calculated by character dialogues, (b) GDRT – calculated by
+the total number of characters’ communications, marked-up dataset (N=243).
+
+marked-up dataset) yield a BWL score that does not exceed 5% of all dialogues
+(Fig. 4 b). This result shows that female characters in Russian films are
+represented quite stereotypically.
+Likewise, in most of the films reviewed, both indicators of gender degree ratio
+(GDR & GDRT) are less than 0.8 (Fig. 5), which according to (Kagan et al.)
+indicates a prevalence of men among the most central characters. Thus, these
+two network indicators show that not only the speech of Russian women
+characters is represented stereotypically, but they are not at all at the center
+of narration in the majority of films.
+
+4.5 Women crews and the representation of women on screen
+The gender composition of the key crew members in the marked-up dataset
+is slightly skewed towards men, compared to the full dataset (see Table 6 vs
+Table 3). As this limitation may have affected the results presented below, they
+should be treated with a certain amount of caution.
+
+Journal of Cultural Analytics
+
+17
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+Table 6. Unique people in key film crew positions, marked-up dataset (N=243)
+Number of people
+male
+
+Share of people in the position
+
+female
+
+male
+
+female
+
+Producers
+
+775
+
+142
+
+84.5%
+
+15.5%
+
+Screenwriters
+
+525
+
+85
+
+86.1%
+
+13.9%
+
+Directors
+
+274
+
+34
+
+88.9%
+
+11.0%
+
+All three key positions
+
+1574
+
+261
+
+85.8%
+
+14.2%
+
+Linear regression analysis results for three dimensions of women’s
+representation, taken as the dependent variables are presented in Table 7.
+The strong and significant negative relationship between the proportion of
+males among the key crew members, on the one hand, and the BWL test,
+GDR, and GDRT, on the other (models 1, 5, and 9) is mostly explained
+by the contribution of screenwriters (models 4, 8 and 12). At the same
+time, the effects of the proportions of men among directors and producers
+are either insignificant or not as strong and not as significant. Nevertheless,
+the centrality of female characters is related to the gender composition
+of the filmmakers, in full agreement with H5 and in concordance with
+previous research that observed a correlation between the presence of women
+protagonists and the gender composition of the crew. This correlation was
+found to be significant not only for writers (Russian researchers have long
+noted the particular importance of female screenwriters for domestic
+women’s cinema – to a greater extent than abroad (Turovskaya 148)), but
+also for directors and, to a lesser degree, for producers on TV (Linke and
+Prommer) and in family films (Smith and Choueiti).
+
+4.6. Women’s on-screen representation and film theatrical
+attendance
+A key hypothesis for this study (H6) is that films in which women characters
+are more central and less stereotyped (measured by the BWL test and two
+indices of gender degree ratio) are more interesting for the audience.
+Additionally, we expected positive changes in the viewers’ attitudes to the
+films with central female characters after 2015 (H7). Twelve linear regression
+models that test these hypotheses are presented in Table 8.
+The table includes only those control variables from the initial theoretical
+model diagram (Fig. 1) that are significant in at least one model. Among
+them, the largest effects belong to the distributor type and film type. From
+the variety of aggregated genres, only comedy and family demonstrate a
+significant (and positive) relationship with film attendance and only in the
+models controlling for the movie’s budget. The latter is always a significant
+predictor of attendance.
+
+Journal of Cultural Analytics
+
+18
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+Table 7. Linear regression models of the key crew members’ gender composition and female representation indexes
+Dependent
+variables
+
+BWL (log-transformed)
+
+Independent
+variables
+(1)
+
+(2)
+
+(3)
+
+GDR (log-transformed)
+
+(4)
+
+(5)
+
+(6)
+
+(7)
+
+GDRT (log-transformed)
+
+(8)
+
+(9)
+
+(10)
+
+(11)
+
+(12)
+
+Share of males
+in crew among:
+•
+
+overall
+
+•
+
+directors
+
+•
+
+producers
+
+•
+
+screenwriters
+
+Constant
+
+-5.829***
+
+-1.763***
+-2.515*
+
+-1.699***
+-0.705*
+
+-0.565
+-0.905*
+
+-2.005
+-5.066***
+-3.040
+
+-5.797***
+
+-6.334***
+
+-3.771***
+
+-0.876*
+-1.067***
+
+0.513
+
+-0.372
+
+-0.231
+
+-0.101
+
+-1.040***
+0.460
+
+-0.493
+
+-0.252
+
+-0.119
+
+Observations
+
+243
+
+243
+
+243
+
+243
+
+242
+
+242
+
+242
+
+242
+
+243
+
+243
+
+243
+
+243
+
+R2
+
+0.029
+
+0.014
+
+0.006
+
+0.053
+
+0.032
+
+0.013
+
+0.014
+
+0.029
+
+0.031
+
+0.009
+
+0.013
+
+0.028
+
+Adjusted R2
+
+0.025
+
+0.010
+
+0.002
+
+0.049
+
+0.028
+
+0.009
+
+0.010
+
+0.025
+
+0.027
+
+0.004
+
+0.009
+
+0.024
+
+Residual Std.
+Error
+
+6.453 (df
+= 241)
+
+6.503
+(df =
+241)
+
+6.529
+(df =
+241)
+
+6.373 (df
+= 241)
+
+1.844 (df
+= 240)
+
+1.862
+(df =
+240)
+
+1.861
+(df =
+240)
+
+1.847 (df
+= 240)
+
+1.820 (df
+= 241)
+
+1.841
+(df =
+241)
+
+1.836
+(df =
+241)
+
+1.823 (df
+= 241)
+
+F Statistic
+
+7.150***
+(df = 1;
+241)
+
+3.328*
+(df = 1;
+241)
+
+1.365
+(df = 1;
+241)
+
+13.390***
+(df = 1;
+241)
+
+8.011***
+(df = 1;
+240)
+
+3.188*
+(df = 1;
+240)
+
+3.414*
+(df = 1;
+240)
+
+7.062***
+(df = 1;
+240)
+
+7.630***
+(df = 1;
+241)
+
+2.092
+(df = 1;
+241)
+
+3.296*
+(df = 1;
+241)
+
+6.901***
+(df = 1;
+241)
+
+Note: *p<0.1; **p<0.05; ***p<0.01.
+
+Journal of Cultural Analytics
+
+19
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+Figure 6. Effect of threshold (before/after 2015) on the relationship between log-transformed GDR (a) and GDRT (b)
+and log-transformed attendance.
+
+Among independent variables of interest, the BWL test score is positively
+related to film attendance (model 1), but its significance is weak and the
+effect disappears when the budget is introduced into the model (2). GDR and
+GDRT are associated with attendance negatively but insignificantly (models
+3-6). We can conclude that H6 has to be rejected. These results are in
+line with some previous research (Lindner et al., “Million Dollar Maybe?”)
+and can be interpreted similarly, as the absence of evidence for the negative
+perception of strong female characters by the Russian viewers.
+However, the effects of interactive terms involving threshold (for which
+we took the 2015 year when gender in films started to be appreciated in
+Russia) are positive and significant when also involving GDR and GDRT,
+but not BWL. As shown by our more detailed post-hoc analysis (Fig. 6),
+female centrality measured both as GDR and GDRT has a negative effect
+on attendance only before 2015, while this effect ceases to exist after 2015
+(the weak positive relationship is insignificant p>0.2). This suggests that while
+Russian viewers were skeptical about attending movies with strong female
+characters before gender equality was on the public agenda, their attitude has
+changed in favor of the propensity to attend films independently of female
+centrality. This coincides with the global trend (Lopez; Vainikka). Although
+formally H7 should be rejected based on the opposite direction of both
+GDR and GDRT found before 2015, conceptually, the change that occurs
+after 2015 is in line with our assumption (i.e. we did assume and did reveal
+the growth of tolerance towards strong female characters). However, this
+evidence is to be treated with caution due to the small effect size and large
+confidence intervals observed.
+
+5. Limitations
+Some factors related to cinema attendance and recommended by previous
+research were not introduced into the models due to their unavailability
+or irrelevance to the Russian cinema market. Only the binary gender of
+film crew members and on-screen characters is considered; the attribution of
+Journal of Cultural Analytics
+
+20
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+Table 8. Linear regression models of the film attendance and female representation indices
+Dependent variable: Attendance (log-transformed)
+Independent
+variables
+
+(1)
+
+(2)
+
+0.019*
+
+0.013
+
+(3)
+
+(4)
+
+(5)
+
+(6)
+
+(7)
+
+(8)
+
+0.014
+
+0.003
+
+(9)
+
+(10)
+
+-0.070
+
+-0.171***
+
+(11)
+
+(12)
+
+-0.082
+
+-0.176***
+
+0.476**
+
+0.503***
+
+0.115
+
+0.222***
+
+Female
+representation &
+period
+BWL (logtransformed)
+GDR (logtransformed)
+
+-0.011
+
+-0.035
+
+GDRT (logtransformed)
+
+-0.020
+
+-0.040
+
+Threshold
+(baseline: before
+2015)
+
+0.588**
+
+0.489**
+
+BWL (logtransformed):
+Threshold
+
+0.016
+
+0.027
+
+GDR (logtransformed):
+Threshold
+
+0.492**
+
+0.509***
+
+0.115
+
+0.224***
+
+GDRT (logtransformed):
+Threshold
+
+Distributor type
+(baseline: selfdistribution)
+•
+
+independent
+distributors
+
+2.247***
+
+1.177**
+
+2.230***
+
+1.115**
+
+2.214***
+
+1.114**
+
+2.245***
+
+1.132**
+
+2.192***
+
+0.946**
+
+2.165***
+
+0.935**
+
+•
+
+leading Russian
+producers’
+representatives
+
+2.699***
+
+1.843***
+
+2.669***
+
+1.769***
+
+2.661***
+
+1.770***
+
+2.729***
+
+1.854***
+
+2.696***
+
+1.744***
+
+2.673***
+
+1.722***
+
+•
+
+Hollywood
+representatives
+
+3.086***
+
+2.126***
+
+3.028***
+
+2.040***
+
+3.023***
+
+2.044***
+
+3.129***
+
+2.125***
+
+3.043***
+
+1.959***
+
+3.023***
+
+1.942***
+
+Film type
+(baseline:
+
+Journal of Cultural Analytics
+
+21
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+Dependent variable: Attendance (log-tr
+(log-transformed)
+ansformed)
+Independent
+variables
+
+(1)
+
+(2)
+
+(3)
+
+(4)
+
+(5)
+
+(6)
+
+(7)
+
+(8)
+
+(9)
+
+(10)
+
+(11)
+
+(12)
+
+moderately
+popular)
+•
+
+festival
+
+-1.695***
+
+-1.510***
+
+-1.727***
+
+-1.530***
+
+-1.736***
+
+-1.525***
+
+-1.652***
+
+-1.458***
+
+-1.682***
+
+-1.437***
+
+-1.694***
+
+-1.423***
+
+•
+
+top
+
+1.984***
+
+1.835***
+
+1.958***
+
+1.799***
+
+1.957***
+
+1.796***
+
+1.997***
+
+1.819***
+
+1.976***
+
+1.778***
+
+1.975***
+
+1.780***
+
+-0.154
+
+-0.539*
+
+-0.185
+
+-0.579*
+
+-0.184
+
+-0.580*
+
+-0.147
+
+-0.594*
+
+-0.188
+
+-0.660**
+
+-0.192
+
+-0.660**
+
+•
+
+undefined
+
+0.191**
+
+Film budget (logtransformed)
+
+0.219***
+
+0.219***
+
+0.205***
+
+0.267***
+
+0.271***
+
+Other (see note)
+ScrRU
+
+-0.0001
+
+0.0001
+
+-0.00005
+
+0.0001
+
+-0.00005
+
+0.0001
+
+-0.0002**
+
+-0.0002*
+
+-0.0002*
+
+Comedy
+
+0.337
+
+0.557**
+
+0.324
+
+0.564**
+
+0.322
+
+0.567**
+
+0.343
+
+0.572**
+
+0.350
+
+0.634**
+
+0.345
+
+0.641**
+
+Family
+
+0.468
+
+0.684*
+
+0.400
+
+0.638*
+
+0.390
+
+0.642*
+
+0.461
+
+0.746**
+
+0.408
+
+0.727**
+
+0.393
+
+0.729**
+
+Constant
+
+9.621***
+
+6.594***
+
+9.515***
+
+5.988***
+
+9.532***
+
+5.970***
+
+9.991***
+
+6.332***
+
+9.785***
+
+5.120***
+
+9.808***
+
+5.540***
+
+Observations
+
+243
+
+193
+
+242
+
+192
+
+243
+
+193
+
+243
+
+193
+
+242
+
+192
+
+243
+
+193
+
+R2
+
+0.800
+
+0.813
+
+0.795
+
+0.811
+
+0.797
+
+0.813
+
+0.804
+
+0.818
+
+0.800
+
+0.823
+
+0.802
+
+0.825
+
+Adjusted R2
+
+0.784
+
+0.793
+
+0.778
+
+0.790
+
+0.780
+
+0.792
+
+0.786
+
+0.796
+
+0.782
+
+0.803
+
+0.784
+
+0.805
+
+Residual Std. Error
+
+0.939 (df
+= 224)
+
+0.942 (df
+= 173)
+
+0.949 (df
+= 223)
+
+0.946 (df
+= 172)
+
+0.946 (df
+= 224)
+
+0.943 (df
+= 173)
+
+0.933 (df
+= 222)
+
+0.934 (df
+= 172)
+
+0.940 (df
+= 221)
+
+0.917 (df
+= 171)
+
+0.939 (df
+= 222)
+
+0.915 (df
+= 172)
+
+F Statistic
+
+49.663***
+(df = 18;
+224)
+
+39.642***
+(df = 19;
+173)
+
+47.975***
+(df = 18;
+223)
+
+38.776***
+(df = 19;
+172)
+
+48.729***
+(df = 18;
+224)
+
+39.584***
+(df = 19;
+173)
+
+45.570***
+(df = 20;
+222)
+
+38.525***
+(df = 20;
+172)
+
+44.228***
+(df = 20;
+221)
+
+39.808***
+(df = 20;
+171)
+
+44.852***
+(df = 20;
+222)
+
+40.542***
+(df = 20;
+172)
+
+Note: *p<0.1; **p<0.05; ***p<0.01. ScrRU – the average number of screens in Russia for the month of release. Comedy, Family – genres categories (in percent of genres enlisted on Kinopoisk.ru). Only significant
+at least in one model variables are presented.
+
+Journal of Cultural Analytics
+
+22
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+gender is based only on names and does not represent the self-identification
+of the crew. Similarly, while the terms “sex” and “gender” are used
+interchangeably in this paper the authors do not presume that women or
+men are biologically defined. The theatrical distribution data used has several
+shortcomings, but it is the only available dataset on the CIS market, and it
+is widely recognized as a reliable proxy for decision-making by commercial
+companies and public bodies.
+
+6. Conclusions
+In our study, we have proposed a continuous version of the Bechdel-Wallace
+test (BWL) calculated as a proportion of qualified dialogues between women
+in Russian films. Our results show that such a metric renders additional
+useful information about on-screen gender balance: in particular, we have
+shown that even among the films that do pass the test the proportion of nonstereotypical dialogues is strikingly low. This situation calls both for a wider
+use of more nuanced metrics and for more action towards gender equality in
+the film industry.
+Our research contributes to the study of gender in global cinema industries
+by investigating a large non-Western market and by introducing a new
+marked-up dataset available for further independent scrutiny. Focusing on
+binary gender imbalance in the Russian film industry from 2008 to 2019,
+our study has considered seven hypotheses, of which four were partially or
+fully confirmed and three were rejected (see Table 9). We confirm several
+trends observed in other countries that point to the lack of women behind
+the camera and their stereotypical representation on the screen. The study
+shows the importance of female screenwriters for representing stronger female
+characters and, simultaneously, the dominance of male producers and
+directors in the access to resources which leads to higher popularity of their
+films. These two trends together result in preventing non-stereotypical female
+characters from reaching wider audiences. At the same time, Russian data
+demonstrates the absence of a relationship between the success of the film
+and indicators of gender bias towards the female characters, which does not
+support a prejudice of strong women as an unpopular image. This means
+that Russian audiences before 2020 were potentially ready to attend movies
+with non-stereotypical portrayals of women and that it was not viewers’ biases
+that prevented strong women from being more widely represented on-screen.
+Finally, the analysis of the change in the Russian audience’s attitude towards
+women on the screen provides suggestive evidence for the decrease of the
+negative effect of strong female characters on attendance: this effect, although
+weak, could be observed before 2015, but entirely disappeared after that.
+Further research could enlarge the existing marked-up dataset which would
+allow testing our conceptual model with structural equation modeling in a
+single statistical framework.
+
+Journal of Cultural Analytics
+
+23
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+Table 9. Summary of hypotheses testing
+Hypothesis
+
+Result
+
+H1
+H1: The higher the proportion of women among filmmakers in key
+creative positions, the smaller the film budget is
+
+Confirmed
+
+H2
+H2: The higher the proportion of women among filmmakers in key
+creative positions, the lower a film distributor’s power is
+
+Partially confirmed (for producers)
+
+H3
+H3: The higher the proportion of women among filmmakers in key
+creative positions, the lower the attendance of Russian films in the
+CIS is
+
+Partially confirmed (for producers)
+
+H4
+H4: After 2015, the (positive) effect of the proportion of men among
+filmmakers on theatrical attendance is smaller than before
+
+Rejected
+
+H5
+H5: The higher the proportion of women among filmmakers, (a) the
+higher the centrality of female characters and (b) the less
+stereotypical their representation are
+
+Confirmed
+
+H6
+H6: (a) The higher the centrality of female characters and (b) the
+lower their stereotyping in dialogues are, the higher the attendance
+of Russian films in the CIS is
+
+Rejected
+
+H7
+H7: After 2015, the (positive) effect of (a) female centrality and (b)
+female character non-stereotyping on attendance is higher than
+before 2015
+
+Partially confirmed for GDR and GDRT, where the
+negative effect of (a) becomes insignificant after 2015.
+For BWL (b) it is insignificant.
+
+Data availability statement
+The database of film production in Russia and film distribution in the
+Commonwealth of Independent States (CIS) before 2018 was received from
+Nevafilm Research, later data was collected from the open sources such as
+Russian Cinema Fund Analytics, Russian Film Business Today, Booker’s
+Bulletin magazines, and Kinopoisk.ru.
+
+Funding details
+The study was implemented in the framework of the Basic Research Program
+at the National Research University Higher School of Economics (HSE
+University).
+
+Acknowledgements
+We appreciate the advice of Elizabeth Prommer from Universität Rostock.
+Many thanks to all 94 students at St. Petersburg State University of the
+Cinema and Television and the National Research University Higher School
+of Economics who marked up the Russian films following Bechdel-Wallace
+test method.
+Data repository: https://doi.org/10.7910/DVN/ISVTB4
+Peer reviewer: Daniel Schwartz
+Submitted: December 11, 2023 EST, Accepted: February 12, 2024 EST
+
+This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0
+International License (CCBY-4.0). View this license’s legal deed at http://creativecommons.org/licenses/
+by/4.0 and legal code at http://creativecommons.org/licenses/by/4.0/legalcode for more information.
+
+Journal of Cultural Analytics
+
+24
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+works cited
+21st Century Fox and The Geena Davis Institute on Gender in Media, et al. “THE ”SCULLY
+EFFECT“: I WANT TO BELIEVE... ...IN STEM.” 21st Century Fox, The Geena Davis Institute
+on Gender in Media, and J. Walter Thompson Intelligence, 2018, https://seejane.org/wp-content/
+uploads/x-files-scully-effect-report-geena-davis-institute.pdf.
+Agarwal, Apoorv, et al. “Key Female Characters in Film Have More to Talk About Besides Men:
+Automating the Bechdel Test.” Proceedings of the 2015 Conference of the North American Chapter
+of the Association for Computational Linguistics: Human Language Technologies, Association for
+Computational Linguistics, 2015, pp. 830–40. Crossref, https://doi.org/10.3115/v1/n15-1084.
+Aley, Melinda, and Lindsay Hahn. “The Powerful Male Hero: A Content Analysis of Gender
+Representation in Posters for Children’s Animated Movies.” Sex Roles, vol. 83, no. 7–8, Feb.
+2020, pp. 499–509. Crossref, https://doi.org/10.1007/s11199-020-01127-z.
+Attwood, Lynne. “Part 1. Women, Cinema and Society’.” Red Women on the Silver Screen, Pandora
+Press, 1993, pp. 19–132.
+---. Red Women on the Silver Screen. Pandora Press, 1993.
+---. “‘Some Interviews on Personal Questions...’: Soviet Women Talk About Their Experiences in
+the Film Industry’.” Red Women on the Silver Screen, Pandora Press, 1993, pp. 225–48.
+Bechdel, Alison. Dykes to Watch Out For. Firebrand Books, 1986.
+Bechdel Test Movie List. May 2021, https://bechdeltest.com/.
+Bulgakova, Oksana. “The Hydra of the Soviet Cinema: The Metamorphoses of the Soviet Film
+Heroine’.” Red Women on the Silver Screen, Pandora Press, 1993, pp. 149–74.
+Conor, B. Gender & Creativity: Progress on the Precipice, Special Edition. UNESCO, 2021.
+Dean, D. Age, Gender and Performer Employment in Europe. Report on Research for the
+International Federation of Actor’s (FIA) Project ‘Changing Gender Portrayal: Promoting
+Employment Opportunities for Women in the Performing Arts.’ Industrial Relations Research
+Unit Warwick Business School University of Warwick, UK, 2008, p. 31.
+Drozdova, Marina. “Sublimations from Socialism: New Images of Women in Soviet
+Cinematography in the Era of Perestroika’.” Red Women on the Silver Screen, Pandora Press,
+1993, pp. 198–214.
+“Eurimages’ Gender Equality Strategy (2021-2023): Equal Voices for Equal Talent.” Eurimage,
+2020, https://rm.coe.int/3rd-gender-equality-strategy-2021-2023-web-2781-1615-4114-2/
+1680a13a04.
+Follows, S., et al. “Cut out of the Picture: A Study of Gender Inequality Amongst Film Directors in
+the UK Film Industry.” Commissioned by Directors UK, 2016.
+Fontaine, Gilles. “Female Audiovisual Professionals in European TV Fiction Production.” European
+Audiovisual Observatory, 2022, p. 64, https://rm.coe.int/female-audiovisual-professionals-ineuropean-tv-fiction-production-202/1680a626dc.
+Garcia, David, et al. “Gender Asymmetries in Reality and Fiction: The Bechdel Test of Social
+Media.” Proceedings of the 8th International AAAI Conference on Weblogs and Social Media
+(ICWSM ’14). arXiv.org, https://doi.org/10.1609/icwsm.v8i1.14522.
+Hetherington Raveney, Francine, et al. “Gender Inequality for Directors in the European Film
+Industry: Focus on Austria.” Handbook of State Aid for Film, Springer International Publishing,
+2018, pp. 509–30. Crossref, https://doi.org/10.1007/978-3-319-71716-6_28.
+Johnston, C. “Women’s Cinema as Counter- Cinema’.” Feminism and Film, edited by A. Kaplan,
+Oxford University Press, 1973, pp. 22–23.
+
+Journal of Cultural Analytics
+
+25
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+Jones, Pete. A Social Network Analysis Approach to Examining Gendered Character Positions in
+Popular Film Narratives. 2020. The University of Manchester, A thesis submitted to the
+University of Manchester for the degree of Doctor of Philosophy in the Faculty of Humanities,
+https://www.proquest.com/openview/23017fdb68cce9a406d5b2ceee30a9d6/1?pqorigsite=gscholar&cbl=18750&diss=y.
+---. “Measuring Centrality in Film Narratives Using Dynamic Character Interaction Networks.”
+Social Networks, vol. 63, Oct. 2020, pp. 21–37. Crossref, https://doi.org/10.1016/
+j.socnet.2020.03.003.
+Kagan, Dima, et al. “Using Data Science to Understand the Film Industry’s Gender Gap.” Palgrave
+Communications, vol. 6, no. 1, May 2020, p. 92. Crossref, https://doi.org/10.1057/
+s41599-020-0436-1.
+Kanzler, Martin, et al. “Focus 2018. World Film Market Trends.” European Audiovisual
+Observatory, 2018, p. 64, https://doi.org/10.1016/j.fos.2018.11.030.
+Kanzler, Martin, and Patrizia Simone. “Focus 2020 World Film Market Trends.” European
+Audiovisual Observatory, 2021, p. 66, https://doi.org/10.1016/j.fos.2018.11.030.
+---. “Focus 2022 World Film Market Trends.” European Audiovisual Observatory, 2022, p. 64.
+Kapoor, Hansika, et al. “The Bechdel in India: Gendered Depictions in Contemporary Hindi
+Cinema.” Journal of Gender Studies, vol. 26, no. 2, Oct. 2015, pp. 212–26. Crossref, https://
+doi.org/10.1080/09589236.2015.1102128.
+Lauzen, Martha M. It’s a Man’s (Celluloid) World, Even in a Pandemic Year: Portrayals of Female
+Characters in the Top U.S. Films of 2021. 2022.
+Leontyeva, Xenia, et al. “Key Trends in Russian Cinema.” European Audiovisual Observatory, 2018,
+p. 58, https://rm.coe.int/ru-2018-key-trends-of-russian-cinema/16808d7212.
+Leontyeva, Xenia, and Pavel Danilov. “Employment Issues in the Russian Film Industry’.”
+KinoKultura, no. 62, 2018, http://www.kinokultura.com/2018/62-leontyeva-danilov.shtml.
+Liddy, Stella, editor. Women in the International Film Industry: Policy, Practice and Power. Palgrave
+MacMillan, 2020, https://doi.org/10.1007/978-3-030-39070-9.
+Lindner, Andrew M., et al. “Million Dollar Maybe? The Effect of Female Presence in Movies on
+Box Office Returns.” Sociological Inquiry, vol. 85, no. 3, 2015, pp. 407–28, https://doi.org/
+10.1111/soin.12081.
+---. “Million Dollar Maybe? The Effect of Female Presence in Movies on Box Office Returns.”
+Sociological Inquiry, vol. 85, no. 3, 2015, pp. 407–28. Crossref, https://doi.org/10.1111/
+soin.12081.
+Lindner, Andrew M., and Ziggy Schulting. “How Movies with a Female Presence Fare with
+Critics.” Socius: Sociological Research for a Dynamic World, vol. 3, no. 3, Jan. 2017, pp. 1–6.
+Crossref, https://doi.org/10.1177/2378023117727636.
+Linke, Christine, and Elizabeth Prommer. “From Fade-out into Spotlight: An Audio-Visual
+Character Analysis (ACIS) on the Diversity of Media Representation and Production Culture.”
+Studies in Communication Sciences, Mar. 2021, pp. 1–17, https://doi.org/10.24434/
+j.scoms.2021.01.010.
+Lopez, Ricardo. “Women and Non-White Characters Are Speaking More in Recent Star Wars
+Movies’.” Variety, 2017, https://variety.com/2017/film/news/star-wars-diversity-dialogue-bechdeltest-rogue-one-1202633473/.
+Mulvey, Laura. “Visual Pleasure and Narrative Cinema.” Visual and Other Pleasures, by Laura
+Mulvey, Palgrave Macmillan UK, 1989, pp. 14–26. Crossref, https://doi.org/10.1007/
+978-1-349-19798-9_3.
+
+Journal of Cultural Analytics
+
+26
+
+Gender (im)balance in the Russian cinema: on the screen and behind the camera
+
+Perrone, J. J. Gender Inequality in Film Infographic. 2018, https://www.nyfa.edu/film-school-blog/
+gender-inequality-in-film-infographic-updated-in-2018.
+Piccon, I., et al. “La Place Des Femmes Dans l’industrie Cinématographique et Audiovisuelle.”
+CNC, 2019, p. 122.
+Rojavin, Marina, and Tim Harte, editors. Women in Soviet Film: The Thaw and Post-Thaw Periods.
+Routledge, 2017, https://doi.org/10.4324/9781315409856.
+Shift7 and CAA. Female-Led Films Outperform at Box Office for 2014-2017. 2018, https://
+shift7.com/media-research.
+Simone, Patrizia. “Female Professionals in European Film Production.” European Audiovisual
+Observatory, 2021, p. 67.
+Smith, S.L., et al. “Inequality in 1 ,300 Popular Films : Examining Portrayals of Gender.” Race /
+Ethnicity, LGBTQ & Disability from 2007 to 2019. Annenberg Foundation, 2020.
+---. “Inequality in 1,100 Popular Films: Examining Portrayals of Gender, Race/Ethnicity.” LGBT &
+Disability from 2007 to 2017. Annenberg Foundation, 2018.
+---. “Inequality in 1,200 Popular Films: Examining Portrayals of Gender, Race/Ethnicity.” LGBTQ
+& Disability from 2007 to 2018. Annenberg Foundation, Sept, 2019.
+Smith, Stacy L., and Marc Choueiti. Gender Disparity On Screen and Behind the Camera in Family
+Films: An Executive Summary. 2009. University of Southern California Annenberg School for
+Communication & Journalism, https://annenberg.usc.edu/sites/default/files/2015/04/28/
+Gender%20Disparity%20On%20Screen%20and%20Behind%20the%20Camera%20in%20Family%2
+0Films-%20An%20Executive%20Summary%20key%20findings.pdf.
+Smith, Stacy L., et al. “Gender Bias Without Borders.” Geena Davis Institute on Gender in Media,
+2014, https://seejane.org/wp-content/uploads/gender-bias-without-borders-full-report.pdf.
+Treme, Julianne, et al. “Gender and Box Office Performance.” Applied Economics Letters, vol. 26, no.
+9, July 2018, pp. 781–85, https://doi.org/10.1080/13504851.2018.1495818.
+Turovskaya, Maya. “"Women’s Cinema” in the USSR.” Red Women on the Silver Screen, Pandora
+Press, 1993, pp. 141–48.
+Vainikka, Vilma. The Portrayal of Female Characters in the Star Wars Film Saga. 2018. University
+of Eastern Finland, Pro gradu thesis, https://erepo.uef.fi/bitstream/handle/123456789/19480/
+urn_nbn_fi_uef-20180653.pdf?sequence=-1.
+Verhoeven, Deb, et al. “Re-Distributing Gender in the Global Film Industry: Beyond #MeToo and
+#MeThree.” Media Industries Journal, vol. 6, no. 1, June 2019, https://doi.org/10.3998/
+mij.15031809.0006.108.
+Vizitei, Maria. “From Film School to Film Studio: Women and Cinematography in the Era of
+Perestroika’.” Red Women on the Silver Screen, Pandora Press, 1993, pp. 215–24.
+Wikstrand, J. “The Money Issue. Gender Equality Report 2018.” The Swedish Film Institute, 2018.
+А Бабы Здесь Тихие. Тестом Бехдель По Нашему Кино. https://bechdelru.wordpress.com.
+Accessed 20 Feb. 2021.
+Артюх, Анжелика. Кинорежиссерки в Современном Мире. Новое Литературное Обозрение,
+2021.
+КиноПоиск. https://www.kinopoisk.ru/.
+Леонтьева, Ксения, et al. “Формирование Базы Данных Российского Кинопроизводства
+2019-2020 Годов и Оценка Последствий Пандемии.” Санкт-Петербургский
+Государственный Институт Кино и Телевидения, 2022, p. 115.
+
+Journal of Cultural Analytics
+
+27
+
+

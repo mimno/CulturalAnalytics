@@ -1,0 +1,1181 @@
+Gius, Evelyn, and Janina Jacke. “Are Computational Literary Studies Structuralist?”
+Journal of Cultural Analytics, vol. 7, no. 4, Dec. 2022,
+https://doi.org/10.22148/001c.46662.
+
+ARTICLE
+
+Are Computational Literary Studies Structuralist?
+Evelyn Gius1 , Janina Jacke2
+1 Technical University of Darmstadt, 2 University of Göttingen
+
+Keywords: DH theory, structuralism, computational literary studies
+https://doi.org/10.22148/001c.46662
+
+Journal of Cultural Analytics
+Vol. 7, Issue 4, 2022
+
+In this contribution we discuss what we call the “digital humanities-asstructuralism” narrative for the case of computational literary studies. To better
+understand the entailed criticism, we start with some background for the noncomputational aspects in this narrative. First, we single out major criticisms
+against structuralism. We then introduce a general and theory-independent
+model of literary text analysis and discuss hypothesis development and
+justification in literary studies. This builds the ground for our analysis of
+structuralism criticisms in computational literary studies. In our discussion of
+the “digital humanities-as-structuralism” narrative, we examine the use of
+computational methods for the exploration and confirmation of interpretation
+hypotheses and its potential relation to structuralist issues.
+We argue that the “digital humanities-as-structuralism” narrative may be
+productive where it cautions against reductionist approaches, but it is not
+appropriate for describing exploratory or partial approaches and the
+presentation of their findings. There, the computational approaches should
+rather be seen as enabling connectivity and fostering the joint endeavor of
+understanding.
+
+1. Introduction
+With this contribution we try to shed some light on the question of whether
+computational literary studies work in a structuralist way. This is a claim that
+is typically made by researches from (non-digital) literary studies and it is
+intended as a criticism of the computational approaches. For example, James
+Dobson claims the following about digital humanities approaches:
+Yet all these different approaches can be understood to be part
+of a retrograde movement that nostalgically seeks to return
+literary criticism to the structuralist era, to a moment
+characterized by belief in systems, structure, and the
+transparency of language (Dobson 57).
+In a more specific perspective, Nan Z. Da states in her critique of
+computational literary studies approaches:
+
+Are Computational Literary Studies Structuralist?
+
+It is easy to see the problem with structuralist arguments that
+are at bottom tied to word frequency: word frequency
+differences show up in all kinds of texts and situations that do
+not match what you want them to represent (613–614).
+While many criticisms of digital approaches in the humanities are based on
+less informed views, such specific and detailed criticisms should be taken
+seriously from a literary studies point of view, whether computational or
+not. Therefore, we will take a closer look at the structuralism allegation.
+The designation of computational literary studies as structuralist, positivist or
+empiricist seems to conceal a similar idea in each case: the idea that computeraided approaches to texts reduce literary works to formalistically describable
+and objectively countable objects. This can be read as a theory narrative, since
+computational literary studies would thus, from the perspective of its critics,
+be based on a highly inadequate or false textual or literary theory.
+In what follows, we will be concerned with examining this theory narrative
+with regard to structuralism. To this end, we will first take a brief look
+at literary structuralism in order to specify and theoretically contextualize
+the criticisms. In the next step, we will sketch the traditional literary
+interpretation practice prototypically – this lays the ground for identifying
+important differences and similarities between established, noncomputational and computational approaches to (the interpretation of)
+literary texts. Subsequently, we will take a closer look at different ways of
+using computational methods in computational literary studies in order to
+identify and analyze potential problems with reference to the criticisms,
+models and approaches outlined above.
+With this, our examination of the “digital humanities-as-structuralism”
+narrative goes beyond the question of whether or not this narrative is
+adequate and thus provides a (hopefully helpful) perspective on the use of
+digital methods in literary studies.
+
+2. Structuralism
+The criticism that computational literary studies are structuralist implies that
+computational literary studies have inherent flaws which are also attributed
+to structuralism. In order to work out these issues, we start by taking a look
+at structuralism and its criticisms in this section.
+So, what is structuralism? While it is probably undisputed that structuralism
+is the investigation of all kinds of literary structures, so many different
+variants of structuralism are advocated in literary studies that a uniform
+characterization of structuralism is not possible beyond a minimal definition
+(Spoerhase). Instead of trying to define structuralism, we therefore would like
+to point out the core elements of structuralism as well as their critique as
+presented in introductory works in literary studies and literary theory. We
+focus on introductions, anthologies and encyclopedias because they highlight
+Journal of Cultural Analytics
+
+2
+
+Are Computational Literary Studies Structuralist?
+
+the essential assumptions of a literary theory. We consider this relevant for
+understanding the critique of structuralism for at least two reasons. Firstly,
+the criticism of a theoretical approach in literary studies is often based on
+the rejection of one or more of its basic assumptions (which are represented
+in introductory works). Secondly, these foundational works themselves often
+present points of criticism against the theories they feature.
+In introductory works, structuralism is invariably considered to be adopted
+into literary studies from linguistic structuralism and in particular from the
+work of Ferdinand de Saussure (Gottlieb 11; Rowe 26; Leitch 21; Rivkin and
+Ryan 5; Culler 74; Titzmann 537). Saussure’s distinction between langue and
+parole is central for structuralism: “The former is a system, an institution,
+a set of interpersonal rules and norms, while the latter comprises the actual
+manifestations of the system in speech and writing” (Culler 74). Here, the
+distinction between rule and behavior is crucial for studies of the production
+or communication of meaning (Culler 75). Whether for Ferdinand de
+Saussure’s linguistic theories, Claude Levi-Strauss’s structural anthropology
+or Roland Barthes’s approach of applying semiotics to literary criticism: in all
+approaches “structuralism importantly recognized that meaning – whether of
+a sentence, a kinship web, or a short story – is produced at least as much by
+the relations between elements as by the elements themselves” (Gottlieb 11;
+Schulenberg).
+1
+
+Structuralism, like every type of formalism , conceives of “culture in general
+as constituted by the same rules of operation that one finds in language”
+(Rivkin and Ryan 5). Cultural meaning, therefore, “is determined by a whole
+system of constitutive rules: rules which do not regulate behavior so much
+as create the possibility of particular forms of behavior” (Culler 73). Or, as
+Levi-Strauss puts it: “particular actions of individuals are never symbolic in
+themselves; they are the elements out of which is constructed a symbolic
+2
+system, which must be collective”.
+With regard to its reception and relevance, structuralism is particularly
+important in France in the 1960s. From there, it was also influential for
+German literary studies (Titzmann 535), while it has received relatively little
+attention in the North American area. The “well-known story” is that “the
+North American reception of structuralism was complicated by the
+simultaneous arrival of post-structuralism” (Gottlieb 11). This is mainly
+due to Derrida’s lecture “Structure, Sign, and Play in the Discourse of the
+Human Sciences”, which he delivered at Johns Hopkins University in 1966.
+
+1 Generally, ‘formalism’ has two connected, but different meanings: it is used i) as a kind of umbrella term for form-oriented approaches in
+
+literary studies or ii) as a short form, for Russian formalism, (For a discussion of similarities and dissimilarities of the three formalist
+approaches Russian formalism, French structuralism and New Criticism, see Schulenberg). Unless otherwise specified, we use the term in
+the first, broader sense.
+2 Cf. Claude Levi-Strauss “Introduction à l’oeuvre de Marcel Mauss,” p. xvi, as quoted in Culler 73.
+
+Journal of Cultural Analytics
+
+3
+
+Are Computational Literary Studies Structuralist?
+
+There, Derrida did not establish structuralism in North America as planned,
+but instead “radically challenged structuralism’s basic claim that systems
+of signs, properly interpreted, produced stable and ahistorical meanings”
+(Gottlieb 11). Since the critique of structuralism thus in a sense preceded
+its introduction, one can assume that this did not exactly promote the
+acceptance of structuralism in northern America.
+But let us now take a short look at how structuralism is criticized in
+contemporary accounts, both by the authors of the introductory works
+and in the context of criticisms they refer to. According to Rowe, the
+“[c]ommonest criticism of the structuralists” is that they do not take their
+own explanatory models into account (Rowe 25). The reason, in his view,
+is that in practice structuralists mostly study a system rather than structure
+in the sense that system means a “whole organization”, which makes full
+explanation possible. This is also essentially the charge Lee Patterson makes
+against formalism (Patterson). Another aspect frequently represented as
+criticism is that, in the further course of the 20th century, the poststructuralist conception of meaning was clearly more important than the
+structuralist one. Even beyond deconstruction, meaning is seen as a process
+rather than a final product and it is assumed that “seemingly stable linguistic
+and conceptual oppositions and hierarchies are in fact always unstable and
+even self-contesting” (Gottlieb 12). In the last decades of the 20th century,
+this led to structuralism being regarded as reductionist. This not only
+occurred insofar as Marxist critics attested to all literary theory accounts
+that “teaching [them] frequently involves little more than imparting sets
+3
+of vocabularies and frameworks for their enunciation”. Within these 20th
+century literary theories, the structuralist was also specifically criticized
+because “paying attention to form was frequently viewed as old-fashioned at
+best and dangerously naive at worst” (Gottlieb 12). From the perspective of
+more context-oriented approaches, this naivety was specified as ahistorical:
+“structuralism’s tendency to make everything a matter of language or signs is
+4
+both dangerously idealizing and naively ahistorical”.
+However, the accusation of ahistoricity brought against structuralism is not
+always as comprehensive as in the aforementioned cases. Rather, the
+ahistoricity criticism is also relativized in two ways: firstly, structuralism is
+considered to build – at least theoretically – on “a set of relations among
+elements shaped by a historical situation” (Rowe 25, emphasis in original).
+In this view, structure is characterized as historically specific. It is important
+to note that this historical specificity is not connected to historical change.
+
+3 Gottlieb referring to the criticism expressed by Terry Eagleton: “‘Literary theorists, critics and teachers, then, are not so much purveyors of
+
+doctrine as custodians of a discourse. Their task is to preserve this discourse, extend and elaborate it as necessary, defend it from other forms
+of discourse, initiate newcomers into it and determine whether or not they have successfully mastered it.’ (Eagleton, 1983: p. 201)” (Gottlieb
+15).
+4 Gottlieb on Fredric Jameson’s critique of structuralism (Gottlieb 19).
+
+Journal of Cultural Analytics
+
+4
+
+Are Computational Literary Studies Structuralist?
+
+The reason for this is that structuralism does consider language at a particular
+time but is not interested in historical change, that structuralism is concerned
+with the synchronic (and probably current) and not the diachronic, changing
+over time (Leitch 21). Secondly, ahistoricity is limited by the fact that
+structuralism builds on a formalist conception of literature. It conceives
+of literature as “bearer of permanent truths about the human condition”
+(Patterson 24). Accordingly, structuralist approaches are ahistorical in the
+sense that they assume no local historical relevance of literature, at the same
+time assuming literature to contain truths that “were, on the contrary, true
+for all time” (Rowe 254).
+Next to ahistoricity, the critique of textual immanence and a connected
+reductionist concept of meaning is often put forward as a criticism of
+structuralism. Structuralism considers “literary texts and how they worked
+rather than authors’ lives or the social and historical worlds to which
+literature refers” (Rivkin and Ryan 6). Here again a formalist conception
+of literature is the object of criticism: “To the formalist, literature is about
+itself: novels are made out of other novels; all poems are about language”
+(Mitchell 16). Now, this view is in principle unproblematic. In the 20th
+century, questions of form were considered central not only to the process
+of interpretation, but also to the specifically literary quality of a text. The
+Russian formalists abolished the dichotomy of form and content that had
+prevailed since Aristotle. Form was content in that the defining elements of
+a text were thoroughly formal and structural (Gottlieb 10). The problematic
+point about this understanding is rather the related structuralist view already
+quoted above that “systems of signs, properly interpreted, produced stable
+and ahistorical meanings” (Gottlieb 12). This is also accompanied by the
+criticized understanding that structuralism can “chart” and thus explicate the
+“not-quite-explicit conventions and rules of reading” of authors and readers
+(Leitch 22). Moreover, while most (other) approaches to literary studies
+relate literary texts to specific extratextual contexts, structuralism generally
+proceeds in a purely text-immanent manner. One of the reasons for this
+is that structuralism does not presuppose ‘object-external’ theories as true
+(Titzmann 536).
+Beyond ahistoricity and the reductionist concept of meaning there is another,
+more general aspect at stake in the “digital humanities-as-structuralism”
+narrative which is more difficult to tackle. Structuralism is sometimes
+presented by both structuralists and non-structuralists as incompatible with
+the majority of current literary theories. At the center of this is the claim
+that structuralist analysis satisfies scientific demands, that is, that it can be
+explicated (Titzmann 536). Thus, structuralism (together with system theory)
+is conceived of as being in opposition to literary theory approaches conceived
+since Dilthey as ‘humanistic’. Structuralism postulates the possibility of
+rational, intersubjective analyzability and theorizing even with respect to
+objects such as literature (Titzmann 535). This counter-narrative is
+Journal of Cultural Analytics
+
+5
+
+Are Computational Literary Studies Structuralist?
+
+strengthened with two positions that originate in New Criticism but are also
+attributed to structuralism: the criticisms labeled as the intentional fallacy
+and the affective fallacy. According to the critique of the intentional fallacy,
+meaning lies in the verbal design of a literary work and not in the statements
+the author makes about his or her intent. The critique of the affective fallacy
+holds that the subjective effects or emotional reactions that a work evokes in
+readers are irrelevant to the study of the verbal object itself, since the meaning
+of the work lies solely in its objective structure (Rivkin and Ryan 6). With
+this, authors and recipients are practically excluded from literary criticism and
+thus many theories are indirectly labelled unscientific.
+These differences stated between structuralism and most other theories are
+reinforced by the fact that theories of literature are often connected to specific
+theories of reading. While the formalist conception of literature corresponds
+to the notion of reading as careful explication and evaluation of dense poetic
+style, other conceptions of literature rather elicit a biographical approach, an
+exegesis or decipherment or a cultural critique as the adequate approach to
+literature (Leitch 6).
+This binary perspective of structuralism as opposed to practically all other
+literary theories is not helpful when discussing the question of whether
+computational literary studies are structuralist or not. Considering it would
+mean discussing structuralism on a general level. This goes far beyond the
+scope of our contribution and therefore we will mainly leave this aspect
+out of our considerations. It is, however, helpful to keep in mind that, in
+practice, structuralism-oriented approaches like (structuralist) narratology are
+often applied in literary studies without the presented assumption that the
+text’s meaning is fully determined by explicating its structures (and thus
+without excluding contextual references, e.g. to authors and readers). On
+the contrary, structuralist-narratological concepts and analysis are viewed as
+neutral towards theories of interpretation (and thus meaning) (Kindt and
+Müller, “Narrative Theory and/or/as Theory of Interpretation” 215).
+In what follows, we will concentrate on the process of literary text analysis.
+More precisely, we will assess computational literary studies approaches to
+literary text analysis with regard to the structuralist flaws highlighted in this
+section, i.e. the question of the ahistoricity and the reductionist concept of
+meaning.
+
+3. Text analysis and interpretation hypotheses in literary studies
+In this section, we provide the background for the further discussion of the
+“digital humanities-as-structuralism” narrative by looking at the process of
+(non-computational) literary text analysis (a process that also encompasses
+interpretation, see subsection 3.1). We will develop a general model for it
+and discuss the procedure of (again: non-computational) development and
+justification of interpretation hypotheses. Based on this, we will discuss
+
+Journal of Cultural Analytics
+
+6
+
+Are Computational Literary Studies Structuralist?
+
+computational literary studies approaches with regard to two major
+structuralism criticisms in the next section. This procedure entails that we do
+not believe that the reason for the computational literary studies criticism is
+merely based on the argument that computational literary studies typically
+focus on the literary analysis of texts. On the contrary, we generally assume
+that even literary studies approaches concerned with aspects beyond the very
+texts in some way relate to the literary analysis of texts. Therefore it is rather
+the computational literary studies’ way of literary text analysis that their
+critics consider flawed.
+
+3.1. Literary text analysis
+So, how can literary text analysis processes be described prototypically? In
+literary studies, there are many approaches to literary text analysis and most
+of these methods or theories lack precise specifications of individual steps
+of interpretation. Therefore there is too much overall diversity and too little
+specificity in the individual approaches for allowing to aggregate concrete but
+at the same time general rules for literary text analysis. Nevertheless, attempts
+at a general description of literary text analysis can be found in introductory
+works or specialized lexicons. However, descriptions in introductions to
+literary studies often expound the problems of the concept of literary text
+analysis rather than explicating it. The major aim is to help students to
+develop an understanding of the diversity of approaches in literary studies,
+which distinguishes itself from non-scholarly procedures. Instead of detailed
+descriptions, procedures are outlined by way of example and supplemented
+with general observations or references. An additional challenge is
+terminology since central terms like “text analysis” as well as “interpretation”
+are used in different contexts as well as in everyday life and thus may be
+sources of misunderstanding. Especially the ambiguity of “text analysis”
+cannot be resolved completely without the introduction of new and probably
+artificial terms. Nevertheless, with our model we hope to be able to give a
+sufficiently clear overview of the process of literary text analysis, and we will
+provide definitions of the way in which we use central terms.
+For our model of literary text analysis, we draw on the definition in the
+Reallexikon der deutschen Literaturwissenschaft, in which (literary) text
+analysis is defined as a generic term for the scholarly study of literary texts that
+includes both description and interpretation. In this understanding, (literary)
+text analysis and interpretation are synonymous (Winko; for the definition of
+the term we referred to, see 597). Thus, the understanding of texts is at the
+essence of literary text analysis, a process that is usually captured in literary
+studies by the term “interpretation.” This understanding of (literary) text
+analysis differs from that of other, typically non-literary approaches which
+do not aim at a comprehensive understanding of the text in the analysis
+procedure. We are trying to avoid this confusion by calling the literary studies
+process aimed at a comprehensive understanding “literary text analysis” and
+the operation of descriptively dissecting a text “text analysis”. The concept of
+Journal of Cultural Analytics
+
+7
+
+Are Computational Literary Studies Structuralist?
+
+literary text analysis is relevant to all literary studies efforts at understanding
+text, regardless of which literary theory, literary studies method or reading
+5
+theory underlies it.
+Activities related to the study of literary texts include both text analysis,
+which encompasses description and analysis (we use “analysis” without any
+additions for the operation of arranging text descriptions and putting them
+in relation to one another), and interpretation of texts (i.e. acquiring an
+understanding of the text as a whole, which usually includes the consulting
+of extratextual contexts). Text analysis can be seen as the precursor and
+condition of interpretation, although the boundaries between text analysis
+and interpretation are blurred from an epistemological point of view. In
+principle, however, assignments of meaning are more elementary or closer
+to the text in the context of text analysis than in the case of interpretation
+and are thus easier to verify. Moreover, assignments of meaning in the
+context of text analysis focus on intratextual contexts and draw only on
+those extratextual contexts that are necessary for primary understanding. The
+results of textual analysis in turn serve as the basis for interpretation, with
+inter- and extratextual contexts being drawn upon in this step to generate
+hypotheses about the meaning of the text as a whole. Thus, both the text
+analysis step and the interpretation step involve the inclusion of additional
+contexts. We add to these two reading as a third (and, actually, preceding)
+activity which is also typically used in practices designed to reconstruct
+6
+meaning.
+Accordingly, the three central activities of literary text analysis are reading,
+analyzing and interpreting. Especially for text-oriented approaches, two
+additional sub-activities can be differentiated within the activity ‘text
+analysis’: description and analysis (see Figure 1). The description contains
+mostly purely descriptive procedures which aim at the quantifiable factors
+as well as linguistic surface phenomena of a literary text. Analysis, on the
+other hand, aims at structure formation and accordingly examines more
+global structural features of a text such as isotopies or other internal semantic
+relations between textual elements (Winko 598). This distinction between
+text analysis and interpretation as well as the additional inclusion of reading
+as a typically preceding activity allow for a more differentiated description of
+activities in literary studies.
+
+5 Because it is about text comprehension as a goal, this concept could also be called “hermeneutic”, although this is potentially misleading.
+
+Such a broad understanding of hermeneutic analysis also underlies other contributions of ours (Gius and Jacke, “Informatik und
+Hermeneutik. Zum Mehrwert interdisziplinärer Textanalyse”; Gius and Jacke, “The Hermeneutic Profit of Annotation: On Preventing and
+Fostering Disagreement in Literary Analysis”). While the specific hermeneutic method of textual interpretation is also included in our
+considerations, it is by no means seen as central. Instead, the focus of our theoretical contributions is placed on interpretation, irrespective of
+a specific theory.
+6 Köppe and Winko state that the steps of reading and text analysis are – though described differently in detail – adopted by most theories of
+
+interpretation in literary studies (308).
+
+Journal of Cultural Analytics
+
+8
+
+Are Computational Literary Studies Structuralist?
+
+Figure 1. The ideal-typical process of literary text analysis
+
+However, this model is ideal-typical and thus it is in practice implemented
+in various ways. Firstly, literary text analysis is usually not a linear but an
+iterative process. Secondly, the sequence of the stages and the focus on them
+may vary according to its goals. For example, during the first reading, an initial
+interpretive hypothesis may emerge that is already based on (i) the linguistic
+understanding of the text (although neither step 2a nor step 2b necessarily
+take place), (ii) literary-theoretical knowledge or assumptions (e.g. implicit
+or explicit literary theories of meaning), and (iii) contextual knowledge (e.g.
+knowledge of epoch, genre or intertext, biographical knowledge of the
+author, knowledge of contemporary society or intellectual currents, etc.). Or,
+if reference is made to conceptual text fixations or text structures (2a and
+2b) in the context of interpretations, then this is usually done selectively on
+the basis of the interpretation hypothesis: those text passages or descriptive
+findings are selected which are judged to be exemplary (i.e. typical and
+generalizable) and which fit to the interpretation hypothesis.
+For the following considerations, the process of textual analysis is conceived
+of as a three-stage engagement with texts in the form of reading, text analysis,
+and interpretation, whereby the second stage can be further differentiated
+into purely local description and analysis focused on structural saliences. This
+model is supposed to be independent of a specific theory or method and thus
+adaptable to all kinds of literary text analysis, both with regard to its iteration,
+sequentiality and the extent to which the single stages are present.
+
+3.2. Interpretation hypotheses in literary studies
+The general model of literary text analysis that was introduced in the last
+subsection gives an impression of the different steps or operations that
+are executed when analyzing and interpreting literary texts. What it leaves
+open is the question of where in this process (interpretation) hypotheses
+are developed and argued for. The reason for this might be that the notion
+of research as the finding and testing of hypotheses is more established in
+the natural and social sciences (Schickore par. 5) and only rarely applied to
+
+Journal of Cultural Analytics
+
+9
+
+Are Computational Literary Studies Structuralist?
+
+7
+
+the humanities (and literary studies in particular). Mapping these notions
+onto the general model of text analysis, however, can help to understand
+how computer-aided methods are put to use in computational literary studies
+and how their use relates to established practices in non-computational
+approaches.
+Typically, in non-computational/established approaches to literature,
+interpretation hypotheses will be generated gradually while reading a text
+for the first time (step 1), based on contextual knowledge (e.g. about the
+socio-cultural circumstances of its genesis, the author, relevant discourses or
+theories of literature/interpretation) and descriptive observations concerning
+the text itself. This process can be described as mutually influencing in the
+way that a scholar’s interpretation hypotheses have an effect on the kinds
+of descriptive observations they will make in a text, and the observations
+8
+will also impact their hypotheses and might lead to modifications. The
+different steps (or the gradual progression) of hypothesis development will
+usually remain implicit and undocumented. Once a hypothesis is formed,
+selected text analytic procedures (step 2) may be performed that highlight
+and interconnect the textual features that are relevant against the background
+of the hypothesis. These analyses can serve as a basis for testing/justifying
+9
+the hypothesis. However, the part of hypothesis justification that is typically
+more dominant in non-computational, established approaches is the
+contextualisation of the text (step 3) where the text as a whole and/or
+the results of selective text description and analysis are related to relevant
+(extratextual) knowledge, e.g. about the generation or reception of a text, its
+10
+socio-cultural background etc.
+
+4. Computational literary text analysis as structuralism?
+We will now turn to discussing the “digital humanities-as-structuralism”
+narrative against the background of the model of literary text analysis and
+the question of hypothesis development discussed in the previous section
+with regard to the criticisms against structuralism elaborated in section 2.
+We will focus our inquiry on approaches in which computational methods
+are applied to literary corpora and the results are analyzed in order to gain
+11
+new insights into these texts. The two main ways of using computational
+
+7 For an application to the digital humanities, see Owens, Gerstorfer.
+8 Cf. the “hermeneutic circle” (Schleiermacher) or “hermeneutic spiral” (Stegmüller).
+9 It seems safe to say that ‘text adequacy’ is widely regarded as one theory-independent criterion for supporting the plausibility of an
+
+interpretation (Strube). Kindt and Müller list different assumptions about the concrete relation between text description/analysis and
+interpretation (Kindt and Müller, “Narrative Theory and/or/as Theory of Interpretation”; Kindt and Müller, “Wieviel Interpretation
+enthalten Beschreibungen? Überlegungen zu einer umstrittenen Unterscheidung am Beispiel der Narratologie”).
+10 On different notions of “context” in connection with literary interpretation, cf. Danneberg.
+11 It is important to note that from all digital humanities approaches with a literary studies background those approaches involving the use of
+
+computational methods are more often criticized from a literary studies perspective than, e.g., manual annotation approaches, since the latter
+show a greater methodological proximity to established, non-digital approaches to literature (Jacke 18, 21–22). The same holds for
+approaches directed towards the edition of text or the efforts for building repositories or archives.
+
+Journal of Cultural Analytics
+
+10
+
+Are Computational Literary Studies Structuralist?
+
+methods in these contexts are (1) to use them in an exploratory way, i.e. as
+a heuristic support in developing interpretation hypotheses, and (2) as an
+analytic device, i.e. to test and/or justify interpretation hypotheses. Following
+an established distinction in data analysis, we call this second case
+“confirmatory”. The use of computational approaches is typically restricted
+12
+to steps 1 and 2 of the model introduced in subsection 3.1. Step 3, the
+actual interpretation (i.e. the contextualisation of the text for the purposes of
+hypothesis specification and justification) is usually not based on (automated)
+computational procedures. The reason for this is that a computational
+implementation of step 3 would require to computationally model the
+literary interpretation process as such. While it is not inconceivable to do
+this, we are not aware of approaches that have implemented this so far.
+Instead, the necessary additional operations for interpretation such as a close
+reading of potentially relevant texts or text passages, manual annotation,
+or the integration of interpretation-theoretical assumptions and extra-textual
+knowledge are up to now performed by scholars.
+We now proceed to discussing the exploratory and the confirmatory use
+of computational methods in computational literary studies approaches in
+detail. In this context, we will also comment on whether and, if so, how
+‘structuralism allegations’ as identified in section 2 apply in the discussed
+cases.
+
+4.1. Exploratory approaches in computational literary studies
+Typically, when computational methods are used in an exploratory way in
+computational literary studies, existing algorithmic procedures are applied
+to a corpus in an exploratory manner in order to identify conspicuous
+results that could be eligible for developing an interpretation hypothesis.
+One possibility for such a result would be that a text strikingly differs
+from the other texts in a corpus concerning one feature. Other possibilities
+include cases where one or more textual features turn out to be remarkably
+frequent (or infrequent), unevenly distributed between or within texts or
+cases that point to (seeming) relations between certain features and one or
+more subgroups of the texts. Based on such observations, an interpretation
+hypothesis about the text’s meaning is formed that is able to explain (the
+origin, the effect and/or the function of) the features in question. In this
+approach, the step of reading in the model from subsection 3.1 (step 1) is
+replaced or supported by computational methods.
+
+12 Many algorithmic methods can be used for both exploratory and analytical purposes. For example, it is possible to use topic modeling
+
+procedures to obtain a kind of overview of the topics in a corpus and, based on this, develop a research question. However, topic modeling
+can also be used for a specific research question. For example, one could cluster a corpus of texts based on the assumption that the topics are
+genre-specific and then consider the clusters as possible genres.
+
+Journal of Cultural Analytics
+
+11
+
+Are Computational Literary Studies Structuralist?
+
+Naturally, the selection of methods to apply to the text(s) cannot (in a strong
+sense) be driven by a hypothesis, because the purpose of their application is
+exactly to find a hypothesis in the first place. Neither do the texts have to
+be known in detail before the methods are applied. Thus, the selection of
+computational procedures will be driven mostly by practical concerns, e.g.
+which methods are available and, maybe, easy to apply. However, it is indeed
+reasonable for scholars to carefully think about whether the applied methods
+make any suppositions like a specific concept of ‘text’ that forms the basis
+of a computational procedure. For example, many current computational
+methods conceive of text as a “bag of words”, not as a linear structure,
+which is not compatible with the text conception of all approaches in literary
+13
+studies. While it is possible to apply methods whose presuppositions are not
+in line with the literary scholar’s assumptions, it is important to keep these
+peculiarities in mind to be able to interpret the outcome of the exploration
+14
+adequately.
+Especially in the context of the exploratory use, the application of selected
+computational methods to a literary corpus typically results in a large amount
+of data and, even more, qualities of this data that need to be identified.
+This is a peculiarity in which computational approaches to literature differ
+from non-digital (even structuralist) approaches. This is, on the one hand,
+due to the fact that, traditionally, descriptive observations are made far more
+selectively against the background of and in the interplay with interpretation
+hypotheses. Thus they are already to a greater extent integrated in a system
+of sense making. On the other hand, the sheer number of outcomes in
+terms of data and its properties is cognitively impossible to integrate at
+once in a meaningful way. Because it is much less clear in the exploratory
+approach what exactly the scholar is looking for, they will look for salient
+properties that are exposed by the computational method, e.g. with regard
+to the frequency or distribution of text features, or similarities/dissimilarities
+between different texts that are analyzed in comparison. This activity is often
+15
+supported by visualizations that help to explore the data. Findings from this
+exploratory process will then serve as a basis for developing interpretation
+hypotheses – we will elaborate on this step later in this section.
+Now, in which ways can such exploratory uses of computational methods be
+confronted with ‘structuralism allegations’ – and in which (if any) regards
+do these allegations apply? When computational methods are used for
+hypothesis development, the choice of methods is rarely inspired by
+
+13 Actually, the “bag of words” concept is probably not in line with most text concepts in literary studies. Think, for example, of rhizomatic
+
+concepts or of text concepts based on sequentiality – or most of the text concepts relying on defined relations between the parts of text.
+14 For example, for a discussion of topic modeling from a literary studies’ perspective, cf. Uglanova and Gius.
+15 Next to the use of visualization options that are available within text analysis tools or provided by packages of programming languages, this
+
+also includes visualizations developed for specific analysis, such as LDAvis for topic modeling or t-SNE for word2vec analyses (Sievert and
+Shirley; Maaten and Hinton).
+
+Journal of Cultural Analytics
+
+12
+
+Are Computational Literary Studies Structuralist?
+
+contextual information and thus “ahistorical”. Due to the nature of
+computational text analysis, the focus lies on text immanent data and the
+results can only be descriptive. Based on this, critics could allege that
+exploratory computational approaches only produce a large amount of
+(entirely or mostly) irrelevant data that is not fit to provide meaningful
+insights into literary texts.
+However, a number of replies can be made against such claims. The first
+one is that exploratory computational approaches can, should and often
+do consider minimal contexts. For example, minimal theoretic contexts are
+included whenever the theoretic presuppositions and implications of a
+computational method are considered (as in the above-mentioned example of
+the concept of ‘text’), and often additional contextual information is included
+in the metadata of digital texts.
+Also, the exploratory use of computational methods is typically embedded
+in the larger process of literary text analysis as described in subsection 3.1
+and supplemented with many non-computational operations. Thus, when
+the descriptive output of the computational approaches is evaluated and
+significant findings are pinned down, the actual development of hypotheses
+that might be able to explain these findings will have to consider (theoretical
+16
+and historical) contextual knowledge to be plausible – a necessary minimal
+criterion would be to consider linguistic change.
+It must be noted, however, that in many cases the initial choice of methods
+is not inspired by contextual/historical knowledge even though this may be
+desirable. Still, this cannot plausibly be held up as criticism, because there
+are no explicit rules prescribing specific procedures for the development
+(as, sometimes, opposed to the justification) of interpretation hypotheses in
+literary studies. Therefore, as long as an approach helps a scholar to find
+interesting hypotheses (that can, then, plausibly be argued for), it should be
+deemed legitimate.
+Let’s now turn to the reductionist concept of meaning allegation. A crucial
+point to keep in mind in this context is that no actual claim about the
+meaning of a text is made in the context of exploration/hypothesis
+development. The formulation of a hypothesis is not equal to the attempt to
+17
+argue for it. It is merely to be regarded as an idea, as “food for thought”.
+As indicated above, the finding of interpretation hypotheses in literary studies
+is not something that is possible in a strictly rule-governed way. Instead,
+it is sometimes mystified (e.g. when hermeneuticists like Schleiermacher
+
+16 An example would be a study Schwan et al., where annotations of narrative levels and temporal phenomena in texts are explored with the
+
+help of visualisations. Narrations with a conspicuous distribution of embedded narrations are singled out, and hypotheses concerning their
+function are developed and tested with the help of close reading and reference to relevant contexts.
+17 As Trevor Owens aptly notes: “If you aren’t using the results of a digital tool as evidence then anything goes”.
+
+Journal of Cultural Analytics
+
+13
+
+Are Computational Literary Studies Structuralist?
+
+speak of “divination”) or at least seen as complex interplay between textual
+knowledge, (personal) experience, historical and theoretical knowledge etc.
+that is difficult or impossible to analyze and understand in detail. The finding
+of interpretation hypotheses (as, sometimes, opposed to their justification)
+seems to come with a genuine “anything goes” – so there seems to be not
+much speaking against a computational approach that targets the linguistic
+material of the text. However, while nothing can be said against a method
+of hypothesis development as long as it helps scholars to find plausible and
+insightful interpretations, the chances of producing plausible and insightful
+hypotheses can, of course, be significantly increased if a bit of thought
+is put into the process. This is true for both computational and noncomputational approaches to hypothesis development. As mentioned, this
+could mean for the computational approach to analyze the concept of text
+underlying computational methods and to choose one that can be aligned
+with one’s own concept. In the context of non-computational approaches,
+this could mean that (depending on a scholar’s text/interpretation theory) the
+first reading of a text should not be informed by anachronistic contexts.
+Actually, in the case of the exploratory use of computational methods, the
+required assumption concerning the relation between the linguistic material
+and the text’s meaning is probably little contentious. Rather, the exploratory
+use of computational methods can operate on the minimal assumption that
+linguistic or formal peculiarities of a text can have an origin, a function or
+an effect that contributes to the meaning of the text. This is why the finding
+of these peculiarities and the attempt to explain their origin, function or
+effect may help to develop interpretation hypotheses. It is not necessary to
+assume that every linguistic peculiarity contributes to the text’s meaning or
+that every relevant aspect of a text’s meaning can be uncovered starting from
+its linguistic material.
+If not all the data generated in the context of exploratory computational
+approaches is relevant, it is indeed a special challenge to identify the data that
+is actually relevant or fruitful for hypothesis development. However, this puts
+a finger on a general theoretical or methodological deficit in literary studies:
+literary studies does not offer any procedures to assess the relevance of (and
+select from) larger amounts of data or descriptive findings in a theoretically
+and methodologically sound way. Established/non-computational approaches
+usually circumvent this problem by only considering and referring to a small
+amount of descriptive observations that is regarded as “exemplary”. The
+exemplariness, however, is rarely argued for – instead the observations gain
+their value for the individual scholar because they are in line with their
+interpretation hypothesis. This not only sweeps the problem of selection
+under the carpet – it also circumvents the necessity of explaining the
+relationship between quantitative conspicuousness and exemplariness.
+
+Journal of Cultural Analytics
+
+14
+
+Are Computational Literary Studies Structuralist?
+
+We would like to discuss another aspect that can also be considered a case
+of reductionism, namely the fact that exploratory computational approaches
+may not fully or explicitly perform the step of hypothesis development.
+It is, for example, possible to simply run computational procedures on a
+corpus of literary texts and conclude with the compilation of selected (i.e.
+conspicuous) descriptive observations. In this case, the hypothesis would
+be both implicit and not very contentious. The claim would merely be
+that the identified peculiarities (qua their comparative conspicuity) might be
+relevant for the text’s meaning. It is also possible to form a more elaborate
+interpretation hypothesis based on the computational results (plus textual/
+contextual knowledge), but not to engage in the testing or justifying of this
+hypothesis (i.e. to leave out steps 2 and 3 of the model). In these cases, it
+could be criticized that a “formal” type of relevance is the only ground for
+suggesting possible relevance in the literary studies sense (especially: relevance
+for the meaning of the text).
+However, digital humanities research in general (and with it also
+computational literary studies research) seems to come with a different
+research culture and attitude than non-computational literary studies.
+Research does not always aim at comprehensiveness – instead, it is more
+common to present modest or preliminary results, to present hypotheses
+without testing them or to report extensively about the process and progress
+18
+of research, including failure. From this perspective, it is more than
+legitimate for researchers to present modest hypotheses and/or not to engage
+in testing them. This can be seen as providing a mere building block to
+research on texts as joint venture. It is just important to make clear or,
+respectively, understand the status of these research contributions (i.e. their
+limited claims of validity or coverage).
+Finally, it is, of course, possible that the attempt to develop an interpretation
+hypothesis with the help of computational procedures fails, e.g. because
+no conspicuous/interesting findings are revealed, because it is not possible
+to find a plausible explanation for the findings or because the explanation
+is not in any way connected to questions of meaning or interpretation.
+However, it is equally possible for an established, non-computational way
+of hypothesis development to fail: there is no guarantee that a scholar will
+come up with an interpretation hypothesis when reading a text, and if they
+take more specific efforts to develop an interpretation hypothesis, it is equally
+possible that several paths will fail. Unfruitful attempts, however, will rarely
+be documented in established, non-computational literary studies research –
+which is not necessarily an asset.
+
+18 For a comparison of research cultures, see Schruhl; for a discussion of the digital humanities’ way of dealing with failure, see Dombrowski.
+
+Journal of Cultural Analytics
+
+15
+
+Are Computational Literary Studies Structuralist?
+
+Summing up, requirements for exploratory uses of computational approaches
+to literary text analysis are to think about possibly relevant presuppositions
+inscribed in the applied methods, to consider minimal contexts like linguistic
+change and to clarify the status of the results. Apart from that, these
+approaches should not be criticized for ahistoricity or a reductionist concept
+of meaning: there are no rules for the development of hypotheses (which
+should not be confused with the arguing for their plausibility). The
+computational exploration of literary texts can thus be regarded as a
+supplementing/alternative approach to hypothesis development that offers its
+own assets, such as a broader and more open view on text(s) and descriptive
+data.
+We will now move on from exploratory to confirmatory computational
+approaches to literary text analysis and look at how the allegations and
+possible replies differ.
+
+4.2. Confirmatory approaches in computational literary studies
+According to our literary text analysis model, after a hypothesis has been
+formed in step 1, computational methods can help to test it in step 2. The
+hypothesis can be formed in the established, non-computational way or with
+the help of exploratory computational methods. It can either be a relatively
+vague hypothesis concerning the relevance of specific features in literary texts
+under investigation or a (rich) interpretation hypothesis that is tested here.
+We call the use of computational methods to test a hypothesis in the process
+19
+of literary text analysis “confirmatory”.
+For the confirmatory use of computational methods, in contrast to the
+exploratory approach, the selection of computational methods should be
+hypothesis-driven. Since the hypothesis directing the selection of methods is
+usually closely tied to a literary studies perspective, the applied methodology
+20
+needs to be aligned with the theoretical or conceptual background. This
+may entail developing new computational methods, but this is not necessarily
+the case. The challenge – and thus also the problems – for computational
+literary studies approaches lies in the operationalization of the question it
+tackles. For this, a lot of decisions have to be made and the resulting research
+design can be defined in a more or a less complex way with regard to the
+operationalization of phenomena of interest, the texts that are analyzed as
+21
+well as the way computation is used for gaining insights. Even though there
+
+19 This terminology is based on the distinction between exploratory and confirmatory data analysis, but it should be mentioned that the result
+
+of the confirmatory approach can also be a falsification or weakening of the hypothesis. In this, the computational approach differs from the
+established, non-computational approach, where publications rarely mention hypotheses that have been dismissed after an attempt to justify
+them failed.
+20 The need to treat separately the theory of a phenomenon and “the formal model of an indicator, which is used to test hypotheses derived
+
+from the theory and which are assumed to be directly or indirectly related to the phenomenon” is frequently overlooked by critics of
+computational literary studies (Jannidis).
+21 For a discussion of the complexity of the five dimensions in concern of computational text analysis (Gius).
+
+Journal of Cultural Analytics
+
+16
+
+Are Computational Literary Studies Structuralist?
+
+is a wide range of possibilities for designing the computational approach,
+the challenge in the steps of the literary text analysis model is typically
+reduced by the mere fact that computational approaches are (or should at
+least be) aligned with the theoretical background guiding the analysis. Since
+the applied computational methods have been chosen in a more targeted way
+and there is an already developed (interpretation) hypothesis that is being
+tested, the evaluation of the generated data can be more straightforward.
+When computational methods are used in a confirmatory approach, the
+allegation of ahistoricism and a reductionist concept of meaning (amounting
+to the irrelevance of the analyses) can be made in a way comparable to the
+case of the exploratory use. However, while we have argued that, basically,
+“anything goes” in the context of exploration and hypothesis development,
+the necessary claims of validity are stronger in the case of confirmatory uses
+of computational methods – so the allegations might be less easy to refute.
+When it comes to confirmatory approaches, the allegations of ahistoricism
+and a reductionist concept of meaning might, again, be based on the fact
+that computational analysis is usually only applied to the literary text itself
+and can only consider its linguistic features. However, if the application of
+computational methods is embedded in a “complete” process of literary text
+analysis, the hypothesis that is tested in step 2 was most likely developed by
+drawing upon the text’s (historical) context(s), and the descriptive analysis
+results are discussed in relation to contextual information in order to argue
+for their relevance for the text’s meaning. Therefore, even though the very
+analysis (i.e. steps 2a and 2b) may be ahistorical and text-immanent, this does
+not hold for the overall literary text analysis. Rather, it is the researchers
+who are in control of the process and should ensure the adequacy of their
+22
+approach.
+Even though it is, in our view, a central issue, this contextualizing of the
+computational outputs does not touch upon the question of whether
+computational literary studies analysis (in the sense of step 2) conceives of
+meaning as deducible from the linguistic material of texts. It is probably
+little controversial to say, as we mentioned earlier, that computational literary
+studies are indeed relying on the assumption that the linguistic material of
+a literary text is crucial in determining its meaning. But this does not entail
+the idea that meaning can be reliably derived from the linguistic material of
+a text (and from this alone). Still, in the context of the confirmatory use
+of computational methods, the assumed relation between linguistic material
+and text meaning is a bit more contentious than for the exploratory use.
+The idea here is that formal features of a text can generally serve to test
+
+22 This holds for practically every activity performed in the digital humanities (and of course also beyond) as Katherine Bode points out:
+
+“Constructing and curating, or modeling, literary datasets – including any interventions we make in existing ones – involves political, social,
+and ethical decisions, the outcomes of which are neither inevitable nor inevitably justified” (Bode 122).
+
+Journal of Cultural Analytics
+
+17
+
+Are Computational Literary Studies Structuralist?
+
+an interpretation hypothesis, and thus strengthen or weaken a hypothesis
+about the meaning of a literary text. It is not necessary to assume that all
+linguistic features of a text can (always) serve this purpose – this is why
+specific computational procedures are selected, namely those that the scholar
+deems fruitful in connection to his or her interpretation hypothesis for a text.
+Neither is it necessary to assume that linguistic or formal features (alone)
+can as much as prove an interpretation hypothesis. Generally, the criteria for
+good interpretations (i.e. the justification of an interpretation hypothesis)
+are relatively rarely discussed in literary studies, and if they are, it is often
+assumed that the criteria vary according to different theories of literature/
+interpretation. Some features, however, could possibly be considered theoryindependent minimal criteria for good interpretations (i.e. interpretation
+justifications), for example consistency, coherence, explanatory power or –
+and this is relevant here – compatibility with the linguistic material of the
+text (Strube; Kindt 35), even if the exact relation between textual description
+23
+and interpretation still remains unclear.
+From this perspective, the “structuralism allegation” that computational
+literary studies are basically incompatible with all other approaches to
+literature/interpretation does not hold. On the contrary, if computational
+approaches do not claim that descriptive analysis fully determines the
+meaning of a literary text, it is not only compatible with but also potentially
+relevant for all other approaches. However, against this background of
+theoretical half-blind spots, computational literary scholars should make the
+exact relation between the target features of the employed computational
+methods and the relevant literary concepts explicit, and they should put
+the results into perspective if necessary. This means that one should start
+with a research question or hypothesis and have reflected on and tested to
+some extent the suitability of the procedure for the analysis. It is important
+that one can assume a certain validity of the results, i.e. that the procedure
+measures what one wants to measure.
+Taking up our discussion of only partial hypothesis development as
+supposedly reductionist practice from subsection 4.1, we would like to
+conclude by elaborating on “incomplete” text analysis in computational
+literary studies. In which regard can the confirmatory use of computational
+methods (i.e. when computational methods are used as text analytic tools to
+test a hypothesis) be incomplete, in the sense that it is not embedded in a
+complete process of literary text analysis as pictured in Figure 1? One case of
+partial text analysis is characterized by basing the computational analysis on
+a relatively weak hypothesis that does not necessarily have to be interpretive,
+
+23 At least four perspectives seem possible (cf. in part Kindt and Müller, “Wieviel Interpretation enthalten Beschreibungen? Überlegungen zu
+
+einer umstrittenen Unterscheidung am Beispiel der Narratologie”): Descriptive findings can (a) suggest certain interpretations, (b) support
+the plausibility of interpretations in the context of testing hypotheses, (c) reveal interpretations as false or implausible in the context of
+testing hypotheses, (d) inspire interpretive hypotheses in a heuristic fashion.
+
+Journal of Cultural Analytics
+
+18
+
+Are Computational Literary Studies Structuralist?
+
+e.g. that a specific text phenomenon is especially conspicuous in a text or
+a text corpus. Other partial text analyses may start with an interpretive
+hypothesis and then target only the textual features that are connected to this
+hypothesis in the context of a computer-aided text analysis, but not additional
+contexts that would be necessary to fully justify the hypothesis.
+In cases like these, the allegations of ahistoricism and a reductionist concept
+of meaning, again, do at first seem to apply. If the hypothesis is not an
+interpretive one, then contexts are most likely entirely ignored – and critics
+could complain that nothing “meaningful” has been said about the text, even
+if the hypothesis can successfully be justified with the help of computational
+analysis. If the hypothesis is an interpretive one, and only descriptive
+computational text analysis is used in an attempt to justify it, a valid point of
+criticism would be that such endeavors can never be (fully) successful because
+interpretations concern the meaning of a text, and that this meaning is never
+constituted by the text alone.
+While critics could label such approaches irrelevant or incomplete because
+the actual relevance of the findings has not been argued for (completely), this
+position reveals a debatable notion of literary studies practice and progress
+(Kindt). The assumption behind this seems to be that scholarly contributions
+concerning a literary text need to be exhaustive and attempt a holistic
+interpretation of the text in order to be valuable. However, this attitude
+tends to make an interwoven, joint research culture where contributions are
+building on each other virtually impossible. In our view, it is not to be
+regarded as a shortfall when a research contribution on a literary text only
+provides selected perspectives. On the contrary: the polyvalence of literary
+texts and the inconclusiveness of sense-making processes in literary studies
+make all contributions necessarily selective. Research contributions should
+ideally provide connectivity and foster the joint endeavor of understanding
+texts with new perspectives. In this vein, even approaches in which
+computational methods are applied to literary texts without engaging in
+interpretation cannot convincingly be accused of ahistoricism and a
+reductionist concept of meaning – because they do not aspire to provide a
+holistic understanding of the text but only potential building blocks in sensemaking. Their claim is therefore far more modest than is often assumed by
+critics.
+In summary, confirmatory computational approaches need to carefully
+choose their methods based on a theoretically and methodologically wellfounded operationalization of the relevant research question. Though the
+validity claim is stronger than for the exploratory use, it is important to
+note that computational confirmatory approaches rarely strive to tackle the
+whole task of text analysis (as in step 2 of the model), let alone the whole
+process of literary text analysis including interpretation (step 3). Hence, it
+can contribute an important part of hypothesis testing that is compatible
+
+Journal of Cultural Analytics
+
+19
+
+Are Computational Literary Studies Structuralist?
+
+with different interpretation approaches, which can be used to complement
+it. Its assets can be to provide a broader and more secure descriptive basis of
+interpretation.
+
+5. Conclusion
+In the previous sections we have tried to shed some light on the question
+of whether computational literary studies work in a structuralist way. What
+we have not considered in this approach is the evaluation of structuralism as
+a literary theory. While this is probably at stake in most debates concerning
+the “digital humanities-as-structuralism” narrative, we cannot address such a
+substantial concern in this paper. This is not only because of the complex
+argumentation lines one would have to follow and then relate to
+computational literary studies approaches, but also because there are probably
+basically only two, very contrary positions with regard to it. While the
+possibility of computational literary studies being structuralist might be seen
+positively or even indifferently by pro-structuralists, anti-structuralists will see
+this as its fundamental flaw. Therefore we concentrated our discussion on
+criticism of structuralism.
+In order to do this, we singled out two major criticisms against structuralism,
+its ahistoricity and its reductionist concept of meaning, in section 2. As
+we have pointed out, there are also general arguments that relativize these
+criticisms. Nevertheless, we based our subsequent discussion of structuralism
+in computational literary studies on the questions of ahistoricity and the
+reductionist concept of meaning. Before discussing them, in section 3 we
+introduced a general and theory-independent model for literary text analysis
+consisting of three steps (reading, analysis and interpretation) and elaborated
+on hypothesis development and justification in literary studies. This built
+the ground for our analysis of structuralism in computational literary studies
+in section 4. Here, we examined the use of computational methods for the
+exploration and confirmation of interpretation hypotheses and its potential
+relation to structuralist issues. Thus we were able to explore the entire process
+of literary text analysis both with regard to the use of computational methods
+and broader activities in which these are embedded. For these, we tackled
+the questions of ahistoricity and the reductionist concept of meaning as
+well as the related issue of presumably “incomplete” processes of exploratory
+hypothesis development or the testing of hypotheses in the context of text
+analysis.
+As we have argued, what can be seen as structuralist is that computational
+literary studies produce descriptive results, fix text elements conceptually and
+emphasize text structures. But since one can assume that literary text analysis
+(as a process including interpretation) always builds to a certain extent on text
+analysis (i.e. non-interpretive, mainly descriptive operations), this can hardly
+be criticized. Computational literary studies are structuralist in a negative
+sense only if it goes hand in hand with a literary theory that reduces textual
+Journal of Cultural Analytics
+
+20
+
+Are Computational Literary Studies Structuralist?
+
+meaning to intratextually describable findings. This is inadequate from the
+point of view of literary studies. The remedy for this kind of – ignorant –
+structuralism lies in the operationalization an approach is based upon. While
+this holds generally for literary studies, the modelling of a phenomenon in
+terms of its textual indicators is a bigger challenge for computational literary
+studies, since it has a stronger, or more direct, impact on the methodological
+process.
+Nevertheless, it should be a general goal of literary textual research (whether
+traditional or computational) that its results equally meet standards of
+comprehensibility and the demand for relevance. To ensure this, the steps
+of analysis and interpretation must be linked in meaningful ways. This
+requires a more detailed exploration of the quality criteria for interpretations,
+which includes the relationship between analysis and interpretation. This
+exploration is up to both traditional and computational literary studies.
+This is where the “digital humanities-as-structuralism” narrative is productive,
+because it cautions against reductionist approaches. Computational literary
+studies should continue to strive for the adequacy of its approaches. It
+must reflect on and explicate the relationship between algorithm goals and
+phenomena of literary interest.
+Nevertheless, the exploratory as well as the (from an interpretation
+perspective) only partial approaches in computational literary studies should
+not be seen as reductionist. Computational exploration is purposeful when
+it produces interesting hypotheses and questions. The same holds for the
+practices of presenting partial findings and explicating the process of analysis
+that are established in computational literary studies. They could serve as
+an (additional) model also for non-computational literary studies, providing
+connectivity and foster the joint endeavor of understanding.
+Submitted: June 14, 2022 EDT, Accepted: June 30, 2022 EDT
+
+This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0
+International License (CCBY-4.0). View this license’s legal deed at http://creativecommons.org/licenses/
+by/4.0 and legal code at http://creativecommons.org/licenses/by/4.0/legalcode for more information.
+
+Journal of Cultural Analytics
+
+21
+
+Are Computational Literary Studies Structuralist?
+
+works cited
+Bode, Katherine. “Why You Can’t Model Away Bias.” Modern Language Quarterly, vol. 81, no. 1,
+Mar. 2020, pp. 95–124, https://doi.org/10.1215/00267929-7933102.
+Culler, Jonathan. “The Linguistic Foundation.” Literary Theory: An Anthology, edited by Julie
+Rivkin and Michael Ryan, Third, Wiley Blackwell, 1998, pp. 73–75.
+Da, Nan Z. “The Computational Case against Computational Literary Studies.” Critical Inquiry,
+vol. 45, no. 3, Mar. 2019, pp. 601–39, https://doi.org/10.1086/702594.
+Danneberg, Lutz. “Kontext.” Reallexikon der deutschen Literaturwissenschaft, edited by Harald
+Fricke, vol. 2, 2000, pp. 333–37.
+Dobson, James E. Critical Digital Humanities: The Search for a Methodology. University of Illinois
+Press, 2019, https://doi.org/10.5622/illinois/9780252042270.001.0001.
+Dombrowski, Quinn. Towards a Taxonomy of Failure. 2019, http://quinndombrowski.com/
+?q=blog/2019/01/30/towards-taxonomy-failure.
+Gerstorfer, Dominik. “Entdecken und Rechtfertigen in den Digital Humanities.” Reflektierte
+algorithmische Textanalyse, edited by Nils Reiter et al., De Gruyter, 2020, pp. 107–24,
+https://doi.org/10.1515/9783110693973-005.
+Gius, Evelyn. “Computational Text Analysis as a Five-Dimensional Problem: A Model for the
+Description of Complexity.” LitLab Pamphlet, edited by Thomas Weitin, no. 8, 2020, pp. 1–19,
+http://www.digitalhumanitiescooperation.de/wp-content/uploads/2020/08/p08giuseng.pdf.
+Gius, Evelyn, and Janina Jacke. “Informatik und Hermeneutik. Zum Mehrwert interdisziplinärer
+Textanalyse.” Sonderband der Zeitschrift für digitale Geisteswissenschaften, no. 1, 2015,
+https://doi.org/10.17175/sb001.
+---. “The Hermeneutic Profit of Annotation: On Preventing and Fostering Disagreement in Literary
+Analysis.” International Journal of Humanities and Arts Computing, vol. 11, no. 2, Oct. 2017,
+pp. 233–54, https://doi.org/10.3366/ijhac.2017.0194.
+Gottlieb, Evan. Engagements with Contemporary Literary and Critical Theory. 1st ed., Routledge,
+2019, https://doi.org/10.4324/9781315722887.
+Jacke, Janina. “Digitale Textanalyse und Interpretation. Zwei Ideen für die literaturwissenschaftliche
+Lehre.” Philologie im Netz-Beiheft: Wie vermittelt man Interpretationskompetenzen? Beiträge zur
+Praxis der literaturwissenschaftlichen Lehre, edited by Stefan Descher et al., vol. 27, no. 2021,
+2021, pp. 13–34.
+Jannidis, Fotis. “On the Perceived Complexity of Literature. A Response to Nan Z. Da.” Journal of
+Cultural Analytics, vol. 5, no. 1, Jan. 2020, pp. 1–12, https://doi.org/10.22148/001c.11829.
+Kindt, Tom. “Gibt es einen Fortschritt der literaturwissenschaftlichen Interpretation?” Germanistik
+in der Schweiz, vol. 13, 2016, pp. 27–36, https://doi.org/10.24894/1664-2457.90149.
+Kindt, Tom, and Hans-Harold Müller. “Narrative Theory and/or/as Theory of Interpretation.”
+What Is Narratology? Questions and Answers Regarding the Status of a Theory, edited by Kindt
+Müller, de Gruyter, 2003, pp. 205–19.
+---. “Wieviel Interpretation enthalten Beschreibungen? Überlegungen zu einer umstrittenen
+Unterscheidung am Beispiel der Narratologie.” Regeln der Bedeutung. Zur Theorie der Bedeutung
+literarischer Texte, edited by Fotis Jannidis et al., de Gruyter, 2003, pp. 286–304, https://doi.org/
+10.1515/9783110907018.286.
+Köppe, Tilmann, and Simone Winko. “Theorien Und Methoden Der Literaturwissenschaft.”
+Handbuch Literaturwissenschaft: Methoden Und Theorien, edited by Thomas Anz, vol. 2, Metzler,
+2013, pp. 285–371, https://doi.org/10.1007/978-3-476-01271-5.
+
+Journal of Cultural Analytics
+
+22
+
+Are Computational Literary Studies Structuralist?
+
+Leitch, Vincent B. “Introduction to Theory and Criticism.” The Norton Anthology of Theory and
+Criticism, edited by Leitch, 2nd ed., W.W. Norton & Co, 2010, pp. 1–33.
+Maaten, Laurens van der, and Geoffrey Hinton. “Visualizing Data Using T-SNE.” Journal of
+Machine Learning Research, vol. 9, no. 86, 2008, pp. 2579–605908.
+Mitchell, W. J. T. “Representation.” Critical Terms for Literary Study, edited by Frank Lentricchia
+and Thomas McLaughlin, U of Chicago P, 2012, pp. 11-22, http://www.credoreference.com/
+book/uchicagols.
+Owens, Trevor. Discovery and Justification Are Different: Notes on Science-Ing the Humanities. 2012,
+http://www.trevorowens.org/2012/11/discovery-and-justification-are-different-notes-onsciencing-the-humanities/.
+Patterson, Lee. “Literary History.” Critical Terms for Literary Study, edited by Frank Lentricchia
+and Thomas McLaughlin, U of Chicago P, 2012, pp. 250-62, http://www.credoreference.com/
+book/uchicagols.
+Rivkin, Julie, and Michael Ryan. “Formalism.” Literary Theory: An Anthology, edited by Rivkin
+Ryan, Third, Wiley Blackwell, 1998, pp. 3–7.
+Rowe, John Carlos. “Structure.” Critical Terms for Literary Study, edited by Frank Lentricchia and
+Thomas McLaughlin, U of Chicago P, 2012, pp. 23-38, http://www.credoreference.com/book/
+uchicagols.
+Schickore, Jutta. “Scientific Discovery.” Stanford Encyclopedia of Philosophy, edited by Edward N.
+Zalta, 2018, http://plato.stanford.edu/entries/scientific-discovery/#DisBetConDisConJus.
+Schleiermacher, Friedrich. “Vorlesungen zur Hermeneutik und Kritik [1805–1833].” Kritische
+Gesamtausgabe, vol. 4, 2012.
+Schruhl, Friederike. “Objektumgangsnormen in der Literaturwissenschaft.” Zeitschrift für digitale
+Geisteswissenschaften, vol. Sonderband 3, 2018, p. 003012.
+Schulenberg, Ulf. “Formalism and Structuralism.” English and American Studies: Theory and
+Practice, edited by Martin Middeke et al., J.B. Metzler, 2012, pp. 181–85, https://doi.org/
+10.1007/978-3-476-00406-2_5.
+Schwan, Hannah, et al. “Narrelations – Visualizing Narrative Levels and Their Correlations with
+Temporal Phenomena”.” Digital Humanities Quarterly, vol. 13, no. 3, 2019, http://
+www.digitalhumanities.org/dhq/vol/13/3/000414/000414.html.
+Sievert, Carson, and Kenneth Shirley. “LDAvis: A Method for Visualizing and Interpreting Topics.”
+Proceedings of the Workshop on Interactive Language Learning, Visualization, and Interfaces. Proc.
+of Proceedings of the Workshop on Interactive Language Learning, Visualization, and Interfaces,
+Association for Computational Linguistics, 2014, pp. 63-70, https://doi.org/10.3115/v1/
+w14-3110.
+Spoerhase, Carlos. “Strukturalismus und Hermeneutik: Über einige Schwierigkeiten strukturaler
+Verfahren im Spannungsfeld von Textanalyse und Interpretation”.” Strukturalismus in
+Deutschland. Literatur- und Sprachwissenschaft 1910–1975, edited by Hans-Harold Müller et al.,
+Wallstein, 2010, pp. 13–38.
+Stegmüller, Wolfgang. “Das Problem Der Induktion: Humes Herausforderung Und Moderne
+Antworten.” Der Sogenannte Zirkel Des Verstehens, Wissenschaftliche Buchgesellschaft, 1996, pp.
+13–74.
+Strube, Werner. “Über Kriterien der Beurteilung von Textinterpretationen.” Vom Umgang mit
+Literatur und Literaturgeschichte. Positionen und Perspektiven nach der Theoriedebatte, edited by
+Lutz Danneberg et al., Metzler, 1992, pp. 185–209, https://doi.org/10.1007/
+978-3-476-03386-4_8.
+
+Journal of Cultural Analytics
+
+23
+
+Are Computational Literary Studies Structuralist?
+
+Titzmann, Michael. “Strukturalismus.” Reallexikon der deutschen Literaturwissenschaft, edited by
+Harald Fricke et al., 3rd ed., vol. III, De Gruyter, 2003, pp. 535–39.
+Uglanova, Inna, and Evelyn Gius. “The Order of Things. A Study on Topic Modelling of Literary
+Texts.” Proceedings of the Workshop on Computational Humanities Research (CHR 2020), edited
+by Folgert Karsdorp et al., CEUR Workshop Proceedings, 2020, pp. 57–76, http://ceur-ws.org/
+Vol-2723/long7.pdf.
+Winko, Simone. “Textanalyse.” Reallexikon Der Deutschen Literaturwissenschaft, edited by Harald
+Fricke et al., 3rd ed., vol. III, De Gruyter, 2003, pp. 597–601.
+
+Journal of Cultural Analytics
+
+24
+
+

@@ -1,0 +1,1422 @@
+Oiva, Mila, et al. “Soviet View of the World. Exploring Long-Term Visual Patterns in
+‘Novosti Dnia’ Newsreel Journal (1945-1992).” Journal of Cultural Analytics, vol. 9, no. 4,
+July 2024, https://doi.org/10.22148/001c.118495.
+
+ARTICLE
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in
+“Novosti dnia” Newsreel Journal (1945-1992)
+Mila Oiva1 , Tillmann Ohm1 , Ksenia Mukhina1 , Mar Canet Solà1 , Maximilian Schich1
+1 Tallinn University
+
+Keywords: visual discourse analysis, Soviet history, audiovisual materials, Convolutional Neural Networks, long-term patterns, historical data, ResNet50, visual
+culture, propaganda
+https://doi.org/10.22148/001c.118495
+
+Journal of Cultural Analytics
+Vol. 9, Issue 4, 2024
+
+Newsreels, short documentary news films, were an influential channel of mass
+communication and propaganda in the Soviet Union. They served as an
+important means of visualizing the world for audiences in the way the Soviet
+authorities wanted it to be depicted. Studies in Soviet visual culture have
+recognized both continuities of repeating patterns and changes in the postWorld War II period. This understanding is based primarily on temporally
+limited source selections, while a more systematic study of the developments in
+Soviet visual culture over a longer period is pending. In this article, we reveal
+long-term continuities, subtle changes, and sudden shifts in the official visual
+discourse in the Soviet newsreel series ‘Novosti dnia’ (News of the Day) 1945 to
+1992. We study visual patterns in approximately 1,700 digitized newsreel issues,
+each about ten minutes long, using multidimensional vector embeddings. These
+embeddings, produced from the central frames of 205,678 shots, help visually
+evaluate the footage and assess visual similarities based on ResNet50 feature
+vectors. For this, we use the Collection Space Navigator tool. The article
+demonstrates how multidimensional vector embeddings can be used to study
+the internal time of the films, and the external time of the years running by.
+
+Introduction
+The Soviet leadership took the role of moving images in mass media seriously.
+From the inception of the Soviet state, leaders recognized the importance of
+cinema in promoting the Soviet cause and propagating desired worldviews,
+thereby supervising newsreel production stringently (Heftberger 2; Kowalsky
+7; Clarke and Seksenbayeva 265–66). Simultaneously it was important for
+them to ensure that the contemporary world was depicted in news media
+in ways that supported their policies (McNair 1, 23, 29–30). Newsreels,
+the eight to twelve-minute news films shown in cinemas before the main
+feature, were produced in the Soviet Union from 1918 until the 1990s,
+typically in weekly series. Given that Soviet citizens were among the world’s
+top cinema-goers (Roth-Ey 2) the audience for Soviet newsreels effectively
+encompassed the majority of the urban population. The production of
+Soviet films, news, and newsreels was organized hierarchically, based on
+the production location and the size of the audience reached (Roth-Ey;
+McNair). Among the various newsreel series released in the Soviet Union,
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+the ‘Novosti Dnia’ (News of the Day) series was the most important. It
+was produced at the Central Documentary Film Studios in Moscow from
+1944 to 1992. Alongside television news introduced later, the ‘Novosti dnia’
+newsreel series is regarded as one of the most central official representations
+of the contemporary world in audiovisual format in the post World War II
+Soviet Union. Due to its highly curated content and the minimal chance of
+accidental on-screen appearances, the series and its changes reflect the official
+Soviet worldview.
+Earlier research has indicated that Soviet newsreels served inspirational,
+pedagogical, and ideological purposes (Kowalsky 8). They portrayed hero
+workers in factories and kolkhozes, construction sites, parades, sports,
+cultural events, and battles against ‘capitalist imperialism’ abroad (Karavaev
+19–28; Clarke and Seksenbayeva 267–69; Veldi et al. 7–8; Kowalsky 8, 10).
+The characteristics developed after the October Revolution shaped Soviet
+non-fiction film in subsequent years (MacKay et al. 119). Dmitrii Karavaev
+has demonstrated how the portrayal of the historical memory of the October
+Revolution in Soviet newsreels from 1922 to 1957 evolved over time
+(Karavaev 19–28). However, apart from Karavaev's research, few studies have
+explored longitudinal characteristics and trends in the Soviet worldview.
+Simultaneously, scholarship on broader Soviet culture has identified both
+immutable characteristics and subtle changes in the post-World War II era.
+Alexei Yurchak describes late Soviet culture, spanning from the mid-1950s
+to the mid-1980s, as characterized by constative and performative aspects of
+acts and speech. During this period, the form of ideological representations,
+evident in posters, monuments, urban visual propaganda, and newsreels,
+became immutable, highly standardized, and predictable (Yurchak 14, 22–25,
+37, 47, 57–59).
+While Yurchak emphasizes the unchanging and ritualized nature of official
+late Soviet-era culture, other scholars have observed subtle shifts in Soviet
+visual culture, particularly during the late 1950s and early 1960s. Ekaterina
+Vikulina notes that Soviet visual culture became increasingly varied in the
+late 1950s due to a growing influx of Western popular culture. Concurrently,
+staged photography gave way to more spontaneous images, and
+photojournalism began to emerge alongside artistic photography (Vikulina
+430–32). Visual media also diversified as the number and variety of illustrated
+magazines expanded dramatically starting in the mid-1950s, and cinemas
+began screening more foreign films from Eastern and Western Europe, the
+US, and India (Vikulina 434–35; Roth-Ey 74, 89–91). This diversification
+influenced, for example, Soviet feature film, where bodily expressions became
+more relaxed, particularly in depictions of young people (Bulgakowa).
+Although the emphasis of the earlier studies may vary, they are not necessarily
+contradictory. In any culture, it is possible to observe both simultaneous
+continuities and changes over time. The studies mentioned above indicate
+Journal of Cultural Analytics
+
+2
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+that the late 1950s were an important period of change, but there is less
+knowledge about potential changes in other periods. To better understand
+the prevailing characteristics and temporal dynamics of Soviet visual
+propaganda, we should shift our focus from analyzing selected short-term
+samples to conducting a systematic study over longer time spans.
+The aim of this article is to study the long-term developments in the official
+Soviet visual representation of the world and its changes by examining groups
+of similar images in the ‘Novosti dnia’ newsreel series. Although previous
+research has demonstrated both continuities and changes in late Soviet visual
+culture, a more systematic long-term analysis is still lacking. To address this
+gap, this study investigates the prevailing ways in which the contemporary
+world was depicted in the ‘Novosti dnia’ newsreel series, screened from 1945
+to 1992, and examines whether and how these depictions changed over
+time. Using a combination of quantitative and qualitative methods, including
+convolutional neural networks (CNNs) on central frames of each shot, this
+research aims to explore, identify and explain temporal patterns.
+Earlier research has employed CNNs to search for similar images and identify
+specific groups within large historical image collections (Wevers; Lee et al.;
+Arnold and Tilton, “Distant Viewing Toolkit for the Analysis of Visual
+Culture” 206–207). While most studies examine image collections
+comprehensively, there are also instances where vector embeddings have been
+used to investigate temporal patterns. For example, Wevers and Smits have
+demonstrated that CNNs can facilitate the examination of temporal trends
+and historical transitions within image cultures (Wevers and Smits 198–200).
+This article builds upon the findings of previous studies and advances the
+analysis of temporal patterns identified through multidimensional vector
+embeddings, exploring developments both internally within the films and
+externally across different years.
+While we acknowledge that multimodality is a crucial feature of audiovisual
+materials (Oiva et al.), focusing on a single modality also offers its benefits.
+By isolating the images from movement, the spoken descriptions in the
+voice-over, and the mood-enhancing music, we can concentrate on the visual
+characteristics of Soviet culture. The findings of the study reveal both
+pronounced continuities and subtle changes in the official Soviet visual
+discourse as presented in ‘Novosti dnia’. In the following subsection, we
+discuss the methodological approach of this paper in greater detail, and then
+proceed to analyze the results.
+
+Methodological Background
+The focus of this article is on the visual images of the newsreels, and the
+dominant visual discourses that emerge from the data. We define visual
+discourses as cultural constructions that aim to shape the social, cultural, and
+spatial realities of a specific society or group. Here, intertextuality is crucial
+
+Journal of Cultural Analytics
+
+3
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+because the overarching imagery can only be captured through a group of
+images, and the images can only be understood in relation to one another. For
+the discourse analysis of images it is essential to examine the kinds of groups
+that the images form, the repeating and dominant features they exhibit, and
+what is notably absent. In the analysis of visual cultures, journalistic images
+such as newsreel frames are particularly interesting because they are often
+treated as ‘visual evidence’, even though they are usually carefully selected
+representations (Vahtikari et al. 232–34, 246; Rose 186–93, 220–26).
+To capture patterns in a large quantity of image data, it is advisable to use
+quantitative methods alongside qualitative analysis (Chávez Heras, Cinema
+and Machine Vision 5, 11–12). Computational studies of the visual content
+of audiovisual data are generally based on either manual or computational
+label annotation of pre-set categories or stylistic characteristics such as
+objects, individuals, or camera angles. This approach is central to the distant
+viewing methodology, developed by Taylor Arnold and Lauren Tilton
+(Arnold and Tilton, Distant Viewing 23, 34, 36–37; Arnold and Tilton,
+“Distant Viewing Toolkit for the Analysis of Visual Culture” i5). The results
+of these annotations typically produce lists of textual keywords (listing objects
+visible in the film, film language) or single numerical values such as shot
+lengths. Analysis of the film usually involves sorting, clustering, and statistical
+analysis of these labels (Carrive et al.; Heftberger 29–38; Burges et al.;
+Williams and Bell; Hielscher; Cooper et al.; Bakels et al.; Burghardt et al.;
+Arnold and Tilton, “Distant Viewing Toolkit for the Analysis of Visual
+Culture”; Masson et al.). The rationale for textual labeling of visual contents
+often stems from the necessity to transform images into analysable entities
+and to bridge the semantic gap between the images and human
+understanding of them (Cooper et al.; Bakels et al.). Additionally, the
+widespread use of textual labels in library catalogs and the predominance
+of textual analysis in Digital Humanities research may also influence this
+practice.
+
+translation loss, partial view, and emphasis on
+deduction
+Initiating a study by detecting known features using textual labels is
+ineffective when the goal is to characterize prevailing visual discourses and
+analyze their temporal patterns. For our research question, such an approach
+would have three major shortcomings that would significantly reduce its
+research potential: it would result in translation loss, would provide only
+a partial view of the data, and would place undue emphasis on deduction.
+The first issue, translation loss, stems from the challenge of fully describing
+an image textually, as interpretations depend on the specific interests of the
+human annotator or the training set used for machine annotators. Translating
+an image into textual categories often overlooks many image features and
+omits subtle nuances and transmissions between different categories (Arnold
+
+Journal of Cultural Analytics
+
+4
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+and Tilton, Distant Viewing 38; Masson et al.). As such, computer-assisted
+humanities research has faced criticism for employing overly simplified
+keyword sets and distorting human culture into vague categories since the
+1960s (Olesen and Kisjes; Da). Instead, we should strive to develop methods
+for analyzing cultural materials such as images in ways that capture all
+nuances and avoid significant data loss during translation.
+The translation loss would lead to the second problem: annotation provides
+only a partial view of the data. When annotating images, researchers predefine
+what they find interesting and worthy of note in the dataset, often based on
+a brief review of the data or knowledge from previous scholarship. At worst,
+such an approach would lead researchers to impose pre-set categories on data
+without confirming whether these categories truly exist or are predominant.
+Additionally, machine learning models, which are most commonly used
+to label historical material, are almost exclusively trained on contemporary
+datasets so far. As a result, they often fail to recognize historical objects or
+individuals that have long been forgotten. While focusing on annotation
+allows for targeted examination of specific topics, it does not offer a
+comprehensive view of the entire corpus or identify prevailing, yet
+unexpected, features.
+A partial view on the data would further lead to the third and most
+fundamental problem with the annotation approach. It compels scholars to
+select at a very early stage of their study what to focus on and what to
+annotate, rather than allowing them to first explore what emerges from the
+data. As such, the study of topics would be based on prior assumptions, while
+inhibiting the exploration needed to uncover previously unidentified patterns
+or new categories. Concentrating on fostering a deductive rather than an
+inductive approach, in the worst case, researchers may end up studying
+what they already know, instead of discovering new ways to perceive and
+conceptualize the data.
+
+our approach
+To mitigate issues such as translation loss, partial view, and deduction we
+employ a combination of quantitative pre-organization and human
+interpretation of the data to identify and understand groups of images that
+are visually similar (Arnold and Tilton, Distant Viewing 181). Although this
+approach still incorporates elements of the previously described problems, it
+reduces these issues by delaying categorization until the researcher has had an
+opportunity to review the entire dataset.
+In our study, we initially processed the data of 1,747 Novosti dnia newsreel
+issues spanning the years 1944 to 1992 using an automatic shot detection
+algorithm (Castellano) to segment the newsreels into 205,678 footage shots.
+This algorithm, which employs a rolling comparison of pixel content in
+consecutive frames, identifies new shots when a specified threshold is
+
+Journal of Cultural Analytics
+
+5
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+exceeded. We adjusted the threshold value for some newsreels that had poor
+digitization quality and substantial contrast fluctuations. To evaluate the
+algorithm’s accuracy, we manually examined a random sample of 58 newsreel
+videos, which revealed an average accuracy of 90.5%, with individual video
+accuracies ranging from 70% to 98%. By setting a relatively low threshold,
+we ensured the detection of most shots while accepting a higher number of
+duplicates.
+From each detected shot segment, we selected the middle frame to represent
+its footage with a single image. Choosing the middle frame helped overcome
+some of the inaccuracies in shot boundary detection at the beginning and end
+of each segment. We then encoded the frames using a pre-trained ResNet50
+model (He et al.), a CNN trained on the ImageNet dataset (Deng et al.), into
+2048-dimensional feature vectors. For dimensionality reduction, we employed
+Uniform Manifold Approximation and Projection (UMAP) (McInnes et al.)
+to transform these multidimensional image embeddings into 2-dimensional
+projections suitable for visual interpretation. There are known issues with
+dimensionality reductions (Shinn; Chari and Pachter; Wattenberg et al.),
+which only provide a limited view of the complex array of similarities. In the
+subsequent analysis of the image contents, we report on the findings derived
+from the UMAP projections, which utilized a correlation metric, included
+the 15 nearest neighbors, and had a 0.18 minimum distance.
+For the analysis of the resulting images, we utilized the Collection Space
+Navigator (CSN), a customizable open-source tool that provides an
+interactive graphical interface for exploration of visual data in the
+multidimensional embedding space (Ohm et al.). The CSN provides
+additional features such as metadata filtering, search queries and category
+colors to enhance navigating the extensive visual information. Advanced
+Dimensionality Reduction algorithms, such as UMAP, are usually nondeterministic, which means that the resulting projections are not “the” but
+“a view” of the data. Therefore, the CSN provides different kinds of distant
+views of the dataset that help the user analyze the data from a variety of
+interpretations.
+After the preparatory steps, a team member trained in Soviet cultural history
+explored the data using the CSN’s functionality, which allows examination
+of different projections. The team member selected the UMAP projection for
+closer visual inspection because it was most relevant to the research question
+at hand. The CSN provided a simultaneous view of all frames, organized
+according to their similarity as determined by the selected projection. From
+this overview, the scholar identified clusters of images and conducted a
+qualitative analysis using the CSN’s filtering and zooming functionalities.
+
+Journal of Cultural Analytics
+
+6
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+implications of our approach
+The combination of using convolutional neural networks (CNNs) and
+qualitative approaches facilitated the grouping of frames in a manner that not
+only led to new findings but also resonated with the context of Soviet visual
+culture. The various projections provided by ResNet50 offered insights into
+the different ways the frames were similar to each other. By allowing a human
+observer to select the projection for closer analysis and to identify image
+clusters based on their knowledge of Soviet cultural history, we ensured that
+the final phase of the analysis was grounded in existing scholarly literature.
+Consequently, the validity of our final findings is based not solely on
+numerical analysis but also on prior studies and understanding of Soviet
+visual culture. Our methodological choice to rely on subjective yet informed
+human selection and categorization, rather than an algorithmic approach,
+stems from the assumption that there is no single correct way to categorize
+images; rather, the appropriateness of categorization depends on the chosen
+perspective.
+Our approach has several important implications for the study. First, it
+enables the analysis to begin inductively, and delays human interpretation
+until after the images have been categorized based on their visual features.
+This strategy not only confirms and delves deeper into visual patterns
+identified by earlier scholarship but also uncovers new, previously
+unrecognized yet potentially significant visual patterns (Olesen and Kisjes
+83–84). Although using multidimensional vector embeddings can be viewed
+as another method of categorizing images, and these are influenced by the
+underlying training data (Arnold and Tilton, Distant Viewing 182) this
+approach of disregarding label predictions initially allows for the grouping of
+images based on their technical features, thereby delaying the assignment of
+meanings.
+Secondly, converting images into vector representations partially addresses the
+issues of translation loss and partial view by focusing on sensory features
+of images that are incompletely captured by verbal descriptions (Masson
+et al.). The digitization of audiovisual material transforms it from physical
+film materials to numeric data. While digitization and vector transformations
+inevitably involve some data loss, they facilitate a different type of
+examination through the ‘estrangement’ of the data (Mittell; Chávez Heras,
+“Creanalytics”).
+Thirdly, using vector representations shifts the focus to how images are
+portrayed and putting what is portrayed to a secondary position. As Eva
+Hielscher has noted, the manner in which objects are depicted may be
+more significant for meaning making than the frequency of their appearance
+(Hielscher). Therefore, it is not only important to identify the objects but
+also to examine how they are portrayed. Employing multidimensional
+embeddings to approach image objects through visual family resemblance
+Journal of Cultural Analytics
+
+7
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+allows for initial clustering based on the ways objects are depicted, followed
+by an exploration of what has been shown repeatedly in a similar manner.
+This method can help identify clusters of congruent ways of depicting similar
+objects, which are likely considered meaningful by the authors if they appear
+frequently (Karjus et al.). If similar objects are depicted in the same way
+repeatedly and over a long period, we can assume that there is a meaning
+attached to them that the film-makers intended to convey.
+Fourthly, the numerical nature of the vector representations enables the
+recognition of overlapping and multimodal similarities, as well as subtle
+continuities, rather than merely categorizing them into crude baskets of
+textual labels. In our research process, we qualitatively identify fuzzy cluster
+areas of similar images instead of algorithmically assigning each frame a
+specific cluster ID. This approach upholds the notion that similarities are
+continuous rather than categorical, and that a frame can simultaneously
+belong to several categories. It also acknowledges the possibility of identifying
+an infinite number of layers of sub-clusters, but limits the analysis to a level of
+abstraction that is appropriate for the research question. Our method aligns
+with the insights from earlier studies in cultural data analytics, which have
+emphasized the importance of recognizing subtle continuities in cultural data
+(Arnold and Tilton, Distant Viewing 44, 181; Manovich 10, 164).
+Finally, reproducibility in our study implies that other scholars analyzing the
+same material would readily recognize our findings. However, our results
+are not exhaustive; other researchers may identify additional clusters, subclusters, and patterns within the data.
+
+Visual Temporal Patterns in Novosti Dnia
+Watching numerous issues of the ‘Novosti dnia’ newsreel gives the impression
+of sameness, with recurring annual celebrations of the New Year, Women’s
+Day, First of May, and October Revolution, alongside representations of
+industrial and scientific progress and abundant harvests, consistently
+heralding the Soviet country’s march toward a bright future until the
+mid-1980s. By stripping the data of sound and movement, and focusing on
+the still images of each shot, we are able to highlight significant characteristics
+of visual tropes and relate these to the broader visual culture in the Soviet
+Union.
+An overview of the UMAP projection of the frames reveals distinctive
+condensations, peninsulas, and even islands of images that share similar
+visual components (for more on interpreting a UMAP projection see Arnold
+and Tilton, Distant Viewing 188, 204). The emphasis on visual similarity
+focuses on how the objects and the environments are depicted, based on a
+variety of dimensions, incorporating a range of dimensions from dark to
+light, granular to robust, and various lines or forms. This approach does not
+categorize images based on what is depicted, since the same objects can appear
+
+Journal of Cultural Analytics
+
+8
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Figure 1. A UMAP projection of ResNet50 embeddings of all extracted frames per shot reveals seven prominent image
+clusters. These clusters are circled in the figure and have been named by the authors as ‘Nature’; ‘Monumental
+gatherings’; ‘People in meetings’; ‘Closeups of people’; ‘Industrial production’; ‘Title frames and other texts’; and ‘City
+views’.
+
+differently. For example, human figures may be portrayed with close-ups, in
+motion, sitting in rows in meeting rooms, or marching in large crowds during
+a parade, each resulting in visually distinct frames.
+A closer examination of the UMAP projection reveals generic clusters within
+the ‘Novosti dnia’ newsreel series that can be categorized as ‘Nature’,
+‘Monumental gatherings’, ‘People in meetings’, ‘Closeups of people’,
+‘Industrial production’, ‘Title frames and other texts’, and ‘City views’, as we
+have also noted elsewhere (Oiva et al.) (Figure 1).
+To determine whether the impression of sameness observed when watching
+the newsreels persists when focusing solely on the images and incorporating
+a quantitative approach, we will first analyze the temporal composition of
+the data. Subsequently, we will explore what the internal and external times
+of the newsreels reveal about the dynamics. For the remainder of the paper,
+we will examine the temporal sequences of specific image groups in the data
+more closely.
+
+Temporal Composition of the Data
+The temporal composition of the data, also analyzed using the CSN, reveals
+variation in the production and preservation of newsreels in the Soviet
+Union, along with crucial omissions of data (Figure 2). The initial and final
+periods of newsreel production are distinct from the main body of data, each
+in its unique way. The number of issues produced annually from 1945 to
+1986 generally fluctuated between 52 and 48, roughly corresponding to one
+Journal of Cultural Analytics
+
+9
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Figure 2. Distribution of the 'Novosti dnia’ newsreel series issue numbers from 1945 to 1992. Each frame represents a
+single issue number. Notably, the issues from 1965 are absent from the dataset. Additionally, the film material appears
+also noticeably darker from mid-1960 to 1976, which could be attributed to the use of different film materials or
+digitization methods. Color footage was introduced in mid-1987. The visualization was produced using the Collection
+Space Navigator tool.
+
+issue per week, with occasional breaks during holiday seasons. In the early
+1950s there was a peak in production, reaching up to 72 issues per year. By
+1987 the annual output had halved, and towards the end of the period, the
+frequency of double issues increased, further reducing the publication rate of
+the newsreels. We will explore the details of the final period later in this article
+and now turn to the specifics of the beginning of ‘Novosti dnia’ newsreel
+production.
+Initially, from 1945 to 1953, the issue numbers of the data suggest that
+newsreel production likely reached at least 45 issues per year, although
+several issues are missing. This absence is probably due to the confiscation
+of materials featuring depictions of Stalin after his death in March 1953.
+During the Stalinist era, from the late 1920s until 1953, newsreels frequently
+depicted Stalin, including his portraits and slogans praising him (Karavaev
+25). Following Stalin’s death, many films were ‘de-Stalinized’ by removing
+footage that referenced Stalin, particularly during the 1950s and the 1970s
+(Heftberger 275–82; MacKay). The scant number of frames featuring Stalin
+in our dataset suggests that the missing footage was likely removed as part of
+the de-Stalinization of archives, resulting in gaps in our dataset.
+Another peculiarity of the early ‘Novosti dnia’ production is the apparent
+peak in newsreel production around 1954. Although it is not possible to
+determine the exact number of issues produced from 1945 to 1953 based on
+the available data, this peak corresponds with the surge in overall Soviet film
+Journal of Cultural Analytics
+
+10
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+production in the mid-1950s. At that time, the Soviet Ministry of Culture
+shifted its film production policy from focusing on grand masterpieces to
+promoting a greater number and variety of films, which resulted in a
+significant increase in feature film productions compared to the drastically
+low numbers of the early 1950s (Gilburd, To See Paris and Die 191; RothEy 29). It appears that newsreel production numbers remained stable during
+the early 1950s, while feature films experienced production cuts. Although
+definitive conclusions cannot be drawn from the available data, it is plausible
+that the tightening grip of Stalinism in its final years impacted feature film
+production more than newsreel propaganda. In April 1956, the Central
+Documentary Film Studios, which produced the ‘Novosti dnia’ newsreel
+series, reported to the Soviet Ministry of Culture that the volume of
+documentary films and newsreel issues produced in 1955 and the first quarter
+of 1956 exceeded the annual plans by 148%. The report highlighted that the
+studio produced films reflecting the “historical decisions of the 20th Party
+Congress, citizens’ efforts to fulfill the goals of the ongoing 6-year plan, and
+the expanding foreign relations of the Soviet Union” (Report 1956).
+According to the available dataset, it appears that neither Stalin’s death
+nor the subsequent peak in production led to visual differences in newsreel
+images. The different projections of the embeddings indicate that the frames
+from before and after 1953 are visually similar. However, this broad overview
+of the data, might be misleading. It is conceivable that the data removed
+contained dissimilar frames, but the remaining dataset was curated to meet
+the standards of the post-Stalinist period. Upon closer examination, we
+can identify frames that depict the reopening of the country to foreign
+relations and the increased production of consumer goods, policies that
+were implemented after Stalin’s death (Kozlov 3; Kozlov and Gilburd 27,
+32–33, 45; Gilburd, “The Revival of Soviet Internationalism in the Mid
+to Late 1950s” 364–68, 376; Crowley and Reid 10; Zakharova 100, 109).
+For viewers at the time, the significant reduction of references to Stalin and
+the introduction of new themes would have represented a noticeable shift.
+Nevertheless, these themes are visually presented in a manner that aligns them
+with the extant footage from the Stalinist period.
+
+Changes in the Internal and External Time of the Newsreels
+The temporality of a newsreel series can be explored by also focusing on both
+the internal and external time of the newsreels (Chávez Heras et al.). The
+internal time of the ‘Novosti dnia’ followed a specific logic, similar to that
+observed in Bulgarian newsreels, for instance (Pozharliev and Gallo González
+99–100). This series maintained a hierarchy of news stories: the opening
+stories typically addressed matters of great political importance, the middle
+segments covered socially relevant issues such as industrial production and
+agriculture, and the series concluded with stories dedicated to culture, sports,
+
+Journal of Cultural Analytics
+
+11
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+and other ‘lighter’ topics. In the external time sequence of a newsreel series,
+months and years succeed one another, allowing subtle political and cultural
+shifts to become gradually apparent as time progresses.
+Visualizing the internal and external temporalities of the newsreels highlights
+customary storylines within the internal time, along with their external
+continuities and changes. Figure 3 illustrates the internal temporal
+distribution of newsreel frames, categorizing them as starting shots (shots
+1-29), mid shots (30-60), and the end shots (61-248). Most newsreels lasted
+8-10 minutes and contained 90-140 shots. It is rare for a newsreel issue to
+contain up to 248 shots. The external timeline is segmented according to
+significant periods in Soviet political history: 1945-1954 (late Stalinism and
+its immediate aftermath), 1955-1964 (Khrushcev’s rise and reign), 1966-1984
+(Brezhnev’s reign and the era of stagnation) and 1985-1992 (the perestroika
+period and the dissolution of the Soviet Union). This segmentation results in
+an uneven distribution of years, which nonetheless facilitates the exploration
+of potential differences between the eras.
+Temporal division following the leadership periods makes sense because the
+newsreel contents were aligned with the shifting policies. In the Soviet Union,
+the acceptability of the contents of newsreels and documentary films was
+verified at several stages of production. The authorities not only controlled
+what was shown in the newsreels, but also how it was presented. The
+directors had to adhere strictly to the instructions coming from above, and
+newsreels highlighted and amplified the decisions made by the authorities
+(Clarke and Seksenbayeva 269). The Main Editorial Board of the Central
+Documentary Film Studios evaluated the most recent newsreel issues and
+decided who was responsible for which tasks in the forthcoming weeks in
+its weekly meetings. Their criteria for a successful newsreel issue were that
+it should be engaging and supportive of the policy goals of the Central
+Committee of the Soviet Union. They also focused on the depiction of
+cultural events that were otherwise inaccessible to those living outside the
+capital, thereby extending their reach. Before production began, the Editorial
+Board planned how best to promote the policies of the Communist Party
+(Protocols 1955-1957).
+Figure 3 illustrates that storylines typically followed a pattern where the
+newsreels began with title frames, followed by ‘City views’ indicating the
+location of the opening news story, and depictions of ‘People in meetings’.
+Temporal differences in the opening shots are evident: starting from the
+mid-1950s, there is a clear emphasis on frames depicting (mostly men wearing
+black suits in) meetings. Interestingly, during the Khrushchev period, there
+appear to be two distinct types of meetings (see A in Fig. 3), with the
+upper type displaying leaders in more dynamic compositions. The trope of
+‘Dynamic Leaders’ was less emphasized from 1965 to 1984, but the ‘People
+in meetings’ cluster extends further to the left and images depicting ‘Meeting
+
+Journal of Cultural Analytics
+
+12
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Figure 3. A UMAP projection of Novosti dnia newsreel series in internal and external temporal sequences, shown
+through filtering of the same projection. Starting scenes (scenes 1-29), mid scenes (30-60), and end scenes (61-248) in
+vertical axis. The time baskets of 1945-1954, 1955-1964, 1966-1984, and 1985-1992 in horizontal axis. (A) shows the
+two types of ‘People in Meetings’ clusters appearing in 1955-1964; (B) indicates the extension of the cluster to cover
+images on the ‘Meeting Table’ cluster; (C) shows the ‘Agriculture’ cluster; (D) points out the cluster for leisure time
+activities. Year 1965 is missing from the data.
+
+Tables’ begin to appear (see B in Fig. 3). These images are portrayed not only
+in the opening but also in the middle of the newsreels. The perestroika period
+and the dissolution of the Soviet Union from 1985 to 1992 also start with
+title frames, city views, and depictions of people in meetings; however, this
+period is marked as a distinctly different era.
+The middle segments of the newsreels (shots 30-60) consistently highlighted
+‘Industrial Production’ and ‘Nature’ from their inception in 1945 until to
+the mid-1980s. Within the ‘Nature’ cluster, depictions of ‘Agriculture’ can
+be identified (see C in Fig. 3). The newsreels concluded with depictions of
+cultural events such as dance and circus performances, sports events, and
+fashion shows. These images frequently featured close-ups of the audience
+enjoying the shows and applauding.
+
+The Kremlin
+Moving on to a closer analysis of the temporal developments of interesting
+clusters emerging from the data, we will first examine one of the most
+temporally stable clusters. The Moscow Kremlin, the old fortification located
+at the heart of the city and used as the headquarters of the Soviet leadership,
+was continuously depicted in the newsreels. Often the first news stories
+featured important meetings with domestic organizations or foreign
+delegations in Moscow, with the initial shot showcasing the venue of the
+Journal of Cultural Analytics
+
+13
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Figure 4. The Moscow Kremlin related ‘peninsulas’: a Kremlin tower and the Grand Kremlin Palace seen from a bridge
+crossing the Moskva river, meetings at the Great Kremlin Palace, and at the State Kremlin Palace, repeating from the
+1950s until the mid-1980s, and in the case of the outdoors Kremlin views and meetings in the State Kremlin Palace
+until the 1990s.
+
+meeting, the Kremlin. As Figure 4 illustrates, shots depicting the Kremlin
+from outside, and gatherings inside the grandiose meeting halls of the Grand
+Kremlin Palace and the State Kremlin Palace, create distinctive ‘peninsulas’
+in the UMAP projection. These ‘peninsulas’, identified qualitatively as
+distinctive elements on the edges of the ‘mainland’ of the UMAP projection,
+belong to the larger clusters of ‘City views’ and ‘Monumental gatherings’
+shown in Figure 1. The positioning of the ‘peninsulas’ on the edges of
+the ‘mainland’ indicates that the projection recognizes them as distinct,
+yet partially connected entities. Our qualitative observations also confirm
+that these image sets were recognizable to human observers as signifying
+images. These frames represent a particularly stable continuity from the early
+1950s—or the early 1960s in the case of the State Kremlin Palace, which
+opened in 1961—through the 1990s. We will discuss the changes observed in
+the late 1980s later in the article.
+Shooting the footage from the same location—either from a bridge crossing
+the Moskva River, or a particularly advantageous spot in the meeting
+hall—results in frames that are very similar to each other, and tend to
+repeat year after year across several decades. The combination of the frequent
+hosting of important events at these venues and a convenient filming location
+began to establish a kind of iconicity around the images. When hearing about
+a meeting held in the Kremlin, the newsreel audiences could easily visualize
+
+Journal of Cultural Analytics
+
+14
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Figure 5. Soviet leaders receiving a parade on the Lenin Mausoleum from 1953 until 1987.
+
+these images in their minds. Simultaneously, the frequently recurring,
+recognizable locations of power reinforced the viewers’ perception of the
+stability of the Soviet power.
+
+The Mausoleum
+Another ‘peninsula’ of frames recurring over a long temporal stretch features
+depictions of the Soviet leadership standing on the Lenin Mausoleum in Red
+Square (Fig 5). These images capture the leadership reviewing a parade, often
+during the October Revolution or the May Day celebrations. They also form
+part of the gallery of Soviet iconography that was publicly displayed to Soviet
+citizens and distributed in the foreign press. In his study on the depictions
+of the October Revolution in Soviet newsreels from 1922 to 1957, Dmitry
+Karavaev demonstrates that showcasing these festivities in newsreels served
+as a reminder to audiences of the revolution’s ideals and conveyed that the
+leadership staunchly supported these ideals (Karavaev 19).
+It presents an interesting contrast that the form of these images—men
+standing in line on top of a former leader’s tomb—remains unchanged for
+decades, while the individuals and styles of hats vary. This juxtaposition
+creates a strong symbolic sense of continuity and masks the reality of
+changing leaders, or even the power struggles behind the scenes, which
+sometimes lead to individuals being erased from historical records (Karavaev
+28). This phenomenon aligns with observations made by Yurchak, who
+notes that Soviet ideology was often represented through ritualized practices
+(Yurchak 14). Similarly, Knut Hickethier identified standardized forms of
+images reoccurring in the West German newsreels in the post World War II
+Journal of Cultural Analytics
+
+15
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+period. He argues that the use of standardized imagery helped the audiences
+immediately recognize the content’s context. Additionally, situations were
+often depicted in a regimented manner: political greeting rituals, contract
+signings, meetings, and event openings were frequently portrayed in a similar
+fashion (Hickethier 49). All this contributed to the repetitiveness of the visual
+appearance, echoing the ‘pathos formulas’, coined by Aby Warburg, which
+refer to a sequence of similar visual configurations passed down through
+history (Hickethier 50; Impett and Moretti 1, 5; Warburg). In the case of
+newsreels, as Hickethier points out, footage was usually not chosen by paying
+explicit attention to ‘pathos formulas’, but rather because they were selected
+from the studios’ footage libraries with little reflection, and following the
+editors’ embedded pictorial knowledge. Therefore, it can be claimed that the
+repeating images reflected the cultural consensus of the time (Hickethier 50).
+In the case of Soviet leaders, however, using old footage of leaders became
+problematic when they became politically controversial and could no longer
+be depicted on the podium (Karavaev 28).
+Due to the absence of data from the late 1940s and the 1950s (Figure 2),
+it is impossible to verify how consistent the depictions of the leadership
+were before the mid-1950s. However, this type of frame became particularly
+prevalent during the height of the era of stagnation from the mid-1960s to
+the 1980s, and continued into the period of perestroika in the late 1980s. In
+contrast, right after Stalin’s death and during the turbulent leadership period
+of the mid-1950s, we could identify only two frames of this kind (1953/59 in
+Fig. 5, and one from 1958).
+
+Dynamic Leaders
+In the opening shots from 1955 to 1964 there is a distinct cluster that later
+disappears, referred to as ‘Dynamic Leaders’ (see A in Fig. 3). As Figure 6
+illustrates, this cluster predominantly features official delegations outdoors
+and was particularly prominent during the Khrushchev period. The common
+characteristics of these images include political leaders in dynamic positions,
+either walking or greeting each other, and soldiers standing in a row, creating
+a strong diagonal line.
+It is noteworthy that the emphasis of this cluster is on the late 1950s
+and the early 1960s. Generally, the so-called Thaw period following Stalin’s
+death has been considered a major turning point in Soviet history, both
+politically and culturally. Although many cultural changes began gradually
+earlier, the relaxation of political control—from mass terror to ‘selective
+suppression’—and openness to cultural influences from abroad led to shifting
+ideas, artistic practices, and everyday material culture with a lasting impact
+on Soviet society (Kozlov 3; Kozlov and Gilburd 27, 32–33, 45; Gilburd,
+“The Revival of Soviet Internationalism in the Mid to Late 1950s” 364–68,
+376). Denis Kozlov has noted that starting from the Thaw, Soviet cultural
+processes began to align with those in Western Europe (Kozlov 3). Similarly,
+Journal of Cultural Analytics
+
+16
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Figure 6. The ‘Dynamic Leaders’ cluster. The upper row shows that the cluster was prominent in the 1955-1964
+starting scenes. The lower row depicts a series of political leaders outdoors meeting each other. The strong diagonal of
+soldiers standing on a row together with the moving postures of the leaders are common features to this cluster.
+
+Eleonory Gilburd suggests that the Thaw period marked a democratization of
+previously privileged information about foreign cultures and provided access
+to more diverse information for a larger audience (Gilburd, “The Revival
+of Soviet Internationalism in the Mid to Late 1950s” 363). During this
+period, an increasing number of foreign films, especially from France and
+Italy, were screened in cinemas, bringing foreign cultures within reach of
+a vast majority of Soviet citizens, even those outside major cities. Postcards
+depicting foreign cinema stars could be purchased for a few kopecks at
+metro station kiosks, further democratizing access to foreign visual culture
+(Gilburd, To See Paris and Die 167, 179–80, 204; Oiva, Salmi, et al. 86–88).
+Documentaries, such as the film about French singer and film star Yves
+Montand’s tour in the Soviet Union, were also utilized to extend foreign
+cultural access to broader segments of the population (Oiva, Salmi, et al.). In
+1956, the Central Documentary Film Studios reported to the Soviet Ministry
+of Culture that the country’s opening to foreign influences was evident in
+its expanding coverage on visiting delegations to and from the Soviet Union,
+the exchange of newsreel footage with foreign studios had increased, and a
+growing number of Soviet cinematographers were visiting foreign countries
+(Report 1956).
+In her study on the depictions of the Soviet political leadership in the late
+1950s and the early 1960s, Ekaterina Vikulina has demonstrated that the
+expansion of foreign influences and the political transition from Stalinism
+to the more relaxed Khrushchev period were reflected in more dynamic
+portrayals of leaders and the expression of emotions in print media (Vikulina
+429–65). The static nature of Stalin’s images symbolized the calmness and
+certitude of the leader, whereas during the Khrushchev period, leaders began
+to be depicted in motion: discussing issues, on the street, in a car, and
+expressing emotions, such as smiling (Vikulina 450–51).
+
+Journal of Cultural Analytics
+
+17
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Figure 7. The ‘Meeting Table’ cluster. 1956/20: Soviet-French negotiations; 1962/47: Meeting of the Presidium of the
+Supreme Soviet of the Soviet Union; 1968/26: Visit of the President of Chad; 1978/12: Soviet-Morocco negotiations;
+1985/13: Meeting of the Soviet leaders and the delegation of the Socialist International.
+
+Our findings, based on a quantitative approach, confirm Vikulina's
+qualitative observations. Simultaneously, our data reveals that although the
+‘Dynamic Leaders’ cluster did not disappear in later years, its significance
+clearly diminished during the Brezhnev era, which is widely regarded as
+a period of stagnation. It is also noteworthy that the political changes
+beginning in the mid-1980s were not depicted using images from this cluster.
+
+The Meeting Table
+One of the densest frame clusters, evident from at least the mid-1950s
+onwards, depicts—mostly men in black suits—sitting around a long table
+with papers scattered around (Figure 7). The ‘Meeting Table’ cluster includes
+footage of meetings with foreign delegations, the highest political bodies of
+the Soviet Union, or labor unions. This type of depiction underscores the act
+of negotiation—whether in the international arena or within society—where
+participants appear more equally represented than in podium-style meetings
+where speakers address an audience (see the meeting depictions in the
+‘Kremlin’ clusters, Fig. 4). An equal meeting of representatives from different
+countries projects an image of the Soviet Union as an active participant
+in the international arena (Fig. 7, frames 1956/20, 1968/26, and 1978/12),
+emphasizing the message of Soviet goodwill in contrast to the ‘colonizing
+imperialist countries.’ Such ‘democratic’ images were also displayed in relation
+to domestic Communist Party or labor union meetings, when the objective
+was to convey that the entire country was united in achieving the goals set by
+the Communist Party (see, for example, 1962/47).
+Due to the scarcity of data from the late 1940s and the early 1950s we cannot
+determine whether these types of frames were also shown earlier or if this
+was a new phenomenon. The Soviet Union’s opening to the international
+Journal of Cultural Analytics
+
+18
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+arena began in the mid-1950s (Kozlov 3; Kozlov and Gilburd 27, 32–33,
+45; Gilburd, “The Revival of Soviet Internationalism in the Mid to Late
+1950s” 364–68, 376), and it is likely that after Stalin’s death, the emphasis
+in publicity shifted from dictating to negotiating with society. Additionally,
+in the late 1920s, the authorities prohibited newsreel studios from showing
+footage of “sensitive discussions and meetings” (Clarke and Seksenbayeva
+267). It is therefore plausible that during the Stalinist era, newsreel studios
+did not independently include material on political meetings in their reels.
+The existing ‘Meeting Table’ cluster frames from 1945-1953, for example,
+depict people drinking tea, studying, or playing pool (see for example 1956/
+33), which represent socially different activities compared to negotiation.
+During this period, the new way of showing ‘more democratic’ meetings is
+evident not only at the beginning of the newsreels, which showcase more
+important gatherings, but also in the middle of the sections, where domestic
+gatherings of various organizations are shown. Traditionally, the period from
+the mid-1960s to the mid-1980s, during which the cluster was prevalent
+(see B in Fig. 3), has been characterized as the era of ‘stagnation’. It is
+well-known that the newsreels employed metaphorical images to represent
+seemingly concrete current events while simultaneously alluding to broader
+unifying symbols. These visual metaphors had a community-forming and
+culture-creating effect because they drew upon imagery that forms part of
+the foundational components of a cultural group or nation (Hickethier 51).
+The focus on images that suggest a more democratic approach to governance
+opens new avenues for interpreting this period. It raises the question of
+whether the ‘Meeting Table’ cluster was a method of narrating a story of
+‘societal agreement’ or visualizing other more abstract themes and intended
+meanings.
+It is noteworthy that these types of frames were often repeated, and
+continued for decades once they began. Unlike the ‘Kremlin’ frame clusters,
+the ‘Meeting Table’ cluster frames were shot in various locations. Despite
+the locational variety, the repeating visual features of a table—often a long
+one creating a strong perspective angle—around which people sat with their
+papers, have been captured by the embedding. Producing footage of a
+meeting indicates that the leaders considered public information about these
+meetings important. Allowing newsreel crews to shoot footage at a meeting
+was a deliberate choice by the leadership, while the repeating camera angle is
+likely due to practical reasons. Depicting people sitting around a long table
+from one end is the simplest way to capture all participants. Simultaneously,
+these repeating images formed a visual gallery depicting how Soviet foreign
+policy and societal functions were perceived by cinema-going audiences.
+
+Journal of Cultural Analytics
+
+19
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Closeups of People
+Alongside the topics depicting the leadership in various ways, another
+recurring cluster is the ‘Closeups of people’ (see Fig. 1). It is one of the
+widest and densest UMAP clusters. It is interesting to note that the collective
+ideology was portrayed through a massive amount of closeups of individuals.
+They were used to illustrate the work done in factories, construction sites,
+and kolkhozes, as well as schools, and kindergartens (Fig. 8), but also to bring
+the news topics closer to the audiences so that they could relate to them.
+Based on the qualitative analysis of Estonian newsreels from 1951, Martti
+Veldi et al. emphasize that during the high Stalinist period, newsreels depicted
+working-class heroes, such as milkmaids, drivers, and mechanics, to instill
+pride in the ordinary citizens about their country (Veldi et al. 8).
+The decades from the 1950s to the 1970s were the golden ages of movie going
+in the Soviet Union, in the Soviet Union, after which attendance stared to
+decrease. As TV access reached saturation in the USSR during the 1970s,
+the box-office figures declined drastically. People began watching movies on
+TV instead (Roth-Ey 121). The emergence of television had a significant
+impact on newsreel production and content globally (Fielding 992–94), and
+it appears that in the Soviet Union, newsreel producers also had to consider
+this new rival in audiovisual news production to a certain extent.
+In the late 1950s, Soviet newsreels were criticized for being monotonous, and
+in 1959 the All-Union meeting of film directors and writers in Moscow urged
+directors to also include ‘little people’, such as hairdressers and newspaper
+sellers, in their newsreels to make the content more vivid. This approach
+was not new, as conveying Soviet propaganda by depicting heroic ordinary
+workers had been common since the 1930s (Fitzpatrick 73–74; MacKay
+382). In Kazakhstan, the initiative was discussed in detail in film studios,
+art councils and the department of cinematography within the ministry
+responsible for culture, but the new directives were interpreted conservatively,
+and little changed in the newsreel content (Clarke and Seksenbayeva 271).
+Similarly, the need to renew newsreels in the late 1950s emerged in West
+Germany, where the advent of television news, advances in recording
+techniques, and a new generation of editors catalyzed the modernization of
+newsreels. Editors began to interview “people like you and me” on the streets
+and in supermarkets (Schwarz 76).
+While discussions on new initiatives do not always lead to tangible results,
+adopting a semi-distant view of the ‘Closeups of People’ cluster suggests
+that in the case of ‘Novosti dnia’, the discussions may have influenced the
+inclusion of closeup shots in newsreels. Analyzing how the cluster evolved in
+three-year segments, we observe that closeups of individuals began to form a
+distinct cluster in the mid-1950s. This trend intensified starting in 1959 and
+continued until the mid-1980s (Fig. 9).
+
+Journal of Cultural Analytics
+
+20
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Figure 8. Frames from the ‘Closeups of people’ cluster, with frames of sub-clusters of ‘Headwear’, ‘Helmets’ and
+‘Drivers’.
+
+Taking a closer look at the images reveals that, unlike the clusters depicting
+the ‘Monumental Gatherings’ and ‘People in Meetings’ (Fig. 1), this category
+includes a wider range of ‘ordinary people’ represented, encompassing
+women, children, and elderly people depicted in various circumstances (Fig.
+8). Clearly, their ‘ordinariness’ was selective, as they portrayed the hardworking and progressive-minded, idealized version of an ordinary (mostly
+Soviet) citizen. This depiction excluded individuals who appeared deprived,
+poor, or disabled. It seems that this was a deliberate strategy until the
+mid-1980s, as archival documentation from Kazakhstan indicates that
+
+Journal of Cultural Analytics
+
+21
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Figure 9. The ‘Closeups of people’ cluster in three-year chunks (apart from 1945-1952, were we have less data) shows
+that the cluster started to emerge in the latter half of the 1950s, and became emphasized starting from 1959. It started
+to fade at the end of the 1980s and beginning of the 1990s, where we have again less data. Year 1965 is missing.
+
+newsreel cinematographers consciously avoided displaying any controversial
+elements in the footage, such as individuals with worn-out clothes or
+dilapidated farmyards (Clarke and Seksenbayeva 269).
+When depicting people abroad, the footage often showed individuals
+suffering from capitalist imperialism, such as African Americans in the US
+(see 1961/07 in Fig. 8), or victims of the Vietnam War. It is noteworthy
+that all depictions of people, including those in the ‘Closeups of people’,
+‘Monumental Gatherings’, and ‘People in Meetings’, feature individuals from
+the European side of the Soviet Union, Central Asia, Siberia, and the
+Caucasus, thereby emphasizing the multi-ethnicity of the Soviet Union.
+Closeups that appear to show non-Soviet, such as people of African descent,
+are also included. However, analyzing the representation percentages of
+different age groups, perceived genders, and expressed ethnicities in the
+official Soviet portrayal of the world would require the use of image detection
+and identification algorithms, and is beyond the scope of this article.
+It is possible to identify smaller sub-clusters within the larger cluster of
+‘Closeups of people’, such as ‘Headwear’, ‘Helmets’, and ‘Drivers’. These
+sub-clusters interestingly showcase some archetypical professional groups:
+miners and construction workers in their helmets, female factory and kolkhoz
+workers in scarves, policemen and military personnel in their hats, and male
+political leaders in their city hats. The large number of individuals in helmets
+and workers’ caps was distinctive to the depiction of the world in the state
+socialist countries. Uta Schwarz has observed that West German newsreels
+did not portray male workers or employees, whereas East German newsreels
+
+Journal of Cultural Analytics
+
+22
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+frequently did. In East Germany, showcasing the workers served to promote
+the working class as the central political class of socialist society. In contrast,
+in West Germany, amid ongoing conflicts between the government, employers
+and unions, the government’s newsreel depicted industrial productivity by
+featuring economic leaders, ministers, and directors (Schwarz 75).
+The sub-clusters identifiable with the help of the UMAP projection offer
+a fascinating insight into Soviet symbolic culture through headwear. For
+example, women wearing hats during the warm season are almost completely
+absent, even in the 1950s. They either wore scarves or no headwear at all.
+In contrast, at the other end of the Soviet media spectrum, catalogs of
+the latest outfits published by the fashion houses depicted women wearing
+hats (Modeli sezona, vesna-leto 1956). This discrepancy suggests that women
+wearing hats might have appeared too ‘bourgeois’ to be shown in ‘Novosti
+dnia’, revealing that the depiction of people and the world in this series was
+more ideologically driven than other Soviet media products.
+Exploration of the ‘Closeups of people’ cluster demonstrates that distant
+viewing of the newsreel frames with the UMAP projection not only reveals
+the size of the clusters in the collection but also helps to understand their
+centrality. Additionally, the density of a cluster in the projection indicates
+how similar the images are perceived by the UMAP. For a cultural historian,
+this provides an initial step in contextualizing groups of visually similar
+images within the collection, which can then be enriched through
+contextualization based on existing literature and other sources. This
+approach guides the researcher’s attention to notice details or patterns that
+might not have been observed otherwise, such as headwear, if the research
+process had begun with pre-existing knowledge rather than observation of the
+data. As new questions arise, this lays the groundwork for further analysis
+involving the detection, identification, and annotation of specific features
+revealed through distant viewing.
+
+Agriculture
+Yet another constant theme in the ‘Novosti dnia’ newsreel series is agricultural
+production. This theme is evident both through qualitative observations
+and in the textual descriptions of the newsreel contents analyzed earlier
+(Oiva et al.). Agricultural production had an important propaganda value
+to the leadership. Collective farms were repeatedly depicted reaching their
+targets early or producing more food than planned (Clarke and Seksenbayeva
+268–69).
+Unlike the earlier discussed clusters, agricultural production does not form a
+clearly distinguishable ‘island’ or ‘peninsula’ in the UMAP projection but is
+scattered among the depictions of ‘Nature’ (Fig. 1). This is understandable,
+because although a human viewer of the newsreels associates the smiling
+people picking up fruits or cotton, caring for animals, and combine harvesters
+
+Journal of Cultural Analytics
+
+23
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+working on vast fields with the overarching theme of agricultural production,
+this is not the case for image embeddings. The visual appearance of a basket
+of round apples and a chain of tractors on a field are visually too different to
+be clustered together. Additionally, these images share visual features, such as
+a distinctive horizon and elements of nature, with images depicting themes
+other than agricultural production.
+As Figure 10 illustrates, it is nonetheless easy to identify decades of
+continuous patterns of sub-clusters of agricultural production, such as
+combine harvesters working in fields. A plentiful harvest, securing the wellbeing of the citizens, and human mastery over nature through technology
+are central themes in the ‘Novosti dnia’ repertoire, transcending all policy
+changes until the mid-1980s. In the 1980s, depictions of agricultural
+production continued, but without the iconic images of combine harvesters.
+Frames identified by UMAP as similar to those of the combine harvesters
+were used to depict ecological problems alongside agriculture (1988/01,
+1988/21, 1989/10, 1989/22, and 1991/21 in Figure 10).
+Exploring depictions of agricultural production reveals that a news story
+theme (‘agriculture’) does not necessarily correspond to a single visual cluster
+(‘combine harvesters’), but instead may be associated with multiple visual
+clusters. Simultaneously, it is possible that the visual tropes, identifiable by
+a human viewer through the combination of visual features and recognition
+of specific objects in the images, are intermingled in the UMAP projection
+with similar images that represent other themes. Examining the temporal
+development of a sub-cluster of images recognized by UMAP as similar can
+illustrate how certain visual patterns begin to diminish (‘combine harvesters’)
+and are replaced by others that depict different subjects (‘ecological problems
+and agriculture’).
+
+The Perestroika Problem
+We will now return back to the particularities of the dataset’s final period,
+which have been noted on various occasions of this article. As stated earlier,
+the annual number of newsreel issues halved in 1987 (Fig. 2); the opening,
+middle, and closing shots from 1985 to 1992 all include a new distinctive
+cluster absent in all other periods (Fig. 3); there are fewer closeups in this
+period compared to earlier ones (Fig. 8); and images depicting ecological
+issues merge into the ‘Agriculture’ cluster (Fig. 10). Indeed, there was
+something specific about this time, and it is clearly visible in the data.
+These changes are clearly linked to the policies of glasnost’ (‘openness’ in
+English) and perestroika (‘reconstructing’) introduced by Soviet leader
+Mikhail Gorbachev in 1985. This shift led to increasing openness in media
+coverage, introducing previously unexplored news topics, such as economic
+problems, blank spots of history, catastrophes, strikes, ethnic unrest, and
+crime in the press (McNair 44–59). In countries where newsreel production
+
+Journal of Cultural Analytics
+
+24
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Figure 10. The ‘Combine Harvesters’ cluster The depictions of combine harvesters working on the field are located in
+the larger group of images depicting nature and outdoors with a distinctive horizon. However, it is easy to identify
+several combine harvester depictions within this group, shot from the 1950s to the mid-1980s. In the late 1980s the
+iconic images of combine harvesters disappear, and the images in the cluster begin to depict in addition to field work
+also ecological problems in cotton production (1988/01), water pollution (1988/21), the problems of the Aral Sea
+(1989/10), and forestry (1991/21).
+
+had not been state subsidized, it had ceased by the late 1960s due to the rise
+of more popular television (Chambers et al. 6; Fielding 992–94); however, in
+the Soviet Union, production continued with state support. Ironically, the
+increased openness in mass media eventually led to the gradual decline of
+newsreels, likely due to reduced state funding and growing competition from
+other media forms.
+On top of the specificities of this period listed earlier in this article, the
+UMAP projection of frames reveals a distinctive ‘Perestroika’ cluster
+emerging between 1985 and 1992 (Fig. 11). Interestingly, it is not visually
+obvious to a human viewer what new element in the images causes the
+UMAP to separate the ‘Perestroika’ cluster images from others. During this
+period, there were also images similar to those of earlier years; for example,
+the clusters of ‘Nature’, ‘Monumental Gatherings’, and ‘Title frames and
+Journal of Cultural Analytics
+
+25
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+other texts’ persisted, while ‘People in meetings’ disappeared completely. The
+persistence of several clusters suggests that introduction of color film was not
+the distinguishing feature recognized by UMAP. It is possible that the images
+contain a technical feature, such as a watermark added later, which is difficult
+for a human to recognize and unrelated to the actual visual contents, but
+which causes UMAP to categorize these images as similar.
+A closeup of the ‘Perestroika’ cluster (Fig. 12) shows that it contains a
+similar variety of images, ranging from closeups and large crowds of people
+to depictions of individuals at work, in meetings, or on the street. The
+frames seem to follow a color scheme, but it is not consistent. Another
+possible hypothesis is that the common feature of these images is that the
+people are not posing for the camera, and quite often the camera angle
+is not from below but either direct or slightly from above. Additionally,
+the postures of some individuals appear tired, with slightly bent backs.
+Testing this hypothesis is beyond the scope of this article, as it requires
+an examination of postures and camera angles to delve deeper. Therefore,
+determining whether the ‘Perestroika’ cluster is due to the changed political
+atmosphere, a result of shifts in filmmaking practices, evolving relationships
+between cinematographers and the subjects, a changing philosophy of what
+and how newsreels should depict, or something entirely different, remains to
+be explored later.
+Alongside the ‘Perestroika’ cluster, there are also distinctive peninsulas
+elsewhere (Fig. 11). For example, the depictions from the State Kremlin
+Palace, discussed in the ‘Kremlin’ sub-section of this article (Fig. 4),
+continued in the late 1980s, albeit in a slightly modified manner. Figure 13
+illustrates that ‘Monumental gatherings’ at the State Kremlin Palace persisted
+in the late 1980s, but their nature changed. Footage was consistently shot
+at meetings held in the palace, but the positioning of the frames in the
+UMAP projection shifted. The State Kremlin Palace hosted the 19th Party
+Conference in July 1988 and sessions of the newly-elected Congress of
+People’s Deputies and Supreme Soviet in 1989, which discussed the country’s
+reforms. These meetings were the focal point of news reporting both in
+newsreels and on television (McNair 62). It is possible that the changing
+atmosphere of these meetings was captured by the UMAP projection as well,
+although the exact reasons for the shifting position of the frames are not
+entirely clear. One differentiating feature is color, but this alone does not
+explain the variation, as the UMAP projection shows color images mixed with
+gray-scale images. For instance, 1978/41 and 1981/16 are located in close
+proximity to the frames from the perestroika period, although they are in
+grayscale. Meanwhile, no color frames from the perestroika period are found
+in the peninsula of the older frames.
+
+Journal of Cultural Analytics
+
+26
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Figure 11. UMAP of frames from 1985-1992. (1) large crowds in meetings in the State Kremlin Palace; (2) a ‘peninsula’ of people giving speeches on a podium; (3) the ‘Perestroika’ cluster with a
+variety of images; (4) title frames and other texts; (5) nature sceneries with a distinctive horizon.
+
+Journal of Cultural Analytics
+
+27
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Figure 12. Closeup of UMAP projection of the “Perestroika” cluster 1988-1992.
+
+One explanation for the different peninsulas representing frames from various
+years could be that, at least from a human viewer’s perspective, the audience
+in the perestroika period is depicted in a more dynamic way: they are shown
+in poses that suggest movement or free interaction among themselves. In
+contrast, the most dynamic frames from the pre-perestroika period depict
+the audience standing and clapping their hands, thus collectively reacting to
+what was said on the podium, but not interacting with each other. One
+outlier frame (1981/16) portrays the audience in slightly more dynamic
+poses, although they are still clapping their hands, thus supporting the
+hypothesis that the basis for the different groupings of frames lies in the
+poses of the people depicted. However, a second outlier (1978/41) displays
+the audience and the speaker in motionless poses, which undermines the
+likelihood of this hypothesis. In this paper, we are unable to provide a
+definitive answer to the question of what underlies these differences, and
+further exploration of the pose hypothesis should be pursued in a separate
+study.
+
+Conclusions
+Did the depiction of the world in the Novosti dnia change over time,
+or did it remain the same? The answer to this question depends on the
+level of detail applied in interpreting what constitutes repetition and how
+we contextualize the images. As we have shown above, there were notable
+visual continuities, but also new visual clusters emerging, fading away, and
+new themes integrating into existing clusters. However, considering that
+the surrounding visual environment in the Soviet Union underwent radical
+changes from 1945 to 1992—introducing television and video, and the
+Journal of Cultural Analytics
+
+28
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Figure 13. Meetings in the State Kremlin Palace. The UMAP projection of the central frames (A) divide the frames
+depicting the meetings into two distinctive ‘peninsulas’ that come from the pre-perestroika (B) and perestroika (C)
+periods. Two frames (1981/16 and 1978/41) are located close to the frames from the perestroika period, although they
+were screened in the earlier period.
+
+increasing diversification of visual culture—the stability of the 'Novosti dnia’
+is remarkable. For the audiences, often young people who came to watch
+their favorite domestic comedies or Indian melodramas (Roth-Ey 72, 82, 86,
+89–91), the contrast with the newsreels shown before the main feature grew
+over the years. Decade after decade, it served as the backbone of the official
+Soviet viewpoint, faithfully repeating Soviet symbols, while the rest of the
+world moved forward.
+Similar to Wevers and Smits (Wevers and Smits 205), our findings
+demonstrate that image similarity does not necessarily imply conceptual
+similarity. Visual similarity (for example, depictions of a field with a horizon),
+what is being depicted (combine harvesters), the relationship of the image
+to a news story topic (agriculture), and the intended meaning of the image
+(plentiful harvest or polluted water), represent different visual and conceptual
+layers of images. Our analysis has focused on the visual similarity layer, and
+we argue that identifying continuous visual patterns, especially in the highly
+curated material such as the ‘Novosti dnia’, is a fruitful way to capture
+fundamental trends and changes in visual culture.
+While we have briefly discussed the relationships between visual similarities,
+news story topics, and intended meanings, there remains much to explore
+in this area. The image clusters examined in this article have generally been
+easy to associate with specific news story themes. For example, although the
+agricultural theme is distributed across several visual sub-clusters, it can still
+be readily identified through the presence of certain visually recognizable
+Journal of Cultural Analytics
+
+29
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+objects (tractors, domesticated animals, fruits, cotton, wheat, fields).
+Additionally, it is worthwhile to explore how more abstract themes are
+visualized and to identify the temporal patterns they follow. One example
+of a news topic not addressed here, despite its central role in Soviet selfunderstanding, is industrial production and technological progress. These are
+questions that merit future study.
+Submitted: July 18, 2024 EDT, Accepted: May 21, 2024 EDT
+
+This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0
+International License (CCBY-4.0). View this license’s legal deed at http://creativecommons.org/licenses/
+by/4.0 and legal code at http://creativecommons.org/licenses/by/4.0/legalcode for more information.
+
+Journal of Cultural Analytics
+
+30
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+works cited
+Arnold, Taylor, et al. “Introduction: Special Issue on AudioVisual Data in DH.” Digital
+Humanities Quarterly, vol. 15, no. 1, 2021. ProQuest, http://digitalhumanities.org/dhq/vol/15/1/
+000541/000541.html.
+Arnold, Taylor, and Lauren Tilton. Distant Viewing: Computational Exploration of Digital Images.
+The MIT Press, 2023, https://doi.org/10.7551/mitpress/14046.001.0001.
+---. “Distant Viewing Toolkit for the Analysis of Visual Culture.” GitHub, Distant Viewing Lab,
+2017, https://github.com/distant-viewing/dvt.
+Bakels, Jan-Hendrik, et al. “Matching Computational Analysis and Human Experience:
+Performative Arts and the Digital Humanities.” Digital Humanities Quarterly, vol. 014, no. 4,
+Dec. 2020.
+Bulgakowa, Oksana. The Factory of Gestures. Body Language in Film. PPMedia & Stanford
+Humanities Lab, 2008.
+Burges, Joel, et al. “Audiovisualities out of Annotation: Three Case Studies in Teaching Digital
+Annotation with Mediate.” Digital Humanities Quarterly, vol. 015, no. 1, Mar. 2021.
+Burghardt, Manuel, et al. “Film and Video Analysis in the Digital Humanities – An
+Interdisciplinary Dialog.” Digital Humanities Quarterly, vol. 014, no. 4, Dec. 2020.
+Carrive, Jean, et al. “Transdisciplinary Analysis of a Corpus of French Newsreels: The ANTRACT
+Project.” Digital Humanities Quarterly, vol. 15, no. 1, 2021, http://digitalhumanities.org/dhq/
+vol/15/1/000523/000523.html.
+Castellano, Brandon. Breakthrough/PySceneDetect. 2014. GitHub, https://github.com/
+Breakthrough/PySceneDetect.
+Chambers, Ciara, et al. Researching Newsreels: Local, National and Transnational Case Studies.
+Palgrave Macmillan, 2018, https://doi.org/10.1007/978-3-319-91920-1.
+Chari, Tara, and Lior Pachter. “The Specious Art of Single-Cell Genomics.” PLOS Computational
+Biology, vol. 19, no. 8, Aug. 2023, p. e1011288. PLoS Journals, https://doi.org/10.1371/
+journal.pcbi.1011288.
+Chávez Heras, Daniel. Cinema and Machine Vision: Artificial Intelligence, Aesthetics and
+Spectatorship. Edinburgh University Press, 2024, https://doi.org/10.1515/9781399514736.
+---. “Creanalytics: Automating the Supercut as a Form of Critical Technical Practice.” Convergence,
+June 2023, p. 13548565231174592. SAGE Journals, https://doi.org/10.1177/
+13548565231174592.
+Chávez Heras, Daniel, et al. Between History and Poetics: Identifying Temporal Dynamics in Large
+Audiovisual Collections. 2023.
+Clarke, John, and Gulzira Seksenbayeva. “Visualizing History: The ‘Soviet Kazakhstan’ Newsreel
+Series.” Historical Journal of Film, Radio & Television, vol. 38, no. 2, June 2018, pp. 263–73,
+https://doi.org/10.1080/01439685.2017.1300406.
+Cooper, Allison, et al. “Exploring Film Language with a Digital Analysis Tool: The Case of
+Kinolab.” Digital Humanities Quarterly, vol. 15, no. 1, Mar. 2021.
+Crowley, David, and Susan E. Reid, editors. Pleasures in Socialism: Leisure and Luxury in the
+Eastern Bloc. Northwestern University Press, 2010, https://doi.org/10.2307/j.ctv43vtgm.
+Da, Nan Z. “The Computational Case against Computational Literary Studies.” Critical Inquiry,
+vol. 45, no. 3, Mar. 2019, pp. 601–39. journals.uchicago.edu (Atypon), https://doi.org/10.1086/
+702594.
+
+Journal of Cultural Analytics
+
+31
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Deng, Jia, et al. “ImageNet: A Large-Scale Hierarchical Image Database.” 2009 IEEE Conference on
+Computer Vision and Pattern Recognition, IEEE Xplore, 2009, pp. 248–55, https://doi.org/
+10.1109/CVPR.2009.5206848.
+Duhaime, Douglas. “PixPlot.” GitHub, Yale Digital Humanities Lab, 2017, https://github.com/
+YaleDHLab/pix-plot.
+Fielding, Raymond. “Newsreels.” Encyclopedia of Journalism, vol. 3, SAGE Publications, 2009, pp.
+992–94.
+Fitzpatrick, Sheila. Everyday Stalinism: Ordinary Life in Extraordinary Times: Soviet Russia in the
+1930s. Oxford University Press, 1999, https://doi.org/10.1093/oso/9780195050004.001.0001.
+Gilburd, Eleonory. “The Revival of Soviet Internationalism in the Mid to Late 1950s.” The Thaw:
+Soviet Society and Culture during the 1950s and 1960s, edited by Eleonory Gilburd and Denis
+Kozlov, University of Toronto Press, 2013, pp. 362–401, https://doi.org/10.3138/
+9781442661059-013.
+---. To See Paris and Die. The Soviet Lives of Western Culture. The Belknap Press of Harvard
+University Press, https://doi.org/10.4159/9780674989771.
+He, Kaiming, et al. “Deep Residual Learning for Image Recognition.” arXiv, 10 Dec. 2015,
+https://doi.org/10.48550/arXiv.1512.03385.
+Heftberger, Adelheid. “Digital Humanities and Film Studies. Visualizing Dziga Vertov’s Work.”
+Springer Link, Springer International Publishing, 2018, https://doi.org/10.1007/
+978-3-030-02864-0_4.
+Hickethier, Knut. “The Creation of Cultural Identity through Weekly Newsreels in Germany in the
+1950s: As Illustrated by the NEUE DEUTSCHE WOCHENSCHAU and the UFAWOCHENSCHAU (With a Side Glance at the DEFA Weekly Newsreel DER
+AUGENZEUGE).” Constructions of Cultural Identities in Newsreel Cinema and Television after
+1945, edited by Kornelia Imesch et al., 1st ed., vol. 17, transcript Verlag, 2016, pp. 39–54,
+https://doi.org/10.14361/9783839429754-003.
+Hielscher, Eva. “The Phenomenon of Interwar City Symphonies: A Combined Methodology of
+Digital Tools and Traditional Film Analysis Methods to Study Visual Motifs and Structural
+Patterns of Experimental-Documentary City Films.” Digital Humanities Quarterly, vol. 014, no.
+4, Dec. 2020.
+Impett, Leonardo, and Franco Moretti. “Totentanz. Operationalizing Aby Warburg’s
+Pathosformeln.” Pamphlets of Stanford Literary Lab, no. Literary Lab Pamphlet 16, Nov. 2017,
+pp. 1–10.
+Karavaev, Dmitrii. “Syuzhety sovetskoi kinokhroniki o prazdnovanii iubileev oktiabrskoi revoliutsii
+kak instrument formirovania istoricheskoi pamiati (in English: Soviet Newsreel Stories on the
+Anniversaries of the 1917 October Revolution as Instrument of Development of Historical
+Memory).” Mezhdunarodnyi zhurnal issledovanii kul’tury, vol. 2, no. 31, 2018,
+https://cyberleninka.ru/article/n/soviet-newsreel-stories-on-the-anniversaries-of-the-1917-octoberrevolution-as-instrument-of-development-of-historical-memory.
+Karjus, Andres, et al. “Compression Ensembles Quantify Aesthetic Complexity and the Evolution
+of Visual Art.” EJP Data Science, vol. 12, no. 21, 2023, pp. 1–23, https://doi.org/10.1140/epjds/
+s13688-023-00397-3.
+Kowalsky, Daniel. “The Soviet Cinematic Offensive in the Spanish Civil War.” Film History, vol. 19,
+no. 1, Mar. 2007, pp. 7–19. EBSCOhost, https://doi.org/10.2979/FIL.2007.19.1.7.
+Kozlov, Denis. “Introduction.” The Thaw: Soviet Society and Culture during the 1950s and 1960s,
+University of Toronto Press, 2013, pp. 3–17, https://doi.org/10.3138/9781442661059-004.
+
+Journal of Cultural Analytics
+
+32
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Kozlov, Denis, and Eleonory Gilburd. “The Thaw as an Event in Russian History.” The Thaw:
+Soviet Society and Culture during the 1950s and 1960s, edited by Denis Kozlov and Eleonory
+Gilburd, University of Toronto Press, 2013, pp. 18–81, https://doi.org/10.3138/
+9781442661059-005.
+Lee, Benjamin Charles Germain, et al. “The Newspaper Navigator Dataset: Extracting And
+Analyzing Visual Content from 16 Million Historic Newspaper Pages in Chronicling America.”
+arXiv.org, May 2020, http://arxiv.org/abs/2005.01583.
+MacKay, John. “Allegory and Accommodation: Vertov’s Three Songs of Lenin (1934) as a Stalinist
+Film.” Film History: An International Journal, vol. 18, no. 4, 2006, pp. 376–91.
+MacKay, John, et al. “Matrices for Non-Fiction: Dziga Vertov and the Kino-Nedelia Newsreels.”
+Researching Newsreels: Local, National and Transnational Case Studies, edited by Roel Vande
+Winkel et al., Palgrave Macmillan, 2018, pp. 119–41.
+Manovich, Lev. Cultural Analytics. MIT Press, 2020, https://doi.org/10.7551/mitpress/
+11214.001.0001.
+Masson, Eef, et al. “Exploring Digitised Moving Image Collections: The SEMIA Project, Visual
+Analysis and the Turn to Abstraction.” Digital Humanities Quarterly, vol. 014, no. 4, Dec.
+2020.
+McInnes, Leland, et al. “UMAP: Uniform Manifold Approximation and Projection for Dimension
+Reduction.” arXiv:1802.03426 [Cs, Stat], Sept. 2020, http://arxiv.org/abs/1802.03426.
+McNair, Brian. Glasnost, Perestroika and the Soviet Media. Routledge, 2006, https://doi.org/
+10.4324/9780203192191.
+Mittell, Jason. “Deformin’ in the Rain: How (and Why) to Break a Classic Film.” Digital
+Humanities Quarterly, vol. 15, no. 1, Mar. 2021, http://www.digitalhumanities.org/dhq/vol/15/
+1/000521/000521.html.
+Modeli sezona. Vesna—leto 1956. Izdanie Gosudarstvennogo nauchno-tehnicheskogo izdatel’stva
+Ministerstva promyshlennosti SSSR, otvetstvennyi redaktor N.N. Nikiforov, Moskva, 1956.
+Ohm, Tillmann, et al. “Collection Space Navigator: An Interactive Visualization Interface for
+Multidimensional Datasets.” Proceedings of the 16th International Symposium on Visual
+Information Communication and Interaction (VINCI ’23), Association for Computing
+Machinery, 2023, pp. 1–5, https://doi.org/10.1145/3615522.3615546.
+Oiva, Mila, et al. “A Framework for the Analysis of Historical Newsreels.” Humanities and Social
+Sciences Communications, vol. 11, no. 1, Apr. 2024, pp. 1–15, https://doi.org/10.31235/osf.io/
+a4xsp.
+Oiva, Mila, Hannu Salmi, et al. Yves Montand in the USSR: Cultural Diplomacy and Mixed
+Messages. Palgrave Macmillan, 2021, https://doi.org/10.1007/978-3-030-69048-9.
+Olesen, Christian Gosvig, et al. “Data-Driven Research for Film History: Exploring the Jean
+Desmet Collection.” The Moving Image: The Journal of the Association of Moving Image
+Archivists, vol. 16, no. 1, 2016, pp. 82–105. JSTOR, https://doi.org/10.5749/
+movingimage.16.1.0082.
+Olesen, Christian Gosvig, and Ivan Kisjes. “From Text Mining to Visual Classification: Rethinking
+Computational New Cinema History with Jean Desmet’s Digitised Business Archive.” TMG
+Journal for Media History, vol. 21, no. 2, Nov. 2018, pp. 127–45, https://doi.org/10.18146/
+2213-7653.2018.370.
+
+Journal of Cultural Analytics
+
+33
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Pozharliev, Lyubomir, and Danae Gallo González. “Martin Luther King’s Assassination in Spain’s
+NO-DOs and in Bulgaria’s Kinopregledi.” Researching Newsreels: Local, National and
+Transnational Case Studies, edited by Roel Vande Winkel et al., Palgrave Macmillan, 2018, pp.
+93–117, https://doi.org/10.1007/978-3-319-91920-1_6.
+Protocols of the meetings of the Main Editorial Board of the Central Documentary Film Studios for
+1955-1957. f. 2487 op. 1 ed. hr. 117. Russian State Archive of Literature and Art (RGALI).
+Report 1956: “Report of film production at the Central studios of documentary film for year 1955 and
+the first quarter of 1956, dated April 2, 1956.” f. 2487 op. 1 ed. hr. 22, pp. 9-11. Russian State
+Archive of Literature and Art (RGALI).
+Rose, Gillian. Visual Methodologies: An Introduction to Researching with Visual Materials. SAGE,
+2016.
+Roth-Ey, Kristin. Moscow Prime Time: How the Soviet Union Built the Media Empire That Lost the
+Cultural Cold War. Cornell University Press, 2011.
+Ruth, Nicolas. “From Clusters to Graphs – Toward a Scalable Viewing of News Videos.” GitHub,
+2023, https://github.com/Nicolas-le/from-clusters-to-graphs.
+Schwarz, Uta. “West German State Newsreels in the Period of the Economic Miracle 1950-1964:
+Gender as an Open Approach.” Constructions of Cultural Identities in Newsreel Cinema and
+Television after 1945, edited by Kornelia Imesch et al., 1st ed., vol. 17, transcript Verlag, 2016, pp.
+55–80, https://doi.org/10.14361/9783839429754-004.
+Shinn, Maxwell. “Phantom Oscillations in Principal Component Analysis.” Proceedings of the
+National Academy of Sciences, vol. 120, no. 48, Nov. 2023, p. e2311420120. pnas.org (Atypon),
+https://doi.org/10.1073/pnas.2311420120.
+Vahtikari, Tanja, et al. “Valokuvan käytön ja tulkinnan menetelmät historiantutkimuksessa.”
+Avaimia menneisyyteen — Opas historiantutkimuksen menetelmiin, edited by Mirkka
+Danielsbacka et al., Gaudeamus, 2022, pp. 229–49, https://kauppa.gaudeamus.fi/sivu/tuote/
+avaimia-menneisyyteen/4047622.
+van der Maaten, Laurens, and Geoffrey Hinton. “Visualizing Data Using T-SNE.” Journal of
+Machine Learning Research, vol. 11, no. 9, 2008.
+Veldi, Martti, et al. “Five-Year Plan in Four: Kolkhoz Propaganda in Film and Documentaries in
+Estonia.” SHS Web of Conferences, vol. 63, 2019, p. 10002. www.shs-conferences.org,
+https://doi.org/10.1051/shsconf/20196310002.
+Vikulina, Ekaterina. “Vlast’ i media. Vizual’naja revoliutsija shestidesiatykh.” Cahiers du monde
+russe, vol. 56, no. 2, Dec. 2015, pp. 429–66.
+Warburg, Aby. Mnemosyne Atlas. 1927–1929.
+Wattenberg, Martin, et al. “How to Use T-SNE Effectively.” Distill, vol. 1, no. 10, Oct. 2016, p. e2.
+distill.pub, https://doi.org/10.23915/distill.00002.
+Wevers, Melvin. “Scene Detection in De Boer Historical Photo Collection.” Proceedings of the 13th
+International Conference on Agents and Artificial Intelligence (ICAART 2021), vol. 1, 2021, pp.
+601–10, https://doi.org/10.5220/0010288206010610.
+Wevers, Melvin, and Thomas Smits. “The Visual Digital Turn: Using Neural Networks to Study
+Historical Images.” Digital Scholarship in the Humanities, vol. 35, no. 1, Apr. 2020, pp. 194–207,
+https://doi.org/10.1093/llc/fqy085.
+Williams, Mark, and John Bell. “The Media Ecology Project: Collaborative DH Synergies to
+Produce New Research in Visual Culture History.” Digital Humanities Quarterly, vol. 015, no.
+1, Mar. 2021.
+
+Journal of Cultural Analytics
+
+34
+
+Soviet View of the World. Exploring Long-Term Visual Patterns in “Novosti dnia” Newsreel Journal (1945-1992)
+
+Yurchak, Alexei. Everything Was Forever, Until It Was No More: The Last Soviet Generation.
+Princeton University Press, 2005.
+Zakharova, Larissa. “Dior in Moscow: A Taste for Luxury in Soviet Fashion Under Khrushchev.”
+Pleasures in Socialism: Leisure and Luxury in the Eastern Bloc, edited by Susan E. Reid and David
+Crowley, Northwestern University Press, 2010, pp. 94–119.
+
+Journal of Cultural Analytics
+
+35
+
+

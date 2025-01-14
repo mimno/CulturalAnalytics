@@ -1,0 +1,1303 @@
+Kang, Hyeok Hweon. “How Network Analysis Uncovers International Networks of
+Smuggling History: Criminals in Nagasaki, Japan circa 1667.” Journal of Cultural
+Analytics, vol. 8, no. 1, Feb. 2023, https://doi.org/10.22148/001c.68188.
+
+ARTICLE
+
+How Network Analysis Uncovers International Networks of Smuggling
+History: Criminals in Nagasaki, Japan circa 1667
+Hyeok Hweon Kang1
+1 Washington University in St. Louis
+
+Keywords: historical network analysis, Gephi, bimodal analysis, criminal network, early modern crime, Chosŏn Korea, smuggling
+https://doi.org/10.22148/001c.68188
+
+Journal of Cultural Analytics
+Vol. 8, Issue 1, 2023
+
+This paper takes a network analytic approach to investigating crime in
+seventeenth-century Japan. In 1667, the Nagasaki magistrate’s office conducted
+the largest documented smuggling crackdown in Tokugawa Japan (1603–1867),
+busting a ring of 87 arms traffickers who had been shipping contraband to
+Chosŏn Korea (1392–1910). I use the office’s “criminal investigation records”
+(hankachō 犯科帳) to build a dataset of the 94 suspects from ten Japanese towns
+who were interrogated about their involvement at the time. Using a three-mode
+network (people, place, crime), the resulting graphs and statistics reveal a new
+geography of the crime in question: contrary to the conclusions of the original
+investigators and of modern-day historians who “closely read” their records, the
+digital analysis relocates the epicenter of the smuggling ring to be in Tsushima,
+not Hakata or Nagasaki, and its ringleader as a merchant named Komoda
+Kanzaemon, rather than Itō Kozaemon. Though various limitations are
+recognized, the case study demonstrates the utility of network analysis on early
+modern crime data in general and for archives built with criminal-investigative
+intent like the hankachō in particular.
+
+Introduction
+Since the early 2000s, a “network turn” has been underway in the humanities
+(Ahnert et al.). As argued by its proponents, the analysis of social and semantic
+networks has now expanded beyond the domain of network scientists to grasp
+the attention of an increasing number of arts and humanities scholars. To be
+sure, the recent interest relates to the “connected” world we live in, defined in
+part by online social networking platforms. But the notion of networks runs
+deeper, tracing back at least to eighteenth-century graph theory, for example
+(i.e., Leonhard Euler’s Seven Bridges of Königsberg problem) (Euler 6670;
+Räz). And it has long resonated with modern-day humanists who have studied
+inter alia political cliques, information flows, and the circulations of objects,
+ideas, and people. If “network scholarship” has existed in many forms, however,
+the recent turn is about a quantitative (or computational) shift in the study
+and critique of networks. Today, with off-the-shelf softwares like Gephi and
+Palladio, researchers can produce network graphs that bring “an immediacy
+to our perception of information” (Ahnert et al. 68). These graphs also offer
+various epistemic media for data exploration, “from sketch drawings that help
+us build intuitions about connectivity, to descriptive data visualisation, to
+visual arguments in a final publication” (Ahnert et al. 68).
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+This emergence of the modern “network perspective” is winning acceptance
+(Barabási).1 But how useful is it for humanistic inquiry? Proponents of
+network scholarship, notably, Ruth Ahnert, Sebastian Ahnert, Chaterine
+Coleman, Scott Weingart, Jason Ladd, and others, are subtle: they recognize
+the challenges of producing significant research outcomes with network
+analysis tools. Indeed, networks, like all data models, entail a great deal of
+abstraction and “information loss”—e.g., of literary, paratextual, and historical
+contexts (Ahnert et al. 79). Other than being reductive, the representations can
+also be “absurdly illegible (in terms of visual complexity),” in comparison to
+other more intuitive media such as frequency charts and heat maps (Ahnert et
+al. 68). Finally, network analyses through off-the-shelf tools come with certain
+dangers: users can feed data into a “black box” and draw misleading insights
+without critically engaging with the underlying assumptions (Ahnert et al.
+64–70).2
+Yet, various consequential case studies have already been advanced. The Six
+Degrees of Francis Bacon project, for example, presents the British social
+network, allowing researchers to trace connections among figures such as
+Francis Bacon, Shakespeare, Isaac Newton, and 13,000 other early modern
+individuals (Warren et al.). John R. Ladd has likewise demonstrated the early
+modern book trade in Europe, using book dedications as a source base (Ladd).
+And various others, including Ruth Ahnert, Sebastian Ahnert, Evan Bourke,
+and Song Chen, have shown effective analyses of historical social networks,
+emphasizing letter networks, biographies, and literary collections (Ahnert and
+Ahnert, “Protestant Letter Networks in the Reign of Mary I: A Quantitative
+Approach”; Ahnert and Ahnert, “Metadata, Surveillance and the Tudor
+State”; Bourke; Chen).
+I contribute criminal networks to this growing field of historical network
+analytics. Network scholars from artists to data scientists have demonstrated
+the utility of analyzing criminal networks. The Ahnerts and their collaborators,
+for instance, open their book The Network Turn with the example of the 9/
+11 terror attack and how an American artist accurately captured—with his
+web-like diagrams—the financial network behind Osama bin Laden and the alQaeda. Valdis Krebs, moreover, has shown that even a small sample of public
+information and newspaper clippings could be analyzed to locate “all nineteen
+of the hijackers [of the 9/11 attack who] were within two email or phone call
+connections of two al-Qaeda members already known” (Ahnert et al. 3; Krebs).
+
+1 Its proponent Albert-László Barabási, for example, has famously argued how a network approach can advance our understanding of crises, from
+
+epidemics and terrorism to economic and environmental catastrophes.
+2 Aspiring practitioners, then, are encouraged to put these tools through a rigorous test and understand their potential utility: researchers may
+
+study the assumptions that are encoded into these network graphing tools; they may also experiment with different registers of abstraction; and
+they may discover different kinds of usefulness, by obtaining preliminary graphs for exploratory data analysis, refining results with customized
+algorithms, and identifying new areas and opportunities for close reading.
+
+Journal of Cultural Analytics
+
+2
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+Yet, if recent terrorist activity was a “key driver of the network turn,” as some
+argue, organized crime has been with us since time immemorial (Ahnert et
+al. 3). Before the rise of modern network science, inquiries into the nature
+of interpersonal connections were conducted, especially by states, bureaucrats,
+merchants, and importantly for us, criminal investigators. And despite not
+enjoying the availability of digital information nowadays, investigators of the
+past, too, investigated, exposed criminals, and meted out punishment.
+But how did they investigate, we may ask? And what might be learned by
+interrogating their “network perspectives,” if any, with modern, digital tools?
+Recently, the Ahnerts have begun to answer these questions: they examined
+the surveillance practices of historical governments, especially how the Tudor
+state might have predicted individuals likely to “trade in intelligence as either
+conspirators or double agents.” (Ahnert and Ahnert, “Protestant Letter
+Networks in the Reign of Mary I: A Quantitative Approach” 11). The present
+paper, however, contributes new research by analyzing criminal networks more
+squarely and with the archives produced by criminal investigators themselves
+(as opposed to, say, the State Papers, of which criminal activity is a small part).
+It also offers a context that is little known to the field of historical network
+analytics—maritime East Asia in the seventeenth century.
+In 1667, an extensive smuggling enterprise came under the scrutiny of the
+Nagasaki magistrate’s office. They confronted an international criminal
+organization which had developed between Chosŏn Korea (1392–1910) and
+the Tokugawa shogunate (1603–1868) between 1621 and 1667, an
+organization which trafficked military contraband from Japan into Korea,
+including but not limited to guns, swords, and ingredients of gunpowder such
+as saltpeter and sulfur. While busting this organization, the Japanese detectives
+then performed the largest documented smuggling investigation in the history
+of early modern Japan: they probed 94 suspects, executed 87 (and their family
+members), and confiscated the latter’s significant assets into the state treasury
+(Kazui Tashiro 田代和生; Arano Yasunori 荒野泰典; Yamawaki Teijiro山
+脇悌二郞; Takeno Yōko 武野要子; Maruyama Yasunari 丸山雍成; Miyake
+Hidetoshi 三宅英利.; Mori Katsumi 森克己; Yun Yusuk 윤유숙; Knoest).
+The extensive administrative effort also left behind the hankachō (犯科帳
+“criminal investigation records,” 1666–1867), which contain essential
+biographical data on the criminals such as name, age, address, and participation
+in crime (Morinaga Taneo 森永種夫. 5; Cullen).
+Building a small dataset from this hankachō, I explore, if you will, a “minimum
+viable product” of historical criminal network studies (Diminescu 451–58;
+Bastian et al. 361–62). Namely, using Gephi, this paper advances a two-part
+argument that recognizes both the possibilities and limitations of said analysis.
+First, it argues that when pulling from a single, centralized repository of
+information (such as criminal records kept by a single office), network analytics
+
+Journal of Cultural Analytics
+
+3
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+can reliably test both the historical “network perspectives” of the Nagasaki
+investigators as well as the conclusions of modern-day literature on the subject
+(e.g., who were the main culprits, where were they located?).
+In fact, we shall see that the use of digital tools dramatically shifts our
+perception of the criminal network, generating compelling results that
+challenge existing scholarship. Yet, as useful as it may be, the method is limited
+for modeling international crime in the early modern period, which necessarily
+crosses borders and concerns highly uneven archives (each recorded according
+to different conventions and intentions). The question thus arises as to the
+general utility of historical network analysis in the scarcity of well-curated
+archives like the hankachō (in a sense, “ready-made” for network analysis),
+and the resulting abundance of compromises that need to be made for the
+historians themselves to mine and build a comparable dataset.
+
+Arms Smuggling on the Korea Strait
+The beginning of Japanese arms smuggling goes back to 1621. That year, when
+a Dutch official Jan Pieterszoon Coen invaded and subdued the Banda Islands
+(part of the Moluccas), he employed to great effect two small contingents
+of Japanese mercenaries. These recruits were valued for their martial skill,
+partaking in most major campaigns by the Dutch East Indies Company
+(VOC). But as efficacious as they were, the Japanese fighters were cruel,
+executing local elders by hacking them through the middle, decapitating, and
+quartering. And their notoriety deeply concerned the shogunate, which went
+on to ban all military exports—mercenaries and weapons alike (Clulow 205).
+Yet, just as Coen continued to insist on mercenary trade despite the shogun’s
+ban, other buyers were likewise eager to import Japanese military contraband:
+Chosŏn Koreans (1392–1910). When the shogunate issued the prohibition
+in 1621, it prevented the Koreans from purchasing Japanese arms such as
+guns, sulfur, and swords at the Japan House, an entrepot on the southeastern
+tip of the Korean peninsula. Combined with domestic shortages and wars,
+however, this then prompted the Chosŏn court to circumvent the shogunate’s
+prohibition. Ensuing was an international smuggling network which emerged
+from royal directives: Korean kings and officials commissioned arms dealing
+through formal diplomatic channels such as embassies to Japan and the
+daimyos of Tsushima (official brokers of Japan-Korea relations); and
+responding to their call were also various on-the-ground agents (military
+officers, merchants, and mariners from Korea and Japan) who trafficked
+contraband behind the shogunate’s back, and eventually the Tsushima
+daimyo’s (Yun Yusuk 윤유숙 292–315).
+This smuggling enterprise has not gone unexamined in scholarship. But most
+historians have not understood it as a “network,” except for Jurre Knoest.
+While advancing an argument about the informal nature of said enterprise,
+especially from the Japanese perspective, Knoest contended that the smugglers
+formed a “self-organized network”—i.e., a network “not primarily embedded
+Journal of Cultural Analytics
+
+4
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+in governmental institutionalization” (Knoest 91). To be sure, the Korean data
+shows that the smugglers were far from “self-organized”: they were in fact
+sanctioned by the Korean court and orchestrated by its diplomats, interpreters,
+and merchants. Still, the network perspective is useful to describe the criminal
+organization which spanned the Korean-Japanese border and included both
+formal and informal actors of various kinds (Yun Yusuk 윤유숙 292–315).
+If the smuggling ring was a relatively complex network, consisting of different
+layers of transparency, formality, and stability, the Nagasaki investigation can
+be seen as an attempt at “analyzing” said network. Operating far from the main
+scenes of arms-dealing, and through a questionable liaison that is the Tsushima
+daimyo, the shogunate had many odds stacked against its success. First, because
+smuggling networks ran across domains, the trans-regionality of the problem
+posed administrative challenges for local authorities with limited jurisdictions.
+Second, the shogunate also led this “centralized” criminal investigation in the
+periphery, installing yet another (albeit trusted and time-tested) liaison that is
+the Nagasaki magistrate’s office. Lastly, due to years of accrued transactions,
+which trace back to 1607, arms trade and trafficking had already been deeply
+entrenched, and the Koreans refused to turn over their accomplices,
+understandably, because that would implicate their high officials and even
+royalty.
+These obstacles combined to pose a Hydra-like problem for the shogunate,
+where cutting off one head sprouted two more in its place: there were previous
+crackdowns (e.g., in 1655, which involved 21 executions), but smuggling
+seemed to only grow worse (Yun Yusuk 윤유숙 295–99; Kuksa p’yŏnch’an
+wiwŏnhoe, Pibyŏnsa Tŭngnok 1656/3/6). How then did the Nagasaki
+investigators manage?
+Remarkably, after 1667, large-scale arms smuggling disappeared from both
+Korean and Japanese records. Many factors contributed to this, including for
+example, Korea’s import substitution of Japanese contraband as well as the
+start of collaborative Chosŏn-Tokugawa efforts at prohibiting smuggling (e.g.,
+transfer of the Japan House, tightening of regulations). But the Nagasaki
+investigators performed an efficacious crackdown. They gathered up to 94
+suspects from ten Japanese towns in three different domains, tracing back the
+criminal network as far as they could. After finding 87 individuals guilty, and
+uncovering their past involvement over six years, the shogunate also put on a
+gory display as a warning against future criminals (Kazui Tashiro 田代和生;
+Arano Yasunori 荒野泰典; Yamawaki Teijiro山脇悌二郞; Takeno Yōko 武
+野要子; Maruyama Yasunari 丸山雍成; Miyake Hidetoshi 三宅英利.; Mori
+Katsumi 森克己; Yun Yusuk 윤유숙; Knoest; Kang).
+This raises the question whether the Japanese navigators possessed a “network
+perspective” of their own, one which allowed them to grasp, namely, the overall
+“embeddedness” of smugglers in their broader networks and identify
+“structurally central” agents who provided seed money and brokerage.
+Journal of Cultural Analytics
+
+5
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+Unfortunately, we do not know what epistemic tools (e.g., charts, diagrams,
+tables) were under their employ. Alas, other than tactics such as crossinterrogation and the collection of “confessions” (yōita 白狀) which ratted out
+collaborators, the various ledgers, notes, and criminal evidence that may have
+bene found are now lost (Arano Yasunori 荒野泰典 412–13). We do have,
+however, the aforementioned hankachō, which includes biographical data on
+the criminals including their name, social status, age, address, and participation
+in crime. Also at the disposal of historians is the conclusion that the Nagasaki
+investigators reached with this information at their fingertips—i.e., that one
+man named Itō Kozaemon was the “root” (chōhon 張本) of the smuggling
+network (Arano Yasunori 荒野泰典 412).
+Taken together, these can help formulate a targeted inquiry about the Nagasaki
+investigation. If the hankachō preserves the essential metadata of criminals
+which the Japanese authorities used, then the same data can be processed
+using digital analytic tools for a comparison. That comparison should generate
+insights for evaluating the nature of the seventeenth-century “network
+analysts.” It should moreover serve to test modern scholarship on the subject,
+based on close reading of the investigation records.
+
+From Hankachō to Gephi, Metadata to Network Analysis
+It has been shown that even small sets of metadata can be useful for historical
+network analysis. In “Using Metadata to Find Paul Revere,” for example,
+sociologist Kieran Healy presents a case study that is comparable to the one
+proposed here. Drawing on historian David Hackett Fischer’s meticulous
+study, Healy sets out to identify key individuals in Boston on the brink of the
+American Revolutionary War (1775–1783). He analyzed about 260 “suspects”
+and their varying membership in Boston’s seven different organizations (e.g.,
+North Caucus, the London Enemies List). The resulting dataset is small, to
+be sure, constituting “the merest sliver of metadata about a single modality
+of relationship between people.” Yet, the resulting analysis still located Paul
+Revere with little difficulty: Mr. Revere, the equestrian patriot, was a member
+of many organizations, and he occupied a structurally central position within
+the broad community of suspects (Healy; Fischer; Shin-Kap).3
+I will use a similar dataset to find the ringleaders of the Korean-Japanese
+smuggling network. Compared to Healy’s, the haystack of suspects from the
+hankachō is even smaller, including only a set of 94 unique individuals from
+ten Japanese towns (Table 1). The metadata, however, is “thicker”: because
+it contains different kinds of information—and not just organization
+membership, one can set up a multi-modal network. For example, other than
+the modalities of person and crime, I added that of “place” to reflect the
+particular attention paid by Japanese investigators to the geographical
+
+3 Healy’s work is based on the research of historian David Hackett Ficher. For a similar yet more detailed study using Fischer’s data, see Shin-Kap.
+
+Journal of Cultural Analytics
+
+6
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+Table 1. Data from the Hankachō*
+ID
+
+Last Name
+
+JPN_Name
+
+Type
+
+Place
+
+Crime
+
+1
+
+Ōgi
+gi
+
+扇角右衛門
+
+Person
+
+Tsushima
+
+1662, 1663, 1664A
+
+2
+
+Shingu
+
+新宮惣兵門
+
+Person
+
+Tsushima
+
+1662, 1666A
+
+3
+
+Nakajima
+
+中嶋利左衛門
+
+Person
+
+Tsushima
+
+1662
+
+4
+
+Itō
+It
+
+伊藤小左衛門
+
+Person
+
+Nagasaki
+
+1663, 1664A
+
+5
+
+Komoda
+
+小茂田勘左衛門
+
+Person
+
+Tsushima
+
+1663, 1664A, 1665, 1666A
+
+高木惣十郎
+
+Person
+
+Hakata
+
+1663, 1664A
+
+…
+
+…
+
+…
+
+6
+
+Takagi
+
+…
+
+…
+
+31
+
+Nakazato
+
+中里弥次右衞門
+
+Person
+
+Tsushima
+
+1664B, 1665, 1666B
+
+32
+
+Oburaya
+
+油屋彥右衞門
+
+Person
+
+Nagasaki
+
+1664B, 1665, 1666B
+
+…
+
+…
+
+…
+
+…
+
+…
+
+95
+
+1662
+
+Crime
+
+96
+
+1663
+
+Crime
+
+97
+
+1664A
+
+Crime
+
+98
+
+1664B
+
+Crime
+
+99
+
+1665
+
+Crime
+
+100
+
+1666A
+
+Crime
+
+101
+
+1666B
+
+102
+
+Tsushima
+
+対馬
+
+Crime
+Place
+
+103
+
+Nagasaki
+
+長崎
+
+Place
+
+104
+
+Hakata
+
+博多/福岡
+
+Place
+
+105
+
+Osaka
+
+大阪
+
+Place
+
+106
+
+Shimabara
+
+島原
+
+Place
+
+107
+
+Yanagawa
+
+柳川
+
+Place
+
+108
+
+Miyazaki
+
+宮崎
+
+Place
+
+109
+
+Kurume
+
+久留米
+
+Place
+
+110
+
+Karatsu
+
+唐津
+
+Place
+
+111
+
+Yatsushiro
+
+八代
+
+Place
+
+* This table is a snapshot of the dataset, which includes information on 94 unique suspects who from 10 Japanese towns, and their involvement in seven initiatives
+of arms smuggling from years 1662–1668.
+
+distribution of criminals. This in turn opens up greater possibilities for
+bimodal analyses to be conducted with different combinations of nodes
+(detailed in the next section).
+In addition to the dataset, which I manually entered,4 the nature of the original
+source—hankachō—has its own affordances as well. If Healy pulled together
+multiple rosters in eighteenth-century Boston to “find” the key suspect (Paul
+Revere), I employ “after the fact” criminal records from Nagasaki that had
+already identified and verified the suspects and their involvement. This means
+that with the hankachō alone, one can’t truly play “historical detective,”
+expecting to discover new criminals hitherto unnoticed by historians and
+
+4 Thanks to modern Japanese scholars who have already transcribed and translated the original hankachō documents, I was able to manually enter
+
+the data into Excel as a Comma Separated Values (.csv) file, before inputting the data as an edges file into Gephi. Arano Yasunori 荒野泰典
+413.
+
+Journal of Cultural Analytics
+
+7
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+Nagasaki investigators alike. Yet the advantages of working with hankachō are,
+first, that even with minimal input and heuristics by the researcher, one can
+utilize the primary source as a centralized repository of information to be
+network-analyzed.5 Also, because said repository was built with criminalinvestigative intent, it lends itself to more “controlled” comparisons for the
+digital humanist: that is, when the intentions of the primary source authors
+and modern historians converge, differences in their resulting analyses can take
+on further significance.
+Yet, speaking of “difference,” does network analysis indeed change the existing
+narrative or geography of the crime?
+
+Relocating the Smuggling Ring: In Three Visualizations
+This section compares the results of digital network analysis with the
+conclusions of the Nagasaki investigators and their historians. In doing so,
+it appreciates key differences in the perception of the smuggling network,
+particularly with regards to the “who, where, and when” of the crime and
+criminals in question.
+To date, Japanese historians have predominantly emphasized the
+aforementioned merchant Itō Kozaemon and his coterie in Hakata. By closely
+reading the hankachō and related documents, they thus affirmed and
+substantiated the view of the original investigators (Toyama Mikio 外山幹夫;
+Egoshi Hiroto 江越弘人). But my digital analysis relocates the epicenter of the
+smuggling ring: another figure named Komoda Kanzaemon (小茂田勘左衛
+門) emerges as the uncontested ringleader and his peers from Tsushima as the
+prime movers in the criminal network.
+This argument is borne out in three visualizations produced on Gephi through
+bimodal analyses: 1) a person-crime mode analysis, which visualizes the
+interpersonal ties between criminals based on their shared participation in
+crime event (Figure 1), 2) a place-people mode analysis, which shows the
+geography of the crime based on criminals from the same location (Figure
+2), and 3) a crime-people mode analysis (Figure 3), which demonstrates the
+connectedness of crime events based on mutual participants.6
+The first “criminal network” graph is already revealing (Figure 1). The nodes
+here indicate unique individuals, and the edges the ties between those who
+collaborated. Using a force-directed algorithm, the graph also shows clusters
+where the criminals participated in the same smuggling event, and separations
+when they operated independently from each other. I used weighted markers
+to render the argumentative “substance” of the graph easily graspable: the
+
+5 However, this is not to suggest that the hankachō is immune to partiality. The author’s discretion was used in flattening the complexities of
+
+some data points, for example, when some individuals had multiple geographical affiliations (due to differences in place of origin and residence).
+On the “partial perspectives,” see Ryan and Ahnert 85.
+6 A useful guide for multimodal network analysis can be found in a series of blog posts in Seire.
+
+Journal of Cultural Analytics
+
+8
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+Figure 1. Person-Crime Mode Analysis.
+A visualization of interpersonal ties between smugglers as defined by their participation in incidences of crime. Major actors in the network
+are labeled with their transliterated surnames.
+
+color and size of nodes as well as the color of edges have been darkened or
+enlarged based on the relative frequency of inter-criminal connections. This
+enhancement is based on statistical evidence, albeit of a basic kind: the graph
+uses a centrality measure called “degree centrality,” the total number of edges
+connected to a particular node, to highlight individuals who are bestconnected in the network (Bourke 3–11).
+For our purposes, this graph highlights a trio of individuals (Table 2): the
+aforementioned Komoda Kanzaemon, who is the epicenter of the entire
+network, and to a lesser extent, Nakazato Yajiemon (中里弥次右衞門) and
+Journal of Cultural Analytics
+
+9
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+Figure 2. Place-People Mode Analysis.
+A visualization of intergroup ties based on geographical background. Places are marked by orange nodes and turquoise labels. Individuals
+are marked by grey nodes, and “core” members with their last names in yellow.
+
+Figure 3. Crime-People Mode Analysis.
+A visualization of relations between incidences of crimes. Red nodes indicate crime events and the varying thickness of edges represents
+relative strength of inter-event connection.
+
+Oburaya Hikoemon (油屋彥右衞門). These individuals are, if you will, the
+inner “core” of the smuggling ring. They occupy structurally central positions
+in the network, as indicated by the size of their nodes, and by the color of
+
+Journal of Cultural Analytics
+
+10
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+Table 2. The “Core” Group
+ID
+
+Name
+
+JPN_Name
+
+Type
+
+Place
+
+Crime
+
+Network Analysis Results
+
+5
+
+Komoda
+
+小茂田勘左衛
+門
+
+Person
+
+Tsushima
+
+1663, 1664A, 1665,
+1666A
+
+Inner core (primus inter
+pares)
+
+31
+
+Nakazato
+
+中里弥次右衞
+門
+
+Person
+
+Tsushima
+
+1664B, 1665, 1666A
+
+Inner core
+
+32
+
+Oburaya
+
+油屋彥右衞門
+
+Person
+
+Nagasaki
+
+1664B, 1665, 1666A
+
+Inner core
+
+1
+
+Ōgi
+gi
+
+扇角右衛門
+
+Person
+
+Tsushima
+
+1662, 1663, 1664A
+
+Outer core
+
+4
+
+Itō
+It
+
+伊藤小左衛門
+
+Person
+
+Nagasaki
+
+1663, 1664A
+
+Outer core
+
+6
+
+Takagi
+
+高木惣十郎
+
+Person
+
+Hakata
+
+1663, 1664A
+
+Outer core
+
+their edges as well as inter-nodal gravity. The dark red edges emanating from
+them further suggest that the three smugglers were closely associated. To be
+sure, there was a second triumvirate of prominent individuals in the bottom
+left. This is the outer “core,” consisting of the Hakata merchant Itō Kozaemon
+as well as Takagi Sojuro (高木惣十郎) and Ōgi Kakuzaemon (扇角右衛門).
+However, while the second trio of smugglers has salient nodes and inter-group
+connections, they pale in comparison to the inner core in terms of both degree
+centrality—and other network metrics such as betweenness and eigenvector
+measures.7
+The identification of Komoda as ringleader (and primus inter pares among the
+inner core) is a significant divergence from the conclusions of the Nagasaki
+investigators and modern-day historians. What’s more, there are four other key
+individuals who have largely gone undetected in scholarship (Kazui Tashiro
+田代和生; Arano Yasunori 荒野泰典; Yamawaki Teijiro山脇悌二郞; Takeno
+Yōko 武野要子; Maruyama Yasunari 丸山雍成; Miyake Hidetoshi 三宅英
+利.; Mori Katsumi 森克己; Yun Yusuk 윤유숙; Knoest).
+Turning to the second visualization, what about the geographical distribution
+of these core groups? The place-people mode (Figure 2) visualizes intergroup
+ties based on geographical background. Displaying a total of ten Japanese
+towns (orange nodes), and their affiliated criminals (grey nodes), this graph
+clusters individuals according to their place of origin, and designates weighted
+markers (e.g., size of labels and nodes) to indicate the quantity of affiliated
+criminals per location. Incidentally, in order to trace the earlier conversations
+on the “core” group, it also marks all of its six individuals with yellow labels.
+The first observation that emerges is that there are three important towns:
+Hakata, Nagasaki, and Tsushima. Hakata in particular was home to the greatest
+number of smugglers (32%), followed by Nagasaki (19%) and Tsushima (18%).
+
+7 I focused on degree centrality because it is the most straightforward and reliable network metric for my particular dataset. Other measures such
+
+as betweenness and eigenvector does confirm with minor variations the composition of both the inner and outer core. However, as shown in
+the conclusion of this essay, they turned out to be less “robust” compared to degree centrality—i.e., more susceptible to data loss, based on
+results from the Network Robustness Tool by Yann C. Ryan and Sebastian E. Ahnert: https://networkingarchives.shinyapps.io/
+network_robustness_tool. Also see Ryan and Ahnert 70–83.
+
+Journal of Cultural Analytics
+
+11
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+Table 3. Smugglers by Role from the Three Top Towns
+Role
+
+Tsushima
+
+Hakata
+
+Nagasaki
+
+All
+
+Main Culprits (e.g., supercargo, investor)
+
+8 (28%)
+
+7 (24%)
+
+13 (45%)
+
+29
+
+Broker
+
+3 (100%)
+
+0
+
+0
+
+3
+
+Interpreter
+
+3 (100%)
+
+0
+
+0
+
+3
+
+Captain
+
+1 (25%)
+
+2 (50%)
+
+0
+
+4
+
+Crew
+
+0
+
+17 (35%)
+
+4 (8%)
+
+48
+
+Other
+
+2 (29%)
+
+3 (43%)
+
+1 (14%)
+
+7
+
+Total
+
+17 (18%)
+
+29 (30%)
+
+18 (19%)
+
+94
+
+At face value, this may be read in support of existing scholarship that
+accentuates the Hakata-based individuals. Itō, for example, also served as the
+important role of investor, and from Hakata hailed just as many “main
+culprits” (shuhan 主犯, e.g., supercargo, investor) as from Tsushima (Table
+3).8 However, not only did Nagasaki in fact outscore Hakata in this measure
+of main culprits, but in terms of other roles, most Hakata individuals played
+minor ones, contributing disproportionately as ship captain or crew.
+Navigating the waters itself was an important task, to be sure, but arguably
+more central to the criminal network were persons handling logistics. In that
+regard, individuals from Tsushima represented an irreplaceable asset: they
+provided for instance someone like Komoda Kanzaemon who served as
+supercargo on four smuggling operations. The island was also the only supply
+of brokers and interpreters (essential for contacting the Koreans) in the
+network (Arano Yasunori 荒野泰典 413; Knoest 106–11). It should be noted
+as well that Tsushima produced three “core” individuals (marked in yellow
+labels)—two of whom belonged to the inner core—while Hakata had two and
+all from the outer core at that.
+The third graph further shows Tsushima’s prominence in the network (Figure
+3). This visualization is based on a crime-people mode analysis of a total of
+seven crime events during years 1662–1666. Represented in it are the
+connections between crime events in terms of the people shared between them.
+The edges have been weighted to show the relative strength of relations
+between events: the thicker the edge, the more criminals shared between the
+two connected nodes.
+What stands out immediately are three disparate groups of events. First, we can
+disregard the isolated cluster of nodes in the bottom right of the graph. This
+insular group coincides with the crime event, 1666B, which was schemed but
+not carried out; it was also led by a new, independent group of smugglers that
+
+8 Arano, “Kozaemon to Kinemon,” 415.
+
+Journal of Cultural Analytics
+
+12
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+Table 4. Main Culprits from Tsushima and Hakata*
+Cluster 1 (1663, 1664A)
+
+Cluster 2 (1664B, 1665, 1666A)
+
+Unique individuals
+
+Total
+
+Unique individuals
+
+Total
+
+Tsushima
+
+Komoda Kanzaemon
+Ōgi Kakuzaemon
+
+2
+
+Komoda Kanzaemon
+Ōgi Kakuzaemon
+Nakazato Yajiemon
+Kihara Ichiemon
+Kameoka Heiemon
+
+5
+
+Hakata (Fukuoka)
+
+Itō Kozaemon
+Shinozaki Den’emon
+Takagi Sōjūrō
+
+3
+
+Maeno Magoemon
+Murata Ichiemon
+Tōsuki Rokurōemon
+Sōemon
+
+4
+
+had sprung up for the first time that year. More interesting, however, are the
+two clusters of strongly linked events in the bottom (1663, 1664A: hereafter
+Cluster 1) and in the top right (1664B, 1665, 1666A: hereafter Cluster 2).
+When read in context, these clusters indicate the growing importance of
+Tsushima agents over time. As shown in Table 4, counting unique individuals
+(main culprits) from each cluster suggests the ascendancy of the islanders in the
+network: individuals from Tsushima doubled in number (2 to 5) while Hakatabased ones grew only slightly (3 to 4). More important than just this aggregate
+count, however, is the permanence of key individuals over time. Main culprits
+from Tsushima such as Komoda and Ōgi (both members of the “core” group)
+remained prominent in both clusters, but no one from Hakata did: Itō, for
+example, was only involved in Cluster 1, becoming inactive after 1664.9
+Why? Given the contextual information available, we will likely never know.
+But an important clue is the coincidence of Cluster 2 with the expansion of the
+criminal network under Komoda’s leadership. During the years 1655–1666,
+Komoda took the reins by doing three things. First, in 1655, he replaced Itō’s
+presence by recruiting heavily from Hakata (1665 is ironically the year when
+the greatest number of main culprits participated from Hakata). Second, the
+next year, Komoda then killed a longtime partner from Tsushima, Shingū,
+perhaps to consolidate competing factions: Shingū was part of the first crime
+event (1662), which consisted entirely of Tsushima individuals but not
+Komoda. Third, under the emerging ringleader, the network grew
+geographically. In 1665, he included a great many smugglers from Osaka. The
+next year, he replaced the Hakata smugglers entirely by enlisting new members
+from four Japanese towns, namely, Kurume, Karatsu, Miyazaki, and Yanagawa
+(Arano Yasunori 荒野泰典; Knoest; Kang).
+
+9 According to Knoest’s dataset, there is a certain “Denemon伝右衛門 from Shinozaki” who participated in crime events 1664A and 1666A.
+
+This is a misreading of the original source: the name of the criminal in question is Shinozaki Den’emon who in fact hailed from Hakata, and he
+only participated in 1664A. There are other typos and mistakes in the data due to what seems to be accidental duplication. The data for my
+network analysis was taken from Arano’s research. See Arano Yasunori 荒野泰典 413; Knoest 106–11. See note 4 for more details.
+
+Journal of Cultural Analytics
+
+13
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+Taken together, these graphs show that contrary to the findings of the original
+investigators and modern-day scholars, the epicenter of the smuggling ring was
+Tsushima, not Hakata, and its ringleader Komoda Kanzaemon, rather than Itō
+Kozaemon. What explains this discrepancy?
+
+From the Library to the Data Lab and Back
+As responsible digital humanists, we should first entertain the possibility that
+the visualizations produced in Gephi might be misleading. Some caveats are in
+order regarding the nature of the data.
+Consider for example potential issues with the criminal records themselves.
+Though neatly compiled in the hankachō, the Nagasaki investigators were
+never quite done: they could not figure out, for instance, the Japanese
+manufacturer (likely in Osaka) who had been supplying contraband armor to
+Komoda “due to various circumstances” (Knoest 105). In fact, they in the end
+discovered little about Komoda himself. The elusive ringleader used an alias
+(Ōku 大久), which might have thrown off the investigators (Arano Yasunori
+荒野泰典 466n13). We also know from another source that he trafficked
+contraband into Korea as many as fifteen times (Knoest 105), but only four of
+his smuggling operations from 1663 to 1666 entered the criminal records.
+What the Nagasaki records show is indeed just the tip of the iceberg: if one
+closely reads the Korean records, many “main culprits” appear there as well.
+The Korean network stretched deep into the peninsula: beginning at the Japan
+House, it included the nearby towns of Pusan and Tongnae—their resident
+interpreters (yŏkkwan), merchants, and military officers; it also included at
+its heart Hansŏng (present-day Seoul), where high-ranking civil officials, the
+top brass, and even Korean kings orchestrated the smuggling operations. As
+introduced earlier, the Korean enterprise also traced back significantly further
+than the seven incidents investigated by the Japanese. Arms trade began as early
+as 1607, when Chosŏn opened the Japan House (a trading outpost maintained
+by the Sō of Tsushima), and it became after 1621 (the year of the shogunate’s
+ban) a smuggling enterprise supported secretly by the Korean kings and
+Tsushima daimyos.
+Adding this Korean data, however, would not have solved the problem. The
+Korean side of the network is amply documented for the entire period
+(1607–1661) and often with names and dates. But it is significantly less
+amenable for network analyses. Contrary to the hankachō, the information is
+scattered across the court annals which were curated for a different purpose
+(i.e., to record the king’s daily duties, rather than investigate crime). The data
+thus needs to be mined and manipulated to a significant extent by the digital
+humanist. And even when processed in this way, the result would be highly
+uneven and incommensurate with the hankachō data: some Korean individuals
+are mentioned only once in vacuo, while others (mostly office holders) can be
+matched with bureaucratic, biographical, and even genealogical data (Kuksa
+p’yŏnch’an wiwŏnhoe, Hyŏnjong sillok 1664/2/29; Kuksa p’yŏnch’an
+Journal of Cultural Analytics
+
+14
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+wiwŏnhoe, Pibyŏnsa Tŭngnok 1656/3/26, 1664/3/3, 1664/3/4). The
+internationality of the crime as it happened in both Korea and Japan is difficult
+to represent with consistency.10
+These caveats notwithstanding, the foregoing network analysis still stands.
+Despite the absence of significant data and the distractions of secondary
+scholarship, the visualizations pointed us to the right direction: it was indeed
+Tsushima, not Hakata, that was the epicenter of the Japanese side of the
+network.
+A close reading of the sources left by the “smugglers” confirms this. While no
+records have survived by the hand of Komoda, Itō, or the other individuals
+executed in 1667, we have decades of transactions documented in the archives
+of the Korean and Tsushima authorities. These archives show, first, that during
+the period of open military trade (1609–21), Chosŏn Koreans imported a
+significant volume of Japanese arms and armor by dispatching envoys to Japan
+as well as purchasing directly from the private markets near the Japan House.
+After 1621, both the Chosŏn and Sō pressed on, dealing Japanese goods
+behind the shogunate’s back. And the daimyos of Tsushima profited greatly
+from this, using arms smuggling as a tactic to gain political and economic
+concessions from the Korean court. To be sure, by the 1660s, the Sō of
+Tsushima was no longer involved in arms trafficking due to the increased risks
+of exposure. But the Koreans then dispatched agents directly to Tsushima
+to partner with individual profiteers in the island. Some of these profiteers
+were prominent Tsushima officials such as Sago Shikiemon who in 1655 was
+ordered disembowelment for dealing with the Koreans. But by the 1660s, as we
+learn through the hankachō, other private merchants like Komoda, Ōgi, and
+Nakazato had risen to the occasion.
+Arms smuggling across the Korea Strait was thus longstanding, systematic, and
+orchestrated by state and non-state agents from Korea and Tsushima. What is
+surprising, however, is that a basic network analysis run on just the last six years
+of this phenomenon revealed a significant clue as to how and where it began.
+In this sense, then, network analysis can be better than its data. For this case
+study, building a more inclusive dataset would have been impractical due to
+the inconsistencies laid out above. It would also have added little value: even
+a cursory reading of Korean or Tsushima records shows their systematic
+involvement in the smuggling network. The point, however, is that even in the
+absence of “complete” data—which is an impossible pursuit anyway, historical
+networks are indeed “remarkably robust” (Ryan and Ahnert 85). As Yann C.
+Ryan and Sebastian E. Ahnert have convincingly argued, network analyses
+
+10 There was also some information which did not enter Gephi. Depending on the severity of crime, the 87 individuals found guilty were recorded
+
+with differing attention to details such as age, residence, home ownership, and penalty. Such details were excluded from the network data due to
+their inconsistency.
+
+Journal of Cultural Analytics
+
+15
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+Figure 4. Robustness of the smuggling network.
+Measured by the Network Robustness Tool developed by Yann C. Ryan and Sebastian E. Ahnert, it shows high stability for the degree
+centrality measures up to 75% of data removal or more for in-degree and out-degree. The closeness and eigenvector measures were more
+sensitive, likely due to the small size of dataset.
+
+yield reliable results up to more than 50% of random data loss. Their Network
+Robustness Tool was built for historical datasets of another order of
+magnitude, but feeding the hankachō data into it returns a similar conclusion:
+the latter, too, is shown to be highly robust, especially in terms of degree
+centrality measures (Figure 4).
+
+Conclusions
+Using a small dataset of metadata about criminals, I have demonstrated that
+adopting a network perspective can radically alter the conclusions reached
+about their history: even when working with the authorities’ data, which
+seemed to emphasize a rich Hakata merchant, the network analysis effectively
+isolated another individual from Tsushima who was in fact more central. This
+conclusion rightfully challenges core assumptions in the archives and related
+modern scholarship. It also points to prospective areas of research which may
+or may not benefit from network analysis: the evolution of the smuggling
+network from the smugglers’ (e.g., Korean, Tsushima) perspective; the history
+of commercial and diplomatic exchanges between East Asian states and nonstate agents; and the nature of contraband networks in the early modern world.
+For the purposes of this essay, however, let us return to the question posed
+above: if not data problems, what explains this discrepancy between the results
+of network analysis and those of the original investigators as well as modernday scholars? There are at least two interpretations, not mutually exclusive.
+The first is that the Nagasaki investigators lacked a systematic understanding of
+the network. During the four decades of arms smuggling (from 1621 to 1666),
+many transactions accumulated which would have surprised the shogunate.
+But in the end, the shogunate did not know that its neighboring state had been
+
+Journal of Cultural Analytics
+
+16
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+methodically operating an illicit enterprise at its border. Even more important,
+they did not realize that their own daimyos—the Sō of Tsushima—were deeply
+involved at first, collaborating with the Koreans behind their back.
+Of course, the shogunate had its doubts. In fact, the Sō’s secrets came close
+to being exposed early on (during a political scandal of 1635) such that they
+thereafter withdrew from further arms smuggling. But during the 1667
+investigation, the Japanese authorities still suspected the Sō’s knowledge
+of—and complicity with—the smuggling incidents, pressing the daimyo to
+come clean. In the end, however, the daimyo emerged unscathed: he blamed
+the profiteering by individual smugglers, of which the daimyo had no part;
+he also used an official explanatory letter from the Korean court to convince
+the shogunate that neither his clan nor the Korean court had been formally
+involved (Arano Yasunori 荒野泰典 418; Kang).
+The Japanese investigation was limited to be sure, but understandably so. For
+one thing, we have all been duped by these smugglers: as noted, most modernday historians ended up repeating the assumptions of the hankachō and of its
+original compilers perhaps because they read it “too closely” (Toyama Mikio
+外山幹夫; Egoshi Hiroto 江越弘人). But digital tools serve not merely to
+perform autopsy on historical acts: another interpretation suggests the
+investigation in fact was methodical and effective in its own right.
+In the absence of knowledge about the entire criminal network stretching
+into Tsushima and Korea, it makes sense from the shogunate’s perspective
+to emphasize Itō Kozaemon as the “root” of the crisis. Taking an economic
+perspective, for example, Itō was indeed a leading investor who financed the
+first smuggling transaction in 1663 by providing seed money as well as
+arranging for the ship, its captain, and the seamen from Hakata.11 In turn,
+because Itō was already a renowned merchant at the time, his crime was easier
+to detect and more “profitable” to prosecute. The Hakata merchant not only
+owned a house in Nagasaki, the home of the investigation. But he loomed
+large in the eyes of both his contemporaries and historians due to the great
+wealth he had accumulated from the Dutch trade. When after 1667, Itō and
+his sons were executed, his staggering asset of 700,000 taels of silver was also
+confiscated, an amount which exceeded the asset of “the third richest person of
+the Dutch Republic” (Knoest 100–14, 114n60). In a sense, then, the Japanese
+authorities successfully traced the smuggling network as far back as they could,
+especially in terms of following the source of the money; it was also effective in
+identifying the person of cultural and economic significance who had brazenly
+flown in the face of shogunal authority.
+
+11 This is not to backpedal on my argument regarding Tsushima’ salience vis-à-vis Hakata. In reality, investors were dispensable: there were
+
+multiple investors for most transactions, including Komoda himself. Arano Yasunori 荒野泰典 412; Knoest 106–11
+
+Journal of Cultural Analytics
+
+17
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+Data Repository: https://doi.org/10.7910/DVN/F2MAOK
+Peer reviewers: Jo Guldi, Ruth Ahnert
+
+Acknowledgements
+I would like to thank Javier Cha, Song Chen, David Howell, and members
+of the 2022 Humanities Digital Summer Workshop at Washington University
+in St. Louis, especially Joseph Loewenstein, Douglas Knox, and Stephen
+Pentecost. They provided intellectual stimulation, encouragement, and handson guidance that made this publication possible. I am also deeply grateful
+to the two anonymous reviewers of this article for providing generous and
+insightful feedback.
+Submitted: October 05, 2022 EST, Accepted: November 02, 2022 EST
+
+This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0
+International License (CCBY-4.0). View this license’s legal deed at http://creativecommons.org/licenses/
+by/4.0 and legal code at http://creativecommons.org/licenses/by/4.0/legalcode for more information.
+
+Journal of Cultural Analytics
+
+18
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+references
+Ahnert, Ruth, et al. The Network Turn: Changing Perspectives in the Humanities. Cambridge
+University Press, 2020, https://doi.org/10.1017/9781108866804.
+Ahnert, Ruth, and Sebastian E. Ahnert. “Metadata, Surveillance and the Tudor State.” History
+Workshop Journal, vol. 87, 2019, pp. 27–51, https://doi.org/10.1093/hwj/dby033.
+---. “Protestant Letter Networks in the Reign of Mary I: A Quantitative Approach.” ELH, vol. 82, no.
+1, 2015, pp. 1–34, https://doi.org/10.1353/elh.2015.0000.
+Arano Yasunori 荒野泰典. “Kozaemon to Kinemon – chieki to kaikin wo meguru danshou” 小左衛
+門と金右衞門 - 地域と海禁をぬくる断章.” Umi kara mita Nihon bunka 海から見た日本
+文化, edited by Ōbayashi Taryō, Shōgakkan, 1992, pp. 407–47.
+Barabási, Albert-László. Linked: The New Science of Networks. Perseus, 2002.
+Bastian, Mathieu, et al. “Gephi: An Open Source Software for Exploring and Manipulating
+Networks.” Proceedings of the Third International ICWSM Conference, vol. 3, no. 1, Mar. 2009,
+pp. 361–62, https://doi.org/10.1609/icwsm.v3i1.13937.
+Bourke, Evan. “Female Involvement, Membership, and Centrality: A Social Network Analysis of the
+Hartlib Circle.” Literature Compass, vol. 14, no. 4, Apr. 2017, https://doi.org/10.1111/lic3.12388.
+Chen, Song. “Governing a Multicentered Empire: Prefects and Their Networks in the 1040s and
+1210s.” State Power in China, 900–1325, edited by Patricia Ebrey and Paul J. Smith, University of
+Washington Press, 2016, pp. 101–52.
+Clulow, Adam. “‘Great Help from Japan’: The Dutch East India Company’s Experiment with
+Japanese Soldiers.” The Dutch and English East India Companies: Diplomacy, Trade and Violence
+in Early Modern Asia, edited by Adam Clulow and Tristan Mostert, Amsterdam University Press,
+2018, pp. 179–210.
+Cullen, Louis. “Japanese Archives: Sources for the Study of Tokugawa Administrative and
+Diplomatic History.” Japan Review, vol. 25, 2013, pp. 33–65.
+Diminescu, Dana. “Introduction: Digital Methods for the Exploration, Analysis and Mapping of eDiasporas.” Social Science Information, vol. 51, no. 4, Nov. 2012, pp. 451–58, https://doi.org/
+10.1177/0539018412456918.
+Egoshi Hiroto 江越弘人. Toppikusu de yomu Nagasaki no Rekishi 「トピックスで読む」長崎の
+歴史. Genshobo, 2007.
+Euler, Leonhard. “Leonhard Euler and the Koenigsberg Bridges.” Scientific American, vol. 189, no. 1,
+July 1953, pp. 66–70, https://doi.org/10.1038/scientificamerican0753-66.
+Fischer, David Hackett. Paul Revere’s Ride. Easton Press, 1996.
+Healy, Kieran. “Using Metadata to Find Paul Revere.” Kieran Healy, 9 June 2013,
+https://kieranhealy.org/blog/archives/2013/06/09/using-metadata-to-find-paul-revere.
+Kang, Hyeok Hweon. Kingpins at Court: Contraband Diplomacy between Korea, Japan, and
+Tsushima, 1607–71.
+Kazui Tashiro 田代和生. Wakan: sakoku jidai no Nihonjin-machi 倭館: 鎖国時代の日本人町.
+Bungei Shunjū, 2002.
+Knoest, Jurre. “‘The Japanese Connection’: Self-Organized Smuggling Networks in Nagasaki circa
+1666–1742.” Beyond Empires: Self-Organizing Cross-Imperial Economic Networks vs Institutional
+Empires, 1500–1800, edited by Cátia Antunes and Amélia Polónia, 2016, pp. 88–137.
+Krebs, V. E. “Mapping Networks of Terrorist Cells.” Connections, vol. 24, no. 3, 2001, pp. 43–52.
+Kuksa p’yŏnch’an wiwŏnhoe, editor. Hyŏnjong sillok. Seoul, 1955–1958.
+---, editor. Pibyŏnsa Tŭngnok. 1959–1960.
+
+Journal of Cultural Analytics
+
+19
+
+How Network Analysis Uncovers International Networks of Smuggling History: Criminals in Nagasaki, Japan circa 1667
+
+Ladd, Jason R. “Imaginative Networks: Tracing Connections Among Early Modern Book Dedications.” Journal of Cultural Analytics, vol. 6, no. 1, Mar. 2021, pp. 180–216, https://doi.org/
+10.22148/001c.21993.
+Maruyama Yasunari 丸山雍成. Chūō Kōronsha. 1992.
+Miyake Hidetoshi 三宅英利. Kinsei Ajia no Nihon to Chōsen Hantō 近世アジアの日本と朝鮮半
+島. Asahi Shinbunsha, 1993.
+Mori Katsumi 森克己. “Kinsei ni okeru Tsushima mitsu bōeki to Tsushima han” 近世に於ける對
+鮮密貿易と對馬藩.” Shien, vol. 54, 1950, pp. 49–73.
+Morinaga Taneo 森永種夫. Hankachō: Nagasaki Bugyō no kiroku 犯科帳: 長崎奉行の記錄.
+Iwanami Shoten, 1962.
+Räz, Tim. “Euler’s Königsberg: The Explanatory Power of Mathematics.” European Journal for
+Philosophy of Science, vol. 8, no. 3, 2018, pp. 331–46, https://doi.org/10.1007/s13194-017-0189-x.
+Ryan, Yann C., and Sebastian E. Ahnert. “The Measure of the Archive: The Robustness of Network
+Analysis in Early Modern Correspondence.” Journal of Cultural Analytics, vol. 7, 2021, pp. 57–88.
+Seire, Maarja. Gephi Guidelines for Cuneiform Archives. Part 5: Transforming a 2-Mode Network into
+a 1-Mode Network. http://persiababylonia.org/archives/methods/gephi-guidelines-for-cuneiformarchives-part-5-transforming-a-2-mode-network-into-a-1-mode-network. Accessed 1 Oct. 2022.
+Shin-Kap, Han. “The Other Ride of Paul Revere: The Brokerage Role in the Making of the American
+Revolution.” Mobilization, vol. 14, no. 2, June 2009, pp. 143–62, https://doi.org/10.17813/
+maiq.14.2.g360870167085210.
+Takeno Yōko 武野要子. Shōnin gunzo 商人群像. Reimei Shuppan, 1991.
+Toyama Mikio 外山幹夫. Nagasaki Bugyo: Edo bakufu no mimi to me 長崎奉行:江戸幕府の耳と
+目. Chuokoronsha, 1989.
+Warren, Christopher N., et al. “Six Degrees of Francis Bacon: A Statistical Method for Reconstructing
+Large Historical Social Networks.” Digital Humanities Quarterly, vol. 10, no. 3, 2016,
+http://digitalhumanities.org/dhq/vol/10/3/000244/000244.html.
+Yamawaki Teijiro山脇悌二郞. Nukeni: sakoku jidai no mitsubo eki 抜け荷: 鎖国時代の密貿易.
+Nihon Keizai Shinbunsha, 1965.
+Yun Yusuk 윤유숙. “17 segi Cho Il-gan Ilbon-jae mugiryu ŭi kyoyŏk kwa milmae” 17세기 조일간
+일본제 무기류의 교역과 밀매.” Sach’ong, vol. 67, 2008, pp. 292–93.
+
+Journal of Cultural Analytics
+
+20
+
+

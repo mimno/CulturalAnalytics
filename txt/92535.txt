@@ -1,0 +1,1716 @@
+Krasselt, Julia, and Philipp Dreesen. “Topic Models Indicate Textual Aboutness and
+Pragmatics: Valuation Practices in Islamophobic Discourse.” Journal of Cultural
+Analytics, vol. 7, no. 2, Mar. 2024, https://doi.org/10.22148/001c.92535.
+
+ARTICLE
+
+Topic models indicate textual aboutness and pragmatics: Valuation
+practices in Islamophobic discourse
+Julia Krasselt1, Philipp Dreesen1
+1 ZHAW Zurich University of Applied Sciences
+
+Keywords: topic modeling, German-language blogs, valuation practices, Islamophobic discourse
+https://doi.org/10.22148/001c.92535
+
+Journal of Cultural Analytics
+Vol. 7, Issue 2, 2022
+
+This study investigates the analysis of evaluative linguistic patterns within the
+context of the German-language Islamophobic online blog PI-News. The corpus
+consists of texts that refer to the Quran. The innovation of this research lies in
+two primary dimensions: Firstly, it adopts John Dewey’s pragmatism to establish
+an explicit valuation theory. Secondly, it extends the boundaries of topic
+modeling in the digital humanities by integrating van Dijk’s differentiation
+between aboutness and pragmatic macrostructures of texts. Notably, within these
+pragmatic macrostructures, the study highlights the practice of quoting Quran
+suras as a significant linguistic pattern. Together with the analysis of topic
+distribution and topic pathways in texts, the paper illustrates how evaluative
+practices reinforce the ideal of an Islam-free Europe.
+
+1. Introduction
+In this paper, we address the following research question: How can we identify
+textual and discursive patterns of (e)valuation in a medium of political
+discourse? We approach this question in a per se (e)valuative environment:
+the Islamophobic online blog PI-News (Dreesen and Krasselt; Krasselt and
+Dreesen). The German-language blog comprises statements with a strong
+negative attitude against liberal norms, especially against a multi-ethnical
+society and migrants. We assume that PI-News is a self-stabilizing discourse
+order based on (e)valuative postings addressing a largely homogeneous
+Islamophobic audience of readers and commentators. For the purpose of this
+paper, we concentrate on texts mentioning the Quran, in order to work with
+a thematically very focused corpus (assuming that (e)valuation always refers to
+some kind of object).
+To answer our research question, we used a data-driven approach to give
+insights into textual evaluation practices within Islamophobic discourse. The
+paper provides two new insights: First, this research is based on John Dewey’s
+distinction of “valuation” and “evaluation” (Dewey, Theory of Valuation). We
+show how an obviously negative attitude towards the subject matter of the
+Quran is transformed into discursive structures of value judgments on a textual
+level. Second, we show how to innovatively use topic modeling – a data-driven
+linguistic approach – to identify evaluative practices in political discourse. We
+use topic modeling in a twofold way, extending its application in the digital
+humanities: Building on the distinction between aboutness and pragmatic
+macrostructures introduced by (van Dijk, “Text and Context”), topics are
+categorized with a specific view on linguistic practices, especially evaluation.
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+Here, we focus on the evaluative practice of quoting. In addition, we explore
+the combination and pathways of topics in order to highlight how the
+evaluative practice of quoting unfolds in the course of texts. Finally, we discuss
+how quoting can be understood as an element of evaluation.
+
+2. Background
+2.1. Valuation and evaluative practices
+Linguistic research on evaluation needs a theory of valuation. This sounds like
+a given, but it is not. Earlier linguistic research on evaluation refers to speech
+acts and conversational maxims (Sager; Zillig). Today, linguistic approaches to
+evaluation focus on practices and positioning in speech and text. A decidedly
+linguistic discussion of valuation issues can be found, for example, in the metaexamination of language ideologies, the affective relation of stance taking, and
+in the understanding of the linguistic market (Bourdieu 651–55; Kroskrity
+497; Silverstein 223, 252–56; Woolard 740–41). The latter is an example of
+the rare adaptation of a value theory to linguistic issues. These exceptions
+include Keller and Alba—Juez and Thompson, who at least mention selected
+metaethical positions. It is noticeable, however, that theoretical and empirical
+studies of evaluative expressions and language action mostly lack a systematic
+reference to existing evaluation theories from, e.g., philosophy, sociology, or
+psychology (cf. e.g. Sandig; Linde; Baker et al.).
+Since the 1980s, interest in the scientific study of evaluation and valuation
+has increased. This is also related to the fact that the development of certain
+valuation practices in Western societies has led to the emergence of
+“Valorisierungsgesellschaften” (‘valuation societies’), which are now being
+investigated (Reckwitz 14). Valuation studies and the “sociology of valuation
+and evaluation” are not only concerned with economic analyses and their
+criticism (Lamont; Doganova et al. 87–88); particularly striking are the
+analyses of the cultural valuation of symbolic goods and social practices (e.g.,
+art, sports, music) and of value regimes (Lamont 203). Lamont asks:
+“What can be done to ensure that a larger proportion of the
+members of our society can be defined as valuable? […]
+Addressing these questions will help us understand the impact of
+dominant definitions of worth and cultural citizenship, as well as
+their implications for xenophobia, racism, solidarity toward the
+poor, and attitudes toward welfare redistribution.” (202)
+Valuing and devaluing creates and maintains social orders, which is why they
+need to be examined in both local practices and macro-structures in order to
+understand their forms, functions and effects.
+The understanding of valuation in this paper differs from the aesthetic or
+economic understandings of taste judgments, such as those found in linguistic
+analyses of evaluative use of language. It is not about the use of language to
+implement judgments of taste and similar practices, but about an instrumental
+Journal of Cultural Analytics
+
+2
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+understanding of verbalized practical judgments aimed at guiding actions and
+problem solving. In this sense, Dewey argues for a pragmatic valuation theory.
+In pragmatism, action as a practical orientation is generally given priority over
+reflection, because human behavior is primarily shaped by issues of usability.
+The focus of pragmatism is how we can carry out our everyday investigations
+in a self-directed and productive way. Considered in this way, the reasons for
+(e)valuative Islamophobic practices lie in problem solving, not in, for example,
+ethical, aesthetic, or political speculative reflection.
+This metaethical reflection of Dewey is based on his differentiation of
+valuation as attitude and evaluation as judgement:
+“Dewey’s term ‘valuation’ covers both valuing and evaluation.
+Valuing, prizing, and esteeming denote ‘affective-motor
+attitudes[,]’[,] with more emphasis on ‘motor’ than ‘affective’.
+Valuing is a matter of loving or hating, liking or disliking
+something, where these attitudes involve tendencies to act”.
+(Anderson)
+This means that one does not need to have an idea of what one (does not)
+value(s) in order to value (e.g., food, city, religion), and that valuing can be
+implemented through habits (e.g., buying a type of cheese) (cf. Anderson).
+“Value, whether immediate or contributory, may be found
+without judgement, without implying cognition. If immediate,
+we prize, cherish, esteem, directly appreciate, etc., and these
+words denote affectional or affecto-motor attitudes, not
+intellectual ones. So we use objects as means, treat them as useful,
+without judgement.” (Dewey, “The Logic of Judgments of
+Practice” 4)
+Dewey claims that we practically value without reflecting and judging, for
+example, by finding objects useful or not (e.g., using an umbrella in the rain).1
+In contrast, value judgments arise in contexts in which we ask ourselves
+whether we should value something. In contrast to most philosophical
+positions, value judgments are practical judgments for Dewey: The function of
+a value judgment is to continue an action when the normal course of action
+has been interrupted by a problematic situation (e.g., considering buying an
+umbrella while standing in the rain). They are made by us to orient ourselves
+in situations and contexts (Anderson). Value judgments are “about the value
+of actions and objects as means—that is, their value in relation to their
+
+1 The umbrella may be immediately valuable; it may have added benefits and unintended consequences, e.g., being perceived as a highly forward-
+
+thinking person.
+
+Journal of Cultural Analytics
+
+3
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+consequences, or the consequences of valuing them in the situation at hand”
+(Anderson). In addition, value judgments are tools for valuing whether and
+how changes to the evaluation process and objects are needed.
+According to Dewey, we can recognize evaluative processes with means and
+ends in the use of propositions. This is useful for understanding Islamophobic
+texts:
+“When the contexts are taken into account, what emerges are
+propositions assigning a relatively negative value to existing
+conditions; a comparatively positive value to a prospective set of
+conditions; and intermediate propositions (which may or may
+not contain a valuation-expression) intended to evoke activities
+that will bring about a transformation from one state of affairs
+to another. There are thus involved (i) aversion to an existing
+situation and attraction toward a prospective possible situation
+and (ii) a specifiable and testable relation between the latter as an
+end and certain activities as means for accomplishing it.” (Dewey,
+Theory of Valuation 13, emphasis original)
+Dewey’s pragmatism assumes that head, heart, and hand are integrated in
+behavoir, “in which, to use more technical language, prizing and appraising
+unite in direction of action.” (Dewey, Theory of Valuation 65). By
+distinguishing between valuation and judgment, Dewey shows their mutual
+reinforcement. Valuation is transformative, as he explains, e.g., in The Logic of
+Judgments of Practice (4-9):
+“appraisals affect our immediate valuings of things. […] Practical
+reasoning does not merely generate new appraisals; it transforms
+our prizings. This is the point of Dewey’s theory of criticism
+and taste. Judgments of the merits of prizings feed back onto
+our primitive prizings and transform them. They not only make
+these prizings more articulate (a union of prizing and
+appraising); in making us more vividly aware of the features of
+the object that we prize, they alter the directions of our prizings”.
+(Anderson)
+The fact that the appraisals change as a result of the realization of devaluing
+judgements shows the relevance of the debate on Islamophobic statements in
+the public discourse. The statements as judgments indicate the deliberately
+emphasized characteristics of the evaluated object, the Quran. This offers
+insight into what the authors of the Islamophobic blog actually consider to be
+the problem with Islam and the Quran. These two aspects, the transformation
+and the named features, are discussed in this paper.
+What is most convincing about Dewey’s pragmatism for dealing with
+evaluative language use is, first, its focus on practical judgements that aim to
+guide action and problem solving; second, its focus on the transformation
+Journal of Cultural Analytics
+
+4
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+between verbal estimation and evaluation in relation to a concrete object: the
+Quran. Let us assume that in the Islamophobic worldview Islam represents
+a central problem in the idealized community of, for example, an extremely
+homogeneous, purely Christian or libertarian-authoritarian ‘problem-free’
+world. We do not know the everyday situations of Islamophobic persons. We
+do not know when and how Islam is habitually devalued in an Islamophobic
+way or when this is disturbed, and value judgments become needed. What
+we can look at, however, is how the Quran is evaluated in the Islamophobic
+discourse order of the blog PI-News. The patterned and thus habitual writing
+of text of this kind on the blog involves valuation as attitude and judgement
+with considerations of consequences. How this can be captured linguistically is
+presented below.
+
+2.2. A text linguistic approach to topic modeling
+How can linguistic practices of evaluation be operationalized from a corpus
+linguistic perspective? In the context of this study, we were interested in a
+corpus-driven, quantitative approach to evaluation. More specifically, we
+operationalized evaluative practices on the textual level by means of word cooccurrence patterns. To that end, we approached the task by applying a
+machine learning algorithm, namely topic modeling. Contrary to alternative
+corpus linguistic methods (e.g., sentiment analysis and other lexicon-based
+approaches), topic modeling has the advantage of working without pre-defined
+hypotheses regarding the linguistic form of evaluative practices. Furthermore,
+it is a “within-corpus” method, i.e., it does not require a reference corpus that
+is used for comparison or as some sort of baseline (as would be the case with
+keyword analysis). In order to use topic modeling for the identification of
+evaluative practices, we refer to a text linguistic theory, allowing to explain the
+output of the topic modeling algorithm by means of semantic and pragmatic
+macrostructures.
+In the literature on topic modeling, the definition of the term “topic” remains
+vague and mostly alinguistic. E.g., Blei states that “[…] topic models resemble
+[…] the thematic structure of the collection” (79) and that topics are “themes
+that run through them [collections of documents, JK]” (77), without defining
+what a thematic structure or a theme is. Blei and Lafferty refer to the topic
+structure of a corpus as “the index of ideas” (71) that is present in the texts
+of the corpus. From a purely algorithmic perspective, topics are probability
+distributions over the vocabulary of a corpus: topics are lists of words which
+have a high cooccurrence probability in documents. Thus, topics are calculated
+on the linguistic surface and are based on the cooccurrence of words, which
+is then used to “identify the aboutness of a corpus” (Murakami et al. 244).
+Murakami et al. point out that topics vary in the degree to which this aboutness
+is visible, which becomes evident when topics are annotated with a mnemonic
+label during the research process. Topics containing many grammatical words
+are harder to label than topics containing concrete nouns, which is very well
+explainable since concrete nouns refer to objects. The following table
+Journal of Cultural Analytics
+
+5
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+Table 1. Example for topics from the study corpus.[^2]
+18
+
+Kundgebung 'demonstration’, Bürger 'citizen’, Video 'video’, links ‘left’, Veranstaltung ‘event’, Uhr ‘clock’, Polizei ‘police’, Pegida,
+Pax, Samstag ‘saturday’, BPE, Bürgerbewegung ‘citizen movement’, linke ‘leftist’, jung ‘young’, Rede ‘speech’, Foto ‘photo’,
+Plakat ‘poster’, einig ‘united’/’some’, Islamisierung ‘islamization’, Widerstand ‘resistance’, Demonstration ‘demonstration’,
+Stuttgart, Dresden, Ort ‘place’, Aktion ‘action’, Platz ‘place’, Gespräch ‘conversatzion’, Straße ‘street’, Teilnehmer ‘participant’,
+drei ‘three’
+
+24
+
+Muslimen ‚muslims‘, heißen ‚called‘, Teil (‚part‘, gegenüber ‚compared to‘, erklären ‚to explain‘, Thema ‚topic‘, diese ‚these‘, einig
+‚united’/’some’, Seite ‚side‘, gelten ‚to apply‘, jedoch ‚however‘, mögen ‚to like‘, warum ‚why‘, gar ‚even‘, natürlich ‚naturally‘,
+sogar ‚even‘, darauf ‚on‘, etwa ‚about‘/‘e.g.‘, welche ‚which‘, verstehen ‚to understand‘, Beispiel ‘example’, Aussage ‚statement‘,
+davon ‚thereof‘, wenig ‚little‘, dafür ‚therefore‘, ein ‚one‘/‘a‘, allerdings ‚however‘, religiös ‚religious‘, wichtig ‚important‘,
+während ‚while‘
+
+exemplifies this with two topics from the corpus used in this study. The
+aboutness of topic 18 can be summarized straightforwardly with the label
+islam critical movements. In contrast, the aboutness of topic 24 is considerably
+harder to grasp from the top words. In the literature, topics like 24 are
+sometimes referred to as boilerplate/noisy topics", i.e., topics with “no
+substantive meaning” (Maier et al. 108; see also DiMaggio et al. 586).
+In an everyday understanding, the term “topic” similarly refers to the
+aboutness of a text. A topic can be understood as the answer to the question:
+“What is this text about?” (van Dijk, “Text and Context” 131). The answer
+to this question can take different forms, ranging from a single word to a
+short phrase or multiple sentences (Stede 88). Thus, the answer to the question
+would very likely contain words which are amongst the top words (see section
+4.1) of a topic in a topic model. Similarly, competent speakers find it easy
+to link a text to a discourse: “Our linguistic behavior shows that we can say
+that a discourse, or part of it, was ‘about’ something. That is, we are able to
+produce other discourses, or parts of discourses, expressing this ‘aboutness’,
+e.g., in summaries, titles, conclusions or pronouncements in any form.” (van
+Dijk, “Text and Context” 131).
+Theoretically more well-founded considerations of the term topic, however,
+can be found within text linguistic theory. According to Hellwig, the topic
+of a text is to be considered as something new, the answer to a question:
+“Ein Thema ist etwas Fragliches, zu dem in einem Text eine Lösung mitgeteilt
+wird oder mitgeteilt werden soll. Jedes Thema kann in Form eines Fragesatzes
+verbalisiert werden.”2 (3). Similarly, Lötscher considers the topic of a text as
+a gap or something controversial. e.g., an event, person or proposition (99).
+More recently, Adamzik proposes a typology of topics, referring to sentence
+semantics and semantic roles (215). Common to all approaches is that a topic
+is conceptualized as an abstraction or reduction of the content of a text.
+
+2 English translation: “A topic is something questionable to which a solution is or should be provided in a text. Any topic can be verbalized in the
+
+form of an interrogative sentence.”
+
+Journal of Cultural Analytics
+
+6
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+An approach how this abstraction can be worked out analytically can be found
+in van Dijk (“Text and Context”). According to van Dijk, a topic of a text
+(he uses the term “topic of discourse” and “topic of conversation”, van Dijk,
+“Text and Context” 119) is derived in a process of abstraction a reader or
+listener has to make during reading/listening. This process of abstraction can
+be described in terms of semantic operations, by which the topic of a text
+can be derived from its individual propositions by specific rules, e.g., deletion,
+selection, generalization, and integration (van Dijk, “Text and Context” 143).
+Understood in this way, a topic is the result of a hierarchical organization of
+the propositions of a text. With focus on action and structure (see below),
+individual propositions in a text build macrostructures, which in turn build
+further macrostructures and so on, until the stage of the global macrostructure
+of a text is reached.
+We follow van Dijk’s theory of macrostructures and argue that topics (i.e., the
+result of the topic modeling algorithm) are a corpus linguistic approach to this
+theory. Topic modeling certainly is not suited as a cognitivist model, i.e., it tells
+us nothing about the way a topic can be inferred from a text cognitively (e.g.,
+by a set of rules applied by a reader/listener), but the theory of macrostructures
+is nevertheless a suitable framework for enhancing the analytical power of
+topic modeling. Topics can be understood as indices of macrostructures –
+above the level of individual propositions but still below the level of the global
+macrostructure of a text. Topic modeling follows the assumption that a text
+always consists of multiple topics; for each text, the proportion of each topic
+is calculated by the algorithm. We argue that the global macrostructure of a
+text can be operationalized as the combination of topics. Pathways of topics
+can give insights into macrorules, i.e., the way how two (or more) topics unfold
+linearly in a text is informative about the way these macrostructures are
+connected.
+Furthermore, van Dijk distinguishes between macrostructures with a semantic
+function and macrostructures with a pragmatic function. Semantic
+macrostructures consist of propositions that transmit semantic information
+and create reference to objects:
+“We see that the notion of ABOUTNESS is not very precise, and,
+at least for sentences, not always decidable. […] More in general,
+aboutness should be established in (con-)textual terms, perhaps
+in such a way that a discourse or a passage of the discourse is
+about something if this ‘something’ is referred to by most phrases
+with topic function. In this case, however, we no longer deal with
+the topic of a sentence but with a TOPIC OF DISCOURSE”.
+(van Dijk, “Text and Context” 119)
+We prefer van Dijk’s term aboutness (see also “‘content’, ie a propositional base”
+11) instead of semantic macrostructure. Pragmatic macrostructures, on the
+other hand, refer to the communicative function of a text and determine the
+Journal of Cultural Analytics
+
+7
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+interpretation of utterances (70). Following Searle, pragmatic macrostructures
+consist of (conventionalized) actions that may or may not succeed (van Dijk,
+“Text and Context” 92).
+We would like to emphasize that texts are complex and ambiguous, so we do
+not try to map or capture textuality with digital tools alone nor a simplistic
+concept of text. Our approach reflects the following aspects: First, digitality
+reduces the complexity of communication (Nassehi). The use of machine
+learning is not intended to have a mapping effect, but rather to extract a few
+aspects from the mass of information that are considered relevant. Second,
+what is convincing about the idea of macrostructures is the fuzzy concept of
+aboutness:
+“a story may be about Romeo, about Juliet, about both, about a
+specific (forbidden or impossible) love or about certain political
+structures in the middle ages. Often, however, the ‘aboutness’
+pertains to a given individual object or person, if most properties
+and relations are assigned to one permanent referent or to those
+objects/persons introduced in relation to it.” (van Dijk, “Text
+and Context” 119)
+Therefore, it depends on the discourse or media in question what a text is
+about (i.e., Islamophobic blog about Quran).
+Third, the linguistic use of topic modeling allows to understand topics as
+indicators of macrostructures, not topics as propositions or practices. Topics
+must be interpreted in the context of the texts in which they appear. This is
+why we distinguish between topics indicating aboutness (“aboutness topics”)
+and topics indicating pragmatics (“pragmatic topics”).
+Summarizing, we argue that these two types of macrostructures can also be
+identified in topic models, i.e., that topics indicate semantic as well as
+pragmatic characteristics of texts in a given corpus. Though van Dijk
+introduces semantic and pragmatic macrostructures as a dichotomously
+identifiable set of textual characteristics, we argue that in an empirical, data
+driven approach such a clear-cut distinction is not appropriate. Instead, topics
+incorporate both types of macrostructures, but to a varying degree. I.e., topics
+can be arranged on a semantic-pragmatic-continuum. Whether a topic is
+placed more towards the semantic or pragmatic end depends on the
+characteristics of its top words (e.g., topics with a high proportion of concrete
+nouns are more semantic than pragmatic), its unfolding in the text and, even
+more important, on the epistemological perspective under which topics are
+examined. In the study presented here, we analyze topics with a view on
+evaluation (cf. “key discursive themes” in Islamophobic blogs, Ekman 1992).
+
+Journal of Cultural Analytics
+
+8
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+3. Data
+The blog PI-News was founded in 2004 and is one of the best-known Germanlanguage websites in the field of right-wing populism and anti-Islamism
+(Schiffer; Dreesen and Krasselt; Krasselt and Dreesen). In a broader sense,
+Islamophobic attitudes can be characterized as “group-based enmity”, such
+as homophobia, anti-Semitism, and racism (Heitmeyer et al.; for a detailed
+discussion on Islamophobia in contexts of Western myths cf. Kumar 41–60).
+PI-News has been monitored by the German Federal Office for the Protection
+of the Constitution since April 2021.3
+The website gained popularity in connection with the controversy over the
+Muhammad cartoons in Jyllands-Posten in 2005. The blog received more
+attention in 2015, when Germany took in Syrian refugees and the
+Islamophobic movement Pegida (Patriotische Europäer gegen die Islamisierung
+des Abendlandes, ‘Patriotic Europeans against the Islamization of the
+Occident’) was organized. The ideological concept of assumed “Islamization”
+is key to almost all Islamophobic European movements: The blog describes
+itself as “Pro-American” and “Pro-Israeli” and advocates “Against the
+Islamization of Europe and For Basic Law and Human Rights”.
+The blog posts used in this study were collected in a web crawling procedure
+in October 2021. The corpus covers a period of 15 years, with the earliest texts
+published in 2006 and the latest texts published in October 2021. Only texts
+in which word forms with the morpheme koran ‘quran’ occur (e.g., Koran
+‘quran’, Koranschule ‘Koranic school’) were considered in the analysis (cf.
+section 1). The corpus contains N = 4,840 texts (5 Mio. words).
+
+4. Method
+Topic Modeling is a collective term for a series of probabilistic machine
+learning methods that identify patterns of word usage in large collections of
+text (Blei 77). Originally developed in natural language processing, topic
+modeling has become a method widely used in Digital Humanities, e.g., for
+the analysis of literary genres (Schöch), themes and motifs in poetry
+(Navarro—Colorado) and novels (Jockers and Mimno).
+For the analysis of evaluative practices, we applied a three-step procedure. First,
+we calculated an LDA topic model and categorized the resulting topics in
+aboutness and pragmatic topics based on van Dijk’s theory of textual
+macrostructures (cf. section 2). Secondly, we examined frequent combinations
+of topics (with a focus on evaluation) to examine how aboutness and pragmatic
+
+3 Bundesamt für Verfassungsschutz, “Statement von BfV-Präsident Thomas Haldenwang zur Vorstellung des Verfassungsschutzberichts 2020”,
+
+June 15, 2021, http://www.verfassungsschutz.de/DE/service/presse/presse_node.html; Dreesen and Krasselt, “Medienporträt: PI-News.de.”
+
+Journal of Cultural Analytics
+
+9
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+topics are intertwined. Thirdly, we analyzed the pathways of topics to see
+how macrostructures typically emerge in texts. The subsequent steps will be
+explained in more detail in the following subsections.
+
+4.1. Step 1: Identification of Topics
+In topic modeling, a topic is a probability distribution over the vocabulary
+of a corpus (Blei and Lafferty 73). Topics are usually represented by those
+twenty to thirty words that have the highest probability of occurrence in that
+topic. Typically, these top words are used for describing, categorizing, and
+interpreting the identified topics (cf. section 2.2., table 1). Crucially, topics are
+directly linked to the documents in the corpus: each document is a mixture
+of multiple topics and exhibits an individual proportion of each topic. E.g.,
+we can filter the corpus for documents in which topic 1 is most strongly
+represented. Each word (except stopwords, see below) in a document is
+assigned to a topic.
+For modeling the PI-News corpus, Latent Dirichlet Allocation (LDA) was used
+(Blei and Lafferty). It is one of the most frequently applied topic modeling
+algorithms. In LDA, the documents of the corpus are treated as the observed
+variables which are used to infer the hidden topic structure that generated the
+texts (Blei 79). It is an unsupervised machine learning method, i.e., no training
+data is used to infer the topics. Instead, the inference of topics is performed
+via Gibbs Sampling, which is a specific form of Markov chain Monte Carlo
+(Steyvers and Griffiths), i.e., each word in each document is assigned to a topic
+in an iterative process.
+In LDA, several parameters have to be set by the researcher. This concerns
+the number of topics, Dirichlet priors and the usage of a pre-defined stop
+word list. For the analysis presented here, the number of topics was determined
+qualitatively by evaluating multiple topic models with a varying number of
+topics. Criteria for evaluation were semantic coherence of top words and topic
+distinctiveness (Evans 2). The final model contains 30 topics. We further set an
+asymmetrical concentration parameter alpha, which allows for highly frequent
+words to end up in a small number of topics instead of being spread over
+all topics (making them semantically less coherent) (Wallach et al. 6).
+Additionally, a stop word list was compiled, containing words which occur in
+more than 30% of the documents. We did not work with a pre-defined stop
+word list, since such lists may contain words crucial for identifying pragmatic
+macrostructures and practices of evaluation in particular (e.g., quotation
+marks, modal particles, personal pronouns or numbers). Also, words occurring
+in less than 10 documents were deleted in a preprocessing step, since hardly any
+distributional information is available for these.
+All topics were manually categorized into aboutness and pragmatic topics (cf.
+section 2). For this purpose, ten documents in which a particular topic was
+most strongly represented were examined qualitatively to see how the top
+words of the topic are textually embedded. In an open coding procedure
+Journal of Cultural Analytics
+
+10
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+Table 3. Mean topic proportion over 10 bins in texts (topic pathways).
+bin
+
+topic
+
+mean topic proportion in bin
+
+standard deviation
+
+0
+
+29
+
+0.26
+
+0.02
+
+0
+
+32
+
+0.12
+
+0.01
+
+1
+
+29
+
+0.27
+
+0.02
+
+1
+
+32
+
+0.14
+
+0.02
+
+2
+
+29
+
+0.28
+
+0.02
+
+2
+
+32
+
+0.17
+
+0.02
+
+…
+
+…
+
+…
+
+…
+
+9
+
+29
+
+0.25
+
+0.02
+
+9
+
+32
+
+0.15
+
+0.02
+
+(Breuer), topics were grouped based on WH-questions (e.g., in relation to
+events, institutions, places, objects, i.e., what, when and where) and with a view
+on possible practices of evaluation.
+
+4.2. Step 2 and 3: Topic combinations and pathways in texts
+After obtaining a topic model and categorizing the topics for the PI-News
+corpus, we identified the two most dominant topics for each document and
+their pathways in the text of this documents. To analyze how individual topics
+are used throughout the course of a text (topic pathways), the topic-wordassignment in each document was used. Each text was split in ten equally sized
+bins. For each bin the mean proportion and standard deviation for the two
+dominant topics in the text was calculated (cf. Table 3). Topic pathways are
+visualized by simple line graphs (one line for each topic), where the course of a
+text is represented by ten bins on the x-axis and mean topic proportion on the
+y-axis.
+
+5. Results
+5.1. Topics (Step 1)
+Topics were categorized based on the idea of macrostructures indicating
+aboutness and pragmatics, introduced in section 2. Topics of the aboutness
+type were further categorized according to their aboutness, i.e., thematically
+similar topics were grouped under the same mnemonic label. The following
+topic categories were identified in the coding process (a comprehensive list of
+all topics is provided as supplementary material).
+
+5.1.1. aboutness topics
+Most of the topics (24 out of 30 Topics) were categorized as aboutness topics.
+In these topics, mainly nouns, adjectives and verbs with a very specific meaning
+represent the top 30 words. E.g., topic 11 contains the nouns Schule ‘school’,
+Kind ‘child’, Schüler ‘pupil’, Lehrer ‘teacher’ and the adjectives muslimischen
+‘muslim’, christlich ‘christian’, staatlich ‘state’. It was labeled with the
+mnemonic label ‘alleged Islam culture and how it contradicts with western
+culture’.
+
+Journal of Cultural Analytics
+
+11
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+Table 4. Aboutness topics and mnemonic labels in the study corpus.
+No.
+
+Description of categories as aboutness
+
+Topic No.
+
+1
+
+on the role of the Quran
+
+8, 27
+
+2
+
+local and domestic issues (e.g., concerning the construction of mosques in German cities)
+
+2,17
+
+3
+
+activities of Islam-critical movements in Germany (e.g., PEGIDA)
+
+18, 20
+
+4
+
+media criticism (e.g., media presence of Islam representatives)
+
+23
+
+5
+
+criticism of German politics and parties
+
+4
+
+6
+
+violence and terror with alleged Islamic origin (e.g., criminal proceedings after domestic violence,
+terrorist attacks)
+
+10, 13, 19, 28
+
+7
+
+Islam in international contexts (e.g., deployment of the German Armed Forces in Afghanistan)
+
+14, 29
+
+8
+
+alleged Islamic antisemitism (e.g., conflicts with the Hamas in Israel)
+
+22
+
+9
+
+alleged Islam culture and how it contradicts with western culture (e.g., violence against woman,
+Islamic religious education in schools)
+
+1, 3, 5, 7, 11, 12,
+21, 26, 30
+
+The categorization of aboutness topics into coherent groups remains fuzzy to a
+certain amount. E.g., topic 26 could also be categorized as “violence and terror
+with alleged Islamic origin”, since texts with a high proportion of this topic are
+on domestic violence. But since alleged domestic violence in Muslim families in
+these texts is viewed from the perspective of western values, we have chosen the
+category “alleged Islam culture and how it contradicts with western culture”.
+Despite the limitation due to their fuzzy nature, these topics can be clearly
+separated from the following pragmatic topics.
+
+5.1.2. pragmatic topics
+Six topics were categorized as pragmatic macrostructures. The top words of
+these topics differ from the other topics, since they mostly have either a very
+general meaning (e.g., heißen, Teil, gelten, verstehen), are grammatical words
+(e.g., ein, welche, daß, dafür) or indicate the reproduction of direct quotations
+(topic 9: euer, vers, sure, numbers). Most of these words occur with a high
+token frequency which explains why they end up in the same topic(s). This is a
+result of our decision to set an asymmetrical Dirichlet prior Θ, which allows for
+individual topics to occur with a higher probability then other topics (Wallach
+et al. 8). Indeed, three out of these four topics (6, 24 and 25) are the topics with
+the highest overall probability (cf. Fig. 1). Nevertheless, these topics should
+not be excluded from analysis since the usage of words with a rather general
+meaning can reveal insights about characteristics of texts.
+The qualitative examination of topics listed in Tab. 5 shows pragmatic
+macrostructures that indicate a hermeneutic process (topic 6, 16, 24, 25). The
+hermeneutic process is an essential part of value judgment in contrast to
+valuing. The value judgment becomes conscious when someone asking
+himself/herself whether something should be (de)valued in order to solve the
+‘problem Quran’. This is what Dewey called the process of investigation, which
+includes devaluing, ignoring, and emphasizing aspects (Dewey, Theory of
+Valuation 50). Therefore, making sense through interpretation is at core an
+evaluative practice that can be identified by evidence, arguments or simply
+semantics on different linguistic levels. The present investigation is proceeded
+Journal of Cultural Analytics
+
+12
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+Table 5. Pragmatic topics in the study corpus.
+Topic
+No.
+
+Top words
+
+Pragmatic
+macrostructure
+
+topic
+6
+
+stürzenberger, michael, ideologie ‘ideology’, klar ‘clear’, versuchen ‘to try’, völlig ‘totally’,
+offensichtlich ‘obviously’, gewalt ‘violence’, friedlich ‘peaceful’, sowie ‘and’, moslemisch ‘muslim’,
+wichtig ‘important’, vergangen ‘past’, daher ‘thus’, gefährlich ‘dangerous’, beispielsweise ‘for example’,
+mein ‘my’, bezeichnen ‘to denote’, faktum ‘fact’, öffentlich ‘public’, gelten ‘to apply’, fordern ‘to
+demand’, politiker ‘politician’, totalitär ‘totalitarian’, gefahr ‘danger’, thema ‘topic’, wegen ‘because’,
+genau ‘exactly’, gegenüber ‘opposite’, problem ‘problem’
+
+hermeneutic
+process
+
+Topic
+9
+
+allah, sure ‘sura’, vers ‘verse’, töten ‘to kill’, ungläubige ‘infidel’, allahs, ;, gott ‘god’, glauben ‘to belief’,
+daß ‘that’, prophet ‘prophet’, gläubige ‘believers’, ungläubig ‘unbelieving’, diejenigen ‘those’, kämpfen
+‘to fight’, jude ‘jew’, weg ‘path’, euer ‘your’, hand ‘hand’, krieg ‘war’, 4, wahr ‘true’, 5, wahrlich ‘truly’,
+Frieden ‘peace’, glaube ‘faith’, 2, gesandten ‘envoys’, kampf ‘fight’, schlimm ‘bad’
+
+quotation
+
+topic
+15
+
+the, of, and, to, a, is, ;, for, i, you, allah, we, that, are, özil, not, ', be, with, this, one, it, who, ], have, on,
+islamic, =, they, as
+
+quotation
+
+topic
+16
+
+mein ‘my’, du ‘you’, mögen ‘to like’, glauben ‘to belief’, leute ‘people’, denken ‘to think’, kind ‘chilc’, dein
+‘your’, freund ‘friend’, herr ‘lord’, euer ‘your’, nie ‘never’, lesen ‘to read’, angst ‘fear’, haus ‘house’, jede
+‘every’, verlassen ‘to leave’, fragen ‘to ask’, gehören ‘to belong’, erzählen ‘to tell’, wahrheit ‘truth’,
+sicher ‘secure’, geld ‘money’, liegen ‘to lie’, davon ‘thereof’, bitten ‘to ask’, darauf ‘thereon’, lieben ‘to
+love’, straße ‘street’, versuchen ‘to try’
+
+hermeneutic
+process
+
+topic
+24
+
+Muslimen ‚muslims‘, heißen ‚called‘, Teil (‚part‘, gegenüber ‚compared to‘, erklären ‚to explain‘, Thema
+‚topic‘, diese ‚these‘, einig ‚united’/’some’, Seite ‚side‘, gelten ‚to apply‘, jedoch ‚however‘, mögen ‚to like‘,
+warum ‚why‘, gar ‚even‘, natürlich ‚naturally‘, sogar ‚even‘, darauf ‚on‘, etwa ‚about‘/‘e.g.‘, welche ‚which‘,
+verstehen ‚to understand‘, Beispiel ‘example’, Aussage ‚statement‘, davon ‚thereof‘, wenig ‚little‘, dafür
+‚therefore‘, ein ‚one‘/‘a‘, allerdings ‚however‘, religiös ‚religious‘, wichtig ‚important‘, während ‚while‘
+
+hermeneutic
+process
+
+topic
+25
+
+natürlich ‘of course’, daß ‘that’, gar ‘even’, sogar ‘even’, warum ‘why’, einfach ‘simply’, eigentlich
+‘actually’, gleich ‘similar’, dafür ‘for that’, wenig ‘little’, heißen ‘to be called’, vielleicht ‘maybe’, gerade
+‘just’, klein ‘small’, wirklich ‘truly’, bekommen ‘to receive’, kennen ‘to know’, lieb ‘dear’, richtig ‘right’,
+beispiel ‘example’, verstehen ‘to understand’, deutsche ‘german’, eben ‘just’, alt ‘old’, schön ‘nice’, nah
+‘close’, brauchen ‘to need’, fast ‘almost’, bild ‘picture’, darüber ‘about’
+
+hermeneutic
+process
+
+by the following: The topics consist of communication verbs (heißen ‘to
+mean’, erklären ‘to explain’, fragen ‘to ask’, erzählen ‘to tell’, bezeichnen ‘to
+name’, lesen ‘to read’), verbs used in the illocutionary speech act of assertives
+(verstehen ‘to understand’, gelten ‘to apply’, kennen ‘to know’, glauben ‘to
+belief’, versuchen ‘to try’) and the consideration using part-whole relations (teil
+‘part’, gegenüber ‘opposite’, seite ‘side’, jedoch ‘however’, während ‘whereas’).
+The hermeneutic process includes also semantic objects with and about which
+interpretation takes place: Communication nouns (thema ‘topic’, aussage
+‘statement’, beispiel ‘example’, bild ‘image’) and other nouns that refer to
+different aspects (muslime ‘muslim’, deutsche ‘german’, politiker ‘politician’,
+gewalt ‘violence’, gefahr ‘danger’, problem ‘problem’, kind ‘child’, Freund
+‘friend’, angst ‘fear’, haus ‘house’, geld ‘money’, straße ‘street’). Typical for
+the PI-News-Blog are truth-related nouns (ideologie ‘ideology’, faktum ‘fact’,
+wahrheit ‘truth’) due to the self-understanding as a counter-medium against
+the ‘suppressing system of lying press’ (Lügenpresse). The hermeneutic process
+works by focusing on some aspects while not using others in the same way
+for sense-making. This is supported by using words for reinforcement (einig
+‘agreed’, natürlich ‘of course’, wirklich ‘really’, genau ‘exactly’, wichtig
+‘important’, sogar ‘even’, richtig ‘right’, nie ‘never’, klar ‘clearly’, völlig ‘totally’,
+totalitär ‘totalitarian’).
+
+Journal of Cultural Analytics
+
+13
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+Figure 1. Frequency of topics in study corpus (number of texts where a specific topic is amongst the top 3 topics).
+
+Topics 9 and 15 refer to a pragmatic macrostructure which is characterized
+by the practice of quoting. More specifically, topic 9 is the result of extensive
+quotation of Sura verses (top words are Sure ‘sura’, Vers ‘verse’, the pronouns
+euer ‘yours’ and du ‘you’ refer to the addressing of potential readers, the
+numbers 4, 5 and 2 represent specific suras/verses). Topic 15 is the result of
+longer quotes given in English (e.g., a speech given by Barack Obama).
+Quoting suras is a practice to present the subject matter to be evaluated, the
+Quran, in a supposedly unbiased way. Reference to the source of the
+quotations (www.islam.de, Central Council of Muslims in Germany) and the
+proof of the—translated—original sentences lend meaning to the quotation
+practice. Crucially, a certain image of the Quran is demonstrated – and a
+certain image of Islam and the collective group of Muslims is directly derived
+from it. For the Islamophobic writers of the blog, the Quran presented in this
+way is part of the problematic situation in which the evaluation process takes
+place. In the following section, the way Sura quotes are used in the blog posts
+in general will be introduced in more detail.
+
+5.2. Topic 9: Quoting of Suras
+Example (1) shows how quotes of Suras are typically embedded within a text.
+The two quoted Sura verses (2:191, 2:193) are referred to as “timelessly valid
+orders” given to Muslims to use physical violence against non-Muslims. The
+current violence exerted by members of the Islamic state is directly connected
+to the Quran.
+
+Journal of Cultural Analytics
+
+14
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+(1) Diese Moslems im Islamischen Staat wiederholen exakt die grausamen
+Taten ihres „Propheten" Mohammed. Es wird mit den seit 1400 Jahren
+laufenden Massenmorden niemals aufhören, solange Mohammed als perfektes
+Vorbild gilt und diese zeitlos gültigen Befehle im Koran stehen: 2:191 Und
+tötet sie, wo immer ihr auf sie stoßt, und vertreibt sie, von wo sie euch
+vertrieben haben; denn die Verführung zum Unglauben ist schlimmer als
+Töten. 2:193 Und kämpft gegen sie, bis es keine Verfolgung mehr gibt und die
+Religion allein Allahs ist. (PINES_55007)
+"These Muslims in the Islamic State are exactly repeating the cruel
+deeds of their ‘prophet’ Muhammad. It will never stop with the
+mass murders that have been going on for 1400 years, as long as
+Muhammad is seen as the perfect role model, and these timeless
+commands are written in the Koran: 2:191 And kill them
+wherever you come across them, and drive them out from wherever
+they have driven you out; for seduction to unbelief is worse than
+killing. 2:193 And fight against them until there is no more
+persecution, and the religion is Allah’s alone." (translated with
+DeepL, 2024/01/22)
+The analysis of frequently occurring 3-grams in Sura quotes supports the
+observation that PI-News most dominantly quotes Sura verses which refer to
+physical violence. In total, the corpus contains 744 quotes of Sura verses.4 The
+following patterns occur in these 3-grams (table 6, highlighted in gray): (1)
+usage of verbs and nouns referring to physical violence (schlagt ‘beat’, getötet
+‘killed’, gekreuzigt ‘crucified’, gemetzel ‘slaughter’), (2) usage of imperative
+constructions with plural pronouns (schlagt ‘beat’, tötet ‘kill’, meidet ‘avoid’,
+lauert ‘lurk’), (3) reference to non-Muslims through the noun Ungläubige
+(‘disbelievers’).
+The high frequency of individual 3-grams indicates that Sura verses are quoted
+multiple times. Table 7 gives an overview over the ten most frequently quoted
+Suras in the study corpus. The analysis shows that only a small number of
+different Suras are quoted (the Quran in total contains 114 Suras), with sura 8
+and 9 being the most often quoted ones (more than 100 quotations).
+Table 8 gives more detail about the five most frequently quoted verses within
+these suras alongside an example quotation from the corpus. Without
+exception, all five verses shown in the table contain incitements to physical
+violence. In the corpus, we find multiple variants of one and the same verse,
+i.e., quotations are not identical in wording. For the majority of the quoted
+
+4 We counted only those quotations which are surrounded by quotation marks. There are nevertheless cases where quotes are not marked in a
+
+clearly identifiable way, i.e., they are inserted without any quotation marks and cannot be distinguished automatically from the rest of the text.
+
+Journal of Cultural Analytics
+
+15
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+Table 6. Top 50 3grams in quotations of Sura verses (N = 9945 3grams in study corpus).
+3gram
+
+n
+
+3gram
+
+n
+
+3gram
+
+n
+
+wo immer ihr
+
+47
+
+ist es der
+
+22
+
+nicht an allah
+
+19
+
+ihr sie findet
+
+33
+
+schlimmer als das
+
+22
+
+seinen gesandten mit
+
+19
+
+die ungläubig sind
+
+32
+
+bis ihr ein
+
+21
+
+tötet sie wo
+
+19
+
+immer ihr sie
+
+30
+
+ein gemetzel unter
+
+21
+
+und tötet sie
+
+19
+
+und schlagt sie
+
+28
+
+gemetzel unter ihnen
+
+21
+
+das vieh sind
+
+18
+
+werden oder daß
+
+28
+
+ihnen angerichtet habt
+
+21
+
+den jüngsten tag
+
+18
+
+für allahs sache
+
+27
+
+ihr ein gemetzel
+
+21
+
+der lohn derer
+
+18
+
+und seinen gesandten
+
+27
+
+sie getötet oder
+
+21
+
+die juden und
+
+18
+
+auf der erde
+
+24
+
+und lauert ihnen
+
+21
+
+ehebett und schlagt
+
+18
+
+in die Herzen
+
+24
+
+und wenn ihr
+
+21
+
+herunter mit dem
+
+18
+
+die ihr glaubt
+
+23
+
+unter ihnen angerichtet
+
+21
+
+herzen der ungläubigen
+
+18
+
+er ist es
+
+23
+
+die ungläubigen trefft
+
+20
+
+ihr die ungläubigen
+
+18
+
+getötet oder gekreuzigt
+
+23
+
+es der seinen
+
+20
+
+im ehebett und
+
+18
+
+allah und seinen
+
+22
+
+sie und lauert
+
+20
+
+meidet sie im
+
+18
+
+als das vieh
+
+22
+
+die herzen der
+
+19
+
+mit dem haupt
+
+18
+
+an allah und
+
+22
+
+gesandten mit der
+
+19
+
+religion der wahrheit
+
+18
+
+der seinen gesandten
+
+22
+
+hände und füße
+
+19
+
+Table 7. 10 most frequently quoted Suras in the study corpus.
+Sura
+
+number of quotations
+
+Sura
+
+number of quotations
+
+Sura 8
+
+117
+
+Sura 3
+
+52
+
+Sura 9
+
+101
+
+Sura 47
+
+40
+
+Sura 2
+
+84
+
+Sura 48
+
+29
+
+Sura 5
+
+73
+
+Sura 33
+
+24
+
+Sura 4
+
+71
+
+Sura 98
+
+14
+
+suras, the source of the German translation is not given. In a small number of
+cases, the website of the Central Council of Muslims in Germany is named as a
+source.
+
+5.3. Topic Pathways (Step 2)
+We identified topic 9, quotations of Quran suras, as a topic with a specific
+evaluative function. In step 2 of the analysis, we used the topic modeling
+output to examine how sura quotations are combined with other topics to
+elaborate further on this practice of evaluation. Topic 9 most frequently occurs
+in combination with the topics listed in table 9 (n > 20 texts).
+Overall, the practice of quoting Sura verses shows a preference for specific
+thematic contexts. A striking pattern is that Sura quotations are used in the
+context of violence and terror (topic 13, 19 and 28). Topic 26, which has
+been categorized as “islam in western society and culture” is also closely related
+to violence, namely domestic violence in Muslim families. Overall, this
+complements the findings of the 3-gram analysis for all the documents
+regarding the close relationship between the topic of violence and quoted suras
+verses.
+Journal of Cultural Analytics
+
+16
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+Table 8. Corpus examples for the five most frequently quoted Sura verses (translated with DeepL, 2024/01/22).
+sura
++
+verse
+
+n
+
+example quotes from PI-News
+
+Sura
+8,
+Verse
+55
+
+29
+
+„Wahrlich, schlimmer als das Vieh sind bei Allah jene, die ungläubig sind und nicht glauben werden“
+(PINES_4508)
+(“Truly, with Allah those who disbelieve and will not believe are worse than cattle”)
+
+Sura
+8,
+Verse
+39
+
+25
+
+„Kämpfet wider sie, bis kein Bürgerkrieg mehr ist, und bis alles an Allah glaubt!“ (PINES_38590)
+(“Fight against them until there is no more civil war and until all believe in Allah!”)
+
+Sura
+47,
+Verse
+4
+
+23
+
+„Wenn ihr die Ungläubigen trefft, dann herunter mit dem Haupt, bis ihr ein Gemetzel unter ihnen angerichtet
+habt; dann schnüret die Bande.“ (PINES_15786)
+(“When you meet the unbelievers, then down with the head until you have made a slaughter among them; then
+cut the gang.”)
+
+Sura
+9,
+Verse
+5
+
+22
+
+„Und wenn die heiligen Monate abgelaufen sind, dann tötet die Götzendiener, wo immer ihr sie findet, und
+ergreift sie und belagert sie und lauert ihnen aus jedem Hinterhalt auf. Wenn sie aber bereuen und das Gebet
+verrichten und die Zakah entrichten, dann gebt ihnen den Weg frei. Wahrlich Allah ist Allvergebend,
+Barmherzig.“ (PINES_3963)
+(“And when the sacred months are expired, then kill the idolaters wherever you find them, and seize them and
+besiege them, and lie in wait for them from every ambush. But if they repent and establish prayer and pay the
+zakah , then give them way. Verily, Allah is All Forgiving , Merciful.”)
+
+Sura
+4,
+Verse
+34
+
+21
+
+„Die Männer stehen den Frauen in Verantwortung vor, weil Allah die einen vor den anderen ausgezeichnet hat
+und weil sie von ihrem Vermögen hingeben. Darum sind tugendhafte Frauen die Gehorsamen und diejenigen, die
+(ihrer Gatten) Geheimnisse mit Allahs Hilfe wahren. Und jene, deren Widerspenstigkeit ihr befürchtet: ermahnt
+sie, meidet sie im Ehebett und schlagt sie! Wenn sie euch dann gehorchen, so sucht gegen sie keine Ausrede.
+Wahrlich, Allah ist Erhaben und Groß.“ (PINES_3437)
+(“The men are responsible to the women because Allah has distinguished some of them from others and because
+they spend their wealth. Therefore virtuous women are the obedient and those who keep (their husbands')
+secrets with Allah's help. And those whose unruliness ye fear, admonish them, avoid them in the marriage bed,
+and beat them. If then they obey you, seek no excuse against them. Verily, Allah is Exalted and Great.”)
+
+Table 9. Topics that are most frequently combined with topic 9.
+Topic
+
+n
+texts
+
+macrostructure
+
+1
+
+Topic 24 (muslimen ‘muslim’, heißen ‘to
+be called’, teil ‘part’)
+
+223
+
+pragmatic macrostructure (hermeneutic process)
+
+2
+
+Topic 6 (stürzenberger, michael, ideologie
+‘ideology’)
+
+88
+
+pragmatic macrostructure (hermeneutic process)
+
+3
+
+Topic 8 (', gott ‘god’, prophet ‘prophet’)
+
+70
+
+aboutness macrostructure (on the role of the Quran)
+
+4
+
+Topic 25 (natürlich ‘of course’, daß ‘that’,
+sogar ‘even’)
+
+54
+
+pragmatic macrostructure
+
+5
+
+Topic 19 (video ‘video’, terror ‘terror’,
+staat ‘state’)
+
+51
+
+aboutness macrostructure
+(violence and terror with alleged Islamic origin)
+
+6
+
+Topic 13 (töten ‘to kill’, afghanistan,
+anschlag ‘attack’)
+
+39
+
+aboutness macrostructure (violence and terror with alleged
+Islamic origin)
+
+7
+
+Topic 26 (kind ‘child’, mädchen ‘girl’,
+familie ‘family’)
+
+34
+
+aboutness macrostructure (alleged Islam culture and how it
+contradicts with western culture)
+
+8
+
+Topic 28 (polizei ‘police’, täter
+‘perpetrator’, opfer ‘victim’)
+
+25
+
+aboutness macrostructure (violence and terror with alleged
+Islamic origin)
+
+Fig. 2 shows the pathway of topic 9 in texts with topic 19 (A), topic 13 (B),
+topic 28 (C) and topic 26 (D). In each facet, the blue line represents topic 9
+(Sura quotations), the red line one of the other four topics. The x-axis shows
+the position in the text (10 bins in total), the y-axis shows the mean topic
+proportion (MTP). All four facets show a striking similarity regarding the
+distributional pattern of topic 9: at the beginning of the texts, the MTP is
+Journal of Cultural Analytics
+
+17
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+Figure 2. Pathway of Topic 9 (blue line in each facet) in texts with topic 19 (A), topic 13 (B), topic 28 (C) and topic 26
+(D), red line in each facet.
+
+lowest, i.e., the first bin (= the first 10% of a text) is the one with the fewest
+words belonging to topic 9. In the subsequent course of the text, the MTP for
+topic 9 is increasing before finally decreasing again in the last bin. In contrast,
+the respective other topic in focus is most dominant in the first bin (with an
+exception for topic 26 on domestic violence, cf. facet D). Overall, the topic
+pathways indicate that Sura quotations are not given immediately at the
+beginning of a text, but later on, when the topic of violence and terror has
+already been introduced.
+The following corpus excerpt gives an example how topic pathways instantiate
+in a specific text. It shows text PINES_42440 in which topic 9 (bold face) and
+topic 19 (on violence and terror with alleged Islamic origin, underlined) are the
+two most dominant topics:
+Focus: Propaganda des Islamischen Staates mit Islam nicht vereinbar
+Am Mittwoch veröffentlichte der FOCUS einen skandalös islamverharmlosenden Bericht über einen jungen
+Moslem aus Hessen , der sich von Salafisten radikalisieren ließ und zum militärischen Einsatz in den Islamischen
+Staat nach Syrien abrückte . Dieser Fundamental-Moslem „ Mehmet “ , so wie er genannt wird , sei nach seiner
+Rückkehr nach Deutschland völlig resozialisiert , so dass von ihm keine Gefahr mehr ausgehe .
+[...]
+Hinter dem brutalen Alltag des Islamischen Staates steckt nun einmal der Koran mit seinen
+unmissverständlichen Befehlen . Aber diesem „ Mehmet “ sei es dort zuviel mit der Gewalt und dem Töten
+geworden . Es habe ihn geschockt , dass Verrätern die Köpfe abgehackt , auf die Brust gelegt und sie so auf einer
+Trage durch das Lager gezogen wurden . Als ihn ein IS-Anhänger bittet , seinem Vater den Kopf abzuschneiden ,
+da jener nicht fünfmal am Tag bete , sei „ Mehmet “ verschwunden . Er habe erkannt , dass er , von Salafisten
+angestachelt , einer „ fremden Ideologie “ gefolgt sei . Im FOCUS ist zu lesen : Hier in Syrien , im Kriegsgebiet des
+sogenannten Islamischen Staates ( IS ) , wo die Radikalen den Feind , der brutal geköpft werden muss , selbst in
+der Familie suchen .
+Nur noch die Ideologie zählt , nur noch das extremistische Gedankengut bleibt übrig in den Ausbildungslagern
+der Terrormiliz . „ Fremde Ideologie “ , „ Radikale “ , „ extremistisches Gedankengut “ ? Ein Blick in den Koran
+genügt , um die brutalen Handlungen der frommen Moslems vom IS aus islamischer Sicht vollauf zu bestätigen : „
+Und wenn ihr die Ungläubigen trefft , dann herunter mit dem Haupt , bis ihr ein Gemetzel unter ihnen angerichtet
+
+Journal of Cultural Analytics
+
+18
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+habt .“ ( Sure 47 , Vers 4 ) Oder auch : „ Als Dein Herr den Engeln offenbarte : „ Ich bin mit euch , festigt drum die
+Gläubigen . Wahrlich in die Herzen der Ungläubigen werfe ich Schrecken . So haut ein auf ihre Hälse und haut
+ihnen jeden Finger ab . “ ( Sure 8 , Vers 12 )
+[...]
+Der ominöse Vers 32 aus Sure 5 wird von moslemischen Täuschern und hiesigen Islam-Kollaborateuren immer
+falsch und unvollständig vorgebracht . Dieser Vers zeigt in seiner kompletten Länge , dass er keinesfalls ein
+generelles Tötungsverbot darstellt und schon gar nicht an die Adresse von Moslems gerichtet ist : „ Deshalb
+haben Wir den Kindern Israels verordnet , daß , wenn jemand einen Menschen tötet , ohne daß dieser einen
+Mord begangen oder ohne daß er Unheil gestiftet hat , es so sein soll , als hätte er die ganze Menschheit getötet ;
+und wenn jemand einem Menschen das Leben erhält , es so sein soll , als hätte er der ganzen Menschheit das
+Leben erhalten . Und Unsere Gesandten kamen mit deutlichen Zeichen zu ihnen ; dennoch , selbst danach
+begingen viele von ihnen Ausschreitungen im Land . “ Mohammed zitiert hier aus einer alten Anweisung an die
+Juden , die aus dem Talmud stammt . Da er bekanntlich weder lesen noch schreiben konnte , wurde sie ihm
+vorgelesen . Sie lautet dort im Original : „ Denn jeder , der eine Seele Israels tötet , der gelte nach der Schrift wie
+einer , der eine ganze Welt getötet hat . Und jeder , der das Leben einer Seele Israels rettet , der gelte nach der
+Schrift wie einer , der eine ganze Welt gerettet hat .
+[…]
+So sei man dort sehr „ offen “ für die Ausreise der IS-Kämpfer gewesen und die türkischen Grenzsoldaten hätten
+nur zum Schein in die Luft geschossen . Die Rückkehr nach Deutschland würden die türkischen Behörden
+erschweren , vermutlich , weil die Türkei nicht wolle , dass man über die Verstrickung ihres Landes erzähle und
+dass der IS auf indirekte Art unterstützt worden sei , wie Thomas Mücke vermutet . Es gibt nur einen Islam , wie
+es auch der türkische Präsident Erdogan bestätigt , und moslemische Sunniten halten in der Umma
+länderübergreifend zusammen , wenn es gegen die „ Ungläubigen “ geht . Interessierte Leser können sich per
+email an den FOCUS wenden : » redaktion@focus .de Bitte wie immer in höflichem Ton und faktenbezogen .
+Focus: Islamic State propaganda incompatible with Islam
+On Wednesday, FOCUS published a scandalously Islam-denigrating report about a young Muslim from Hesse
+who was radicalized by Salafists and left for military service in the Islamic State in Syria. This fundamental Muslim
+" Mehmet " , as he is called , was completely re-socialized after his return to Germany , so that he no longer posed
+any danger .
+[...]
+Behind the brutal everyday life of the Islamic State is the Quran with its unmistakable commands . But for this
+"Mehmet", the violence and the killing had become too much . He was shocked to see traitors having their heads
+chopped off, placed on their chests and dragged through the camp on a stretcher . When an IS supporter asked
+him to cut off his father's head because he wasn't praying five times a day, "Mehmet" left. He had realized that he
+had followed a "foreign ideology", incited by Salafists. The FOCUS reports: Here in Syria , in the war zone of the
+so-called Islamic State ( IS ) , where the radicals are looking for the enemy , who must be brutally beheaded , even
+in the family .
+Only the ideology counts , only the extremist ideas remain in the training camps of the terrorist militia . " Foreign
+ideology " , " radicals " , " extremist ideas " ? A glance at the Quran is enough to fully confirm the brutal actions of
+the pious Muslims of IS from an Islamic point of view: "And when you meet the unbelievers , then down with your
+heads until you have caused a slaughter among them ." ( Sura 47 , verse 4 ) Or also : " When your Lord revealed to
+the angels : " I am with you , strengthen therefore the believers . Verily I cast terror into the hearts of the
+unbelievers . So strike their necks and cut off every finger. " ( Sura 8 , verse 12 )
+[...]
+The ominous verse 32 from Sura 5 is always presented incorrectly and incompletely by Muslim deceivers and
+local Islam collaborators . This verse shows in its entire length that it is by no means a general prohibition of
+killing and is certainly not addressed to Muslims : " Therefore We have decreed to the Children of Israel that if
+anyone kills a man without his having committed murder or without his having done mischief, it shall be as if he
+had killed all mankind ; and if anyone preserves the life of a man, it shall be as if he had preserved the life of all
+mankind . And Our messengers came to them with clear signs; yet even after that many of them committed riots
+in the land . " Muhammad quotes here from an old instruction to the Jews , which comes from the Talmud . As it is
+known that he could neither read nor write , it was read to him . It reads there in the original : " For whoever kills a
+soul of Israel shall be counted according to the Scripture as one who has killed a whole world . And whoever saves
+the life of one soul of Israel is considered in Scripture as one who saved the whole world.
+[...]
+They had been very "open" to the IS fighters leaving the country and the Turkish border guards had only fired into
+the air for show . The Turkish authorities made it difficult to return to Germany, presumably because Turkey did
+not want people to talk about their country's involvement and that IS had been indirectly supported, as Thomas
+Mücke suspects. There is only one Islam, as Turkish President Erdogan confirms, and Muslim Sunnis stick
+together in the Umma across countries when it comes to fighting the " disbelievers " . Interested readers can
+contact the FOCUS by email : " redaktion@focus .de Please, as always, be polite and factual .
+(translated with DeepL, 2024/01/22)
+
+Fig. 3 shows the pathway of topic 9 in texts with topic 8 (A), topic 6 (B), topic
+24 (C) and topic 25 (D). In general, topic 9 shows the same pattern as in Fig.
+2: its mean topic proportion is lowest at the beginning of a text, rises towards
+the middle of the text and decreases at the end of a text. I.e., we observe a stable
+pattern regarding the preferred position for Sura quotations in texts. Topics 8,
+24 and 25 show a different behavior then the topics in Fig. 2: topic 8 on the
+role of the Quran (Fig. 3, A) has a pathway parallel to topic 9 which can be
+Journal of Cultural Analytics
+
+19
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+Figure 3. Pathway of Topic 9 (blue line in each facet) in texts with topic 8 (A), topic 6 (B), topic 24 (C) and topic 25 (D),
+red line in each facet.
+
+explained by their close relationship: both are closely connected to the Quran
+and develop in sync. The curves for topic 24 (Fig. 3, C) and 25 (Fig. 3, D)
+run relatively flat (i.e., without salient peaks) which is an additional argument
+for their categorization as pragmatic topics. They refer to a specific form of
+hermeneutics (cf. section 5.2.1) that runs throughout the text.
+
+Discussion
+In this paper, we have shown that topic modeling is a suitable tool for the
+detection of macrostructures in texts. Through the decidedly linguistic
+application of topic modeling, aboutness macrostructures and pragmatic
+macrostructures can be distinguished quite clearly from each other. The
+aboutness topics relate to the situation in Germany and the West (topic no.
+1, 2, 3, 4, 5, 7, 8, 11, 12, 17, 21, 26, 27, 30) and to (international) violence
+and terror (10, 13, 14, 19, 22, 28, 29). However, there are also clearly selfreferential anti-Islamic (18, 20) or meta-discursive media-related topics (23).
+The pragmatic macrostructure consists first of topics indicating a hermeneutic
+process (6, 16, 24, 25). Hermeneutics, interpretation, “investigation of things”
+is what Dewey calls inquiry, of which value judgments are a part (Dewey,
+Theory of Valuation 50). The blog writers refer to the Quran and point out
+through different aspects and contexts the Quran as a problem in a given
+situation in Germany and Europe.
+The second type of pragmatic macrostructure concerns the quotation topics
+(9, 15). It has been shown that the quotation of suras (topic 9) can be
+recognized as a distinctive topic. The quotations are used to specify the
+‘problematic situation of Islam in Germany and Europe’ and therefore the
+Journal of Cultural Analytics
+
+20
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+reason for the value judgements. Following Clark and Gerrig, focussing on
+specific aspects and illustrating them are the very function of quoting:
+“Demonstrations and descriptions are fundamentally different methods of
+communication. Demonstrations depict their referents—what is being
+demonstrated—whereas descriptions do not.” (764) If we understand value
+judgement as a process of investigation, the quotation can be seen not only as a
+negative aspect of the quoted Quran as a whole: “What the speaker ultimately
+calls attention to is not the displayed token itself in all its singularity but certain
+properties of it, i.e. some type which it instantiates.” (Recanati 640). That is the
+reason why the quoted Suras have in some cases the textual functions ‘opening’
+und ‘closing’, shown by the combination of the quotation topic (9) and the
+semantic topics (19, 13, 26, 28). Recanati explains:
+“More often than not, the properties in question are
+demonstrated because they are properties of something which
+one attempts to depict through the demonstration. Let us call
+that thing the ‘target’. […] The speaker therefore does three
+things at the same time: he displays a token, demonstrates certain
+properties of that token (a type), and thereby depicts the target.”
+(Recanati 642 emphasis original)
+The target could be ‘Islam as violence’, demonstrated by the Sura quotes in
+the context of violence and terror (13, 19, 28, and also 26). This finding is also
+supported by the analysis of 3-grams frequently occurring in Sura quotations.
+Following Dewey, the target is one of the most important features of the prized
+object ‘Quran’.
+What is the status of value judgements on Quran in the Islamophobic PINEWS blog? The aboutness topics, the hermeneutic process, and the
+quotations have the function of confirming what Dewey calls the ideal:
+“The ideal is, in the first place, a method of insight into the
+given or present situation; and primarily it is not something to
+be attained. That is, it is not a goal in an external, fixed sense
+which is there and which we simple recognize and aim for. But
+it is rather a way of interpreting the given experience. […] You
+cannot eliminate the fact that in the projection the ideal does
+go beyond present experience. You cannot get the ideal out by a
+merely mechanical study of existing conditions. But it must grow
+out of negative elements in the existing situation taken in relation
+to the positive elements.” (Dewey, Lectures on Ethics, 1900 - 1901
+60)
+We do not know the ideal of the Islamophobic writers in detail, although we
+can think of it in broad outlines: ‘Germany and Europe are no places for Islam.’
+The appraisal of an object is “an act that involves comparison” (Dewey, Theory
+of Valuation 5). Islamophobic writers imagine a state in which the Quran plays
+
+Journal of Cultural Analytics
+
+21
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+no role. The depicted target, e.g., in quotation contradicts this ideal. What
+we can now see, based on the topic modeling with regard to the selected Sura
+quotations, is how a verification of the ideal is made: With the help of the (for
+the most part unspoken) ideal in the texts, the writers embedded quotations
+in aboutness macrostructures with violence topics to show negative effects of
+Islam. In this respect, the ideal is a method to find and demonstrate negative
+evidence of the Islam underlying the situation under investigation. Finally, the
+textual macrostructures transform the Islamophobic evaluation judgement of
+the Quran into a primitive negative prizing, called hate, again.
+What is dangerous about this is that it is almost impossible to distinguish
+between means and ends in the valuation process: The also often unspoken
+means form the content of the concrete end, not some abstract norm or ideal
+(Dewey, Theory of Valuation 48). Moreover, ends become means for further
+ends (Dewey, Theory of Valuation 50). This raises the question of whether
+devaluating Islam and Quran is an end in itself, or a mean to achieve another
+end. This also concerns the legal issue how an end is to be achieved (Dreesen
+and Krasselt). With the costs of achieving the end, the assessment of the value
+of the end comes into focus: “Practical judgment is creative: it institutes new
+ends-in-view.” (Anderson).
+Dataverse repository: https://doi.org/10.7910/DVN/FRYPSL
+Submitted: May 15, 2023 EDT, Accepted: June 15, 2023 EDT
+
+This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0
+International License (CCBY-4.0). View this license’s legal deed at http://creativecommons.org/licenses/
+by/4.0 and legal code at http://creativecommons.org/licenses/by/4.0/legalcode for more information.
+
+Journal of Cultural Analytics
+
+22
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+works cited
+Adamzik, Kirsten. Textlinguistik: Grundlagen, Kontroversen, Perspektiven. De Gruyter, 2016, http
+s://doi.org/10.1515/9783110339352.
+Alba-Juez, Laura, and Geoff Thompson. “The Many Faces and Phases of Evaluation.” Evaluation in
+Context, edited by Geoff Thompson and Laura Alba-Juez, John Benjamins Publishing Company,
+2014, pp. 3–23.
+Anderson, Elizabeth. “Dewey's Moral Philosophy.” The Stanford Encyclopedia of Philosophy, edited by
+Edward N. Zalta and Uri Nodelman, Metaphysics Research Lab, Stanford University, 2023, http
+s://plato.stanford.edu/archives/spr2023/entries/dewey-moral/.
+Baker, Paul, et al. Discourse Analysis and Media Attitudes: The Representation of Islam in the British
+Press. 1st ed., Cambridge University Press, 2013, https://doi.org/10.1017/cbo9780511920103.
+Blei, David M. “Probabilistic Topic Models.” Communications of the ACM, vol. 55, no. 4, Apr. 2012,
+pp. 77–84, https://doi.org/10.1145/2133806.2133826.
+Blei, David M., et al. “Latent Dirichlet Allocation.” Journal of Machine Learning Research, vol. 3,
+2003, pp. 993–1022.
+Blei, David M., and John D. Lafferty. “Topic Models.” Text Mining: Classification, Clustering, and
+Applications, edited by A N Srivastava and M Sahami, Taylor & Francis, 2009, pp. 71–93. Crossref,
+https://doi.org/10.1201/9781420059458.
+Bourdieu, Pierre. “The Economics of Linguistic Exchanges.” Social Science Information, vol. 16, no. 6,
+Dec. 1977, pp. 645–68, https://doi.org/10.1177/053901847701600601.
+Breuer, Franz. Reflexive Grounded Theory. VS Verlag für Sozialwissenschaften, 2010, https://doi.org/
+10.1007/978-3-531-92580-6.
+Clark, Herbert H., and Richard J. Gerrig. “Quotations as Demonstrations.” Language, vol. 66, no. 4,
+Dec. 1990, pp. 764–805, https://doi.org/10.2307/414729.
+Dewey, John. Lectures on Ethics. 1900-1901. Edited by Donald F. Koch, SIU Press, 1991.
+---. “The Logic of Judgments of Practice.” The Middle Works of John Dewey. 1899-1924. Essays and
+Miscellany in the 1915 Period and German Philosophy and Politics and Schools of Tomorrow, edited
+by Jo Ann Boydston, vol. 8, 1979, pp. 3–28.
+---. Theory of Valuation. The University of Chicago Press, 1939.
+DiMaggio, Paul, et al. “Exploiting Affinities between Topic Modeling and the Sociological Perspective
+on Culture: Application to Newspaper Coverage of U.S. Government Arts Funding.” Poetics, vol.
+41, no. 6, Dec. 2013, pp. 570–606, https://doi.org/10.1016/j.poetic.2013.08.004.
+Doganova, Liliana, et al. “Valuation Studies and the Critique of Valuation.” Valuation Studies, vol. 2,
+no. 2, Dec. 2014, pp. 87–96, https://doi.org/10.3384/vs.2001-5992.142287.
+Dreesen, Philipp, and Julia Krasselt. “Medienporträt: PI-NEWS.Net.” Jahrbuch Extremismus &
+Demokratie (E & D), edited by Uwe Backes et al., Nomos, 2022, pp. 237–54, https://doi.org/10.57
+71/9783748936930-237.
+Ekman, Mattias. “Online Islamophobia and the Politics of Fear: Manufacturing the Green Scare.”
+Ethnic and Racial Studies, vol. 38, no. 11, Sept. 2015, pp. 1986–2002, https://doi.org/10.1080/014
+19870.2015.1021264.
+Evans, Michael S. “A Computational Approach to Qualitative Analysis in Large Textual Datasets.”
+PLoS ONE, edited by Daniele Fanelli, vol. 9, no. 2, Feb. 2014, p. e87908, https://doi.org/10.1371/j
+ournal.pone.0087908.
+Heitmeyer, Wilhelm, et al. Rechte Bedrohungsallianzen. Suhrkamp, 2020.
+
+Journal of Cultural Analytics
+
+23
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+Hellwig, Peter. “TITULUS Oder ÜBER DEN ZUSAMMENHANG VON TITELN UND
+TEXTEN. Titel Sind Ein Schlüssel Zur Textkonstitution.” Zfgl, vol. 12, no. 1, 1984, pp. 1–20, htt
+ps://doi.org/10.1515/zfgl.1984.12.1.1.
+Jockers, Matthew L., and David Mimno. “Significant Themes in 19th-Century Literature.” Poetics,
+vol. 41, no. 6, Dec. 2013, pp. 750–69, https://doi.org/10.1016/j.poetic.2013.08.005.
+Keller, Rudi. “Bewerten.” Sprache Und Literatur (SuL), Secial Issue: Texte Bewerten, no. 102, Dec.
+2008, pp. 2–15, https://doi.org/10.30965/25890859-039-02-90000001.
+Krasselt, Julia, and Philipp Dreesen. “„[D]Er Koran Muss Wörtlich Genommen Werden (Sagt Der
+Koran)“. Korpuslinguistische Befunde Zur Islamfeindlichkeit Im Korandiskurs Und Ethische
+Überlegungen Zu Bedingungen von Streitkultur.” Streitkulturen. Medienethische Perspektiven Auf
+Gesellschaftliche Diskurse, edited by Christian Gürtler et al., vol. 18, Nomos, 2022, pp. 95–112, http
+s://doi.org/10.5771/9783748911098-95.
+Kroskrity, Paul V. “Language Ideologies.” A Companion to Linguistic Anthropology, edited by
+Alessandro Duranti, Blackwell, 2006, pp. 496–517, https://doi.org/10.1002/9780470996522.ch2
+2.
+Kumar, Deepa. Islamophobia and the Politics of Empire. Haymarket Books, 2012.
+Lamont, Michèle. “Toward a Comparative Sociology of Valuation and Evaluation.” Annual Review of
+Sociology, vol. 38, no. 1, Aug. 2012, pp. 201–21, https://doi.org/10.1146/annurev-soc-070308-120
+022.
+Linde, Charlotte. “Evaluation as Linguistic Structure and Social Practice.” The Construction of
+Professional Discourse, edited by Britt-Louise Gunnarsson et al., Longman, 1997, pp. 151–72.
+Lötscher, Andreas. Text Und Thema: Studien Zur Thematischen Konstituenz von Texten. De Gruyter,
+1987, https://doi.org/10.1515/9783111371665.
+Maier, Daniel, et al. “Applying LDA Topic Modeling in Communication Research: Toward a Valid
+and Reliable Methodology.” Communication Methods and Measures, vol. 12, no. 2–3, Apr. 2018,
+pp. 93–118, https://doi.org/10.1080/19312458.2018.1430754.
+Murakami, Akira, et al. “‘What Is This Corpus about?’: Using Topic Modelling to Explore a
+Specialised Corpus.” Corpora, vol. 12, no. 2, Aug. 2017, pp. 243–77, https://doi.org/10.3366/cor.2
+017.0118.
+Nassehi, Armin. Muster: Theorie Der Digitalen Gesellschaft. C. H. Beck, 2019, https://doi.org/10.171
+04/9783406740251.
+Navarro-Colorado, Borja. “On Poetic Topic Modeling: Extracting Themes and Motifs From a Corpus
+of Spanish Poetry.” Frontiers in Digital Humanities, vol. 5, June 2018, p. 15, https://doi.org/10.338
+9/fdigh.2018.00015.
+Recanati, François. “Open Quotation.” Mind, vol. 110, no. 439, 2001, pp. 637–87.
+Reckwitz, Andreas. Die Gesellschaft der Singularitäten: zum Strukturwandel der Moderne.
+Suhrkamp, 2021.
+Sager, Sven Frederik. “SIND BEWERTUNGEN HANDLUNGEN?” Zfgl, vol. 10, no. 1, 1982, pp.
+38–57, https://doi.org/10.1515/zfgl.1982.10.1.38.
+Sandig, Barbara. “Bewertungstexte.” Übersetzung - Translation - Traduction: Neue Forschungsfragen in
+Der Diskussion ; Festschrift Für Werner Koller, edited by Jörn Albrecht et al., Narr, 2004, pp.
+185–201.
+Schiffer, Sabine. “Grenzenloser Hass im Internet. Wie „islamkritische“ Aktivisten in Weblogs
+argumentieren.” Islamfeindlichkeit: wenn die Grenzen der Kritik verschwimmen, edited by
+Thorsten Gerald Schneiders, 2010, pp. 354–76, https://doi.org/10.1007/978-3-531-92385-7_23.
+
+Journal of Cultural Analytics
+
+24
+
+Topic models indicate textual aboutness and pragmatics: Valuation practices in Islamophobic discourse
+
+Schöch, Christof. “Topic Modeling Genre: An Exploration of French Classical and Enlightenment
+Drama.” Digital Humanities Quarterly, vol. 11, no. 2, 2017, pp. 1–53.
+Searle, John R. Speech Acts. An Essay in the Philosophy of Language. Cambridge University Press, 1969.
+Silverstein, Michael. “Language and the Culture of Gender: At the Intersection of Structure, Usage,
+and Ideology.” Semiotic Mediation, Elsevier, 1985, pp. 219–59, https://doi.org/10.1016/b978-0-1
+2-491280-9.50016-9.
+Stede, Manfred. Korpusgestützte Textanalyse: Grundzüge der Ebenen-Orientierten Textlinguistik. Narr,
+2007.
+Steyvers, Mark, and Tom Griffiths. “Probabilistic Topic Models.” Handbook of Latent Semantic
+Analysis, edited by Thomas K. Landauer et al., Lawrence Erlbaum, 2006, pp. 427–48.
+van Dijk, Teun A. “Text and Context.” Explorations in the Semantics and Pragmatics of Discourse,
+Longman, 1977.
+---. “Textwissenschaft.” Eine Interdisziplinäre Einführung., Niemeyer, 1980.
+Wallach, Hanna M., et al. “Rethinking LDA: Why Priors Matter.” Advancesin Neural Information
+Processing Systems, vol. 22, 2009, pp. 1973–81.
+Woolard, Kathryn A. “Language Variation and Cultural Hegemony: Toward an Integration of
+Sociolinguistic and Social Theory.” American Ethnologist, vol. 12, no. 4, Nov. 1985, pp. 738–48, htt
+ps://doi.org/10.1525/ae.1985.12.4.02a00090.
+Zillig, Werner. Bewerten: Sprechakttypen der bewertenden Rede. M. Niemeyer, 1982, https://doi.org/1
+0.1515/9783111357157.
+
+Journal of Cultural Analytics
+
+25
+
+

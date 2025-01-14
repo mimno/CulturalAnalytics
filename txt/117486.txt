@@ -1,0 +1,1646 @@
+Frishkopf, Michael. “Poet-Composer Collaborations in Modern Egyptian Song: A Social
+Network Analysis Approach to Music History.” Journal of Cultural Analytics, vol. 9, no. 3,
+June 2024, https://doi.org/10.22148/001c.117486.
+
+ARTICLE
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social
+Network Analysis Approach to Music History
+Michael Frishkopf1
+1 University of Alberta
+
+Keywords: Egyptian song, Social Network Analysis, Music, History, Poets, Poetry, Composers, Composition, Egypt, Arab
+https://doi.org/10.22148/001c.117486
+
+Journal of Cultural Analytics
+Vol. 9, Issue 3, 2024
+
+In this paper I formulate and apply a social network analysis methodology for
+understanding the history of song on Egyptian radio. Music is a massively
+relational cultural form, involving interactions among composers, poets,
+arrangers, conductors, and performers, among others. The reality of music
+history thus emerges as a complex network of relationships, unfolding and
+changing over time. Song production, in particular, centers on poet-composersinger collaborations. Many Arab music histories highlight narratives of the
+stars, presented in historical and cultural context, but neglect the broader
+network of productive relationships. However many important musical figures
+are not celebrities, and the full complexity of the non-linear network can only
+be grasped holistically, including big data empirical analysis, not pointillistically
+through case studies of celebrities. Such holistic analysis can reveal surprising
+emergent, structural patterns that are not apparent in any single narrative.
+Social network analysis (SNA) offers a powerful suite of tools enabling such an
+approach, including metrics for centrality and the detection of cohesive
+subgroups. Starting with a large dataset of songs broadcast on Egyptian radio, I
+extract a network of poet-composer collaborations, and apply SNA algorithms
+to reveal its social structure. I then interpret that structure in light of wider
+socio-cultural and historical factors. In this way, my paper both sheds light on
+Egypt’s musical history, and supplies a model and method that may be applied,
+mutatis mutandis, to other musical domains.
+
+I. Introduction
+A. The history of music, music history, big data, and social
+network analysis
+How do we transform the history of music into music history? How well
+do prevailing modes of historiography reflect musical reality? Music emerges
+from social interactions interconnecting myriad agents, for music is a
+collaborative art, arising from, as well as forging, relationships. Occasional
+appearances to the contrary, individuals never make music alone. But
+celebrities loom large in music culture, especially since the emergence of
+media technologies and the music industry. Music histories are thus prone
+to telling linear stories of star composers or performers. Such histories lie far
+from music’s expansive, tangled reality, because they are both reductive and
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+atomizing. To understand the full social complexity of musical life requires
+both big data, and relational data, combining to form large social networks
+representing musical interactions.
+Taking a broad view of music to include all “musicking” (Small), this network
+should include myriad roles: composers, poets, performers, arrangers,
+conductors, and producers, as well as dancers, impresarios, venue managers,
+distributors, broadcasters, critics, audiences, consumers, and listeners
+generally. Ideally, musical historiography would include the representation of
+countless collaborations among all these musical participants, unfolding over
+time. Such a task would be impossible, even for relatively well-documented
+music.
+But in every place and time certain roles are more important to musical
+production than others. Modern Arab music centers on precomposed song,
+produced primarily by relationships connecting poets, composers, and
+singers. How can we understand Arab music history by applying social
+network analysis (SNA) to composer-poet collaborations? My paper aims to
+1
+answer this methodological question.
+Most music histories do not adopt a big data approach, in the past perhaps
+because such data was not readily available. But the advent of the modern
+music industry both radically altered musical reality, and generated the big
+data to describe it. Here, I define musical modernity in technological terms.
+Recording and broadcasting drew a bright historical line, utterly transforming
+the musical landscape, from the introduction of the phonograph in the late
+19th century, to radio and musical films, TV, LPs, cassettes, and CDs, down
+to contemporary music streaming services. Alongside these technological
+transformations came seismic shifts in the modes and relations of music
+production, from a small-scale live performance art, to a complex music
+industry founded on technologies of recording and dissemination. The Arab
+world was no exception (Malm; Frishkopf, Music and Media).
+The same factors producing musical modernity, technology and industrial
+complexity, both enabled and required the construction of large music
+databases, yielding big data. Technologies for media recording, transmission,
+dissemination, and archiving offered the possibility for cataloging such data,
+while music’s embedding in an industrial system necessitated it, for the
+sake of tracking production, distribution, and sales; intellectual property
+management; accounting of royalties and taxes; and sometimes government
+censorship. Thus, big data emerged out of both technological possibilities and
+administrative need.
+
+1 While this article focuses on relations of poets and composers, an extension to singers is planned for the future. Sincere thanks to my
+
+colleague and friend, Egyptian writer Yasser Abdel-Latif, who, thanks to his vast knowledge of Egyptian music, provided invaluable
+assistance correcting the database at the heart of this analytical project. This paper draws on research supported by Canada’s Social Sciences
+and Humanities Research Council.
+
+Journal of Cultural Analytics
+
+2
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+For example, Egyptian radio has broadcast music, of different styles and eras,
+ever since its founding in 1934 (El-Shawan, “The Socio-Political Context
+of al-Musika al-ʿarabiyyah in Cairo, Egypt: Policies, Patronage, Institutions,
+and Musical Change (1927-77)”). In order to locate recordings of suitable
+length, genre, and personnel, to properly announce them, and to transfer
+use statistics to performing rights organizations, it was essential to catalog
+them. Once computer technology provided the means, large song databases
+were developed containing metadata, including song title, and the names of
+collaborating singer, composer, and poet, as well as the date and duration of
+the recording. Such song lists provide an excellent starting point for social
+network analysis of musical relationships, as I will demonstrate in this paper,
+and they are crucial for understanding modern Egyptian musical history,
+due to the centrality of state radio throughout the middle third of the 20th
+century, at least until the cassette era of the late 1970s, and even thereafter
+(Castelo-Branco; Boyd; Fahmy).
+However, resistance to big data representations of music history stems also
+from a particular methodological disposition. The prevailing music historical
+norm among academic musicologists has been to critically interpret “small
+data”, a relatively limited number of salient cases, even if conceptually
+embedded within a wider cultural landscape. In an earlier era music historians
+centered their studies almost entirely upon biographies of a relatively small,
+select group of music’s “great men” and their works, typically excluding
+women, but also deemphasizing the social connections that actually
+constitute music culture. While a narrative appreciation of key figures and
+works may be necessary to attain a humanistic understanding of music
+history, such an approach is insufficient for a sociological one.
+Since the 1990s, following the rise of Postmodern, New, or Cultural
+Musicology (Kramer), musicologists have broadened their scope to cultural
+studies, considering music practices more critically within a wider sociomusical space beyond “great” individuals and works, supported by diverse
+disciplinary perspectives—gender studies, political economy, post-colonial
+studies, or ecology (Rehding; Solie; Qureshi; Locke)—broadening the canon,
+but without entirely relinquishing attachment to the concept of musical
+luminaries. Small data non-relational qualitative study has remained central
+to musicology, albeit now embedded in a wider context.
+More recently, there have been counter-trends. Particularly since the late
+1990s’ advent of social media, many music scholars began to deploy the
+“social network” concept as a potent metaphor, though mostly without
+its development as an empirical object of investigation (Ozment). In
+ethnomusicology, always more attuned to the social, scholars have applied
+social network concepts qualitatively to diagram small groups (Brinner;
+Frishkopf, “Music for Global Human Development: Participatory Action
+Research for Health and Wellbeing”). With the increasing prominence of
+
+Journal of Cultural Analytics
+
+3
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+digital humanities in the late 2000s, quantitative big data computational
+empirical musicology and ethnomusicology has made a confident appearance
+as well (Gómez et al.; Weyde et al.; Kent-Muller; Urberg; Abdallah et al.;
+Cottrell; Clercq). But most of this research centers on datasets populated
+with bibliographic, catalogue, score, transcription, or audio data, and
+associated metadata, rather than on the social networks underlying music
+production, though some bibliographic studies have included techniques of
+network analysis (Rose et al.).
+Social network analysis requires big social data – and near-complete data.
+Such data is not always easily obtained. Missing data and consequent issues
+of imputation are thorny compared to those of conventional non-relational
+statistics, and constitute an enormous problem for social network analysis
+(Krause et al.; Kossinets). Perhaps in part for this reason SNA musicological
+studies are scarcer, though the literature is growing (see Giannetti). Nick
+Crossley and his colleagues have made numerous contributions (McAndrew
+and Everett; Crossley, Networks of Sound, Style and Subversion; Crossley,
+“Music Worlds and Event Networks”; Crossley and Ozturk; Crossley and
+Ozturk; O’Shea). Scholars from math, physics, and engineering, working in
+the new sciences of network and complexity studies, and bringing stronger
+technical skills for data collection and analysis, have delved deepest into
+musical SNA, studying large networks of musical influence, similarity, and
+collaboration, though mainly in Western music, where data is more readily
+available (Gienapp et al.; Zhang et al.; Park et al.; Ortega; Bryan and Wang).
+Arab music has not lagged much, if at all, in absorbing new technologies
+and modes of music production. The earliest Egyptian recordings date to
+around 1904 (Racy, “Record Industry and Egyptian Traditional Music” 25),
+numerous radio stations were active in Cairo from the 1920s, musical film
+emerged in 1932, and national radio in 1934 (El-Shawan, “The Socio-Political
+Context of al-Musika al-ʿarabiyyah in Cairo, Egypt: Policies, Patronage,
+Institutions, and Musical Change (1927-77)” 94, 97; Fahmy). Consequently,
+music changed rapidly as well, in both its sonic and social aspects. Traditional
+Egyptian music of the 19th and early 20th centuries—later known as the
+turath (heritage)—centered on poetry set to melodies based on a system
+of modes (the maqamat) and meters (the iqaʿat), accompanied by a small
+heterophonic chamber ensemble. Within this repertoire, the precomposed
+metric song, featuring classical or colloquial Arabic poetry, was central.
+Instrumental pieces and improvisations served primarily as preludes or
+transitions. But vocal improvisation – particularly the mawwal and qasida –
+was also important, and in any case the singer was typically the composer as
+well – often accompanying him or herself on the oud (a type of fretless lute).
+A series of pieces in a common mode constituted a longer suite, the wasla,
+whose performance might require an hour or more (Lagrange; Racy, “Music
+in Nineteenth-Century Egypt: An Historical Sketch”; Racy, “Waslah”).
+
+Journal of Cultural Analytics
+
+4
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+Starting from the early 20th century, new media technologies dramatically
+altered this musical scene, though certain elements were retained. Within the
+Arab world, Egyptian music remained in the vanguard, due to the country’s
+large population, central location, proximity and openness to Europe, and
+status as a cultural hub. Transformations wrought by technological
+innovations along with corresponding changes in modes of production hit
+Egypt first, and most forcefully (Racy, Musical Change and Commercial
+Recording in Egypt, 1904-1932).
+Retentions from the older turath included a continued focus on song, with
+lyrics and hence singer central, in contradistinction to the greater prominence
+of instrumental genres in other Middle Eastern musics, particularly Turkey
+and Iran. But with the advent of a capitalist media economy requiring a
+consistently polished product, and due to length restrictions (the phonograph
+cylinder could only hold around two minutes of music; 78s only slightly
+longer), precomposed songs soon became the norm. Improvisation declined,
+and ensembles expanded, necessitating carefully prepared arrangements. All
+of these factors led to greater specialization. The centrality of precomposed
+song meant that distinct figures of composer and poet were now central as
+well, and increasingly separated from roles of singer, instrumentalist or (later)
+arranger or producer (Frishkopf, Music and Media).
+Arab music histories remain primarily rooted in the older school of small
+data critical interpretation, often centered on lives of the “great” singers
+and composers. Those written in Arabic are particularly prone to such
+tendencies, perhaps because the limited market for such works is primarily
+a popular one, fascinated by celebrity. Books surveying a wider swath of
+musical history typically present a series of capsule biographies, whether
+covering the modern period, or stretching back over a thousand years to
+the legendary, swashbuckling figure of Ziryab (Zaki, Aʿlam al-Musiqa alMisriyya ʿabr 150 sana; Zaki, al-Muʿasirun min Rawwad al-Musiqa alʿArabiyya; Mursī; Najmi; Darwish; Sahab).
+Several recent scholarly studies in English likewise focus upon a single
+celebrated performer or composer (Danielson; Zuhur; Frishkopf,
+“Nationalism, Nationalization, and the Egyptian Music Industry”), though
+contextualized within cultural history. Other English-language studies present
+broader social histories of music, transcending a focus on the individual,
+yet remaining largely in the camp of small data, qualitative interpretation,
+centered upon prominent individuals, though Salwa El-Shawan’s scholarly
+oeuvre presents some quantitative analyses as well (Racy, “Sound and Society:
+The Takht Music of Early-Twentieth Century Cairo”; Racy, “Music in
+Nineteenth-Century Egypt: An Historical Sketch”; El-Shawan, “Western
+Music and Its Practitioners in Egypt (ca. 1825-1985): The Integration of
+a New Musical Tradition in a Changing Environment”; El-Shawan, “The
+Socio-Political Context of al-Musika al-ʿarabiyyah in Cairo, Egypt: Policies,
+
+Journal of Cultural Analytics
+
+5
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+Patronage, Institutions, and Musical Change (1927-77)”). Again, Brinner’s
+exemplary study of Israeli and Arab musicians applies social network theory,
+but in a qualitative, small data manner. Without a doubt, all these works
+contribute importantly to Arab music history, and yet small data limitations
+mean that they also miss emergent patterns that can only be discerned
+through a big data social network analysis approach.
+Indeed, the lack of a big data, inclusive, and relational approach to music
+history means that salient features of the music network may be overlooked
+entirely. For instance, to foreshadow my own conclusions: never in all my
+readings on Arabic music did I encounter mention of the most productive
+collaboration in mid-20th century Egyptian song: that of lyricist Hussein alSayed (1916 - 1983) and composer Mohamed Abdel Wahab (1901 – 1991).
+Individually these figures are well known (though only Abdel Wahab shines
+in music history). But the fact that theirs was the most productive partnership
+in modern Egyptian song is not, because this fact is not traversed in any
+individual narrative. Yet it is an important fact of Egyptian music history, due
+to the centrality of relationship in the production of the musical art. Using a
+big data SNA approach, facts such as this one immediately pop out, ripe for
+interpretation.
+To summarize: two primary problems afflict music historiography, masking
+salient features of music history, and particularly in the Arab world: a
+tendency to interpret a small number of cases, i.e. a lack of big data, and
+a tendency to atomize: a lack of relational data. These problems can be
+ameliorated simultaneously by collecting and analyzing large quantities of
+relational data: big social networks.
+In this paper I outline an SNA approach to Arab music historiography,
+predicated on the mid-20th century social and musical centrality of Egyptian
+state radio and the modern concept of the fully precomposed Arabic song.
+This approach comprises two phases: (1) assembly and analysis of a social
+network representing musical collaborations between poets and composers,
+thereby highlighting salient facts and suggesting key questions, and (2)
+interpretation of these facts and pursuit of these questions, by situating the
+network within a wider social, cultural, and historical context. I apply (1) to
+highlight key agents and structures of Egypt’s modern musical history, based
+on big relational data, while leaving (2) to the future. In the process, beyond
+any specific conclusions that may be drawn, I aim to illustrate a transposable
+method that might be applied, mutatis mutandis, elsewhere.
+
+Journal of Cultural Analytics
+
+6
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+2
+
+B. Social Network Analysis
+
+Social network analysis (SNA) begins with an abstraction: the concept of
+network, of broad applicability to many real-world problems. Formally, a
+network is a set of nodes, together with a set of links. Each link (or tie) can
+be defined as a pair of nodes, whether ordered or unordered. The pair is
+thus connected, and each node is said to be a neighbor to the other. The
+ordered pair (a,b) represents an asymmetric directed link pointing from node
+a to node b, while the unordered set {a,b} represents a symmetric undirected
+link joining a and b. A network containing directed links is called a directed
+network. While every link connects exactly two nodes, one at either end, a
+node can be connected by any number of links. In principle two nodes might
+be connected by many links, but in a so-called “simple” network at most one
+link connects each node pair. A node’s degree is the number of links by which
+it is connected, which—in a simple network—is the same as the number of
+3
+its neighbors.
+A network is highly abstract, but it admits of many useful real-world
+interpretations. Social network analysis centers on networks for which nodes
+and links are given social interpretations. Nodes typically represent social
+agents (people or organizations), while links represent relations between
+those agents – undirected for reciprocal relations (such as “consanguinity”,
+“collaborating with”) and directed for non-reciprocal relations (such as
+“admires”, “teacher of”).
+Nodes and links have properties, represented by numbers. Some of these
+properties are derived from network structure (e.g. a node’s degree); others,
+sometimes called “attributes”, are derived from the network’s real-world
+interpretation (e.g. a node’s gender) rather than structure. Links are often
+associated with a property called “weight”, typically indicating its strength.
+An unweighted network is formally equivalent to a weighted network in
+which all weights are equal to 1; these are used interchangeably. A node’s
+weighted degree is the sum of the weights of the links to which it is
+connected. In general degree and weighted degree are different. But if an
+
+2 The roots of social network analysis lie in the sociometry of Jacob Moreno and others, dating to the 1930s. The field blossomed in the
+
+1970s; Freeman provides an excellent history (Moreno; Freeman, The Development of Social Network Analysis: A Study in the Sociology of
+Science). Over the past 20 years a broader and increasingly popular field, network science, has emerged as a productive theoretical and
+methodological approach to formulating and solving problems across a wide range of disciplines, from physical and biological sciences to
+ecology, medicine, psychology, sociology, linguistics, business, and technology, especially as the online world, both hardware and software, is
+explicitly formulated in these terms (e.g. computer networks, social media networks). Correspondingly, a wide range of books on the topic
+have appeared in recent decades, some devoted to to network science in general (Newman; Barabasi, Network Science), and others to social
+network analysis in particular (Wasserman and Faust; Scott; Nooy and et al.), as well as numerous popular science treatments (Barabasi,
+Linked; Watts; Christakis and Fowler). At the root of it all lies the mathematical theory of graphs (Biggs et al.; Wilson). Rather than trace
+this history, my presentation in this introductory section draws on these sources to succinctly sketch SNA’s principal ideas, in a manner
+simple enough to be understood by any reader, yet sufficient to enable comprehension of the analysis that follows.
+3 To avert possible confusion it is useful to note, at the outset, that mathematicians employ a different terminology: for them, networks are
+
+graphs, nodes are vertices, directed links are arcs, and undirected links are edges. Some social network researchers define a network as a graph
+representing real-world phenomona, and hence augmented with a social context, and metadata: numerical attributes associated with vertices,
+edges, and arcs, but not derivable from the mathematical structure itself. (Nooy and et al. 8)
+
+Journal of Cultural Analytics
+
+7
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+unweighted network is exchanged for its weighted equivalent, degrees in
+the former will match weighted degrees in the latter. When n multiple,
+unweighted links connect two nodes they can be replaced by a single link of
+weight n without loss of information. Replacing all such multiple links across
+an unweighted non-simple network results in an equivalent weighted, simple
+network.
+A network in which any two nodes can be connected is called “one-mode”: its
+nodes are homogeneous with respect to connection. Such a network can be
+represented by a square table, or matrix, with an equal number of rows and
+columns. The nodes are numbered and listed to the left of the first column,
+and above the first row. Then the presence of a directed link from node m
+to node n is indicated by writing the link’s weight (or “1” for an unweighted
+network) into the cell located in row m and column n. If the network is
+undirected, we use the lower left triangle only, since cells in the upper right
+triangle represent the same node pairs.
+While a network can be represented geometrically – in two, three, or higher
+dimensions – in theory, spatial layout is immaterial for representing its
+structural properties. But visualization is exceedingly valuable for
+understanding and interpretation, due to the acuity of our visual sense, and
+our ability to recognize visual patterns. The abstract network structure can
+be physically instantiated and visualized as a set of balls (representing nodes)
+connected by strings (links), such that each string connects exactly two balls.
+For directed links the string is assigned a beginning and end.
+More practically, we may also draw the network on a flat piece of paper, using
+circles (or any closed shape) for nodes and lines for links. For directed links,
+direction can be indicated by an arrowhead. Node and link properties may
+also be visualized as, for instance, node area or line thickness (for quantitative
+properties), or color (for qualitative ones).
+But because only connections matter, all visual representations are accurate so
+long as connections are drawn correctly. Three nodes connected in triangular
+formation with three links can be represented as an equilateral triangle of any
+size, or a scalene triangle with three lengths at different orders of magnitude
+entirely: a millimeter, a meter, and a kilometer. (Of course it is important for
+the drawing to fit on a page!)
+However, among all drawings that fit, some are far more useful as
+visualizations than others. For the sake of visualizing network structure it
+is helpful to draw a network so as to represent the relative importance of
+each node and link. Since link crossings are meaningless (only link-node
+connections are significant), visualizations strive to minimize them (crossings
+mistakenly imply that the point of intersection is important), as well as
+to ensure that structurally central nodes are visually central too (rigorous
+definitions of node centrality will follow). In an unweighted network, all
+
+Journal of Cultural Analytics
+
+8
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+links should be of roughly equal length (if higher weight indicates a stronger
+connection, e.g. more frequent collaboration, then weightier links should be
+shorter).
+One way to optimize a network drawing is to apply a force-directed layout
+algorithm. Such algorithms, of which several are well-known, take each link
+to be a spring with fixed natural length. When compressed to become shorter,
+or stretched to become longer, the spring exerts a contrary force, roughly
+proportional to the change in length, thus requiring that energy be expended,
+4
+stored as potential energy in each compressed or stretched spring. Nodes can
+be also be modeled as positively charged particles that repel each other when
+not connected, tending to reduce inadvertent line crossings. Using an iterative
+physical simulation, the layout algorithm determines node positions so as
+to minimize total potential energy, i.e. maintaining link lengths as close as
+possible to their neutral (unstretched) state and increasing distance between
+nodes not connected by a link. The simulation halts when adjustments are
+no longer reducing energy, or after a maximum run time.
+Since rotations and translations do not affect total energy, the resulting
+positioning will not be absolute but only relative. Furthermore simulation
+of this physical process must begin with random positioning. Another factor
+determining the final positioning of nodes is simulation length. For all
+these reasons, different runs may produce different results. Two commonly
+used force-directed layout algorithms are Kamada-Kawai, and FruchtermanReingold. Either may be set to account for link weights, such that shorter
+strings model stronger links. (Kobourov; Kamada and Kawai; Fruchterman
+and Reingold)
+A undirected network may be connected or disconnected; a connected piece
+is called a component. Representing the network using balls and fixed-length
+5
+strings, lifting a single ball raises the entire component to which it belongs.
+Note that a component could be as small as a single disconnected node;
+conversely, the entire network may comprise a single component.
+In this study, I represent song production data as a network by assigning each
+artist (poet or composer) a distinct network node, and each unique song an
+undirected link connecting its poet and its composer, representing a single
+collaboration. For the preliminary analysis described in this paper I do not
+include any other artists (singers or instrumentalists) in the network. Every
+node has a binary attribute, indicating its role: poet or composer. Artists who
+fulfill both roles (i.e. serving as both poet and composer) are represented by
+two different nodes. Clearly this network is not simple, since a collaborating
+pair (poet and composer) frequently produce several songs together, leading
+
+4 The approximation that a spring’s force is proportional to its stretching or compression is known as “Hooke’s Law” (Feynman, vol 2, 38-1).
+5 The definition is slightly more complex for directed networks.
+
+Journal of Cultural Analytics
+
+9
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+to multiple links between the two. But we can replace such multiple links
+with a single weighted link, thereby arriving at an equivalent simple weighted
+network, as explained earlier.
+The resulting network is also bipartite, or “two-mode”, because the set of
+nodes can be divided into two types or “modes” (here, poet nodes, and
+composer nodes), such that every link connects an element of one set to
+an element of the other. This result follows from the definitions, since
+every collaboration connects a composer and poet (and since an individual
+functioning as both poet and composer is assigned two different nodes
+corresponding to the two roles). Whereas a one-mode network can be
+represented by a square matrix, a two-mode or bipartite network is better
+represented as a rectangular matrix with m rows and n columns, where m
+is the number of nodes in the first mode (e.g. poets) and n is the number
+of nodes in the second mode (e.g. composers). Every cell in such a network
+represents a possible collaboration. (See Borgatti and Everett)
+Earlier I mentioned that there are several ways of evaluating node centrality.
+In this paper, I deploy five centrality metrics: (1) Degree centrality, (2)
+Weighted degree centrality, (3) Closeness centrality, (4) Betweenness
+centrality, and (5) Eigenvector centrality. (See Nooy and et al. ch. 6; Freeman,
+“Centrality in Social Networks Conceptual Clarification”; Wasserman and
+Faust, ch. 5)
+Degree and weighted degree centrality have already been introduced. Recall
+that link weight represents the number of collaborations between a composer
+and a poet. Then degree centrality measures an artist’s total number of
+collaborators, while weighted degree centrality measures the artist’s total
+number of collaborations (songs).
+For two other kinds of centrality—closeness and betweenness—we require
+additional network concepts of geodesic, and geodesic distance. An
+(undirected) walk between two network nodes N1 and Nn is a sequence N1,
+L1, N2, L2, N3, L3…. Nn-1, Ln-1, Nn such that the N’s are nodes, the L’s are
+links (for this definition, we’ll ignore link direction, if any), and the sequence
+is connected: L1 links N1 and N2; L2 links N2 and N3, and so on, down to
+Ln-1 which links Nn-1 and Nn. The length of such a walk is the number of
+links it contains (here, n-1). Since this number is an integer, there must be
+a shortest length walk between N1 and Nn (though there may be more than
+one walk of this length). Each such shortest length walk is called a geodesic,
+and its length is the geodesic distance between N1 and Nn. The geodesic
+distance is well-defined for two nodes in the same component; for two nodes
+in different components there is no walk connecting them. Then we can
+either say that the geodesic distance is undefined, or that it is infinite.
+
+Journal of Cultural Analytics
+
+10
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+The closeness centrality of node N is the reciprocal of the average distance
+from N to all other nodes, equivalent to the number of other nodes divided
+by the sum of its geodesic distance to each of them. Those that are closer,
+on average, to all other nodes, rendering the denominator smaller, will
+display a higher closeness centrality value. To compute node N’s betweenness
+centrality, consider all pairs of other nodes. Each such pair may be connected
+by one or more geodesic. For each such geodesic we may ask: does it pass
+through N? N’s betweenness centrality is the fraction that do. Note that
+to compute closeness centrality a network must be connected, comprising a
+single component. Betweenness centrality, however, can be computed for any
+network, connected or not.
+Finally, eigenvector centrality is a recursive metric: the centrality of a node
+N depends on the centrality of its neighbors. Link weight can also be taken
+into account, such that high link weights imply greater centrality. I will not
+present the mathematical details, but they are available online for those who
+6
+are interested.
+
+II. SNA for Egyptian music history
+A. Egyptian song data as a social network
+Like other media institutions, Egypt’s public broadcaster, the Egyptian Radio
+and Television Union (Ittiḥād al-Idhāʿa wa al-Tilifizyūn al-Miṣrī) maintains
+a database of their their musical recordings, for programming and intellectual
+property rights (IPR) management, since song creators must receive royalties.
+Each database record contains a song title, as well as the names of composer,
+poet, and singer, along with other relevant information. A song may appear
+in the database more than once, due to multiple recordings by the same
+singer, or by different singers.
+We can easily convert such a database into a weighted network. First we
+clean the tabular data, standardizing spellings and names, and correcting any
+typographical errors. A single artist or song must have a single name, and
+if two artists or songs have the same name they must be differentiated, so
+that there is a one-to-one mapping between artists and songs, and the names
+used to identify them in the database. Next we enhance the data, detecting
+and correcting factual errors as much as possible, and adding missing data
+wherever possible.
+After removing incomplete records, there remain 14,020 completely
+documented recordings. However, multiple rows – with identical composer,
+poet, and title – may correspond to the same song. These may be covers
+
+6 All network operations and visualizations were executed using the free Pajek software package; see http://mrvar.fdv.uni-lj.si/pajek/ (Nooy
+
+and et al.). On the advice of one of Pajek’s co-authors, Andrej Mrvar, I am using Pajek’s “hubs and authorities” 2-mode algorithm for
+computing eigenvector centrality in the two-mode poet-composer network. (Batagelj and Mrvar)
+
+Journal of Cultural Analytics
+
+11
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+Table 1. The first 10 of 12,523 complete records, each representing a unique song recording held by Egyptian Radio.
+Record
+
+Song
+
+Singer
+
+Poet
+
+Composer
+
+1
+
+‫حفتكرلك ايه‬
+
+‫محمد فوزي‬
+
+‫مصطفى عبد الرحمن‬
+
+‫محمد فوزي‬
+
+2
+
+‫ادي الحياة‬
+
+‫فايزة احمد‬
+
+‫عمر بطيشة‬
+
+‫محمد سلطان‬
+
+3
+
+‫بنت الحب‬
+
+‫ميادة الحناوي‬
+
+‫عمر بطيشة‬
+
+‫خليل مصطفى‬
+
+4
+
+‫آخر زمن‬
+
+‫ميادة الحناوي‬
+
+‫سمير الطائر‬
+
+‫محمد سلطان‬
+
+5
+
+‫حكاية حب‬
+
+‫ميادة الحناوي‬
+
+‫عصمت الحبروك‬
+
+‫سيد مكاوي‬
+
+6
+
+‫ست الكل‬
+
+‫فايدة كامل‬
+
+‫حسين السيد‬
+
+‫محمد الموجي‬
+
+7
+
+‫عيني‬
+
+‫ميادة الحناوي‬
+
+‫عمر بطيشة‬
+
+‫محمد سلطان‬
+
+8
+
+‫فاتت سنة‬
+
+‫ميادة الحناوي‬
+
+‫سيد مرسي‬
+
+‫بليغ حمدي‬
+
+9
+
+‫قد ايه واحشني‬
+
+‫عادل مأمون‬
+
+‫عبد العزيز سالم‬
+
+‫عادل مأمون‬
+
+10
+
+‫يا مصر ياجنة‬
+
+‫فاطمة علي‬
+
+‫حيدر إمام‬
+
+‫كامل احمد علي‬
+
+by different singers, or different recordings by one singer, or even erroneous
+multiple entries for exactly the same recording. We only want to count each
+song once, regardless of how many recordings exist, whether by the same or
+different singers.
+We therefore run a duplicate detection algorithm, identifying groups of rows
+for which song title, composer, and poet are identical, and replacing them
+with a single row. After removing the duplicate rows, each of the remaining
+rows in the database represents a distinct song, the output of a collaboration
+between a poet and a composer (who are nearly always different people, and
+contemporaries). Thus reduced, the database contains 12,523 unique songs,
+the first ten of which are presented in Table 1.
+Finally we can construct a preliminary bipartite “two-mode” network,
+interpreting every song as a link connecting its poet and composer (singers
+are not included in the analysis). Multiple links between a given poet and
+composer are then replaced by a single link whose weight is equal to the
+number of song collaborations connecting them. Each node’s degree then
+represents the number of its collaborators (composers for poets; poets for
+composers), while its weighted degree represents the number of its
+collaborations (songs).
+
+B. The full network
+visualizing and counting
+To visualize this network, I apply a force-directed algorithms, FruchtermanReingold, to generate a representation in three dimensions, presented in
+two-dimensional projection in Figure 1. (The layout can also be viewed in
+3D using the video link provided in the caption.) Poet nodes are yellow;
+composer nodes are green; collaboration links are blue.)
+
+Journal of Cultural Analytics
+
+12
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+Figure 1. Energized full network using the Fruchterman-Reingold force-directed three-dimensional graph layout
+algorithm. Poets are represented in yellow, and composers in green. What appear as numerous green isolates are in
+reality green-yellow pairs: a poet and a composer who only work with each other, and thus are drawn very close
+together. This is clear in a video presentation (https://vimeo.com/874538881); as the structure turns, a node may
+switch from yellow to green or vice versa.
+
+These visualizations indicate that while much of the network is connected
+in a single component, there are also many smaller components. While
+such visualization is important, it serves mainly to guide network analysis,
+especially for larger networks, whose visual representations are hard to read
+except in gross qualitative terms. The first step in that analysis is simply to
+count network elements.
+We find 2,332 artists (nodes), including 1,593 poets (nodes in the first
+mode) and 739 composers (nodes in the second mode), linked by 5,834
+collaborative relationships, of varying weights (each indicating the number of
+songs produced), summing to 12,523 collaborations (songs) in total. Already,
+network analysis has yielded an interesting fact (assuming that the dataset,
+7
+even if not complete, is not biased): there are slightly more than twice as
+many poets as composers involved in producing this collection of songs. This
+means that on average there are more than twice as many songs per composer
+as songs per poet, i.e. the average weighted degree for composers is more than
+twice the average weighted degree for poets. Further (since every collaboration
+links exactly one poet and one composer) there are more than twice as many
+collaborators per composer as collaborators per poet.
+
+7 Specifically, 1593/739 or approximately 2.16.
+
+Journal of Cultural Analytics
+
+13
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+The average composer weighted degree is the total number of songs divided
+by the number of composers, and likewise for poets. On average poets
+participate in 7.86 song collaborations, as compared to 16.95 for composers,
+with an average of 3.66 collaborators, as compared to 7.89 for composers.
+These facts are not obvious from a simple song listing, but emerge instantly
+from a network representation.
+If each collaboration requires approximately the same effort from poet and
+composer, this means composers are busier than poets in this world of song.
+Speculating, we may turn briefly to the interpretive phase. The disparity is
+perhaps understandable considering the high status of poetry in Arab society;
+poets may be writing on commissions outside the world of music (though
+composers may also be occupied with purely instrumental composition, this
+may be less common for song composers), and are perhaps more likely than
+composers to be amateurs involved in other non-poetry careers. Arab music
+composers tend to be more closely integrated in the music world, also serving
+as conductors and performers, and music is more likely to be a full-time
+occupation for them. This explanation is but an hypothesis, yet provides
+an instance of the interpretive act that must follow the purely analytical
+operations of social network analysis. It would be interesting to compare
+Arabic and Western popular music in this regard.
+
+network components
+Beyond such counting, it is useful to examine network connectivity. Recall
+that in a single component it is possible to walk from any node to any
+other, considering collaborations as links. Creative collaborations typically
+necessitate intensive social interactions, often requiring communications –
+messages are passed along these links. When a composer, say, collaborates with
+two different poets, messages may be passed between the two poets as well,
+via the composer as intermediary, and likewise for a poet working with two
+different composers. In other words, we can interpret a connected network
+as a social structure enabling messages to flow among its nodes, by means
+of links. Extra-network information helps confirm this possibility as most
+artists are Egyptian-born, and were alive in the mid-20th century. Conversely,
+we cannot make such an assertion for two artist-nodes each located in a
+different component, i.e. where there is no walk connecting them, even if
+communication is still possible in this case. A second analytical step, then, is
+to decompose the network into its disconnected pieces or components and
+conduct an inventory based on size.
+The full bipartite network contains 2,332 nodes in 133 components.
+However, most nodes – 2,037 out of 2,332 or 87% – fall within a single large
+component, indicating great potential communicative connectivity among
+the vast majority of collaborating artists. Still, the network also contains
+132 smaller components, ranging in size from two (dyadic collaborations) to
+seven. Of these, 113 (or 86%) are dyadic (size two). There are 12 instances of
+Journal of Cultural Analytics
+
+14
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+size three (e.g. a poet who works with two different composers, none of them
+working with anyone else, or the reverse), four of size four, two of size five,
+8
+and one of size seven. In some cases these small components may result from
+missing data, which, if provided, would connect them to the large group. But
+the fact that most nodes are contained in a large 2,037 node component, such
+that a potential communicative path linking any two of them exists, is worthy
+of note, and calls for further analysis and interpretation.
+
+scale-free distributions
+One aspect of the collaboration network is typical of other networks (e.g.
+friendship) in large-scale urban environments: the scale-free distribution.
+Plotting any of degree (collaborators), weighted degree (collaborations), or
+link weights (strength of collaboration) as a histogram, we observe the “long
+tail” distribution. This distribution is typical of networks that form through
+so-called “preferential attachment”: nodes with many neighbors tend to be
+preferred, and attract even more neighbors, because they are better connected;
+thus, “the rich get richer”. This sort of distribution is called “scale free”
+because it contains no characteristic “scale”; mean and median do not
+represent a typical point on the distribution, unlike a normal (bell) curve, or
+the distribution of human height, for example. Scale-free distributions recur
+in many domains, from the distribution of wealth to the number of incoming
+9
+links on websites.
+At the onset of any career, an artist has zero collaborations, though they
+may enjoy other network connections depending on the social environment
+into which they are born, including artist family members and friends.
+Some artists may be “better”, in the sense of musical talent and quality,
+resourcefulness, versatility, dedication, or social appeal; others may simply
+be lucky. But once an artist attracts a critical mass of collaborators, they
+tend to accumulate more, perhaps roughly proportional to the number they
+already have, and the degree of these select individuals increases. By contrast,
+most artists collaborate with far fewer and mostly just one other person. (See
+Figures 2-4.)
+
+C. The network’s structural core
+So far it has been difficult to view the network’s structural core, defined
+by its strongest collaborations, as that core is hidden amidst so many lowdegree nodes and low-weight links, representing weak collaborations. In order
+
+8 A component of size 1 is not possible since artists were only included in the dataset by virtue of having collaborated on at least one song; a
+
+component of size 6 is possible, but happens not to exist.
+9 In music I have hypothesized that scale-free distributions characterize artist fame in the modern mediated era, when anyone can listen to any
+
+artist at any time. By contrast in premodern settings, with limited travel and no possibility of mediated performance, the distribution of
+artist fame should be closer to bell-shaped, with a concentration near the mean, because artists can only interact with proximate fans in live
+settings. Simulations support this hypothesis. (See Frishkopf, Differentiating Traditional and Popular Music by Analyzing the Social
+Structure of Fame: A Computer Simulation of Fan - Artist Affiliations)
+
+Journal of Cultural Analytics
+
+15
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+Figure 2. Histogram of degree (number of collaborators). The average is 5.0, maximum 142. The vast majority of
+artists have fewer than four collaborators, while very few have many. This curve resembles the expected power law of
+scale-free distributions (in contrast to a bell curve), and often results from a process of preferential attachment: artists
+with many collaborators tend to attract more, through the network itself.
+
+Figure 3. Histogram of weighted degree (number of collaborations). The average is 10.7, maximum 557. The same
+scale-free distribution appears as in Figure 2.
+
+Figure 4. Histogram of line weights (strength of collaborations, i.e. number of songs). The average is 2.1, and the
+maximum is 114. Most collaborations are weakly productive (about 70% amount to just one song), while a few are
+extremely productive.
+
+to view the core structure we need to peel away weak collaborations in
+order to see the stronger ones more clearly, via a threshold for significant
+collaboration. Such a threshold is bound to be somewhat arbitrary (one
+Journal of Cultural Analytics
+
+16
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+of SNA’s methodological problems is determining such cutoffs), but if we
+compute the 95th percentile of link weights (see Figure 4), we find that a
+minimum weight of 7 (i.e. collaborations on seven songs or more) represents
+the top 5% of all collaborations. Therefore, as a starting point we will
+define 7 songs as the threshold for “significant collaboration”. We can then
+extract what is sometimes known as the “7-slice”, comprising the subnetwork
+comprising lines of weight 7 or higher only. All weaker lines are deleted, along
+with any nodes that are thereby disconnected (i.e. which do not collaborate
+with anyone on at least seven songs). We can then re-energize this subnetwork
+in order to visualize its structure.
+The 7-slice turns out to comprise 194 nodes: 113 poets, and 81 composers,
+connected by 274 links. It is noteworthy that the poet to composer ratio
+is lower within this more densely connected portion of the full network.
+Whereas the ratio for the full network was 2.16, for the strongly connected
+7-slice, it is only 1.40. At the core of the network, the activity of composers
+and poets is closer to parity: collaborations per artist, and collaborators per
+artist, are more equal when comparing those poets and composers who are
+most active. Still there is a wide range in strength of collaborations. Link
+weights range from 7 to 114 songs, with an average weight of about 15.
+There are 24 components, but only one of them is large, comprising 139
+artists. The remainder comprise 19 poet-composer pairs (dyads), plus a
+handful of other relationships, with component sizes three, five, and six. I
+present the 7-slice and its components in Figure 5.
+Now that we’ve characterized the general structure of the 7-slice, we can
+zoom in on its large component, and begin to address two fundamental
+structural questions of social network analysis: Which artists are most central?
+And where are the network’s cohesive subgroups?
+
+centrality
+Earlier I introduced five different centrality metrics: degree, weighted degree,
+closeness, betweenness, and eigenvector. Applied to the artist network, the
+first two evaluate centrality in terms of collaborators and collaborations,
+respectively, while the latter three consider the network as a structure that
+can support message-passing, identifying nodes that may play a key role in
+network communications.
+Every node can be evaluated according to all five measures of centrality. As
+usual with SNA thresholds, the number of nodes to consider “central” is
+somewhat arbitrary; we want to limit this number to locate the core of the
+network, without reducing it too much, since the metrics themselves are also
+somewhat arbitrary (many other centrality metrics also exist). If we identify
+the dozen most central nodes in the large 7-slice component (139 nodes) for
+each of the five metrics, then in theory there could be as many as 60 central
+nodes,12 distinct nodes for each metric. (See Table 2.)
+Journal of Cultural Analytics
+
+17
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+Figure 5. The 7-slice (energized using Kamada-Kawai) comprises 194 nodes, including a large component (139 nodes),
+19 dyads (poet-composer pairs, at the bottom), and four other components of size 3, 5, and 6 (upper right). Again,
+poets are represented in yellow, and composers in green. The following videos energize using Fruchterman-Reingold in
+3D: (a) the entire 7-slice: https://vimeo.com/874539449; (b) its large component: https://vimeo.com/874539464
+Table 2. The dozen most central artists in the main component of the 7-core, ranked by degree centrality. P designates poet; C designates
+composer.
+Rank
+
+Name
+
+Degree centrality
+
+Role
+
+1
+
+Mohamed El Mougy
+
+22
+
+C
+
+2
+
+Abdel Fattah Mustafa
+
+18
+
+P
+
+3
+
+Abdel Azim Mohamed
+
+15
+
+C
+
+4
+
+Baligh Hamdi
+
+14
+
+C
+
+5
+
+Fathi Qura
+
+13
+
+P
+
+6
+
+Abdel Wahab Mohamed
+
+12
+
+P
+
+7
+
+Ahmed Sidqi
+
+12
+
+C
+
+8
+
+Riad Al Sunbati
+
+11
+
+C
+
+9
+
+Abdel Aziz Salam
+
+10
+
+P
+
+10
+
+Mohamed Ali Ahmed
+
+10
+
+P
+
+11
+
+Mohamed Abdel Wahab
+
+10
+
+C
+
+12
+
+Mahmoud al-Sharif
+
+10
+
+C
+
+However, in practice there is heavy overlap among these five groups of 12,
+resulting in a total list of only 20 central nodes: 11 composers, and 9 poets.
+This is reassuring: it means that to a great extent the five centrality measures
+converge. We can summarize the situation by counting how often each node
+turns up in a top 12 list (ranging from 1 to all 5), and then ranking on this
+count. Adding birth and death dates as metadata helps in interpreting this
+data, suggesting a network of interacting contemporaries over several decades.
+(See Table 3 and Figure 6.)
+Journal of Cultural Analytics
+
+18
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+Table 3. The top 20 most central artists, according to a combination of the five centrality metrics. All are Egyptian males. Several
+composers, such as Ahmed Sidqi, are rarely mentioned in music histories, but their centrality here emerges clearly. Note: ties are listed
+alphabetically.
+Rank
+
+Name
+
+# top 12 lists
+
+Role
+
+1
+
+Abdel Azim Mohamed
+
+5
+
+C
+
+2
+
+Abdel Fattah Mustafa
+
+5
+
+P
+
+3
+
+Abdel Wahab Mohamed
+
+5
+
+P
+
+4
+
+Ahmed Sidqi
+
+5
+
+C
+
+5
+
+Baligh Hamdi
+
+5
+
+C
+
+6
+
+Mohamed El Mougy
+
+5
+
+C
+
+7
+
+Fathi Qura
+
+4
+
+P
+
+8
+
+Hussein Al-Sayed
+
+4
+
+P
+
+9
+
+Mohamed Abdel Wahab
+
+4
+
+C
+
+10
+
+Riad Al Sunbati
+
+4
+
+C
+
+11
+
+Mahmoud al-Sharif
+
+3
+
+C
+
+12
+
+Abdel Aziz Salam
+
+2
+
+P
+
+13
+
+Mohamed Ali Ahmed
+
+2
+
+P
+
+14
+
+Abdel Rahim Mansour
+
+1
+
+P
+
+15
+
+Abdel Rahman el-Abnudi
+
+1
+
+P
+
+16
+
+Helmy Amin
+
+1
+
+C
+
+17
+
+Hussein Junayd
+
+1
+
+C
+
+18
+
+Mohamed Fawzy
+
+1
+
+C
+
+19
+
+Mursi Gamil Aziz
+
+1
+
+P
+
+20
+
+Sayed Mekawy
+
+1
+
+C
+
+Figure 6. Lifespans of the top 20 most central artists, in rank order (see Table 3). Most are contemporaries from 1940
+to 1980. As their lifespans overlap heavily, they likely participated in a productive and interactive musical community,
+catalyzed by the heyday of Egyptian Radio.
+
+Journal of Cultural Analytics
+
+19
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+Table 4. The full network’s seven most productive collaborations. Social network analysis greatly facilities detection of these relationships.
+Historical or cultural analysis can then attempt to explain them. Only three individuals (indicated with an asterisk) do not appear in the
+centrality list (Table 3).
+Rank
+
+Poet
+
+Composer
+
+Collaborations (link weight)
+
+1
+
+Hussein Al-Sayed
+
+Mohamed Abdel Wahab
+
+114
+
+2
+
+Abdel Fattah Mustafa
+
+Ahmed Sidqi
+
+66
+
+3
+
+Mursi Gamil Aziz
+
+Mohamed El Mougy
+
+63
+
+4
+
+Mohamed Hamza*
+
+Baligh Hamdi
+
+63
+
+5
+
+Abdel Rahim Mansour
+
+Baligh Hamdi
+
+62
+
+6
+
+Abdel Wahab Mohamed
+
+Baligh Hamdi
+
+62
+
+7
+
+Abdel Salam Amin*
+
+Ammar El Sherei*
+
+61
+
+The number of composers and poets in the final centrality list are roughly
+equal. All are Egyptian and male, and the top six (four composers and
+two poets) are equally ranked, as are the following four (two poets, and
+two composers). From the metadata we observe that the lifespans of these
+most central 20 artists overlap heavily, meaning they could participate in a
+productive interwoven community. Of the top six composers, four (Baligh
+Hamdy, Mohamed El Mougy, Mohamed Abdel Wahab, and Riad al-Sunbati)
+are widely known in English-language music histories, but two others (Abdel
+Azim Mohamed and Ahmed Sidqi) are rarely mentioned. Why? While an
+historical inquiry beyond SNA is required in order to reveal the reasons,
+systematic network analysis has here proven its worth by revealing their
+importance and posing the question. As for poets, very few are discussed
+in English language sources, and identifying them constitutes an important
+contribution to Egyptian music history. Other questions are also raised. For
+instance, one may ask about the reasons for the the striking absence of central
+females as poets or composers, despite the large number of female singers.
+Is it due to a male bias in Egyptian radio holdings? Or due to broader
+social factors discouraging women from these roles? Network analysis doesn’t
+provide all the answers, but can help to guide historical research in productive
+directions.
+
+cohesion
+Now let us consider cohesive subgroups (Wasserman and Faust, ch. 7). There
+are several ways to define these tightly connected groups of nodes. One
+may examine the most productive dyadic collaborations, or one may search
+for highly connected clusters. Link weight provides the former, while the
+latter may be revealed through several popular cluster detection algorithms,
+including (1) isolating components in higher K-slices (for K > 7); (2)
+detecting bipartite cliques, or (3) detecting communities.
+Table 4 displays the most productive seven collaborations in the full network,
+representing the top 2.5% of all link weights. This list emerges immediately
+from network analysis, though it is hidden in the tabular data. While all
+the poets are different, one composer stands out as central to productive
+Journal of Cultural Analytics
+
+20
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+Figure 7. The 21-slice, with link weights indicated. The most productive collaboration (114 songs), between Mohamed
+Abdel Wahab and Hussein Al-Sayed, is highlighted in red. Historical or ethnographic research may explain why these
+particular groupings are salient.
+
+collaborations: Baligh Hamdi, responsible for three of the links. There are 12
+names altogether—seven poets and five composers—of which all but three
+(indicated with an asterisk) also appear on the centrality list (Table 3). Most
+striking is the collaboration between the famous composer Mohamed Abdel
+Wahab and poet Hussein Al-Sayed, with nearly twice as many collaborations
+as any other pair. Such an analysis once again demonstrates the power of SNA
+to highlight key figures and relationships, all of which can then be further
+explored and interpreted through more conventional qualitative historical or
+ethnographic research.
+Honing in further on the most cohesive sections of the network, we can
+extract the 21-slice, and examine its components. Figure 7 indicates the
+structure, with link weights added. The structure thus revealed, other more
+qualitative methods of social science can be applied to explain them.
+Another way to locate cohesive subgroups is to search for bipartite cliques.
+A clique is a fully connected subset of nodes. Thus a dyad is a clique of
+two, and a closed triad is a clique of three. A clique of four is a square
+with diagonals added. For two-mode (bipartite) networks, where links cannot
+connect within but only between modes, no cliques exist beyond the dyad.
+Therefore, a bipartite clique is defined as a subset in which every node in the
+first mode is connected to every node in the second; this subset is maximally
+connected within the bipartite network. For instance, Figure 8 represents a
+bipartite clique: four composers and four poets, with every possible poetcomposer pair connected.
+Journal of Cultural Analytics
+
+21
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+Figure 8. A bipartite clique on 8 nodes, 4 poets and 4 composers.
+
+We can search for instances of such a structure throughout the larger
+network, counting the number of Figure 8-type cliques in which each
+network node is a member, in order to highlight cohesive subgroups.
+Searching detects three instances; the result is shown in Figure 9, where red
+nodes are members of all three cliques, green nodes are members of two,
+and yellow nodes are members of just one (nodes that are not members
+of any bipartite clique are removed). Energizing (using Kamada Kawai),
+the red nodes move to the center, and yellow nodes to the periphery. The
+analysis highlights the centrality of poet Abdel Fattah Mustafa and composer
+Mohamed El Mougy, who together link the two halves of this tightly
+connected web
+Finally, we may also experiment with community detection algorithms, of
+which several are widely used. Informally, a community is a group of nodes
+that are densely connected to each other, but only sparsely connected to the
+rest of the network. We define a community partition as an assignment of
+every node to exactly one community (with this definition, communities do
+not overlap). The modularity of that assignment is defined as the fraction
+of all links that connect two nodes assigned to the same community (as
+opposed to connecting two nodes assigned to different communities), minus
+the expected such fraction in a random network with the same node degrees
+(since some links will fall within a single community even for a random
+network). Community detection algorithms attempt to assign nodes to
+communities such that modularity is maximized. In this way they help to
+reveal highly connected groups of nodes within the network.
+
+Journal of Cultural Analytics
+
+22
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+Figure 9. Searching for the bipartite clique illustrated in Figure 8, we find three instances. Here color does not indicate
+role. Rather, red nodes are members of all three instances, green nodes are members of two, and yellow nodes are
+members of just one. One poet and one composer (red nodes) play critical brokering roles, linking two halves of this
+network. (Poets are indicated with the suffix P; composers with C.)
+
+Figure 10. Results of Louvain community detection algorithm. To some extent these communities differentiate
+musical eras of the 20th century: early (green), mid (red), and later (yellow). But there also appear to be stylistic
+implications. (Poets are indicated with the suffix P; composers with C.)
+
+Figure 10 shows the results of the Louvain community detection algorithm
+(Blondel et al.), applied to the large component of the 18-slice. Three
+communities have been circumscribed, with modularity 87%. Subsequent
+interpretation is required, based on metadata (such as date, or style), and
+contextual factors. To some extent these communities differentiate musical
+eras of the 20th century: early (green), mid (red), and later (yellow). But there
+also appear to be stylistic implications. More interpretive work is required.
+Journal of Cultural Analytics
+
+23
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+III. Concluding remarks
+Thus network analysis of a simple song database has highlighted important
+individuals, collaborative relationships, and cohesive subgroups, raising many
+important questions for further analysis and interpretation that would not
+otherwise even have been asked. I reiterate that social network analysis alone
+cannot answer many of the questions it raises. Rather, it is useful for drawing
+an empirically-grounded, big data, relational picture, and highlighting key
+features, structures, and relationships, to become focal points for subsequent
+historical or ethnographic inquiry. Applying social network analysis also
+means that the pitfalls of narrative histories – lack of big data, and lack
+of relational data – are avoided, because big relational data is required to
+perform social network analysis.
+More practically, the application of social network analysis outlined in this
+article illustrates a general methodology for handling widely available
+collaboration data of this type, whether in music or any other domain,
+in three phases, which may be summarized as follows. First, gather and
+clean collaboration data, and assemble it as a network. Next, apply SNA
+to highlight features and relational structures that would otherwise remain
+invisible, such as lists of the most central nodes, the most important
+collaborations, or the most tightly connected subgroups. Finally, interpret
+these features and structures in light of broader socio-cultural and historical
+factors, in an attempt to explain why certain figures are central, or why certain
+subgroups are tightly connected. These interpretations may suggest further
+data-gathering and network analysis, forming a cycle of empirical research,
+network analysis, and interpretation.
+In sum, the qualitative, critical interpretive methods of humanistic research
+and the quantitative, computational methods of social network analysis are
+not mutually exclusive, much less incompatible. Rather they blend
+harmoniously in music history, each complementing and guiding the other.
+If the methodological balance formerly tilted toward the former, perhaps the
+recent availability of big data and SNA tools, along with greater acceptance
+of digital humanities among music scholars, will help restore equilibrium,
+enriching our understanding of music history in the process.
+Data repository: https://doi.org/10.7910/DVN/8QYNVS
+Submitted: February 05, 2024 EDT, Accepted: March 21, 2024 EDT
+
+This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0
+International License (CCBY-4.0). View this license’s legal deed at http://creativecommons.org/licenses/
+by/4.0 and legal code at http://creativecommons.org/licenses/by/4.0/legalcode for more information.
+
+Journal of Cultural Analytics
+
+24
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+works cited
+Abdallah, Samer, et al. “The Digital Music Lab: A Big Data Infrastructure for Digital Musicology.”
+Journal on Computing and Cultural Heritage, vol. 10, no. 1, Jan. 2017, pp. 1–21. ACM Digital
+Library, https://doi.org/10.1145/2983918.
+Barabasi, Albert-Laszlo. Linked: How Everything Is Connected to Everything Else and What It
+Means. Plume, 2003.
+---. Network Science. Cambridge University Press, 2016.
+Batagelj, Vladimir, and Andrej Mrvar. Pajek Reference Manual. 2011, http://vlado.fmf.uni-lj.si/
+pub/networks/pajek/doc/pajekman.pdf.
+Biggs, Norman Linstead, et al. Graph Theory 1736-1936. Clarendon Press, https://doi.org/10.1039/
+jr9360001736.
+Blondel, Vincent D., et al. “Fast Unfolding of Communities in Large Networks.” Journal of
+Statistical Mechanics: Theory and Experiment, vol. 2008, no. 10, Oct. 2008, p. P10008,
+https://doi.org/10.1088/1742-5468/2008/10/P10008.
+Borgatti, Stephen P., and Martin G. Everett. “Network Analysis of 2-Mode Data.” Social Networks,
+vol. 19, no. 3, Aug. 1997, pp. 243–69. ScienceDirect, https://doi.org/10.1016/
+S0378-8733(96)00301-2.
+Boyd, Douglas A. Egyptian Radio: Tool of Political and National Development. Association for
+Education in Journalism, 1977.
+Brinner, Benjamin Elon. Playing across a Divide: Israeli-Palestinian Musical Encounters. Oxford
+University Press, 2009. Open WorldCat, https://doi.org/10.1093/acprof:oso/
+9780195395945.001.0001.
+Bryan, Nicholas J., and Ge Wang. Musical Influence Network Analysis And Rank Of Sample-Based
+Music. 2011.
+Castelo-Branco, Salwa El-Shawan. “Radio and Musical Life in Egypt.” Revista de Musicología, vol.
+16, no. 3, 1993, pp. 1229–39. JSTOR, https://doi.org/10.2307/20795978.
+Christakis, Nicholas A., and James H. Fowler. Connected: The Surprising Power of Our Social
+Networks and How They Shape Our Lives -- How Your Friends’ Friends’ Friends Affect Everything
+You Feel, Think, and Do. Reprint, Back Bay Books, 2011.
+Clercq, Trevor de. “Big Data, Big Questions: A Closer Look at the Yale–Classical Archives Corpus
+(c. 2015).” Empirical Musicology Review, vol. 11, no. 1, July 2016, pp. 59–67, https://doi.org/
+10.18061/emr.v11i1.5274.
+Cottrell, Stephen. “Big Music Data, Musicology, and the Study of Recorded Music: Three Case
+Studies.” The Musical Quarterly, vol. 101, no. 2–3, Mar. 2019, pp. 216–43, https://doi.org/
+10.1093/musqtl/gdy013.
+Crossley, Nick. “Music Worlds and Event Networks: An Exposition.” Cultural Sociology, July 2023,
+p. 17499755231180182, https://doi.org/10.1177/17499755231180182.
+---. Networks of Sound, Style and Subversion: The Punk and Post-Punk Worlds of Manchester,
+London, Liverpool and Sheffield, 1975-80. 2015. Open WorldCat, https://search.ebscohost.com/
+login.aspx?direct=true&scope=site&db=nlebk&db=nlabk&AN=1131176.
+---. Social Networks and Music Worlds. Routledge, 2015.
+Crossley, Nick, and Tugba Aydin Ozturk. “Music, Social Structure and Connection: Exploring and
+Explaining Core-Periphery Structure in a Two-Mode Network of Music Festivals and Artists in
+Turkey.” Miscellanea Anthropologica et Sociologica, vol. 20, no. 2, Nov. 2019, pp. 192–210.
+
+Journal of Cultural Analytics
+
+25
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+Danielson, Virginia. The Voice of Egypt : Umm Kulthum, Arabic Song, and Egyptian Society in the
+Twentieth Century. University of Chicago Press, 1997, https://doi.org/10.7208/chicago/
+9780226136080.001.0001.
+Darwish, Hasan Sayyid. Sayyid Darwish bayna al-ʿAbqariyya wa-l-Muʾamirat al-Fanniyya. AlṬabʻah 1, Dar al-Ahmadi li-l-Nashr, 2000.
+El-Shawan, Salwa. “The Socio-Political Context of al-Musika al-ʿarabiyyah in Cairo, Egypt: Policies,
+Patronage, Institutions, and Musical Change (1927-77).” Asian Music, vol. 12, no. 1, 1980, pp.
+86–128, https://doi.org/10.2307/833799.
+---. “Western Music and Its Practitioners in Egypt (ca. 1825-1985): The Integration of a New
+Musical Tradition in a Changing Environment.” Asian Music, vol. 17, no. 1, 1985, pp. 143–53.
+Fahmy, Ziad. “Early Egyptian Radio: Transitioning from Media-Capitalism to Media-Etatism,
+1928–1934.” Middle East Journal of Culture and Communication, vol. 15, no. 1–2, 2022, pp.
+92–112, https://doi.org/10.1163/18739865-01501005.
+Feynman, Richard P. The Feynman Lectures on Physics. Addison-Wesley Pub. Co., 1963, http://
+www.feynmanlectures.caltech.edu/.
+Freeman, Linton C. “Centrality in Social Networks Conceptual Clarification.” Social Networks, vol.
+1, no. 3, Jan. 1978, pp. 215–39. ScienceDirect, https://doi.org/10.1016/0378-8733(78)90021-7.
+---. The Development of Social Network Analysis: A Study in the Sociology of Science. Empirical Press;
+BookSurge, 2004.
+Frishkopf, Michael. Differentiating Traditional and Popular Music by Analyzing the Social
+Structure of Fame: A Computer Simulation of Fan - Artist Affiliations. 2013, https://
+drive.google.com/file/d/1yZ-bUWFuvcTZsyj-YYTWkl4RXgfXPhvL/view.
+---, editor. Music and Media in the Arab World. The American University in Cairo Press, 2010.
+---. “Music for Global Human Development: Participatory Action Research for Health and
+Wellbeing.” MUSICultures, vol. 49, 2022, pp. 71–109.
+---. “Nationalism, Nationalization, and the Egyptian Music Industry: Muhammad Fawzy,
+Misrphon, and Sawt al-Qahira (SonoCairo).” Asian Music, vol. 39, no. 2, July 2008, pp. 28–58.
+Fruchterman, T. M. J., and E. M. Reingold. “Graph Drawing by Force-Directed Placement.”
+Software: Practice and Experience, vol. 21, no. 11, Jan. 1991, pp. 1129–64, https://doi.org/
+10.1002/spe.4380211102.
+Giannetti, Francesca. “A Review of Network Approaches in Music Studies.” Music Reference
+Services Quarterly, vol. 19, no. 2, Apr. 2016, pp. 156–63. Taylor and Francis+NEJM,
+https://doi.org/10.1080/10588167.2016.1166842.
+Gienapp, Lukas, et al. “Topological Properties of Music Collaboration Networks: The Case of Jazz
+and Hip Hop.” DHQ: Digital Humanities Quarterly, Jan. 2021, p. N.PAG, https://
+openurl.ebsco.com/contentitem/
+gcd:149414414?sid=ebsco:plink:crawler&id=ebsco:gcd:149414414.
+Gómez, Emilia, et al. “Computational Ethnomusicology: Perspectives and Challenges.” Journal of
+New Music Research, vol. 42, no. 2, June 2013, pp. 111–12. Taylor and Francis+NEJM,
+https://doi.org/10.1080/09298215.2013.818038.
+Kamada, T., and S. Kawai. “An Algorithm for Drawing General Undirected Graphs.” Information
+Processing Letters, vol. 31, no. 1, Apr. 1989, pp. 7–15. EBSCOhost, https://doi.org/10.1016/
+0020-0190(89)90102-6.
+Kent-Muller, Anna. “Big Musicology: A Framework for Transformation.” Digital Libraries for
+Musicology, 2017.
+
+Journal of Cultural Analytics
+
+26
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+Kobourov, Stephen G. “Force-Directed Drawing Algorithms.” Handbook of Graph Drawing and
+Visualization, edited by Roberto Tamassia, CRC Press, Taylor & Francis Group, 2014, pp.
+383–408.
+Kossinets, Gueorgi. “Effects of Missing Data in Social Networks.” Social Networks, vol. 28, no. 3,
+July 2006, pp. 247–68. ScienceDirect, https://doi.org/10.1016/j.socnet.2005.07.002.
+Kramer, Lawrence. “Musicology and Meaning.” The Musical Times, vol. 144, no. 1883, 2003, pp.
+6–12, https://doi.org/10.2307/3650677.
+Krause, Robert W., et al. “Missing Network Data A Comparison of Different Imputation
+Methods.” 2018 IEEE/ACM International Conference on Advances in Social Networks Analysis
+and Mining (ASONAM), IEEE Xplore, 2018, pp. 159–63, https://doi.org/10.1109/
+ASONAM.2018.8508716.
+Lagrange, Frédéric. Musiciens et poètes en Égypte au temps de la Nahda. 1994. Paris 8, PhD
+Dissertation.
+Locke, Ralph P. “Constructing the Oriental ‘Other’: Saint-Saëns’s ‘Samson et Dalila.’” Cambridge
+Opera Journal, vol. 3, no. 3, 1991, pp. 261–302, https://doi.org/10.1017/S0954586700003530.
+Malm, Krister. “Music on the Move: Traditions and Mass Media.” Ethnomusicology, vol. 37, no. 3,
+Oct. 1993, pp. 339–52. JSTOR, https://doi.org/10.2307/851718.
+McAndrew, Siobhan, and Martin Everett. “Music as Collective Invention: A Social Network
+Analysis of Composers.” Cultural Sociology, vol. 9, no. 1, Mar. 2015, pp. 56–80. SAGE Journals,
+https://doi.org/10.1177/1749975514542486.
+Moreno, J. L. “Sociometry in Relation to Other Social Sciences.” Sociometry, vol. 1, no. 1/2, 1937,
+pp. 206–19. JSTOR, https://doi.org/10.2307/2785266.
+Mursī, Ṣāliḥ. Laylā Murād. Dār al-Hilāl, 1416.
+Najmi, Kamal. Turath al-Ghinaʾ al-ʿArabi: bayna al-Mawsili wa Ziryab wa Umm Kulthum wa
+ʿAbd al-Wahhab. Al-Ṭabʻah 1, Dar al-Shuruq, 1993.
+Newman, Mark. Networks: An Introduction. 1st ed., Oxford University Press, 2010.
+Nooy, Wouter de and et al. Exploratory Social Network Analysis with Pajek. Third edition,
+Cambridge University Press, 2018. Open WorldCat, https://doi.org/10.1017/9781108565691.
+Ortega, José Luis. “Cover Versions as an Impact Indicator in Popular Music: A Quantitative
+Network Analysis.” PLOS ONE, vol. 16, no. 4, Apr. 2021, p. e0250212. PLoS Journals,
+https://doi.org/10.1371/journal.pone.0250212.
+O’Shea, Susan. The Art Worlds of Punk-Inspired Feminist Networks - a Social Network Analysis of
+the Ladyfest Feminist Music and Cultural Movement in the UK. 2014. The University of
+Manchester (United Kingdom), Ph.D. ProQuest, https://www.proquest.com/docview/
+1780282051/abstract/6A8AD087204C45D5PQ/1.
+Ozment, Elizabeth Whittenburg. “The Sociology of Musical Networks.” International Sociology,
+vol. 30, no. 5, Sept. 2015, pp. 448–56. SAGE Journals, https://doi.org/10.1177/
+0268580915597184.
+Park, Juyong, et al. “The Social Network of Contemporary Popular Musicians.” International
+Journal of Bifurcation and Chaos - IJBC, vol. 17, Oct. 2006, https://doi.org/10.1142/
+S0218127407018385.
+Qureshi, Regula Burckhardt. Music and Marx. Routledge, 2015.
+Racy, Ali Jihad. “Music in Nineteenth-Century Egypt: An Historical Sketch.” Selected Reports in
+Ethnomusicology, vol. 4, 1985, pp. 157–79.
+---. Musical Change and Commercial Recording in Egypt, 1904-1932. 1977. University of Illinois,
+PhD dissertation.
+
+Journal of Cultural Analytics
+
+27
+
+Poet-Composer Collaborations in Modern Egyptian Song: A Social Network Analysis Approach to Music History
+
+---. “Record Industry and Egyptian Traditional Music: 1904-1932.” Ethnomusicology, vol. 20, no. 1,
+1976, pp. 23–48, https://doi.org/10.2307/850819.
+---. “Sound and Society: The Takht Music of Early-Twentieth Century Cairo.” Selected Reports in
+Ethnomusicology, vol. 7, 1988, pp. 139–70.
+---. “The Waslah: A Compound-Form Principle in Egyptian Music.” Arab Studies Quarterly, vol. 5,
+no. 4, 1983, pp. 396–403.
+Rehding, Alexander. “Ecomusicology between Apocalypse and Nostalgia.” Journal of the American
+Musicological Society, vol. 64, no. 2, 2011, pp. 409–14, https://doi.org/10.1525/
+jams.2011.64.2.409.
+Rose, Stephen, et al. “Writing a Big Data History of Music.” Early Music, vol. 43, no. 4, Nov. 2015,
+pp. 649–60. Silverchair, https://doi.org/10.1093/em/cav071.
+Sahab, Victor. Al-Sabʿa al-Kubār Fi al-Mūsiqā al-ʿArabiyya al-Muʿāṣira (The Seven Greats of
+Contemporary Arabic Music). Dār al-ʻIlm lil-Malāyīn, 1987.
+Scott, John. Social Network Analysis: A Handbook. SAGE Publications, 2000.
+Small, Christopher. Musicking : The Meanings of Performing and Listening. University Press of
+New England, 1998.
+Solie, Ruth A. Musicology and Difference: Gender and Sexuality in Music Scholarship. University of
+California Press, 1995. Open WorldCat, http://hdl.handle.net/2027/heb.06281.
+Urberg, Michelle. “Pasts and Futures of Digital Humanities in Musicology: Moving Towards a
+‘Bigger Tent.’” Music Reference Services Quarterly, vol. 20, no. 3–4, Oct. 2017, pp. 134–50.
+Taylor and Francis+NEJM, https://doi.org/10.1080/10588167.2017.1404301.
+Wasserman, Stanley, and Katherine Faust. Social Network Analysis: Methods and Applications. 1st
+ed., Cambridge University Press, 1994, https://doi.org/10.1017/CBO9780511815478.
+Watts, Duncan J. Six Degrees: The Science of a Connected Age. W. W. Norton & Company, 2004.
+Weyde, Tillman, et al. “Big Data for Musicology.” Proceedings of the 1st International Workshop on
+Digital Libraries for Musicology, Association for Computing Machinery, 2014, pp. 1–3,
+https://doi.org/10.1145/2660168.2660187.
+Wilson, Robin J. Introduction to Graph Theory. 2015.
+Zaki, ʿAbd al-Hamid Tawfik. al-Muʿasirun min Rawwad al-Musiqa al-ʿArabiyya. al-Hayʾa alMisriyya al-ʿAmma li-l-Kitab, 1993.
+---. Aʿlam al-Musiqa al-Misriyya ʿabr 150 sana. al-Hayʾa al-Misriyya al-ʿAmma li-l-Kitab, 1990.
+Zhang, Xiaowei, et al. “A Study of Music Genres Based on Social Networks and Statistical
+Methods.” 2023 4th International Conference on Intelligent Computing and Human-Computer
+Interaction (ICHCI), IEEE Xplore, 2023, pp. 366–71, https://doi.org/10.1109/
+ICHCI58871.2023.10277839.
+Zuhur, Sherifa. Asmahan’s Secrets : Woman, War and Song. Center for Middle Eastern Studies,
+University of Texas at Austin, 2000.
+
+Journal of Cultural Analytics
+
+28
+
+

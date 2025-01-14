@@ -1,0 +1,1042 @@
+Boyle, Dominick. “‘Authentic and Amazing’: Authenticity as an Evaluative Category in
+Online Consumer Restaurant Reviews.” Journal of Cultural Analytics, vol. 7, no. 2, Feb.
+2024, https://doi.org/10.22148/001c.91289.
+
+ARTICLE
+
+“Authentic and Amazing”: authenticity as an evaluative category in
+online consumer restaurant reviews
+Dominick Boyle
+Keywords: authenticity, online consumer restaurant reviews, computational methods, corpus driven discourse analysis, sentiment analysis
+https://doi.org/10.22148/001c.91289
+
+Journal of Cultural Analytics
+Vol. 7, Issue 2, 2022
+
+Claims and evaluations of authenticity are a powerful resource in food discourse:
+reviewers use evaluations of authenticity to demonstrate their expertise, and
+restaurants viewed as authentic receive higher star ratings. But the multivalent
+nature of authenticity presents challenges for researchers. This contribution seeks
+to understand authenticity by combining computational and corpus driven
+discourse analysis methods. O’Connor et al. (2017) sought to quantify the
+impact of authenticity on consumer perception via four theoretical authenticity
+types (type, craft, moral, and idiosyncratic). This method is tested using a sample
+of US restaurant reviews and compared to sentiment analysis metrics computed
+from the same dataset. All types except for moral authenticity showed a positive
+effect on sentiment. Authenticity in restaurant reviews is further investigated by
+examining collocates of terms referring to authenticity and compiling keywords
+of subcorpora created from high and low scoring reviews. Reviewers most often
+topicalize authenticity in terms of place, taste, and descriptors of ethnicity. These
+findings illustrate how combining corpus driven discourse analytical and
+computational methods can illuminate evaluation from multiple perspectives and
+provide insights which may help to improve computational approaches in the
+future.
+
+Introduction
+While restaurant reviews have traditionally come from sanctioned experts such
+as food writers and restaurant critics, platforms such as Yelp, Google and
+TripAdvisor offer users a plethora of information on businesses created by
+other users. This has led to the rise of a now ubiquitous type of social discourse:
+the consumer review. Reviewers participate in online discourse communities in
+which cultural and culinary capital is built via evaluation and where reviewers
+challenge existing hierarchies in food discourse while also staking their own
+claims to culinary expertise (Vásquez and Chik). Reviewers are also concerned
+with their own identity construction and self-presentation over the course
+of a review, and employ various discursive strategies, such as “narratives to
+portray their own social or psychological characteristics, role or stance” to
+cast themselves in a positive light (Jurafsky et al., “Narrative Framing”). This
+means that restaurant reviews are not merely a sober evaluation of the dining
+experience, but messy, complex, and context dependent (Vásquez 28). This
+becomes especially clear when looking in detail at the particular aspects of their
+experience which reviewers evaluate and to which they draw attention. For
+instance, in the following excerpt from a consumer review, the author draws
+attention to the fact that the business is family owned, the family comes from
+Vietnam, and that they don’t use MSG by grouping them together in one list.
+What do they have in common?
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+Ex. 1: This is the best pho you will ever have. They are straight
+from Vietnam, family owned, no msg, authentic and amazing.
+Been to los [sic] Angeles, little Saigon in Westminster, and all
+over California. This is by far the best. (5 stars)
+I argue that their commonality lies in the fact that they all contribute, in
+different ways, to the construction of the restaurant as authentic.
+In this paper I view authenticity from an attributional point of view, meaning
+that it is something assigned to the restaurant, food, or experience from the
+perspective of the reviewer as the result of dynamic social processes (Lacoste
+et al. 2). Rather than looking at how the reviewers authenticate or legitimize
+their own reviews, I am interested here in how reviewers topicalize authenticity
+and utilize it as an explicit or implicit evaluative concept. Authenticity as an
+evaluative concept has proven to be analytically challenging. Past research has
+clearly demonstrated that restaurants seek to influence consumers’ perceptions
+of authenticity and that consumers consider it an important part of their
+dining experience.1 However, multiple meanings of the term make it
+challenging to assess the roles that various facets of authenticity play in
+consumer evaluations. This paper combines computational and corpus
+linguistic approaches to more fully understand the role that authenticity plays
+in the discourse of consumer reviews by addressing the following research
+questions:
+RQ1: How do evaluations of authenticity relate to the overall
+sentiment of reviews?
+RQ2: How are evaluations of authenticity realized in context
+and does this align with prior theoretical models of authenticity
+evaluations?
+
+The role of authenticity in food discourse: distinction
+The literature on authenticity is exceptionally broad and covers many
+disciplines, but two perspectives in the literature are relevant here: a discourse
+analytical approach grounded in sociolinguistics, and an applied approach
+grounded in organizational and management studies. While the two
+approaches come from very different backgrounds, the computational method
+developed by O’Connor et al. adds a useful perspective to the predominantly
+qualitative and discourse analytical approach taken in many studies on
+authenticity in food discourse, as well as the corpus driven analysis in the
+second half of this paper. The hope is that by combining two approaches a
+fuller picture of authenticity evaluations will emerge.
+
+1 See Jurafsky et al., “Linguistic Markers”, Skibinsky, and Vásquez and Chik.
+
+Journal of Cultural Analytics
+
+2
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+The work of Bourdieu has provided perhaps the most influential model for
+analyzing social processes in food discourse. He argues that language use,
+particularly “technical, archaic and esoteric” is a crucial distinguishing feature
+between the connoisseur and the common consumer (Bourdieu 279). Common
+choices in language about food by businesses or consumers can create social
+cohesion within the group in question in different class or social contexts,
+while also serving as grounds to distinguish one group from the other (Lakoff
+150). Moreover, linguistic changes in menus over time, such as the semantic
+bleaching and subsequent disappearance of gourmet from menus or
+fluctuation in the length of menu item descriptions, can be seen as the result
+of a continual process of negotiation of cultural capital as previous markers of
+distinction become commonplace (Jurafsky et al., “Linguistic Markers”; Lakoff
+156–57). One aspect that is consistently oriented to by both restaurants and
+customers as a source of distinction is authenticity, but the ways in which
+authenticity is invoked and the meanings of the term vary widely from context
+to context.
+
+Sociolinguistic Approaches to Authenticity
+In general, three to six senses or types of authenticity are common in the
+literature.2 Coupland's influential model includes the five semantic dimensions
+of ontology, historicity, systemic coherence, consensus, and value (418-9). Van
+Leeuwen identifies four aspects which can be involved in creating or evaluating
+authenticity: genuine provenance or authorship, faithfulness of representation,
+authorization by some external authority, and the expression of a true
+sentiment or style (392-93). He stresses the social construction of authenticity
+as well as the role it plays in the reproduction of normative values and
+hierarchies. In this view, authenticity is an evaluation of the validity of an
+object or the actions of an agent, and is therefore tied to the cultural, social, and
+historical forces which enforce certain judgements as valid over others.
+Mapes identifies five rhetorical strategies (historicity, simplicity, pioneer spirit,
+lowbrow appreciation, and locality/sustainability) used to evoke authenticity in
+food discourse in the New York Times. Her analysis focuses on the concept
+of ‘elite authenticity’ and the ways in which the rhetorical strategies employed
+by authors simultaneously normalize the privilege of the upper-class while
+disavowing elitism and romanticizing the food and practices of the lower-class.
+Thus, she argues that authenticity is a crucial way in which social distinction
+is produced and made attractive in media discourse (283). Building on Mapes,
+Skibinsky has found that Asian restaurants in the U.S. carefully mediate
+authenticity to produce an indistinct ‘Asian’ identity which is simultaneously
+exotic but non-threatening to appeal to the white, middle-class consumer.
+
+2 Compare Lacoste et al., which takes a sociolinguistic approach, with Lehman et al. and Newman and Smith from management and
+
+organizational studies.
+
+Journal of Cultural Analytics
+
+3
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+The work of Jurafsky et al. (“Linguistic Markers”) and Freedman and Jurafsky
+likewise focuses on authenticity as a driver of distinction between social classes.
+They argue that restaurants and advertisers cater to clientele of different
+socioeconomic status by emphasizing different aspects of authenticity with
+which their target customer can identify, and that these linguistic decisions,
+which highlight different markers of distinction, are domain and context
+dependent. Jurafsky et al. groups authenticity in restaurant menus into two
+primary metaphors: naturalness and tradition. Words referencing naturalness
+and the source or type of ingredients (natural, heirloom, local) were used by
+more expensive restaurants, whereas mentions of tradition and historicity (old
+fashioned, mother, home style) correlated with lower priced restaurants
+(Freedman and Jurafsky 51–52).
+However, authenticity is not just something projected by restaurants and
+perceived by consumers. Karrebæk and Maegaard engage in a detailed study
+of the construction of authenticity in a single Danish fine-dining restaurant.
+Their article shows how intricately authenticity is discursively achieved in
+different frames and semantic dimensions by using a variety of multimodal
+resources and emphasizes the active role consumers play in co-constructing
+and determining the authenticity of their own experience. Also focusing on
+consumers, Vásquez and Chik observed how lay reviewers judged the
+authenticity of restaurants as part of building their ‘culinary capital’ in order
+to assert their expertise and belonging to a gastronomical social elite, i.e. to the
+ranks of connoisseurs. This was accomplished by the use of discursive resources
+such as referencing first-hand knowledge gained through travel and indicating
+a personal or heritage connection to the cuisine, especially in reviews of ‘ethnic
+cuisine’ (242).
+For lay reviewers, discussing authenticity is an important resource in identity
+construction, and reviewers actively seek and co-construct authentic
+experiences. As Coupland notes, “Authentic things […] are authenticating for
+people who recognize their authenticity, as well as in themselves being socially
+authenticated.” (419). By eating at authentic restaurants and telling others
+about it, reviewers increase their own culinary and cultural capital,
+distinguishing themselves from other consumers who are not ‘in the know’
+and marking themselves as having authentic taste, in all senses of the word.
+However, even if a reviewer deems the restaurant to be inauthentic, making
+such an evaluation involves claiming the knowledge and authority needed to
+make an evaluation of authenticity in the first place, thereby preserving the
+reviewer’s positive self-presentation and cultural capital.
+
+The Quantification of Authenticity
+The motivation of management studies to quantify consumer perceptions of
+authenticity reflected in textual data has largely been to understand its effect
+on value judgments and consumer satisfaction. The model adopted for the
+quantitative analysis in this article divides authenticity into four subtypes: type,
+
+Journal of Cultural Analytics
+
+4
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+moral, idiosyncratic, and craft authenticity. Type authenticity relates to fidelity
+to genre or archetype, whereas moral authenticity describes an evaluation of
+the sincerity of the views and choices expressed by individuals or organizations.
+Closely related to type authenticity, craft authenticity is tied to the skill and
+quality of production, while idiosyncratic authenticity concerns the perceived
+uniqueness and quirkiness of an organization or product, tying it to moral
+authenticity (O’Connor et al. 3–4).3
+Both Kovács et al. and O’Connor et al. adopt a lexicon-based approach similar
+to sentiment analysis. Kovács et al. found that reviews with higher authenticity
+scores correlated to a higher star rating, and that consumers were willing to pay
+higher prices for products or experiences they considered more authentic (12,
+17). Further research found that each of the authenticity subtypes mentioned
+above exerted a positive effect on the evaluation of restaurants measured by
+star rating and willingness to pay, but to a different degree. This more nuanced
+approach aimed to account for the ways in which evaluating authenticity
+involves multiple and overlapping context dependent meanings, as discussed in
+the previous section (O’Connor et al. 9–11).
+The clarity provided by the framework of Newman and Smith is beneficial
+for any attempt to approach authenticity from a quantitative or ‘big-data’
+perspective. In their typology of authenticity judgements they emphasize that
+the criteria against which authenticity is judged (external or internal) as well
+as the type of referent being evaluated (agent or object) shape the way
+authenticity is evaluated. In their model it is the interaction between these two
+dimensions which gives rise to different types of authenticity (614).
+This insight allows us to make informed predictions regarding the types of
+authenticity evaluations likely to be made in the data here. For instance, fivestar reviews have been found to focus most explicitly on the food, whereas onestar reviews tend to be narratives focusing on the actions of people (Jurafsky
+et al., “Narrative Framing”). Thus, evaluations of type and craft authenticity
+might be most prevalent in consumer reviews of restaurants with higher
+authenticity and sentiment scores, whereas references to moral and
+idiosyncratic authenticity may be more present in reviews with low sentiment
+and authenticity scores. As can be surmised from the discussion above, being or
+acting authentic is generally considered a positive attribute, so we can predict
+that authenticity in general will be correlated with an increase in positive
+sentiment. However, the impact that the different types of authenticity
+discussed above have on sentiment, as well as the way in which authenticity
+is evaluated in context—what is evaluated and how this evaluation is
+achieved—are still not fully understood.
+
+3 Examples from the data used here include: Type: “This place is authentic real Hawaiian poke.” Moral: “Service was wonderful, extremely
+
+friendly and genuine.” Craft: “My Hemingway was fantastic! thanks to their expert bartenders…” Idiosyncratic: “Unique blends of flavors - not
+your typical south of the border fare.”
+
+Journal of Cultural Analytics
+
+5
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+Thus far we have covered many different models of authenticity from different
+disciplinary perspectives. I view authenticity as an attributional concept which
+is the result of dynamic social processes, rather than an essential quality of an
+object or agent. It is an important means of distinction between consumers and
+classes, but because of its social contingency the meaning of and markers for
+authenticity must be continually negotiated. Different ‘meanings’, ‘semantic
+dimensions’ or ‘types’ of authenticity are relevant in different contexts, and
+often multiple types of authenticity are relevant simultaneously. I hope that
+by attempting to quantify aspects of authenticity we can gain a birds eye
+perspective which is complementary to the diverse research which has come
+before. In this paper, I will adopt the approach of O’Connor et al. for the
+quantitative investigation of the relationship between sentiment and
+authenticity because the scores they provide with their lexicon make it easier to
+operationalize and the types of authenticity they identify are largely compatible
+with the other models discussed above. This will allow us to answer RQ1. I
+will then construct corpora based on authenticity scores which will allow us to
+answer RQ2.
+
+Data and Methods
+The data set under analysis was provided free of charge for academic use by the
+company Yelp, which offers a platform for users to share reviews of businesses
+they have visited and to read the reviews of others, among other services. Using
+R, from a total corpus of N= 6,685,900 reviews from 10 metropolitan areas,
+I selected all English-language reviews of U.S. restaurants, leaving me with
+n= 2,595,487 reviews.4 From these reviews I created three corpora. Corpus
+1 was created from a sample of n= 500,000 random English-language U.S.
+restaurant reviews for an initial investigation into the data. Filtering for reviews
+containing at least one item from the O’Connor et al. authenticity lexica
+resulted in n= 283,549 reviews for the analysis. Corpus 2 was used for the
+main quantitative analysis and consists of all English-language U.S. restaurant
+reviews from the original Yelp dataset with 5 or more instances of words from
+the authenticity lexica. This data selection process left me with n= 71,269
+reviews, or 2.75% of the total number of English-language U.S. restaurant
+reviews. While this removed a considerable number of the reviews, the amount
+of data points collected per review provided an ideal data set for investigation.
+The aim here was to improve accuracy of the automatically generated
+authenticity score. To aid in a closer look at the realization of authenticity
+evaluations in the corpus, I constructed Corpus 3 from a sample of n= 70,887
+reviews from Corpus 1. Reviews with an average authenticity score in the top
+quartile were grouped into the high authenticity review (HAR) subcorpus and
+reviews with scores in the bottom quartile into the low authenticity review
+
+4 The data used for this analysis was obtained in 2019. The current version of the Yelp Dataset has been expanded, see www.yelp.com/dataset.
+
+Journal of Cultural Analytics
+
+6
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+(LAR) subcorpus. Corpus 3 contains roughly 11 million tokens, with the
+HAR subcorpus containing 2.1 million tokens and the LAR subcorpus 3.4
+million tokens.
+The next task was to compute sentiment polarity score, authenticity type score,
+and average authenticity scores for each review. Since the concept of
+authenticity encompasses several different meanings, it is likely to be expressed
+with a variety of different lexical items, not merely using the word authenticity
+or authentic. For this reason, I adopted the full wordlist of 91 authenticity
+terms from O’Connor et al., along with the system scoring each word on a scale
+from 0-100 in terms of how much it expresses each one of the 4 authenticity
+types identified in their paper: moral, type, craft, and idiosyncratic
+authenticity. Items included high scoring terms such as skilled (type: 81, moral:
+77, idio: 60, craft: 58) or pure as well as low scoring terms like false or bogus
+(moral: 14, craft: 14, idio: 16 type: 19).5 In order to minimize collinearity
+between the scales I developed another version (Appendix 1) which only
+contains the words most strongly associated with each subtype. If words had
+the same score in more than one scale, they were retained in all of the scales in
+which the score was the same. If a single word scored both above 50 in one scale
+but below 50 in another scale the word was retained in each scale.
+Sentiment was analyzed at the review level using a lexicon-based approach.
+Using the sentimentr package in R, I computed the sentiment of each review
+with the included “Jockers-Rinker” lexicon modified to remove all terms which
+also appeared in the authenticity lexicons (Rinker). The authenticity type
+lexica were also loaded into sentimentr and used to compute an authenticity
+score for each review reflecting the overall valence of the authenticity type
+terms present in the review. An advantage of using sentimentr for computing
+authenticity and sentiment scores is that it uses a rule-based approach to detect
+negation, downgraders, upgraders, and other lexical items which can
+contribute to or modify sentiment in the text. In addition, I approximated
+a general authenticity score for each review by taking the average of the
+authenticity subtype scores. To make the authenticity and sentiment scores
+more comparable, I rescaled all scores between 1 and -1. Finally, I used linear
+regressions to predict the relationship between authenticity score and
+sentiment.
+For the analysis of Corpus 3, I chose the quanteda package in R and Sketch
+Engine (Benoit et al.; Kilgarriff et al.). Sketch Engine was used as it provides a
+way to explore the data with a user-friendly graphical interface. This allowed
+me to quickly follow several lines of investigation as my familiarity with the
+data grew. Quanteda on the other hand is highly customizable, and so was an
+ideal environment for implementing the custom lexicons, calculating keyness
+
+5 Detailed information is available in O’Connor et al. in Appendix S1, S2, and S3.
+
+Journal of Cultural Analytics
+
+7
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+statistics not available in Sketch Engine and preparing the data for linear
+regressions. Keywords were computed with both the HAR and LAR
+subcorpora serving as target and reference corpus in turn. Keyword analysis is
+one of the central methods used in corpus driven research methodologies. It
+is usually aimed at uncovering salient frequency differences of words between
+the target corpus and a reference corpus which provides texts for comparison,
+but it can be done with other metrics, such as dispersion (Brezina 79; Egbert
+and Biber). This allows researchers to understand the ‘aboutness’ of a corpus
+through the analysis of these lists ranked by statistical significance or effect
+size to measure saliency (Baker 125). Following Gabrielatos, I used Difference
+Coefficient to measure effect size and G2 to measure statistical significance
+with a cutoff of 18.81 (Gabrielatos 225). After an initial analysis I introduced
+a cutoff of n ≥ 5 for absolute frequency in the target corpus in order to
+remove extremely infrequent keywords. Based on the literature review and
+an examination of collocates and concordances, I then grouped the top 25
+keywords according to semantic domain.
+
+Results
+The Link between Sentiment and Authenticity
+Comparing authenticity scores with sentiment polarity scores provided the
+opportunity to compare two lexicon-based text analysis techniques covering
+differing but overlapping semantic domains. This is particularly useful to gain a
+sense of how authenticity analysis, a relatively new technique, performs against
+a more established metric. The results from Corpus 1 show that an increase
+in authenticity score correlates with an increase in sentiment. Figures 1 and
+2 show average authenticity score plotted against sentiment for two data
+selection scenarios. Figure 1 shows all reviews from Corpus 1, indicating a
+slight positive relationship between authenticity and sentiment while also
+showing considerable variance in the data. This could have been due to a lack
+of data points to accurately calculate the authenticity score per review since
+authenticity is a narrower domain of evaluation than sentiment in general. To
+see if this might be the case, the second model only used reviews with 5 or more
+matches for words in the O’Connor et al. lexica. This considerably reduced
+the variance in the authenticity scores, as visible in fig. 2, and the linear model
+predicted a slightly larger positive effect of authenticity on sentiment and was
+able to explain more of the variance in the data, as shown by the higher R2.
+However, one downside of this approach is that the number of reviews was
+reduced to n= 7,350. Since there is a notable bias towards positive language in
+restaurant reviews this most clearly impacted the lower range of authenticity
+and sentiment scores (Jurafsky et al., “Narrative Framing”). Because of this,
+Corpus 2 included all reviews with 5 or more authenticity terms to add as many
+data points as possible at the lower end of the authenticity and sentiment score
+range, while maintaining the benefits of the frequency cutoff.
+
+Journal of Cultural Analytics
+
+8
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+Figure 1. Average authenticity score compared to sentiment for all reviews in Corpus 1.
+
+Figure 2. Average authenticity score compared to sentiment score for all reviews in Corpus 1 containing 5 or more
+authenticity terms.
+
+As can be seen from table 1 and fig. 3, this improved the model considerably.
+Expanding the size of the data set allowed for a slightly larger R2, smaller
+standard deviation, and showed stronger effect of authenticity on sentiment.
+These results show that the average authenticity rating of a review increases as
+the sentiment rating increases. This means that the more positive authenticity
+words are present in a review, the more the writer of that review uses positive
+
+Journal of Cultural Analytics
+
+9
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+Figure 3. Average authenticity score compared to sentiment score for all reviews in Corpus 2.
+
+Table 1. Results of the linear regression showing the predictive power of average authenticity score on sentiment score for
+three different data selection scenarios.
+
+language overall. This finding adds to the body of research which has found
+numerous positive outcomes for organizations attached to an increased
+perception of authenticity, such as O’Connor et al. and Lehman et al.
+While the previous analysis was done with the original lexica from O’Connor
+et al., the analysis of the individual subtypes was done with the modified lexica.
+Looking at table 2, which shows the results of the linear model comparing the
+four types of authenticity evaluations, a more complex picture emerges: craft
+authenticity emerges as the strongest predictor of review sentiment, followed
+by idiosyncratic authenticity. This suggests that both positive evaluations of
+food and the quality of production, as well as the unique and inexplicable
+appeal and identity of a restaurant play an important role in shaping reviewers’
+evaluations of their dining experience. Type authenticity plays a smaller role
+but still contributes positively to sentiment. These findings support the
+Journal of Cultural Analytics
+
+10
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+Table 2. Predictive power of authenticity subtype on sentiment in Corpus 2.
+
+assertion that reviewers seek to establish culinary capital in their texts by
+highlighting aspects of restaurants which contribute to social
+distinction—especially if reviewing a restaurant positively. While words
+associated with type authenticity such as delicious or real are typically used
+positively, affirming something as real caramel or real milk offers the reviewer
+less of an opportunity to display their culinary knowledge and create
+distinction than describing a dish as having creative spicing.
+Contrary to the findings of O’Connor et al., which found that all subtypes
+of authenticity contributed positively to star ratings, moral authenticity
+contributed negatively to sentiment. One potential explanation for this slightly
+negative effect is that the positive associations which survey respondents had
+with words such as decent or pure when the scores were generated for the
+authenticity lexica of O’Connor et al. are related to abstract or prototypical
+meanings that are less readily transposed to the restaurant domain than those
+of the other authenticity types. Specifically in relation to authenticity, whether
+someone is evaluating an object or an agent has been found to shape the type
+of evaluation made (Newman and Smith 614). For example, saying someone
+is a decent person is a positive evaluation of authentic moral character, whereas
+saying that the sandwich was decent is much less positive, and could be
+understood as a neutral or even slightly negative evaluation of the taste or
+quality of the food depending on the context.6 This is confirmed by a look in
+Corpus 3 at collocates of decent (n = 6,927, FPM = 618.68), the most frequent
+word from the moral authenticity lexicon.7 When sorting by LogDice, the
+strongest left and right noun lemma collocates within a three-word window
+include objects such as price (LogDice = 9.82), selection (LogDice = 9.53), and
+
+6 See also Vásquez 34-5 for a discussion of lukewarm evaluations in consumer reviews.
+7 FPM = frequency per million words
+
+Journal of Cultural Analytics
+
+11
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+food (LogDice = 9.14), whereas references to agents who could be evaluated
+on moral authenticity appear less often and collocate less strongly.8 The only
+reference to an agent in the top 20 collocates was service (LogDice = 8.73).
+In addition, positive scoring moral authenticity terms have a considerably
+higher relative frequency in one-star reviews (FPM = 700.63) than five-star
+reviews (FPM = 282.18) as well as in the LAR subcorpus (FPM = 992.54) than
+in the HAR subcorpus (FPM = 321.3). The highest scoring moral authenticity
+term, caring (FPM = 8.57), is indeed used to evaluate the moral authenticity of
+agents in the reviews in Corpus 3, but appears infrequently compared to the
+other terms.9 As noted above, since one star reviews are more likely to focus
+on people and their actions rather than the food, it would follow that words
+tied to moral authenticity, or rather a lack thereof, are more likely to appear
+in these contexts (Jurafsky et al., “Narrative Framing”). Moreover, types of
+negation which are not detectable by the current methodology, such as sarcasm
+or other complex forms of negation, may lead to inaccurate results—a common
+challenge in automated text analysis (Taboada 333). This is why tools from
+corpus linguistics were used to gain a deeper understanding of authenticity
+evaluations in context.
+
+Corpus Analysis
+Authentic cuisine and authentic fare: Evaluations with
+‘authentic’
+To better understand the way authenticity was topicalized and evaluated in
+the data, and to better understand and assess the results of the quantitative
+metrics adapted from O’Connor et al., a small-scale corpus driven investigation
+was completed using Corpus 3 and the HAR and LAR subcorpora. This
+was partially inspired by Vásquez, who found that top down, automated text
+analysis techniques, such as the ones used in the previous section, can be
+improved with a closer qualitative corpus driven analysis (30).
+To begin, a “word sketch” of authentic in Sketch Engine was created for the
+entire corpus to gain a better sense of how the most explicit reference to
+authenticity was used in the data. Word Sketches are particularly useful for
+this type of initial investigation because the data is classified into subcategories
+such as “nouns modified by ‘authentic’” or “subjects of ‘be authentic’”.
+Unsurprisingly perhaps, the most frequent noun modified by authentic and
+the most common subject of be authentic was food. Other common subjects
+of be authentic include place and taste. After food, the most frequent nouns
+modified are restaurant, cuisine, dish, place, taco, pizza, flavor, experience and
+taste. Even at this early stage in the analysis, the presence of words such as
+cuisine and experience show the close relationship between authenticity and
+
+8 For information on LogDice see Rychlý.
+9 i.e. Michael the manager is helpful, caring and nice as well!
+
+Journal of Cultural Analytics
+
+12
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+distinction, and indicate that consumers who style themselves as food
+connoisseurs expect to enjoy an ‘experience’ rather than just a meal (Mapes;
+Karrebæk and Maegaard). Likewise, cuisine and other synonyms for food (fare,
+cooking) which collocated strongly with authentic are distributed unevenly
+based on the authenticity score of reviews. All synonyms except for fare
+appeared more frequently in the HAR corpus than the LAR corpus. However
+the most pronounced difference was between the Germanic origin fare and
+the French cuisine in a manner echoing the register shift between French and
+Germanic origin English words noted in Mapes (281). In the HAR corpus
+the word cuisine (FPM = 25.9) appeared more than twice as frequently as fare
+(FPM = 10.63), while in reviews with the lowest authenticity scores cuisine
+(LAR FPM = 20.63) appeared less frequently than fare (LAR FPM = 22.51),
+as well as less frequently overall.
+By referring to food as fare, authors emphasize the typical but unremarkable
+nature of the food served. This points to the difficulty in using type
+authenticity as a means to build prestige—being typical, the restaurant is also
+not unique.
+Ex. 4 If you’re looking for the standard run-of-the-mill class fare,
+stay away. In fact you’re better off going to pizza hut across the
+street. If you want to push the edge of your comfort zone, you’ve
+found the right spot. […] Go, have fun, take a risk! (HAR, 4 stars)
+In ex. 4 the reviewer uses the typicality and simplicity associated with fare
+to create a rhetorical contrast between what most people eat and the cuisine
+they enjoyed, constructing a basis for distinction and building culinary capital.
+They identify the restaurant they are reviewing as a place to “push the edge
+of your comfort zone” with an atypical culinary experience, and not for the
+culinary naive or faint of heart who might be used to less adventurous fare. This
+illustrates how reviewers use subtle language shifts to draw boundaries between
+experiences using type authenticity.
+
+Taste and the Burden of Authenticity
+Looking at adjectives used with authentic points us in a different direction. The
+most frequent adjectives used in combination with authentic were Mexican,
+Italian, Chinese, delicious, great, good, fresh, tasty, Thai and Korean, such as in
+in ex. 5.
+Ex. 5 Highly recommended to everyone who likes HK style
+cooking and authentic Chinese cuisine.
+In fact, many more mentions of ethnicity were included, and examining the
+strongest 1R collocates authentic of showed that mentions of ethnicity made
+up 19 of the top 25 strongest collocates when sorted by LogDice. Together
+these data indicate that lay concepts of authenticity are closely intertwined
+with ethnicity, and that these evaluations often concern type authenticity.
+
+Journal of Cultural Analytics
+
+13
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+When most explicitly evaluating authenticity, reviews are concerned with the
+taste of the food as an authentic representation of ethnic cuisine. Newman and
+Smith's model suggests that reviewers are assessing authenticity in this manner
+according to an internal reference, in this case based on their own history of
+dining experiences and evaluating the fit of the taste of the food to a specific
+category.
+Therefore, most of the food judged explicitly on authenticity is food which is
+marked: perceived by the reviewer as being ethnic cuisine of some kind and
+therefore subjected to an additional evaluation other than tasting just good or
+bad. This is oriented to explicitly by reviewers who chain evaluations together
+such as authentic and delicious or authentic and amazing in ex. 6 (already
+included as Example 1 above):
+Ex. 6 This is the best pho you will ever have. They are straight
+from Vietnam, family owned, no msg, authentic and amazing.
+Been to los [sic] Angeles, little Saigon in Westminster, and all
+over California. This is by far the best. (5 stars)
+In this excerpt, the reviewer gives us a list of attributes which contribute to
+their evaluation of the restaurant as authentic. This encompasses the assumed
+ethnicity and history of the people who own the restaurant (i.e. straight from
+Vietnam, emphasizing a close connection to the country where the cuisine
+originates), the type of business (family owned vs. chain) as well as their
+cooking techniques (no MSG), therefore evaluating the restaurant in terms of
+type, moral, and craft authenticity. In the eyes of the reviewer, these attributes
+not only contribute to the Pho tasting amazing but also legitimize the taste
+as authentic. While reviewers also occasionally evaluated American cuisine in
+terms of authenticity, the only references found in the data from the United
+States in connection with authenticity mentioned regional cuisines, which can
+also be considered culturally marked (Chicago, BBQ, Southern).
+Restaurants seen as producing “non-American” cuisine are therefore placed
+under a burden of authenticity, where food must be perceived as authentic
+while also being non-threatening and not too strange. If the reviewer in ex. 6
+found out that the owners were not from Vietnam, or that it was a franchise,
+they might also revise their opinion of the taste or be inclined to account for
+their positive evaluation despite a potential lack of authenticity, as in ex. 7:
+Ex. 7 OK, I don’t want to hear that PJ Cheung’s10 is not
+authentic Chinese…..everybody knows that. The family enjoys
+coming here. (LAR, 3 stars)
+
+10 Names appearing in the data have been changed.
+
+Journal of Cultural Analytics
+
+14
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+Here, the reviewer defends against imagined criticism for their positive
+evaluation of the restaurant despite its inauthenticity. This insulates the
+reviewer from criticism, since it is the family and not the reviewer that enjoys
+the restaurant, while also marking family enjoyment as a more salient evaluative
+criteria than authenticity, which would typically be the most salient evaluative
+criteria for an ethnic restaurant.
+If reviewers are not able to integrate the taste or experience into their
+expectations, they may provide a justification for their negative review by
+ascribing this mismatch to different cultural norms or standards between them
+and the ethnic group represented, describing the food or restaurant as being
+too authentic. This dynamic can be seen in one reviewer’s justification of their
+dislike of an unfamiliar dish in ex. 8.
+Ex. 8 croquetas - we weren’t sure what these were because there
+wasn’t a description on the bar menu. Unfortunately, as soon as
+I took a bite I spat it back out into my napkin. Maybe this was a
+little too authentic for me. (2 Stars)
+The reviewer in the above example was clearly somewhat self-deprecating when
+declaring that the dish they spat out was “too authentic”—since they admit
+unfamiliarity with the cuisine they are eating, they blame themselves for not
+being able to adequately judge or appreciate the food. Nonetheless, describing
+the food as too authentic emphasizes the mismatch between their expectations
+and the unfamiliar food they received, which contributed to their negative
+review. This also plays a role in ex. 9 below, which is an extract from a longer
+review where the author describes seeing the chef re-serve food they rejected to
+other customers.
+Ex. 9 Since we were sitting on the line, we watched the server take
+it back to the Chef Tournant and show him – he took the plate,
+walked around to the wok side of the line - added what was left
+on our plate (that we’d returned) and put it on another order. […]
+Sadly as a result, this restaurant became a bit too authentic for my
+repeat business…
+While the conclusion may likewise be a bit tongue-in-cheek, the reviewer’s
+focus on authenticity is telling. The association of an unhygienic practice with
+‘authenticity’ in the context of a Chinese restaurant draws on a long history
+of discourse in the United States which stigmatizes Asian cooking practices
+in general and Chinese cuisine in particular as exotic, deviant and unclean
+(Mosby 135). By referring to the restaurants as too authentic, both reviewers
+are discursively constructing a boundary between themselves and the readers
+of the review as part of the hegemonic culture on one side, and the culture
+represented by the cuisine they are eating on the other. The examples above
+illustrate the double-bind restaurants are placed in by the burden of
+authenticity: ethnic restaurants which match consumers preconceptions of
+
+Journal of Cultural Analytics
+
+15
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+Table 3. Top 25 keywords when comparing HAR and LAR subcorpus from Corpus 3, arranged by semantic domain and
+by keyness according to difference coefficient. Words also appearing in the authenticity lexicons have been removed.
+
+type authenticity are praised for it, but a negative experience may just as well
+be ascribed to (taste) preferences or cultural norms of the group represented
+by the restaurant being reviewed. While infrequent in the data (n = 4), these
+examples provide an interesting insight to the ways in which type authenticity
+judgements interact with prior beliefs and prejudices. As Lehman et al. note,
+“authenticity is a good thing—so long as the referent carries appeal” to the
+consumer (22).
+
+Keyword analysis: authenticity types and distinction
+In the next phase of the analysis, I computed keyword lists for the HAR and
+LAR subcorpora by comparing them to each other in turn. This was done
+primarily to provide a more detailed understanding of the types of discourse
+uncovered by high and low authenticity scores, and it acts as a check on the
+quantitative methodology used above. For example, while type authenticity
+came to the foreground in the previous discussion of the realization of
+evaluations using authentic, craft and idiosyncratic authenticity showed more
+of a positive effect on sentiment than type authenticity. By examining how
+authenticity is evaluated in context in subcorpora made up of either very high
+or very low authenticity scores, we will more effectively be able to answer RQ2.
+Table 3 shows the results of the keyword analysis. Since words which are
+included in the lexicon of O’Connor et al. are the basis of the authenticity
+scores which were used to create the two subcorpora, I removed them from this
+analysis and the next keyword was selected until 25 keywords per subcorpus
+was reached. The full keyword rankings by difference coefficient including any
+keywords from the authenticity lexica are in Appendix 2.
+
+Journal of Cultural Analytics
+
+16
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+There are a number of differences which emerge between the two keyword
+lists in the analysis. Globally, there is a clear contrast in the emotional tenor
+of the two lists. The keywords from HAR reviews are clearly more positive
+overall. Words reviewers used as part of narratives illustrate this fundamental
+difference, with words such as celebrated or complementary signaling more
+positive experiences than denied or refund, as can be seen by comparing ex. 10
+and 11.
+Ex. 10 After my meal, I was brought some complementary and
+homemade coconut-pineapple ice cream. F@*$ing delicious.
+Thank you Chippy’s. I will be back. (HAR, 5 stars)
+Ex. 11 I wasn’t looking for a refund or freebie, but he didn’t even
+offer one, just denied all accountability… (LAR, 1 star)
+The category of EVALUATIVE WORDS contains keywords which were used
+in explicit evaluations, such as typical evaluative adjectives and adverbs, as well
+as some more creative evaluative resources like 10/10 or a bust, as in It was
+a bust of a dinner. Comparing the HAR and LAR keyword lists reveals an
+absence of positively connoted evaluative words in the top keywords of the
+LAR reviews. Words in this category could potentially be used to expand
+the authenticity lexica, as they are often tied to one of the four authenticity
+types. Evaluative words in the LAR corpus such as miserable and disrespectful,
+as in ex. 12, evaluate the behavior of agents and describe a perceived lack of
+authenticity in their actions, and are therefore a negative evaluation of moral
+authenticity.
+Ex. 12 The waiter, an older man perhaps in his 60s, was
+downright miserable. He took our order and was reluctant to
+offer any information about any of the choices. (LAR, 1 star)
+In the HAR corpus, evaluative resources such as thoughtful, welcoming, and
+hospitable indicate sincerity in the actions of employees, and therefore indicate
+positive moral authenticity.
+Ex. 13 Janine and her team more than exceeded our expectations!
+The dishes she created were thoughtful, inspired and absolutely
+delicious! (HAR, 5 stars)
+Ex. 14 The service here is warm and welcoming (they are actually
+Thai!). (HAR, 5 stars)
+ex. 14 is particularly interesting because of the causal relationship the reviewer
+draws between moral and type authenticity: the warm welcome is all the
+warmer because the staff at the restaurant are actually Thai, and so much
+like in ex. 6 the lamination of type and moral authenticity strengthens the
+overall perception of authenticity by the reviewer. Craft authenticity was also
+emphasized by items such as talented and beautifully, which collocated
+
+Journal of Cultural Analytics
+
+17
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+strongly with participle adjectives such as presented, decorated, plated, and
+crafted. These lexical resources emphasize the skill tied to the preparation of
+the food or the design of the restaurant. Finally, the use of inventive was tied
+to evaluations of idiosyncratic authenticity and scrumptious primarily to type
+authenticity.
+One domain which was unique to low authenticity reviews in this analysis was
+EMOTION WORDS. These three verbs are all colloquial ways of expressing
+strong negative emotional reactions either to the behavior of others, to the
+food, or to some other aspect of their experience. As already noted, this feature
+of negative reviews was observed more generally by Jurafsky et al. from which
+they concluded that “one–star reviews are narratives of negative emotion,
+stories about something bad that happened involving what other people said
+and did” (Jurafsky et al., “Narrative Framing”). Likewise, the emotion words
+in the present data were tied to negative interpersonal experiences or where
+reviewers felt the moral order or cultural norms had been breached, such as in
+ex. 15.
+Ex. 15 Can’t complain to anyone when your server is the owner
+and on top of that she charged us for the “so called extras” boy
+was I pissed. Told her we’ll never go back to this cheating place
+again.
+Even the verb grossed out, which on a surface level appears to directly reference
+a strong negative gustatory reaction, was most often used as part of a narrative
+where being grossed out was the reaction to or result of moral transgressions.
+Ex. 16 After only a couple of bites I was grossed out by the whole
+thing, I turned and gave it to my dog. Sub Factory was a total
+waste of my money and time. Note: When you own a little
+independant [sic] food chain, you are supposed to “kick butt”
+and go the extra mile with your food, and your customers. I
+wasn’t satisfied or impressed as a customer, I will NOT be back,
+not even for free food, it’s that gross…
+In Example 16, the initial target of the evaluation is the taste of the food,
+but the reviewer quickly shifts to expressing moral outrage. In the aside, the
+reviewer accuses the business owner of a lack of moral authenticity since the
+actions of the business owner did not live up to the criteria by which the
+reviewer evaluates independent local businesses: not only did the food not taste
+good, but the reviewer felt there was no sincere effort in the production of the
+food or customer service, since the businesses did not go “the extra mile”. This
+demonstrates how taste can also become a moral matter for reviewers when
+evaluations are negative.
+Finally, the two domains FOOD: ETHNIC OR CACHÉ and FOOD:
+PROVENANCE OR TYPE illustrate a clear overlap between previous
+findings concerning authenticity and social distinction and those of O’Connor
+Journal of Cultural Analytics
+
+18
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+et al. For example, frosty in LAR reviews is used to describe the drinks or
+glasses the drinks are served in and echoes the more explicit language found
+in the menus of less expensive restaurants. Keywords in this category from the
+HAR corpus on the other hand were associated with the provenance (pacific),
+preparation (squeezed) or type (hangar, Ethiopian) of food. In addition,
+specific dishes mentioned were mostly foreign or foreign sounding words, such
+as agua (fresca), chilaquiles, carbonara, or broccolini. These findings closely
+echo Jurafsky et al. who noted that the most expensive restaurants in their
+data focused on natural authenticity and used more complex and sophisticated
+language (Jurafsky et al., “Linguistic Markers”). This is also seen clearly in ex.
+17, where there is considerable specificity in the description of the dish as well
+as a focus on the skill involved in the preparation of the dish. Scallops are not
+just cooked, but perfectly seared and silver dollar-sized, and they were not just
+served with broccolini but nestled on a bed of broccolini.
+Ex. 17 I ordered the scallops (on his recommendation) and they
+were delicious. Silver dollar-sized, perfectly seared, nestled on a
+bed of broccolini, sweet grape tomatoes, apricots, and capers.
+Taken together, these findings show that reviewers who use more positive
+authenticity words also emphasize aspects of their experience and types of
+authenticity which have been linked to more expensive restaurants, thereby
+drawing attention to their own culinary capital. This also suggests that craft
+authenticity may have had the strongest effect on review sentiment because
+it is the type of authenticity which provides the most effective means for
+reenforcing class distinction.
+
+Discussion and Conclusion
+Overall, the results of the quantitative and qualitative analyses show that
+authenticity has a net positive effect on sentiment. Reviewers who viewed their
+overall experience as positive also tended to view the restaurant they visited, the
+food they ate, or the experience they had as more authentic. While this finding
+may seem trivial, it is not always treated by reviewers as a foregone conclusion,
+as the presence of phrases such as authentic and awesome and ex. 7 illustrate.
+This finding was strengthened by looking at moments where the burden of
+authenticity comes to the foreground: restaurants which serve ‘ethnic’ cuisine
+undergo additional scrutiny in terms of their authenticity, which is often
+treated by reviewers as a separate evaluative category. While previous research
+has investigated the relationship between authenticity, increased star ratings
+and price, sentiment analysis is such a ubiquitous technique in computational
+approaches to language data that it was instructive to compare the two
+approaches and ask what authenticity adds to our understanding of evaluation
+in restaurant reviews. From this quantitative comparison we see the small but
+discernible positive effect that authenticity has on sentiment.
+
+Journal of Cultural Analytics
+
+19
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+Different types of authenticity also showed different contributions to the
+overall sentiment polarity. As expected, craft authenticity showed the strongest
+impact on sentiment, while contrary to earlier findings, moral authenticity had
+a small negative impact on sentiment. The potential reasons for this are varied,
+and likely it is a combination of factors: both the fact that negative reviews are
+more likely to discuss agents and issues of moral behavior, as well as the domain
+specific meaning of some of words in the moral authenticity lexicon, such as
+decent.
+While it was expected that type and craft authenticity would have the largest
+effect on sentiment and that reviews with higher authenticity and sentiment
+scores would mostly contain evaluations of type and craft authenticity, this did
+not prove to be the case. Instead, craft and idiosyncratic authenticity showed
+the greatest effect on sentiment. This was also borne out by the corpus analysis,
+which mostly found evaluative resources related to idiosyncratic, craft, and
+moral authenticity in the subcorpus of reviews with high authenticity scores.
+When viewed through a Bourdieuian lens however, we can see that type
+authenticity provides a poor basis for distinction, as having professional staff
+cooking with genuine ingredients would be assumed for any high-class
+restaurant. Therefore, emphasizing craft and idiosyncratic authenticity
+provides a stronger foundation for distinction, both for the restaurant and for
+the reviewer to establish themselves as a knowing connoisseur. These findings
+provide further evidence that the effort of restaurants to create value through
+emphasizing certain types of authenticity according to their target customer
+are picked up on and embraced by consumers as part of their own identity
+construction.
+The corpus analysis also provides insights which could be used to improve the
+detection of both positive and negative authenticity evaluations. Regarding
+moral authenticity, this might involve including words like welcoming,
+thoughtful or miserable. These words were not likely to have been included by
+the methodology used to generate the authenticity lexica because they are not
+tied to any prototypical understanding of authenticity. However, their use in
+context illustrates their connection with the concept of moral authenticity in
+the restaurant domain. In addition to this, the corpus analysis revealed other
+resources that may not have originally been considered in the construction
+of the lexica but which, through the keyword analysis, nonetheless show a
+relationship with one of the authenticity subtypes: multi-word phrases such
+as go the extra mile, verbs like pissed or ticked off, and other resources like first
+names were all components of positive or negative evaluations of authenticity.
+Including some of the evaluative resources discussed in the previous sections
+might improve the accuracy of the authenticity lexica, and with an expanded
+corpus analysis it is possible that many more terms could be added. The
+challenge in this case is to expand and improve the utility of such specialized
+lexica to detect discourse about authenticity in all of its various meanings,
+while avoiding introducing too much noise into the data or watering down
+Journal of Cultural Analytics
+
+20
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+the concept of authenticity so that it is no longer analytically useful. While the
+bulk of this work remains for the future, I believe that by remaining close to the
+data we can more fully understand how authenticity evaluations are realized
+in situ and avoid too much reliance on dictionary definitions or preconceived
+notions of authenticity, while maintaining its utility as an analytical construct.
+Of course, this study has several limitations itself. For example, limiting the
+statistical analysis to reviews with only 5 or more terms from the authenticity
+lexica resulted in the loss of a considerable amount of data. However, this
+was seen as a necessary trade off to ensure the quality of the data included in
+the quantitative analysis. Moreover, I was not able to integrate the evaluative
+resources discussed in the corpus analysis into the quantitative analysis to test
+if their inclusion would improve the performance of the lexica, and so this
+work will have to be undertaken at a later date. In addition, the dataset only
+included reviews of businesses in the Unites States. It is likely however, that
+different cultures and different languages view the concept of authenticity
+differently, and so other frameworks will need to be developed to account
+for this. Nevertheless, I hope that this study could shed some light on one
+particular type of evaluation, that of authenticity in restaurant reviews, and
+in doing so to provide further evidence for the deep and complex way in
+which all evaluations are tied to the context and social order in which they are
+produced.11
+Dataverse repository: https://doi.org/10.7910/DVN/9JVSMI
+Submitted: April 10, 2023 EDT, Accepted: May 28, 2024 EDT
+
+This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0
+International License (CCBY-4.0). View this license’s legal deed at http://creativecommons.org/licenses/
+by/4.0 and legal code at http://creativecommons.org/licenses/by/4.0/legalcode for more information.
+
+11 I would like to thank Steve Duman, Daria Dayter, Miriam Locher, and an anonymous reviewer for their comments and suggestions on earlier
+
+iterations of this project and article. Thank you to Thomas Messerli and the editors for their patience and guidance during the publication
+process.
+
+Journal of Cultural Analytics
+
+21
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+works cited
+Baker, Paul. Using Corpora in Discourse Analysis. Continuum, 2006, https://doi.org/10.5040/978135
+0933996.
+Benoit, Kenneth, et al. “Quanteda: An R Package for the Quantitative Analysis of Textual Data.”
+Journal of Open Source Software, vol. 3, no. 30, Oct. 2018, pp. 774–78, https://doi.org/10.21105/jo
+ss.00774.
+Bourdieu, Pierre. Distinction: A Social Critique of the Judgement of Taste. Harvard University Press,
+1984.
+Brezina, Vaclav. Statistics in Corpus Linguistics: A Practical Guide. Cambridge University Press, 2018,
+https://doi.org/10.1017/9781316410899.
+Coupland, Nikolas. “Sociolinguistic Authenticities.” Journal of Sociolinguistics, vol. 7, no. 3, Aug.
+2003, pp. 417–31. Crossref, https://doi.org/10.1111/1467-9481.00233.
+Egbert, Jesse, and Doug Biber. “Incorporating Text Dispersion Into Keyword Analyses.” Corpora, vol.
+14, no. 1, Apr. 2019, pp. 77–104, https://doi.org/10.3366/cor.2019.0162.
+Freedman, Joshua, and Dan Jurafsky. “Authenticity in America: Class Distinctions in Potato Chip
+Advertising.” Gastronomica, vol. 11, no. 4, 2011, pp. 46–54, https://doi.org/10.1525/gfc.2012.1
+1.4.46.
+Gabrielatos, Costas. “Keyness Analysis: Nature, Metrics and Techniques.” Corpus Approaches to
+Discourse: A Critical Review, edited by Charlotte Taylor and Anna Marchi, Routledge, 2018, pp.
+225–58, https://doi.org/10.4324/9781315179346-11.
+Jurafsky, Dan, et al. “Linguistic Markers of Status in Food Culture: Bourdieu’s Distinction in a Menu
+Corpus.” Journal of Cultural Analytics, vol. 1, no. 1, Oct. 2016, pp. 1–24, https://doi.org/10.2214
+8/16.007.
+---. “Narrative Framing of Consumer Sentiment in Online Restaurant Reviews.” First Monday, vol.
+19, no. 4, Mar. 2014, https://doi.org/10.5210/fm.v19i4.4944.
+Karrebæk, Martha Sif, and Marie Maegaard. “Pigs, Herring, and Bornholm on a Table.” Semiotic
+Review, no. 5, 2017.
+Kilgarriff, Adam, et al. “The Sketch Engine: Ten Years On.” Lexicography, vol. 1, no. 1, July 2014, pp.
+7–36, https://doi.org/10.1007/s40607-014-0009-9.
+Kovács, Balázs, et al. “Authenticity and Consumer Value Ratings: Empirical Tests From the
+Restaurant Domain.” Organization Science, vol. 25, no. 2, Apr. 2014, pp. 458–78. Crossref, http
+s://doi.org/10.1287/orsc.2013.0843.
+Lacoste, Véronique, et al. “Authenticity: A View From Inside and Outside Sociolinguistics.” Indexing
+Authenticity, edited by Véronique Lacoste et al., de Gruyter, 2014, pp. 1–13, https://doi.org/10.151
+5/9783110347012.1.
+Lakoff, Robin Tolmach. “Identity à La Carte: You Are What You Eat.” Discourse and Identity, Studies
+in Interactional Sociolinguistics, Cambridge University Press, 2006, pp. 142–65, https://doi.org/1
+0.1017/cbo9780511584459.008.
+Lehman, David W., et al. “Authenticity.” Academy of Management Annals, vol. 13, no. 1, Jan. 2019,
+pp. 1–42. Crossref, https://doi.org/10.5465/annals.2017.0047.
+Mapes, Gwynne. “(De)Constructing Distinction: Class Inequality and Elite Authenticity in
+Mediatized Food Discourse.” Journal of Sociolinguistics, vol. 22, no. 3, May 2018, pp. 265–87, http
+s://doi.org/10.1111/josl.12285.
+
+Journal of Cultural Analytics
+
+22
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+Mosby, Ian. “‘That Won-Ton Soup Headache’: The Chinese Restaurant Syndrome, MSG and the
+Making of American Food, 1968-1980.” Social History of Medicine, vol. 22, no. 1, Oct. 2008, pp.
+133–51, https://doi.org/10.1093/shm/hkn098.
+Newman, George E., and Rosanna K. Smith. “Kinds of Authenticity.” Philosophy Compass, vol. 11,
+no. 10, Oct. 2016, pp. 609–18, https://doi.org/10.1111/phc3.12343.
+O’Connor, Kieran, et al. “Disambiguating Authenticity: Interpretations of Value and Appeal.” PLoS
+One, vol. 12, no. 6, June 2017, p. e0179187, https://doi.org/10.1371/journal.pone.0179187.
+Rinker, Tyler. R Package ‘Sentimentr.’ 2019.
+Rychlý, Pavel. “A Lexicographer-Friendly Association Score.” Second Workshop on Recent Advances in
+Slavonic Natural Language Processing, RASLAN 2008, edited by Petr Sojka and Aleš Horák, 2008.
+Skibinsky, Mika. “Construction of ‘Asian’ Identity in Restaurant Menus: A Case Study.” Inquiries
+Journal, vol. 12, no. 10, 2020.
+Taboada, Maite. “Sentiment Analysis: An Overview From Linguistics.” Annual Review of Linguistics,
+vol. 2, no. 1, Jan. 2016, pp. 325–47, https://doi.org/10.1146/annurev-linguistics-011415-040518.
+Van Leeuwen, Theo. “What Is Authenticity?” Discourse Studies, vol. 3, no. 4, Nov. 2001, pp. 392–97,
+https://doi.org/10.1177/1461445601003004003.
+Vásquez, Camilla. The Discourse of Online Consumer Reviews. Bloomsbury, 2014.
+Vásquez, Camilla, and Alice Chik. “‘I Am Not a Foodie…’: Culinary Capital in Online Reviews of
+Michelin Restaurants.” Food and Foodways, vol. 23, no. 4, Oct. 2015, pp. 231–50, https://doi.org/1
+0.1080/07409710.2015.1102483.
+
+Journal of Cultural Analytics
+
+23
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+Appendices
+
+Appendix 1. Modified Authenticity Type Lexica from O’Connor et al.
+
+Journal of Cultural Analytics
+
+24
+
+“Authentic and Amazing”: authenticity as an evaluative category in online consumer restaurant reviews
+
+Appendix 2. Keywords from HAR and LAR subcorpora
+Keywords from the authenticity lexica (in italics) were removed from the analysis.
+DC = difference coefficient; FPM = frequency per million; Ref. = reference corpus
+
+Journal of Cultural Analytics
+
+25
+
+

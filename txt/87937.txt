@@ -1,0 +1,974 @@
+Yeager, Sean A. “Time Maps: Theory and Method.” Journal of Cultural Analytics, vol. 8,
+no. 3, Nov. 2023, https://doi.org/10.22148/001c.87937.
+
+ARTICLE
+
+Time Maps: Theory and Method
+Sean A. Yeager1
+1 The Ohio State University
+
+Keywords: time map, narratology, annotation, visualization
+https://doi.org/10.22148/001c.87937
+
+Journal of Cultural Analytics
+Vol. 8, Issue 3, 2023
+
+This article documents the production and analysis of time maps, the graphs
+which are produced by plotting a narrative’s fabula against its syuzhet. Other
+researchers have independently studied time maps, and most of them directly
+adopted Genette’s classic ordering schema, which tracks the sequence of events in
+the fabula by assigning them a letter. My method creates time maps of
+unprecedented resolution by numerically tracking each scene’s position and
+duration in the fabula. This accounts for differences across time scales, which
+previous work has overlooked. I consider how time maps can advance narrative
+theory by visualizing nonlinear narration and by highlighting the affordances of
+different media. I introduce the notion of a “narratological chronotope” to
+describe the visualizations of Genette’s “canonical movements” and suggest a
+heuristic typology of narrative temporal cues. I develop these arguments through
+analyses of Rashomon and Mrs. Dalloway.
+
+Introduction
+I study narratological structure through the use of time maps,1 a term William
+Nelles and Linda Williams coined to describe the graphs which are created
+when a narrative’s fabula (the story’s internal timeline of events) is plotted
+against its syuzhet (the order in which these events are related to readers) on
+
+1 For more examples of time maps see: Nelles, “Mapping the Chronology of Persuasion” (55, 57); Nelles and Williams, “Hard Time,” (194-211,
+
+215-6); Kim et al.; Kim et al., “Visualizing Nonlinear Narratives,” (1-7); Newman, “Modernist Life Histories,” (140-1); Wittenberg, “Time
+Travel,” (69); Pezzotta, “Personal Time,”( 2,6-7,9); Stoicheff, et al., “Faulkner’s The Sound and Fury,” np; Skau, “Complicated Movie Plots,”
+np; Sharma and Rajamanickam, “Using Interactive Data Visualization,” (5); Carter et al. “Dissecting a Trailer”; Aprahamian, “Inception,” np;
+and Yeager and Ciccoricco (forthcoming). This is, to the best of my knowledge, a corpus of all publicly available time maps. All of the
+aforementioned graphs deserve richly detailed discussions that are beyond the limited scope of this paper. The study by Kim’s team is
+particularly noteworthy, however, since they wrote an automated parser to extract information from several movie scripts. Their graphs (along
+with Pezzotta’s, and Carter et al.’s) have an inverted axis, but are otherwise equivalent. Furthermore, Kim’s team uses the phrase “story curve”
+instead of “time map,” but I find the latter term more fitting because a “story curve” strikes me as the best fit line drawn between various
+segments (e.g. in Newman). Aprahamian’s graph of Memento is perhaps the most widely known time map and “structured like a boomerang”
+(Hansen 173). See Klein, Ghislotti, and Nolan (2014) for discussions relevant to Aprahamian’s work. In addition to the aforementioned
+graphs, prototypes for time maps can be found in Drucker, “SpecLab,” (54-8); Labov and Waletsky, “Narrative Analysis,” (375); Mani, The
+Imagined Moment (throughout); as well as Lévi-Strauss’s influential analysis of myth via “a two-dimensional time referent which is
+simultaneously diachronic and synchronic” (“Structural Study” 432). Finally, both Newman and Nelles have shared unpublished time maps
+with me in personal correspondence, and Nelles has presented on as-yet-unpublished graphs of Faulkner (2020). Time maps have the same xaxis as the sentiment analysis graphs produced by Vonnegut (1981, 1995), Jockers, Reagan et al., and Elkins, but are otherwise unrelated.
+Zerubavel uses the term in an unrelated context.
+
+Time Maps: Theory and Method
+
+a Cartesian plane.2 Time maps visualize Gérard Genette’s ordering framework
+from Narrative Discourse, a method which Nelles and Williams summarize by
+saying:
+Genette represents temporal order by assigning letters to story
+events “according to the order of their appearance in the
+narrative”… and assigning each event a number to indicate the
+position it occupies in the chronological sequence of events in
+the diegetic universe… Thus, for example, a perfectly
+chronological narrative would yield the formula A1 – B2 – C3, a
+narrative beginning in medias res A2 – B1 – C3, a narrative told
+perfectly backward A3 – B2 – C1. (140)
+Genette’s framework can be used to generate coarse graphs where the vertical
+axis corresponds to the characters’ timeline and the horizontal axis corresponds
+to the reader’s chronology. Within this scheme, each scene corresponds to a
+point in the coordinate plane. My refinement of Genette’s framework allows
+for adequately chronicled scenes to manifest as one or more line segments. The
+totality of the narrative, which may be viewed as the collection of these scenes,
+will be roughly isomorphic to a subspace of the plane and each of the time
+maps associated with a narrative is a display of this subspace, either in part or in
+whole.3
+Nelles and Williams’s paper is the first to rigorously explore the narratological
+potential of time maps, yet their paper’s theoretical reach is narrowly focused.
+In particular, the extent of their argument is simply that time maps prove
+that narratives tend to be told in an anachronous manner. They ultimately
+conclude that “it is beyond reasonable doubt that anachrony, not chronology,
+is the default mode for narrative” (155). Which is to say that narratives, by
+nature, have a tendency to slip forward and back across time, as opposed to
+creeping forward in a strictly chronological order. My data is in complete
+harmony with their claim.4 Narratological ellipsis, for example, is a common
+storytelling device, even in narratives which might be described as a
+
+2 From a formalist standpoint (e.g. Chatman’s), there are a number of synonyms for “fabula” within narratological scholarship, including: story-
+
+time, récit, histoire, and story order. Similarly, “syuzhet” is a functional substitute for: narrative-time, discours, diegetic time, and text order. I use
+the Russian terms for two reasons: to honor Boris Tomaševski, who first formalized these notions systematically; and to minimize ambiguity for
+nonspecialists, who might use the English-language equivalents interchangeably. Niche distinctions emerge when foregrounding the cognitive/
+semiotic process of meaning-making (see Pier), but this is secondary when focused on the construction of a time map. As such, my synonym
+lists intentionally omit contested terms such as “plot” (Kukkoken) and muthos (Ricoeur), which are inherently tied to the process of meaningmaking. In short, I am focused on narratives’ chronology, not their teleology. Regardless of verbiage, an important caveat is that “the story/
+discourse distinction should be viewed as a more or less valuable heuristic device rather than a hard-and-fast rule” (Herman, Story Logic 215). As
+I discuss below, this paper utilizes a naïve fabula/syuzhet “heuristic” so that my future work might deconstruct it.
+3 For simplicity of language, I sometimes speak of “the” time map of a narrative, but this is slightly misleading. In general, any narrative can be
+
+represented by a multiplicity of graphs, each of which corresponds to a different narratological scale. One might argue that these are merely
+zoomed in snapshots of a single underlying time map, which corresponds to the text in toto, but other temporal structures (see below) more
+fundamentally destabilize the notion of a single time map.
+4 In addition to my present case studies, I have complete datasets for the following narratives: 500 Days of Summer, Breakfast of Champions,
+
+Citizen Kane, A Visit from the Goon Squad, House of Leaves, Howards End, Infinite Jest, Pulp Fiction and the first season of True Detective.
+Altogether, these comprise 2865 lines of data. All generalizations in the present paper are drawn from the entirety of this data, even though
+spatial constraints prevent a full analysis from occurring here.
+
+Journal of Cultural Analytics
+
+2
+
+Time Maps: Theory and Method
+
+“chronicle,” where “events are narrated in the order in which they occur”
+(Montfort 89). Most methods of literary analysis gloss over the essential
+nonlinearity of ellipsis, but this association becomes unavoidable when
+studying a time map: any narrative which features an elliptical gap is necessarily
+nonlinear.5 The time map of a chronicle will be monotonically increasing, but
+narratives are not bound by this restriction — they routinely flout it. Shlomith
+Rimmon-Kenan critiques misplaced expectations of temporal linearity by
+saying that “strict linear chronology is neither natural nor an actual
+characteristic of most stories. It is a conventional ‘norm’” (17). Instead of being
+an essential component of narrative, linearity is a socially imposed construct.6
+Barbara Herrnstein Smith pushes this critique even further, saying that “to the
+extent that perfect chronological order may be said to occur at all, it is likely
+to be found only in acutely self-conscious, ‘artful,’ or ‘literary’ texts’” (227,
+original emphasis). Purely chronological narratives are not the foundation of
+narrative, but quite the opposite — they will only occur within consciously
+constrained contexts. Though I have mapped some narratives that approximate
+linear narration in whole, (e.g. Rope, Figure 5), or in part (e.g. Mrs. Dalloway,
+Figure 4), I ultimately concur with Mark Currie’s claim that “narratives,
+though often taken to be linear in nature, can rarely achieve a temporal shape
+that can meaningfully be called linear” (36).
+
+Method and Theory
+As mentioned before, my visualization methods build on Genette’s analysis of
+fabula and syuzhet in Narrative Discourse. Genette’s framework assigns a letter
+and a number to each scene in a narrative, and these respectively correspond
+to the scene’s placement in the syuzhet and the fabula. Time maps may be
+generated by using these coordinates to place the scene on a Cartesian grid, in
+a manner similar to the process of directing attacks in a game of Battleship.
+Most other analysts have used Genette’s method to create their time maps,
+yet this technique has key shortcomings. For one, tracking the order of scenes
+in the fabula by assigning each one a letter fails to account for the reach of
+anachronies because it overlooks differences in scale. Furthermore, each scene
+is effectively described as a coordinate pair, reducing the scene to a single point,
+regardless of whether it spanned a minute or a year in the fabula. Genette
+explicitly avoids accounting for the duration of scenes, due to his fear that
+“Detailed analysis of these effects would be both wearying and devoid of all
+real rigor, since diegetic time is almost never indicated (or inferable) with the
+
+5 Or, more poetically: “Equally disturbing, from the standpoint of linear narration, were the blatant gaps and omissions in the account”
+
+(Herman, Philosopher 71). For comparison, consider that “[Genette’s] notion of prolepsis concerns the representation (however brief) of a
+future event before its proper time, the narration (however reliable) of a future moment that disrupts a strictly chronolinear of natural order of
+telling” (Liveley 533). The point is that “chronolinear” is an even stricter requirement than “natural order” because the discontinuities of
+ellipsis disqualify a narrative from achieving the former but not the latter.
+6 The more general assumption of a rigidly linear temporality seems peculiar to neurotypical Western discourse. Other phenomenologies are
+
+rooted in nonlinearity: Lisa Brooks (Abenaki) observes that “reading rhizomically ‘across time’ [is] common in Indigenous studies” (308);
+Walidah Imarisha maintains that “Blackness defies linear time” (np); and La Marr Jurelle Bruce identifies four key signatures of “madtime”
+(204-5).
+
+Journal of Cultural Analytics
+
+3
+
+Time Maps: Theory and Method
+
+precision that would be necessary” (Narrative Discourse 88). I find Genette’s
+claim to be overly pessimistic. As I detail in the following section, many
+narratives contain an abundance of “temporal operators” (TOs), textual cues
+which Jan Cristoph Meister describes as “literal expressions or grammatical
+and formal features that can either contain content information on how events
+and entities occurring in the represented world are related to each other in
+terms of temporal succession” (112). Here, I outline a method for tracking a
+narrative’s TOs and describe how they can be used to numerically represent
+the narrative as a collection of line segments. This requires more labor, since
+each scene now requires four pieces of quantitative information instead of two,
+but the increased resolution is well worth the effort. In my system, the n-th line
+segment has its origin at:
+
+where sni denotes the scene’s initial location in the syuzhet and fni denotes the
+scene’s initial location in the fabula. The line segment’s terminus is at:
+
+where snf denotes the scene’s final location in the syuzhet and fnf denotes the
+scene’s final location in the fabula.7 Each line segment is uniquely defined by
+its values for sni, fni, snf, and fnf, and the narrative’s associated time maps are
+simply sets of these line segments.
+If a narrative contains a total of N scenes with clear TOs, generating the
+narrative’s time map requires at least 4N pieces of information, which I refer
+to as the narrative’s primary data. I track these numbers in tables, which are
+available for download in the supplementary material.8 Each row corresponds
+to a scene, and their order matches the scenes’ order in the syuzhet. In theory,
+the primary data for a narrative could be recorded in just four variables, but
+in practice, it’s usually simpler to distribute this information across separate
+variables which track each scene’s fabular position in terms of year, month,
+day, hour, and/or minute, depending on the scale of the TOs. When data
+
+7 Though it’s usually easy to measure syuzhet within the context of film, the very concept of a syuzhet cannot be taken for granted, as Richardson
+
+has demonstrated in great detail (2002, 2013, 2019). Interactive media, like video games (Ensslin and Bell) and choose-your-own-adventure
+books (Douglass), destabilize the notion of a syuzhet, yet problems arise even within traditional forms like the written word, due to its "basis of
+discrete, digital units’’ (Heise 62). Following Genette, I use page numbers as an approximation for novels, but this doesn’t work for short
+narratives where “the granularity of the temporal metric” is comparable to the length of the story itself (Drucker, SpecLab 54). Müller and
+Richardson have suggested word count as a potential workaround (Poetics of Plot 113), yet polytemporal words (e.g. “antediluvian,”
+“postpartum”) can be even further decomposed into their temporo-morphemic elements. Future work will address the granularity problem
+within the contexts of Jennifer Egan’s chapter “The Gold Cure,” Robert Julius’s poem “A Reverse Chronology of the Body in Motion,” and
+Gabriel Teodros’s short story, “Lalibela.”
+8 Sometimes, for instance, I include additional information such as the characters which are present in each scene and encode it into the time
+
+map via color-coding. My prime example of this is Vonnegut’s Breakfast of Champions, but I must reserve discussion of that narrative for future
+work. My table for Rashomon contains unused information on characters. Kim also encodes character information into his graphs. He
+represents the co-presence of characters as a rainbow of their respective colors, but I prefer representing co-presence via mixture (a method
+which is especially apt for the triumvirate of Vonnegut’s novel). Kim’s method emphasizes character interactions, whereas mine prioritizes
+temporal structure. Kim’s suggestion to use “a log scale for story time while keeping a linear scale in narrative time” also yields interesting results
+for Vonnegut’s text (9).
+
+Journal of Cultural Analytics
+
+4
+
+Time Maps: Theory and Method
+
+collection is complete, the table’s formula bar allows for these distributed pieces
+of information to be appropriately converted and quickly summed into a single
+number which corresponds to the scene’s beginning or end in the fabula. To
+simplify coding, I “distill” all of my datasets into barebones versions which
+only contain the minimal four variables — and these distillations are what the
+scripts read. Yet the quantitative information in my undistilled tables is always
+scaffolded by at least two pieces of qualitative information: a brief summary of
+each scene and a list of potential TOs, along with references to the TOs’ specific
+location in the syuzhet. Despite these common threads, each data set is shaped
+by the peculiarities of its narrative, so each table contains a readme page titled
+“Decisions.”
+This annotation method was developed from scratch when I was an
+independent scholar who was entirely unfamiliar with the field of textual
+markup. It also reflects my preference for reading paper books over digital
+editions. CATMA, Pelagios, and the Timeline Consortium all offer alternative
+ways of tracking this information. Furthermore, Kearns details a helpful XML
+schema for encoding narrative temporalities. In a similar vein, a team led by
+Angus Fletcher is developing a machine-assisted method where trained human
+readers collaborate with AI to identify and categorize various narratological
+features. Comparing my analog method to these alternatives lies beyond the
+scope of this paper yet may prove a useful exercise for scholars who are
+interested in automating annotation via machine-learning.
+I began working on this project optimistic about the possibility of automating
+data collection; but after digging through the weeds for several hundred hours,
+I have grown increasingly pessimistic. For one, I’ve come to share Meister’s
+belief that “Manual tagging will nevertheless remain a necessity because of
+metaphorical use of language in literary narratives, which a parser simply
+cannot resolve” (116). Even if one sets aside the challenges inherent to
+metaphor, machine-based approaches must grapple with the linguistic fact that
+“time reference cannot be located in the verb itself, so that the analysis of
+temporal structure must look to… larger units of discourse [e.g. metaleptic
+embedding] than the verb form itself” (Currie 139). Furthermore, many
+narratives provide TOs which are intentionally blurred, obscured, or outright
+contradictory. Human readers can readily recognize the aporetic nature of
+such texts and will understand why these narratives might be completely
+ungraphable, but I expect mechanical methods to be relatively naïve in the
+face of such trickery. Kim’s parser brilliantly evades these challenges because
+it is specifically catered to film scripts — a medium which intentionally
+foregrounds its TOs — but the tradeoff is a loss of generalizability. Taylor
+Arnold and Lauren Tilton are doing promising work in the video medium:
+their “distant viewing” framework holds great promise for identifying
+transitions between shots, an important piece of a large puzzle. Inderjeet Mani
+has also sketched out an algorithm for computational approaches to tracking
+time in textual narratives, though I learned of this work too belatedly to offer
+Journal of Cultural Analytics
+
+5
+
+Time Maps: Theory and Method
+
+commentary. Gregory Yauney, Ted Underwood, and David Mimno have
+developed interesting algorithms which can approximate the duration of an
+arbitrary length of text, yet their statistical approach is too imprecise for
+creating a time map. Underwood himself has recently experimented with
+GPT-4, concluding that while “large language models will be tremendously
+useful assistants in content analysis, I don’t think we can dispense with
+multiple human readers” (“Using GPT-4” np). I do not rule out the possibility
+that generalized machine-learning techniques might eventually be able to infer
+temporal structure from verbal narratives, but human verification of machine
+output currently remains an essential stopgap. Though I myself am not actively
+attemping to automate the process, I am nevertheless contributing to this
+endeavor by articulating the human labor required to parse temporal language,
+which is notoriously fluid and ubiquitous.
+Before moving on, I must make a terminological modification to reflect a
+narratological reality: a single scene can correspond to multiple line segments
+by simultaneously portraying multiple moments in the fabula. Examples
+include textual analepses which are heavily focalized through a reminiscing
+narrator, or cinematic flashbacks with voiceovers set in the present. I treat
+these “endophoric multimodal representations” (Herman, “Word-Image” 81),
+as dual portrayals of past and present, an approach which aligns with RimmonKenan’s belief that “if we abstract the story from the text, such events… will
+probably appear twice: once as an occurrence in the past or a projected
+occurrence in the future, and once as a part of the present act of remembering,
+fearing, or hoping” (51).9 As such, these structures appear in my visualizations
+as two line segments stacked over a single, horizontal length of syuzhet. Because
+a scene does not necessarily correspond to a single line segment (and also
+because “scene” has a specialized meaning in temporal narratology — see
+below) I must stop equating line segments with scenes. Drawing from
+Bakhtin’s well-known concept, I use the term “narratological chronotope”
+(NC) to describe the line segments which are produced when a length of fabula
+is plotted against the span of syuzhet over which it is portrayed.10
+Geometrically speaking, an arbitrary line segment may be horizontally or
+vertically transposed to an infinite number of positions on the plane. Likewise,
+that same line segment may be rotated by any angle or scaled by any length.
+This means that any given line segment is defined by four quantities: the
+
+9 Ci counters that, “the temporal location of a subjective event [i.e. a focalized analepsis] is not the time of its content (which may well be one or
+
+more past objective events) but the time of its occurrence as a subjective event” (24, original emphasis). Currie intensifies this, noting that “when
+analepsis functions in the mode of memory, it needn’t be viewed as an anachrony at all, since the memory itself is an event in the fictional
+present” (77). They raise good points, but Genette’s response feels most apt for time maps: “the segments in question are ambivalent, being at
+the same time present by virtue of their medium and past (or future) by virtue of their content” (“A Reply” 39).
+10 This term was jointly coined by Sue Lanser and Shlomith Rimmon-Kenan, who have given me the honor of introducing it to readers. NCs
+
+always reflect the entanglement of narrative time with geometric space; they do not necessarily reflect entanglements with narrative space,
+though they certainly may, as in Mrs. Dalloway (Figure 3).
+
+Journal of Cultural Analytics
+
+6
+
+Time Maps: Theory and Method
+
+horizontal and vertical coordinates of its origin, its angle, and its length.11 As
+such, there are an infinite number of configurations that an NC may take,
+even before considering the narrative content it represents. Furthermore, an
+infinite number of line segments may be drawn onto any grid, and there is no
+theoretical upper bound on the number of NCs which may be present in a
+narrative. In short, there are an infinite number of possible NC collections,
+and a correspondingly infinite number of possible time maps. Out of these
+multitudes, each narrative would ideally match with a single time map, “an
+atemporal matrix structure whose form is indeed constant,” because the
+collection of NCs is uniquely inscribed within the text (Lévi-Strauss,
+“Structure and Form” 184).12 Duplicates, of course, may exist, but the endless
+number of possible configurations virtually guarantees that perfect replicas will
+tend to be produced through methods more akin to Borges’s than Menard’s —
+simulacra created through intentional trickery, not accidental reinvention (43).
+Based on the angle it makes with the horizontal (Figure 1), an NC can be
+categorized as one of the five canonical “movements” of classical narratology:
+pause, stretch, scene, summary, and ellipsis.13 Following Fludernik’s notation
+schema (7), I classify an NC by comparing the duration of its fabula (F) to its
+accompanying length of syuzhet (S).
+• Pauses (red) are NCs where the fabula does not advance over a given
+length of syuzhet (F=0). They are horizontal line segments. A
+common example of pause in film is the freeze-frame shot; pauses in
+writing correspond to purely descriptive stretches of text.
+• Stretches (blue) are NCs where a large amount of syuzhet is dedicated
+to a brief segment of fabula (S>F). Stretches are line segments with
+a slight incline. Examples include slow-motion shots in film, and indepth descriptions of brief events in text.14
+
+11 These four quantities are isomorphic to the pairs of coordinate pairs which form the basis of my datasets. Both formulations are useful,
+
+depending on context: the prior framework enables straightforward data entry, while the present highlights the nature of geometric
+transformations.
+12 Things are naturally messier in reality, and there will be slight variations in the time maps, depending on who has collected the data. Nelles
+
+discussed these fluctuations by studying the time maps his students produced for several of Faulkner’s narratives (“Narrative Order in
+Faulkner”). They produced nonidentical time maps for each, with variations depending on which features the student decided to include. Still,
+these variations were small relative to the scale of the narrative itself, and the text’s large structures (e.g. opening in media res) all remained intact
+across iterations. To account for this subjectivity, each of my tables documents “Omitted TOs.”
+13 Importantly, “the classical concepts of order put forth in (and inspired by) Genette’s work retain their validity, but only within certain limits”
+
+(Herman, “Limits of Order” 75). A simple outlier is the downward-sloping NC at the top left corner of Aprahamian’s Memento graph. This
+corresponds to the film’s opening shot, where fabular time runs backwards.
+14 Genette dismissed stretches as a possible “movement,” (Narrative Discourse 95), but Chatman reclaimed them (“Genette’s Analysis”).
+
+Journal of Cultural Analytics
+
+7
+
+Time Maps: Theory and Method
+
+Figure 1. The five classical categories of NC: pause, stretch, scene, summary, and ellipsis
+
+• Scenes (black) are NCs where the syuzhet and the fabula proceed
+exactly in tandem. In a time map, scenes appear as line segments at
+an angle of 45°. Examples include real-time shots in film,15 as well as
+events which are narrated at a constant pace in a text.
+• Summaries (green) are steep NCs where a short segment of syuzhet
+covers a large span of fabula (S<F). Examples of summary include
+time-lapse footage in film, as well as statements like “She worked for
+ten years” in text.
+• Ellipses (magenta) occur whenever there is a discontinuous leap
+forward or backward in the fabula (S=0). Examples of ellipses include
+temporal jump cuts in film, and phrases like “five days later…” in
+text. I have used a vertical line to represent ellipses in Figure 1, but
+it is important to note that ellipses themselves receive no direct
+representation in my time maps. As discussed earlier, this is because
+an ellipsis is not an NC, but rather the absence of one.16
+
+15 Though real time shots of mundane activities are scenes within Genette’s typology, they often induce a phenomenological experience of
+
+slowness (e.g. Hume 2005; Baetens and Hume 2006; Mingazova 2018; Phelan 2020; and Alsop 2020). Underwood raises a related issue, asking
+“How much time has to pass in a scene before it becomes summary?” and concludes “we have no reason to assume that this is a binary division
+at all” (“Literary Time” 344).
+16 More generally, any anachrony corresponds to a discontinuity in the fabula and manifests as the vertical gap between two NCs that are
+
+horizontally adjacent.
+
+Journal of Cultural Analytics
+
+8
+
+Time Maps: Theory and Method
+
+Though theoretically provoking,17 the labor of data collection often makes it
+difficult to align NCs with their idealized angles. Also, in addition to these five
+categories, I should note that there is also a “sixth” canonical NC, achrony,
+which has traditionally served as a catchall term for everything which doesn’t fit
+into the classical five. Genette coined the term by saying “no inference from the
+content can help the analyst define the status of an anachrony deprived of every
+temporal connection, which is an event we must ultimately take to be dateless
+and ageless: to be an achrony” (Narrative Discourse 83–84). In short, Genette
+defined achronies as occurring whenever TOs are lacking. Narratologists now
+recognize this characterization as inadequate, for reasons I shall address in
+future work.
+
+Data Collection and Categorization
+I present my method phenomenologically, as an interpretive act. I am, for the
+purposes of this paper, a human reader writing for human readers.18 This is
+not to abject other potential readers, whom I shall welcome upon recognition!
+Instead, I simply need to estimate my readers’ abilities, should they wish to
+replicate my process for annotating print editions. Contra Genette’s prior
+suppositions, my method is quite “rigorous,” though I concede that it is indeed
+“wearying.” It is most closely akin to the methods of disabled poet and critic,
+Josephine Miles, whose analog practice has been characterized as “extreme
+reading” (Pasanek 355). For perspective, describing this method is how I met
+the criteria for “highly restricted, fixated interests that are abnormal in intensity
+or focus” when getting my autism diagnosis (DSM-5). Readers hoping to
+automate this process simply must appreciate the magnitude and the nuances
+of the labor. Importantly, Johanna Drucker reminds us that “designing a textanalysis program is necessarily an interpretive act” (“Distant Reading” 631) —
+fortunately, so is the method I discuss below.
+The process of assembling a dataset varies across media and across narratives,
+but time maps are most easily produced for texts which contain “clear spatiotemporal markers” (Willemsen and Kiss 193). This was the primary
+consideration in assembling my otherwise disparate corpus, since an
+abundance of readily accessible TOs facilitates data entry and guarantees a
+robust graph. Gathering data from a print narrative requires several re-readings,
+and I recommend beginning with a “zeroth” encounter that’s dedicated solely
+to affective engagement. The first round of data collection involves close
+reading the text and underlining any potential TOs. The second time around, I
+have a digital table open to enter the information identified during my previous
+reading. From a theoretical point of view, this is when I begin making decisions
+about what is or isn’t included as an NC — this occurs in terms of which
+
+17 My visualization of NCs inverts Genette’s classical definition of velocity to think in terms of fabula per syuzhet, but I must postpone discussion
+
+of this for future work.
+18 For an exposition on the necessity of this seemingly tautological positioning, see Jackson.
+
+Journal of Cultural Analytics
+
+9
+
+Time Maps: Theory and Method
+
+information is recorded and which events are given distinct rows. These
+distinctions aren’t as clear cut as might initially be imagined,19 but I don’t split
+hairs here. Instead, the goal is to build a skeletal outline of the text’s temporal
+structure while documenting the TOs as comprehensively as possible. The
+third reading is when I crystalize my interpretive choices and use the compiled
+TOs to flesh out the gaps in the once-skeletal table. In some ways, this barely
+constitutes “reading,” because I spend more time staring at the data than the
+text, which now functions more like a reference book than a narrative. After
+entering the last piece of data, I can run the tables through hand-coded Python
+scripts to generate the time map. The process is similar for film and television,
+except that the first and second “readings” are collapsed into a single viewing
+which features many pauses and lasts several times longer than the video’s
+uninterrupted runtime. Finally, all of these tables are later revisited in a fourth
+reading to verify the data. The difficulty of compiling all this information
+varies, but patience is always a necessity.
+Having studied the TOs of several thousand NCs, I’ve found that most of
+these cues can be described as either “absolute” or “relative.”20 Absolute TOs
+give numerical dates and times, such as “March 14th, 1592” or “Monday at
+20:00,” and are reliable anchors within the narrative’s fabula. These types of
+cues are often displayed at the start of a scene, especially in epistolary novels
+and documentary films, but they may also be hidden in background details
+which contextualize the NC in reference to an event from elsewhere in the
+narrative or from the real world.21 An instance of the latter occurs during the
+exposition of Black Panther, when a background television screens footage of
+the then-ongoing Rodney King protests, placing the NC somewhere between
+April 29 and May 4 of 1992. In contrast to the numerical precision of absolute
+TOs, relative TOs do not provide quantitative information, only demarcating
+the order in which events happen within the fabula. Relative TOs are usually
+intuited from the context of the story, rather than directly stated. A common
+type of relative TO is the indication that an NC has occurred between two
+others. In Pulp Fiction, for instance, Vincent and Mia briefly chat about their
+prior date. This conversation must occur after the date, but before Butch kills
+
+19 e.g. Footnote 7. Paralepsis presents another difficulty, because a spatial discontinuity between events isn’t necessarily indicative of a temporal
+
+one. Rather than prescribing general rules for handling such events, I recommend carefully documenting all relevant TOs and then evaluating
+contextually, because some texts offer natural cutoffs for establishing a threshold.
+20 I echo Tomaševski’s terminology, though he has three categories. Tomaševski’s first category describes TOs which indicate “the moment of
+
+action,” either “absolutely” or “relatively” (78). His second category contains TOs which indicate “the duration of events” in definitive terms, as
+distinguished from his third category of TOs, those which more vaguely leave “an impression of the duration of time” (78). My typology
+effectively inverts Tomaševski’s hierarchy: I prioritize the distinction between absolute and relative TOs, while he prioritizes the distinction
+between TOs which seem to focus on a singular moment and TOs which more explicitly discuss a duration of time. This inversion occurs
+because I represent NCs as line segments. Within my system, the primary difference between his first category and his latter two is the height of
+the line segment in question; the primary difference between his latter two categories is the amount of interpretive guesswork that is required.
+21 In his otherwise excellent analysis of Gravity’s Rainbow, Weisenberger misreads Genette to respectively categorize such TOs as “internal
+
+determinants” and “external determinants” (50). Genette, in the passage cited by Weisenberger, is discussing whether scenes are internal to or
+external from the fabular span of the narrative’s main storyline — not whether they refer to intra- or extratextual phenomena (Narrative
+Discourse 140–43). Distinguishing between referential levels is important for narratives which prominently feature alternative universes and
+counterfactual histories.
+
+Journal of Cultural Analytics
+
+10
+
+Time Maps: Theory and Method
+
+Vincent. Within a given narrative, the absolute TOs may vary in detail, yet they
+generally remain more helpful than relative TOs for the purpose of creating
+a time map. Absolute TOs are already numerical, yet a relative TO is not
+necessarily sufficient to assign an NC a definite position in the fabula. Still,
+the slipperiness of language means that the boundary between absolute and
+relative TOs is not as rigid as it may seem at first glance. An example of this
+can be found in 500 Days of Summer, where the characters’ clothes function
+as absolute TOs for a few shots which lack an explicit day number. This sort
+of blurring isn’t a problem however, because my distinction between absolute
+and relative TOs is merely a useful heuristic,22 not a rigid demarcation.
+To demonstrate how I parse TOs into NCs, consider the following passage
+from Mrs. Dalloway:
+there was that dreadful, ridiculous scene over Richard Dalloway
+at lunch… they had never seen each other since, she [Sally] and
+Clarissa, not more than half a dozen times perhaps in the past ten
+years. And Peter Walsh had gone off to India… (285)
+These few lines are packed with TOs. First, Woolf describes a luncheon during
+the summer at Bourton. This TO is absolute with regard to the full scale of
+the novel’s fabula, fixing the event within that summer. Yet we are also given
+a relative TO for the luncheon: it must have happened near the end of the
+summer, because Sally and Clarissa part ways afterward. In my initial readings,
+I flagged this TO for inclusion, but I eventually realized that attempting to map
+the contours of that summer would be futile because Woolf provides so few
+other TOs for situating NCs within this period. But because the fabula spans
+decades, it’s fairly inconsequential for a time map when an event occurred
+within those few months. Furthermore, the memory of this specific luncheon
+initiates several pages worth of remembrances from throughout the summer.
+As such, I chunked these NCs into a single one spanning the whole summer
+and omitted the aforementioned TO from my data. I have likewise omitted the
+TO which iteratively references a handful of meetings that occurred over the
+span of ten years. These might be included as a single summarizing NC which
+lasts ten years, or as six-ish elliptically stacked NCs which span the decade.
+But these events are not well-positioned within the decade and Woolf never
+describes them in any detail, so I decided that they’re below the threshold
+of inclusion. Conversely, I did include this isolated reference to Peter’s time
+to India because his travels are discussed throughout the novel. This passage
+contains an unusually high density of TOs, but graphing a novel means
+iterating this type of thought process across several hundred pages worth of
+text.
+
+22 I have also developed a loose typology of narratives based on the relative distribution of their TOs, but this lies beyond my present scope.
+
+Journal of Cultural Analytics
+
+11
+
+Time Maps: Theory and Method
+
+Analysis and Interpretation
+Rashomon’s time map (Figure 2) demonstrates two distinct geometries of
+parallel storytelling. The first form results from recursively nested storylines
+unfolding simultaneously across the syuzhet. Aside from Tajomaru’s capture
+(green) and the priest’s recollection of encountering the samurai and the
+woman before they are attacked (orange), the film’s NCs cluster into three
+groups which resemble vertically displaced line segments: red corresponds to
+the outermost frame narrative, which features a monk, a woodcutter, and a
+peasant waiting out a rainstorm; blue corresponds to the trial, as recollected by
+the monk and woodcutter; and the remaining colors sync up with mutually
+exclusive accounts of the events which prompted the trial.23 Genette describes
+the second form of parallel storytelling in Rashomon as repetition, referring to
+the repeated narrations of the same encounter (Genette, Narrative Discourse
+54).24 Because Rashomon makes heavy use of both types of parallel storytelling,
+the film’s time map quintessentially exemplifies a more general theoretical
+pattern: that stories with multiple timelines will be vertically offset from one
+another,25 while those with repeated events will contain line segments which
+are horizontally offset. Time maps, in short, enact geometric materializations
+which intuitively approximate abstract notions of “parallel storytelling.”26
+Rashomon is helpful for illuminating my collection methods. The events at
+the gate occur on the same day as the trial, which happens three days after
+the original crime and two days after Tajomaru’s capture. Yet the duration of
+NCs, along with the ellipses between them, is rarely made any more explicit.
+As such, I represent the duration of a fabular day with the arbitrary value of
+“100,” then use single-digits to represent fabular spans of individual NCs, most
+of which only last a few minutes. Arguably, “1,000” would have been a better
+approximation, because there are 1,440 minutes in a day, but what matters is
+that there is a large scale (hundreds) corresponding to the large ellipses between
+clusters of NCs and a small scale (ones) corresponding to the durations of
+individual NCs.27 A more accurate representation would have chosen values
+for the durations of individual NCs such that each one makes the ideal angle
+of 45° for a Genettean scene. Though I tried to choose values which roughly
+
+23 Rashomon’s temporal nesting is comparable to the ontological nesting in Douglas Hofstadter’s short story, “Little Harmonic Labyrinth,” where
+
+characters “push” and “pop” between recursively nested worlds (103-126). Hofstadter presents a visualization (129) of his story, where the xaxis corresponds to syuzhet and the y-axis corresponds to an ontological hierarchy. In both visualizations, vertical displacement is a mode of
+narratological embedding; and both ultimately undermine the rigidity of these hierarchies. Hofstadter’s characters never pop back out to their
+original world, but Kurosawa’s maneuver is subtler. The trial storyline initially serves as a bridge connecting the other two storylines: voiceovers
+during the first three recountings of the crime (magenta, cyan, yellow) are never focalized from the gate, only the trial, yet the fourth retelling
+(black) occurs at the gate itself, eliding the law’s mediation.
+24 In Dannenberg’s words, “analepsis in practice can involve the interplay of virtual and actual versions of the past world in which the past is
+
+serially remodelled” (168). A time map can help readers orchestrate these possible worlds. Richardson proposes the term “pseudofrequency” as
+“the near-repetition of events with only a slight variation” produced by Rashomon’s shifting focalization (Poetics of Plot 103).
+25 Newman’s example, Eyeless in Gaza, portrays four parallel times in the protagonist’s life.
+26 Paraleptic storytelling of temporally-simultaneous-but-spatially-distinct events will also manifest via horizontal offsets. Future work will discuss
+
+this in Vonnegut’s Breakfast of Champions.
+27 Cf. Underwood: “at the scale of thirty minutes you’re simply going to narrate different aspects of human life than you would narrate at the scale
+
+of two days” (“Literary Time” 348).
+
+Journal of Cultural Analytics
+
+12
+
+Time Maps: Theory and Method
+
+Figure 2. Time map of Rashomon
+
+represent the NCs’ actual length in the fabula, I resist the perfectionist urge
+to smooth out these small discrepancies; this would entail a large amount of
+labor but would not substantially alter the large contours of the time map.
+We can certainly quibble over the exact details of temporal representations
+— ironically, such critiques might be rooted in either scientific precision or
+poststructural différance — but these differences will usually amount to minor
+fluctuations. What’s important here is a temporal paradox of the heap, where
+“quantitative differences become qualitative differences,” due to broken
+symmetries across scales (Marx, quoted in Anderson 396).28 Within the context
+of Rashomon’s time map, this means that my subjective interpretation shapes
+the time map’s fine details, but the film’s overarching structure remains
+isomorphic across accurate representations. The two most salient features —
+that it has three vertically offset storylines and that the bottommost of these
+storylines can be split into roughly parallel sub-storylines — are preserved
+because the intra-storyline variations on the order of “1” are small compared to
+the inter-storyline differences of “100.”
+The importance of scale carries over to Mrs. Dalloway (Figure 3). Though the
+narrative’s main storyline occurs within a single day, the full fabula spans many
+years. There are four primary time periods: Clarissa’s reminiscences of Bourton
+(red); Septimus’s flashbacks to World War 1 (blue); Peter’s memories of India
+(magenta); and the present (green). Many things happen on the day Clarissa
+decides to buy the flowers herself, but 24 hours is four orders of magnitude
+
+28 Underwood makes a provocative extrapolation, claiming: “the boundary between subjective and objective time is really a question about scale”
+
+(“Literary Time” 345).
+
+Journal of Cultural Analytics
+
+13
+
+Time Maps: Theory and Method
+
+Figure 3. Time map of Mrs. Dalloway’s full narrative
+
+smaller than the thirty-year reach of the novel’s analepses. Because of this,
+the main storyline is effectively collapsed into a flat line, demonstrating the
+tradeoffs inherent to all visual scaling: a fuller view of the big picture necessarily
+reduces the image’s resolution. This green line spans nearly the entire syuzhet,
+from left to right, because the narrative spends so much time in the present. Yet
+there are three gaps where the narrative entirely focuses on analeptic flashbacks:
+the first two of these are lengthy descriptions of the summer at Bourton, while
+the third is a war flashback. Importantly, Septimus’s memories are abstract
+recollections of his time on the front lines, recalled through the haze of trauma.
+None of these NCs feature specific TOs, a “strategically inexact” ambiguity
+which produces a “fuzzy temporality” (Herman, Story Logic 212). Still, Woolf
+establishes that “Septimus was one of the first to volunteer” while noting that
+his dear comrade Evans “was killed, just before the Armistice” — meaning
+Septimus served for the War’s full duration (130). As such, I have plotted all
+of these NCs as spanning the duration of The War, causing them to be nearly
+vertical lines whose angular fluctuations are due to variations in the length of
+syuzhet. I employed a similar strategy for Clarissa’s summer at Bourton, but
+this only lasted a quarter-year, so the effect is less noticeable. Peter’s memories
+of India are similarly hazy, so most of these NCs are also nearly vertical lines.
+The exception is a more compact NC (237-41) which is counterfactually
+embedded in a reverie. In the dream, Peter has died, his crush is grieving, and
+a mutual acquaintance advises her to “forget him, or merely remember him
+as he was in August 1922,” the date which was used to position this NC
+in the fabula. Such difficulties contribute to the “ever-growing discontinuity
+between discourse-time and story-time” which “characterizes Mrs. Dalloway”
+(Chatman, “Backwards” 361).
+Journal of Cultural Analytics
+
+14
+
+Time Maps: Theory and Method
+
+Figure 4. Time map of Mrs. Dalloway’s present
+
+Figure 4 zooms into Mrs. Dalloway’s main storyline. This graph features the
+instances when Big Ben tolls, along with several other well established TOs —
+moments when the mechanical aspect of time is readily identifiable.29 Notably,
+my linear method of representation reduces to Genette’s punctual method
+in this limiting case. My numerical approach does not incorporate Woolf’s
+fluid focalization shifts, though it does demonstrate how the day’s events
+approximate a pattern of “rigorous linearity” (Currie 36). Attempting to
+connect the dots reveals that there is a sudden jump from about 07:00 to
+11:00 (25), an ellipsis between the morning’s events (red) and an elongated
+presentation of characters’ lunchtime happenings (blue). This meal lasts an
+hour in the fabula, yet it spans a third of the syuzhet. There is another bend
+at 12:00, and the remainder of the NCs (green) are nearly collinear with its
+first few, reflecting a shift in the pacing of character development. The graph
+for Mrs. Dalloway’s main storyline is very nearly linear, but not quite.30 This
+contrasts with the perfectly linear time map of the main storyline of Alfred
+Hitchcock’s Rope (Figure 5). Comparing these graphs demonstrates a key
+difference between the camera and the written word: real-time filming means
+that perfectly linear NCs are unremarkable in cinema, but the slippery nature
+of language makes them rare in writing. This tension between experiential and
+mechanical time is what makes Mrs. Dalloway so memorable.
+
+29 Another timeline is available here: https://www.preceden.com/timelines/55072-mrs–dalloway-timeline, but I’ve found that its creator is
+
+overzealous in their estimations. For example, they list the end of the party as occurring at 03:00, but there are no concrete TOs which indicate
+such specificity, so I omit this “event.”
+30 The R2 value for Mrs. Dalloway’s main storyline is 0.91, very close to the value for pure linearity: 1. Jennifer Egan’s short story “Forty-Minute
+Lunch” has an even higher R2 value (0.93).
+
+Journal of Cultural Analytics
+
+15
+
+Time Maps: Theory and Method
+
+Figure 5. Time map of Rope
+
+Conclusion
+This paper outlines a theoretical and methodological basis for the study of
+time maps, only hinting at their interpretive value. These temporal patterns are
+necessarily non-exhaustive of the possibilities they gesture toward. Still, these
+graphs demonstrate how common storytelling techniques will share certain
+features across their time maps — e.g. beginning a narrative in media res will
+necessarily feature an NC followed by vertically lower NC.
+The time and labor required to make a time map has led to questions about the
+efficacy and efficiency of this work. It is tempting to enact academic capitalism,
+to assume that data-driven projects must easily scale into something bigger and
+better. As stated earlier, I am open to the possibility of exploring narratological
+temporal structure through machine-learning, even though I have my
+reservations about its feasibility. But I am more interested in how the
+ponderous creation of a time map can highlight the “possibilities for small
+data” (Dinkins). This project’s seed was simple curiosity, and I pursued it for
+years outside of academia, autodidactically learning how to close read. This
+work also demonstrates how formal analysis can be “preeminently useful” for
+establishing common ground between readers (Spillers 85). Indeed, formalism
+need not be the New Critics’ practice of sealing the lid on a well-wrought urn:
+it is simply a tool for understanding and appreciating a story’s aesthetics, and
+my future work will show how careful consideration of a time map’s structure
+can open new inroads for interpretation.
+
+Journal of Cultural Analytics
+
+16
+
+Time Maps: Theory and Method
+
+Acknowledgments
+I thank Sue Lanser, Shlomith Rimmon-Kenan, Shawna Lipton, Taylor Eggan,
+Brian McHale, Amy Shuman, Sean Downes, Soohyun Cho, Ayo Olugbuyiro,
+and Roxann Wheeler for feedback.
+Peer reviewer: Richard Jean So
+Submitted: May 16, 2023 EST, Accepted: June 20, 2023 EST
+
+This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0
+International License (CCBY-4.0). View this license’s legal deed at http://creativecommons.org/licenses/
+by/4.0 and legal code at http://creativecommons.org/licenses/by/4.0/legalcode for more information.
+
+Journal of Cultural Analytics
+
+17
+
+Time Maps: Theory and Method
+
+references
+(500) Days of Summer. Comedy, Drama, Romance. Directed by Marc Webb, Fox Searchlight Pictures,
+Watermark, Dune Entertainment III, 2009.
+Alsop, Elizabeth. Beyond Narrative Complexity: Theorizing Contemporary Serial TV. 2020.
+Anderson, Philip W. “More Is Different.” Science, vol. 177, no. 4047, Aug. 1972, pp. 393–96,
+https://doi.org/10.1126/science.177.4047.393.
+Aprahamian, Steve. “Memento.” Wikipedia, 2009, https://commons.wikimedia.org/wiki/
+File:Memento_Timeline.png.
+Arnold, Taylor, and Lauren Tilton. “Distant Viewing: Analyzing Large Visual Corpora.” Digital
+Scholarship in the Humanities, vol. 34, no. Supplement_1, Mar. 2019, pp. i3–16, https://doi.org/
+10.1093/llc/fqz013.
+Baetens, Jan, and Kathryn Hume. “Speed, Rhythm, Movement: A Dialogue on K. Hume’s Article
+‘Narrative Speed.’” Narrative, vol. 14, no. 3, 2006, pp. 349–55, https://doi.org/10.1353/
+nar.2006.0008.
+Black Panther. Directed by Ryan Coogler, Marvel Studios, Walt Disney Pictures, 2018.
+Borges, Jorge Luis. Labyrinths. Translated by Donald A. Yates and James E. Irby, New Directions,
+1964.
+Brooks, Lisa. “The Primacy of the Present, the Primacy of Place: Navigating the Spiral of History in
+the Digital World.” PMLA, vol. 127, no. 2, Mar. 2012, pp. 308–16, https://doi.org/10.1632/
+pmla.2012.127.2.308.
+Bruce, La Marr Jurelle. How to Go Mad without Losing Your Mind: Madness and Black Radical
+Creativity. Duke University Press Books, 2021.
+Carter, Shan, et al. “Dissecting a Trailer: The Parts of the Film That Make the Cut.” The New York
+Times, 19 Feb. 2013.
+Chatman, Seymour. “Backwards.” Narrative, vol. 17, no. 1, 2008, pp. 31–55, https://doi.org/
+10.1353/nar.0.0015.
+---. “Genette’s Analysis of Narrative Time Relations.” L’Esprit Créateur, vol. 14, no. 4, 1974, pp.
+353–68.
+---. Story and Discourse: Narrative Structure in Fiction and Film. 1980.
+Ci, Jiwei. “An Alternative to Genette’s Theory of Order.” Style, vol. 22, no. 1, 1988, pp. 18–38.
+Currie, Mark. About Time: Narrative, Fiction and the Philosophy of Time. Edinburgh University Press,
+2006, https://doi.org/10.1515/9780748630400.
+Dannenberg, Hilary P. “Ontological Plotting: Narrative as a Multiplicity of Temporal Dimensions.”
+The Dynamics of Narrative Form: Studies in Anglo-American Narratology, edited by John Pier,
+Walter de Gruyter, 2004, pp. 159–90, https://doi.org/10.1515/9783110922646.159.
+Dinkins, Stephanie. “Not the Only One V1. Beta 2.” Deep Learning AI, Computer, Arduino, Sensors,
+Electronic, 2018, https://www.stephaniedinkins.com/ntoo.html.
+Douglass, Jeremy. “Graphing Branching Narratives.” Transverse Reading Gallery, 2017,
+https://jeremydouglass.github.io/transverse-gallery/.
+Drucker, Johanna. SpecLab: Digital Aesthetics and Projects in Speculative Computing. University of
+Chicago Press, 2009, https://doi.org/10.7208/chicago/9780226165097.001.0001.
+---. “Why Distant Reading Isn’t.” PMLA, vol. 132, no. 3, May 2017, pp. 628–35, https://doi.org/
+10.1632/pmla.2017.132.3.628.
+Egan, Jennifer. A Visit from the Goon Squad. 1st ed., Anchor, 2011.
+
+Journal of Cultural Analytics
+
+18
+
+Time Maps: Theory and Method
+
+Elkins, Katherine. The Shapes of Stories Analysis for Narrative. Cambridge University Press, 2022,
+https://doi.org/10.1017/9781009270403.
+Ensslin, Astrid, and Alice Bell, editors. Digital Fiction and the Unnatural: Transmedial Narrative
+Theory, Method, and Analysis. 1st ed., The Ohio State University Press, 2021, https://doi.org/
+10.26818/9780814214565.
+Fludernik, Monika. An Introduction to Narratology. 1st ed., Routledge, 2009, https://doi.org/
+10.4324/9780203882887.
+Genette, Gérard. “A Reply to Jiwei Ci’s ‘Alternative.’” Style, translated by Harold F. Mosher, vol. 22,
+no. 1, 1988, pp. 39–41.
+---. Narrative Discourse: An Essay in Method. Translated by Jane E. Lewin, Cornell University Press,
+1980.
+Ghislotti, Stefano. Backwards - Memento. 31 Dec. 2009, https://web.archive.org/web/
+20091231020648/http://dinamico2.unibg.it/fa/fa_mem01.html.
+Hansen, Per Krogh. “Backmasked Messages: On the Fabula Construction in Episodically Reversed
+Narratives.” Unnatural Narratives - Unnatural Narratology, edited by Jan Alber and Rutiger
+Heinze, de Gruyter, 2011, pp. 162–86, https://doi.org/10.1515/9783110229042.162.
+Heise, Ursula K. Chronoschisms: Time, Narrative, and Postmodernism. Cambridge University Press,
+1997.
+Herman, David. “Limits of Order: Toward a Theory of Polychronic Narration.” Narrative, vol. 6, no.
+1, 1998, pp. 72–95.
+---. Philosopher of Stories. Independently published, 2019.
+---. Story Logic: Problems and Possibilities of Narrative. University of Nebraska Press, 2002.
+---. “Word-Image/Utterance-Gesture: Case Studies in Multimodal Storytelling.” New Perspectives on
+Narrative and Multimodality, edited by Ruth Page, 1st ed., Routledge, 2009, pp. 78-.
+Hofstadter, Douglas R., and Escher Gödel. Bach: An Eternal Golden Braid. Anniversary, Basic Books,
+1999.
+Hume, Kathryn. “Narrative Speed in Contemporary Fiction.” Narrative, vol. 13, no. 2, 2005, pp.
+105–24, https://doi.org/10.1353/nar.2005.0010.
+Imarisha, Walidah. “Octavia’s Brood: Science Fiction Stories from Social Justice Movements.” Pacific
+Northwest College of Art, 11 Apr. 2018, https://www.youtube.com/watch?v=Jzcgpm5rxG8.
+Jockers, Matthew L. A Novel Method for Detecting Plot. 5 June 2014,
+http://www.matthewjockers.net/2014/06/05/a-novel-method-for-detecting-plot/.
+Kearns, Edward. “Annotation Guideline No. 2: For Annotating Anachronies and Narrative Levels in
+Fiction.” Journal of Cultural Analytics, 2019, p. 11200, https://doi.org/10.22148/16.052.
+Kim, Nam Wook, et al. “Visualizing Nonlinear Narratives with Story Curves.” IEEE Transactions on
+Visualization and Computer Graphics, vol. 24, no. 1, Jan. 2018, pp. 595–604, https://doi.org/
+10.1109/tvcg.2017.2744118.
+Klein, Andy. Everything You Wanted to Know about ‘Memento.’ 28 June 2001,
+https://www.salon.com/2001/06/28/memento_analysis/.
+Kukkonen, Karin. “Plot.” The Living Handbook of Narratology, 27 Aug. 2014, https://wwwarchiv.fdm.uni-hamburg.de/lhn/node/115.html.
+Labov, William, and Joshua Waletsky. “Narrative Analysis: Oral Versions of Personal Experience.”
+Essays on the Verbal and Visual Arts: Proceedings of the 1966 Annual Spring Meeting of the
+American Ethnological Society, edited by June Helm, University of Washington Press, 1967, pp.
+12–44.
+
+Journal of Cultural Analytics
+
+19
+
+Time Maps: Theory and Method
+
+Lévi-Strauss, Claude. “Structure and Form: Reflections on a Work by Vladimir Propp.” Theory and
+History of Folklore, University of Minnesota Press, 1958, pp. 167–89.
+---. “The Structural Study of Myth.” The Journal of American Folklore, vol. 68, no. 270, Oct. 1955, p.
+428, https://doi.org/10.2307/536768.
+Liveley, Genevieve. “Fables for Tomorrow: Narrating Net Zero.” The Routledge Companion to
+Narrative Theory, edited by Paul Dawson and Maria Mäkelä, Routledge, 2022, pp. 529–41,
+https://doi.org/10.4324/9781003100157-49.
+Meister, Jan Christoph. “Tagging Time in Prolog: The Temporality Effect Project.” Literary and
+Linguistic Computing, vol. 20, no. Suppl 1, Jan. 2005, pp. 107–24, https://doi.org/10.1093/llc/
+fqi025.
+Memento. Directed by Christopher Nolan, Mystery, Thriller, 2001.
+Mingazova, Ella. Playing the Accordion: On Narrative Slowness in Literature. McGill University, 2018.
+Montfort, Nick. Ordering Events in Interactive Fiction Narratives. Jan. 2007.
+Nelles, William. “Mapping the Chronology of Persuasion.” Approaches to Teaching Austen’s
+Persuasion, edited by Marcia McClintock Folsom and John Wiltshire, Approaches to Teaching
+World Literature. Modern Language Association, 2021, pp. 53–63.
+---. Narrative Order in Faulkner. 2020.
+Nelles, William, and Linda Williams. “Doing Hard Time: Narrative Order in Detective Fiction.”
+Style, vol. 55, no. 2, 2021, p. 190, https://doi.org/10.5325/style.55.2.0190.
+---. “Narrative Order in the First-Person Novel.” Poetics Today, vol. 39, no. 1, Feb. 2018, pp. 131–58,
+https://doi.org/10.1215/03335372-4265107.
+Newman, Daniel. Modernist Life Histories: Biological Theory and The Experimental Bildungsroman.
+Edinburgh University Press, 2019, https://doi.org/10.3366/edinburgh/9781474439619.001.0001.
+Nolan, Christopher. “18-Minute Analysis By Christopher Nolan On Story & Construction Of
+Memento.” Eyes on Camera, 2014, https://www.youtube.com/
+watch?v=tYScJZWhaHA&feature=youtu.be.
+Pasanek, Brad. “Extreme Reading: Josephine Miles and the Scale of the Pre-Digital Digital
+Humanities.” ELH, vol. 86, no. 2, 2019, pp. 355–85, https://doi.org/10.1353/elh.2019.0018.
+Pezzotta, Elisa. “Personal Time in Alternative and Time Travel Narrative: The Cases of Groundhog
+Day, Twelve Monkeys, and 2001: A Space Odyssey.” Alphaville: Journal of Film and Screen Media,
+vol. 2, no. 2, Winter 2011, pp. 1–13, https://doi.org/10.33178/alpha.2.03.
+Phelan, Peggy. Andy Warhol’s Filmic Embrace of Slowness. 2020.
+Pier, John. “On the Semiotic Parameters of Narrative: A Critique of Story and Discourse.” What Is
+Narratology ? Questions and Answers Regarding the Status of a Theory, edited by Tom Kindt and
+Hans-Harald Müller, Walter de Gruyter, 2003, pp. 73–98, https://doi.org/10.1515/
+9783110202069.73.
+Propp, V. Morphology of the Folktale. Translated by Laurence Scott, 2nd ed., University of Texas Press,
+1968, https://doi.org/10.7560/783911.
+Pulp Fiction. Directed by Quentin Tarantino, Walt Disney Video, 1998.
+Rashomon. Directed by Akira Kurosawa, 1951.
+Reagan, Andrew J., et al. “The Emotional Arcs of Stories Are Dominated by Six Basic Shapes.” EPJ
+Data Science, vol. 5, no. 1, Nov. 2016, p. 31, https://doi.org/10.1140/epjds/s13688-016-0093-1.
+Richardson, Brian. A Poetics of Plot for the Twenty-First Century: Theorizing Unruly Narrative.
+Theory and Interpretation of Narrative. The Ohio State University Press, 2019.
+
+Journal of Cultural Analytics
+
+20
+
+Time Maps: Theory and Method
+
+---. “Beyond Story and Discourse. Narrative Time in Postmodern and Nonmimetic Fiction.”
+Narrative Dynamics: Essays on Time, Plot, Closure, and Frames, edited by Brian Richardson, Ohio
+State UP, 2002, pp. 47–63.
+---. “Unnatural Stories and Sequences.” A Poetics of Unnatural Narrative, edited by Jan Alber and
+Henrik Skov Nielsen, The Ohio State University Press, 2013.
+Ricoeur, Paul. Time and Narrative. Translated by Kathleen McLaughlin and David Pellauer, 1st ed.,
+vol. 1, University of Chicago Press, 1990.
+Rimmon-Kenan, Shlomith. Narrative Fiction: Contemporary Poetics. 2nd ed., Routledge, 2002.
+Rope. Directed by Alfred Hitchcock, 1948.
+Sharma, Rasagy, and Venkatesh Rajamanickam. “Using Interactive Data Visualization to Explore
+Non-Linear Movie Narrative.” Parsons Journal for Information Mapping, vol. VII, no. 1, 2015, pp.
+1–12.
+Skau, Drew. “Visually Blog 16 Complicated Movie Plots Explained With Infographic Timelines |
+Visually Blog.” Visually (Blog), https://visual.ly/blog/16-movie-timeline-infographics/. Accessed 4
+Aug. 2015.
+Smith, Barbara Herrnstein. “Narrative Versions, Narrative Theories.” Critical Inquiry, vol. 7, no. 1,
+Oct. 1980, pp. 213–36, https://doi.org/10.1086/448097.
+Spillers, Hortense J. Black, White, and in Color: Essays on American Literature and Culture.
+University of Chicago Press, 2003.
+Tomaševskij, Boris. “Thematics.” Russian Formalist Criticism: Four Essays, edited by Paul A. Olson,
+translated by Lee T. Lemon and Marion J. Reis, University of Nebraska Press, 1925, pp. 59–95.
+U of Saskatchewan. Faulkner’s The Sound and the Fury: A Hypertext Resource. Mar. 2003,
+http://drc.usask.ca/projects/faulkner/.
+Underwood, Ted. “Using GPT-4 to Measure the Passage of Time in Fiction.” Using Large Digital
+Libraries to Advance Literary History, 19 Mar. 2023.
+---. “Why Literary Time Is Measured in Minutes.” ELH, vol. 85, no. 2, 2018, pp. 341–65,
+https://doi.org/10.1353/elh.2018.0013.
+Vonnegut, Kurt. “The Sexual Revolution.” Palm Sunday, RosettaBooks LLC, 1981.
+---. The Shapes of Stories. 1995, https://www.youtube.com/watch?v=oP3c1h8v2ZQ.
+Weisenburger, Steven. “The Chronology of Episodes in Gravity’s Rainbow.” Pynchon Notes, vol. 0, no.
+14, Feb. 1984, https://doi.org/10.16995/pn.401.
+Willemsen, Steven, and Miklós Kiss. “Keeping Track of Time: The Role of Spatial and Embodied
+Cognition in the Comprehension of Nonlinear Storyworlds.” Style, vol. 54, no. 2, 2020, pp.
+172–98, https://doi.org/10.5325/style.54.2.0172.
+Wittenberg, David. Time Travel: The Popular Philosophy of Narrative. Fordham University Press,
+2013, https://doi.org/10.5422/fordham/9780823249961.001.0001.
+Woolf, Virginia. Mrs. Dalloway. Harcourt, Brace and Company, 1959.
+Yauney, Gregory, et al. “Computational Prediction of Elapsed Narrative Time.” North American
+Chapter of the Association for Computational Linguistics, 2019.
+Zerubavel, Eviatar. Time Maps: Collective Memory and the Social Shape of the Past. University of
+Chicago Press, 2003, https://doi.org/10.7208/chicago/9780226924908.001.0001.
+
+Journal of Cultural Analytics
+
+21
+
+

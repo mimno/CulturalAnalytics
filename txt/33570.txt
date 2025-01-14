@@ -1,0 +1,1139 @@
+Journal of
+Cultural Analytics
+
+March 10, 2022
+
+Between consumers and fans: Writing
+fan reports as a multifunctional
+evaluation practice
+Simon Meier-Vieracker
+Simon Meier-Vieracker, Technische Universität Dresden, Germany
+Peer-Reviewer: Jannis Androutsopoulos
+Dataverse DOI: https://doi.org/10.7910/DVN/GMKLV4
+Article DOI: https://doi.org/10.22148/001c.33570
+
+ABSTRACT
+Based on a corpus of approx. 360,000 “fan reports”, that is online concert reviews written by
+customers of a ticket agency, this paper analyses lexical and stylistic features of evaluative
+language and their social functions as means for (self-)positioning. The analysis shows that the
+reviews are oriented towards different and competing orders of value and their writers take
+different roles. While some writers act as enthusiastic fans that use the platform for building
+communities of shared feelings, other writers appear as consumers who judge primarily
+according to economic criteria. On the basis of concrete patterns of language use it is shown how
+the heterarchic plurality of evaluative standards is used as a resource for social demarcations.
+
+1. Introduction
+On the website of the leading German ticket agency Eventim, concert reviews
+written by customers can be found under the heading “Fan-Reports: Bewertungen
+und Rezensionen” (fan reports: ratings and reviews). A prototypical “fan report”, in
+this case on a Justin Bieber concert, goes like this:
+Der Hammer !!!
+
+Köln, LANXESS arena, 18.09.2016 *****
+
+Das Konzert war einfach so toll! Ich war schon am 17.9 morgens da um auch wirklich sicher zu stellen
+das ich in die erste Reihe komme und es hat geklappt! Die Atmosphäre war einfach so krass und ich
+würde alles dafür geben diesen Tag nochmal zu wiederholen! Justin war so Hammer und die fans haben
+auch richtig Stimmung gemacht.Alles in allem : Perfekt !
+Awesome !!!
+The concert was just so great! I was already there on 17.9. in the morning to make sure that I got into
+the first row and it worked! The atmosphere was just so unreal and I would give anything to repeat this
+day! Justin was so awesome and the fans really set the mood, all in all: Perfect!1
+
+Journal of Cultural Analytics 7.2 (2022): 4-31
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+The person who wrote this review is obviously a big Justin Bieber fan. She spares
+no effort to get as close as possible to her beloved star, and she even identifies herself
+as a fan in her report. Looking back on the concert, she is overtly expressing her
+enthusiasm, albeit in a rather clichéd way by phrases like would give anything to
+repeat this day, but also through repeated use of the intensity marker so (so great,
+so unreal, so awesome).2 Moreover, she positions herself within the group of fans
+who share the same experience of – as she puts it – ‘having set the mood’ and who
+have played their part in the constitution of this emotionally thrilling event.3 By
+writing about her concert experience in such an enthusiastic manner, she seems to
+affiliate with all those readers who will share her enthusiasm, thus positioning
+herself once again in the fan community. At the same time, the person acts as a
+costumer of the ticket agency who is rating the quality of the sold product and makes
+use of the widespread and standardized valorization technique of awarding a number
+of stars ranging from one to five.4 Significantly, however, the reviews, which every
+customer of Eventim (as long as the ticket was bought online) is asked to write, are
+called “Fan-Reports”, framing the reviewing process as a practice of fandom rather
+than mere consumption.
+In this paper, I will have a closer look at this multifunctional nature of fan reports as
+online evaluation practices. Based on a corpus of approx. 360,000 fan reports and
+using corpus linguistic and data-driven methods, I will analyse lexical and stylistic
+features of evaluative language which underpin the textual admiration practices of
+fans as well as the product rating practices of consumers. Based on theoretical
+accounts of evaluation and positioning through language from both linguistics and
+sociology, I will show how both types of evaluation are intertwined in this genre and
+its discursive contexts.
+My analysis of evaluation in fan reports brings together two strands of research.
+First, it contributes to the study of online reviews from a linguistic perspective,
+which has often drawn attention to the central role of evaluative practices in this
+genre and has produced valuable insights into linguistic means of evaluation in
+discourse.5 However, most of the studies examining discourse features of evaluation
+beyond star ratings use qualitative methods based on small datasets. In contrast,
+computational linguistic approaches to the analysis of large datasets like sentiment
+analysis are mostly oriented to the task of automated detection of mood and
+5
+
+WRITING FAN REPORTS AS A MULTIFUNCTIONAL EVALUATION PRACTICE
+
+consumer preferences6 and tend to abstract from the discursive aspects of evaluative
+language. I will therefore base my analysis on a large amount of data and at the same
+time conduct a discourse-oriented analysis which will cover discursive functions of
+evaluation like audience design and (self-)positioning.
+Second, the particular type of online reviews analysed here contributes to the study
+of fandom and fan communication, which has become a vibrant branch in sociology
+and linguistics.7 Analysing fandom through the lens of fan writings is a common
+approach here. As the cultural theorist John Fiske has argued, semiotic productivity
+and text production are important and constitutive aspects of fandom and fan
+communities:
+All popular audiences engage in varying degrees of semiotic productivity, producing meanings and
+pleasures that pertain to their social situation out of the products of the culture industries. But fans often
+turn this semiotic productivity into some form of textual production that can circulate among – and thus
+help to define – the fan community.8
+
+Thus, genres like fanzines, fan fictions and, more recently, internet forums have
+always been valuable resources for fan research.9 As opposed to professional
+reviews e.g. by journalists,10 fans’ reviews, which can be found in large numbers on
+various platforms on the internet, represent a distinct type of expertise which also
+differs in the criteria of evaluation.11 Most research on fans’ textual products,
+however, also prefers qualitative methods for the analysis of rather small data sets.
+By contrast, I will show how corpus linguistic methods allows to work with much
+more data and to focus on more comprehensive patterns of evaluative language use.
+Moreover, the special case of fan reports may reveal how the fans’ evaluation
+practices are entangled with economic aspects and processes of commodification.
+This will shed light on how fans make “their culture out of the commercial
+commodities […] of the cultural industries”12 and how they use the commercial
+platforms as resources for building up communities of shared feelings.13
+In the following, I will first outline the theoretical framework of my analysis (sec.
+2) and then present the data set and methods (sec. 3). Starting with a data-driven
+analysis (sec. 4), I will interpret the findings against the backdrop of some theoretical
+considerations on the social functions of evaluation practices: First, I will discuss
+audience design by language style and forms of address (sec. 5), second, I will
+6
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+elaborate on acts of positioning (sec. 6). In the conclusion, I will discuss some
+implications for the constitution of fandom and fan cultures at the interface of
+subcultural practice and commodification (sec. 7).
+
+2. Theoretical framework: Evaluation in (digital) discourse
+My analysis takes a data-driven approach to the analysis of evaluation in discourse.14
+Instead of looking for the distribution of certain linguistic markers of evaluation as
+derived from theory, I will rather seek to develop the analytical categories
+inductively from the data itself. However, my analysis moves within a framework
+of previous theoretical approaches to evaluation in general and in the field of digital
+media in particular.
+Generally speaking, linguistic evaluation encompasses all instances of language use
+that are capable of taking a positive or negative stance on a person, situation or other
+entity, thereby assigning a certain value to that entity from a subjective, but possibly
+socially shared point of view.15 While the primary function of evaluation is to
+express attitude, it also may construe social relationships between participants of
+communication as it serves as a rhetorical means for aligning with readers’/listeners’
+evaluative stances and will activate them to supply their assessments.16 This is also
+what Systemic Functional Linguistics or Appraisal Theory, one of the most
+comprehensively theorized models of evaluative language, aims at when it assigns
+evaluations to the domain of interpersonal meaning.17
+A somewhat different approach which still seeks to cover both the attitudinal and
+the interpersonal function of evaluation is positioning theory as introduced by
+Davies & Harré18 and further developed in linguistics by John Du Bois.19 According
+to his seminal stance triangle model, stance taking is conceptualized as an interactive
+process of two subjects evaluating an object, thereby positioning themselves and
+thereby aligning with each other, be it converging in their evaluative judgements or
+diverging.20 From a linguistic perspective, this alignment in terms of shared feelings
+and opinions will rely on the adaption not only of attitudes but also of lexical as well
+as stylistic, e.g. graphemic means, particularly since text-based computer-mediated
+communication offers a broad range of stylistic alternatives which function as cues
+of positioning.21 Based on the assumption that the writers of fan reports position
+7
+
+WRITING FAN REPORTS AS A MULTIFUNCTIONAL EVALUATION PRACTICE
+
+themselves and others both as consumers and as fans, it is to be expected that this
+will be reflected in differences in language style and in forms of address as a means
+of audience design.22
+From a cultural analytic point of view in particular, it becomes clear that in this
+theoretical framework, evaluation is based on but not limited to individual cognitive
+judgements and emotional assessments. As evaluation represents a social and
+cultural process of establishing value, it includes both categorization based on
+negotiable intersubjective criteria and its legitimation within or towards social
+groups.23 Moreover, it is shaped by the available technological valuation
+infrastructures (in the case of fan reports the digital writing environment with its
+affordance to supplement the reviews with numerical ratings).24 These aspects are in
+the focus of the sociology of evaluation, which can therefore complement the
+linguistic approaches well.25 In the following, I will thus ask how the evaluation
+practice of writing digital fan reports with its characteristic linguistic features
+reflects a ‘heterarchic’ plurality of matrices against which the evaluated entities are
+compared26, and how this nexus of different “orders of worth”27 points to the
+constitution of fandom and fan culture in times of commodification.
+
+3. Data and methods
+The corpus of this study consists of 361,957 fan reports on live events of 11,491
+different artists that were published between 2000 and 2017. Most of the reports are
+about rock and pop concerts, occasionally football matches or theater and comedy
+performances are also reviewed. For the sake of simplicity, I will generally speak of
+concerts in the following.
+The corpus was compiled in February 2018 when the website was still completely
+HTML-based and could be easily scraped. For the corpus compilation, the texts were
+downloaded together with some metadata (i.e. artist, location, date, year, rating) and
+were processed as XML files. The corpus was lemmatized and part-of-speech tagged
+with the standard software TreeTagger.28 After tokenization, the corpus contains
+27,767,429 tokens. For the analysis, the corpus was imported to the software IMS
+Open Corpus Workbench29 and its web-based derivation CQPweb. 30 This software
+offers a variety of methods for linguistic analysis, next to a flexible, regular
+8
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+expression-based syntax for corpus queries. Statistical methods such as keyword and
+collocation analyses are also available.31
+In this paper, I will use the ratings as metadata to group the texts and do contrastive
+analyses. Table 1 shows the distribution of the ratings which fits to the well-known
+J-shaped distribution of online reviews.32
+Rating
+*****
+****
+***
+
+No. of texts
+255,211 (70%)
+47,839 (13%)
+21,995 (6%)
+
+No. of tokens
+17,394,917
+3,855,732
+2,267,565
+
+**
+
+20,026 (5%)
+
+1,939,660
+
+*
+16,886 (6%)
+Table 1: Distribution of reviews by ratings
+
+2,309,555
+
+Most people seem to be happy with the sold product. This might be seen as a hint
+that most of the writers are indeed affectively committed to the rated artists. It does
+not mean, however, that the majority of the concertgoers are happy with the concert
+performance itself.
+The length of the reviews ranges from 6 to 501 tokens (mean = 74.6, median = 56).
+When grouped by their ratings, it shows that reviews with higher ratings tend to be
+shorter (cf. Table 2). This points to a tendency known from conversation analysis as
+the notion of preference, which states that criticism as a dispreferred action must be
+justified in more detail.33
+Rating
+
+Mean
+
+Median
+
+*****
+
+68.2
+
+51
+
+****
+
+80.6
+
+60
+
+***
+
+103.1
+
+79
+
+**
+
+96.9
+
+89
+
+*
+
+136.8
+
+89
+
+Table 2: No. of tokens per text (i.e. text length) grouped by ratings.
+
+The most reviewed artist is the German comedian Mario Barth with 3,992 reviews,
+followed by the pop singer Helene Fischer (3,813 reviews) and the pop band
+Unheilig (3,336 reviews). The most reviewed international artist is Pink (2,589
+
+9
+
+WRITING FAN REPORTS AS A MULTIFUNCTIONAL EVALUATION PRACTICE
+
+reviews). 3,362 different artists (29%) received at least 10 reviews, 675 (6%) at least
+100.
+In what follows, I will start with corpus linguistic, data-driven findings concerning
+patterns of evaluative language derived from the whole dataset. Afterwards, I will
+further enrich these findings by focussing on selected aspects that are particularly
+meaningful for the research question on the entanglement of fandom and
+consumption.
+
+4. Corpus linguistic findings: Patterns of evaluative language
+use
+4.1. Keywords
+To get an impression of the linguistic means of evaluation in the genre of fan reports,
+a keyword analysis is a useful first step. Keywords are words whose frequencies in
+a target corpus differ significantly from their frequencies in a reference corpus and
+are thus in some extent crucial to the target corpus.34 For this study, five subcorpora
+were built from the texts of the different ratings that were contrasted with the whole
+corpus in order to find typical formulations for the different ratings.35 The keywords
+were calculated with lemmas instead of word forms, the statistical measure was Log
+Likelihood Ratio (LLR). The keyword analysis can be replicated with the code and
+data in the Dataverse repository.
+Rating
+*****
+
+****
+
+Keywords
+!, einfach, super, wieder, toll, Hammer, genial, geil, jede, und, Konzert, Abend,
+immer, nah [nächste], absolut, dabei, begeistern, empfehlen, live, Wahnsinn,
+unvergesslich, perfekt, Erlebnis, Dank, klasse, unglaublich, Stimmung, er,
+fantastisch
+!, simply, super, again, great, awesome, brilliant, genious, every, and, concert,
+evening, always, close [next], absolutely, there, enthusiastic, recommend, live,
+insane, unforgettable, perfect, experience, thank, great, unbelievable,
+atmosphere, he, fantastic
+etwas, aber, sehr, leider, gut, allerdings, schön, Abzug, trotzdem, ansonsten,
+Stern, einzig, die, gefallen, kurz, finden, gelungen, Platz, ., insgesamt, Manko,
+dennoch, jedoch, wenige, (, klein, Kritikpunkt, laut, Parkplatz, doch
+bit, but, very, unfortunately, good, however, nice, deduction, nonetheless,
+besides, star, alone, the, enjoy, short, find, successful, place, all in all,
+shortcoming, nevertheless, but, few, (, small, criticism, loud, parking lot, but
+
+10
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+***
+
+**
+
+*
+
+leider, aber, nicht, schlecht, die, allerdings, etwas, mehr, schade, wenige,
+jedoch, doch, ok, Platz, dann, kurz, eher, gut, zu, fehlen, erwarten, Preis,
+teilweise, laut, Uhr, teuer, nett, finden, Stunde, insgesamt
+unfortunately, but, not, bad, the, however, bit, more, pity, few, but, okay, place,
+then, short, rather, good, too, lack, expect, price, partly, loud, o’clock,
+expensive, nice, find, hour, all in all
+nicht, schlecht, leider, schade, enttäuschend, enttäuscht, mehr, die, ?, keine,
+eher, dann, aber, mittelmäßig, erwarten, Geld, wenige, Enttäuschung, Euro,
+teuer, zu, Naja, Preis, um, viel, enttäuschen, laut, nichts, Stunde, schwach
+not, bad, unfortunately, pity, disappointing, more, the, ?, no, rather, then, but,
+mediocre, exptect, money, few, disappointment, Euro, expensive, much,
+disappoint, loud, nothing, hour, weak
+schlecht, Geld, nicht, enttäuschend, Enttäuschung, keine, ?, enttäuscht,
+verlassen, schade, nie, nichts, dann, Frechheit, Reinfall, um, wir, Euro, leider,
+die, langweilig, enttäuschen, mehr, Pause, gar, überhaupt, laut, völlig, teuer,
+peinlich
+bad, money, not, disappointing, disappointment, no, ?, disappointed, leave, pity,
+never, nothing, then, outrage, flop, about, we, Euro, unfortunately, the, boring,
+disappoint, more, break, completely, loud, absolutely, expensive, embarrassing
+
+Table 3: Keywords
+
+First, the keyword table shows the standards of assessment, i.e. the presupposed
+norms and expectancies against which the writers evaluate the concert performance
+and their concert experience respectively.36 In the highest rating, positive adjectives
+with purely attitudinal meaning like super, toll (great), geil (awesome) and perfekt
+clearly prevail, but nouns like Stimmung (atmosphere), Erlebnis (experience) and
+also Gänsehaut (goosebumps, rank 46 of the keyword list) point to emotional aspects
+as the crucial evaluation criteria for the events; people obviously go to concerts
+because they want to be emotionally touched. Moreover, the adverb immer (always)
+which is mainly used in the phrase wie immer (as always) shows that people often
+attend several concerts by the same artist. They have acquired concert experience
+and use it as a resource for evaluation. In the lower ratings of four and three stars,
+the keyword kurz (short) points to the more concrete expectation that concerts should
+not last too short (1), while Platz (place or seat) indicates that the quality of the
+concert experience is related to the taken seats (2). In both examples, these
+judgements are clearly separated from the quality of the artists’ performance itself.
+(1) Einziger minus punkt: haben ein kleines bisschen zu kurz gespielt. Sonst wirklich ein sehr, sehr
+gutes Konzert! (****)
+
+11
+
+WRITING FAN REPORTS AS A MULTIFUNCTIONAL EVALUATION PRACTICE
+
+The only minus point: they played a little bit too short. Apart from that, really a very, very good
+concert!
+(2) Tabaluga Konzert und Künstler Top. Halle an unseren Plätzen viel zu warm und z.T. schlechte
+Akustik. (****)
+Tabaluga concert and artist were top. The hall was much too warm at our seats and partly bad
+acoustics.
+
+From the ratings of three stars downwards, keywords appear that point to monetary
+aspects like Preis (price), Geld (money), teuer (expensive) and Euro, mostly by the
+claim that the concerts were too expensive for the quality offered:
+(3) Kurzum wir waren enttäuscht und würden nicht noch einmal gehen, dafür sind die Karten zu teuer.
+(***)
+In short, we were disappointed and would not go again, the tickets are too expensive for that.
+(4) sehr kurz viel zu wenig fürs Geld bei mäßiger Akustik. (***)
+Very short, far too little for the money with mediocre acoustics.
+
+The lowest ratings of one and two stars naturally include purely negative adjectives
+like schlecht (bad), but also more descriptive adjectives like laut (loud) and
+langweilig (boring) which again point to more concrete expectations towards the
+concerts. Moreover, different lexemes from the semantic field of disappointment
+(Enttäuschung, enttäuschen, enttäuschend) are typical for the lower ratings,
+indicating the consumers’ higher expectations that were not fulfilled by the concerts.
+Expressives like the stance adverb leider (unfortunately)37 and schade (pity) as
+expressions of regret point in the same direction. In the lowest rating of one star, the
+emotional response of disappointment and regret is even surpassed by
+embarressment (peinlich) and indignation (Frechheit, outrage) which seems to put
+the blame more on the side of the artists:
+(5) So hatt die Dame bei einigen Liedern z.B. Noch die Mundharmonika im Mund, während der Gesang
+schon weiterging. Und das finde ich für einen Weltstar wie Shakira einfach nur peinlich! (*)
+In some songs, for example, the lady still had the harmonica in her mouth while the singing
+continued. And I think that's just embarrassing for a world star like Shakira!
+(6) Das Konzert in Köln war kurz gesagt, einfach nur eine frechheit! Weniger als eine Stunde gespielt,
+und dafür sind leute über 300 km angereist! (*)
+
+12
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+The concert in Cologne was, in short, just an outrage! Less than an hour played, and people
+travelled over 300 km for that!
+
+In addition to these evaluative means, the keyword table also shows lexical items
+used to scale or graduate the evaluative judgements.38 In the extremes of one and
+five stars we find intensifiers like absolut (absolutely), überhaupt and völlig
+(completely), but also indefinite pronouns expressing completeness like jede (every)
+and nichts (nothing). In the mid-range ratings, graduating lexical items like etwas
+(bit) or teilweise (partially) can be found, allowing writers to mediate between praise
+and criticism. This also holds true for adversative conjunctions like aber, jedoch
+(but) and allerdings (however) which are typical for the mid-range ratings, too:
+(7) Das Event war sehr schön, aber leider nur für die Ohren. Der Sitzplatz war Block 01 und die
+Scheinwerfer waren ständig im Gesicht, so daß man nicht viel gesehen hatte. (***)
+The event was very nice, but unfortunately only for the ears. The seat was block 01 and the spotlights
+were constantly in your face, so you didn't see much.
+
+Still another finding is noteworthy: In the five-star ratings, exclamation marks are
+significantly frequent, emphasizing the expressiveness of the evaluations:
+(8) Tolle Musiker, Solisten, Tänzer, die Promi-Darsteller, tolles Bühnenbild, bzw. die ganze Halle war
+ja eine einzige Bühne - Wahnsinn!! (*****)
+Great musicians, soloists, dancers, the celebrity performers, great stage design, or rather the whole
+hall was a single stage - awesome!!
+
+In the lower ratings of one and two stars, however, question marks are frequent,
+mostly used in (rhetorical) questions that express consternation about the bad quality
+of the concert and function as indirect accusations:39
+(9) […] katastrophale Klangqualität, eine Klangsuppe, Bass und Schlagzeug überbetont, Gesang und
+Gitarre (auch bei Soli) kaum zu hören - saß da überhaupt jemand am Mischpult? (*)
+Catastrophic sound quality, a sound soup, bass and drums overemphasised, vocals and guitar (even
+during solos) barely audible - was there anyone at the mixing desk at all?
+
+13
+
+WRITING FAN REPORTS AS A MULTIFUNCTIONAL EVALUATION PRACTICE
+
+4.2. Distribution of lexical items
+The findings from the keyword analysis can be supplemented by visualizing the
+distributions of selected lexical items. As Fig. 1 shows, aber (but) and leider
+(unfortunately) share a similar distribution with their highest frequencies in the midrange ratings.40 Fig. 2 shows that exclamation marks are more frequent in both the
+extremes. While writers of mid-range ratings try to balance positive and negative
+evaluations, writers of one-star ratings just seem to be angry. Finally, Fig. 3 shows
+that financial aspects are mentioned more frequently in the lower ratings.
+
+Fig. 1: Distribution of aber and leider
+
+14
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Fig. 2: Distribution of punctuation marks
+
+Fig. 3: Distribution of Euro/€ and Geld
+
+4.3. Key-trigrams
+The keyword analysis can be expanded by moving to key-ngrams (in this case: keytrigrams).41 Like the keywords, the key-ngrams were calculated with lemmas using
+the statistical measure Log Likelihood. This analysis, too, can be replicated with the
+data and code in the Dataverse repository. Table 4 shows selected results with the
+most frequent word form instantiations:
+15
+
+WRITING FAN REPORTS AS A MULTIFUNCTIONAL EVALUATION PRACTICE
+
+Rating
+*****
+
+Key-trigrams
+es war ein; war einfach nur; auf jeden Fall; war der Hammer; das beste Konzert;
+freue mich schon
+it was a; was simply; in every case; just awesome; the best concert; looking
+forward to
+
+****
+
+leider war die; sehr gut gefallen; alles in allem; ein Stern Abzug; ein schöner
+Abend; nicht so gut
+unfortunately it was, liked it very much, all in all, one star off, a nice evening, not
+that good
+
+***
+
+leider war die; gut, aber; nur 3 Sterne; an sich war; nicht so gut; für den Preis
+unfortunately it was; good, but; only 3 stars; in itself it was; not that good; for
+that price
+viel zu laut; gut, aber; mir mehr erwartet; für den Preis; war viel zu; auf der
+Bühne
+much too loud; good, but; exptected more; for that price; was much too; on stage
+
+**
+
+*
+
+schade um das; in der Pause; Geld nicht wert; nicht zu empfehlen; war sehr
+enttäuscht; viel zu laut
+a pity about the; in the break; not worth the money, not recommended; was very
+disappointed; much too loud
+
+Table 4: Key-trigrams
+
+Whereas exclamative constructions like war einfach nur {toll/super/genial} (was
+simply {great/super/brilliant}) prevail in the five-star ratings, financial aspects come
+to the fore in the lower ratings. Again, for the mid-range ratings a balancing of praise
+and critique can be found, e.g. with the adversative construction gut, aber (good,
+gut) or with the focus marker an sich (itself) which allows to separate the quality of
+the performance from surrounding factors:
+(10) Das Konzert an sich war spitze, nur unsere Sitzplätze waren leider schlecht. (***)
+The concert itself was great, but our seats were bad.
+
+As in (10), writers often comment on this with expressions of regret (leider war die,
+unfortunately it was) and with references to unfulfilled expectations (mir mehr
+erwartet, expected more). Finally, the trigram freue mich schon (looking forward to)
+points to the desire for repetition of the concert experience, which is indeed typical
+for fans, as it has already been shown for the review of the Justin Bieber fan quoted
+
+16
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+in the introduction. This desire for repetition finds its counterpart in the caution notes
+with the set phrase nicht zu empfehlen (not recommended) in the one-star ratings, by
+which writers warn others not to make the same mistake as themselves.
+
+5. Audience design by language style and forms of address
+The data-driven analysis has shown an uneven distribution of the thematisation of
+emotional or financial aspects across the different ratings. In order to interpret these
+findings, it is helpful to take into account the specific audience design of the genre
+of the so-called fan reports.42 As stated above, linguistic evaluation encompasses
+both categorization and legitimation which will differ depending on the addressed
+group. Generally speaking, writers of fan reports seek to share their experiences with
+other actual or possible visitors of the events for which Eventim is selling tickets.
+On the one hand, the targeted audiences include other fans who also passionately
+admire the artists. By sharing their positive emotions in writing fan reports in an
+expressive manner, writers may appeal for and align with a community of shared
+feeling. On the other hand, fan reports are aimed at other consumers and function as
+purchase recommendations, thus being a type of online word of mouth. 43 Of course,
+fans are consumers too, and fans even can be defined as persons who invest time and
+money in the relationship with a fan object with a certain regularity.44 To some
+extent, also an enthusiastic review can be seen as an implicit purchase
+recommendation. However, the writers tend to separate between these two functions,
+which, as I want to suggest, are mirroring two different audiences, and their
+orientation towards different orders of worth. In addition to lexical features already
+discussed in the section above, stylistic features also play an important role which,
+following Bell, can be described as indexing the presumed relation to other people.45
+5.1. Non-standard spellings
+As an example, I will first focus on non-standard spellings which are very common
+in the genre of fan reports. As it has often been shown, non-standard spellings are
+characteristic traits of different genres of text-based computer mediated
+communication, “exhibit[ing] a wealth of non-verbal cues, providing information
+and expressing emotional intimacy”.46 Additionally, non-standard spellings have
+always played an important role in textual products of fans like fanzines.47 Following
+
+17
+
+WRITING FAN REPORTS AS A MULTIFUNCTIONAL EVALUATION PRACTICE
+
+the taxonomy of Androutsopoulos, different types of non-standard spellings can be
+found in the corpus. First, prosodic spellings representing prosodic patterns are very
+frequent. Common typographic means include character iterations representing
+vowel lengthening (11) or capitals simulating word stress (12).
+(11) Einfach der Waaaaahnsinn!!! (*****)
+Simply aaaaaawesome!!!
+(12) Das Konzert von Massive Attack war einfach SUPER! (*****)
+The Massive Attack concert was just SUPER!
+
+Both types can easily be queried in the corpus by regular expressions.
+\S*(.)/1{3,}\S* matches all instances of character iterations within a word with
+a minimal length of 3. [A-ZÄÖÜ]{2,} matches all capitalized words. The results
+include highly frequent acronyms like CD, DJ and TV, which must be excluded. Fig.
+4 and 5 show the distributions of both patterns, showing that they are mainly used in
+five-star ratings. Assuming that both patterns can be interpreted as conventional
+means for expressing emotional involvement, these findings support the hypothesis
+that such stylistic choices serve to affiliate with others who share the writer’s
+enthusiasm.
+
+Fig. 4: Distribution of character iterations
+
+18
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Fig. 5: Distribution of capitals
+
+Second, various forms of phonetic spellings can be found, i.e. spellings that
+mimetically reproduce colloquial pronunciation. A common technique is the
+replacing of the word ending -er by -a like aba (but), supa and, most importantly,
+hamma (roughly: awesome). Although it is difficult to query directly for phonetic
+spelling, it seems that mainly expressive words are spelled that way. The spelling
+hamma alone occurs 1099 times. Moreover, phonetic spellings of geil (awesome)
+like gail or even goil can be observed. This latter spelling could be included under
+the third type of regiolectal spellings, which represent features typical for regional
+varieties. Especially reviews on artists who sing or perform in dialect often adapt to
+this linguistic choice in order to express affinity towards the artist and “to convey a
+positive assertion of local identity”.48 For instance, a review on a show of “Franken
+goes Musical” is closed with an exclamative in Franconian dialect including the
+characteristic invocation formula Allmächt:
+(13) Allmächt, war des abba subber! (*****)
+God almighty, that was great!
+
+All the mentioned types of spellings share the common feature of emulating features
+of orality in the written mode. They can be described as instances of what Koch and
+Oesterreicher have called conceptual orality, which usually is associated – and thus
+19
+
+WRITING FAN REPORTS AS A MULTIFUNCTIONAL EVALUATION PRACTICE
+
+is able to construe – situations of informality, familiarity and communicative
+immediacy.49 Therefore, these stylistic choices on the graphematic level, which all
+are found to be typical for higher ratings, serve as rhetorical means for aligning with
+other enthusiastic fans in an emotional way and help to build up communities of
+shared feelings.
+Next to these oral-like features, still other types of non-standard spellings can be
+found that cannot be explained with reference to the sound of spoken language. An
+example can be found in fan reports of the German Band “Tokio Hotel” who started
+as teenagers and therefore had mostly teenage fans. In fan reports from the early
+period, the somewhat systematic substitution of the letters g and k by q can often be
+observed like in qeil, as well as the substitution of j by y:
+(14) EiinfacH qEiiL!!! Ich war auf den konzerten in oberhausen und essen... es war einfach hamma
+geil!!! die stimmung vor der halle war echt supi und als das konzert endlich anfing...OHA^^ einfach
+nur bombe!!! man kann nicht richtig erklären wie es is...man muss selba auf einem TH konzert
+gewesen sein!!! naya ich denke mir einfach mal:... DorTmunD wiirD geroqqT!!! (*****)
+Just awesome. I was at the concerts in Oberhausen and Essen… it was just freakin’ amazing!!! The
+atmosphere in front of the hall was really great and when the concert started… WHOA^^ just a
+blast!!! You can’t really explain what it’s like… you have to be at a TH concert!!! Well, I just think
+to myself:… Dortmund will be rocked!!!
+(15) qeiiiL^^ whoaaa ich war Bremen o6,Bremen o7 und Hamburq o7!!! Das war so ends qeil^^ ich
+kann nur jeden ein TH konzi empfehlen die sind live einfach soo geil.!! Bill singt mit so viel gefühl
+*herzchen auqen krieq* xD Hamburq war für mich das qeiLste die stimmunq war der HAMMA
+und ich hoffe das ich auch nach Essen kann das ist für mich so wichtiq DA bei zu sein!!naja ich
+wünsche allen die auf jeden fall dahin qehen gaaanz viel spaß ... rockt nochmal mit den junqs
+ordentlich die bude ^^ (*****)
+Awesome^^ whoa I was Bremen 06, Bremen 07 and Hamburg 07!! That was so cool^^I can only
+recommend a TH concert to everyone, they are just so cool live!! Bill sings with so much feeling
+*heart-eyes* xD Hamburg was the best for me, the atmosphere was amazing and I hope that I can
+go to Essen as well, it is so important for me to be there!! Well, I wish all who will go there a lot of
+fun … rock the house again with the boys ^^
+
+In German graphematics, spellings like qeil, geroqqt, wichtiq and naya are deviant,
+but yet understandable. It can be ruled out that these are spelling or typing errors,
+rather they are highly marked variants. Also, word internal capitalization or even the
+constant change between upper and lower case like qEiiL or DorTmunD are common
+
+20
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+stylistic features in Tokio Hotel reviews. Finally, emoticons, i.e. iconic uses of
+characters in digital writing like ^^, x3, xD, =) or the like can often be found. All
+these patterns form a kind of group style that serves as a subcultural identity marker
+of the Tokio Hotel fan community as part of the so called Emo subculture. Its use
+presupposes familiarity with group specific repertoires of evaluation50 and binds the
+fans together as they share a common way of expressing their admiration and
+enthusiasm in language – a way which includes those who are familiar with it and
+excludes those who are not. In the special case of a teenage fan community, the
+spelling’s deviance from orthographic norms as taught in school is likely to be an
+additional motive for its use in the reviews. It thus seems reasonable that the reviews
+are targeted at other fans, as it is explicitly stated in (15). A general recommendation
+is made to visit a Tokio Hotel concert (kann nur jeden ein TH konzi empfehlen, just
+can recommend a TH concert to everyone) which seems to be directed at outsiders.
+However, it is overlaid by the direct address of other fans who will visit the Essen
+concert with the imperative rockt nochmal […] die bude (rock the house again).
+Although it is difficult to operationalize these group identity-related types of nonstandard spellings for a quantitative analysis, it seems that they occur mainly in very
+enthusiastic reviews with five-star ratings.
+5.2. Forms of address
+Even more overt linguistic markers related to audience design are forms of address.
+At least parts of the reviews are written in the second person plural. In some cases,
+the writers explicitly address other potential concert visitors by second person
+pronouns or even imperatives as already shown in (15).
+(16) PINK live ist einfach der Hammer! Das müsst Ihr Euch anschauen! Geht hin und Ihr werdet
+begeistert sein! (*****)
+PINK live is simply awesome! You have to see it! Go there and you will be thrilled!
+
+Thereby, writers explicitly position themselves and their addressees as parts of the
+same community. Along with these addresses of the fan reports’ readers (and, at the
+same time, potential ticket purchasers), addresses of the artists can frequently be
+found, too:
+
+21
+
+WRITING FAN REPORTS AS A MULTIFUNCTIONAL EVALUATION PRACTICE
+
+(17) Über zwei Stunden ohne Pause, ja Jungs ihr wart einfach spitze. Macht weiter so.
+Over two hours without a break, yes, guys, you were just great. Keep up the good work.
+
+Moreover, addresses in the second person singular, particularly with the proximal
+pronoun du expressing solidarity and intimacy,51 can be found in the corpus, which,
+as in the following example, sometimes even sound like a love letter:
+(18) Mein Mann und ich lieben Deine Musik. Auf unserer Hochzeit wollte ich keinen langweiligen
+Walzer, sondern ein Lied von Dir. Du und ich für immer!
+My husband and I love your music. At our wedding I didn't want a boring waltz, but a song by you.
+You and me forever!
+
+It can hardly be assumed that the writers of these reviews really do think that the
+artists who are literally addressed will get notice of the reviews. Rather, these forms
+of address, indicating a kind of para-social interaction,52 are to be described as means
+of staging familiarity and closeness to the artist that is indeed primarily exhibited by
+fans. By directly addressing the artists in front of the public audience, writers can
+successfully act as fans with a particular close relation to their stars that privileges
+them to communicate with them in a correspondingly intimate way.
+Although this direct addressing of the artists is most frequent in the five-star ratings,
+it can be found in the lower ratings, too:
+
+22
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Fig. 6: Distribution of du
+
+On a closer look, the one-star ratings with direct addressing often turn out to be
+reviews by disappointed fans, that is fans who had very high expectations based on
+their former experiences that were not fulfilled in this particular concert.
+(19) Schade Schade Helene, daß Du dem Mainstream folgen mußt und Deine Show dadurch zum Pop
+Klamauk herabstufst. Du bist so eine tolle Künstlerin! Ich verstehe nicht weshalb Du nicht nur
+Deine eigenen Lieder präsentierst, sondern noch zig andere Interpreten nachsingen mußt, das hast
+Du wirklich nicht nötig! (*)
+It’s a pity Helene that you have to follow the mainstream and thus downgrade your show to pop
+clamour. You are such a great artist! I don’t understand why you don’t just present your own songs,
+but also have to sing after other artists, you really don’t need to do that
+
+If the artist would have stayed true to herself and focused on her own music instead
+of following the mainstream,53 the concert would have been of better quality. The
+writer therefore presents herself as familiar enough with the artist to be able to judge
+on this. The observation that direct forms of address, especially with the pronoun du,
+serve as means of presenting oneself as a fan thus also holds true for their use in the
+lower ratings.
+
+23
+
+WRITING FAN REPORTS AS A MULTIFUNCTIONAL EVALUATION PRACTICE
+
+6. Acts of positioning: Fandom vs. consumption
+Within the enthusiastic reviews under the five-star ratings it stands out that economic
+aspects like the money spent for the tickets or the like are hardly ever mentioned.
+When expressing admiration as fans, they lose sight of the fact that they are
+consumers who buy and consume products. On the other hand, it is precisely these
+economic aspects that are addressed in the lower ratings, where enthusiasm seems
+to lack. Some evidence for this can be found in the complementary distribution of
+the lexical items Geld (money) and begeistert (enthusiastic), which suggests a
+separation between the roles of consumers and fans:
+
+Fig. 7: Distribution of begeistert and Geld
+
+To put it in Boltanski & Thévenots terms, the writers orient towards different and
+even competing orders of worth: the “inspired” order representing emotional
+judgements on the one hand and the “market” order representing monetary
+classifications on the other.54 By this divergent orientation, writers take different
+roles and thus position themselves in different ways.
+This separation between these two roles seems to be countered by the distribution of
+the lexical item Fan which is also frequent in the lower ratings:
+
+24
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Fig. 8: Distribution of Fan
+
+On a closer look, however, there turn out to be different patterns of use. In the onestar ratings, common patterns include nur für Fans (only for fans) or nur für
+eingefleischte/Hardcore Fans (only for die-hard fans) that clearly address fans as an
+out-group which the writers themselves do not belong to:
+(20) Solche Konzert scheinen nur etwas für Fans zu sein, die Ihre Gruppe auch persönlich erleben
+möchten. Um die Musik scheint es dabei nicht wirklich zu gehen. (*)
+Such concerts only seem to be something for fans who want to experience their group in person. It
+doesn't really seem to be about the music.
+(21) Für Hardcore Kelly Fans sicher ein Muss. Alle Anderen sollten sich auf viel Lärm einstellen. (*)
+For die-hard Kelly fans certainly a must. All others should be prepared for a lot of noise.
+
+From a disappointed consumer’s perspective, fans are profiled as people who are so
+fanatic and irrational in their fanhood55 that they will ignore the bad artistic quality
+of the performance, be it by giving more weight to the experience in person (20), be
+it by perceiving pure noise as music (21). Therefore, fans appear as people unable to
+realistically assess the poor economic balance of the product. This incompatibility
+between fandom on the one hand and economic judgement on the other is explicitly
+stated in (22):
+
+25
+
+WRITING FAN REPORTS AS A MULTIFUNCTIONAL EVALUATION PRACTICE
+
+(22) Fazit: unverschämte Abzocke für teures Geld und viele Fans wollen das nicht merken. Nie mehr
+irgendeinen Cent für Genesis. (*)
+Conclusion: outrageous rip-off for a lot of money and many fans don't want to notice that. Never
+again any cent for Genesis.
+
+In the five-star ratings, the pattern nur für eingefleischte Fans is usually negated in
+order to emphasize the positive evaluation even more, as the quality of the
+performance is objectively evident also for non-fans:
+(23) Wahnsinnig tolltes Konzert, charmant bayrisch und nicht nur für eingefleischte Fans. (*****)
+Insanely great concert, charmingly Bavarian and not only for die-hard fans.
+
+In this example, the writer leaves open whether she is a fan by herself. In other cases,
+the lexical item fan is clearly used as a self-reference as already shown in the very
+first example in the introduction. Accordingly, patterns like wir Fans (us fans) or
+wir als Fans (we as fans) occur mainly in the five-star ratings.
+(24) Die Stimmung sensationell, die alten Herren haben wieder so richtig abgerockt, wir Fans nicht
+weniger. (*****)
+The atmosphere was sensational, the old men really rocked out again, us fans no less.
+(25) Als Fans vom Circus Roncalli können wir nur sagen: absolutes muß (*****)
+As fans of Circus Roncalli, we can only say: an absolute must!
+
+Note that in (24) the adverb wieder (again) identifies the writer as a regular concert
+visitor of the reviewed group which also qualifies her as a fan.
+In terms of the stance triangle model Du Bois56, these findings can be systematized
+as follows.57 The function of five-star ratings can be described as self-positioning of
+fans who thereby align with other enthusiastic fans. As noted above, they build up
+communities of shared feelings through this and even may establish idiosyncratic
+linguistic codes that will exclude everyone not familiar with it. In the lower ratings,
+by contrast, writers typically position themselves as disappointed consumers who,
+on the one hand, distance themselves from the fans as irrational subjects unable to
+judge objectively on the economic value of the product. On the other hand, they align
+26
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+with other potential consumers, often by explicitly giving advice against purchase.
+Seen from this perspective, the fan reports’ heterarchy of standards of evaluation and
+their linguistic expression and negotiation can at least partly be resolved by assigning
+them to different types of social demarcation.
+
+7. Conclusion
+In this paper, I have analysed fan reports, that is online concert reviews written by
+customers of the ticket agency Eventim. With corpus linguistic methods and by
+using the ratings as metadata, I have analysed lexical and stylistic features of
+evaluative language within the genre of fan reports which is located between the two
+poles of fandom and consumption. Starting from linguistic theories of evaluation
+and of social positioning, I have developed an analytical framework which combines
+a data-driven approach to the analysis of patterns of evaluative language with
+functional and discourse-oriented perspectives. As I have shown, in the higher
+ratings fans typically express their enthusiasm while they tend to play down
+economic aspects of concert business in favour of fan culture as an emotional
+community. Of course, fans are also customers and consumers of economic
+products, but this very fact, the economic side of the culture industry, so to speak, is
+hardly ever mentioned. By contrast, in the lower ratings people often oppose to the
+concept of fandom already imposed by the name of the genre and profile their
+purchase recommendations as not affected by the irrational admiration practices of
+fans. Therefore, the fan reports reflect the orientation towards competing orders of
+worth which is in turn used as a resource for social demarcations.
+Of course, the ticket agency’s website section entitled „Fanreports“ is a commercial
+space in the first place. In a way, the company is taking economic advantage of the
+fans, their experiences and their expertise in order to promote their products.
+Nevertheless, it is the particularly enthusiastic fans who appropriate the platform and
+use it as a communicative space for subcultural practices and community building
+beyond economisation. However, in contrast to genuine formats of fan culture and
+fan productivity like fanzines or fan forums, the genre of fan reports is always
+permeated by economic judgements. The fact that the reviewed concerts are part of
+a concert business and the result of a comprehensive commodification of culture
+remains ever present. The genre of fan reports thus sheds light on the constitution
+27
+
+WRITING FAN REPORTS AS A MULTIFUNCTIONAL EVALUATION PRACTICE
+
+and transformation of fan cultures and the intersection of subcultural practice and
+commodification.
+Further research could address related forms of (online) reviews e.g. in the domain
+of social reading, where again other heterarchies of standards of evaluation and
+different social functions might be observed. Still the genre of fan reports as analysed
+in this paper is a most interesting case in point for a corpus linguistic and cultural
+analytic study of multifunctional evaluation practices. Methodologically, this paper
+shows how both the study of online reviews and of fan cultural practices can benefit
+from corpus linguistic methods. Moreover, it shows how a data-driven approach
+oriented towards linguistic aspects of evaluation practices can complement
+sociological approaches to evaluation and make them empirically more precise.
+
+Notes
+1
+
+All translations are my own. Note that many of the original quotes show characteristic features of internet-based
+writing like missing blanks, incomplete punctuation and so on. I will drop these features in my translations and will
+point to them in the text only if they are crucial for my argumentation.
+Heike Wiese, “So as a Focus Marker in German,” Linguistics 49, no. 5 (2011): 997,
+https://doi.org/10.1515/ling.2011.028.
+2
+
+Hubert Knoblauch, “Publikumsemotionen: Kollektive Formen kommunikativen Handelns und die Affektivität bei
+Großpublika in Sport und Religion,” Zeitschrift für Literaturwissenschaft und Linguistik 46, no. 4 (2016): 552,
+https://doi.org/10.1007/s41244-016-0040-4.
+3
+
+4
+
+Camilla Vasquez, The Discourse of Online Consumer Reviews (London: Bloomsbury, 2014),
+https://doi.org/10.5040/9781472593535.
+Vasquez; Judith Bridges and Camilla Vásquez, “If nearly all Airbnb reviews are positive, does that make them
+meaningless?,” Current Issues in Tourism 21, no. 18 (2018): 2065–83,
+https://doi.org/10.1080/13683500.2016.1267113.
+5
+
+Cornelius Puschmann and Alison Powell, “Turning Words Into Consumer Preferences: How Sentiment Analysis Is
+Framed in Research and the News Media,” Social Media + Society 4, no. 3 (2018): 1–12,
+https://doi.org/10.1177/2056305118797724.
+6
+
+Monika Bednarek, “Fandom,” in Pragmatics of Social Media, ed. Christian Hoffmann and Wolfram Bublitz
+(Berlin, Boston: De Gruyter, 2017), 545–72, https://doi.org/10.1515/9783110431070-020; Paul Booth, A
+Companion to Media Fandom and Fan Studies, 2018, https://doi.org/10.1002/9781119237211; Stefan Hauser and
+Simon Meier-Vieracker, eds., Fankulturen und Fankommunikation, Forum Angewandte Linguistik 68 (Berlin:
+Lang, 2022).
+7
+
+John Fiske, “The Cultural Economy of Fandom,” in The Adoring Audience. Fan Culture and Popular Media, ed.
+Lisa A. Lewis (London, New York: Routledge, 1992), 30.
+8
+
+28
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Michael Klemm, “Doing being a fan im Web 2.0. Selbstdarstellung, soziale Stile und Aneignungspraktiken in
+Fanforen,” Zeitschrift Für Angewandte Linguistik 56, no. 1 (2012): 3–32, https://doi.org/10.1515/zfal-2012-0002;
+Bednarek, “Fandom.”
+9
+
+10
+
+Rainer Diaz-Bone, Kulturwelt, Diskurs und Lebensstil: eine diskurstheoretische Erweiterung der Bourdieuschen
+Distinktionstheorie, 2nd ed., Theorie und Praxis der Diskursforschung (Wiesbaden: VS Verlag für
+Sozialwissenschaften, 2010).
+Andreas Wagenknecht, “‘Trotzdem sollte man als Metalfan dieses Album besitzen.’ Online-Rezensionen auf
+Amazon als Form der Fankommunikation,” in Fankulturen und Fankommunikation, ed. Stefan Hauser and Simon
+Meier-Vieracker, Forum Angewandte Linguistik 68 (Berlin: Lang, 2022), 177–198.
+11
+
+12
+
+Fiske, “The Cultural Economy of Fandom,” 46.
+
+13
+
+J. Martin and Peter R. R. White, The Language of Evaluation. Appraisal in English (New York: Palgrave
+Macmillan, 2005), 5, https://doi.org/10.1057/9780230511910.
+Simon Meier, “Einzelkritiken in der Fußballberichterstattung. Evaluativer Sprachgebrauch aus
+korpuspragmatischer Sicht,” Muttersprache 129 (2019): 1–23.
+14
+
+John W. Du Bois, “The Stance Triangle,” in Stancetaking in Discourse: Subjectivity, Evaluation, Interaction, ed.
+Robert Englebretson, vol. 164 (Amsterdam: Benjamins, 2007), 143, https://doi.org/10.1075/pbns.164.07du.
+15
+
+Geoff Thompson and Susan Hunston, “Evaluation: An Introduction,” in Evaluation in Text. Authorial Stance and
+the Construction of Discourse, ed. Susan Hunston and Geoff Thompson (Oxford: Oxford University Press, 2000), 8.
+16
+
+Martin and White, The Language of Evaluation. Appraisal in English; Michele Zappavigna, “Evaluation,” in
+Pragmatics of Social Media, ed. Christian Hoffmann and Wolfram Bublitz (Berlin, Boston: De Gruyter, 2017), 435–
+58, https://doi.org/10.1515/9783110431070-016.
+17
+
+Bronwyn Davies and Rom Harré, “Positioning: The Discursive Production of Selves,” Journal for the Theory of
+Social Behaviour 20, no. 1 (1990): 43–63, https://doi.org/10.1111/j.1468-5914.1990.tb00174.x.
+18
+
+19
+
+Du Bois, “The Stance Triangle.”
+
+20
+
+The function of evaluation practices as a form of socio-cultural (self-)positioning is also emphasized by Stefan
+Nicolae et al., “Soziologie des Wertens und Bewertens,” in (Be)Werten. Beiträge zur sozialen Konstruktion von
+Wertigkeit, ed. Stefan Nicolae et al., Soziologie des Wertens und Bewertens (Wiesbaden: Springer Fachmedien,
+2019), 14, https://doi.org/10.1007/978-3-658-21763-1_
+Jannis K. Androutsopoulos, “Non-Standard Spellings in Media Texts: The Case of German Fanzines,” Journal of
+Sociolinguistics 4, no. 4 (November 2000): 527, https://doi.org/10.1111/1467-9481.00128.
+21
+
+Allan Bell, “Language Style as Audience Design,” Language in Society 13, no. 2 (1984): 145–204.
+https://www.jstor.org/stable/4167516.
+22
+
+Michèle Lamont, “Toward a Comparative Sociology of Valuation and Evaluation,” Annual Review of Sociology
+38, no. 1 (2012): 205f., https://doi.org/10.1146/annurev-soc-070308-120022.
+23
+
+Frank Meier, Thorsten Peetz, and Désirée Waibel, “Bewertungskonstellationen. Theoretische Überlegungen zur
+Soziologie der Bewertung,” Berliner Journal für Soziologie 26, no. 3/4 (2016): 319, https://doi.org/10.1007/s11609017-0325-7; Anne K. Krüger and Martin Reinhart, “Theories of Valuation - Building Blocks for Conceptualizing
+Valuation between Practice and Structure,” Historical Social Research 42, no. 1 (2017): 278f.,
+https://doi.org/10.12759/hsr.42.2017.1.263-285.
+24
+
+25
+
+Nicolae et al., “Soziologie des Wertens und Bewertens.”
+
+29
+
+WRITING FAN REPORTS AS A MULTIFUNCTIONAL EVALUATION PRACTICE
+
+26
+
+Lamont, “Toward a Comparative Sociology of Valuation and Evaluation,” 208.
+
+Luc Boltanski and Laurent Thévenot, “The Sociology of Critical Capacity,” European Journal of Social Theory 2,
+no. 3 (1999): 368, https://doi.org/10.1177/136843199002003010.
+27
+
+Helmut Schmid, “Probabilistic Part-of-Speech Tagging Using Decision Trees,” in New Methods In Language
+Processing, ed. D.B. Jones and H. Somers (London: Routledge, 2003), 154–64.
+28
+
+Stefan Evert and CWB Development Team, “The IMS Open Corpus Workbench (CWB),” 2019,
+http://cwb.sourceforge.net/files/CQP_Tutorial.pdf.
+29
+
+Andrew Hardie, “CQPweb — Combining Power, Flexibility and Usability in a Corpus Analysis Tool,”
+International Journal of Corpus Linguistics 17, no. 3 (2012): 380–409, https://doi.org/10.1075/ijcl.17.3.04har.
+30
+
+31
+
+Access to the corpora can be granted on request at https://fussballlinguistik.de/korpora/registrierung/
+
+32
+
+Bridges and Vásquez, “If nearly all Airbnb reviews are positive, does that make them meaningless?,” 2059.
+
+Anita Pomerantz, “Agreeing and Disagreeing with Assessments: Some Features of Preferred/Dispreferred Turn
+Shaped,” in Structures of Social Action. Studies in Conversation Analysis, ed. J. Maxwell Atkinson and John
+Heritage (Cambridge: Cambridge University Press, 1984), 57–101.
+33
+
+Jonathan Culpeper and Jane Demmen, “Keywords,” in The Cambridge Handbook of English Corpus Linguistics,
+ed. Douglas Biber and Randi Reppen (Cambridge: Cambridge University Press, 2015), 90–105,
+https://doi.org/10.1017/CBO9781139764377.006.
+34
+
+Meier, “Einzelkritiken in der Fußballberichterstattung. Evaluativer Sprachgebrauch aus korpuspragmatischer
+Sicht.”
+35
+
+Birte Arendt and Pavla Schäfer, “Bewertungen mm Wissenschaftsdiskurs. Eine Analyse von ReviewKommentaren als Aushandlungspraxis normativer Erwartungen,” LiLi 177 (2015): 104.
+https://doi.org/10.1007/BF03379894.
+36
+
+37
+
+The role of attitudinal stance adverbs for evaluation in online reviews is also emphasized by Vasquez, The
+Discourse of Online Consumer Reviews, 39.
+38
+
+Martin and White, The Language of Evaluation. Appraisal in English, 37; Zappavigna, “Evaluation,” 439.
+
+39
+
+Vasquez, The Discourse of Online Consumer Reviews, 47.
+
+Christopher Potts and Florian Schwarz, “Affective ‘This,’” Linguistic Issues in Language Technology 3, no. 5
+(2010): 14f. https://doi.org/10.33011/lilt.v3i.1219.
+40
+
+41
+
+This method is extensively discussed by Noah Bubenhofer, Sprachgebrauchsmuster. Korpuslinguistik als
+Methode der Diskurs- und Kulturanalyse (Berlin, Boston: De Gruyter, 2009),
+https://doi.org/10.1515/9783110215854.
+42
+
+Bell, “Language Style as Audience Design.”
+
+Ana Margarida Barreto, “The Word-of-Mouth Phenomenon in the Social Media Era,” International Journal of
+Market Research 56, no. 5 (2014): 631–54, https://doi.org/10.2501/IJMR-2014-043.
+43
+
+Jochen Roose, Mike S. Schäfer, and Thomas Schmidt-Lux, “Einleitung. Fans als Gegenstand soziologischer
+Forschung,” in Fans. Soziologische Perspektiven, ed. Jochen Roose, Mike S. Schäfer, and Thomas Schmidt-Lux
+(Wiesbaden: Springer VS, 2010), 14.
+44
+
+30
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Allan Bell, “Back in Style: Reworking Audience Design,” in Style and Sociolinguistic Variation., ed. Penelope
+Eckert and John R Rickford (Cambridge: Cambridge University Press, 2002), 141f.
+45
+
+Yen-Liang (Eric) Lin, “Non-Standard Capitalisation and Vocal Spelling in Intercultural Computer-Mediated
+Communication,” Corpora 11, no. 1 (2016): 64, https://doi.org/10.3366/cor.2016.0085. See also further references
+in this section.
+46
+
+47
+
+Androutsopoulos, “Non-Standard Spellings in Media Texts.”
+
+48
+
+Androutsopoulos, 525.
+
+Peter Koch and Wulf Oesterreicher, “Schriftlichkeit und Kommunikative Distanz,” Zeitschrift für Germanistische
+Linguistik 35, no. 3 (2007): 346–75, https://doi.org/10.1515/zgl.2007.024.
+49
+
+50
+
+Nicolae et al., “Soziologie des Wertens und Bewertens,” 14.
+
+Roger Brown and Albert Gilman, “The Pronouns of Power and Solidarity,” in Readings in the Sociology of
+Language, ed. Joshua A. Fishman (Berlin, Boston: de Gruyter, 1968), 252–75,
+https://doi.org/10.1515/9783110805376.252.
+51
+
+Donald Horton and Richard Wohl, “Mass Communication and Para-Social Interaction: Observations on Intimacy
+at a Distance,” Psychiatry 19, no. 3 (1956): 215–29, https://doi.org/10.1080/00332747.1956.11023049.
+52
+
+For the discursive functions of the concept of “mainstream” cf. Sarah Thornton, Club Cultures: Music, Media and
+Subcultural Capital (John Wiley & Sons, 1995), 5.
+53
+
+54
+
+Boltanski and Thévenot, “The Sociology of Critical Capacity,” 368.
+
+This view was also wide-spread in early sociological accounts of fandom. Cf. Joli Jenson, “Fandom as Pathology.
+The Consequences of Characterization,” in Adoring Audience, ed. Lisa A. Lewis (London, New York: Routledge,
+1992), 9–29.
+55
+
+56
+
+Du Bois, “The Stance Triangle.”
+
+57
+
+The function of evaluation practices as a form of socio-cultural (self-)positioning is also emphasized by Nicolae et
+al., “Soziologie des Wertens und Bewertens,” 14.
+
+31
+
+

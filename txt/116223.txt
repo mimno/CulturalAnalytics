@@ -1,0 +1,1151 @@
+Mohamed, Eid, and Talaat F. Mohamed. “Racio-National Imaginary and Discursive
+Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modeling
+Study.” Journal of Cultural Analytics, vol. 9, no. 3, June 2024,
+https://doi.org/10.22148/001c.116223.
+
+ARTICLE
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic
+Identity in al-Manār and al-Risālah: A Topic Modeling Study
+Eid Mohamed1, Talaat F Mohamed2,3
+1 Qatar University, 2 Al Azhar University, 3 Egypt and Jouf University, KSA
+
+Keywords: al-Manār, al-Risālah, Arab Identity, Racial Identity, Arab Nahḍah, Islamic Identity
+https://doi.org/10.22148/001c.116223
+
+Journal of Cultural Analytics
+Vol. 9, Issue 3, 2024
+
+This article focuses on the dynamics of culture, language, and race as integral to
+the discourse on Pan-Islamist/Pan-Arabist national identification in Egypt
+during an era of drastic change in the Egyptian political and social spheres that
+set the stage for the current century that followed. Our approach draws on
+computational tool of topic modeling to probe relevant thematic discussions on
+the” conceptualization of race, language, culture, and identity by leading ArabMuslim intelligentsia at a foundational moment that paved the way for Arab
+Nahḍah (modernity). Specifically, this analysis is meant to trace the intellectual
+development in the writings of Muḥammad Rashid Riḍā’s (1865-1935), which
+appeared in the magazine he edited, al-Manār (‘The Lighthouse’, 1898-1935),
+and those of Aḥmad Ḥasan al-Zayyāt’s (1885-1968), editor of al-Risālah (`The
+Messageʼ, 1933-1953), also a weekly magazine, both published in Cairo, Egypt.
+The study concludes that both figures sought to galvanize a largely hybridized
+Islamist/Arabist discourse as manifested in the clusteral paradigms of modelled
+topics.
+
+This article focuses on the dynamics of culture, language, and race as integral
+to the discourse on Pan-Islamist/Pan-Arabist national identification in Egypt
+during an era of drastic change in the Egyptian political and social spheres
+that set the stage for the current century that followed. Our approach draws
+on computational analysis or topic modeling to probe relevant thematic
+discussions on the conceptualization of race, language, culture, and identity
+by leading Arab-Muslim intelligentsia at a foundational moment that paved
+the way for Arab Nahḍah ('modernityʼ). Specifically, this analysis is meant
+to trace the intellectual development in the writings of Muḥammad Rashid
+Riḍā’s (1865-1935), which appeared in the magazine he edited, al-Manār
+('The Lighthouseʼ, 1898-1935), and those of Aḥmad Ḥasan al-Zayyāt’s
+(1885-1968), editor of al-Risālah ('The Messageʼ, 1933-1953), also a weekly
+1
+magazine, both published in Cairo, Egypt. The study concludes that both
+figures sought to galvanize a largely hybridized Islamist/Arabist discourse as
+manifested in the clusteral paradigms of modeled topics.
+
+1 The two magazines were individual initiatives that stopped with the passing of their owners and main editors.
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+Our investigative approach to the politics of identity and other modalities,
+including religion, culture, and ethnicity, builds on a blending, or – to
+borrow from Andrew Piper – “integration” (“Novel Devotions” 69) of
+distant and close readings of the paradigmatic shifts in the identity politics
+discourses in the two magazines. We make use of Franco Moretti distant
+reading (2005), which is a facet of the digital turn in the humanities, in
+exploring the entire corpora of the two magazines, while our “close reading”
+draws mainly on the articles written by the two editors-in-chief, who are the
+main contributors to the two magazines. Our visualizing-steered approach is
+meant to sustain traditional close reading with the abstract view offered by
+the graphs of topics modeled and in turn probe the paradigmatic shifts in the
+discourse of Arab/Islamic identity as introduced in the two magazines. This
+digitally-aided close reading aims at a better understanding of the underlying
+parameters of identity discourse during a critical juncture in the history of
+Arab literary/cultural journalism and Arab cultural history in general.
+Contextually, numerous studies discussed the application of topic modeling
+to Arabic corpora to enhance topic detection and clustering (Rafea and
+GabAllah 2018). Researchers like Francesca Fallucchi et al. (2022), for
+example, discuss how both quantitative and qualitative research methods in
+the humanities can be enriched through the use of the functionalities and
+tools offered by digital humanities in Arabic, though they focus mainly on the
+2
+Edumeres Toolbox as applied to Arabic textbooks. This enriching potential
+features prominently in Till Grallert’s study of the periodical press during in
+late Ottoman Eastern Mediterranean, with a focus on four Arabic magazines
+that included al-Manār. In his article, Grallert proposes a systemic study
+of journalistic production during the pre-Nahda period as a “formative”
+discursive field that still has bearings on the cultural and intellectual life in the
+Arabic-speaking Middle East. However, his study addresses the question of
+authorship and the inter-journalistic network, using “social network analysis
+and stylometry for authorship attribution” (Grallert 61). In a more recent
+study, “Do Egyptians Still Care About the Arab Spring?” (2024), topic
+modeling is used in the classification of journalistic topics in post-Arab
+Spring Egypt where the modelling step provides a deeper and richer
+understanding of the relationships and patterns in the corpus. It shows how
+modelling process enables researchers to gain insights into the cultural, social,
+and historical contexts of the studied texts.
+Methodologically, we use morphological processing and topic modeling of alManār and al-Risālah corpora to investigate topical (thematic) concurrences
+associated with the identity discourse in the Arab-Muslim world in both
+magazines. This qualitative mapping (and graphing) is coupled with a
+
+2 ^Utilizing computer-
+
+assisted analysis techniques derived from computational linguistics and computer science to explore and compare extensive text corpora to id
+entify recurring patterns^ ^or dominant topics.^
+
+Journal of Cultural Analytics
+
+2
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+quantitative, close reading of selected articles, by the editors-in-chief, that
+directly address the respective topics explored in this study. This hybrid
+approach, besides enhancing our understanding of the engaged topics, helps
+in unraveling the underlying discursive patterns and their fluctuations across
+the span of the two magazines’ lifespans, and of course apart from the
+controversy of the pros and cons, or – to borrow from Elizabeth Callaway
+et al. (2020) – the “push and pull” of digital humanities. So, based on
+established traditional readings of the selected topics, we revisit the corpora,
+contextualize modeled topics, and search for new insights by drawing on the
+abstract views resulting from such modeling. Here, clustering words together
+under topic modeling allows us to pinpoint the word network recurring
+under each theme and track thematic variations and frequency rates over the
+publishing spans of the two magazines.
+
+Methodology
+The data used in this study comes from the Shamela versions of al-Manār
+(https://old.shamela.ws/index.php/book/6947)
+and
+al-Risālah
+(https://old.shamela.ws/index.php/book/29674). The two xhtml text files
+of the two magazines, which already have a clean and simple navigation
+structure, were extracted using the Python library, BeautifulSoup, removing
+the boilerplate and the markup tags. This resulted in 3980 text files and
+6.740.567 words from al-Manār and 13755 text files and 15,228,812 words
+from al-Risālah. The texts are organized chronologically so that we can track
+the respective topics and also quantitatively measure the frequency of clusters
+(word networks) across the lifespan of the magazines. Although the digital
+versions of the two journals are searchable, it is not possible to analyze the
+large amount of available data or extract thematic evidence without the help
+of topic modeling, as the digital versions only allow for keyword searches.
+Drawing on distributional semantics, topic modeling the two magazines’
+datasets offers us paradigmatic insight into the key themes or clusters that
+can nuance our traditional close readings of these related themes. Due to
+the special richness of Arabic morphology, preprocessing is applied through
+morphological stemming, in which prefixes and suffixes are dropped, and
+then conjunctions are dismissed in topic models, using root forms only.
+In preparation for processing, sentence boundaries are detected heuristically,
+and then morphological segmentation is conducted. The topic models are
+then built through stems produced by the Arabic-SOS tools, where the
+Gradient Boosting Machine Learning algorithm is used for word
+segmentation, resulting in an accuracy rate of 98.8%. Next, the Mallet topic
+modeling toolkit (Mohamed and Sayyed 2019) within these models, topical
+words, having maximally higher frequency rates than others, are taken to be
+thematically correlating into clusters (themes). Through 50 and 100-topic
+modeling, we get a thematic distribution map, where the high-probability
+list co-concurrences (or near collocates) guide our close investigation of
+Journal of Cultural Analytics
+
+3
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+Figure 1. Data Processing Phases
+
+the distribution of such top words and reading of the selected texts to
+see how the surfacing topics cohere into meaningful patterns. This close
+reading is coupled with a metadata review to sustain a consistent reading of
+the topics discussed. With close reading focusing eclectically on the articles
+written by the editors-in-chief of the two magazines and the topic modeling
+process results, we compare and contrast the progress line of the selected
+themes that sustain the identity formation discourse to identify elements or
+convergence and divergence in both magazines and thus see how the digitalmanual synergy can help in giving new insights about major sociocultural
+preoccupations during a foundational period in the history of Arab culture.
+Such preoccupations will be contextualized in the following sections.
+
+Arab Racio-national Imaginary: Critical Context
+According to the Italian Marxist Antonio Gramsci (1891–937), hegemony
+is not just the dominance of one class over the other(s) but also necessitates
+the consent of the lower class(es). In his later writings, Gramsci explains that
+hegemony is not merely rooted in economism but is a matter of political and
+cultural dominance as well. We would have to agree with Gramsci's theory
+of hegemony because the modes of hegemony, dominance, and control that
+we observe in the early 20th century Arab World do not merely dominate in
+the realm of state politics, but practically dominate over a majority, if not all
+aspects of life. However, it is through struggle and human agency that we can
+overcome hegemony.
+
+Journal of Cultural Analytics
+
+4
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+We use the above theoretical framework in addressing the minorities in
+the Arab world (specifically in Egypt), and the cultural and political
+constructions of empire. We explore through computational tools the role of
+the selected magazines in shaping the earlier discursive formations of identity
+that still reverberate in the modern cultural and intellectual life in Egypt and
+the Arab world.
+
+Why al-Manār and al-Risālah
+During the pre-Nahḍah period (roughly mid-19th to early 20th cen.),
+magazines were the locomotives of cultural transformation and
+enlightenment in an Arab world that was suffering both vicious colonialism
+and oppressive monarchy. These magazines induced dynamism in a largely
+stagnating Arabo-Islamic world. They also served as a platform, not only
+for interreligious dialogues, debates, and disputes but also for an eclectic
+translational process of world literature. No wonder major intellectuals of the
+time contributed to these magazines, adding to their lively and innovative
+discussions. Both al-Manār and then al-Risālah played a key role in
+reflecting the spirit of their age and in invigorating the cultural sphere in
+Egypt and, by extension, in the rest of the Arabo-Islamic world, given their
+circulation outside Egypt.
+3
+
+Scope
+Based on the foregoing, this article investigates the multifaceted identity
+discourse as represented in the journals through racial, religious and cultural
+debates. These key constituents of identity largely shape and are also shaped
+by the prevalent nationalist narratives in Egypt during the lifespan of the
+two journals. And, since language itself is a key constituent in the racial
+discourse on Arab, Christian-(Coptic)-Jewish relations, topic modeling has
+helped us in tracing the main associations or collocates surrounding the topic
+and identifying its conceptual molding.
+
+From Pan-Islamism to Pan-Arabism
+Both al-Manār and al-Risālah represent pivotal links in the shift from PanIslamism to Pan-Arab nationalism within the discourse of Arabo-Islamic
+identity in Egypt, and the rest of the Arab world, during the pre(modern)
+period. While the focus of al-Manār was on religious issues, especially the
+relationship between Muslims and Copts (Christians) and later Muslims and
+Copts against Jews, with the rise of the Palestinian Question, both al-Manār
+and al-Risālah had a deep nationalist thread within that sweeping religious
+current.
+
+3 For a broader contextualization of the term, see Hannah Scott Deuchar, ‘“Nahḍa”: Mapping a Keyword in Cultural Discourse’, Alif: Journal
+
+of Comparative Poetics 37 (2017): 50–84.
+
+Journal of Cultural Analytics
+
+5
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+Figure 2. Cluster network in al-Manār, with an illustration of relevant head clusters
+
+Figure 3. Graphic representation of Clusters 11, 15, and 40.
+
+Based on an analytical inspection of the high frequency themes in al-Manār
+throughout its publication years, the following cluster-network chart
+indicates a steady mention of the religious, followed only by a parallel, though
+less frequent, discourse on Egyptian national discourse that involves largely
+political reform. The leading clusters 15, 11, and 40, into which all other
+subclusters channel, are shown in (Figure 1).
+These three clusters roughly reflect the dominance of the religious (clusters 40
+and 15) in the magazine, with a bent towards the religio-national, as reflected
+in cluster 11. The line graph shows a considerable rise in cluster frequency
+between 1916 and 1917, corresponding to the 1916 Great Arab Revolt led by
+Sharif Hussein ibn 'Ali against the Ottoman Empire.
+And while cluster 40 engages exegesis of the Qurʼan, based on the conclusive
+scriptural evidence and genuine Sunnah ('Prophetic Traditionsʼ), cluster 15
+reflects a binary religious discourse through which Islam and Christianity
+Journal of Cultural Analytics
+
+6
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+are weighed against one another, in terms of the creed itself, and with a
+focus on the notion of monotheism as compared to the Christian Trinity.
+Yet, by following the idea of his mentor, Muḥammad ‘Abduh, Riḍā believed
+that Egypt as a nation was not ready for self-sovereignty, needing “gradual
+training in the arts of rule” (Hourani, Arabic Thought 137). Riḍā first
+advocated socio-religious reform in a then-declining Ottoman Caliphate in
+the face of vicious European imperialism. However, he lost all hope in this
+proto-Ottoman Islamism with the rise of the Unionists’ Pan-Turanism and
+Ataturk’s abolition of the Caliphate. He dubbed the abolition as a social,
+religious, and political coup (Riḍā, “al-Inqilāb” 273), and admitted that
+Islamic rule is “closer to Republicanism than to absolute monarchy” (Riḍā,
+“Manāfi” 279). In Riḍā’s opinion, unmarred belief in Islamic monotheism
+and proper understanding of sound governance, based on consultation
+(Shūra), were entwined in sustaining both religious and secular progress
+for the Muslim nation. In 1907, he believed that the Egyptians, like the
+Europeans, were much better than the Turks, as the former enjoyed a
+free press while the Turks were still suffering the bloody consequences of
+censorship. He attributed the Arabo-Muslim backwardness and despotism in
+his time to misunderstanding of or deviation from the pristine tenets of Islam
+and to the fact that the Arabs had learned the values of freedom and justice
+largely through mingling with the Europeans.
+Figures 2 and 3, where a plummeting cluster 11 is met with a rising trend in
+clusters 15 and 40, underline the shifts in Riḍāʼs revivalist/reformist course,
+showing that his reformism flourished under the influence of his two masters,
+'Abdu and al-Afghānī (climaxing at the close of the 19th century), and then
+receded in the 1930s in favor of a spiking revivalist Salafism, when ChristoIslamic binarism resurfaced. This religious binarism is also reflected in Riḍā’s
+discourse on the Jews. Here, we will compare the attitude towards the Jews as
+a racial other in both al-Manār and al-Risālah, but only after introducing a
+brief outline of how the Jews have been represented in Arab-Islamic history.
+
+Race and Racism in al-Manār and al-Risālah
+As will be explained later, the terms 'raceʼ and 'racismʼ witness high frequency
+in both magazines during times of crises and transition (as reflected in clusters
+38 (weighted 0.03777) and 66 (weighted 0.04149) in al-Manār and cluster
+65 (weighted 0.02803) in al-Risāla), knowing that, just like chauvinism,
+racism itself is a shifting social construct that is nevertheless integral to
+the processes of identity formation with the purpose of modernizing Egypt
+without abandoning its cultural heritage. Farah Antun’s conclusion of his
+1904 novel gives a clear indication to the alternative of a failed negotiation,
+that is decline (symbolized by the death of the two lovers due to their
+superimposed separation due to their difference in religious affiliations,
+Christianity and Judaism (Alwan 52–53).
+
+Journal of Cultural Analytics
+
+7
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+A spirit of tolerant coexistence among the followers of the three Abrahamic
+religions was largely prevalent in Egypt up until the 19th century, thanks to
+4
+the established Islamic Dhimma concept. Such tolerance finds its roots in
+the Prophet of Islam’s Charter of Medina concluded between the Muslims
+and the Jews, where both parties constituted a single nation under which
+all enjoyed equal rights and duties. For Alwan, awareness of anti-Jewish
+prejudices and bigotry increased with the modernization process of the 19th
+century and the expansion of European education. However, the major
+shift in the relations between both the Muslims and the Christians, on one
+hand, and the Jews, on the other, came with the 1948 Jewish occupation
+of Palestine. Then, pro-Jewish sentiments in Egyptian journals started to
+recede while the ‘Jewish Question’ began to surface. It would be interesting,
+however, to quickly skim the Jewish presence in Arabic literature from
+its early stages. This developing discourse will therefore be traced in both
+magazines under investigation.
+
+Riḍā’s Developing Discourse on the Jews
+Riḍā’s representation of the Jews in al-Manār can better be conceived
+within the context of journalistic views of the Jews in Egypt during its
+publishing span. The literature about the Jewish presence in Egypt was largely
+marred with political tensions, in a discourse tinged with a nationalist hue,
+especially during the 1940s and beyond. As early as 1902, he would speak
+positively, not only about the Jews but also about the Zionists. Within
+his discussion of the Jewish revival, Riḍā referred to the Jewish Zionist
+Society, praising their financial and economic leverage, especially in France,
+and inviting Arabs and Muslims to follow their suit in clinging to material
+power as a source of prosperity (“Ḥayāt” 302). For Riḍā, the Jews maintained
+their unity and power through adherence to their language and religion, and
+through their economic mastery. He also believed that their power lay in their
+formation of several societies (movements or denominations), including the
+Zionist Society, which originated in Austria, Germany, England, and America
+without the purpose of seizing Jerusalem as a seat of their authority. Riḍā’s
+comparatist, emulative line of thought about the Jews, as illustrated through
+the following graph (Figure 3), maintains that the shift from the religious to
+the political was sparked only with the emergence of the Palestinian Question,
+and preceded the organized Jewish Immigration and consequent JewishPalestinian clashes, followed by the Hebron Massacre (1929).
+In Figure 4, the territorial precedes the religious and the focus is on the issue
+of entitlement to a homeland in sacred Jerusalem. Here, the religious tone
+seems to subside in favor of the territorially grounded political, as manifested
+in the over-recurrence of territorial terms (signifiers). This perspective is
+
+4 Covenanted non-Muslim minority (Jews or Christians) living in a Muslim majority country.
+
+Journal of Cultural Analytics
+
+8
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+Figure 4. al-Manār cluster 38.
+
+also sustained by Riḍā’s arguments against the then-attempted French
+‘Christianization’ of the Berber, within his 1930s articles on the Berber
+Question and the French attacks on Islam in al-Maghreb al-Aqṣā (the Farthest
+5
+Maghreb).
+In Egypt, however, and because of the Israeli occupation of Palestine, the
+Egyptian Jewry – who had formerly been overlooked or acknowledged as part
+of the national fabric of the community – were caught between the Egyptian/
+Israeli binary, where ethnic, religious, and identarian nuances were at full
+play. So, the periods in which the Jews were singled out as ‘fifth column’
+traitors to the country and the nations were those during the critical junctures
+of the Palestinian Question, either during the 1947 UN Partition Plan for
+Palestine or the 1948 war. This surging sentiment of hostility towards the
+Jews was largely trigged by “Zionist policy in Palestine, and it is a hostility
+that has affected even the Oriental Jews who are not Zionists” (Hourani,
+Minorities 35). Among the prevalent narratives about the Jews was that they
+were fully entitled citizens whose Jewishness prevailed over their Arabness.
+Another narrative, however, was that they were colonialists in disguise or
+– to borrow Fanon’s phrase with a slight twist, ‘Arab skins with Jewish
+masks’ – a narrative that was outweighed during the times of crises. That very
+narrative ran through both al-Manār and al-Risālah consistently (see Kamel
+2006). The Jewish-Arab crises during this period include the emergence of
+Sir Moses Montefiore and his massive support of Zionism (the 1840s), the
+role of Sephardic Jews in Egypt under the protection of British Capitulations,
+
+5 Riḍā vehemently denounced France’s attempts to exclude the Berber from the bounds of Islam. Comparing such Christianization attempts
+
+to the British attempts to Judaize Palestinian Arabs, he insisted that the Berber are part of the Arab-Muslim territory and culture through
+their belief in Islam and adoption of Arabic as their official language. See “Iṣrār” (309).
+
+Journal of Cultural Analytics
+
+9
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+the Jewish role in robbing the state in the 1870s by lending Khedive Ismail
+a wealth that dragged Egypt into a swamp of debts and thus led to British
+and French intervention, the Zionist Congress in Basel (1897), and the
+economic leverage that allowed the Jews to have Jewish ministers in the 1920s.
+These junctures, and others, reflect the fluctuating recurrence rates of Jewish
+mention in al-Manār.
+Given that the magazine’s objective, in Riḍā’s words, was to induce reform
+in a stagnating Arab world at the time (“Fātiḥat al-Sanah al-Ūlā” 9), its
+treatment of racial discrimination as a threat to the nation’s unity was
+largely balanced. The representation of Jews in al-Manār was tolerant, with
+a prevailing tone of antisemitism/antiracism. This approach by the SyroLebanese owner and editor was remarkable, especially as Levantine Christian
+writings about the Jews at that time were unfavorable, even hostile, in the
+light of the Dreyfuss Affair (Haim 307–09). Instead, his frequent mentions
+of the Jews in al-Manār allowed Riḍā to denounce European racial
+discrimination against them (Hourani, Minorities 18). The Jews, who
+embraced the Arabic language, were relatively integrated into the larger
+Muslim community, and were even “Islamized in their social life and popular
+ethics” (18).
+Riḍāʼs magazine did not buy the anti-Jewish racialism then prevalent in
+Europe. In 1898, he addressed the issue of the Jews in France and in
+Egypt — in particular, that the Dreyfuss Affair demonstrated a 'racistʼ, not
+religious, foundation to the prosecution of Jews (“al-Yahūd fī Faransā” 54).
+Riḍā also condemned similar anti-Jewish attitudes assumed by some Egyptian
+magazines, stating “we believe public freedom is not limited to a certain
+party to the exclusion of another. Rather proper civility and genuine fairness
+dictate absolute equality among all humans in terms of public utilities” (53).
+Here, Riḍā insisted on a conciliatory approach, prioritizing commonalities
+within the bounds of the one nation, concluding with a call to “fellow
+easterners” to learn from the Jewish case in France.
+In 1901, Riḍā would highlight the fallacies or misconceptions about every
+religion (“Shubuhāt” 379). He also noted that no followers of a specific
+religion, Muslim or Christian, should promote misconceptions about
+another religion. Still, he criticized the Christians for hurling false accusations
+against Islam. In the same article, Riḍā argued against certain misconceptions
+about the prophecies of Moses and Jesus, though noting that Judaism and
+Christianity would be properly understood only when Islam was
+acknowledged, since the evidence of the veracity of the two former religions
+lay in the Qurʼan.
+In 1902, Riḍā elaborated on the idolatrous origins of both the Torah and
+the Bible (“Shubuhāt” 379), noting that the current versions of the Old
+Testament were distorted. He stated that the true Torah referred to in the
+Qur’an was the one containing Moses’ Commandments, as outlined in the
+Journal of Cultural Analytics
+
+10
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+Figure 5. Al-Manār cluster 66.
+
+Pentateuch. He stressed that the only way to salvation for the Jews was to
+acknowledge the Muslim faith, though he admitted that even some eastern
+Muslims, embracing European misconceptions about Islam, had abandoned
+the religion altogether, just as Europeans had largely abandoned Christianity.
+He added that “were it not for the Muslims’ misrepresentation of their
+religion and the Westerners’ mistranslation of the Qur’an, all rational
+Europeans would have embraced it” (380). In this sense, Riḍā was
+differentiating between the pristine version of revealed Judaism and its
+contemporary distorted version. Yet, during the heated debates about the
+Jesuit missionaries, Riḍā found the Jews less excessive in their mammon
+worship than the Jesuits. The spirited controversies between Riḍā and
+Christian missionaries at the time and how Islamic-Christian religious
+polemics eclipsed their Islamic-Jewish counterparts are reflected in the
+prevalence of the religious thread over the national/political in Figure 4.
+The two main clusters (38 and 66) reflect the frequent mention of Islamic/
+Judaic themes in al-Manār. The topic modeling result shows that the
+religious discussions of Judaism versus Islam prevail over the discussions of
+the same theme from national and political perspectives. The first cluster
+anchors key Judaic terms as part of the Islamic-Christian debates, with a
+focus on the religious. Terms such as “Jews, Torah, the Pentateuch, the
+Land of Israel, and Old Testament” entwine with Christian terms: “Messiah,
+Bibles, Christians, Crucifixion, Jesus, Matthew, John, and Disciples.” Within
+this cluster, the religious tone prevails over other political and national
+threads. The second cluster, however, shows that the earlier religious tone
+as subsuming and even morphing into nationalistic and political threads. So,
+
+Journal of Cultural Analytics
+
+11
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+the national/territorial — “Palestine, Maghreb, France, Jerusalem, homeland,
+Algeria, World, and land” — couples with the politico-religious — “Jews,
+Arab, Zionist, French, and Berber, tribes and mosque.”
+This braiding of the religious, the national/territorial and the politicoreligious reflects the intricacies of Jewish representation in al-Manār, and
+the prevalence of the religious. The topical associations also reveal reciprocity
+in the frequencies of the two different clusters. The graphic chart in Figure
+5 shows parallel fluctuations in the two clusters throughout the magazine’s
+publishing cycle. The early recurrence in the chart occurs in 1898, the time
+the Dreyfus Affair found its way into the press, revealing anti-Jewish racism
+among French “publishers coveting Jewish wealth” (“al-Yahūd” 53) in the
+words of Riḍā himself, who was contrasting the status of the Jews both in
+France and in Egypt. Interestingly, Riḍā in this article criticized not only the
+French double-standard policy towards the Jews in the East and the West but
+also prejudiced journalism in both France and Egypt, asking the Egyptians
+— and the Easterners in general — to learn the anti-racism lessons from the
+Dreyfuss Affair.
+Although Riḍā clearly distinguished between the religious and the political
+in the representation of the Jews, as indicated in Figures 4 and 5, the two
+different topics show parallel fluctuations, falling and rising together almost
+exactly, throughout in a way that hints at an unaddressed link between
+the two. No doubt Riḍā himself, in his articles on Islam, Arabism, and
+nationalism, maintained that these different designations were entwined
+within the transcendent bond of Islam. Responding to a question on Islam’s
+view of nationalism, Riḍā differentiated between chauvinistic national,
+ethnic, or religious fanaticism and nationalism, asserting that Islam
+denounces clannishness or blind partisanship in favor of a multi-ethnic,
+multireligious bond within the single country, which by no means conflicted
+with pan-Islamism or Islamic solidarity (“al-Waṭanīyah” 191). In this sense,
+Riḍā seemed to be deriving from his precursor, al-Afghānī, who deemed
+religious unity and national unity mutually reinforcing and even preferred
+nationalism to pan-Islamism since the former – based on common language,
+culture, and territory – would be more effective in establishing and sustaining
+political power (see Kedourie 14–15). For Riḍā, this was a modern form of
+solidarity that would be palatable, unlike Jahili (pre-Islamic) clannishness or
+chauvinistic partisanship (“al-Waṭanīyah” 161). This view seemed to derive
+largely from 'Abduh’s (and of course al-Afghānī's) rationalistic view of
+religion and his advocacy for multireligious sociopolitical unity in the face of
+a stagnant, superstitious, and dogmatic Islamism.
+In the 1910s, Riḍā would maintain that both Arabs and Jews were Semites
+and Easterners. Yet, those Jews became increasingly racist with the rise of
+Zionism, whose objective was to “rally the Israeli people in Palestine and
+make it a homeland for them exclusively” (“Al-Ṣihyūnīyah” 385).
+
+Journal of Cultural Analytics
+
+12
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+Interestingly, Riḍā noted that the “Christian nations” in Europe used to
+disparage the Jews “in the name of anti-Semitism,” in a way that united
+all European Jews and eventually inspired them to “colonize Palestine” to
+avoid European oppression (385). So, his solution was that the Arabs either
+reconcile with the Zionist leaders or rally up, form associations or – if
+absolutely necessary, in case peaceful solutions failed – “establish armed
+militias to resist them by force” (“al-Masʼlatān” 319). Later on, and in the
+wake of the Buraq Uprising (also known as the Wailing Wall riots) in 1929,
+Riḍā lumped together the British occupation and the Jews as “opening the
+door for sedition in Jerusalem and paving way for appropriation of the alAqṣā Mosque from the Muslims” (“Fatḥ al-Yahūd” 414). According to him,
+the “great” American President Wilson, the Zionist Jews, and the Jewish
+nation at large, were used as tools by the British in their imperialist enterprise
+(414).
+Riḍā’s discussion of Zionism and Jewish-Arab relations was only part of a
+larger discourse on Islamic ‘Arabness’ as an umbrella identity. In 1917, he
+maintained the bond between Islam and Arabism, that Islam promoted Arab
+unity and that Arabo-Muslims had abandoned earlier forms of chauvinistic
+partisanship in favor of the multi-racial, multi-national, and multireligious
+nation. His call for Arab independence from a nominally Islamic Turkish
+authority was only a countermove to a Turkish pan-Turanism, which for
+him was a renewed form of chauvinistic racism. In this regard, he developed
+the Salafiyya preached in al-Urwah al-Wuthqa (Arslan 127–28), adopting alAfghānī's utilitarianism in his reform project. This Salafiyya was his drive for
+Arab nationalism (Al-Makhzumi 257), which was posited against Ottoman
+Islam as well as military despotism and barbarism. Riḍā’s reform project built
+on an inclusive multicultural, multireligious, and multiethnic vision in his
+quest for a new normativity that lay beyond the rigidly traditional and the
+neoliberally secular, in a “step on the path of revival” (Shahin ix-x).
+Al-Zayyāt, on the other hand — and whose al-Risālah magazine (1933-1953)
+was considered a milestone of Arab liberalism — took things a step further in
+the reconciliatory project, developing a synthetic approach that braided Arab
+and Western literary heritage with his own discourse of race, specifically in
+relation to Judaism/Zionism/Fascism during the interwar period, all within
+his umbrella discourse on Arab identity. His enterprise favored an ecumenical
+approach to the Arab Nahḍah (Makdisi 110). In this sense, the emergence
+of al-Risālah came as a natural representation of the spirit of the age in
+
+Journal of Cultural Analytics
+
+13
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+Egypt, with a focus on a new nationalistic trend rooted in collective Egyptian
+6
+identity and the Arabic language, in its literary and historical sense, rather
+than in its religious sense (Esposito 62–63).
+Riḍā’s pragmatic view of the rising secular nationalist bent as assimilative of
+ethnic and religious diversity in the new nation-state, was developed by alZayyāt into a pro-Arabic, pro-Islamic, and pro-Eastern version. Like Riḍā’s,
+al-Zayyāt’s version was antiracist, despite the temporary fluctuations under a
+turbulent inter-war and post-war Egypt. His nationalist discourse embraced
+religious plurality clearly manifested in his articles on the other, i.e. the Jews.
+
+Egyptian national identity and the Jews in al-Risālah
+A review of the head themes in al-Zayyātʼs magazine al-Risālah, as indicated
+in Figure 6, largely reveals the main journalistic concerns at the time. Read
+together, the frequently discussed key clusters address anticolonial, Arab
+Egyptianness, marked by an awareness of its Islamic roots, territorial privilege,
+and freedom from British occupation and local despotism. In this version of
+Arab-Islamic nationalism, issues related to the Jews represent a single variable
+within a political, territorial identity discourse. Compared to the Arab-Islamic
+Egyptianness clusters (16 & 60, at 0.092 & 0.062%), the Jews-related cluster
+(65) is less frequent (0.028%). While incorporating the territorial and
+nationalistic Arabness in cluster 65, it also features Zionism within the
+interplay of the territorially national and the historically religious. So, the
+discussion of Zionism was bounded by an Arabness (in language and culture)
+and Islamness.
+Figure 6 outlines the magazine al-Risālah’s approach to such opposite
+narratives, featuring a topic (social) network, with the head themes
+highlighted in green, and reflecting the magazine’s highest probabilistic
+clusters or paradigmatic frame. Within its discourse on the religiopolitical
+tradition, the territorial sense of the Egyptian nation looms large. This
+territorial attachment to the homeland (patrie) is based on Ibn Khaldūn’s
+(1902) notion of 'Aṣabiyya (`communal or tribal solidarityʼ), which implies
+an ethnic sense of genealogical partisanship. It also builds on al-Ṭahṭāwī’s
+(1801-1873) concept of patriotism (Waṭanīyyah), which involves
+nationalistic attachment or “sense of solidarity … in relation to a particular
+geographical territory” (Colla 133). This double sense of patriotism accounts
+for the braiding of the religious, the communal, and the territorial in the
+clusters addressing nationalism (including ethno-religious Arabo-Islamism
+and modern state patriotism).
+
+6 Figures such as Riḍā and al-Zayyāt — and not unlike other Arab nationalists following the Napoleonic invasion of Egypt — turned to the
+
+Arabic language as “the primary criterion in defining the cultural and sociopolitical identities of the Arabic-speaking peoples” (Suleiman
+64–65) This recourse to the Arabic language in nurturing a collective sense of national identity helped in transcending ethnic and religious
+boundaries.
+
+Journal of Cultural Analytics
+
+14
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+Figure 6. Cluster network in al-Risālah.
+
+al-Zayyāt intended al-Risālah to drive a cultural and intellectual revival
+by enhancing literary taste and maintaining cultural enlightenment (“ArRisālah” 3). Al-Zayyāt believed that genuine progress could be attained
+through a wholesome synthesis of the old and the new, the Arab and the
+Western, the Islamic and the Christian — not unlike Riḍā — and that
+al-Risālahʼs core principle was to connect and link these aspects. Yet this
+synthetic approach was to be embraced within an Arab culture whose impact
+on the history of world progress was intensely outlined by al-Zayyāt in a series
+of articles on “The impact of Arab culture on knowledge and the world”
+(“Athar al-Thaqāfah” nos.1, 3, and 4). According to al-Zayyāt, and unlike
+the repressive Roman and Byzantine empires, the Arabo-Islamic culture had
+“civilized the world”, “revived chivalric values”, “instilled tolerance”, and
+“liberated the mind” (“Athar al-Thaqāfah” no.1, p.8). Al-Zayyāt compared
+this Arab culture to the Latin culture in medieval Europe, which had induced
+the light of knowledge and civility in a then-barbaric Europe. Through the
+efforts of Raymond de Sauvetât’s Toledo School of Translators, the gems of
+Arab sciences were translated into Latin and thus infused vitality into a then
+stagnating West (al-Risālah (no.3, p.9). For al-Zayyāt, Egypt was the seat of
+Islam and Arabism and the hub of any potential pan-Islamist and pan-Arabist
+revival (“Miṣr wa al-Umam” 1401-1402).
+However, he acknowledged that the renewal of Arabic literature, which
+lay at the heart of that Arabo-Islamic culture, should be grafted with the
+literatures of other nations, European arts, and modern thought, through
+translation (“Taṭʻīm al-Adab al-ʻArabī” 1861). Denouncing philistine calls
+for a revival of a pharaonic Egypt at the expense of an Arab Egypt, he
+
+Journal of Cultural Analytics
+
+15
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+Figure 7. al-Risalah clusters 34 and 70.
+
+believed that modern culture, in its spirit, draws on Islam and Christianity,
+and in its literature on Arab and Western literatures, and in its science on
+purely European mentality. But unlike Riḍā, whose ultimate objective was a
+united Arabo-Islamic nation, al-Zayyāt’s focus was primarily on an AraboIslamic Egypt that would assimilate Arab and Western cultures, along with
+the Islamic, Christian, and Pharaonic within a predominant Egyptianness. As
+a disciple of Muḥammad 'Abduh, Egyptian nationalism that was grounded
+on a multivocal and multilingual culture, featured prominently in his liberal
+thought and discourse. He unreservedly believed that such nationalism
+should be propped against Arabic literature that would be rejuvenated
+through the translation of a “dynamic” Western literature and culture as a
+vehicle for modernity (Tageldin 226). Al-Zayyāt’s a syncretic worldview of
+7
+a “supra-Egyptianism” encompassed Egyptian nationalism and Arab-Islamic
+cultural identity without excluding Western culture, which – for him – was
+vital for the desired “reform and revival of the indigenous heritage” (Gershoni
+and J. Jankowski 145).
+The two clusters in Figure 7 reflect parallel probability rates, with cluster
+70 encompassing a more inclusive paradigm of reciprocal cultural exchange
+between East and West. The corresponding spiking in both clusters during
+critical moments in the history of Egypt, the Arab world, and the world
+in general reflect a constant interest in nurturing cultural hybridity as a
+main prop for an Arab Egyptian identity that embraces a synthetic
+
+7 For more details on the definition of supra-Egyptianism, see Gershoni and Jankowski (1995).
+
+Journal of Cultural Analytics
+
+16
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+Weltanschauung. In his article, “Shabāb al-'Irāq fī Miṣr”, al-Zayyāt
+proclaimed Arab unity, comparing it to the unity of the Muslims nation,
+as a means to resist foreign occupation and induce a religious, cultural, and
+political revival. Like Riḍā, he believed that Islam is the system that eventually
+unites the Arab (321), knowing that – he stressed - Islam inclusively
+advocated freedom and civility for all. This blend of Arabo-Islamic and
+revolutionary reform persisted in al-Zayyāt’s discourse on identity, sustained
+by an anticolonial defense of “freedom, fraternity and equality” (the motto
+that would be reiterated years later during the January 2011 Revolution
+in Egypt), in “Cairo, Jerusalem and Damascus” alike (“Tārīkhun Yathūr”
+8
+201–02). This same synthetic approach to nationalism, in its local (Egyptian)
+sense, was a continuation of al-Manār’s two-fold objective of assimilating
+modern (European) sciences and warding off European hegemony. This
+synthetic identity narrative that embraced European constitutionalism and
+democracy and dismissed European (British) colonization features
+prominently (see Fig. 8) in cluster 43, with a probability rate of 0.08485.
+It is also reflected in the reciprocal translational interplay between Arabic,
+Latin, and French (considering al-Zayyāt’s personal experience in France)
+as represented in cluster 46, where the probability rate is 0.05513. This
+hybridized construction of national identity based on language and culture
+is yet counterpoised with an identity narrative that focused purely on the
+Arabo-Islamic sense of the nation, which drew mostly on religious and
+territorial nexuses. Cluster 60 (probability rate of 0.06281) accentuates this
+discursive formation of identity. In this narrative, al-Risālah drew on Islam
+and Muslim nations, including both Arabs and Indians and on Arabic
+language and culture as the basis for a collective sense of identity, where the
+East was posited against the West or the rest of the world (mainly Europe and
+the United State at that time).
+Throughout the nearly three-decade run of the al-Risālah magazine, the
+three topics represented by clusters 43, 46, and 60, witnessed a rise, especially
+during critical moments in Egyptian history, including the 1936 AngloEgyptian treaty and (later) its unilateral abrogation by the Wafd government
+in 1951, the Arab war against the Israeli occupation of Palestine in 1948, and
+eventually the Egyptian Revolution of 1952.
+Even with the introduction of a racial element in the identity equation with
+the Israeli occupation of Palestine, al-Zayyāt – and al-Risālah in general
+– maintained an anti-racist voice, where Egyptianness was depicted as a
+collective identity that transcends religious and ethnic boundaries.
+
+8 The article addresses the 1936 general strike in Syria.
+
+Journal of Cultural Analytics
+
+17
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+Figure 8. Clusters 43, 46, and 60, respectively.
+
+The Jews in al-Zayyāt’s national identity discourse
+The mention of the Jews in al-Risālah is largely shaped by the anecdote
+introduced by al-Zayyāt in a 1947 article (“Ḥasan, Murqus, Cohīn” 1421).
+It is a story of a Muslim, a Christian, and a Jew. The Muslim Ḥasan,
+a Shakespearean Antonio, seeks to borrow 500 pounds from the Shylocklike Jew, Cohen, through the mediation of the Christian broker, Muqrus.
+Ḥasan intends to donate the money to the Palestinian cause, which provokes
+Cohen into refusing to lend the money. al-Zayyāt’s argument was that,
+although some people would claim that the Jews in Egypt were fellow
+Egyptians and brothers to the Arabs and that the Jewish Rabbi (Haim)
+Nahum (1960-1972) said, “the Jews of Egypt are Egyptians, not Zionists”
+(1421) still all Jews believed that the Promised Land was theirs and that they
+would own lands between the River Nile and the Euphrates, as stated in
+Genesis. The final word of the Jew in the parable was that the three terms
+“Religion, Race, and Homeland” only meant the same thing, sustaining the
+same cause (1421). This stereotypical representation of the Jews finds its roots
+in Arabo-Islamic history, where the Jews have been depicted as unprincipled,
+usurious moneylenders and as blacks. In 1947, a writer argued that the
+roots of the modern Palestinian crisis under Jewish occupation could be
+traced back to the machinations of the Jew ‘Abdullāh ibn Saba’, the Jewish
+Arab dubbed “Ibn al-Sawdā’” (‘son of the black womanʼ) and the “first
+Zionist,” who managed through conspiracies to murder Caliph ‘Uthman and
+“undermine the (Muslim) rule in Medina” (al-Afghānī 1400–02). However,
+this ideologically nurtured tone did not last long in the magazine, considered
+a bulwark of Egyptian liberal democracy against a then-soaring European
+
+Journal of Cultural Analytics
+
+18
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+9
+
+totalitarianism and Arab authoritarianism. The racism of the German and
+Italian regimes was seen by al-Zayyāt (and other authors such as Muḥammad
+ʽAbd Allāh ʽInān, Khalīl al-Hindāwī and ʽAbd al-Razzāq al-Sanahūrī) fascism
+constituted a real threat to liberal democracy, which advocated social,
+political, and cultural pluralism. This was why the magazine engaged in
+deconstructing Nazi racist arguments through critical analysis of its
+manifesto, Hitler’s Mein Kampf. (Anonymous, “Ḥawla Kitāb” 1413;
+Anonymous, “Maṣdar Al-Hitlarīyah” 1775–76). Likewise, al-Zayyāt would
+fiercely denounce Mussolini’s fascism as represented by the Italian occupation
+of Abyssinia, “the last free fort in Africa,” in what he described as the battle
+between the East and the West, or the European colonization of enslaved
+eastern nations (“Qaḍīyat al-Ḥabashah” 1421-1422). He even maintained
+that Egypt would not benefit from joining the Geneva League of Nations,
+which was no more than a mask for bloody colonialism and a farcical
+“guise for colonial powers to prey on the Eastern nations” and deprive
+them of their freedom in the name of “European civility and refinement”
+(“Miṣr wa ʻUṣbat”). Al-Risālah writers could also distinguish between racial
+discrimination practiced against the Jews in Germany and the Zionist
+occupation of Palestine. Al-Zayyāt would advocate Jewish rights against Nazi
+10
+racial ideology (Aryanism and anti-Semitism) in Germany
+and
+countermanded Zionist racism in Palestine. He maintained that Nazi antiSemitic policy against the Jews contradicted humanity and civility ("Uqtulū
+al-Jū’" 800), and saw Nazism as synonymous with despotism, where people
+– such as Aryan Germans – stooped to a bestial level, relinquishing their
+moral principles ("Usbū’ Mahmum" 1561-1562). He equally denounced
+Mussolini’s “bloody barbaric fascism” and imperialist bestiality in Abyssinia,
+which was being sustained by the tacit compliance of other imperialist
+Western countries, in an act of sheer “racism” and manifest “chauvinism”
+(“Qaḍīyat al-Ḥabashah” 1241-1242, “Khaybat al-Madaniyyah” 1721-1722).
+He viewed Hitleran Nazism as a threat, not only to the Jews but to “all
+monotheistic religious traditions – Judaism, Christianity, and Islam” and
+11
+also to “secular human civilization” (“Jarīrat al-Nāzīyyah” 1927). Acerbically
+flouting Hitler’s Nazi racism, al-Zayyāt compared Hitler to a false prophet
+who claimed his Mein Kampf to be a holy book. Drawing on this religiously
+hued tirade of Hitlerʼs and his book, al-Zayyāt dismissed such Aryan racist
+and supremacist discourse as opposed not only to Judaism but also to
+Christianity and to Islam, whose message was one of “humanism,
+compassion, and love” (1928). Despite al-Zayyāt’s earlier admiration of
+
+9 See for instance articles such as al-Zayyāt (“Maʽrakat” 2118-2119), Muḥammad ʽAbd Allāh ʽInān, “al-Fāshistiyyah,” 849, and “Azmat al-
+
+Dīmuqrāṭiyyah,” 528; “Aḥlām al-salām wa-kayfa inhārat fī-l-khamsat ʽashr ʽāman?”, al-Risālah, 21 October 1935, 1687-1689.
+10 On German anti-Semitism, Aryanism and racial ideology, see al-Zayyāt (“Nazariyyat” 1758-1759) and "Bayna " 197-198.
+11 The article is thoroughly discussed in Gershoni (231-232).
+
+Journal of Cultural Analytics
+
+19
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+Figure 9. Cluster 65 in al-Risālah.
+
+Hitler’s positive domestic performance, especially in reforming the economy,
+he did not hesitate in denouncing the man’s hubristic authoritarianism
+(1928).
+According to al-Zayyāt, Palestine, the sanctuary of the three heavenly religions
+(Judaism, Christianity, and Islam) was subdued by “Titus (Flavius’;
+European) vanquishing colonialism and Judas’ (Judaic) greedy investment”
+after having been “purely Arabized”(“Yā lallāh” 1241). So, the Jews occupying
+Palestine were the descendants of the Wandering Jew who had denied Jesus
+shade and food (taunted him) and who were thus cursed by Jesus, doomed
+to roam the earth until the Second Coming. Thus, al-Zayyāt asserted,
+attempting to dwell the Jews among other people meant acting “against
+nature and belying Jesus’ prophecy” (1241). He built his argument about
+Arab Palestine against world Jews who had rallied to “insolently wage war
+against the Arabs in Palestine,” being driven by religious and nationalist
+motives, and backed by “Jewish bankers” and “English arms factories”. That
+was why he turned to both the Arabs and the Muslims on the basis of both
+12
+religious and ethnic bonds with the Palestinians (1242). The graph in Figure
+9 features the main cluster 65 on Jews, Judaism, and Zionism in al-Risālah.
+Since the Jews-related topics in the 50- and 100-keys stemming gives us only
+one cluster, we expand stemming to 500 keys, knowing that determining
+the number of topics is a preprocessing step. As a result, we get four
+clusters, where the topics on Jews range from the coexistence of the Jews
+
+12 Here, al-Zayyāt used the term “Asabiyyah,” introduced by Ibn Khaldūn (1902).
+
+Journal of Cultural Analytics
+
+20
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+Figure 10. Jews-related clusters varying between the religious (Judaeo-Islamic (117), Judaeo-Christian (497)), and the
+territorial, nationalist (Judaeo(Zionist)-Arab (216), Judaeo-Islamic/Arabist (10; 65)).
+
+and the Muslims in Medina, through the acquittal of the Jewish French
+officer, Dreyfus, and the oppression of the Jews in Europe, the “Protocols
+of the Elders of Zion”, (Lionel de) Rothschild’s role in helping the British
+government purchase Khedive Ismail’s Suez Canal shares, secret Jewish
+associations, Theodor Herzl’s schemes, the Partition Plan (for Palestine), the
+British mandate on the difference between Judaism and Zionism (clusters
+497, 241, 117, and 216, with probability rates of 0.00785, 0.0049, 0.01155,
+and 0.01078, respectively). Yet, in the dominant two clusters (10 at 0.07304
+and 65 at 0.02803, keyed through a 50-cluster stemming and a 100-cluster
+stemming, respectively), the main thread addresses Arabism, Judaism,
+Zionism, the Torah, the East, territory, and unity of the Arabo-Muslim
+nations. Figure 10 is a detailed visualization of the probability rates of cluster
+65 (in a 100-cluster stemming), compared with the average rates of other
+relevant clusters (in a 50- and 500-key stemming). It reflects a relative rise in
+1936, coinciding with the 1936–39 Arab Revolt in Palestine, spiking in the
+WWII-years, and then peaking in 1948, with the Partition Plan.
+Like Riḍā, the religiously oriented al-Zayyāt drew on the notion of Shura
+('consultationʼ) as the proper mode of governance, where there was no place
+for authoritarian Nazis such as Hitler, nor for “racist fanaticism” or “antiSemitism,” which was then taking root in Germany (“Naẓarīyat al-Jins”
+1758-1759).
+However, in al-Zayyāt’s discourse on (Egyptian) nationalism, factors such
+as 'race,ʼ 'ethnicity,ʼ and `racial affiliationʼ were meaningless, since national
+identity draws on common language, culture, and historical experience. He
+believed 'raceʼ was a social construct that built on temporal and
+Journal of Cultural Analytics
+
+21
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+environmental conditions, and that the characteristic elements of a
+nationality were `socio-cultural,ʼ including language, culture, values,
+sentiment, and religion. Hence, he considered the Persian Badīʽ al-Zamān
+(also known as Bediüzzaman) as Arab, the Swiss Rousseau as French
+13
+(“Firʻawnīyūn Wa-ʻArab!” 3). In this sense too, Egyptian 'Aṣabīyah
+transcended communal (religious, sectarian, or ethnic) partisanship into a
+patriotic sense that involved both historical (Pharaonic, Arab, and Coptic)
+and territorial. It derived from al-Ṭahṭāwī’s definition of Waṭanīyyah
+14
+('patriotic love of homelandʼ). This open or more liberal national concept
+transcends the exclusivist Egyptianism, which was grounded in territoriality,
+into – à la Gershoni and J. P. Jankowski (1995) – a “supra-Egyptian”
+conceptualization of national identity. The same pan-Arabist, pan-Islamicist
+discourse was also upheld by Rashid Riḍā, which largely reflected the
+dominant sentiment at the time (Gershoni and J. P. Jankowski 28). Gershoni
+notes that al-Zayyāt “strove to forge an Egyptian Arab national identity that
+would be integrated into the broader Pan-Arab nationalist framework” (83).
+At a local level, small states, or “small fish” in al-Zayyāt’s words, should unite
+in a confederate union, in the American model, to protect themselves from
+“the big sharks”, such as Hitlerist Germany, Mussolinist Italy, or Stalinist
+Russian (“Fashal al-‘Aql!” 482). Hence, the Arab and Muslim nations should
+unite to defend themselves and to ensure their peace. This call for an
+Islamically hued pan-Arab union, similar to American confederacy, sustained
+by a synthetic blending of the traditional and the modern, spirituality of the
+East, and material scientism of the West, represented the main paradigm in
+the identity discourse of both Riḍā and al-Zayyāt. It was representative of
+the mainstream dialogue on Arabo-Islamic identity during the inter-war and
+post-war periods, largely shaping the Nahḍah discourse in the Arab world
+and still finds echoes at the present time.
+Al-Zayyāt represented the future progressive version of Riḍā. Just as they
+rejected nativist exclusivity and purism, they managed to distinguish between
+(national) identity assertion and assimilation of Western scientific and
+industrial progress without slipping into the trap of blind mimicking of
+the colonizer or passivist Westernization. Al-Zayyāt compared passivist
+Westernization to “mental bondage,” which is more vicious than “physical
+bondage” (“al-Thaqāfah” 122). For them both, “selective imitation” that did
+not contradict Eastern spirit or values was the key. This is why al-Zayyāt
+denounced Ataturk’s Westernized recreation of the state at the expense of
+the Arabo-Muslim nation, faith, and culture (“Ila ayn yusāq” 362). For
+
+13 Though we focus on al-Zayyāt’s articles in al-Risālah, other writers engaged in a deconstruction of racist arguments, including Zākī (“al-
+
+ʽUnsūriyyah”) and Muhammad (“al-Siyasah”).
+14 On al-Tahtawi’s definition of Egyptian patriotism, see Colla ( 2007).
+
+Journal of Cultural Analytics
+
+22
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+him, European civilization was intrinsically materialistic and violent, and
+thus should be met with a revival of Eastern spirituality or cosmopolitan
+humanism.
+Like Riḍā, al-Zayyāt pragmatically advocated a pluralist national (Ummatic/
+statal) identity that drew on the social virtues of monotheistic religions and
+embraced (Shura-like) democracy. Only then, he maintained, could people of
+different races and ethnicities enjoy fraternity and equality. Like Riḍā too, alZayyāt concluded that Egypt and the rest of the Arab-Muslim world should
+side with the Allies, “the democratic camp,” in their fight against the Nazis,
+pragmatically deferring the fight against these very colonial powers as a second
+priority (“Jarīrat al-Nāzīyah” 1928).
+
+Conclusion
+This paper illustrates the integration of thematic qualitative research and
+topic modeling, presenting an example of how these two approaches can
+be blended in Arab studies. Such a methodology has the capability to pave
+the way for innovative research forms that leverage both the advantages of
+human interpretation and automated processing. We conducted a thorough
+analytical examination by considering the identified paradigmatic outlines
+revealed through distant reading and topic modeling. The goal was to
+delineate comprehensive or overarching patterns that offer fresh perspectives
+for approaching two major Arab magazines in the first half of the twentieth
+century, both on an individual and collective basis. This article tries to
+challenge Orientalist periodization that entrenches essentialist Western ideas
+about the Arabo-Islamic East, by tracing the routes of continuity in the
+Arabo-Islamic intellectual tradition of reform. It has sought to induce an
+epistemological shift beyond the long history of colonial monopoly. Through
+topic modeling, we have captured the main representational paradigm or
+discursive framing of Arabo-Islamic identity during inter-war and post-war
+Egypt, with a specific reference to magazine articles written by Riḍā and
+al-Zayyāt, in al-Manār and al-Risālah, the two leading literary/cultural
+platforms at the time. We have addressed such discursive praxis as a cultural
+continuum, rather than separate moments in Egyptian history. Blending
+digital (distant) and close analytical readings of relevant articles, we have
+nuanced the almost settled views of both luminary figures in the Arab
+Nahḍah. Indeed, a broader analytical lens would help us transcend the
+cultural and identitarian binaries of Egypt, which is frequently grappled as
+Pharaonic, Islamic, Arab, Middle Eastern, or even European. In addition, we
+have attempted to frame the legacy of Riḍā and al-Zayyāt as a hybridizing
+force that aimed to formulate a collective identity through (re)appropriation
+of modernist cultural legacy as integral to an Arab and Egyptian identity and
+thus avoiding purism (nativist Egyptianist) and exclusion. Our discussion of
+high probability clusters on topics such as language, culture, and race, shows
+the two intellectuals as truly reflecting the anti-imperialist spirit of their age.
+They worked on linking the past to the present, and the East to the West.
+Journal of Cultural Analytics
+
+23
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+In their assimilationist publishing enterprises, they induced a cultural revival
+that nurtured the intellectual Nahḍah, which in turn produced a hybrid
+knowledge informed by both Arabo-Islamic and European cultures.
+Data repository: https://doi.org/10.7910/DVN/6BJUJN
+
+Acknowledgement
+This article was made possible by NPRP grant NPRP10-0115-170163 from
+the Qatar National Research Fund (a member of Qatar Foundation). The
+project of "Computational Study of Culture: Cultural Analytics for Modern
+Arab and Islamic Studies” is led by Dr. Eid Mohamed. The findings achieved
+herein are solely the responsibility of the authors.
+Submitted: November 23, 2023 EDT, Accepted: January 15, 2024 EDT
+
+This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0
+International License (CCBY-4.0). View this license’s legal deed at http://creativecommons.org/licenses/
+by/4.0 and legal code at http://creativecommons.org/licenses/by/4.0/legalcode for more information.
+
+Journal of Cultural Analytics
+
+24
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+works cited
+al-Afghānī, Said. Al-Ṣihyūnī al-Awwal!” Al-Risālah. no. ue 651, Dec. 1945, pp. 1400–02.
+al-Zayyāt, Aḥmad Ḥasan. “Al-Thaqāfah al-Mudhabdhabah.” Al-Risālah, no. 82, Jan. 1935, pp.
+121–22.
+---. “Al-Thaqāfah al-Mudhabdhabah.” Al-Risālah, no. 82, Jan. 1935, pp. 121–22.
+---. “Ar-Risālah.” Al-Risālah, no. 1, Jan. 1933, p. 3.
+---. “Athar At-Thaqāfah al-‘Arabiyyah Fi al-‘Ilm Wa al-‘Alam.” Al-Risālah, no. 1, Jan. 1933.
+---. “Athar At-Thaqāfah al-‘Arabiyyah Fi al-‘Ilm Wa al-‘Alam.” Al-Risālah, no. 3, Feb. 1933.
+---. “Athar At-Thaqāfah al-‘Arabiyyah Fi al-‘Ilm Wa al-‘Alam.” Al-Risālah, no. 4, Mar. 1933.
+---. “Fashal al-‘Aql!” Al-Risālah, no. 350, Mar. 1940, pp. 481–82.
+---. “Firʻawnīyūn Wa-ʻArab!” Al-Risālah, no. 18, Oct. 1933, pp. 3–4.
+---. “Ḥassan, Murquṣ, Cohīn.” Al-Risālah, no. 756, Dec. 1947, p. 1421.
+---. “Ilā Ayn Yusāq Al-Atrāk?” Al-Risālah, no. 88, Mar. 1935, pp. 361–62.
+---. “Jarīrat Al-Nāzīyah ʻala al-Insānīyah.” Al-Risālah, no. 327, Oct. 1939, pp. 1927–28.
+---. “Khaybat Al-Madaniyyah.” Al-Risālah, no. 121, Oct. 1935, pp. 1721–22.
+---. “Maʽrakat Al-Fāshistiyyah Wa-al-Dīmuqrāṭiyyah.” Al-Risālah, no. 234, Dec. 1937, pp. 2118–19.
+---. “Miṣr Wa ʻUṣbat Al-Umam.” Al-Risālah, no. 114, Sept. 1935, pp. 1441–42.
+---. “Miṣr Wa-Ṣawt al-Umam al-Sharqīyah.” Al-Risālah, no. 113, Sept. 1935, pp. 1401–02.
+---. “Naẓarīyāt Al-Jins Wa al-Sulālah Wa al-Khuṣūmah al-Sāmīyah.” Al-Risālah, no. 121, Oct. 1935,
+pp. 1758–59.
+---. “Qaḍīyat Al-Ḥabashah: Qaḍīyyat al-Sharq Wa-Qaḍīyat al-Ḥurrīyah.” Al-Risālah, no. 109, Aug.
+1935, pp. 1241–42.
+---. “Shabāb Al-‘Irāq Fī Miṣr.” Al-Risālah, no. 139, Mar. 1936, pp. 3321–22.
+---. “Tārīkhun Yathūr.” Al-Risālah, no. 136, Feb. 1936, pp. 201–02.
+---. “Taṭʻīm al-Adab al-ʻArabī.” Al-Risālah, no. 176, Nov. 1955, pp. 1861–62.
+---. “Uqtulū Al-Jū‘ Taqtulū al-Ḥarb.” Al-Risālah, no. 303, Apr. 1939, pp. 799–800.
+---. “Usbū’ Maḥmum: Bayna al-Dimuqratiyya Wa al-Diktatūriyya.” Al-Risālah, no. 273, Sept. 1938,
+pp. 1561–62.
+---. “Yā Lallāh Li-Filasṭīn.” Al-Risālah, no. 265, Aug. 1938, pp. 1241–42.
+Al-Jāḥiẓ, Abū ʻAmr. “Risālat Fakhr Al-Sūdān ʻalá al-Bīḍān [The Pride of Blacks over Whites].” AlRasāʼil, vol. 1, 1991, pp. 177–226.
+Al-Makhzumi, Muḥammad. Khātirat Jamāl Al-Dīn al-Afghānī [The Memoir of Al-Afghani].
+Maṭābi’ Dār al-fikr, 1931.
+Alwan, Mohammed Bakir. “Jews in Arabic Literature, 1830–1914.” Al-‘Arabiyya, vol. 11, no. 1/2,
+1978, pp. 50–52.
+Al-Ya‘qubi, Aḥmad ibn Isḥāq. Tarīkh Al-Ya‘qubī. Dār Bayrūt lil-Ṭibāʻah wa-al-Nashr, 1960.
+Anonymous. “Ḥawla Kitāb.” Al-Risālah, no. 60, Aug. 1934, p. 1413.
+---. “Maṣdar Al-Hitlarīyah.” Al-Risālah, no. 278, Oct. 1938, pp. 1775–76.
+Anṭūn, Faraḥ Ūrshalīm al-Jadīdah wa-Fatḥ al-ʻArab Bayt al-Maqdis. “New Jerusalem or the Arab
+Conquest of Bayt Al-Maqdi.” Hindawi, vol. 2013, 1904.
+Arslan, Shakib. Al-Sayyid Rashid Rida Wa-Ikha’ Arba’in Sanah. Ibn Zaydun, 1937.
+Callaway, Elizabeth, et al. “The Push and Pull of Digital Humanities: Topic Modeling the ‘What Is
+Digital Humanities?’ Genre.” Digital Humanities Quarterly, vol. 14, no. 1, 2020.
+
+Journal of Cultural Analytics
+
+25
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+Colla, Elliott. Conflicted Antiquities: Egyptology, Egyptomania, Egyptian Modernity. Duke
+University Press, 2008, https://doi.org/10.1215/9780822390398.
+Esposito, John L. The Islamic Threat: Myth or Reality? Oxford University Press, 1992.
+Fallucchi, Francesca, et al. “Digital Qualitative and Quantitative Analysis of Arabic Textbooks.”
+Future Internet, vol. 14, no. 8, July 2022, p. 237, https://doi.org/10.3390/fi14080237.
+Gershoni, Israel, editor. “‘The Crime of Nazism Against Humanity’: Ahmad Hasan Al-Zayyat and
+the Outbreak of World War II.” Arab Responses to Fascism and Nazism: Attraction and Repulsion,
+University of Texas Press, 2014, pp. 217–42.
+Gershoni, Israel, and James Jankowski. Confronting Fascism in Egypt: Dictatorship versus Democracy
+in the 1930s. Stanford University Press, 2010, https://doi.org/10.11126/stanford/
+9780804763431.001.0001.
+Gershoni, Israel, and James P. Jankowski. Redefining the Egyptian Nation, 1930–1945. Cambridge
+University Press, 1995. Crossref, https://doi.org/10.1017/cbo9780511523991.
+Grallert, Till. “Catch Me If You Can! Approaching the Arabic Press of the Late Ottoman Eastern
+Mediterranean through Digital History.” Geschichte und Gesellschaft, vol. 47, no. 1, June 2021,
+pp. 58–89, https://doi.org/10.13109/gege.2021.47.1.58.
+Gramsci, Antonio. Selections from the Prison Notebooks. Lawrence & Wishart, 1971.
+Gribetz, Jonathan Marc. Defining Neighbors: Religion, Race, and the Early Zionist-Arab Encounter.
+Princeton University Press, 2014, https://doi.org/10.1515/9781400852659.
+Haim, Sylvia G. “Arabic Antisemitic Literature: Some Preliminary Notes.” Jewish Social Studies, vol.
+17, no. 4, Oct. 1955, pp. 307–12.
+Hourani, Albert. Arabic Thought in the Liberal Age, 1798–1939. Oxford University Press, 2013, pp.
+1798–939.
+---. Minorities in the Arab World. Oxford University Press, 1947.
+Ibn Khaldūn, ʿAbd al-Raḥmān. Al-Muqaddimah [Prolegomenon to History]. al-Maṭbaʻah alAmīrīyah, 1902.
+Kamel, Anas Mustafa. “Anas Mustafa Kamel’s Al-Raʼsmālīyah al-Yahūdīyah Fī Miṣr [Jewish
+Capitalism in Egypt].” Dar Merit, 2006.
+Kedourie, Sylvia. Arab Nationalism: An Anthology. University of California Press, 1962.
+Makdisi, Ussama. Age of Coexistence: The Ecumenical Frame and the Making of the Modern Arab
+World. University of California Press, 2019, https://doi.org/10.1525/9780520971745.
+Mohamed, Emad, and Zeeshan Ali Sayyed. “Arabic-SOS: Segmentation, Stemming, and
+Orthography Standardization for Classical and Pre-Modern Standard Arabic”.” DATeCH2019:
+Proceedings of the 3rd International Conference on Digital Access to Textual Cultural Heritage,
+May 2019, pp. 27–32. Crossref, https://doi.org/10.1145/3322905.3322927.
+Moretti, Franco. Graphs, Maps, Trees: Abstract Models for a Literary History. Verso, 2005.
+Muhammad, Muhammad ʽAwad. “Al-Siyasah Wa-ʽIlm al-Ajnās.” Al-Risālah, no. 33, Feb. 1934, pp.
+283–84.
+Nadim, ‘Abd al-Fattah. Sulafat Al-Nadim Fi Muntakhabat as-Sayyid `Abdullah al-Nadim. General
+Egyptian Book Organization, 2008.
+Piper, Andrew. “Novel Devotions: Conversional Reading, Computational Modeling, and the
+Modern Novel.” New Literary History, vol. 46, no. 1, 2015, pp. 63–98, http://www.jstor.org/
+stable/24542659.
+Rafea, Ahmed, and Nada A. GabAllah. “Topic Detection Approaches in Identifying Topics and
+Events from Arabic Corpora.” Procedia Computer Science, vol. 142, 2018, pp. 270–77,
+https://doi.org/10.1016/j.procs.2018.10.492.
+Journal of Cultural Analytics
+
+26
+
+Racio-national Imaginary and Discursive Formation of Arabo-Islamic Identity in al-Manār and al-Risālah: A Topic Modelin…
+
+Riḍā, Muḥammad Rashīd. “Al-Inqilāb al-Dīnī al-Siyāsī Fī al-Jumhūrīyah al-Turkīyah.” Al-Manār,
+vol. 25, no. 4, May 1924, pp. 273–99.
+---. “Al-Masʼlatān al-Sharqīyyah Wa al-Ṣihyūniyyah.” Al-Manār, vol. 17, no. 4, Mar. 1914, pp.
+319–20.
+---. “Al-Ṣihyūnīyah.” Al-Manār, vol. 17, no. 5, Apr. 1914, pp. 385–90.
+---. “Al-Waṭanīyah Wa-al-Qawmīyah Wa-al-ʻAṣabīyah Wa-al-Islām.” Al-Manār, vol. 33, no. 3, May
+1933, pp. 190–91.
+---. “Al-Yahūd Fī Faransā Wa-Fī Miṣr.” Al-Manār, vol. 1, no. 2, Feb. 1898, pp. 53–55.
+---. “‘Āqibat al-Sharīf Ḥusayn Ibn ‘Alī Ma‘a al-Injilīz”.” Al-Manār, vol. 26, no. 2, June 1925, pp.
+159–60.
+---. “Fatḥ Al-Yahūd Li-Bāb al-Fitnah Fī al-Quds.” Al-Manār, vol. 29, no. 6, Oct. 1928, pp. 414–17.
+---. Fātiḥat Al-Sanah al-Ūlā.”al-Manār. no. 1, Jan. 1898, pp. 9–14.
+---. “Ḥayāt Ummah Baʻda Mawtihā; Jamʻīyat al-Yahūd al-Ṣihyūnīyah.” Al-Manār, vol. 4, no. 21, Jan.
+1902, pp. 801–09.
+---. “Iṣrār Faransah ʻalā Ikhrāj Al-Barbar Min al-Islām.” Al-Manār, vol. 31, no. 4, vol. 31, Oct. 1930,
+pp. 309–11.
+---. “Manāfiʻ Al-Ūrūbbīyīn Wa-Maḍārriihim Fī al-Sharq; al-Istibdād.” Al-Manār, vol. 10, no. 4, June
+1907, pp. 279–84.
+---. “Shubuhāt Al-Masīḥīyīn ‘alā al-Islām Wa Shubuhāt at-Tārīkh ‘alā al-Yahūdīyah al-Naṣrānīyah.”
+Al-Manār, no. ue 10, vol. 4, July 1901, pp. 379–87.
+---. Tarikh Al-Ustadh al-Imam al-Shaykh Muḥammad ʻAbduh. al-Manar Press, 1931.
+Shahin, Emad Eldin. Through Muslim Eyes: M. Rashid Riḍā and the West. International Institute
+of Islamic Thought, 1993.
+Suleiman, Yasir. The Arabic Language and National Identity. Edinburgh University Press, 2003.
+Tageldin, Shaden. Disarming Words: Empire and the Seductions of Translation in Egypt. University
+of California Press, 2011.
+Zākī, Aḥmad. “Al-ʽUnṣūriyyah.” Al-Risālah, no. 30, Jan. 1934, pp. 191–94.
+
+Journal of Cultural Analytics
+
+27
+
+

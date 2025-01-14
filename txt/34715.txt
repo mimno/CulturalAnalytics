@@ -1,0 +1,1042 @@
+Journal of
+Cultural Analytics
+
+April 20, 2022
+
+Rhythms of Silence: Digital audio
+analysis of Swedish Radio
+Broadcasting, 1980-1989
+Johan Malmstedt
+Johan Malmstedt, Umeå University, Sweden
+Peer-Reviewer: Alexander Russo
+Dataverse DOI: https://doi.org/10.7910/DVN/BHDTTJ
+Article DOI: https://doi.org/10.22148/001c.34715
+
+ABSTRACT
+How can silence be studied, and what can we learn from it? This article explores the so-called
+‘modernization’ of Swedish Public Service radio by pertaining to pauses, halts and the absence
+of content. By applying computational analysis to the broadcasting archive, radio can be
+explored on a larger scale than previously affordable. The article argues that it is possible to
+understand the rhythm between more and less dense content by studying the distribution of
+silence in time. The analysis focuses on how varying degrees of silence are distributed
+throughout the day in broadcasting by the Public Service Program 1 (P1). Sweden was one of
+the last western, democratic countries to undergo broadcasting de-monopolization. However, in
+order to stimulate a modernization process, competition was introduced within the state
+monopoly before the proper commercialization of radio in 1993. Though the actual effect of this
+process remains disputed, the last decade of the Swedish radio monopoly is considered a
+significant media historical period of transition. Whilst the organizational structure endured,
+public discourse witnessed a clash between new and old ideas concerning the very essence of
+radio. The period thus enables the study of radio in transition.
+To grasp the potential effects of these debates and organizational changes on the very content of
+radio, this study takes its cue from the overlooked but essential matter of silence in the radio
+medium. Tracing the changes and trends in a set of sample weeks from 1980 to 1989, the results
+indicate both how the amount of silence diminished and its rhythm became more uniform. Whilst
+providing insights into the style of Swedish public service radio, the work is also intended to
+inspire new, creative ways of researching sound media.
+
+Rhythms of silence
+Thirteen days of radio silence. During two weeks in spring 1980, the Swedish
+airwaves were empty. At least according to the archive at the National Library of
+Sweden, which already at the time kept complete recordings of the daily
+Journal of Cultural Analytics 7.1 (2022): 108-138
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+broadcasting. Omissions of this kind were rare, and as it turns out, this literal archival
+silence is no result of documentation error. These dates coincide with the largest
+strike in Swedish history. ‘The Great Conflict’, as it has come to be remembered,
+was the escalation of growing unrest over the cause of several wage cuts throughout
+the 1970s.1 Come spring 1980, the union had managed to engage over 700 000
+workers from across the labor force, resulting in a strike that effectively put the entire
+country to a halt. In prior historical research, the actual strike is conceived to have
+lasted between the 2nd and 11th of May, yet the void in the radio archive starts already
+on the 29th of April.2 This suggests that Swedish radio, in effect, might have predated
+the official strike action, calling for a revised role of media in the history of ‘The
+Great Conflict’. We can arrive at this conclusion by paying attention to the very
+absence of content. In the sound archive, silence is information.
+
+This article maps and analyzes silence in the history of Swedish public broadcasting.
+The proposition is simple: silence constitutes an important, yet historically
+contingent feature of the radio medium which allows for qualitative research.
+Throughout the 20th century, radio silence has been understood as vital for
+communication, beneficial for the audience as well as a serious danger to the very
+medium itself. Broadcasting is today often regulated by silence detectors warning
+against any undesirable pauses. According to Andrew Crisell’s 1986 milestone in
+radio semiotics, the medium can in fact be condensed to just two parameters: “noise
+and silence”.3 Despite this, the history of radio silences has remained largely in the
+unexplored periphery of media studies.
+
+But how can silence be explored, and what can we learn from it? This article
+proposes a method for computational analysis of silence in sound media. By
+mapping how silence occurs throughout the broadcasting day, my research
+109
+
+RHYTHMS OF SILENCE: DIGITAL AUDIO ANALYSIS OF SWEDISH RADIO BROADCASTING, 1980 -1989
+
+contributes to the understanding of the aesthetics of public service radio. For this
+purpose, the Swedish case offers a unique opportunity. Prior historical research has
+linked a more hostile stance towards radio silence to commercial radio production
+and the economic dependency on the listener numbers.4 In contrast, Sweden can be
+considered the staple example of public service media, where production was to a
+large extent state-financed. In the early postwar era, Sweden had one of the most
+vacant broadcasting schedules in all Europe.5 Not only was the program schedule
+itself spacious, pauses and halts are supposed to have occurred with high frequency.6
+There are even occasions were Swedish critics praised the pauses between speech,
+granting the listener time to contemplate the messages.7
+
+Swedish radio history is distinctive in two interesting ways. First off, Sweden
+sustained a radio monopoly all through the 1980s, at a time when European
+broadcasting policy was characterized by increasingly liberalist measures. As a
+result, Sweden witnessed a delayed and debated reception of the Anglo-American
+commercial style of radio. Secondly, Sweden was one of the first countries in the
+world to legislate a rule of legal deposit for complete broadcasting. Total archiving
+was unheard of in most places at the time, and radio is said to have been the most
+scarcely archived mass medium throughout the second half of the 20 th century.8
+Swedish history sets itself apart from this tendency through the 1979 legal deposit
+act, which is registered as the first in the world to include radio and television.9 This
+early and extensive collection of broadcasting data, combined with late demonopolization, provides an illustrative opportunity to study the history of public
+service broadcasting. The analysis focuses specifically on broadcasting by the
+Swedish radio monopoly flagship P1 – or Program 1, the so-called “spoken channel”
+– from 1980 to 1989. Established in 1925, it was the first radio channel in the country
+and it remains the flagship of Swedish public service broadcasting. The content is
+110
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+considered to be oriented towards information and news and is to a large extent
+composed by speech.
+
+This analysis extracts data on the distribution and rhythm of silence throughout the
+broadcasting day. By computational means, the rhythmic variations in density of
+silence within this material can be coded and analyzed on a larger scale than possible
+with human listening. The aim of this article is to map these rhythms and
+subsequently examine how the results can be connected to previous media historical
+research. The term ‘rhythm’ is here referring to the fluctuations between varying
+densities of silence throughout the day. As the analysis demonstrates, by studying
+these fluctuations it is possible to explore aspects of what Raymond Williams called
+the “flow” of media.10 William observed how television and radio came to offer their
+own characteristic media experience by replacing the discrete pages of the book with
+an uninterrupted flow. He particularly points out how it is the careful management,
+and minimization, of “intervals”, which is constitutive for the experience of
+broadcasting as a never-seizing stream of content, fused together through sound. The
+quantitative study of silence, or “intervals” can thus grant insight into how radio has
+changed over time.11 This was also the proposition put forward by one of the key
+figures in the emergence of sound studies, Murray Schafer. In his reflections on
+“rhythms” in his book The Soundscape from 1977, he proposed that “broadcasting
+is always changing and these changes can thus be studied, exactly as a critic or
+historian studies the styles and tendencies of contrasting schools of literature or
+music”.12 He proceeds by stating that these changes can be considered in “how
+broadcasting was at first occasional, separated by extensive periods of silence or
+low-keyed activity”.13 Influenced by this careful attention to the historical style of
+broadcasting, it is today possible to explore the very signal itself. The method of
+digital signal processing allows for a study of radio history, not only through textual
+111
+
+RHYTHMS OF SILENCE: DIGITAL AUDIO ANALYSIS OF SWEDISH RADIO BROADCASTING, 1980 -1989
+
+remains but by means of preserved signal values. This connotes what Wolfgang
+Ernst has dubbed “radical media archeology”, in the sense that it “stays close to the
+signal”, and “concentrates on the non-discursive elements in dealing with the past”.14
+The results presented in my article confirm the prospect of such an approach. By
+paying close attention to the signal, it is possible to provide an elementary overview
+of the rhythm of the entire broadcasting day, which in turn grants new insights into
+the stylistic development of radio. As the distribution of silence is compared
+throughout the decade, on a scale unaffordable for human listening, results indicate
+that P1 was developing in the direction of a more effective broadcasting style.
+Silence does not only gradually decrease; it also settles into a more uniform rhythm.
+Furthermore, the results can be constructively put in dialogue with previous media
+historical scholarship, both in order to confirm the plausibility of the results, and
+contribute new knowledge to the debated history of the decentralization of Swedish
+radio.
+
+Analyzing radio silence
+To quote Swedish Radio Scholar Carin Åberg: “Radio Analysis? Sure! But How?” 15
+When Åberg posed this quite legitimate methodological question back in 2001, she
+was echoing simultaneous research interests in German radio studies. This emerging
+approach to radio analysis aimed to move beyond content and “look more deeply
+into the structure of the programmes”.16 Together with authors like Detlef Schröter,
+she pioneered the practical application of the theories of Raymond William to radio
+material.17 With the ambition to study “radio as sound in time”, she ventured into
+the quantitative analysis of the aesthetics and form of radio.18 Nevertheless, this
+method quickly ran into a significant obstacle. To manually code entire days of radio
+content is slow and tedious work. Every minute of material demanded real-time
+analysis by the researcher. Today, such problems can be bypassed by tapping into
+112
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+the affordance of digital audio signal processing. By feeding these tasks to the
+machine, it becomes possible to consider “the structure of the programmes” on an
+unexplored scale.
+
+Two principal criteria need to be set in order to study radio silence as quantifiable
+data; amplitude and duration. This analysis employs a negative definition of silence,
+as anything that isn’t sound. Therefore, these two criteria will determine the status
+of sound, and silence will be calculated as any sequence not qualifying as sound.
+Since there is no absolute silence on the radio, a threshold is needed to determine the
+amplitude of silence. The somewhat puzzling question of how silent silence is, can
+today productively be translated into a matter of the loudness of the background
+noise. In the age of modern signal processing, this pursuit is best understood in terms
+of the signal-to-noise ratio. This technique, which Friedrich Kittler once proposed
+to be the successor to poetry and hermeneutics, is the mathematical estimation of
+what matters, and what doesn’t, in regards to the transmission of a message.19 From
+this perspective, silence is demarcated by the static background noise indicating the
+temporary absence of radio content. The specific level of this static can be
+determined through spectral analysis – that is, the analysis of a spectrum of
+frequencies – by which it is possible to single out the frequency of the background
+noise and measure its amplitude separately. Figure 1 demonstrates a sample from
+the audio, where a low-frequency buzz is detectable. As the level of the background
+noise may vary due to the shifting quality of pre-recorded material, a sample every
+twenty minutes has been used to determine the appropriate threshold.
+
+113
+
+RHYTHMS OF SILENCE: DIGITAL AUDIO ANALYSIS OF SWEDISH RADIO BROADCASTING, 1980 -1989
+
+Figure 1: Spectral image of background noise measured by its negative decibel value. The amplitude is centered
+around the low end of the frequency spectrum, indicating a low buzz. By measuring the negative decibel of this
+background noise, it is possible to set a variable threshold for when actual auditory activity appears.
+
+The second criterion concerns the aspect of duration. As with amplitude, the
+employed definition is defined negatively, and thus, what must be defined is the
+threshold length of a sound. Depending on the frequency of the sound, the upper
+limit of what the human ear possibly can perceive is very short. A very high-pitched
+sound can potentially be audible even at a duration up to a couple of milliseconds.
+However, in the case of this archived material, the broadcasting was originally
+recorded on tape. Due to the quality of the cassette decks that were used, many
+recordings suffer from pre-and post-echo. This phenomenon, which can be caused
+both by magnetization and compression of a recording, produces an effect where
+every click, or infinitesimally short sound, is spread out and extended by thousands
+of milliseconds. In order to avoid as much as possible of these disturbances, the
+threshold for what is counted as sound is set to any duration longer than 500
+milliseconds. Reversely, based on the prior research in the field of conversation
+analysis and linguistics, the duration of a silent part must be longer than 300
+milliseconds to count.20 This method, therefore, assumes a definition of silence
+
+114
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+which is defined negatively as any moment of broadcasting where a signal does not
+remain above the background noise threshold for more than half a second. In this
+sense, the method is mimicking the praxis of ‘silence detection’, already employed
+within broadcasting.
+The data that is utilized in my research is composed of digitized recordings of live
+broadcasting. The original recordings, made on tape, were documented by the
+Swedish radio. Back in 1966, a new law rendered Swedish broadcasting accountable
+to conserve all broadcasted material for 6 months. The initiative was financed by the
+Swedish state and was intended to provide juridical evidence for issues related to
+broadcasting.21 This process had demonstrated how total radio recording was
+possible, yet the purpose at the time was not historical, and therefore no archival
+measures were undertaken. This would all change when the law of legal deposit for
+audiovisual media was reformed in 1979. According to the legal deposit register at
+the International Association of Sound and Audiovisual Archive, Sweden was the
+first country to attempt a complete archiving of public service broadcasting.22 With
+financial backing from the state, the Swedish National Archive of Recorded Sound
+and Moving Images was inaugurated. This new archival institution was equipped
+with storage capacity suited for far more extensive documentation.23 The new scope
+of the archive meant no extensive changes to the technical infrastructure. It was the
+economic aspect which was more daunting. What was needed was more tape, and a
+lot of it. In contrast to the juridical material, which could be rerecorded twice every
+year, this new documentation required a constant expenditure. Therefore, the
+juridical material could be stored on high quality tape, whilst the archive recordings
+were object to economic restraints. The result is that sections of the documented
+material suffer from an apparent tape noise.
+
+115
+
+RHYTHMS OF SILENCE: DIGITAL AUDIO ANALYSIS OF SWEDISH RADIO BROADCASTING, 1980 -1989
+
+Digitization, later conducted by the National Library of Sweden, transferred the
+material from tape to Waveform Audio File Format. The digitized documents
+correspond to the manner in which the material was originally recorded. The daily
+broadcasting is composed of three separate files, each containing six hours of
+content, ranging from 06:00 in the morning, until 24:00, midnight. My research
+attends only to the week days, excluding weekends. In an early state of research, it
+was clear that the weekends, in their concisely different structure, provided
+variations in the statistics which would have required a separate analysis. The data
+is thus composed of the collected week days from the same one sample week every,
+week nine of the year. The results are controlled against another sample week,
+composed from randomized weekdays from every year. Altogether, the data set is
+composed of 1800 hours of broadcasting, over 100 days. To randomly sample
+complete broadcasting days in this manner is only possible due to the unique
+affordances of the Swedish media archive. 24 The rigorous collection grants access
+to plenty of new ways to study broadcasting during the welfare state epoch, far from
+exhausted by this article.
+
+The audio files have also required considerable data cleaning. I have mainly
+employed two computational tools for preparing and studying the data. For the
+purpose of simple labeling and time stamping, aubio has been employed. Aubio is
+an audio labeling tool kit developed in the programming language of C.25 It is written
+in order to run directly in Python, and provides a simple and effective audio
+processing tool. For the purpose of the aforementioned cleaning, more advanced
+software was necessary. The process, which mostly consisted in the removal of
+irrelevant rewind noises remaining from the original tape recording, was carried out
+in Audacity.26 This free software is recognized and an established tool in audio
+
+116
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+analysis. By virtue of being open-source, the simple, yet hands-on controls are under
+constant improvement, and therefore appropriate for data cleaning.
+
+Audacity has also been used for control listening. After marking up the silence in
+the data, the subsequent timestamps have been reapplied to the audio file. The
+resulting edit contains only the total silence of the recording, contracted together.
+This technique has been used in order to determine the accuracy of the method,
+granting insight into what the program renders as silence. The applied method has
+the limitation of consequently rendering every signal below the level of the
+background noise as silence. For the question at hand, this is deemed as an affordable
+loss, as most of these sounds would be too quiet to be audible. Yet, there are
+exceptions, where distinguished sounds remain buried under the surface noise level.
+Such occasions are part of signal processing theory, and commonly referred to as
+“artefacts”. Figure 2 displays how elusive these phenomena appear, yet by
+amplifying the audio signal, it is sometimes possible to identify an auditory event.
+
+Figure 2: Image of an artefact. The slight increase in the lower frequencies in the middle of the image indicates an
+auditory event. At this level, it remains quiet and covered in noise, imperceptible by the human ear, yet with enough
+amplification, it might be possible to identify the sound.
+
+To investigate the sort of sounds which lay sunken beneath the threshold of silence,
+sample excavation has been conducted on every file. The results, however curious,
+117
+
+RHYTHMS OF SILENCE: DIGITAL AUDIO ANALYSIS OF SWEDISH RADIO BROADCASTING, 1980 -1989
+
+seem not to interfere with the validity of the method. The detected artefacts consist
+most commonly of external respiration; breathing and sighs. On rare occasions,
+mumbled voices have also been detected. These appear not to be part of the
+intentional broadcast, as the speech is imperceptible, and appear to take place behind
+a wall. Finally, some artefacts are the last moments of music being faded out. My
+discoveries are similar to the ones detected by Matt Rogalsky in his artist work with
+silences in broadcasting at the BBC: “I immediately discovered that the ‘silences’
+were interesting; they weren’t silent at all. They were full of tiny sounds which
+mainly went unnoticed in the flow of a broadcast, and also included a strong human
+presence mostly in the form of breath”.27 These are interesting discoveries in their
+own right, but they are neither the subject for this study, neither do they, as Rogalsky
+proposes, pose any greater effect on the experience of the broadcasting.
+
+Silence in the history of radio
+Radio was an integral part of the sonic transformation of the 20th century, attracting
+attention from a range of cultural critics. The swiss philosopher Max Picard, for
+example, linked the development of radio to an overall loss of silence. In his book,
+Die Welt des Schweigens from 1948 – translated as The World of Silence – he proclaimed radio to be the final nail in the coffin for silence. “Man is no longer aware
+of the radio-noise all around him. He does not hear the constant hum of the radio: it
+has become a kind of noisy silence of which he hardly takes any notice at all,
+however loud it may be all around him”.28 If, to Picard, radio was auxiliary to the
+disappearance of contemplative quietness, the medium simultaneously seemed to
+establish its own form of silence.
+
+Researcher like John Mowitt and Kate Lacey have demonstrated how radio
+producers in America developed a sophisticated usage of absences in broadcasting
+118
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+content.29 An illustrative example can be found in the final lines of the script for the
+renowned radio rendition of Welles’ “War of The Worlds” – which called for ‘dead
+silence’. In order to leave a final haunting impression on the audience, producers
+first considered the sound of an alien laser beam. Instead, however, they went with
+the far more subtle effect of a staged broadcast interruption. One had to be familiar
+with the haunting effects of this crackling absence of content in order to realize that
+it would prove far more unsettling than any loud weapon sound. Yet, radio silence
+wasn’t only discovered as a narrative device. In the 1930s, pauses came to be a
+valued feature in broadcasting. The BBC could insert a 15 minutes break between
+programs to let the audience “contemplate what they just heard”.30 There are
+indications that a similar positive attitude towards silence informed the dawn of
+Swedish radio production. In 1925, an early on-site segment from the Gothenburg
+harbor received praise for the reporter’s bold use of silence. The supposedly five
+minutes long pause provided the listeners with suggestive environmental sounds and
+allowed time for contemplation.31 The idea that pauses in broadcasting could be used
+to provide the listener time to reflect recalls the musings of the proclaimed “first
+media man” and radio programmer Filson Young. To Young, silence was “a
+definitive opportunity to sit without the distraction of voice and sound, and think the
+thoughts that are within oneself”.32 Nevertheless, prior research has demonstrated
+how such positive conceptions of silence were restricted to public service
+broadcasting.33 In early British commercial radio, silence was instead perceived as a
+threat. Absence of content was considered to increase the risk of losing the listener.
+In order to keep the audience transfixed, commercial radio had to supply an
+unwavering flow of content. The distribution of silence on radio can thus be
+understood in analogy to Raymond William’s writings on the flow of television.
+Silences between discrete sequences of content disrupt “the process of relative
+unification, into a flow of otherwise diverse or at best loosely related items”. 34
+119
+
+RHYTHMS OF SILENCE: DIGITAL AUDIO ANALYSIS OF SWEDISH RADIO BROADCASTING, 1980 -1989
+
+Williams propose his concept of media flow in order to get at the glue of television,
+but as researcher like Mimi White has argued, it is equally appliable on radio.35 The
+manner in which contentless gaps are left in the ether is part and parcel of the
+historical development of any sonic broadcasting media.
+
+Prior research has connected the venture to minimize silence, to the development of
+commercial radio during the interwar period in America. Within this context, a
+hostile view towards extended absences of content was cultivated. Aptly put, “[t]he
+absence of predetermined sound (‘dead air’) is anathema, and every second of
+precious ad airtime is carefully scheduled”.36 By the late 1960s, it was possible to
+declare that radio silence itself might be “dead”.37 Paddy Scannell regards this as an
+almost natural tendency in the radio medium as such:
+“But radio has no sense of occasion, of a time and place set apart from ordinary
+life and affairs. On the contrary, its distinctive features are the reverse of
+occasionality. Because it appears as a domestic utility always on tap like water,
+gas or electricity it must always have an available content. Thus, the momentum
+of broadcasting has always been towards a continuous, uninterrupted flow of
+program output.”38
+
+In prior research on radio silence in the British context, the reduction of silence is
+often directly linked to the concept of commercialization. In the early days of British
+and American commercial radio, the tempo and content of programming were both
+suited to an ideal audience. Subsequently, this change in commercial broadcasting
+style has been proven to also influence public service content. In 1969, the BBC
+concluded that the challenges posed by commercial radio and television meant that
+public service broadcasting needed to adapt to a “changing world to meet changing
+120
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+tastes and needs”.39 Old time radio programming, with its breaks, sudden changes,
+and pleasant surprises was “inherently unfit” to provide its services to the new
+audience. What was required was a “more uniform and predictable kind of content,
+an uninterrupted supply of music, perhaps, or of information”.40
+
+The BBC was not alone in facing these troubles. Stirrings in the structure and role
+of radio have been observed in many liberal democratic countries in the early second
+half of the 20th century.41 In this context, silence is suggested to decline as a
+consequence of adjusting radio to the modern listener. This was a listener who was
+perceived to reach for the transmission knob without hesitation, at the slightest pause
+between content. In prior media historical research, commercial radio is usually
+proposed to be the culprit in this development. “Commercial radio avoids all
+moments of silence with a three-second cut-off point. This prevents the space of
+anticipation to extend into doubt about the heard. The sounds of commercial radio
+build a formidable wall, solid and permanent”.42
+
+These conclusions are however not directly translatable to the case of Swedish
+broadcasting. The exceptionally late de-monopolization of radio in Sweden delayed
+any real commercial concurrence until 1993. Therefore, the effective decline of
+silence over the decade cannot be regarded as the result of any direct commercial
+influence. Nevertheless, the 1980s is far from a static decade in the history of
+Swedish broadcasting. The legislative permission for commercial radio in 1993 can
+rather be understood as just one step in the instigation of competition within the
+medium. The market-liberal ideas prevalent in Europe throughout the second half of
+the 20th century also caught attention within Swedish broadcasting. The company
+behind the broadcasting monopoly, Sveriges Radio, faced accusations of hampering
+the natural development of the medium.43 The plea for competition was further
+121
+
+RHYTHMS OF SILENCE: DIGITAL AUDIO ANALYSIS OF SWEDISH RADIO BROADCASTING, 1980 -1989
+
+motivated by the struggle for Radio to maintain footing in the intermedial struggle
+against television. Thus, the idea of competition as a beneficial, and sometimes
+necessary component in culture was not foreign to the Swedish discourse.44
+
+Media Scholar Michael Forsman has proposed that the process can be understood as
+two succedent stages, with each solution corresponding to the political leadership in
+Sweden at the time. The proper commercialization of radio in the 90s constitutes
+from this perspective the later step in the development, determined by the more
+distinctly liberal government at the time.45 However, the social democratic party had
+already provided their response to the matter, 15 years earlier. Instead of introducing
+the commercial forces, this approach decentralized broadcasting by installing
+competition within the sphere of the public service monopoly. Alternative channels
+were established alongside the flagship P1. The second channel, P2, was instigated
+back in 1955, and functioned principally as a source for classical music, together
+with educational segments. A decade later, Sveriges Radio introduced a third
+alternative, P3, which at the time was conceived as yet another complementary
+channel, focusing largely on popular music.46 Whilst P2 remained a marginal option
+for the radio audience, P3 grew rapidly in popularity, and by the 1980s it was cause
+for loud concerns at the Swedish Radio. Towards the mid-1980s, P3 had an
+estimated audience of 67 percent of the population, against a waning 13 percent
+sported by P1.47 P3 was not in a strict sense a commercial competitor, however, these
+concerns mirrored many of the tropes from British radio history. The growing
+imbalance in listeners between the flagship P1, and the popular entertainment
+alternative, was conceived as a threat to culture.48 The critique against P3 actualized
+the pejorative features of tap listening. It was seen as antithetical to cultural
+education, instead of providing the youth with a fast-paced, undemanding stream of
+popular music.
+122
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Keeping with the spirit of decentralization, the Swedish government ruled in favor
+of local radio production in 1978. The consequence was, not just a third, or fourth
+alternative, but an upsurge of regional alternatives. By 1984, more than 20 local
+channels were transmitting parallelly, and beyond that, hundreds of communal radio
+stations ha had popped up across Sweden.49 Research into Swedish media history
+has located this to be the defining onset of the disintegration of the radio monopoly.50
+Local radio came to influence the ether. Yet, as Birgitta Höijer has pointed out in her
+research on radio history, the local was at the same time the global.51 Looking to the
+British radio for inspiration, these new broadcasting initiatives immediately assumed
+a more international style of broadcasting. This entailed the introduction of
+production tools like stopwatches and commercial jingles, rendering a type of
+broadcasting that less and less resembled the classic public service radio. In order to
+win back the audience, the flagship had to adapt. Forsman has shown how this
+pressure brought about heated debates within the profession, which in turn can be
+tied directly to the matter of silence. P1 needed to be “modernized”.52 The debate
+revolved around the issue of the programming structure. The older producercontrolled approach was challenged by the effective block system. Radio needed to
+become “more uniform and predictable”. Yet, we ought to yield careful attention
+when we consider the cause for this development. As been argued by scholars like
+Jane Feuer, media studies ought not to conflate the historical factors behind
+commercial broadcasting with media history in general.53
+The “modernization” debate, which ran throughout the second half of the 1980s have
+been granted varying significance in earlier historical scholarship. In Lennart
+Weibull’s work on the grand history of Swedish broadcasting, the actual change is
+conceived to be limited to the role of music on channel 1. 54 In contrast, Forsman’s
+account considers the effects on a more structural level, proposing general increase
+123
+
+RHYTHMS OF SILENCE: DIGITAL AUDIO ANALYSIS OF SWEDISH RADIO BROADCASTING, 1980 -1989
+
+in uniformity.55 The following analysis provides granular examination of the signal
+value of the actual broadcasting, in order the return to these questions by studying
+the radio data, instead of textual accounts.
+
+Analysis
+
+Figure 4: The rhythm of average relative silence during broadcasting hours 06:00 until 22:00 for 1980 and 1989.
+Each data point corresponds to a 10-minute window for which the relative amount of silence is presented. Despite
+the overall lower frequency of the orange curve, corresponding to 1989, the graph displays intriguing similarities in
+rhythm. The timestamps for decrease and increase in the distribution of silence appear to correspond. This
+correspondence will be further perused in the following graphs.
+
+This graph is a representation of the silence rhythm of the entire broadcasting day,
+displayed as percentage of silence within 10 minutes segments. The yearly average
+124
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+in the sample data from 1980 and 1989 are plotted parallelly by visual tools provided
+in python, with added packages. The visualization allows for several noteworthy
+interpretations. First of all, Max Picard might perhaps have been too hasty when he
+diagnosed the extinction of silence already in 1948. There are measurable amounts
+of silence in broadcasting still occurring towards the end of the 1980s – at least in
+Sweden. Yet, it is a clear discrepancy between the start and the end of the decade.
+The orange curve, corresponding to data from 1989, remains below the value from
+the 1980, drawn in blue, with only a few exceptions. Regarded from the perspective
+of international radio history, the results seem to confirm an established tendency.
+The reduction of silence demonstrated by the results can thus be understood as part
+of a larger development towards the minimization of silence, and seem to align with
+what prior research has hypothesized in regards to the Anglo-American context.
+
+There is however another interesting aspect to the graph. Due to the general
+difference in frequency, the two curves rarely overlap, yet the graph seems to
+indicate correspondence on a structural level. It is possible to identify several
+cooccurrences in fluctuation, especially throughout the second half of the day. These
+signs seem to point towards a shared configuration of silences throughout the day.
+Despite the diminishing amount of silence, the graph still displays clear moments of
+alignment. This begs the question of the general level of similarity within the data
+set.
+
+125
+
+RHYTHMS OF SILENCE: DIGITAL AUDIO ANALYSIS OF SWEDISH RADIO BROADCASTING, 1980 -1989
+
+Figure 5: Principal components analysis (PCA) of the rhythm of silence. Each data point corresponds to a sampled
+day, the principal components have been computed from the proportion of silence during each 10-minute window as
+variables, as demonstrated in the prior graph. X and y-axes are two variant approximations of the trends in the total
+data. Components clustering closer to each other are more similar and those that cluster closer to the origin have
+less deviation from the overall mean.
+
+Figure 5 displays the statistical correspondence in the data according to principal
+component analysis. The computation confirms a high level of similarity between
+the data points. The only noteworthy exception within the data is “1983-06-20” to
+the far right, which breaks with overall tendency, indicating significantly higher
+values of silence. The explanation for this is a scheduled broadcasting pause
+appearing this day, resulting in a longer silent pause before noon.56 Altogether, the
+graphs demonstrate a significant and intriguing similarity in rhythm. The following
+part of the analysis investigates the plausibility and causality of these reoccurring
+
+126
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+rhythms of silence, through the overall uniformity in programming structure, the
+specific similarity in broadcasting content, and finally, the validity of the data.
+
+As discussed in the prior section, discursive records from the mid 1980s contain
+evidence of controversy in regards to the question of broadcasting standards. The
+sample data in this study indicate that the advocates of a more modern radio had an
+impact on the actual content of radio at the time. The program schedule
+accompanying the radio recordings document the gradual reorganization of content.
+Toward the latter half of the decade, there is evidence supporting the shift to block
+structure programming proposed by Forsman. Content came to be thematically
+arranged over larger sections of time. However, within these block sections, the
+sheer number of separate segments tends to increase. Between 1980 and 1989, there
+was an increase from an average of 2,5 to 3,7 programs per hour. The transformation
+to block structure thus resulted in more separate shows, despite a decrease in silence.
+This indicates that the number of separate shows does not, with necessity, determine
+the amount of silence. If the substantial quantity of silence was depending on the
+pauses between segments, an increase in the number of shows would likely have
+produced the same effect on silence. Furthermore, considering these extensive
+changes in schedule structure, programming alone does not provide a satisfactory
+explanation for the similarity in the rhythm of silence.
+
+127
+
+RHYTHMS OF SILENCE: DIGITAL AUDIO ANALYSIS OF SWEDISH RADIO BROADCASTING, 1980 -1989
+
+Figure 6: Rhythm of silence, aligned with content of broadcasting on singular days. The graphs display data from
+Monday and Tuesday from 1980 and 1989 respectively. Purple nodes correspond to content with explicit news
+orientation. Orange nodes correspond to music content. Green nodes make up the remaining mixture of programs.
+
+The second variable of interest is the content of the broadcast. If the shows were to
+remain similar, only with slightly shifted time slots, this would provide an
+explanation for the similarity in the frequency of silence. Figure 6 aligns the program
+structure with the data from the Monday and Tuesday from the first and last sample
+week in the data set. These graphs provide insight into the greater variation of silence
+throughout the first half of the day. As indicated by the orange markers, morning
+radio in 1980 contained significantly more musical content, which in turn seems to
+heavily influence the frequency of silence. As displayed in the two upper graphs in
+figure 6, the low frequency of silence in the first hours of the day corresponds to
+specific musical segments. As has been argued by prior research, one of the early
+effects of the emergence of local radio was a migration of music content from P1, to
+the other channels.57 The effects of the migration of music can clearly be identified
+in the frequency of silence. Orange markers tend to be followed by a steep decrease
+in silence, which seems intuitive considering the different functions of silence within
+music. Thus, the reorganization of musical content throughout the first part of the
+
+128
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+day can account partially for the variation in rhythm between 1980 and 1989.
+Besides this tendency, however, there are no clear trends between the specific
+content and the frequency of silence. Explicitly news-oriented segments exhibit no
+more a clear tendency than the thematically diverse elements merged under the
+“Misc”-tag. Both tags are followed by drastic increases and decreases in silence
+interchangeably. The 08:00 o’clock news, which on Monday causes a reduction of
+silence, has the opposite effect the next day.
+
+A number of shows do remain in the same time slot throughout the decade. A longer
+news segment appears at the same time, 12:30, in almost all broadcasting data. There
+are also three shorter news segments, each between two and five minutes in length,
+occurring at 08:00, at 15:00, and at 21:00. Similarly, a five minutes long weather
+report reoccurs three times every day, at 06:00, at 13:00, and 18:00. These unvarying
+elements do affect the rhythm of silence. Yet, the total amount of time, in particular
+throughout the second part of the day, only constitutes a subsidiary factor amongst
+the many hours of data. Taking the above-mentioned unpredictability of the effect
+into consideration, the consistency in content proves unsatisfying as an explanation
+for the similarity in the rhythm of silence. Thus, beyond the clear effect of music,
+the content of the program appears an equally insufficient variable for explaining the
+overlap in pattern throughout the second half of the day.
+
+129
+
+RHYTHMS OF SILENCE: DIGITAL AUDIO ANALYSIS OF SWEDISH RADIO BROADCASTING, 1980 -1989
+
+Figure 7: Deviation from average in proportion of silence. The average rhythm of silence is plotted in dark blue and
+the shaded region corresponds to the minimum and maximum proportion of silence. The graphs display data from
+every third year throughout the decade, from top to bottom: 1980, 1983, 1986, and 1989 .
+
+The rhythm of silence thus seems to display a certain degree of autonomy in regards
+to the radio content and programming. This calls for a closer investigation of the
+data itself. Figure 7 displays the rhythm of silence for each separate year, plotted
+against the deviation from average. From a methodological perspective, this
+visualization draws attention to the limitations of the generalizing method applied in
+the analysis. The considerable variation displayed between 09:00 and 13:00 in the
+first graph demonstrates the degree to which the method generalizes occasionally
+highly heterogeneous data. However, these graphs also display occasions of
+noteworthy similarity in the data. The almost exact overlap in both of the upper
+graphs occurring prior 13:00 and 17:00 are examples of strong correspondence,
+redeeming the accuracy of the method. It is possible to conclude that, despite being
+reductive in character, the analysis still provides insight into the high congruence
+within the data.
+
+Studying the deviation from average, however, also provides significant indications
+130
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+in regards to the historical development. By comparing the variance in data
+throughout the decade, it is possible to elucidate a difference in uniformity within
+the rhythm of silence. In figure 7, the minor deviation from average in sample week
+1989 poses a strong contrast to the large shaded regions in the data from 1980. The
+two sample weeks between, 1983 and 1986, seem to indicate a gradual development
+towards a higher degree of homogeneity. This tendency is also confirmed by the
+PCA analysis in Figure 8, where the later sample weeks cluster closer to the middle
+of the graph.
+
+Figure 8: Principal components of proportion of silence averaged over days in each sampled week. The opaque
+data points, corresponding to later years, cluster towards the zero point of the graph, indicating less diversion from
+average.
+
+131
+
+RHYTHMS OF SILENCE: DIGITAL AUDIO ANALYSIS OF SWEDISH RADIO BROADCASTING, 1980 -1989
+
+These results are a compelling indication that the deviation decreases over the
+decade, in a manner that brings to mind Crisell’s observation that radio had to
+become more “uniform” and “predictable”.58 This is also similar to what Schafer
+proposed concerning North American commercial radio, already back in 1977. In
+his prediction, each station would keep on forming increasingly “tight little loops
+throughout the day”.59 Radio time needed to be managed with precision and silence
+needed to exist under controllable circumstances. If a producer were to impulsively
+leave room for another seven seconds of mediational silence, as encouraged by
+Filson Young in the 1930s, the decision would have direct consequence in the
+packed tabloid schedule. The consequence is that the very programming and
+formatting of the medium influenced both the amount and the regularity of silence.
+The results presented in my study does not only appear to confirm these
+hypothesizes, but they also demonstrate how this style of broadcasting had influence
+beyond the realm of American commercial broadcasting. Prior research on the
+history of Swedish radio has located similar tendencies in the new local radio
+channels which appeared on the air throughout the 1980s. These small-scale radio
+stations adopted strategies from commercial broadcasting, like the use of regular
+jingles and clocks.60 However, due to their size, their influence on the flagship P1
+has not been accentuated. Nevertheless, the increasingly more similar rhythm of
+silence throughout the P1 broadcasting day provides evidence that the new style was
+spreading throughout the public service monopoly, quicker than previously
+documented.
+
+Exploring the frequency of silence has thus rendered insights into the development
+of P1 broadcasting. Yet, in regards to the general similarities exhibited in the data,
+neither programming structure, nor the content of broadcasting provide an
+exhaustive explanation. Instead, these silence rhythms seem to display a certain
+132
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+autonomy in their consistency. Such autonomy is good reason to further consider the
+function of silence as a crucial element in composing the form of radio.
+
+Conclusion
+“Historians will always insist that there is no unmediated access to the past. But
+as the negative sound of the archive, silence is the truest articulation of times
+past.”61
+
+As Wolfgang Ernst argues in his latest book, Sonic Time Machines, the historian
+needs to become attentive to the significance of ‘negative sound’. In order to provide
+a scientific and methodological response to such a demand, this article has evoked
+the informational value of silence. By exploring both changes and similarities in the
+frequency of silence in P1 broadcasting, two distinct contributions to the
+understanding of media history can be made. Not only do the results confirm a clear
+and gradual decrease in silence, but the data also indicates a tendency towards a
+more homogenous rhythm of silence, suggesting more rigidly formalized content.
+Read against the backdrop of prior radio historical research, these results provide
+further knowledge on the question concerning the style of public service
+broadcasting towards the end of state monopoly. Whether the modernization of radio
+necessitated a more uniform program structure is a debated matter. My research
+provides new insights into how increased competition and ideas of modernization
+came to influence the very content of radio. The gradual increase in structural
+similarity does not only confirm Crisell’s and Murray’s suggestions that radio
+becomes more predictable, but it also demonstrates that this development took place
+beyond the realm of commercial radio. The extent to which my results align with
+prior historical estimations is also interesting from a methodological perspective.
+
+133
+
+RHYTHMS OF SILENCE: DIGITAL AUDIO ANALYSIS OF SWEDISH RADIO BROADCASTING, 1980 -1989
+
+Whilst this lessens the novelty of the results, it simultaneously grants credibility to
+the method. Today, the ever-increasing amount of audio data at the disposal for
+media and cultural studies calls for new approaches to the study of sound. By turning
+the attention to the audio signal and the rhythmic redistribution of silence within the
+several hours of data at the time, it was possible to both discover new results, as well
+as anchor the conclusions in prior research. In doing so, my research affirms the
+media archeological interest in the signal, suggested by Ernst, and points forward to
+the potential of digital signal processing as a method within the humanities. By
+studying the very signal from a structural perspective, new answers are provided to
+old questions.
+
+By putting the question to silence itself, this study has managed to validate a
+correspondence between a homogenization of rhythm and the decentralization of
+radio, as it took place in Sweden. The results both support the effectivization thesis
+and offer new perspectives on the role of silence on radio. Nevertheless, many of the
+conclusions would do well to be tested on different, and larger data sets. This
+highlights the prospect of future comparative research. It would be highly interesting
+to contrast the changes and factors between broadcasting in the different countries.
+The study also constitutes a reminder that sound data remains both an obstacle and
+a resource. The very materiality of the documents has posed concrete limitations to
+the scope of this research. The data has furthermore required quite considerable
+manual cleaning and has been juridically difficult to access. These matters retain the
+prospects of media studies, yet, it is also a reminder that all archival documents have
+their own history and politics. The archive is and has always been an economic
+structure. The state and accessibility of the remnants of the past are subject to matters
+of prioritization.
+
+134
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+These are interesting times for any media scholar sensitive to sound. The
+significance and potential of the accumulation of sound media, both in classical
+archives and in digital infrastructures, has only been scratched on its resonant
+surface. The possibility of large-scale signal processing enables new ways to
+understand the deep structure of sound media. No longer is it necessary to manually
+code every single minute of radio in order to study its form. Instead, as I have tried
+to demonstrate, audio data can be explored by simple computational methods. The
+means to extract information from the vast residue of the sonic past potentially
+changes the conditions for historical knowledge. This is a valuable insight both
+within and outside media studies. In this regard, the article offers only a small
+addition. Yet, the ambition is to make a contribution which extends beyond the
+specific historical topic, inspiring future excursions into the unexplored realm of
+digital audio. Today, there are no clear boundaries or rules for the study of sound
+within humanities. Rather, it is up to attuned researchers to develop the proper
+techniques and discover the possibilities of audio data.
+
+Notes
+Kjellberg, Anders, “The Great Conflict of 1980 and other major labour conflicts in Sweden”. (”Arbetarhistoria:
+meddelande från arbetarrörelsens arkiv och bibliotek”, Vol. 35, No. 138-139, 2011), pp. 33-40.
+1
+
+2
+
+Ibid.
+
+3
+
+Crisell, Andrew, Understanding Radio, (Routledge, 1986): 3.
+
+4
+
+See: Lacey, Kate, Listening Publics (Polity press, 2013) and Voegelin, Salome, Listening to Noise and Silence
+(Bloomsbury, New York, 2010).
+5
+
+Elgemyr, Göran, Radion i strama tyglar, (Etermedierna Sverige, 1996), p. 225.
+
+6
+
+Hadenius, Stig, Weibull, Lennart, och Wadbring, Ingela, Massmedier: press, radio och tv i den digitala tidsåldern,
+(Ekerlider: Stockholm, 2008): 96.
+7
+
+Djerf-Pierre, Monika, Weibul Lennart, Spegla, granska, tolka: Aktualistetsjournalistik i svensk radio och TV under
+1900-talet, (Prisma förlag, 2001): 38.
+Brylawski, Samuel, “Preservation of Digitally Recorded Sound”, in Building a National Strategy for Digital
+Preservation: Issues in Digital Media Archiving, (CLIR and Library of Congress, 2002).
+8
+
+135
+
+RHYTHMS OF SILENCE: DIGITAL AUDIO ANALYSIS OF SWEDISH RADIO BROADCASTING, 1980 -1989
+
+9
+
+According to the legal deposit register at the International Association of Sound and Audiovisual Archives, IASA,
+”Audiovisual Legal Deposit register”, June 21, 2021, https://www.iasa-web.org/legal-deposit/register.
+10
+
+See Williams, Raymond, Television: Technology and Cultural Form, (Routledge, 2003/1974). The link between
+silences and flow in communicative content has more recently been pointed out by Shammur Absar Chowdhury et.
+al, see; Chowdhury, Shammur Absar, Stepanov, Evgeny, Danieli, Morena, Riccardi, Giuseppe, "Functions of
+Silences towards Information Flow in Spoken Conversation" in Proceedings of the Workshop on Speech-Centric
+Natural Language Processing (Association for Computational Linguistics, Copenhagen, 2017”).
+11
+
+Ibid
+
+12
+
+Schafer, R. Murray, The Tuning of the World, (New York: Knopf, 1977): 93.
+
+13
+
+Ibid
+
+Ernst, Wolfgang, “Radical Media Archaeology (its Epistemology, Aesthetics and Case Studies)” (Artnodes, Num.
+21, July 2018):3, and Ernst, Wolfgang, Digital Memory and the Archive, (Minneapolis: University of Minnesota
+Press, 2012):45.
+14
+
+Åberg, Carin, “Radio analysis? Sure! But how?”, (Radio-Kultur und Hör-Kunst:Zwischen Avantgarde und
+Poplarkultur 1923-2000, Königsh./Neum., Würzb, 2001).
+15
+
+16
+
+Ibid.
+
+Poulsen, Ib, “Carin Åberg: The sounds of Radio. On radio as an auditive means of communication”
+(MedieKultur: Journal of Media and Communication Research, 17(33), 2001).
+17
+
+18
+
+Åberg, Carin, The Sound of Radio, (Stockholm University Press, 1999).
+
+19
+
+Kittler, Freidrich, The Truth of the Technological World (Stanford University Press, 2014): 178.
+
+20
+
+In conversation analysis, it is common to use 500 milliseconds as a threshold for silence, but following the work
+of Lynch et. al on the lengths of silences within speech, my intention has been to captured the some of the more
+significant silence within dialogue as well. Further reading: Lynch JF, Josenhans LJ, Crochiere RE, ”Speech/Silence
+Segmentation for Real-Time Coding via Rule Based Adaptive Endpoint Detection”, IEEE International Conference
+Acoustics, Speech, and Signal Processing (ICASSP-87, Dallas 1987), pp. 1348 -1351.
+21
+
+https://lagen.nu/1966:756
+
+22
+
+IASA, ”Audiovisual Legal Deposit register”, June 21, 2021, https://www.iasa-web.org/legal-deposit/register.
+
+Snickars, Pelle, ”Mediestudiets infrastruktur: Om etableringen av Arkivet för ljud och bild” (Massmedieproblem:
+Mediestudiets formering, ed. Mats Hyvönen, Pelle Snickars, Per Vesterlund, Lunds universitet: 2015).
+23
+
+24
+
+The results would nonetheless have benefited from exhaustive data, but due to complex legal status of radio
+recordings, this was not possible. The method proposed in this article is time effective when applied to digital
+documents. However, due to the current implementation of the General Data Protection Regulation, access has been
+compromised, which in turned has necessitated live analyses
+25
+
+https://aubio.org/
+
+“Audacity Team (2021). Audacity(R): Free Audio Editor and Recorder [Computer application]. Version 3.0.0
+retrieved March 17th 2021 from https://audacityteam.org/ [1].”
+26
+
+136
+
+J OURNAL OF CU LTURAL A NALYTICS
+
+Rogalsky, Matt “Maintain radio silence: listening to the gaps between the words 2000–2003”, (Digital Creativity,
+14:2, 2003), pp. 115-118: 116.
+27
+
+28
+
+Picard, Max, Die Welt des Schweigens, (Piper Verlag, 1991/1948): 207.
+
+29
+
+Mowitt, John, “Radio Silence; or, ON the Fritz” (Cultural Critique, vol. 91:150, 2015): 159, and Lacey, 2013.
+
+30
+
+Lacey, 2013: 89.
+
+31
+
+Djerf-Pierre, Monika, Weibull Lennart, Spegla, granska, tolka: Aktualistetsjournalistik i svensk radio och TV
+under 1900-talet (Prisma förlag, 2001): 38.
+For the moniker “first media man”, see: Mazzarella, Sylvester, Filson Young: The First Media Man (1876 –
+1938), 2017.
+32
+
+33
+
+Lacey, Kate, Listening Publics, (Polity Press, 2013).
+
+34
+
+Williams, Raymond, Television: Technology and Cultural Form, (Routledge, 2003/1974): 90.
+
+White, Mimi, “Flows and Other Close Encounters with Television,” in Planet TV.A Global Television Reader, ed.
+Lisa Parks and Shanti Kumar (New York: New York Press, 2003).
+35
+
+36
+
+Eastman, Susan T, Ferguson, Douglas A, Klein, Robert, Media Promotion & Marketing for Broadcasting, Cable
+& the Internet (Routledge, 2006): 128.
+37
+
+Robert Paul Dye, “The death of silence” (Journal of Broadcasting, 12:3, 2009/1968), pp. 225-228: 225.
+
+38
+
+Scannell, Paddy, “Radio Times: The Temporal Arrangements of Broadcasting in the Modern World”, (1986): 21.
+
+British Broadcasting Corporation, “Broadcasting in the Seventies: the B.B.C.’s plan for network radio and nonmetropolitan broadcasting”, (B.B.C., 1969): 1.
+39
+
+40
+
+Crisell, 1986: 32.
+
+Ruohomaa, Erja. “Radio as a (Domestic) Medium Towards New Concepts of the Radio Medium” (Nordicom,
+1997), pp. 151 - 160.
+41
+
+42
+
+Voegelin, 2010: 114.
+
+Forsman, Michael, ”Radio för framtiden eller bildning i förfall? Debatterna kring moderniseringen av tablåer och
+tilltal i Riksradions P1 1966-1986” (Presshistorisk Årsbok, 2014), pp, 71-84: 119.
+43
+
+44
+
+Forsman, Michael, Lokal radio i konkurrens 1975 – 2010, (Ekerlids, 2010): 13.
+
+45
+
+Forsman, 2010: 46.
+
+46
+
+Hadenius, Stig, Weibull, Lennart, och Wadbring, Ingela, Massmedier: press, radio och tv i den digitala
+tidsåldern, (Ekerlider: Stockholm, 2008): 100 – 102.
+47
+
+Höijer, Birgitta, Det hörde vi allihop!: etermedierna och publiken under 1900-talet (Prisma: Stockholm, 1998):
+244.
+48
+
+Forsman, 2014: 86.
+
+49
+
+Höijer, 1998: 238.
+
+137
+
+RHYTHMS OF SILENCE: DIGITAL AUDIO ANALYSIS OF SWEDISH RADIO BROADCASTING, 1980 -1989
+
+50
+
+Engblom, Lars-Åke, Radio- och TV-folket: Rekryteringen av programmedarbetare till radion och televisionen i
+Sverige, 1925-1995, (Stiftelsen Etermedierna Sverige, 1998): 178, and Höijer, 1998: 238.
+51
+
+Höijer, 1998: 240.
+
+52
+
+Forsman, 2014: 75.
+
+Feuer, Jane, “The Concept of Live Television: Ontology as Ideology,” in E. Ann Kaplan,
+ed. Regarding Television (Los Angeles: American Film Institute, 1983): 12-22.
+53
+
+54
+
+Hadenius, Weibull, Wadbring, 2008: 101.
+
+55
+
+Forsman, 2014: 74.
+
+56
+
+Scheduled broadcasting pauses are a rare phenomenon. Throughout the decade, there are 103 noted occurrences,
+with the majority taking place in the first half of the decade.
+57
+
+Hadenius, Weibull, Wadbring, 2008: 101.
+
+58
+
+Crisell, 1986: 32.
+
+59
+
+Schafer, 1977: 235.
+
+60
+
+Forsman, 2010: 117.
+
+61
+
+Ernst, Wolfgang, Sonic Time Machines (Amsterdam University Press, 2016): 119.
+
+138
+
+

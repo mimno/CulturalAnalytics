@@ -1,0 +1,1256 @@
+Clariana-Rodagut, Ainamar, and Alessio Cardillo. “Quantifying Women’s Marginalisation
+in Ibero-American Film Culture During the First Half of the Twentieth Century: A
+Network-Science Proposal.” Journal of Cultural Analytics, vol. 9, no. 4, July 2024,
+https://doi.org/10.22148/001c.118589.
+
+ARTICLE
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture
+During the First Half of the Twentieth Century: A Network-Science
+Proposal
+Ainamar Clariana-Rodagut1,2 , Alessio Cardillo1
+1 Universitat Oberta de Catalunya -- Internet interdisciplinarily Institute (IN3), Barcelona, Spain, 2 Philipps-Universität Marburg, Marburg, Germany
+
+Keywords: film field, cinema history, women, gender approaches, social network analysis, Iberoamerica, film culture, heterogeneous data
+https://doi.org/10.22148/001c.118589
+
+Journal of Cultural Analytics
+Vol. 9, Issue 4, 2024
+
+The research presented here uses the tools of social network analysis to
+empirically show a socio-cultural phenomenon already addressed by the social
+sciences and history: the historical marginalisation of women in the field of
+cinema. The novelty of our approach lies in the use of a large amount of
+heterogeneous historical data. On the one hand, we built a network of
+interactions between people involved in the film field in Ibero-America during
+the first half of the twentieth century. On the other hand, we propose a k-core
+decomposition and a multi-layered analysis, as a quantitative way to study the
+position of women within the cultural melieu. After conducting our analysis,
+we concluded that women were mostly situated in the outer k-shells of the
+empirical network, and their distribution was not uniform across the k-shells.
+From a qualitative perspective, these results can be interpreted as the
+consequence of the lack of evidence of the participation of women in the public
+sphere.
+
+1. Introduction
+The digital humanities blossomed as a discipline in the early twenty-first
+century. Since then, a multitude of methods from the computational sciences
+have been imported to the humanities. Digital tools have been successfully
+used in a plethora of disciplines, including history, philosophy, philology, and
+cultural studies, to analyse large amounts of data that would be impossible
+to manage using traditional tools. This has allowed for the discovery of
+new patterns and unidentified phenomena (Schich et al.; Fraiberger et al.;
+Brughmans; Fulminante et al.). Nonetheless – to the best of our knowledge
+– network analysis has barely been applied to the study of film history. The
+research presented here seeks to fill this knowledge gap and uses the tools of
+social network analysis to empirically explore a socio-cultural phenomenon
+that has already been studied in the social sciences and history, namely, the
+historical marginalisation of women in the cinema field. Yet, the novelty of
+our approach lies in the use of a large amount of heterogeneous, historical
+data and in our proposed method to analyse the position of women within
+social networks linked to the cultural field. This approach allows us to
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+highlight certain yet-unknown nuances of marginalisation and tie them to the
+network’s structural properties and the nature of the connections composing
+it.
+Our analysis has two goals. On the one hand, we seek to detect the social
+position of women in the cultural medium, specifically regarding film, in
+Ibero-America over the first half of the twentieth century, as per the data
+compiled in our database. To do so, we apply social network analysis and
+use a gender perspective and a relational approach. On the other hand,
+we propose using k-core decomposition and multi-layered analysis as a
+quantitative way of analysing the marginal position of women in the cultural
+milieu.
+The data we rely on for our analysis comes from a dataset comprising data
+on women who participated in the Ibero-American film field during the first
+half of the twentieth century. This dataset was extracted from the database
+created by the participants of the ERC project “Social Networks of the
+Past: Mapping Hispanic and Lusophone Literary Modernity, 1898-1959” and
+members of the GlobaLS research group. Our dataset was built as part of
+the cinema and the women-focused subprojects of the larger, aforementioned
+ERC project.
+The methodological proposal and analysis undertaken for this paper are the
+result of a joint effort between a complex systems scientist and a humanist
+deploying the gender perspective who specialises in cinema studies.
+Interdisciplinarily, we seek to detect the influential women in our database.
+From a qualitative perspective, it is generally accepted that historiography
+has invisibilized women who worked in the film field during the silent and
+1
+early cinema periods. It means that the data we gathered for the proposed
+framework are scarce and sparse. Even so, we believe that 1) quantitative
+methods can contribute to the discussion around why women suffer
+marginalisation, and that 2) network science can also propose different ways
+to tackle the historical roles played by women in the cultural field. This paper
+aims to empirically show how marginalisation conditioned them.
+By visualising the roles and positions women had in the networks, we pose
+the following research questions. Firstly, were the women peripheral? After
+exploring this question and realising that women were effectively situated at
+the margins of our network – even when deploying the gender perspective
+and positive discrimination in the data-gathering process, we ask, what was
+
+1 In our case, this lack of data is exacerbated by our geographical context of focus, which has been considered peripheral by film historians. See
+
+for example Richard Abel’s Encyclopedia of Early Cinema (2004), in which entries on filmmakers are organised according to the countries
+where they worked, with the number of filmmakers from the United States towering over other countries. Also, these data records contain
+far fewer women than men. For recent work recovering the stories of women in silent cinema, see the Women Film Pioneers project.
+
+Journal of Cultural Analytics
+
+2
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+the quantitative effect of marginalisation? To this end, we use k-core
+decomposition as a suitable method for quantitatively analysing the
+peripheral position of women in our networks.
+This method allows us to see that women were mostly situated in the outer
+k-shells of the empirical network, and their distribution was not uniform
+across the k-shells. In contrast, the random counterpart networks display a
+more even distribution of women across the k-shells. Therefore, we postulate
+that there was a social force pushing women to the outskirts of the network.
+In light of our results, we consider that the marginalisation effect is not
+due to mere chance but, instead, to the way the cultural field is structured
+and behaves when analysed as a network. From a qualitative perspective,
+these results can be interpreted as the consequence of the lack of data on
+women. This does not imply in any way that women did not occupy key
+roles in the institutionalisation process that took place in the film field.
+A plausible argument regarding this scarcity of data hinges on women’s
+disproportionately low occupation of positions in the public sphere,
+compared to their dense fabric of relations and collaborations in the private
+spheres. As the majority of data we rely on has been gathered from
+publications and official documents, they fail to grasp the exchanges that
+took place in private spheres (Arendt). To address the data’s scarcity, we have
+developed certain data-gathering strategies, such as building ego-networks
+around certain key women mediators and then paying special attention
+to their female collaborators. Alternatively, we may assign a category to
+relationships in our database to add women for whom we do not have
+information other than their relationship (including marriage) with a man
+who occupied a relevant position in the cultural field of that time. Using
+our historical knowledge, we also structured the data in order to highlight
+the names of women on whom no further meta-information was available.
+One strategy we followed when considering distinct types of interactions
+was to convert each type into a separate network, to retrieve all the women
+who had personal relationships with other well-known people who swayed
+great symbolic power in the film and cultural field. We made this decision
+considering that most women in relationships with a male artists or
+intellectuals would have probably carried out relevant activities too.
+
+2. Methodology
+Perspectives
+As this paper includes the word “women” in its title, we must reflect upon
+what we mean by this category. First of all, it is crucial to state that most
+of the women we are referring to were white and came from upper- and
+middle-class backgrounds. This, in fact, conditioned women’s survival in the
+intellectual and cultural fields. Although, on the one hand, their condition
+as women inevitably limited their social roles, their position was, on the
+other hand, very privileged compared to that of other women who were not
+Journal of Cultural Analytics
+
+3
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+white or from the upper-middle class. Silvia Federici notes that as long as the
+sexual division of labour in the framework of analysis remained as powerful
+as it had been since the emergence of capitalism, the concept “women”
+remains a useful category for analysis. Federici’s work has led us to realise
+the importance of women’s strategies to legitimise their voices and work in
+the cinema field. One shared experience among most of the women in our
+database was their fight against the roles imposed on them. Their struggle
+for emancipation indicates that, for all of them, there in fact was a clear
+definition of what it meant to be a woman, a category they often referred
+to and described in their works. Given the cultural environment they were
+raised in, they were told that their primary duty as women was to marry
+and care for the other members of their families. In one way or another,
+most of the women we have data on fought against this imposition. The
+crux of their struggle involved avoiding the reproductive labour they were
+destined for, resulting in social rejection. Nevertheless, the very privileged
+environment they were part of helped these women boost their productivity
+in the artistic and cultural fields as a direct consequence of their rejection
+(Clariana-Rodagut and Roig-Sanz). In this sense, these women could occupy
+social positions that were previously barred from women, thanks to their
+newfound freedom.
+Comparing men and women is useful as long as we use it to describe the
+differences themselves and their implications, but comparison proves useless
+if we assume that men and women operated under equal conditions and
+thus expect equal, or even comparable, results. In no way can the public
+roles of the women at hand be approached using the same methods we
+would use to analyse men’s contributions within the same context. Although
+men’s contributions have always been historically acknowledged, women’s
+contributions did not receive the same praise because of their limited access to
+the public sphere. Therefore, if women’s contributions were to be compared
+to their male counterparts’ using the same tools of measurement, women
+would always appear less relevant – or gifted – in the history of culture. The
+above reasoning has led us to work on certain compensation strategies which,
+taken together, make up the method of analysis we propose in this paper.
+
+Data
+Our analysis leverages our research group’s data, which is stored in the
+Nodegoat Virtual Research Environment. The database has been filled and
+enriched since 2019 and, therefore, is the result of the collaboration between
+current and past members of our research group. We believe it is important
+to be clear about the work involved in compiling data, given that such
+labour is often invisibilized, as noted by Catherine D’Ignazio and Lauren
+Klein in their book Data Feminism (2019). This invisibility implies that the
+places from which datasets are built are rarely acknowledged. Thus, little
+responsibility tends to be assumed around the biases affecting data-collection,
+cleaning, and systematisation processes. While knowledge should always be
+Journal of Cultural Analytics
+
+4
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+situated (Haraway), it is imperative that we specify our places of enunciation
+as researchers. This means that we must take responsibility for our biases,
+recognize what is being left out and what we are taking for granted, and
+clarify where the data were gathered and what procedure was used to extract
+them. The goal of such a process is to avoid what Haraway calls “the god
+trick,” that is, the deployment of a perspective that is situated nowhere,
+presuming that what we are showing reflects reality, instead of reflecting just
+one of its parts, our version of it. We aim to steer clear of the idea that the data
+cannot lie.
+Thus, it is worth mentioning that the data-compiling team operates from
+the south of the Global North and that the team’s salaries are paid by a
+prestigious funding institution, the European Research Council. The means
+available to conduct our research are greater than average. Most of the people
+who have taken part in gathering our data are cisgender and white, and come
+from middle-class backgrounds. The data are biassed by our own standpoint.
+The project behind the data collection, “Social Networks of the Past:
+Mapping Hispanic and Lusophone Literary Modernity (1989-1959),”
+consists of four research lines. These lines investigate cultural assets in the
+Ibero-America of the first half of the twentieth century. We aim at finding
+the mediators who spearheaded the exchange of material (e.g., books) and
+inmaterial (e.g., ideas) goods, but also the circulation of people. We posit that
+these relationships and exchanges provide the best windows to understanding
+the contribution that Ibero-America made in the building of artistic
+modernity. Our main research objects are 1) translations in cultural and
+literary historical journals, 2) the International Committee of Intellectual
+Cooperation of the League of Nations, 3) film criticism in specialised and
+cultural historical journals, and 4) women of the first Ibero-American film
+clubs. The information we gathered involves human and non-human agents
+and agencies (Latour), and using the actor-network theory’s tenet “follow
+the actor,” all the agents found during our source’s harvesting phase were
+uploaded into our database to unveil the networks around our objects.
+Therefore, in our database, we can find data on associations (for example,
+linked to historical journals), cultural events, and people. We also have data
+on people with whom the participants of our main objects exchanged letters
+and who collaborated in books and articles published by our human actors.
+Given our data’s intrinsic heterogeneity, our sources are varied, as they
+come from primary sources and secondary bibliography. Primary sources
+can be located in personal, municipal, and national archives, or in historical
+publications, thus including correspondence, historical documents, pictures,
+2
+exhibition catalogues, member lists, etc.
+
+2 These are some of the most relevant sources for each case study. For María Luz Morales’s case study, we included data from Cabré, Codina
+
+Canet, Fulcarà Torroella, González Naranjo, Morales and Cabré, Pérez-Villanueva Tovar, Real Mercadal, and Zulueta, as well as from the
+articles she published in newspapers and journals, and from newspaper reports published in La Vanguardia. For Lola Álvarez Bravo’s case
+
+Journal of Cultural Analytics
+
+5
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+One of the consequences of using heterogeneous sources is that we fed the
+records on the relationships based on participation in events and publications.
+Yet, we do not possess data on associations’ every event but, in most cases,
+we have data on just a few events organised by a subset of associations.
+Likewise, the information does not cover every actor at a specific event or
+association, but only those we managed to find in the sources we had access
+to. Most of the data in this paper has been manually gathered. During the
+data harvest and uploading, each member of the team added descriptors using
+well-established concepts from their own fields of expertise. For instance,
+we have included the descriptor “cinema” to describe a given event’s topic,
+the specialisation of a journal, or the main topic of a specific text. These
+descriptors are written in English – as this is our research group’s
+communication language – and in Spanish – the main vehicular language
+used by the agents and agencies we work with.
+Data heterogeneity also affects the types of relationships we establish between
+actors. The plurality of sources and people who have extracted/curated the
+data may also lead to inconsistencies, which we have tried to mitigate through
+constant verification. The metadata available on each human actor can also
+vary. In this sense, the invisibilisation of women in cultural history, and
+the consequent paucity of data on them, is worth mentioning. Therefore,
+regarding the human actors, we have considered meta-information on gender,
+name (first and last), and professional or participation-related ties to
+magazines, events, publications, and institutions, when available. We have
+also included personal relationships for the most prominent people in our
+database, that is, the ones we have been extensively working on from a
+qualitative point of view.
+To address the lack of data on women, we have created a category on
+relationships (either personal or professional) in our database. Although we
+do not always possess the empirical evidence (e.g., an article, photo, or list
+of collaborators) of the professional relationship between two agents, when
+working with women it is essential that we include the self-reflexive and
+personal texts in which these women declare their professional or personal
+relationship with certain relevant actors in the cultural or cinematographic
+3
+fields. In our category “relationships,” we have selected only personal,
+romantic relationships (e.g., wife-husband, or unmarried couple) and those
+defined as professional relationships. Such a selection is based on our
+knowledge of the historical context. Our expertise, in fact, leads us to believe
+
+study, we gathered data from Álvarez Bravo, Debroise, Fuentes Rojas, Poniatowska, and Rodríguez Álvarez. For the Victoria Ocampo case
+study, we included data from Artundo et al., Leston, Liendo, and Ocampo (Testimonios. Primera serie; Ocampo, Testimonios. Segunda serie;
+Ocampo, Testimonios. Quinta serie (1950-1957); Ocampo, Victoria Ocampo. Correspondencia; Ocampo, Autobiografía). We have included
+data from Ocampo’s correspondence published by the Houghton Library in the collection Victoria Ocampo papers. We also added the data
+published by Benedict on Ocampo’s publishing house and journal Sur.
+3 See Diana Anselmo and Amelie Hastie.
+
+Journal of Cultural Analytics
+
+6
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+that women married to “prominent” men almost always worked in their
+4
+shadows. See, for instance, the case of Lola Álvarez Bravo. Concerning
+professional relationships, we have traced them thanks to primary sources
+(e.g., self-reflexive texts) or other sources (e.g., photographs), providing
+empirical evidence of the existence of a relationship between two (or more)
+people.
+In sum, the main criterion to select relevant data within the whole dataset
+stored in Nodegoat was that the agents had to have some relationship with
+the film field. This criterion entails the selection of those institutions
+(journals, film clubs, federations, etc.), events, and people that played a role
+or were related to the film field, with the latter having worked or somehow
+participated in any such events, institutions, and journals. Our decision is
+based upon the paucity of data and the need to work with indirect data.
+Thus, even if for some people we only have data related to a single event, we
+will still consider them actors tied to the film field. In the next section, we
+provide a detailed description of how each channel (or type) of interaction
+has been defined and subsequently used to generate a network of people.
+
+Channels of Interaction
+In mathematical terms, a graph (or network) is an object made of a certain
+number of points (denoted by ) called nodes or vertices, connected by a
+given number of edges or links (whose number is equal to ) (Latora et al.).
+The number of connections of a node is called its degree, and we denote it as
+. An isolated node is a node with no connections. We use the term path to
+indicate the sequence of edges (or nodes) that needs to be crossed to go from
+the path’s origin to its destination. A connected component of a graph is the set
+of mutually reachable nodes via a path. The biggest component in the graph
+is called its giant component (Latora et al.).
+Below we present how each channel (i.e., type) of interaction was used to
+build the corresponding network. Each of these networks can be thought of
+either as an independent entity or, alternatively, as a subnetwork (i.e., a layer)
+of a multiplex/multilayer network (Bianconi).
+
+collective bodies
+Given the list of all the collective bodies available in our database, we:
+
+4 Other members of the Mexican group of artists surrounding Lola Álvarez Bravo include Graciela Amador Sandoval and Isabel Villaseñor
+
+(respectively, David Alfaro Siqueiros’s and Gabriel Fernández Ledesma’s wives) (Cueva Tazzer). The latter – according to Lola Álvarez Bravo
+– died because her husband did not let her out of the house or let her be as creative as she needed (Poniatowska). There was also Elena
+Garro (Octavio Paz’s wife), whose husband forced her to burn her own writing due to his jealousy of her skills (Paz Garro). In the circle of
+intellectuals tied to the Lyceum club in Madrid we may find María Lejárraga, the ghostwriter for her husband, the well known Gregorio
+Martínez Sierra (Lizárraga Vizcarra). For further references of women artists whose work was underrepresented by their husbands, refer to
+Grosenick or Birrell.
+
+Journal of Cultural Analytics
+
+7
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+1. Selected those collective bodies (CB) for which the field “Kind of
+organisation” contained one of the following terms: ‘Cine’, ‘cine’,
+‘Ciné’, ‘ciné’, ‘Film’, and ‘film’. This operation yielded all the CB
+classified as ‘Film Club’, ‘Film Archive’, ‘Venue’, and ‘Film
+Distributor’.
+2. Selected those CB whose field “Name” contained one of the
+following terms: ‘Cine’, ‘cine’, ‘Ciné’, ‘ciné’, ‘Film’, and ‘film’.
+These steps allowed us to select, overall, 422 CB. Then, for each CB, ,
+we extracted the set,
+, of people involved with their activities but
+classified as prominent figures (e.g., founders, organisers, managers, treasurers,
+etc.) or playing a relevant role (for instance, presenters, guests, authors, etc.)
+within them. Then, given the set
+, we added an edge between each
+pair of elements. By considering only prominent figures, we ensured that the
+interactions we captured were those among people who were committed to
+the activities organised by the CB and therefore would have met at some
+point. That said, it is worth stressing that such an assumption implies that
+each CB’s prominent figure took part in all its activities (which might not
+always have been the case).
+
+events
+Given the list of all the events available in our database, we:
+1. Selected those whose field “Subject” contains the word ‘Cinema’.
+2. Selected those whose field “Name” contained one of the following
+5
+terms: ‘cine’, ‘film’, ‘pelicula’, and ‘proyecci’.
+These steps allowed us to select 99 events (EV). Then, for each EV, , we
+extracted the set,
+, of its participants, and added a connection between
+each possible pair of them. It is worth noting that some EV’s participant list
+consists of only one – or no – person. When we only found one person, the
+node corresponding to the sole participant was added to the network without
+any edge connecting it.
+
+publications
+Given the complete list of all publications available in our database, we:
+1. Selected those whose field “Genre” corresponded to ‘Film’.
+2. Selected those whose field “Title” contained either the word ‘film’
+6
+or the word ‘cine’.
+
+5 The match is case insensitive.
+
+Journal of Cultural Analytics
+
+8
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+3. Selected those whose field “Journal name” contained one of the
+7
+following terms: ‘film’, and ‘cine’.
+Using these criteria, we selected 64 publications (PUB). From these PUB
+we extracted the set of journals where they were published (a total of
+16), and created a set,
+, of people associated with each journal, ,
+either due to authorship or, for those related to cinema, due to the role
+they played within them. For the latter, we selected those whose role is
+one of the following: ‘Director’, ‘Editor’, ‘Co-director’, ‘Editor in chief’,
+‘Co-founder’, and ‘Founder’. This approach allows us to grasp not only
+authorship relationships but also – and most importantly – relationships
+between authors and editors. Indeed, many publications in specialised
+journals were submitted thanks to direct invitations from the editor, thus
+implying the existence of a relationship between editors and authors. We also
+assume that the people publishing pieces on cinema were interested in cinema
+as well.
+
+relationships
+Given the list of people involved in CB, EV, or PUB relationships, we
+extracted the list of (pairwise) personal relationships (REL) of the type
+‘Spouse’, ‘Unmarried partner’, and ‘Professional’. This step led us to include
+people not belonging to the CB, EV, and PUB relationships. Such a selection
+criterion translated into 601 connections.
+
+epistolary correspondence
+Given the list of people involved in CB, EV, PUB, and REL, we searched
+through our epistolary database once again and added epistolary
+correspondence (COR) only if both the sender and the receiver belonged
+to the aforementioned list of people. We decided not to include all the
+correspondence from our database because we did not want to add new
+actors who were not connected to the cinema field to our network. Rather,
+we deemed only those actors with a role in the cinema field to have played a
+role in the articulation of the field in itself.
+Table 1 summarises the main structural features of these networks,
+comprising the number of nodes, , of edges, , the maximum number of
+connections per node,
+, the number of connected components,
+,
+(i.e., pieces of the network in which it is possible to go from every node
+to every other node within it), the number of isolated nodes,
+, and
+the relative size of the giant component, , (i.e., the percentage of nodes
+
+6 The match is case insensitive.
+7 The match is case insensitive.
+
+Journal of Cultural Analytics
+
+9
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+Table 1. Structural features of the networks used in our study. See the main text for the details.
+Network
+REL
+
+1367
+
+601
+
+75
+
+783
+
+412
+
+6.95
+
+4
+
+COR
+
+1367
+
+101
+
+91
+
+1269
+
+1268
+
+7.24
+
+2
+
+CB
+
+1367
+
+1315
+
+23
+
+1136
+
+1101
+
+1.76
+
+20
+
+PUB
+
+1367
+
+244
+
+18
+
+1323
+
+1317
+
+1.39
+
+16
+
+EV
+
+1367
+
+1898
+
+95
+
+1258
+
+1250
+
+7.02
+
+58
+
+ALL
+
+1367
+
+4090
+
+117
+
+373
+
+37
+
+36.72
+
+58
+
+belonging to the biggest connected component in the graph) (Latora et al.).
+We also computed the same indicators for the network merging together all
+the layers (ALL).
+
+Brief Introduction to Mathematical Concepts
+jaccard index
+Using different networks accounting for distinct channels of interaction raises
+the question of whether the connections grasped by each network are the
+same or not (and to what extent). One way to quantify the redundancy of
+the information encoded in two layers of a multiplex network is to compute
+the Jaccard index of their edges’ sets (Bianconi). Given two generic sets 𝛼 and
+𝛽, their Jaccard index (Jaccard), J, can be computed mathematically:
+
+The numerator
+indicates the number of elements belonging both
+to sets and . The denominator
+, instead, denotes the number of
+elements belonging to either set 𝛼 or . The structure of Eq. (1) implies
+that the values of
+can span from zero to one. A value of
+indicates that the two sets have exactly the same elements (i.e., one is an exact
+copy of the other), whereas
+indicates that the two sets do not
+have any element in common (i.e., they are completely different). A value of
+between zero and one indicates, instead, a certain degree of similarity
+between the two sets, with values of
+close to one denoting high
+similarity and those close to zero denoting low similarity.
+
+-core decomposition
+As we are interested in pinpointing those women who played a relevant role
+in cultural mediation in the Ibero-American film field of the first half of the
+twentieth century, we can leverage the network’s formalism to identify them,
+pushing our analysis beyond dyadic interactions by considering mesoscopic
+structures – i.e., coherent structures made by groups of nodes. Amidst the
+plethora of possible mesoscopic structures (Lambiotte et al.), we decided
+to focus on a type of core-periphery structure called k-core decomposition
+Journal of Cultural Analytics
+
+10
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+(Borgatti and Everett; Seidman; Kong et al.). Such a technique has proven
+useful in a variety of domains (Carmi et al.; Morone et al.; Kong et al.), but
+one in particular is especially appealing for our case. It turns out that k-core
+decomposition identifies the most influential spreaders in a network more
+efficiently than by ranking them according to, for instance, their number
+of connections (Kitsak et al.). Cultural mediators, like the women we are
+working on, can be taken, to a certain extent, as spreaders in the sense that
+they played the key role of mediating between spheres and cultures. In this
+sense we considered the ability to spread (as defined by network science)
+as similar to mediation (as defined by the social sciences) (Roig-Sanz and
+Meylaerts). This underpins our choice of using k-core decomposition to
+pinpoint women cultural mediators.
+The k-core decomposition of a network is an iterative pruning process
+decomposing it into a set of concentric (i.e., onionlike) k-shells. The algorithm
+consists in recursively removing the nodes having less than k connections (i.e.,
+8
+first
+, then
+, and so on). Under this assumption, a k-shell is the set
+of nodes belonging to the k-th core but not to the (k + 1)-th core (that is why
+the structure is akin to that of an onion). The k-shell index, , of the deepest
+k-shell available for graph (i.e., its maximum on the graph
+) is
+called its degeneracy, .
+Given the aforementioned properties of the k-core decomposition, we studied
+the fraction of nodes of each gender in each k-shell. To ensure that our
+observations are not the result of mere chance, we compared them to their
+analogue, measured in a randomised version of the network.
+
+graph randomisation
+Given a network with nodes and edges,
+, the randomisation
+process generates a network
+which, besides the number of nodes
+and edges, also preserves each node’s number of connections. Such a random
+counterpart can be obtained from network
+using the edge-swapping
+rewiring mechanism proposed by Fosdick et al., developed from the
+configuration method (Molloy and Reed). In a nutshell, the edge-swapping
+method selects uniformly at random two edges,
+and
+, of the
+network , and replaces them – if they do not exist already, or generate
+self-loops – with either pair
+or, alternatively, with the pair
+. Both replacements ensure the conservation of each node’s
+degree. For this study, we repeated the edge-swap step several times to ensure
+
+8 These nodes could originally have more than k connections, but the removal of other nodes connected to them decreases their effective
+
+number of connections.
+
+Journal of Cultural Analytics
+
+11
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+that the final network
+was sufficiently distinct from the original
+one. We repeated the whole randomisation procedure several times (in our
+case, 50) to ensure the statistical significance of our results.
+
+3. Results
+Quantifying Women’s Marginalisation Using k-core
+Decomposition
+One way of quantifying the marginalisation of women in the film field is
+to study their presence – and abundance – across the network’s k-shells, as
+outer ones tend to be populated mainly by nodes belonging to the network’s
+outskirts, whereas deeper k-shells are populated by more influential spreaders,
+which also tend to occupy central positions in the network. To this end, we
+have built a network – labelled as ALL – obtained by collapsing together all
+the layers (i.e., the REL, COR, CB, PUB, and EV networks) of the multiplex
+network. The collapse of distinct layers into a single network implies that
+the presence of an edge in the ALL network stems from its existence in, at
+least, one of the layers. Table 1 summarises the structural features of the ALL
+network. Upon inspection, we may highlight that the number of edges, ,
+and the size of the biggest connected component, , are considerably larger
+than those of the single layers. These differences, combined with the smaller
+number of connected components,
+, and isolated nodes,
+, tell us
+that the ALL network is considerably more cohesive than the layers’ networks
+when taken separately. With this picture in mind, we can study the k-core
+decomposition of the ALL network. Specifically, for each k-shell, we have
+9
+counted its number of nodes classified either as men, women or “unknown”
+10
+and divided such numbers by the total number of nodes in the k-shell.
+The left panel of Fig. 1 displays the fraction of women, men, and unknown
+people present in each k-shell of the empirical network. Notably, the women
+tend to concentrate in a few k-shells, especially in the outer – and shallower
+– ones. However, the same analysis performed on the randomised networks
+delivers a distinct picture. By glancing at the right panel of Fig. 1, we notice
+how women’s presence tends to be more widespread across all the k-shells.
+The fraction of women appearing in a k-shell appears more homogeneous in
+the random counterpart than in the empirical network. These features make
+us suspect that there could be some kind of “force” exacerbating women’s
+marginalisation by pushing them towards k-shells where their influence as
+cultural mediators is weaker.
+
+9 We use this category to indicate the lack of metadata on the gender of a person.
+10 This procedure ensures that the sum of the fractions of men, women, and unknown nodes of a given k-shell is always equal to one.
+
+Journal of Cultural Analytics
+
+12
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+Figure 1. Organization of the nodes grouped by gender across the k-shells.
+The horizontal axis indicates the k-shell index, , whereas the vertical axis denotes the fraction of nodes with a given
+gender in each k-shell (inner k-shells are the most central ones). The left panel displays the results for the empirical ALL
+network, whereas the right panel displays the case of the random counterpart (results are averaged over 50 realisations of
+the rewiring process).
+
+Decoupling the Source of Marginalisation
+The marginalisation of women within the k-core decomposition observed
+in the ALL network (displayed in Fig. 1) raises the question of whether
+such a phenomenon stems directly from a single – or a few – channels of
+interaction or is due to their interplay. It has been proved that the structural
+features of networks obtained by merging together the layers of a multiplex
+network can be quite different from those of their layers considered singularly
+(Cardillo et al.). To find whether marginalisation is directly related to the
+multilayered nature of our system, we leveraged the full structure of the
+multiplex network and repeated our analysis of each of the layers separately.
+Such a procedure allows us to understand how marginalisation affected
+women in different facets of their activities (i.e., channels of interaction). We
+hypothesise that each channel of interaction would show different levels of
+marginalisation depending on the type of interaction involved: more private
+channel of interaction (such as COR or REL) would display smaller levels of
+marginalisation among women, whereas a more public channel of interaction
+(e.g., EV) would reveal higher levels of marginalisation.
+To quantify the overlap of information in each layer pair, we use Eq. (1) to
+compute the pairwise Jaccard index
+between layers 𝛼 and . Figure
+2 shows the heatmap matrix of the values of computed for all the pairs
+of layers. Except for the elements of the main diagonal (comparing a layer
+with itself, thus translating to a value of
+) all the remaining values of
+are quite small. This means that the amount of redundant (i.e., overlapping)
+information encoded in our layer networks is quite small, ranging between
+Journal of Cultural Analytics
+
+13
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+Figure 2. Heatmap matrix encoding the values of the Jaccard score,
+and corresponding to the layers of the multiplex network.
+
+, computed between pairs of networks 𝛼
+
+Light shades denote small similarities, whereas those on the diagonal are by definition equal to one. The symmetry of
+allows us to display only the matrix’s upper half.
+
+0.0 and 0.031. In other words, our layer networks are quite distinct from
+one another. Such differences justify the use of multiplex network formalism
+(Bianconi).
+To delve into the source of women’s marginalisation, for each of the layer
+networks, including the ALL one, we computed the difference between
+the empirical fraction of women belonging to a given k-shell,
+, and
+the same quantity computed in the randomised networks,
+(see Figure
+3). Specifically, for each network
+we computed the difference
+for each k-shell available. A positive difference (i.e.,
+) indicates that for that k-shell, there are (proportionately) more
+women in the empirical network than in the random counterpart.
+Conversely, a negative difference (i.e.,
+) indicates that – on average –
+the random counterpart has proportionately more women than the empirical
+one. Finally, a difference equal to zero (i.e.,
+) indicates that the
+fraction of women in that k-shell is the same in both the empirical and the
+random networks.
+By inspecting Figure 3, we may highlight a few remarkable features. First,
+random networks tend to have a shallower k-shell structure than their
+empirical counterparts. The red star indicates the position of the value of
+the degeneracy for random networks,
+. We notice how for all networks
+(except the COR one),
+is smaller than in the empirical case (see also
+
+Journal of Cultural Analytics
+
+14
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+Figure 3. Differences between the fraction of women nodes belonging to each k-shell,
+, and its average counterpart computed in a randomly rewired network,
+.
+
+, of the empirical network,
+
+Each panel accounts for a distinct network, whether the whole network (ALL) or a single layer (REL, COR, CB, PUB,
+and EV). The red star indicates the deepest k-shell (i.e., the network’s degeneracy ( )) obtained in the random network
+counterpart
+, whereas the dashed line denotes the k-shells for which only the empirical value,
+, exists. Random
+values are obtained by averaging the results over 50 realisations.
+
+Table 1). Such a recoil has been observed already in empirical and artificial
+networks (Malvestio et al.) and is due to the shattering of tightly knit groups
+of nodes (e.g., communities) operated by the random rewiring mechanism.
+Another feature of Fig. 3 is that marginalisation occurs mainly in the EV
+layer but also in the PUB and CB layers. In contrast, it is absent in those
+layers corresponding to “private” interaction channels, such as REL or COR.
+These opposite behaviours originate from the intrinsic nature of the EV,
+PUB, and CB networks, which proceed from the projection of two-mode
+networks (i.e., networks with two types of nodes with connections existing
+only between nodes of different type) into single-mode networks rich with
+cliques (i.e., groups of nodes all connected with each other). This dichotomy
+suggests that public interactions were more prone to marginalise women than
+those occurring in the private sphere. This is why it is crucial that we compare
+the single-mode networks’ results (COR and REL) to those of two-mode
+networks (EV, PUC, and CB) and give them the same value when analysing
+women’s contributions to the cultural field. Finally, we observe how the
+collapse of the available interactions’ channels into a single layer gives rise
+to a less defined marginalisation scenario than when the layers’ networks are
+studied independently.
+
+Journal of Cultural Analytics
+
+15
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+4. Conclusions
+The methods proposed in this manuscript can help us quantitatively
+understand the marginalisation of women in the Ibero-American film field of
+the first half of the twentieth century. The novel and valuable nature of this
+joint research effort does not lie in a discovery but, rather, in a methodological
+proposal combining quantitative tools of social network analysis with a
+feminist perspective in the field of historical cultural phenomena. A growing
+number of studies are analysing data from several cultural and social fields
+through the lenses of gender and social networks analysis (Smith-Doerr;
+Lutter; Morgan et al.; Macedo et al.; Wapman et al.; Herrera-Guzmán et al.).
+Data science has also been applied to the study of the history of cinema,
+especially the history of reception, exhibition, and distribution practices
+(Maltby et al.). Nontheless, only a few works apply social network analysis
+tools to the study of cinema history, though they only use contemporary
+data (Verhoeven et al.; Loist and Samoilova). In this sense, the exceptionality
+of our research lies in the combination of applying social network analysis
+methods to historical data from cinema and cultural history while deploying
+the gender perspective.
+One of the main results of our work is the empirical confirmation of existing
+qualitative knowledge, namely, that during the first decades of the twentieth
+century, women were rather marginalised from the cultural public sphere.
+This phenomenon is easily traceable in the literary and publishing world
+(King; Kowaleski-Wallace). However, the same conclusion holds for cinema
+history in the same period, as publications and the creation of theoretical
+film knowledge through publications were particularly relevant both in the
+emergence of film cultures (Navitski and Poppe), as well as in the process
+of institutionalisation of the film field (Bourdieu). Yet, the theoretical and
+historical knowledge generated in spaces in which women often participated
+collectively, such as film clubs, ended up being attributed to individual,
+usually male, authors. Likewise, the events organised around the medium
+– like competitions and festivals – and their “visible figures” would stand
+as cornerstones in the institutionalisation of a field that was not yet
+professionalised. As Mary Beard pointed out in her classic text, certain
+mechanisms in Western culture, from its foundation, have hindered and
+continue to hinder women’s access to the spheres of power. This means that
+a big part of the cultural activity women performed occurred in the private
+spheres.
+After using affirmative-action strategies in the data-collection process, as well
+as in the data’s systematisation and analysis, our quantitative analysis has
+bolstered this idea. The first strategy was to use the Latourian method
+for building networks and to trace the relationships starting with historical
+female agents. After that, we used the Latourian method of “follow the
+actor,” consisting in choosing case studies around which to build networks.
+We selected the case studies after qualitative historical research and now, after
+Journal of Cultural Analytics
+
+16
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+qualitative analysis, we have the certainty that those cultural mediators were
+relevant within the historical period under analysis. Despite the differences
+between the actor-network and the networks from graph theory, certain
+similarities allow us to use graphs to study social phenomena, as proposed by
+Venturini et al.. Here, we go one step further by leveraging tools from both
+approaches to reach our goal: to analyse the marginalisation of women in a
+specific historical-cultural context.
+Another strategy we used to trace women in the data-structuring process
+was to add the category “relationships.” The main purpose of this strategy
+was to introduce information on personal and work relationships mentioned
+in underexplored historical sources, whose legitimacy has been neglected
+until now. After conducting qualitative research within our framework, we
+discovered that most of the women who were married or who were lovers
+of men playing a prominent role in the cultural fields carried out relevant
+11
+cultural activities as well. Furthermore, some evidence, such as photographs
+from the period, show that the participation of women in spaces considered
+12
+eminently masculine in historiography was actually quite high. However,
+as a consequence of the structural chauvinism affecting historiography, some
+evidence had not been fully considered in the histories of Ibero-American
+cinema.
+Despite the aforementioned compensation strategies, the data used to carry
+out our study remains limited and very heterogeneous. The former, as
+expected, stems from the little attention these women have received from
+historiography. This is relevant because only by scraping data from different
+fields and disciplines can we prove the relevance of the cultural mediators we
+are studying (Roig-Sanz and Meylaerts). We decided to use the multilayer
+network formalism and combine it with k-core decomposition to address the
+data’s heterogeneity. Although we do not have access to information on every
+woman’s connection, we still had key information assisting us in investigating
+the roles women played in the network. For example, we possessed data on
+relevant connections, or on key events or organisations they took part in.
+Their strategic positions, allowing us to label them as cultural mediators, were
+as important – or more so – as the number of connections they had. If we
+would have analysed their relevance looking exclusively at their number of
+
+11 For instance, the work of Lola Álvarez Bravo was considered irrelevant for Mexican culture until the '80s, the decade of her death. The most
+
+well-known examples in Spain include las Sinsombrero, who adopted prominent roles in the cultural and intellectual fields of the Spanish
+pre-Civil War period, whose contributions had not been acknowledged until very recently (Alonso Valero; Balló). These women were either
+close friends, lovers, or spouses of the intellectuals and male artists of the Generación del 27, or were close to the Residencia de Estudiantes.
+While the male artists and intellectuals close to these groups have been prominently studied by cultural historians for a long time, women
+who also took part in the same cultural fields have been completely neglected. We might mention Teresa de León, Concha Méndez, and
+María Luisa Muñoz de Vargas (spouses of Rafael Alberti, Manuel Altoaguirre, and Rogelio Buendía, respectively), or Maruja Mallo and
+Margarita Manso (close friends of Salvador Dalí and Federico García Lorca). The same pattern can be spotted in similar frameworks.
+Women who were surrealist artists and intellectuals were invisibilised by cultural historians and overshadowed by their male counterparts,
+including Leonora Carrington and Dora Maar (respectively, Max Ernst and Picasso’s lovers).
+12 Such as the first Western film clubs (Clariana-Rodagut).
+
+Journal of Cultural Analytics
+
+17
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+connections, they would have appeared much less relevant to cultural history
+than their male counterparts. In contrast, by considering their mediating
+roles, we have assessed their contributions to the cultural field in a fairer way.
+In network analysis, a proxy to measure mediating abilities is to measure the
+ability to diffuse information efficiently (Kitsak et al.) and keep the system
+united as a whole (Carmi et al.; Kong et al.), thus allowing us to use the k-core
+decomposition method.
+Our choice to work with a multi-layered network is based on two factors:
+first, it has preserved all the channels of interaction that we deemed relevant,
+keeping us from losing any of the mediating facets or roles that these women
+played in the cultural field. Second, it has allowed us to see – at a later stage
+– the differences in the way each layer of interaction is structured. We allude
+to the cultural field because the non-institutionalisation of the film field
+often implied that cultural activities related to film were organised alongside
+other literary, artistic, and intellectual activities. Therefore, although the data
+concerns the field of cinema, their relationship with the latter may often have
+been indirect. For instance, when including the data from a film critique
+(namely the author/s’ name/s), we also added the names of people involved
+not only with the volume in which the critique was published, but also
+with the journal in which the piece was published. In this sense, the use
+of multi-layer network formalism allowed us to preserve information about
+the relationships that women established through different channels, such as
+publications, involvement in institutions, or participation in events.
+Then, we performed k-core decomposition on all the layers separately, as well
+as on the post-collapsation single layer. Our intuition was that, given the
+nature of our data and our object of study, different interaction layers would
+probably display different behaviours, as we saw in Figure 3. In addition, the
+intensity of the marginalisation effect was amplified in the collapsed network,
+though this was not the case when each layer was analysed individually. In
+fact, this effect did not occur in certain layers (e.g., the COR network). When
+performing k-core decomposition on separate layers (networks), we observed
+that the marginalisation effect is stronger in the EV network. In this layer,
+women fall into the outer k-shells more often than in the random network
+counterpart. The strength of the marginalisation effect is stronger in the EV
+layer because, by definition, the network corresponding to one event is a
+complete graph or a clique (i.e., a graph where each node is connected to every
+other node). The edge-swap stage adopted by our randomisation process
+destroys such cliques, thus making the whole network’s k-core structure
+shallower (Malvestio et al.). A similar reasoning applies to the PUB and CB
+networks, albeit to a much smaller extent.
+Another possible explanation for the marginalisation phenomenon concerns
+the nature of the data. Despite our mitigation strategies, our data for public
+activities like events, come from publicly available information (mostly
+
+Journal of Cultural Analytics
+
+18
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+newspapers and magazines). The press releases advertising or reviewing events
+(our information’s source) were less keen to include women in lists of
+participants, thus making their appearance more marginal than men’s. Finally,
+another explanation for the marginalisation effect has to do with the features
+of people’s collaboration networks. As the majority of unacknowledged
+women in our dataset come from associations’ lists of participants, they
+form a sort of “private club,” inflating the amount of woman-to-woman
+13
+connections (Newman). However, such a correlation gets weaker in the
+randomised network.
+Despite the appeal and advantages of using a quantitative approach to
+complement qualitative and historical insight, there are some caveats. For
+instance, k-core decomposition assumes that the network under scrutiny
+could be made of several components, but their structure should be complex
+enough to ensure a moderate value of degeneracy. This means that the insight
+provided by the k-core decomposition is directly proportional to the total
+number of k-shells available. For example, the k-core decomposition of a
+network comprised of a group of disjoint yet complete graphs (e.g., when
+many events do not have any participant in common) yields nothing other
+than the members of these graphs (i.e., the event’s participants) grouped
+by size (i.e., number of attendants). This implies that nodes less entwined
+with the “bulk” of the system will be relegated to the outer k-shells of the
+network, even when frequently interacting with smaller groups. Working
+with marginalised minorities – like women in the film field – which only
+have scant bonds with the rest of the system, might decrease the amount of
+information extractable via the k-core decomposition. Another shortcoming
+stems from cliques’ resilience to the k-core’s iterative pruning process. Such
+resistance makes nodes belonging to these cliques (events) fall into inner
+k-shells, thus pushing nodes (people) belonging to larger cliques (i.e.,
+attending events with many participants) into deeper k-shells, even though
+these cliques do not share any, or no more than a few, nodes with each other.
+Given these limitations, one possible workaround could be to cross-examine
+the mesoscopic structure of the network and extract its community structure
+(Lambiotte et al.) to study how the latter overlaps with the innermost k-shells
+(Malvestio et al.). For instance, some of the events organised by the Lyceum
+Club might translate into specific communities falling to the innermost
+k-shells.
+Despite the limitations of the methodology proposed in this manuscript, we
+believe that our attempt is valuable to the study of minorities, like women,
+and the social spaces they occupy. While our methodological proposal can
+be used in a contemporary context, it has been developed specifically for
+
+13 This phenomenon is called assortative mixing and has been observed in several types of networks, including social ones (see Verhoeven et al.
+
+and references therein).
+
+Journal of Cultural Analytics
+
+19
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+the study of historical data concerning a minority group. In sum, we believe
+that collaboration between specialists of different expertise and perspectives
+harnesses a great potential that has yet to be discovered, which could
+revolutionise the field of the humanities and pave the way for new and
+exciting challenges in network science.
+
+Acknowledgements
+The authors would like to thank Vensislav Ikoff for his support in extracting
+and curating the data, as well as Diana Roig-Sanz and Malte Hagener for their
+suggestions.
+The numerical analysis has been carried out using the NumPy and NetworkX
+Python packages (van der Walt et al.; Hagberg et al.). Graphs have been
+prepared using the Matplotlib Python package (Hunter).
+Data repository: https://doi.org/10.7910/DVN/WULQ0I
+Submitted: March 26, 2024 EDT, Accepted: May 21, 2024 EDT
+
+This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0
+International License (CCBY-4.0). View this license’s legal deed at http://creativecommons.org/licenses/
+by/4.0 and legal code at http://creativecommons.org/licenses/by/4.0/legalcode for more information.
+
+Journal of Cultural Analytics
+
+20
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+works cited
+Alonso Valero, Encarna. “Feminismo y vanguardia. La producción literaria obliterada de las mujeres
+en la España de los años 20 y 30.” Pandora: revue d’etudes hispaniques, no. 5, 2005, pp. 163–69.
+Alvarez Bravo, Lola. Lola Alvarez Bravo: In Her Own Light. Edited by Olivier Debroise and James
+Oles, University of Arizona Center for Creative Photography, 1994.
+Álvarez Bravo, Lola. Lola Álvarez Bravo. Recuento Fotográfico. Penélope, 1982.
+Anselmo, Diana. A Queer Way of Feeling. Girl Fans and Personal Archives of Early Hollywood.
+University of California Press, 2023, https://doi.org/10.1525/9780520971295.
+Arendt, Hannah. The Human Condition. 1958. University of Chicago Press, 1998.
+Artundo, Patricia, et al. Amigos del arte 1924-1942. Malba/Fundación E. Constantini, 2008.
+Balló, Tània. Las sinsombrero. Sin ellas, la historia no está completa. Espasa, 2016.
+Beard, Mary. Women & Power. A Manifesto. Profile Books, 2017.
+Benedict, Nora. Global Networks of Culture. 2022, https://github.com/norabenedict/ocampodatabase.
+Bianconi, Ginestra. Multilayer Networks Structure and Function. Oxford University Press, 2020.
+Birrell, Rebecca. This Dark Country: Women Artists, Still Life and Intimacy in the Early Twentieth
+Century. Bloomsbury Circus, 2021.
+Borgatti, Stephen P., and Martin G. Everett. “Models of Core/Periphery Structures.” Social
+Networks, vol. 21, no. 4, Oct. 2000, pp. 375–95, https://doi.org/10.1016/
+s0378-8733(99)00019-2.
+Bourdieu, Pierre. La distinction: critique sociale du jugement. Les Éditions de Minuit, 1979.
+Brughmans, Tom. “Thinking through Networks: A Review of Formal Network Methods in
+Archaeology.” Journal of Archaeological Method and Theory, vol. 20, no. 4, Apr. 2012, pp.
+623–62, https://doi.org/10.1007/s10816-012-9133-8.
+Cabré, María Ángeles. María Luz Morales, pionera del periodismo. La Vanguardia Ediciones, 2017.
+Cardillo, Alessio, et al. “Emergence of Network Features from Multiplexity.” Scientific Reports, vol.
+3, no. 1, 2013, p. 1344, https://doi.org/10.1038/srep01344.
+Carmi, Shai, et al. “A Model of Internet Topology Using k-shell Decomposition.” Proceedings of the
+National Academy of Sciences of the United States of America, vol. 104, no. 27, July 2007, pp.
+11150–54. National Academy of Sciences, https://doi.org/10.1073/pnas.0701175104.
+Clariana-Rodagut, Ainamar. Networks of Women in the First Ibero-American Film Clubs:
+1923-1932. PhD Open University of Catalonia and Philips-Universität Marburg.
+Clariana-Rodagut, Ainamar, and Diana Roig-Sanz. “Victoria Ocampo’s Transnational Networks: A
+Sociocultural and Data-Driven Approach.” The Palgrave Handbook of Transnational Women’s
+Writing in the Long Nineteenth Century, edited by Claire Emilie Martin and Clorinda Donato,
+Palgrave MacMillan, 2024, pp. 765–80.
+Codina Canet, María Adelina. “Documentación y archivo de La Residencia de Señoritas
+(1915-1936).” Mujeres, educación y cultura. Centenario de la Residencia de Señoritas, Universidad
+Carlos III de Madrid / Asociación estudiantil Carlos Marx, 2015, https://doi.org/10.5209/
+rev_RGID.2015.v25.n2.51244.
+Cueva Tazzer, Ma de Lourdes. “Filias y rupturas de una comunista: Las Memorias de Graciela
+Amador en el PCM, 1924-1940.” Tesis Psicológica, vol. 12, no. 2, 2017, pp. 12–31.
+Debroise, Olivier. Fuga mexicana. Un recorrido por la fotografía en México. Gustavo Gili S.L, 2005.
+D’Ignazio, Catherine, and Lauren F. Klein. Data Feminism. MIT Press, 2020.
+
+Journal of Cultural Analytics
+
+21
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+Federici, Silvia. Caliban and the Witch. Women, the Body and Primitive Accumulation.
+Autonomedia, 2004.
+Fosdick, Bailey K., et al. “Configuring Random Graph Models With Fixed Degree Sequences.”
+SIAM Review, vol. 60, no. 2, Jan. 2018, pp. 315–55. Society for Industrial and Applied
+Mathematics, https://doi.org/10.1137/16m1087175.
+Fraiberger, Samuel P., et al. “Quantifying Reputation and Success in Art.” Science, vol. 362, no.
+6416, 2018, pp. 825–29, https://doi.org/10.1126/science.aau7224.
+Fuentes Rojas, Elizabeth. La Liga de Escritores y Artistas Revolucionarios: una producción artística
+comprometida. 1995. Universidad Nacional Autónoma de México.
+Fulcarà Torroella, Maria Dolors. La Residència d’Estudiants de Catalunya (1921-1939).
+Publicacions i Edicions de la Universitat de Barcelona, 2011.
+Fulminante, Francesca, et al. “Coordinated Decisions and Unbalanced Power. How Latin Cities
+Shaped Their Terrestrial Transportation Network.” Frontiers in Digital Humanities, vol. 4, Feb.
+2017, https://doi.org/10.3389/fdigh.2017.00004.
+Gaines, Jane, et al. Women Film Pioneers Project. Columbia University Libraries.
+González Naranjo, Rocío. “Actividades del Lyceum Club Femenino de Madrid censadas en la prensa
+(1926-1936).” El día que supe que era feminista, 2018,
+http://eldiaquesupequeerafeminista.blogspot.com/2019/02/habla-el-lyceum-club-demadrid-1926-1936.html.
+Grosenick, Uta. Women Artists in the 20th and 21st Century. Taschen, 2001.
+Hagberg, Aric A., et al. “Exploring Network Structure, Dynamics, and Function Using
+NetworkX.” Proceedings of the 7th Python in Science Conference (SciPy2008), 2008, pp. 11–15,
+http://conference.scipy.org/proceedings/scipy2008/paper_2.
+Haraway, Donna. “Situated Knowledges: The Science Question in Feminism and the Privilege of
+Partial Perspective.” Feminist Studies, vol. 14, no. 3, 1988, pp. 575–99, https://doi.org/10.2307/
+3178066.
+Hastie, Amelie. Cupboards of Curiosity. Duke University Press, 2007, https://doi.org/10.1515/
+9780822388258.
+Herrera-Guzmán, Yessica, et al. “Structural Gender Imbalances in Ballet Collaboration Networks.”
+EPJ Data Sci., vol. 12, 2023, p. 53, https://doi.org/10.1140/epjds/s13688-023-00428-z.
+Hunter, J. D. “Matplotlib: A 2D Graphics Environment.” Computing in Science and Engineering,
+vol. 9, no. 3, Jan. 2007, pp. 90–95, https://doi.org/10.1109/mcse.2007.55.
+“Inauguró sus actividades el Cine-club.” Radio Actualidad, no. 17, 1937, p. 16.
+Jaccard, Paul. “Etude Comparative De La Distribution Florale Dans Une Portion Des Alpes Et Des
+Jura.” Bulletin Société Vaudoise de Sciences Naturelles, vol. 37, 1901, pp. 547–79.
+King, Kathryn R. “Of Needles and Pens and Women’s Work.” Tulsa Studies in Women’s Literature,
+vol. 14, no. 1, 1995, pp. 77–93, https://doi.org/10.2307/464249.
+Kitsak, Maksim, et al. “Identification of Influential Spreaders in Complex Networks.” Nature
+Physics, vol. 6, no. 11, Aug. 2010, pp. 888–93, https://doi.org/10.1038/nphys1746.
+Kong, Yi-Xiu, et al. “k-core: Theories and Applications.” Physics Reports, vol. 832, Nov. 2019, pp.
+1–32. Elsevier BV, https://doi.org/10.1016/j.physrep.2019.10.004.
+Kowaleski-Wallace, Elizabeth. Encyclopedia of Feminist Literary Theory. Routledge, 2009,
+https://doi.org/10.4324/9780203874448.
+Lambiotte, Renaud, et al. “From Networks to Optimal Higher-Order Models of Complex
+Systems.” Nature Physics, vol. 15, no. 4, Mar. 2019, pp. 313–20, https://doi.org/10.1038/
+s41567-019-0459-y.
+
+Journal of Cultural Analytics
+
+22
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+Latora, Vito, et al. Complex Networks: Principles, Methods and Applications. Cambridge UP, 2017,
+https://doi.org/10.1017/9781316216002.
+Latour, Bruno. Reassembling the Social: An Introduction to Actor-Network-Theory. Oxford
+University Press, 2005, https://doi.org/10.1093/oso/9780199256044.001.0001.
+Leston, Eduardo Paz. Victoria Ocampo va al cine. Libraria, 2015.
+Liendo, Victoria. “Victoria Ocampo: una esnob para el desierto argentino.” Cuadernos LIRICO, no.
+16, 2017, https://doi.org/10.4000/lirico.3761.
+Lizárraga Vizcarra, Isabel. Luz ajena. El enigma de María Lejárraga. Renacimiento, 2020.
+Loist, Skadi, and Evgenia (Zhenya) Samoilova. “How to Capture the Festival Network: Reflections
+on the Film Circulation Datasets.” NECSUS_European Journal of Media Studies, vol. no. 1, no.
+2023, pp. 363–90, https://doi.org/10.25969/mediarep/19615.
+Lutter, Mark. “Do Women Suffer from Network Closure? The Moderating Effect of Social Capital
+on Gender Inequality in a Project-Based Labor Market, 1929 to 2010.” American Sociological
+Review, vol. 80, no. 2, 2015, pp. 329–58, https://doi.org/10.1177/0003122414568788.
+Macedo, Mariana, et al. “Differences in the Spatial Landscape of Urban Mobility: Gender and
+Socioeconomic Perspectives.” PLOS ONE, vol. 17, no. 3, 2022, p. e0260874, https://doi.org/
+10.1371/journal.pone.0260874.
+Maltby, Richard, et al. Explorations in New Cinema History: Approaches and Case Studies. WileyBlackwell, 2011, https://doi.org/10.1002/9781444396416.
+Malvestio, Irene, et al. “Interplay Between k-core and Community Structure in Complex
+Networks.” Scientific Reports, vol. 10, no. 1, Sept. 2020, p. 14702. Nature Portfolio,
+https://doi.org/10.1038/s41598-020-71426-8.
+Molloy, Michael, and Bruce R. Reed. “A Critical Point for Random Graphs With a Given Degree
+Sequence.” Random Structures and Algorithms, vol. 6, no. 2–3, Mar. 1995, pp. 161–80,
+https://doi.org/10.1002/rsa.3240060204.
+Morales, María Luz, and Ma. Ángeles Cabré. Alguien a quien conocí: Marie Curie, García Lorca,
+Gabriela Mistral, Valéry, Víctor Català, Keyserling, Malraux. Editorial Renacimiento, 2019.
+Morgan, Alison C., et al. “The Unequal Impact of Parenthood in Academia.” Science Advances, vol.
+7, no. 9, 2021, p. eabd1996, https://doi.org/10.1126/sciadv.abd1996.
+Morone, Flaviano, et al. “The k-core as a Predictor of Structural Collapse in Mutualistic
+Ecosystems.” Nature Physics, vol. 15, no. 1, Oct. 2018, pp. 95–102. Nature Physics,
+https://doi.org/10.1038/s41567-018-0304-8.
+Navitski, Rielle, and Nicolas Poppe. Cosmopolitan Film Cultures in Latin America 1896-1960.
+Indiana University Press, 2017, https://doi.org/10.2307/j.ctt2005vd4.
+Newman, M. E. J. “Assortative Mixing in Networks.” Physical Review Letters, vol. 89, no. 20, 2002,
+p. 208701, https://doi.org/10.1103/PhysRevLett.89.208701.
+Ocampo, Victoria. Autobiografía. Sur, 1983.
+---. Testimonios. Primera serie. Revista de Occidente, 1935.
+---. Testimonios. Quinta serie (1950-1957). Sur, 1957.
+---. Testimonios. Segunda serie. Editorial Sur, 1941.
+---. Victoria Ocampo. Correspondencia. Editorial Sur, 1980.
+Paz Garro, Helena. Memorias. Océano, 2019.
+Pérez-Villanueva Tovar, Isabel. La Residencia de Estudiantes. Centro de Publicaciones, Ministerio de
+Educación y Ciencia, 1990.
+Poniatowska, Elena. Todo México. Tomo II. 1993.
+
+Journal of Cultural Analytics
+
+23
+
+Quantifying Women’s Marginalisation in Ibero-American Film Culture During the First Half of the Twentieth Century: A …
+
+Real Mercadal, Neus. Dona i literatura a la Catalunya de preguerra. Publicacions de l’Abadia de
+Montserrat, 2006.
+Rodríguez Álvarez, Carlos Gabriel. Contemporáneos y el Cineclub Mexicano: Revistas y cine clubes; la
+experiencia mexicana. 2002. Universidad Nacional Autónoma de México (UNAM).
+Roig-Sanz, Diana, and Reine Meylaerts. Literary Translation and Cultural Mediators in Peripheral
+Cultures: Customs Officers or Smugglers? Palgrave Macmillan, 2018, https://doi.org/10.1007/
+978-3-319-78114-3.
+Schich, Maximilian, et al. “A Network Framework of Cultural History.” Science, vol. 345, no. 6196,
+2014, pp. 558–62, https://doi.org/10.1126/science.1240064.
+Seidman, Stephen B. “Network Structure and Minimum Degree.” Social Networks, vol. 5, no. 3,
+Sept. 1983, pp. 269–87, https://doi.org/10.1016/0378-8733(83)90028-x.
+Smith-Doerr, Laurel. “Flexible Organizations, Innovation and Gender Equality: Writing for the US
+Film Industry, 1907–27.” Industry and Innovation, vol. 17, no. 1, 2010, pp. 5–22,
+https://doi.org/10.1080/13662710903573810.
+van der Walt, Stefan, et al. “The NumPy Array: A Structure for Efficient Numerical Computation.”
+Computing in Science and Engineering, vol. 13, no. 2, Mar. 2011, pp. 22–30, https://doi.org/
+10.1109/mcse.2011.37.
+Venturini, Tomaso, et al. “Actor-Network versus Network Analysis versus Digital Networks.”
+DigitalSTS. A Field Guide for Science & Technology Studies, edited by Janet Vertesi and David
+Ribes, 2019, pp. 510–23. Princeton University Press, https://doi.org/10.2307/j.ctvc77mp9.36.
+Verhoeven, Deb, et al. “Controlling for Openness in the Male-Dominated Collaborative Networks
+of the Global Film Industry.” PLOS ONE, vol. 15, no. 6, June 2020, p. e0234460. Public Library
+of Science, https://doi.org/10.1371/journal.pone.0234460.
+Wapman, K. Hunter, et al. “Quantifying Hierarchy and Dynamics in US Faculty Hiring and
+Retention.” Nature, vol. 610, 2022, pp. 120–27, https://doi.org/10.1038/s41586-022-05222-x.
+Zulueta, Carmen de, and Alicia Moreno. Ni convento ni college: La Residencia de Señoritas.
+Publicaciones de la Residencia de Estudiantes, 1993.
+
+Journal of Cultural Analytics
+
+24
+
+

@@ -1,0 +1,1390 @@
+Ravina, Mark. “Algorithmic Maps and the Political Geography of Early-Modern Japan.”
+Journal of Cultural Analytics, vol. 8, no. 3, Aug. 2023,
+https://doi.org/10.22148/001c.84860.
+
+ARTICLE
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+Mark Ravina1
+1 The University of Texas at Austin
+
+Keywords: early modern Japan, interactive maps, pre-modern politics, political spaces
+https://doi.org/10.22148/001c.84860
+
+Journal of Cultural Analytics
+Vol. 8, Issue 3, 2023
+
+Many of our conventional mapping practices are ill-suited to the complexities and
+nuances of pre-modern politics, especially in the non-Western world. Choropleth
+maps suggest that political borders are clear and uniform, but early modern
+politics was characterized by ill-defined and overlapping political spheres. This
+study uses interactive maps to explore the case of composite state borders in early
+modern Japan. Using points, rather than polygons, to represent villages, we
+reproduce how Tokugawa-era officials understood political space primarily as
+population nodes, not as clearly defined polygons. In lieu of conventional
+borders, we calculate Voronoi polygons to show where political authority was
+spatially fragmented. Using logit analysis we show that increased spatial
+contiguity allowed lords (daimyo) to establish monopolies and tax their holdings
+more intensively. Other factors, such as the lord’s rank, figure prominently in the
+historiography, but can not be substantiated in our analysis.
+
+Introduction
+Farmers in early modern Japan paid taxes to a welter of political entities,
+ranging from large, consolidated warrior suzerainties down to tiny religious
+seigneuries. How can we measure and map this complex and fragmentary
+political landscape? How can we assess the impact of composite-state
+geography on political power? This essay argues that computational methods
+provide both new ways of visualizing political spaces, and new ways of
+evaluating the spatial component of political authority. Digital interventions,
+such as “born digital” maps, can help us with two distinct tasks: reconstructing
+Japan’s early modern spatial imaginaries (how period actors understood space)
+and evaluating the relationship between space and political power. New maps
+can advance both the emic project of understanding Tokugawa conceptions of
+space and the etic project of understanding how spatial consolidation affected
+political control
+Conventional maps of early-modern Japan (e.g., Nishioki and Hattori 1956)
+are choropleth and divide the landscape into neat, color-coded blocks. But that
+“jigsaw-puzzle view of discrete, bounded territories” (Lewis and Wigen 12)
+reflects a modern post-Westphalian European view of sovereignty rather than
+period Japanese understandings of political space. That disconnect between
+our conventional cartographic practice and period concepts of space is not
+unique to Japan. Choropleth maps are ideal for visualizing modern
+territoriality, the division of landscapes into exclusive, bordered spaces. But
+such clearly-bounded polygons are ill-suited to the political landscapes of much
+of the premodern and non-Western world. As noted by Charles Maier, “despite
+our taking it as a given for so long, territoriality has not been a timeless attribute
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+of human societies. It is a historical formation, and its political form was also
+historical, that is, it has a beginning and an end.” (Maier 806-807) The specific
+case of Tokugawa-era Japan thus highlights major conceptual challenges in
+cartographic practice.
+How might we map political spaces without tacitly imposing modern
+territoriality? One solution is to avoid entirely “jigsaw-puzzle” polygons. As
+Peter Bol has observed, premodern Chinese maps routinely emphasized points
+over polygons, beginning with the world’s oldest extant grid map, the Traces
+of Yu Map 禹跡圖 (1136 CE). “The near total absence of gazetteer maps
+showing boundaries,” Bol argues, suggests that the cartographers understood
+political space as “nested hierarchies of places” rather than neatly bounded
+territories. In Song-dynasty China, as in the Tokugawa case, “although local
+governments had a concept of boundaries, and knew where they were on
+roads between administrative seats . . . there was no need to be exact about
+boundaries if the taxpaying villages were identified.” Accordingly, he suggests
+discarding the choropleth or jigsaw model in favor of a network model of
+connected points (Bol, “Mapping China’s History”). Merrick Lex Berman
+concurs: “Does the evidence found in pre-modern historical sources justify
+spending a great deal of time trying to reconstruct estimated boundaries? My
+answer is no.” (Berman)
+For the European case, Luca Scholz has argued that the polygon convention
+creates anachronistic spatial contiguities. “Polygon-based maps” of the Holy
+Roman Empire are problematic “not just because reliable information on the
+boundaries of territories and districts is hard to come by, but also because
+polygon-heavy maps obscure the entangled, ambiguous, and dynamic nature
+of old-regime spatial orders.” Revisiting the work of Karl Brunner on the
+Electoral Palatinate, Scholz finds that Brunner’s polygon maps radically
+overstate how successfully the Palatinate reasserted its authority after the
+Thirty Years War (Scholz). Our best historical maps, he concludes, might
+neglect borders entirely.
+An alternative approach is to repurpose polygons, developing a new visual
+vocabulary to match our linguistic vocabulary. Our analyses of space now
+include concepts such as “middle ground,” “contact zones,” “thirdspace,” and
+borderlands. Researchers have also developed typologies of borders, such as
+Gülzau and Mau's five-level scale: “no-man’s land” borders, landmark borders,
+checkpoint borders, barrier borders, and fortified borders (Gülzau and Mau).
+Yet our visual vocabulary remains strikingly mired in convention. The maps
+of the Roman Empire in the Oxford Classical Dictionary, for example, use a
+single red line to depict radically different imperial “borders”. In Britain, the
+edge of the empire was defined by Hadrian’s Wall, but in the North African
+and Arabian deserts, borders were largely undefined. Nonetheless, the Oxford
+
+Journal of Cultural Analytics
+
+2
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+maps use the same modern visual lexeme, a solid red line, to represent these
+radically different phenomena. What alternative visual vocabularies might
+better represent these divergent spatial adjacencies?
+This essay maps early modern Japan using two strategies: both points and
+polygons. The “points over polygons” strategy is valuable, first, because it is
+truer to period spatial concepts. The shogunate’s major regional maps, for
+example, ignored village borders and depicted villages with simple oval marks.
+Points also help us visualize population densities, which were higher in the
+coastal plains and low in the mountains. Further, we can use points to calculate
+spatial statistics and engage the rich historiography on the relationship between
+space and political authority. Did, for example, size and spatial cohesiveness
+support greater political authority? This study argues that it did: large,
+contiguous domains exerted greater control over the local economy. What
+other factors shaped political economy? Many historians have argued that
+fudai (“allied”) lords, who could serve in the shogun’s administration,
+governed differently than tozama (“outside”) lords, who could not. This study
+argues that any such differences were minor.
+Given the value of mapping points, why use polygons? This study re-purposes
+polygons to circumvent their limitations. The central failing of chorolopleth
+maps is how they impute modern territoriality to the borders of Tokugawa
+(and other pre-modern) political spaces, which were often vague or complex.
+Simple borderlines cannot depict, for example, the shared usufruct rights and
+ill-defined edges of forests. But polygons are better than points for showing
+spatial adjacency. Where, for example, did clusters of villages pay harvest taxes
+to the same holder? Intriguingly, while points are best useful for calculating
+adjacency, polygons are more effective for visualizing those clusters.
+This study uses a standard algorithm, Voronoi tessellation, to depict such
+neighboring villages as same-colored blocks. As detailed below, Voronoi
+tessellation creates a grid of polygons by drawing lines equidistant between
+points. As mathematical artifacts, the polygons in this study are not
+reconstructions of period “borders” and they do not take account of period
+checkpoints. In essence, this study inverts standard practice, wherein historians
+draw clear borders even where period borders were ill-defined or undefined.
+This study, by contrast, argues that since Tokugawa-era village borders are
+often poorly defined or difficult to reconstruct, we can rely instead on an
+algorithmic alternative, a formal, standardized method for inferring psuedoborders. As mathematical artifacts, Voronoi polygons are like isobars on a
+topographic map. When hiking we do not expect to see numbered, curved lines
+on the ground as we ascend or descend a hill. Rather we recognize isobars as a
+tool for visualizing elevation changes. Accordingly, we appreciate how isobars
+have regular increments (e.g. 100 meter intervals) although the actual elevation
+changes are continuous. Topographic maps help us understand terrain
+precisely because they mathematically abstract elevation changes into a regular,
+
+Journal of Cultural Analytics
+
+3
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+visual gradient. In the same way, we can use Voronoi polygons to visualize
+spatial patterns in tax authority, e.g. compactness and coherence vs
+fragmentation. As empirically grounded abstractions, such polygons can
+represent the spatial extent of power without presuming to depict exact
+borders.
+
+Political Spaces in Early-modern Japan
+Tokugawa-era political authorities were ambivalent about borders. The
+shogunate was concerned primarily with the location on roads of villages and
+checkpoints, and only secondarily with borders between provinces. A striking
+example is the official 1838 shogunal map (kuniezu 国絵図) for Iyo province
+(伊予国) (Figure 1). Like all kuniezu, the map depicts villages as points rather
+than polygons and specifies the location of border checkpoints using mileage
+markers on key roads. Between those points, however, the entire border was
+labelled as undefined (kunizakai aishirazu 国境不相知): the shogunate’s
+border between Iyo and Tosa provinces was thus a “checkpoint border.” The
+provincial borders of Shikoku were uniquely ill-defined, and other provincial
+borders were often marked by rivers and roads. Nonetheless, kuniezu reveal
+how the shogunate was concerned with controlling the movement of people at
+key nodes, not with establishing comprehensive territorial boundaries. Indeed,
+although kuniezu show aspects of physical geography, such as forests, they
+are primarily maps of people, represented as population nodes. Accordingly,
+kuniezu borders do not conform to our modern sense of territoriality and are
+ill-suited to conventional choropleth mapping.1
+The ambiguity of Tokugawa-era borders reflects a coherent vision of political
+space rather than a technological limitation: the shogunate could have created
+vastly more accurate maps. Indeed, the shogunate had more accurate maps
+in its own archives, the product of Inō Tadataka. In 1800, Inō, a wealthy
+and successful sake brewer and rice merchant, ceded his family business to
+his heir in order to focus on his avocation, surveying and cartography. For
+the next seventeen years, until his death in 1818, Inō traveled the length and
+breadth of Japan, some 35,000 km, compiling geospatial measurements of
+unprecedented accuracy. Using a quadrant, Inō was able to measure latitude to
+within seconds of a degree. His longitude measurements were less precise, since
+he lacked a reliable portable timepiece, but are still useful. After Tadataka’s
+death, his friends and students completed his mapping project and in 1821
+they presented the shogunate with a massive atlas of 225 maps, detailing the
+Japanese archipelago at scales ranging from 36,000:1 to 432,000:1. The smallscale maps included graticules (longitude and latitude lines), with the ruins of
+the ancient imperial observatory in Kyoto serving as a prime meridian.2
+
+1 For an incisive and concise discussion of kuniezu see Sugimoto 2016. For greater detail see Kuniezu Kenkyūkai 国絵図研究会編 2005.
+2 Suzuki 2016
+
+Journal of Cultural Analytics
+
+4
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+The shogunate received the gift and seems to have recognized the military
+value of accurate physical geography. But the government made no use of Inō’s
+work in its official cartography. Instead, for its final series of provincial maps
+(1835-1838), the shogunate reproduced the style and format of its original
+series, compiled between 1696 and 1702. Since the shogunate deliberately
+ignored innovations in cartography, we need to interpret the “inaccuracies” of
+kuniezu as part of a coherent, native understanding of political space.
+
+Figure 1. Shogunal Map of Iyo province, 1838
+
+Daimyo mapped their domains only rarely and those maps commonly follow
+shogunal practice, focusing on villages as population nodes with little emphasis
+on borders. Ōzu domain in modern Ehime prefecture, for example, compiled
+detailed maps in 1770 and again in 1814. Like the shogunate’s kuniezu, the
+Ōzu maps give detailed information for village harvest yields and border
+crossings on roads, but are impressionistic for general borders. The 1814 map
+(Figure 2) is especially stylized: villages are represented by rounded rectangular
+labels, while the surrounding mountains are flowing green swirls. The overall
+perspective is top down, but the mountains are drawn in an ad hoc mix of
+landscape perspectives. As with shogunal maps, we need to understand this
+lack of detail as a distinct political vision.
+
+Journal of Cultural Analytics
+
+5
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+Figure 2. Ōzu Domain Map, 1814
+
+The absence of absolute coordinates in the 1814 map is especially striking
+since the cartographer, Azuma Kanji 東寛治, included graticules and precise
+surveyors notes in a separate series of maps. Azuma was directly influenced by
+Inō, who visited Shikoku in 1808 and shared both data and techniques with
+Azuma. In appreciation of Inō’s guidance, Azuma drafted 17 maps of the Ōzu
+coastline and sent them to Inō (Figure 3). Despite his addition of graticules,
+Azuma continued the kuniezu practice of ignoring comprehensive borders in
+favor of checkpoints. The red diagonal lines at the far left and right of the
+map mark the borders of the village of Konbō 今坊 with Kushi 串 (to the
+East) and Kuroda 黒田 (to the West), but those “border lines” are just parallels
+extending from border points on the coastal road. As straight lines, they do
+not follow the hilly terrain and do not represent borders in any modern sense.
+While Azuma painstakingly measured linear distances along major roads, and
+elegantly depicted houses and fields, he made no attempt to define Kondo as
+a fully bordered space. Accordingly, Azuma defined the size of Konbō as its
+length along the coastal road (38 chō 28 kan and 4 shaku, approx. 4,237 m), a
+line between two border points, rather than as an area defined by a polygon.
+
+Journal of Cultural Analytics
+
+6
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+Figure 3. Map of Konbō village on the Ōzu coastline by Azuma Kanji 東寛治, early 19th C.
+
+Because modern territoriality idealizes comprehensive geospatial coordinates,
+Tokugawa-era political maps seem “inaccurate.” But kuniezu are “inaccurate”
+only if we misuse them. Tokugawa political maps were schematic rather than
+geospatial. They simplified and abstracted unimportant (or secondary) details.
+A helpful analogy is the modern mass transit map. Consider, for example, two
+modern maps of the Sendai City subway system. Figure 4 depicts the system as
+two simple perpendicular lines, intersecting at the Sendai central station.
+
+Figure 4. Sendai Subway Map
+
+Journal of Cultural Analytics
+
+7
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+Figure 5 allows for more complexity and shows that, in places, the North-South
+line (in green) actually runs from east to west.
+
+Figure 5. Sendai Subway Map
+
+But both maps radically simplify the shape of the rail system, so they are
+geospatially “inaccurate.” For example, at its western edge (from Aobayama
+青葉山 to Yagiyama Zoological Park 八木山動物公園), the East-West line
+briefly reverses direction and runs to the southeast rather than the west. By
+contrast, Google Maps is geospatially accurate and shows the absolute
+geographic coordinates of the stations (Figure 6). But the Google map is usable
+only because we can interactively highlight the desired details. A map showing
+all possible rail, bus, vehicular, and pedestrian routes from Aobayama to
+Yagiyama Zoological Park would be impenetrably dense. That interactive
+dimension of Google maps suggests how we might rethink historical
+cartography, creating maps that combine modern interventions with the
+reconstruction of historical epistemologies of space.
+Because the conventions of transit maps are familiar, we do not treat these
+schematic abstractions as “inaccuracies.” We know not to use a map of the
+London Underground to boat on the Thames. And we accept how schematic
+maps simplify secondary details (e.g., the spatial grid locations of the stations)
+in favor of primary information: the sequence of stations on each line (relative
+locations), travel time between stations, and the fare schedule.
+Like subway or railway maps, kuniezu and domain maps were focused and
+task-specific. Kuniezu focused on village harvest yields and relative positions on
+roads, but simplified details that the cartographers considered secondary, such
+as borders through forests. By detailing the taxable harvest and relative location
+of villages, the kuniezu foregrounded a key aspect of political authority: lords
+Journal of Cultural Analytics
+
+8
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+Figure 6. Google Maps image of Sendai Subway
+
+measured their wealth and status in bushels of rice and restricted the mobility
+of their subjects. If we read kuniezu like transit maps, we can appreciate their
+schematic focus: simplified lines make both kuniezu and transit maps more
+legible. Kuniezu are jarring because they fuse practices that, in modern
+cartography, belong to different genres, mixing details of physical geography
+and schematic abstraction.
+
+Choropleth and Beyond
+Conventional cartographic practice ignores differences between Tokugawa and
+modern spatial epistemologies. Consider, for example, a map of Ōzu (Figure
+7) and surrounding territories from the official History of Ehime Prefecture
+(Ehime-ken shi 愛媛県市). The map divides the prefecture into neat, domainbased blocks, but the evidentiary bases for those shapes are not revealed. How
+and why did the cartographers establish those borders? Which primary and
+secondary sources were consulted? Again, following convention,the text itself
+is silent.
+Upon careful inquiry, it becomes clear that the Ehime-ken shi map depicts
+with clarity and certainty data that are by turns, unclear, contested, and
+unknowable. The map gives Ōzu clear land borders to the southeast, but those
+are explicitly marked on shogunal maps as unknown. At a more granular level,
+consider two contrasting depictions of Nakajima Island 中島 from Ehime-ken
+shi (circled in red above) and from Ōzu domain’s 1814 map (Figure 8). First,
+the two maps disagree on who controlled four villages: Obama 小浜村, Ōura
+大浦村, Awai 粟井村, and Uwama 宇和間村. On the Ehime-ken shi map, the
+eastern and western sides of the islands are colored black, suggesting that those
+villages were shogunal holdings (天領). On the 1814 Ōzu map, however, the
+Journal of Cultural Analytics
+
+9
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+Figure 7. Domains of Ehime Prefecture from Ehime-ken shi
+
+villages (labelled with burnt orange ovals) are described as the holdings of Ōzu
+domain. That conflict reflects the nuances of early-modern territorial control:
+the villages were simultaneously Ōzu holdings and shogunal holdings. Those
+villages had once been divided. In Ōura in the mid-1700s, for example, 116
+families were under shogunal administration but 87 paid taxes to Ōzu. That
+division was a perennial source of tension. Did Ōzu villagers and shogunal
+villagers have the same forest rights? And should they pay regular taxes at
+the same rate? Beyond those practical matters, villagers under Ōzu domain
+jurisdiction complained that their neighbors under shogunal jurisdiction were
+arrogant and contemptuous. In 1780, Ōzu domain surrendered its parts of
+those four villages to the shogunate as part of a larger exchange of territories.
+But in 1813, the shogunate granted Ōzu administrative control over the four
+villages. Those shogunal parcels were henceforth azukaridokoro 預所, or
+“loaned lands”: the shogunate claimed the villages’s tax yield, but entrusted
+administration to Ōzu domain. Nonetheless, village control remained
+unresolved. In 1843, the shogunate reversed itself and reasserted direct
+authority, and then in 1850 returned control to Ōzu.3 Choropleth maps are illsuited to such fluid and contested borders.
+Second, the polygons of Ehime-ken shi suggest that Nakajima Island was
+divided into two clear and well-delineated political zones: a shogunal region
+(solid black), and the holdings of Matsuyama domain (vertical lines). But the
+island had several overlapping and contested internal borders. The border
+
+3 Nakajima Chōshi Shiryōshū Henshū Iinkai, 161-167 and Nakajima Chōshi Henshū Iinkai, 175-180. Nakajima has also historically been
+
+known as Kutsunajima 忽那島
+
+Journal of Cultural Analytics
+
+10
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+Figure 8. 1814 Map of Nakajima and Nuwajima
+
+between Obama and Ōura was left unresolved when the villages were separated
+in the 1580s and became a source of perennial conflict. In 1789, the villagers
+of Obama protested by decamping en masse to the neighboring village of
+Nagashi in Matsuyama territory. Local clergy helped arbitrate the dispute,
+and Ōzu promised to resolve the border dispute. The border of Awai village
+was similarly complex. Awai and the neighboring village of Hatari (畑里村)
+were divided in the 1430s but the forest in-between was held in common
+(iriaichi 入会地). While villagers could not cut timber there, both Awai and
+Hatari collected other vegetation as food, feed, and fertilizer. The problem
+of iraichi is especially acute for Nakajima because common lands included
+other neighboring islands. The two nearby islands of Ōtabachijima 大館場
+島 and Kotabachijima 小館場島, for example, were once the common land
+of four villages — Uwama, Kumata 熊田, Yoshiki 吉木 and Nyō 饒 — but
+the islands were then divided: Ōtabachijima was given to Nyō and Yoshiki and
+Kotabachijima to Uwama and Kumata. Uwama villagers thus shared common
+lands on multiple islands with villagers of different lords.4
+Finally, cardinal directions in the 1814 Ōzu map are strikingly inconsistent. For
+the main territory of Ōzu on Shikoku, south is up, but for several islands in the
+Inland Sea, south is down. Because of that inconsistency, villages on Nakajima
+are on the wrong side of the island: Awai and Ōura, for example, were on the
+long, peninsular, northeast end of the island, but they are depicted instead
+on the flat, southwest end. That “error” reflects the intentionally schematic
+
+4 FIX FIX add note to Nakajima Chōshi Shiryōshū Henshū Iinkai FIX FIX ####
+
+Journal of Cultural Analytics
+
+11
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+Figure 10. 1814 Map of Nuwajima Island 怒和島 by Azuma Kanji 東寛治, early 19th C.
+
+nature of most early modern Japanese maps. We can contrast, for example,
+the depiction of Nuwajima in the bottom right of Figure 8 with Azuma’s
+personal map from the same period (Figure 10). In the latter, Azuma focused
+on physical geography and included a compass rose and the calculated
+circumference of the island, while the former is a more schematic
+representation of political authority.
+All these factors militate against using period maps to create modern
+choropleth polygons. We can, however, re-purpose polygons as explicitly
+analytical interventions. We can use polygons, like isobars, not as direct
+representations but as fruitful abstractions. In the words of William Sewell,
+“the powerful abstracting, abbreviating, and summarizing techniques of
+quantitative reason” can help us see regularities that are obscure at the granular
+level (Sewell 350).
+
+Polygons beyond Choropleth
+For both points and polygons, this essay draws on data from a neglected source,
+the Kyūdaka kyūryō torishirabechō 旧高旧領取り調べ帳, (KKT), literally
+“Survey of old tax yields and old investitures.” The KKT is essentially an
+autopsy of the Tokugawa shogunate (1600-1868): a comprehensive survey of
+landholding compiled by the new Meiji government as it dismantled the old
+regime. The KKT recorded the size, holder name, and village name for over
+95,000 parcels in over 60,000 individual villages. This study combines the KKT
+data (as edited and digitized by the National Museum of Japanese History,
+or Rekihaku) with geolocation search engines to estimate the location of the
+villages. Many of the villages and hamlets in KKT disappeared as independent
+
+Journal of Cultural Analytics
+
+12
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+political units in 1889, when the Meiji state undertook a massive administrative
+consolidation, amalgamating 71,314 cities, towns, villages, and hamlets (市町
+村) into 15,859 larger units.5 Although that consolidation eliminated some
+55,000 administrative units, we can approximate the locations of those lost
+villages and hamlets because the toponyms survive in other forms, such as the
+names of modern “small statistical areas” (kochiiki 小地域),6 and vestigially
+in the names of schools, civic centers, parks, businesses, bus stops, and even
+highway interchanges (details of the geolocation process are in the Appendix).
+Those coordinates are decidedly approximate. Different researchers using
+different reference works and different search engines produce results that vary,
+often by a few kilometers. Rather than attempt to resolve that “fuzziness,” this
+study builds on it. At the individual village level, the imprecision of coordinate
+locations reflects the imprecision of Tokugawa-era maps, detailed below. At the
+aggregate level, with over 60,000 villages, small village-level variations wash out
+as statistical noise. Indeed, the statistical conclusions in this study hold even
+if we artificially add “noise” to the data, shifting the village locations in small
+random increments.7
+Using those approximate coordinates, we can create hybrid maps that capture
+the political geography of Tokugawa-era Japan but allow for interactivity and
+spatial statistics. Figure 11, which can be downloaded here, uses basic HTML
+and JavaScript to overlay both points and polygons on satellite images. The
+“villages” layer reproduces the Tokugawa-era convention of villages as points.
+Instead of cartouches, the map uses mouseovers and on-click popups to relate
+details such as village name, harvest yield, and tax claimants. Those interactive
+elements allow for a high density of information. In order to convey villagelevel details, Tokugawa-era maps were enormous. The 1814 Ōzu map is 117cm
+x 173cm (46in x 68in), and the kuniezu of Iyo is 714cm x 706cm (281in x
+278in). Interactive maps capture a similar level of detail in a more manageable
+format. Using pop-ups, for example, the map includes notes on “loaned lands”
+on Nakajima and the common lands of Ōtabachijima and Kotabachijima.
+
+5 The principle behind the 1889 consolidation was to create administrative districts with between 300 and 500 households. Beginning in 1956,
+
+the government began merging villages with less than 8000 residents. As of 2022, there are only 1718 remaining districts.
+https://www.soumu.go.jp/gapei/gapei2.html
+6 Many toponyms survive as the names “small statistical areas” (kochiiki 小地域), spatial units introduced by the government in 1995. The
+
+creation of “small statistical areas,” like the merging of villages, was a response to rural depopulation. Consolidating villages into larger districts
+reduced administrative costs, but also created regions too large and diverse for meaningful data analysis. The administrative district of
+Matsuyama city (松山市), for example, now includes the relatively densely populated prefectural capital itself, but also sparsely populated and
+unpopulated islands in the Inland Sea. The single administrative region is thus subdivided, as of 2021, into 725 “small statistical areas” with
+populations ranging from 0 to 7620. Many of those kochiiki retain the names of Tokugawa-era hamlets, but the borders are modern constructs.
+This study therefore uses kochiiki to derive central points rather than polygons.
+7 Technically, this study relies on the Law of Large Numbers and the Central Limit Theorem. Less technically, we can treat the noise in village
+
+locations as a game of chance. A fair coin toss will produce 50% heads and 50% tails, but it is impossible to see that outcome in a single toss. The
+“law of averages” appears only with multiple trials. A more suitable analogy for the spatial case might be a target shoot. Even if different archers,
+shooting under different conditions, all miss the bullseye, we can assume that the bullseye lies at the rough center of their cumulative attempts.
+
+Journal of Cultural Analytics
+
+13
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+The “Voronoi borders” layer relies on an algorithm, Voronoi tessellation, to
+create pseudo-borders. Rather than relying on period records or maps to create
+village borders, Voronoi tessellation generates lines equidistant between pairs
+of points, and those serve as pseudo-borders. Nodes are created where those
+lines meet and those points are equidistant between three or more villages.8
+How does this map improve on conventional chorolopleth maps like those in
+Ehime-ken shi? The points layer reveals how valleys and littorals were densely
+populated but mountain regions were not. Matsuyama, Uwajima, and
+Toyohashi (a branch of Uwajima) domains, for example, appear not as
+homogeneous spaces, but as c-shaped, with large empty spaces in the high
+mountains and dense clusters of villages along rivers and seas. Ōzu and Niiya,
+by contrast, are more evenly populated at moderate densities.
+The Voronoi cells, by contrast, reveal spatial contiguities: where were villages
+closest to villages with the same lord? Where were neighboring villages
+beholden to a different lord? Voronoi cells reveal those relationships through
+adjacent colored blocks. Unlike conventional choropleth maps, Fig. 11 makes
+no attempt to represent exact borders since many of these were undefined.
+Rather, the regular spiderweb pattern of cells, like the regular, nested loops of
+a topographic map, is an empirically grounded abstraction.
+Finally, the map is highly reproducible. The point and polygon data are all
+included in the HTML file and are also available in simple txt format. The
+principles behind the polygons (Voronoi tessellation) are well known, and the
+relevant code can be readily shared. The map is almost entirely self-contained in
+a single file: the points, polygons, and metadata (mouseover and on-click text)
+are all in the HTML file and require no special software or server. The only
+external dependency is zooming the satellite image base maps, which requires
+an internet connection, although more limited base maps could be stored in a
+single folder. In short, Fig. 11 is a “born digital” spatial visualization rather than
+an incremental modification of static maps.
+
+Quantifying Spatial Fragmentation and Political Power
+The raw geospatial data behind “born digital” maps also allows us to explore
+the relationship between space and power. How did spatial fragmentation
+affect the excercise of political control? How can we measure the spatial
+consolidation (or fragmentation) of early-modern Japanese domains? Such
+measurements are complex because we need to account for many factors.
+Individual villages could have multiple holders. Alternatively, some villages had
+a single holder, but were surrounded by villages owing taxes to different lords.
+Some daimyo holdings formed a single contiguous territory around the lord’s
+
+8 Polygons were calculated using the R package ggvoronoi r.0.8.5, which relies on Rolf Turner's deldir package.
+
+Journal of Cultural Analytics
+
+14
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+castle, while other holdings were fragmented into scattered parcels. Villages at
+the periphery of a lord’s holdings might be close to another lord’s or separated
+by forests, lakes, or rivers.9
+A simple but powerful metric for these multiple factors is the Simpson index,
+a widely used metric of diversity developed by Edward H. Simpson in 1949.
+The basic formula is simple: the sum of the squared proportions. For example,
+in an area divided by two holders as 90% and 10%, the index is
++
+= 0.82, but for a 50%-50% split the index is
++
+= 0.5. The Simpson
+index ranges from 0 to 1, with 0 as infinite fragmentation and 1 as complete
+consolidation. The index, or similar variants, are used in a range of disciplines
+(including ecology, political science and economics) to measure diversity and
+competitiveness.10
+We can calculate Simpson indices for any areal unit: a village-level Simpson
+index would include all holders within a village, while a county-level index
+would include all holders within a county. This study relies on Simpson indices
+for a 5km radius around each village. Consider, for example, the Simpson index
+for a 5 km radius around Sakamoto village (坂元村) near Kagoshima Castle.
+The village was held entirely by the Shimazu daimyo house, as were all the
+surrounding villages, so the Simpson index is 1 because = 1. At the opposite
+extreme is the most fragmented village in the KKT, Saiin village (西院村) in
+Kadono county (葛野郡), now a part of central Kyoto. The largest holder was
+Tōji Temple, which claimed roughly 22% of the village, but it shared Saiin with
+165 other holders (households, temples, and shrines). A 5 km radius around
+Saiin encompasses another 125 villages and raises the total unique holders to
+408. Because many of those holders claimed only a tiny portion of the yield,
+the Simpson index for the area is 0.02.11 The largest holder in the radius was the
+“former administrative holding of the Kyōto military commissioner” (元守護
+職役知) which held 4,244 koku or 8.28% of the total yield. The second largest
+holder was " administrative holding of the Kyōto military commissioner" (守
+護職役知) which held 2,219 koku or 4.33% of the total yield. The third largest
+holder was “former imperial house holdings” (元御料) which held 1,938 koku
+or 3.78% of the total yield. The first three elements of the Simpson index are
+therefore 0.083 + 0.043 + 0.038 .
+
+9 There is an enormous bibliography on how to measure gerrymandering, but electoral districts are contiguous districts while daimyo domains
+
+were often non-contiguous.
+10 Formally, where
+
+is the tax yield, (kokudaka) allocated to each unique holder, and X is the total kokudaka, Simpson =
+. Closely
+related metrics include the Gibbs-Martin and Blau indexes in sociology, psychology and management studies, and the Herfindahl index or the
+Herfindahl–Hirschman index (HHI) in economics. For an overview of diversity metrics see Chiarucci, “Old and New Challenges.”
+
+11 For the 5km radius Simpson index for Saiin village, the total yield for the area was 51,270.75 koku.
+
+Journal of Cultural Analytics
+
+15
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+We can calculate the Simpson index for a domain by calculating the average of
+the 5 km Simpson indices for villages in which the domain was the primary
+holder. The Simpson index for domains ranged from a high of 0.98 for
+Kagoshima domain 鹿児島藩 to a low of 0.08 for Takaoka domain 高岡藩.12
+Large, highly consolidated domains exercised greater control over their people
+than smaller domains with scattered holdings. Political control is a complex
+phenomenon to quantify, but we can measure one key facet through the
+presence (or absence) of domain monopolies. Historians have found records
+of hundreds of domain monopolies and monopsonies, covering commodities
+as diverse as rice, salt, tea, sugar, lumber, cotton, indigo, ceramics, ink stones,
+eggs and gelatin (寒天 kanten). The goals of such monopolies were as diverse
+as the target products. Often the objective was to directly increase government
+revenue by fixing prices. In other cases, the domain had the broader objectives
+of promoting economic development through quality control and reliable
+distribution networks. In all cases, domains needed extensive political power in
+order to establish monopoly control.13
+Which domains established monopolies? Monopolies were supported by two
+factors: size and consolidation. As shown in Figure 12, the likelihood of
+establishing a monopoly rose with size and mean Simpson index (5 km radius).
+For example, only 15% of domains under 50,000 koku ran monopolies, in
+contrast to 97% of domains over 200,000 koku.14 Similarly, 8% of domains
+with a mean Simpson index under 0.25 ran monopolies, in contrast to 74% for
+domains over 0.75. In other words, the likelihood of establishing a monopoly
+rose with each factor. We can formally specify those relationships with a logistic
+regression (logit) model, and estimate the underlying probabilities. In Figure
+12, the dashed diagonal line marks the calculated threshold above which the
+model predicts a domain monopoly: points above the line are expected to
+have a monopoly and those below not. That model predicts with roughly
+82% accuracy whether a domain established a monopoly. In some situations,
+accuracy is a misleading metric of model performance, but in this case it points
+to a robust conclusion: large consolidated domains were much more likely to
+run monopolies than small, fragmented territories (Model details are in the
+Appendix).15
+
+12 This analysis omits Nanbu domain 南部藩, which was radically altered in the early Meiji era, and domains whose holdings in KKT were under
+
+10,000 koku
+13 Data on domain monopolies and monopsonies is from Yoshinaga 1973
+14 Koku was measure of volume (roughly 5 bushels, or 180 liters), narrowly used to measure grain, but more widely used as a currency of account.
+
+A landholding of 50,000 koku, for example, was understood as a parcel with an annual harvest valued at 50,000 koku of rice
+15 The mean Simpson index (5km radius) was calculated for all villages where the target domain was the largest holder. Similar results obtain for
+
+other metrics. The text above reports model accuracy, although it can be a problematic measure for unbalanced data sets. Consider, for example,
+the prediction of a rare event, such as the crash of a commercial airplane. We can build a model that is extremely “accurate” simply by predicting
+“no crash” for all cases. If the crash rate is 0.000001% then the model can be 99.9999% accurate even without any additional information, a
+nearly perfect “no-information rate.” The problem, of course, is that such a model will have a “false negative” rate of 100%, failing to predict any
+aviation problems. Accordingly, we often need metrics that account for “accurate” but useless predictions. Fortunately, the domain monopoly
+
+Journal of Cultural Analytics
+
+16
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+Figure 12. Domain monopolies as a function of fragmentation and size
+
+While the technical details of logit modelling are complex and beyond the
+scope of this essay, the basic principles are straightforward and are illustrated
+in Figure 13. In that graph the x-axis is the degree of fragmentation and the yaxis is the likelihood of a monopoly for each domain. The black points mark
+the observed values: 1.00 (or 100% likelihood) for a monopoly and 0.00 (or
+0% likelihood) for no monopoly. The red curve represents the hypothetical
+likelihood of a monopoly for a given level of fragmentation. The curve is
+a sigmoid (S-shaped) because the effect of fragmentation (or size) must be
+asymptotic: even a huge, consolidated domain cannot have a monopoly
+likelihood above 100%. The term “logit” derives from the specific
+mathematical form of the sigmoid, the logistic function. Logit models adjust or
+“fit” the sigmoids to the observed data, trying to get the “S” as close as possible
+to the observed points. Thus, logit does not directly maximize accuracy, but
+rather maximizes the fit of the likelihood curve. For the simple case of one
+variable (e.g., predicting monopolies with the Simpson metric as in Figure 13),
+the relevant scatter plot is fairly simple. The threshold in that model, where
+the red line hits a likelihood of 0.5, is at roughly 0.625. Thus we will expect
+domains with Simpson indices above 0.625 to have monopolies. More complex
+
+data is much more balanced: 63.64% of domains ran monopolies, so the “no information accuracy” of the model is also 63.64%. Using data on
+size and fragmentation, we can raise that accuracy to 82%, or roughly halfway to perfect accuracy. The value of the model is also confirmed with
+more robust metrics, such as AUC = 0.88
+
+Journal of Cultural Analytics
+
+17
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+Figure 13. Domain monopolies as function of fragmentation
+
+models (such as the two and three independent variable models explored
+below) are difficult or impossible to visualize, requiring three or more
+dimensions, but the principles are the same.16
+How good a result is 82% accuracy? If size and fragmentation fully determined
+the presence of monopolies, we might reach 100% accuracy. By contrast, the
+floor for predictive accuracy, the “no information rate” for this model is 64％.
+For binary choices (in this case “monopoly” or “no monopoly”), the larger
+category is used as the default prediction and 64％ of domains did not run
+monopolies. Data on domain size and fragmentation (82% accuracy) thus gets
+us roughly halfway from “no information” (64％ accuracy) to perfect
+information (100% accuracy). Those formal calculations aside, the impact of
+size and fragmentation is clear from Figure 12: there are no domains with
+monopolies in the bottom left, and no domains without monopolies at the top
+right. That conclusion is also confirmed by the parameter values (e.g. ß) in the
+Appendix.
+These findings confirm the seminal work of Yasuoka Shigeaki. In 1959 Yasuoka
+asserted that spatial fragmentation and cohesiveness were key to explaining an
+apparent paradox in Japan’s 1868 Meiji Restoration. Why, he asked, was the
+Restoration led by the southwestern domains of Satsuma and Chōshū, rather
+than by domains in the more economically developed Kinai region (the Osaka
+
+, where is the observed values and ⯑ the estimated
+likelihood. Parameter values were estimates using the default method in the R glm package, iteratively weighted least squares. In the interests of
+reproducibility, we share a sample of 25,000 villages from the complete data, and that sample produces effectively identical logit parameters.
+Effectively identical results were also obtained using gradient descent.
+
+16 To be exact, logit models minimize a loss function
+
+Journal of Cultural Analytics
+
+18
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+area)? Yasuoka posited a discrete, binary distinction between the “territorial
+holdings” (領国 ryōgoku) of the southwest, which were large and consolidated,
+and the “non-territorial holdings” (非領国 hiryōgoku) of the Kinai, which
+were smaller and spatially fragmented. For Yasuoka, the size and fragmentation
+of Kinai domains undermined their ability to formulate and execute consistent
+economic policies, and thereby stopped them from converting relative
+economic advantage into political power (Yasuoka 1959).
+At one level, the logit model results are unsurprising: it seems intuitive that
+size and spatial contiguity would enhance state capacity. In that context it is
+valuable to explore where the model fails as well as where it succeeds. For
+example, which small and fragmented domains ran monopolies, contrary to
+expectations? While the model correctly classified 226 domains, it failed to
+predict the appearance of monopolies in 20 cases. What factors did those
+domains have in common?
+Many such “false negatives” involved goods with highly localized production,
+so the monopolies did not require control over extensive, contiguous holdings.
+Kanō domain 加納藩, for example, was divided into two distinct clusters, one
+in modern Gifu 岐阜県 and one in modern Ōsaka 大阪府, producing a low
+Simpson score (0.25). The domain ran a monopoly on umbrellas, but umbrella
+production was limited to the Gifu cluster. Thus, while Kanō holdings were
+fragmented, umbrella production was not.17 In similar fashion, the small and
+fragmented domain of Toyooka (豊岡藩) successfully ran a monopoly on a
+type of wicker trunk (yanagikōri 柳行李) because production was limited to
+the domain castle town. In some cases, production was localized because of
+natural forces.18 Mori domain (森藩) in Kyushu appears too small (23,732
+koku) and fragmented (0.61) to have run a monopoly. Contrary to
+expectations, Mori ran a monopoly on potassium alum (myōban 明礬), used
+both as a medicinal and in fine leather work. The model misclassifies Mori
+because the alum salts were obtained solely from a hot spring in Tsurumi village
+(鶴見村), so maintaining the monopoly did not require extensive spatial
+control. Rather, establishing a domestic monopoly required lobbying to limit
+imports of Chinese potassium alum into Nagasaki.19
+What of “false positives,” the 26 large and consolidated domains that did not
+run monopolies? It is, of course, difficult to explain the absence of a domain
+initiative, but some instances are suggestive. The largest domain to lack a
+monopoly was Shōnai domain 庄内藩 (listed in KKT as Ōizumi domain 大
+泉藩). Shōnai was distinguished by its heavy reliance on a wealthy commoner
+financier house, the Honma, for financial support. The Honma regularly
+
+17 Okamura and Shinma 1929
+18 Toyooka-shi 1981, 301-305
+19 Ōita mirai shin’yō kinkō 2002, 30-33
+
+Journal of Cultural Analytics
+
+19
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+extended credit to Shōnai, and then forgave the loans in return for political
+access (Ravina 60). That financial support likely blunted the need for a
+monopoly as a revenue source.
+What other factors supported the ability to run monopolies? In both Japanese
+and English historians have often looked to the status of the lord. Fudai lords
+were descendants of the first shogun’s more trusted vassals and were therefore,
+by hereditary privilege, eligible to serve in the shogun’s administration. In
+the conventional view, the shogunate entrusted fudai with smaller, scattered
+parcels and frequently changed their holdings. Those measures helped to
+ensure their dependence on the shogunate and their reliability as shogunal
+agents. Tozama lords, by contrast, were the descendants of the first shogun’s
+less trusted vassals, including those who had sworn fealty only after defeat
+in 1600. In the conventional view, they had large, contiguous holdings,
+commonly at the periphery of Japan, far from the shogun’s major cities and
+key castles. A smaller, third category, kamon, constituted daimyo with close
+kinship ties to the shogunate. In the sample for this study 107 domains were
+tozama (38.91%), 140 domains were fudai (50.91%), and 22 domains were
+kamon (8.00%)
+In the 1960s and 1970s, Conrad Totman and Harold Bolitho sparred over
+these tozama-fudai distinctions. Totman argued that fudai domains were
+markedly different from tozama holdings. Fudai lords who served as Tokugawa
+officials, for example, had more fragmented holdings because their parcels were
+increased or decreased based on their service to the shogun. “Even after 1700,”
+he observed, “the process of rewarding officials undermined the integrity of
+the domains involved.” While some older fudai domains enjoyed territorial
+integrity, many fudai holdings were “artificial creations at best, not political
+units proved by survival.” In Sakura domain, for example, the Hotta house
+had holdings scattered over six provinces and had only limited control over
+parcels far from their castle. That fragmentation “made the Hotta hostage to
+the Tokugawa system” (Totman, Politics in the Tokugawa Bakufu, 1600-1843,
+esp. 156-59)
+Bolitho counter-argued that fudai holdings were, in general, indistinguishable
+from those of tozama. He rejected as a “stereotype” the claim that fudai were
+more fragmented than other domains. Cases of extreme fragmentation, such
+as Sakura domain, were uncommon, as was the relocation of fudai. Although
+few fudai held the same fief in 1868 as in 1630, the rate of relocation dropped
+in the late 1600s, so that most fudai remained in place after the 1730s. Bolitho
+rejected as “without substantial basis in fact” the argument that fudai lacked
+strong ties to their holdings because of frequent relocation. (Bolitho, Treasures
+Among Men, esp. 44-56)
+The tozama-fudai distinction figures prominently in Japanese historiography
+as well. Building on Yasuoka’s work, historians developed a “regional society
+地域社会” approach that seeks to integrate local and national history. In the
+Journal of Cultural Analytics
+
+20
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+Figure 14. Tozama and fudai domains
+
+words of Yamasaki Yoshihiro, “regional society theory 地域社会論” seeks to
+formulate a “grand theory” (gurandō seorī) of Japanese history that
+encompasses local specificities within a national framework of differences.
+Many “regional society” studies include the tozama-fudai distinction.20
+Did tozama and fudai domains differ markedly in landholding and did that
+shape how they exercised power? The observation that tozama domains were
+large and consolidated, in contrast to small and fragmented fudai holdings,
+holds for extreme values. The largest consolidated domains were indeed tozama
+while the smallest and most fragmented were fudai. But the vast majority of
+both types of domain lay in between those extremes. We can visualize the
+tozama-fudai distinction by combining a scatter plot with convex hulls (Figure
+14), revealing how extensively the two types of lord overlapped but not at
+extreme values. This graph reveals the “one picture is worth a thousand words”
+potential of quantitative analysis. Visually, it becomes clear that Totman’s
+argument focuses on the corners of the plot, while Bolitho’s focuses on the
+overlapping area at the center. The two arguments are less in conflict than they
+are complementary.
+What then, of domain monopolies? Following the conventional distinction
+between tozama and fudai, we would expect tozama to have been more
+independent and form monopolies at a higher rate. The logit modelling hints
+at such a “tozama effect,” but it is relatively small and statistically tenuous.
+
+20 The “regional society theory 地域社会論” bibliography is enormous. Key works include Yamasaki 2020; Ōshima 2008 and 2009; Iwaki 2003;
+
+Ono et al. 2001. Quote from Yamasaki 2020, 226.
+
+Journal of Cultural Analytics
+
+21
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+Model 2 below contrasts tozama with both fudai and kamon. The results
+suggest that, for a mid-sized domain, tozama status increased the likelihood
+of running a monopoly by roughly 15% over a comparable fudai domain,
+but that estimate has a high margin of error. Indeed, the raw accuracy of
+the model with a “tozama effect” (Model 2) is actually incrementally lower
+than that of the base model (Model 1). Other model specifications, such as
+dropping kamon domains from the sample, reduced all measures of model
+performance. As a check for robustness, we conducted a parallel analysis using
+the caret package for a tenfold cross-validated decision tree. The results were
+effectively the same: fragmentation and size were important split nodes while
+tozama dropped out. Finally, we arrived at a similar conclusion through simple
+arithmetic: comparing 32 domains in a band around the median values in
+the scatter plot, specifically between the 35th and 65th percentiles. Within
+that band, 16.7% of fudai and kamon ran monopolies, compared to 21.4%
+of tozama, a difference of 4.8%. In short, the tozama effect on monopoly
+formation was small to none.
+The shogunate’s political control, like that of the domains, was attenuated by
+spatial fragmentation. Most Tokugawa holdings were in the Kinai or Kanto,
+and were relatively scattered. But in areas where Tokugawa holdings were
+consolidated, the shogunate functioned much like a contiguous, consolidated
+domain, extracting revenue through monopolies. In the seventeenth century,
+the shogunate established spatially coherent control over key resources,
+including the Iwami Silver Mine, the Aikawa gold and silver mines on Sado
+Island, and the forests of Hida Province.
+As in daimyo domains, spatial fragmentation diminished the shogunate’s
+governmental capacity. The fragmentation of the Kanto and the Kinai regions
+reflect a central tension in the shogunate’s spatial authority. The shogunate
+was a national government, with authority and responsibility across the
+archipelago, but its own holdings were fractured, especially around its major
+cities. As a result, the shogunate was a strangely weak government in its own
+heartland. The commercial development of the Kanto in the later Tokugawa
+period exacerbated those spatial problems. Pushed by poverty and drawn by
+greater opportunity, villagers left their homes for larger towns and the Edo
+metropole. That labor mobility commonly involved movement between legal
+jurisdictions, creating a surge in people described by authorities as mushuku
+無宿, literally “homeless,” but more accurately “unregistered,” or “lacking a
+legally actionable domicile.” The growing market economy generated increased
+demand for entertainments, including theater, gambling, and prostitution and
+many mushuku were involved in those legally marginal or illegal activities.
+Those displaced by the volatility of market forces were also drawn into criminal
+gangs, which engaged in extortion and brigandage, as well as gambling and
+prostitution. Because the gangs could move freely between legal jurisdictions,
+
+Journal of Cultural Analytics
+
+22
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+the shogunate found it difficult to suppress them. The shogunate also struggled
+with poverty relief since the poor also moved across jurisdictions (Howell;
+Botsman).
+Period observers considered the fragmentation of Tokugawa holdings an
+impediment to Tokugawa rule. The problem was discussed, for example, by
+Hoashi Banri 帆足万里 (1778―1852), essayist and domain elder (karō
+家老) of Hiji 日出 domain. According to Hoashi, the fracture of shogunal
+holdings diluted government authority and reduced shogunal agents to mere
+tax farmers, incapable of enforcing edicts. He evocatively described the political
+geography of the Kanto as a “houndstooth” pattern (kenga 犬牙). Hoashi
+recommended the radical reapportionment of lands to consolidate Tokugawa
+holdings around Edo and Osaka.21 The Tokugawa senior councilor Mizuno
+Tadakuni attempted such a bold move in 1843, when he ordered the
+consolidation of all lands within a 10 ri 里 (approx 39.3 km) radius of Edo and
+Osaka castles. Daimyo and hatamoto with holdings within those areas would
+receive new, equivalent parcels, further out from the castle towns. Mizuno’s
+edict prompted a furious reaction that cut across class lines. Daimyo and
+samurai did not want to be relocated, while commoners feared that the
+transfers would trigger new land surveys and discover unreported or under
+reported yields. The opposition was so intense and widespread that Mizuno
+abandoned the transfer plan and resigned as chair of the shogunal council of
+elders.
+While neither Hoashi nor Mizuno’s bold plans were realized, the shogunate
+did manage less dramatic spatial consolidation. Most notably, it created the
+Kanto Itinerant Inspectors (Kantō Toshimari Deyaku 関東取締出役), a new
+constabulary force authorized to cross conventional jurisdictions within the
+eight provinces of the Kantō region.22 The force also cut across status
+boundaries: samurai intendants were allowed to deputize commoner posses in
+pursuit of criminals. The force, commonly known as the Hasshū mawari 八
+州廻り, was effective in suppressing both banditry and popular uprisings. In
+1866, the Hasshū mawari was deployed during the Busshū Revolt, a massive
+protest against rising prices that spread across three provinces. That presaged
+the Meiji state’s mobilization of commoners in its military and police. But the
+reform also had the unintended consequence of exacerbating conflict within
+the commoner estate, since posse members were often the local elite. Thus,
+in Japanese popular culture, the Hasshū mawari are commonly depicted as
+corrupt and unjust while the thieves, gamblers, and rebels they pursued are
+
+21 See Hoashi’s 1843 essay “Tōsenpuron” 東潜夫論 in Hoashi Kinen Toshokan, 1:35-81, esp. 47-48. The curious title, literally “Thesis by an
+
+Eastern Recluse,” is a reference to an essay by Later Han scholar Wang Fu 王符 (82 CE-167).
+22 The term deyaku 出役 is also read as shutsuyaku.
+
+Journal of Cultural Analytics
+
+23
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+portrayed as noble anti-heroes.23 Most important, for present purposes, the
+deployment of the Hasshū mawari reflects how the shogunate attempted to
+resolve the problem of spatially fragmented authority.
+
+Conclusions
+In early-modern Japan, spatial coherence enhanced political power. Ruling
+authorities were able to exert greater control when their holdings were exclusive
+and contiguous. Shogunal officers such as Mizuno Tadakuni appreciated that
+spatial dimension of political control, as revealed by their reform efforts.
+Nonetheless, Tokugawa-era political authority did not correspond to modern
+territoriality. In their emic cultural framework, period agents did not
+conceptualize contiguous spaces as discrete “jigsaw puzzle” blocks of land,
+but as clusters of villages. Standard choropoleth maps of Tokugawa-era Japan
+obscure that spatial sense by treating polygons as period borders, rather than
+as a modern, etic interventions. By contrast, polygons based on Voronoi cells
+are explicitly interpretive and illustrate spatial contiguities without imputing
+modern territoriality or assuming it a priori.
+Standard, static maps require cartographers to make a choice between points
+and polygons. Interactive maps, by contrast, allow us to simultaneously deploy
+both. Two further advantages of such maps are transparency and
+reproducibility. In conventional historical maps, the creative process is
+undocumented and unreproducible. The smooth arcs of rivers and borders
+produced by GIS and mapping software are based on complex calculations,
+such as the Bernstein polynomials used in Bezier curves. Those calculations,
+however, are hidden, so the process is both obscured and naturalized. With
+Voronoi tessellation, by contrast, the process is transparent and polygons can
+be reproduced from the point data.
+As a challenge to conventional GIS practice, this essay echoes broader calls
+for new approaches to historical maps. Anne Kelly Knowles has advocated for
+a humanistic GIS that can “broaden the range of geographical methods for
+visualizing the spatiality of human experience.” While historians may want to
+rely on coordinate-based maps, they also need to explore alternatives: “GIS is
+ideal for studying representations of space but has limited utility for studying
+spatial practice.” (Knowles et al.) David J. Bodenhamer has called for “deep
+maps”, which link “geographic and cultural representations of a place” and
+“are visual, multilayered, and inclusive, offering multiple perspectives of a small
+area of the earth” “Traditional GIS,” he argues, “is not the means for
+constructing a deep map. But it is part of the solution, especially when linked
+to recent advances in spatial multimedia.” (Bodenhamer) The maps in this
+study are more conventional than the expansive reconceptionalizations offered
+by Knowles and Bodenhamer. But this study reveals how humanistic GIS
+
+23 Sippel. For a lively introduction to the Hasshū mawari see Ochiai 2002. For greater detail see Tokuzo 1947
+
+Journal of Cultural Analytics
+
+24
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+and quantitative inquiry can be mutually supportive. If we reject the limiting
+association of quantitative methods with exactitude, we can use computational
+techniques such as Voronoi polygons as alternatives to precise borders. We can
+use aggregate statistics to overcome the noisiness of geolocation data. Modern
+computational methods can thus lead us towards, rather than away from,
+Tokugawa-era spatial experiences.
+
+Acknowledgements
+I presented earlier versions of this research at the Institute for Historical Studies
+at the University of Texas, Austin; Stanford University’s Center for Spatial and
+Textual Analysis (CESTA); the Universitat Autònoma de Barcelona (UAB);
+the International Research Center for Japanese Studies (Nichibunken) in
+Kyoto; and Waseda University, Tokyo. At those meetings, and in following
+exchanges, I learned much from the questions and suggestions of Giovanna
+Ceserani, Dan Edelstein, Grant Parker, Andrew Patrick Nelson, Burçak
+Keskin-Kozat, Summit Guha, Rebekah Clements, Richard Pegg, D. Max
+Moerman, Mario Cams, Elke Papelitzky, Edward Boyle, and Kazumi
+Hasegawa. Fabian Drixler and Yamasaki Yoshihiro offered keen insights and
+encouragement. Hilson Reidpath was an exceptional research assistant.
+Thanks also to Megan Gilbert and Jessa Dahl. As always, I am indebted to Ari
+Levine for his intellectual generosity and friendship.
+Peer reviewers: Luca Scholz, Michelle Damian
+Dataverse repository: https://doi.org/10.7910/DVN/63MIDP
+Submitted: April 10, 2023 EST, Accepted: May 10, 2023 EST
+
+This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0
+International License (CCBY-4.0). View this license’s legal deed at http://creativecommons.org/licenses/
+by/4.0 and legal code at http://creativecommons.org/licenses/by/4.0/legalcode for more information.
+
+Journal of Cultural Analytics
+
+25
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+references
+Berman, Merrick Lex. “Boundaries or Networks in Historical GIS: Concepts of Measuring Space and
+Administrative Geography in Chinese History.” Historical Geography, vol. 33, 2005, pp. 118–33.
+Bodenhamer, David J. “The Varieties of Deep Maps.” Making Deep Maps, edited by David J.
+Bodenhamer et al., Routledge, 2021, pp. 1–16, https://doi.org/10.4324/9780367743840-1.
+Bol, Peter Kees. “Creating a GIS for the History of China.” Placing History: How Maps, Spatial Data,
+and GIS Are Changing Historical Scholarship, edited by Anne Kelly Knowles and Amy Hillier,
+ESRI Press, 2008, pp. 27–59.
+---. “Mapping China’s History.” Verge: Studies in Global Asias, vol. 2, no. 2, 2016, p. 70,
+https://doi.org/10.5749/vergstudglobasia.2.2.0070.
+Bolitho, Harold. “The Han.” The Cambridge History of Japan, Volume 4: Early Modern Japan, edited
+by John Whitney Hall, vol. 4, Cambridge University Press, 1991, pp. 183–234.
+---. Treasures Among Men: The Fudai Daimyo in Tokugawa Japan. Yale University Press, 1974.
+Botsman, Daniel V. Punishment and Power in the Making of Modern Japan. Princeton University
+Press, 2005.
+Chiarucci, Alessandro, et al. “Old and New Challenges in Using Species Diversity for Assessing
+Biodiversity.” Philosophical Transactions: Biological Sciences, vol. 366, no. 1576, Aug. 2011, pp.
+2426–37, https://doi.org/10.1098/rstb.2011.0065.
+Clauset, Aaron, et al. “Power-Law Distributions in Empirical Data.” SIAM Review, vol. 51, no. 4,
+Nov. 2009, pp. 661–703, https://doi.org/10.1137/070710111.
+Drixler, Fabian Franz, et al. Samurai and the Culture of Japan’s Great Peace. Peabody Museum of
+Natural History, Yale University, 2015.
+Fryer, Roland G. Jr., and Richard Holden. “Measuring the Compactness of Political Districting
+Plans.” The Journal of Law and Economics, vol. 54, no. 3, Aug. 2011, pp. 493–535, https://doi.org/
+10.1086/661511.
+Gillespie, Colin S. “Fitting Heavy Tailed Distributions: The poweRlaw Package.” arXiv E-Prints:
+arXiv:1407.3492, 2014, https://doi.org/10.18637/jss.v064.i02.
+Grassmueck, Georg, and Martin Shields. “Does Government Fragmentation Enhance or Hinder
+Metropolitan Economic Growth?” Papers in Regional Science, vol. 89, no. 3, Mar. 2010, pp.
+641–57, https://doi.org/10.1111/j.1435-5957.2010.00278.x.
+Gülzau, Fabian, and Steffen Mau. “Walls, Barriers, Checkpoints, Landmarks, and”No-Man’s-Land.”
+A Quantitative Typology of Border Control Infrastructure.” Historical Social Research / Historische
+Sozialforschung, vol. 46, no. 3, 2021, pp. 23–48.
+Hayama Hisao 羽山久男. Chigyō ezu to sonraku kūkan: Tokushima, Saga, Hagi, Owari-han to
+Kawachi no kuni Furuichi-gun no hikaku kenkyū 知行絵図と村落空間 : 徳島・佐賀・萩・尾
+張藩と河内国古市郡の比較研究. Kokon Shoin 古今書院, 2015.
+Hayama Hisao 羽山久男. Tokushimahan bunken ezu no kenkyū 徳島藩分間絵図の研究. Kokon
+Shoin 古今書院, 2019.
+Hoashi Kinen Toshokan 帆足万里. Hoashi Banri zenshū 帆足万里全集. Edited by Hoashi Kinen
+Toshokan, vol. 1, Hoashi Kinen Toshokan 帆足記念図書館, 1926.
+Howell, David L. “Hard Times in the Kantō: Economic Change and Village Life in Late Tokugawa
+Japan.” Modern Asian Studies, vol. 23, no. 2, May 1989, pp. 349–71, https://doi.org/10.1017/
+s0026749x00001098.
+
+Journal of Cultural Analytics
+
+26
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+Itō Takayuki 伊藤孝幸. “Mikawa kuni tōbu de no aikyū sonryaku no shihai ni tsuite.” 三河国東部
+での相給村の支配について Transactions of The Institute for Cultural Studies, Aichi Gakuin
+University 人間文化：愛知学院大学人間文化研究所紀要, vol. 26, 2011, pp. 25–49.
+Iwaki Takuji 岩城卓二. “Kinai, Kingoku shihai kōzō kenkyū no kadai: hiryōgokuron, bakufu
+ryōgokuron, shihai kokuron ga teiki shita mono.” 畿内・近国支配構造研究の課題–非領国論
+・幕府領国論・支配国論が提起したもの Rekishi Kagaku 歴史科学, vol. 173, 2003, pp.
+1–12.
+Kanzaki Akitoshi 神崎彰利. “Hatamoto chigyōsho 旗本知行所.” Kokushi daijiten 国史大辞典,
+Yoshikawa Kōbunkan, 1979–1997.
+Kawamura Hirotada 川村博忠. Edo bakufu no Nihon chizu : kuniezu, shiroezu, Nihon zu 江戸幕府
+の日本地図 : 国絵図・城絵図・日本図. Yoshikawa Kōbunkan 吉川弘文館, 2010.
+Kimura Motoi 木村礎, editor. Kyūdaka Kyūryō Torishirabechō 旧高旧領取調帳. 1969–1979.
+Tōkyōdō shuppan 東京堂出版, 1995.
+Knowles, Anne Kelly. “Historical Geographic Information Systems and Social Science History.”
+Social Science History, vol. 40, no. 4, 2016, pp. 741–50, https://doi.org/10.1017/ssh.2016.29.
+---. “Inductive Visualization: A Humanistic Alternative to GIS.” GeoHumanities, vol. 1, no. 2, July
+2015, pp. 233–65, https://doi.org/10.1080/2373566x.2015.1108831.
+---. “Why We Must Make Maps: Historical Geography as a Visual Craft.” Historical Geography, vol.
+42, 2014, pp. 3–26.
+Kokuritsu Kokugo Kenkyūjo 国立国語研究所. Nihon gengo chizu 日本言語地図. 1966–1974.
+Kuniezu Kenkyūkai 国絵図研究会編, editor. Kuniezu no sekai: Kuniezu, province maps of Japan
+made by the Tokugawa Government 国絵図の世界. Kashiwa Shobō 柏書房, 2005.
+Kuwai Kaoru 桑井薫, editor. Awa Tokushima Hachisuka-ke kashin shoryōchi narabi ni kokudaka
+hikae 阿波徳島藩蜂須賀家家臣所領地並石高控. Revised, Tokushima Kamon Kenkyūkai 徳
+島家紋研究会, 2003.
+---. Meiji san-nen Tokushima-han shokuin roku narabi ni gobunchi gokachū bungenchō 明治三年徳島
+藩職員録並御分知御家中分限帳. Kuwai Kaoru 桑井薫, 1992.
+Lewis, Martin W., and Kären Wigen. The Myth of Continents: A Critique of Metageography.
+University of California Press, 1997.
+Maier, Charles S. “Consigning the Twentieth Century to History: Alternative Narratives for the
+Modern Era.” The American Historical Review, vol. 105, no. 3, June 2000, p. 807, https://doi.org/
+10.2307/2651811.
+Morris, J. F. “Central Control or Parallel Evolution: Samurai Landholding in Tokugawa Japan.” Early
+Modern Japan, vol. 6, no. 1, 1997, pp. 17–26.
+---. “Hatamoto Rule: A Study of the Tokugawa Polity as a Seigneurial System.” Papers on Far Eastern
+History (Canberra, vol. 41, 1990, pp. 9–44.
+Nishioka Toranosuke 西岡虎之助, Hattori Shisō 服部之總 and Ikenaga Jiro 池永二郎. Nihon
+rekishi chizu 日本歴史地図. Zenkoku Kyōiku Tosho Kabushiki Kaisha 全国教育図書株式会社,
+1956.
+Niwa Kunio 丹羽邦男. “Hida ‘ohayashiyama’ no ichi kōsatsu.” 飛騨「御林山」の一考察
+Tokugawa Rinseishi Kenkyūjo Kenkyū Kiyō 徳川林政史研究所研究紀要, vol. 56, 1982, pp.
+69–94.
+Ochiai Nobutaka 落合延孝. Hasshū mawari to bakuto 八州廻りと博徒. Yamakawa Shuppansha 山
+川出版社, 2002.
+
+Journal of Cultural Analytics
+
+27
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+Ōita mirai shin’yō kinkō 大分みらい信用金庫. Furusato no isan” shirīzu 1: Beppu onsen dokuhon
+「ふるさとの遺産」シリーズ 1：別府～温泉読本: Ōita mirai shin’yō kinkō 大分みらい信
+用金庫. 2002.
+Okamura Seiji 岡村精次 and Shinma Nitarō 神馬仁太郎. Gifu gasa ni kansuru chōsa kenkyū 岐阜
+傘に関する調査研究. Gifu-ken Inaba-gun Kanō-chō 岐阜県稲葉郡加納町, 1929.
+Ono Sho 小野将, et al. “Kinsei chiiki shakai-ron no genzai.” 近世地域社会論の現在 Rekishigaku
+Kenkyū 歴史学研究, vol. 748, 2001, pp. 33–48.
+Ōshima Mario 大島真理夫. “Kinsei chiiki shakai-ron no seika to kadai: ‘bakuhansei shihai no chiiki
+ruikei’ ron no teiki.” 近世地域社会論の成果と課題–「幕藩制支配の地域類型」論の提起
+Nihonshi Kenkyū 日本史研究, vol. 564, 2009, pp. 3–19.
+---. “Kinsei Kinai chiiki shakai-ron no hikaku to sōgō.” 近世畿内地域社会論の比較と総合
+Keizaishi Kenkyū 経済史研究, vol. 11, 2008, pp. 194–211.
+Ravina, Mark. Land and Lordship in Early Modern Japan. Stanford University Press, 1999,
+https://doi.org/10.1515/9780804763868.
+Scholz, Luca. “Deceptive Contiguity: The Polygon in Spatial History.” Cartographica, vol. 54, no. 3,
+Sept. 2019, pp. 206–16, https://doi.org/10.3138/cart.54.3.2018-0018.
+Sewell, William Hamilton. Logics of History: Social Theory and Social Transformation, Chicago Studies
+in Practices of Meaning. University of Chicago Press, 2005.
+Shirakawabe Tatsuo 白川部達夫. Hatamoto chigyō to kokudakasei 旗本知行と石高制. Iwata Shoin,
+2013.
+Sippel, Patricia. “Popular Protest in Early Modern Japan: The Bushu Outburst.” Harvard Journal of
+Asiatic Studies, vol. 37, no. 2, Dec. 1977, p. 273, https://doi.org/10.2307/2718676.
+Suda Tsutomu 須田努. Akutō” no jūkyūseiki : minshū undō no henshitsu to “kindai ikōki” 「悪党」
+の一九世紀 : 民衆運動の変質と “近代移行期. Aoki Shoten 青木書店, 2002.
+Sugimoto, Fumiko. “Visualizing the Political World through Provincial Maps - Sugimoto Fumiko.”
+Cartographic Japan: A History in Maps, edited by Kären Wigen et al., University of Chicago Press,
+2016, pp. 48–51, https://doi.org/10.7208/chicago/9780226073194.003.0010.
+Suzuki, Junko. “Seeking Accuracy: The First Modern Survey of Japan’s Coast.” Cartographic Japan: A
+History in Maps, edited by Kären Wigen et al., University of Chicago Press, 2016, pp. 129–32,
+https://doi.org/10.7208/chicago/9780226073194.003.0029.
+Taylor, Peter J. “A New Shape Measure for Evaluating Electoral District Patterns.” American Political
+Science Review, vol. 67, no. 3, Sept. 1973, pp. 947–50. https://doi.org/10.2307/1958636.
+Tokuzō Imagawa 今川徳三. Hasshūmawari to daikan 八州廻りと代官. Yūzankaku 雄山閣, 1974.
+Totman, Conrad. “Plantation Forestry in Early Modern Japan: Economic Aspects of Its Emergence.”
+Agricultural History, vol. 60, no. 3, 1986, pp. 23–51.
+---. Politics in the Tokugawa Bakufu, 1600-1843. Harvard University Press, 1967.
+---. The Green Archipelago. University of California Press, 1989.
+Toyooka-shi 豊岡市史. Toyooka-shi shi 豊岡市史. Toyooka-shi 豊岡市史, 1981.
+Trewartha, Glenn Thomas. Japan: A Geography. University of Wisconsin, 1965.
+Tsuguharu, Inaba, and Imamura Naoki, editors. Nihon kinsei no ryōgoku chiiki shakai: Kumamoto
+hansei no seiritsu, kaikaku, tenkai 日本近世の領国地域社会 : 熊本藩政の成立・改革・展開.
+Yoshikawa Kōbunkan, 2015.
+Turner, Monica G. Landscape Ecology in Theory and Practice. 2004.
+
+Journal of Cultural Analytics
+
+28
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+Vesey, Alexander. “Temples, Timber, and Negotiations: Buddhist-Lay Relations in Early Modern
+Japanthrough the Prism of Conflicts over Mountain Resources.” Japan Review, vol. 28, 2015, pp.
+67–101.
+Westerveld, L., and A. K. Knowles. “Loosening the Grid: Topology as the Basis for a More Inclusive
+GIS.” International Journal of Geographical Information Science, vol. 35, no. 10, Dec. 2020, pp.
+2108–27, https://doi.org/10.1080/13658816.2020.1856854.
+Wigen, Kären, et al. Cartographic Japan: A History in Maps. University of Chicago Press, 2016,
+https://doi.org/10.7208/chicago/9780226073194.001.0001.
+Yabuta Yutaka 藪田貫. “Chiiki shakai ron to ‘Ryōgoku chiiki shakai’ 地域社会論と「領国地域社
+会」.” Nihon kinsei no ryōgoku chiiki shakai: Kumamoto hansei no seiritsu, kaikaku, tenkai 日本近
+世の領国地域社会 : 熊本藩政の成立・改革・展開, edited by Tsuguharu Inaba 稲葉継陽,
+and Naoki Imamura 今村直樹, vol. 稲葉継陽, 今村直樹, Yoshikawa Kōbunkan, 2015.
+---. Kinsei Ōsaka chiiki no shiteki kenkyū 近世大坂地域の史的研究. Seibundō 清文堂, 2005.
+---. Kokuso to hyakushō ikki no kenkyū 国訴と百姓一揆の研究. Azekura Shobō 校倉書房, 1992.
+Yamasaki Yoshihiro 山﨑善弘. “Kinsei chiiki shakai-ron no dōkō to kadai: kobetsusei no haaku to
+ippanka, fuhenka no ryōritu ni mukete.” 近世地域社会論の動向と課題 ――個別性の
+把握と一般化・普遍化の両立に向けて―― Tōkyō Mirai Daigaku Kenkyū Kiyō 東京未
+来大学研究紀要, vol. 14, 2020, pp. 221–31.
+Yasuoka Shigeaki 安岡重明. Nihon hōken keizai seisaku shiron: Keizai tōsei to bakuhan taisei 日本封
+建経済政策史論: 経済統制と幕藩体制. Yūhikaku 有斐閣, 1959.
+Yoshinaga Akira 吉永昭. Kinsei no senbai seido 近世の専売制度. Yoshikawa Kōbunkan 吉川弘文
+館, 1973.
+Yuki Seigo 結城清吾. “Hida nōmin sōdō no rekishi chiri-gakuteki kenkyū.” 飛騨農民騷動の歴史
+地理学的研究 Shin Chiri 新地理, vol. 7, no. 3–4, 1959, pp. 314–26, https://doi.org/10.5996/
+newgeo.7.314.
+
+Journal of Cultural Analytics
+
+29
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+Appendix
+Geolocation procedures: This study relied on Rekihaku’s digitized version of
+KKT, especially the administrative codes (市町村コード) added in 1990. By
+reversing those codes, we were able to place hamlets/villages within modern
+administrative units and create psuedo-addresses. We then used search engines
+and databases (Google Maps, Bing, Mapion, the CODH Geoshape
+Repository, and the Japanese government’s e-Stat spatial data) to geolocate
+those addresses. We employed two checks for possible errors. First, we
+investigated duplicated coordinates (multiple hamlets with the same location),
+and second we checked that villages in the same county comprised a contiguous
+spatial unit. Errors were corrected by referring to reference works such as
+Kadokawa Nihon chimei daijiten 角川日本地名大辞典 and Nihon rekishi
+chimei taikei 日本歴史地名大系 and generating new search strings. We are
+continuing to “clean” this data set, but after testing various subsamples of
+the data, we find that the remaining data errors can be treated as random
+statistical “noise.” Notably, our conclusions are the same whether we use our
+most recent, “cleanest” data or earlier, “noisier” versions.
+
+Journal of Cultural Analytics
+
+30
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+Model 1
+ß
+Constant
+
+Model 2
+odds
+ratio
+
+marginal effects at
+mean
+
+mean marginal
+effects
+
+ß
+
+odds
+ratio
+
+marginal effects at
+mean
+
+mean marginal
+effects
+
+-14.965***
+
+-
+
+-
+
+-16.246***
+
+-
+
+-
+
+Simpson 5km
+
+3.486***
+
+32.642
+
+0.736
+
+0.464
+
+2.888 **
+
+17.955
+
+0.611
+
+0.379
+
+log10(kokudaka)
+
+2.715***
+
+15.112
+
+0.573
+
+0.361
+
+3.002***
+
+20.130
+
+0.635
+
+0.394
+
+0.682 *
+
+1.978
+
+0.148
+
+0.148
+
+tozama
+n
+
+272
+
+272
+
+AIC
+
+232.14
+
+230.812
+
+AUC
+
+0.88
+
+0.884
+
+Wald test χ2
+
+74.279***
+
+71.819***
+
+No Information
+Rate
+
+63.97%
+
+63.97%
+
+Raw Accuracy
+
+82.18%
+
+81.45%
+
+Precision
+
+0.84
+
+0.84
+
+Recall
+
+0.89
+
+0.90
+
+Journal of Cultural Analytics
+
+31
+
+Algorithmic Maps and the Political Geography of Early-modern Japan
+
+supplementary materials
+Figure 11. Interactive map of Iyo Province and select islands
+Download: https://culturalanalytics.org/article/84860-algorithmic-maps-and-the-political-geography-ofearly-modern-japan/attachment/174413.html
+
+Journal of Cultural Analytics
+
+32
+
+

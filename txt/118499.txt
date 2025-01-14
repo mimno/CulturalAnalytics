@@ -1,0 +1,2927 @@
+Hagener, Malte, and Theresa Blaschke. “Approaching a National Film History through
+Data. Network Analysis in German Film History.” Journal of Cultural Analytics, vol. 9, no.
+4, July 2024, https://doi.org/10.22148/001c.118499.
+
+ARTICLE
+
+Approaching a National Film History through Data. Network Analysis
+in German Film History
+Malte Hagener1,2 , Theresa Blaschke1,2
+1 Philipps University of Marburg, 2 Marburg Center for Digital Culture and Infrastructure
+
+Keywords: Film Studies, Network Analysis, Digital Humanities
+https://doi.org/10.22148/001c.118499
+
+Journal of Cultural Analytics
+Vol. 9, Issue 4, 2024
+
+The present paper is an attempt at importing network analysis as a method and
+applying it to a field that has hitherto been examined in different ways: the
+study of national cinema. The approach was motivated by the perceived
+conundrum in the existing studies of German cinema that filmhistorical and
+political history usually do not match. The aim is to open up another
+perspective on the problem of periodization by looking at the data of film
+production, more specifically of collaboration. By using a comprehensive data
+set which is made availavable by the Filmportal, the central internet platform on
+German film, the approach in this paper is to look at the key creatives involved
+in the production of a film in the period from 1919 to 1939 and to
+conceptualize collaboration and connectivity in a (national) film culture
+through the use of network research methods.
+
+As more data sets in good quality become available, as tools that help us
+understand big data are developed and gain traction, as researchers acquire
+knowledge and experience about meaningful methods for using large pools of
+information, we are faced with the task of testing our hypotheses in new ways.
+Of course, the “datafication” of film studies is a complex process that has
+institutional as well as economical impact, it requires us to rethink methods
+as well as study programmes (because students need new skills), it calls for
+new introductions and reflections (Arnold and Tilton). At the same time,
+we need to take the risk of breaking new ground in our research methods
+which implies the possibility of failure. The present paper is an attempt at
+importing a method – network analysis – and applying it to a field that
+has hitherto been examined in different ways: the study of national cinema.
+As certain misunderstandings are rather common, it is important to note at
+the start that this paper does not propose an ultimately better way of doing
+film history nor does it imply a replacement of existing approaches, but it
+rather ventures down a different path. By using a comprehensive data set
+and reverting to methods of network analysis, our paper is trying to break
+new ground for the study of national cinema. The approach was motivated
+by the perceived conundrum in the existing studies of German cinema that
+filmhistorical and political history usually do not match.
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+Of course, there is a larger question looming behind the question what
+can be considered a national cinema which cannot be addressed here in
+total. Film studies has a tradition of critical engagement with the concept of
+national cinema, its vicissitudes and pitfalls (see e.g. Higson; Vitali; Christie).
+There are, of course, many good reasons why traditional film histories that
+most often rely on the unquestioned triad of nation, work, and author – as
+conventional national film histories did – have gone out of fashion. And we
+certainly do not want to attempt a rescue mission of these approaches from
+the dustbin of history. Yet again, approaching a national film history as a
+whole can be attempted on the basis of the available data which is what this
+essay proposes. Whether this is the entirety (or even totality) of a national
+cinema is a different question, but it is – in terms of data – at least a more
+comprehensive base on which we are building.
+
+Break or continuity – how to periodize German film history?
+The disasters of German history this century have left their mark
+on the cinema, and even more so on the image and idea we have
+of it.
+Thomas Elsaesser (1995, 172)
+In recent decades, there have been few attempts to consider German film
+history in its entirety. The last major attempt with a claim to providing a
+general overview of German film history, written in German, has not been
+updated for 20 years (Jacobsen et al.). More recent publications focusing on
+German film history as a whole have not only been written without exception
+in English, they announce their reservations and limited scope already in their
+titles. One title proclaims the book to be a “critical history” (Brockmann),
+even if the classic canon is worked through. A similar approach, offering
+a series of analyses of canonical films, can be found in another anthology
+(Garncarz and Ligensa). A third publication is announced as a “new history”
+(Kapczynski and Richardson) because conceptually the texts are oriented
+rather towards events and discourses than towards works and persons. This
+limited claim also applies to other studies as well: one anthology immediately
+places history in the plural and relates these “histories” to genre development
+(Fisher), while another collection proposes multiple approaches to historical,
+as well as aesthetic and theoretical questions of German cinema, making it
+more of a scholarly compendium (Bergfelder et al.). All of these books are
+similar insofar as they take a limited sample (usually a small group of films,
+sometimes persons or events) and consider this as a representative subset of
+the whole.
+Besides the question of comprehensiveness (the data basis), there is also
+the question of internal periodization. German film history has often been
+divided into periods according to the political ruptures and the frequent
+system changes that have characterized the history of the country over the
+
+Journal of Cultural Analytics
+
+2
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+20th Century. What is still the most canonical film history in German
+(Jacobsen et al.), has chapters on German film history up to 1918 (the
+imperial period), on Weimar film culture (1919-33), on Nazi film (1933-45),
+on postwar cinema divided between East and West and, in the case of the
+Federal Republic, further subdivided according to decades (1945-89), and,
+in the second edition, it also contains a final chapter on post-Wall cinema
+1
+(1989 to present). Of course, these political breaks are important and I
+am certainly not denying the impact of political transformations and system
+change on the cinema sector in general and filmmaking specifically. At the
+same time, there are other temporal markers in existence which are often
+connected to the development of film as a medium that do not map exactly
+onto these political dates, but are in conflict with them. The most significant
+film-historical events that would imply a different periodization compared
+to the major political ruptures are probably the following: the introduction
+of the long feature film which happened in the early to mid-1910s during
+the imperial period and before World War I; sound film was introduced
+in Weimar Germany between 1928 and 1930; cinema attendance peaked in
+the mid-1950s and then declined until the 1980s, a period in which the
+competition with television provided the constant background noise. These
+decisive moments could also be applied to divide German film history into
+2
+temporal slices. It is therefore a conceptual decision to give the (legal) takeover of government by the National Socialists in early 1933 more weight
+than the introduction of sound a couple of years before. We are certainly not
+arguing that sound film is more important (for film history) than the Nazis
+coming to power, we simply want to highlight the unspoken assumptions
+inherent in such periodization that are only seldomly discussed. Turning
+to a data-driven approach, one can test the existing assumptions such as
+the correlation (or even causal link) of cinema and political history which
+undergirds much writing on German film history. In the analysis that follows
+we wish to open up another perspective on this problem of periodization by
+looking at the data of film production, more specifically of collaboration.
+
+Films and/as networks
+Film history is always a phenomenon of the in-between, of the
+relation and of the context.
+Lorenz Engell (10)
+
+1 To be fair, one should add that these chapters following the political logic of German history are complemented by texts on experimental
+
+and documentary film, on feminism and censorship, on criticism and the relationship of film to television that cut across the periodization.
+2 In fact, US film history is more often conceptualized by dates relevant to the medium; the introduction of sound in the late 1920s is usually
+
+seen as an epochal break, just as the Paramount decision by the Supreme court, forcing the studios in the late 1940s to divest themselves off
+their cinema chains, thereby effectively ending vertical integration. See for an early example (Altman), and for a more current one, the
+History of the American Cinema-series (University of California Press) which follows a film historical periodisation until the introduction of
+sound (the volumes are divided as follows: up to 1907; 1907-1915; 1915-1928; 1926-1931), then turns to decades as the organizing principle.
+
+Journal of Cultural Analytics
+
+3
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+Film is a cultural form that is, in most cases, created in collectives (Mayer
+et al.). Films are usually made in creative networks of individual actors
+(Jones), some of whom are considered to be creative individuals (so called
+“above the line”-workers or head of departments), while others are rather
+3
+seen as craftspeople, service providers or subworkers (“below the line”). Even
+though the director is most often credited with being the author of a specific
+4
+work , most experts would agree that there is usually a group of creative
+professionals involved in the making of a film. If a film has a shared vision
+and is perceived to be of a piece, the creative individuals need to work closely
+together because cultural objects cannot be produced on the drawing board,
+but they need to be individualized and created collectively. By concentrating
+on these collaborative networks, we are putting an emphasis on relationships,
+not on individuals or singular works. Historically, the production of films has
+been most frequently organized as freelance work in project teams. Factory5
+like division of labour has played a role both in mainstream filmmaking as
+well in other forms of film production (e.g. commissioned and educational
+films), while non-collective, artisanal filmmaking by individuals proved to be
+an alternative for experimental filmmakers, but the most common form of
+organization remains the project team that is assembled for each production
+anew. Even though teams are regrouped with each new film, the composition
+of such teams is not arbitrary, but often professionals work in relatively stable
+networks of co-workers. In a network analysis of film production in Hungary,
+Juhász et al. have shown how the positioning in networks can be decisive for
+success, measured in terms of awards won (Juhász et al.). Our take is to follow
+a specific aspect of this approach, namely seeing the shifting networks of
+collaboration as central to the workings of the industry. The approach in this
+essay is to look at the key creatives involved in the production of a film: the
+heads of departments and the main actors/actresses. We decided to specifically
+extract the data for director, producer, screenwriter, director of photography,
+editing, set design, and music, plus six actors/actresses. With the view towards
+the selection of the material, the aim of this study is to consider the whole
+field in a comprehensive way, not just the famous examples. This does not
+necessarily produce better or more valuable results, but such research on the
+basis of larger and comprehensive data sets might highlight aspects that have
+gone unnoticed so far.
+
+Data preparation
+…the translation of the social into data involves a process of
+abstraction that compels certain compromises to be made as the
+data are generated, selected and analysed
+
+3 For a critical and ethnographic look at the “below the lines”-workers see Caldwell.
+4 For important overviews of this approach from different time periods see Caughie, Grant Jeong and Szaniawski.
+5 For the most iconic example, the classical Hollywood studio system, see the seminal study Bordwell et al.
+
+Journal of Cultural Analytics
+
+4
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+van Es and Schäfer (13)
+This being an exploratory study, the time period – and therefore the data
+pool – had to be limited, even though the amount of data we worked on
+remained rather large when compared to many other network analyses in
+6
+the field of Digital Humanities. Initially, we wanted to concentrate on the
+time period from 1919 to 1962 which would have encompassed a number of
+different political systems. This time frame would have included the cinema
+of the Weimar Republic and the reign of the Nazis, as well as the immediate
+post-war period up to the Oberhausen Manifest (in February 1962) in the
+West which ushered in the Young German Film (and therefore another period
+in film history) and the building of the Berlin wall (August 1961) in the
+East, thus anchoring for both East and West Germany the time frame with
+historical events. Of course, such temporal boundaries are always to a certain
+extent arbitrary, yet our aim was to have a number of ruptures within the
+examined period and not to claim any primacy or specific significance for
+this particular periodisation. When preparing the data though, we realized
+that the amount of data would not only have taken a lot more time to
+process than anticipated, but also given us so much material that we would
+be overwhelmed. So, for the purpose of this article, we limited the time frame
+to the 21-year-period from 1919 to 1939, concentrating on the immediate
+interwar period. This choice encompasses the transition to sound, but not the
+shift to the long feature film in the mid 1910s or the peak in cinema going in
+the 1950s.
+We used the data available and curated at Filmportal, the central internet
+platform on German film, a non-profit project run by the German Film
+Institute in Frankfurt and financed by national as well as regional cultural
+funding. The service has been online since 2005 and arguably provides the
+best data, in terms of credits and technical information, publicly available on
+7
+German cinema from the beginning to today. As a way to limit the amount
+of data and to make it processable, we decided to concentrate on feature
+films; therefore, short subjects, documentaries, “useful cinema” (Acland and
+Wasson), such as films that are being shown in schools, universities,
+administrations or companies, amateur films and others were excluded. For
+each film we collected the following data: director, producer, writer, director
+of photography, editor, production designer, and composer, as well as six
+actors/actresses (those with top billing). There is no widespread consensus on
+what the key contributors in terms of creative input are to a film production.
+Jan-Christopher Horak, for example, has argued that exile films are films
+made outside Germany by émigres who were working in the German-
+
+6 The data can be found here: Hagener, Malte; Blaschke, Theresa, 2024, “Approaching a National Film History through Data”,
+
+https://doi.org/10.7910/DVN/C80HD1, Harvard Dataverse"
+7 See https://www.filmportal.de/seite/die-geschichte-von-filmportal.de (17.8.2023) for a brief overview. Thanks to David Kleingers and the
+
+team at the DFF for their helpful assistance and collaboration.
+
+Journal of Cultural Analytics
+
+5
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+speaking film industry prior to their migration; and he defined the key
+position as director, writer and producer. We deliberately chose a more
+encompassing model of creative work which included the main crafts
+involved in the production of a film. Of course, decisions what to include
+and what to exclude are to a certain extent always arbitrary. Why did we
+not include sound design, make-up or costume? There are two reasons for
+the exclusion of additional categories: First of all, we can find data for most
+of the films for the creative positions chosen, while other crafts are often
+not listed. This fact already demonstrates a certain contemporary significance.
+Secondly, our aim was to show networks of people working together over
+time and how these networks shift or remain stable. In order to do that, we
+had to construct a data model and apply it which is necessarily an abstraction
+from historical reality. Adding a category or two would not have changed the
+results in decisive ways.
+8
+
+We created a unimodal network based on persons which were conceptualised
+as nodes and on films which connected two persons (edge) that worked
+on the same film. In our case, we wanted to understand temporal change
+within the network and therefore we built a separate network for each
+year. In effect, we ended up with 21 networks which we compared and
+contrasted in different ways. In these networks, persons were conceptualized
+as nodes, whereas connections are established if they work together on a
+film. As a result, a film would usually create thirteen connections (direction,
+production, screenwriting, camera, editing, set design, music, six actors/
+actresses), sometimes more if the technical positions were occupied by more
+than one person, sometimes less if not all of the positions were known or
+occupied. We worked with CSV-files to process the data and used Gephi,
+a popular and well-known program, as a tool to calculate the metrics and
+visualize the networks. Once the dataset was cleaned and corrected, it
+contained a total of 22.132 nodes, that is persons with credits in the relevant
+categories, and 6.046 films over the 21-year-period. Since many persons show
+up more than once in the same or in subsequent years, we counted 8.101
+unique professionals that worked in the relevant categories on German films
+between 1919 and 1939. Which information does this network actually
+contain? It provides a certain image of the industry, as it shows how much
+in demand professionals were that worked in creative positions on film. What
+flows in these networks is reputation and the dynamics of the industry.
+More importantly, the structure of the network also shows patterns of
+collaboration. As the following observations will be concerned with the
+density and centrality within the network and with changes over time,
+the specific focus is on closeness and distance, on collaboration and
+transformation.
+
+8 A unimodal network only contains one kind of node and one kind of edge without further specification or direction of the edge. For the
+
+possibilities and risks inherent in networks in the humanities see Weingart which has been important for our reasoning here.
+
+Journal of Cultural Analytics
+
+6
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+Illustration 1. number of films and number of participants per year
+
+Results
+One of the first things we noticed already during the preparation of the data
+was the rather wide fluctuation in the number of films produced in each year
+(see fig. 1). In the beginning of the period under consideration, nearly 1000
+films were made in a single year (1919: 866; 1920: 980; 1921: 717). There
+are a number of reasons one can find for this phenomenon, among them the
+fluctuating economy which made a highly speculative industrial sector such
+as film production attractive to potential investors, as well as the weakness
+of the currency which made exports very profitable and therefore potential
+earnings higher (Spiker). Most important were probably the expectations
+towards films (in terms of return on investment) and the generally low degree
+of professionalization of the industry – it was relatively easy to enter the
+industry which would also explain the rather high oscillation of the key
+creative professionals involved in the production (see next paragraph). As
+the years went on, it became costlier to make a film and it required more
+expertise to enter the industry, so fewer films were made and more stability
+was achieved. The number of films produced annually soon settled at a much
+lower average of 230 films (calculated over the years 1923 to 1929) and even
+lower, if we look at the sound film period with 154 films produced annually
+(the average of the years 1930 to 1939). Given the capital necessary for film
+production, the rising production costs and the access to professionals and
+equipment, this development is not surprising. At least the number of films
+produced annually was a parameter well known before (Prinzler).
+We were specifically interested in the stability of the network (as a whole)
+over time, so we tried to zoom in a bit on those persons that leave the
+network from one year to the next. The first thing that struck us – even
+Journal of Cultural Analytics
+
+7
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+though it did not quite surprise us – was that those people had a much lower
+9
+average participation in productions than those that stayed in the network.
+Those that left the network from one year to another were involved in 1,3
+to 1,6 productions in the preceding year, with 1,44 as the average. These
+numbers remained rather stable over the whole period under investigation.
+Since 1,0 is the lowest possible value here (because the person has to have
+at least one credit in the preceding year), an average of 1,3 to 1,6 is pretty
+low, especially if we look at the numbers for those remaining in the network.
+The number of productions that the people remaining in the network from
+one year to the next participated in fluctuated between 4,96 (nearly five
+productions on average; in 1921) and 2,33 (in 1938) with the average of the
+whole time period (1919-39) being 3,3. Of course, with the huge difference
+in the number of films produced each year, it is only logical that these
+number decline over time. For the 1920s, the average is 3,7 films, while for
+the 1930s it is 2,9, echoing the general trend of fewer films produced per
+year. Most probably, this also has to do with the average production time that
+an individual was occupied with on any project. Films at the beginning of
+the 1920s, on average, were produced faster and also with fewer participants.
+Here, an approach based on network analysis is productive because it shows
+wider trends based on the entirety of available data, not just a section or part
+thereof.
+The next thing we noticed was the rather wide fluctuation of personnel each
+year. Each person that receives a credit in a given year is represented by a node;
+one to two thirds of all the nodes of a given year (i.e. persons) do not show
+up in the network of the next year. The highest numbers of people leaving
+the network (not being present in the following year) are to be found in the
+early years of the Weimar Republic. In the early 1920s about two thirds of the
+professionals active in a given year did not receive a credit on a feature film in
+the following year (1921: 66,3%; 1922: 68,5%; 1923: 64,3%), so it seems that
+the industry was at a most volatile state. When looking more closely – and
+beyond the immediate post-war situation – at the data, we noticed that one of
+the largest percentage of people not showing up the next year in credits can be
+observed from 1933 to 1934 (60,3%), i.e. exactly at the point in time, when –
+after the National socialists came to power – a great number of professionals
+belonging to persecuted groups (Jews, political activists, open opponents of
+the fascists, queers and other minoritarian groups) were forced out of the film
+industry. If we ignore the early years of the Weimar Republic as a short spell
+of turmoil and disorder, then the percentage of persons not showing up in
+next year’s credits is usually below 50%. It is only twice decisively over 55% in 1927 and in 1934. The peak in 1927 is harder to explain than the one in
+
+9 Mainly for reasons of operationalization, we only looked at participation from year to year. We did not take into account that some
+
+professionals do not show up one year and then have a credit again in the year after. Of course, one could model the data in such a way that
+participation in the network has a half-life period of more than one year. Yet again, this being an exploratory study, we were more interested
+in getting to know and exploring the data than in modelling only one particular question.
+
+Journal of Cultural Analytics
+
+8
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+Illustration 2. percentage of participants not active in the following year (with 3-year-rolling-average)
+
+1934, but it could be due to the economic slump which hit the film industry
+in 1926 (Kremeier 146–57), a kind of delayed reaction to the economic
+crisis and inflation of 1923. The overall development becomes more apparent
+when one calculates and works with a three-year-rolling average to account
+for the time it takes from the conception of a project via the production
+to the film coming into cinemas. Films usually take a year or two along
+this path, so using a three-year average is an attempt to take vagaries of film
+production into account. Here, a clear second climax (beside the one in the
+post-World War One period) is visible in the years 1933 and 1934 which
+clearly demarcates that the exodus from the German film industry is a result
+of the Nazis coming to power, as some professionals were anticipating the
+political changeover, while the trend intensified in 1933 and the following
+years.
+One of the most striking results is the noticeable increase in network density
+over time. Network density is measured as the ratio between the potential and
+the actual edges (connections) in the network. A network density of one (1,0)
+would indicate that the full potential is realized, i.e. every node is connected
+to all other nodes. Translated to our case at hand, such a state would indicate
+that every person (node) in the network would work on every production.
+The lower the network density, the more spread out is the participation in
+films among the creative personnel. Or, put differently – a higher number
+in network density indicates a smaller group working on more productions,
+thus a more tightly knit group of creative professionals. The lowest density of
+
+Journal of Cultural Analytics
+
+9
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+10
+
+the network as a whole, thus also the highest average path length , is visible in
+the early years of the Weimar republic (1919: 0,011; 1920: 0,010; 1921: 0,012;
+1922: 0,014; 1923: 0,015). The value then increases noticeably and remains
+rather close to 0,030 throughout the whole period under investigation. The
+development of the average path length which stays clearly above 3 until 1925
+and then oscillates around 2,7 for the rest of the period appears structurally
+to be very similar. As time goes on, therefore, the network is structured more
+densely, the industry is increasingly tightly knit, but it remains rather stable
+in this respect all through the period under investigation.
+These findings about the development of the network are corrobated by
+the results in network diameter which show a similar development and
+echo the findings just mentioned. The diameter is the longest chain in the
+whole network that you are forced to travel along to get from one node
+to another or, simply put, the longest distance between any two nodes. As
+a measurement, it indicates how densely interconnected the nodes are or,
+conversely, how spread out or loose the network is. Whereas the early years
+of Weimar filmmaking (1919-23) shows a diameter of between 7 and 9, this
+measurement later settles between 5 and 6. Superficially, this means that the
+two persons furthest apart in the network, i.e. film industry, have to traverse
+less nodes/people in later years. Yet again, the significance of the results goes
+beyond the degree of separation of the film industry, as it illustrates a higher
+degree of concentration in the industry. This concentration is indicative of
+the interpersonal, but also of the economic state of the industry which tends
+in the 1920s towards concentration (see also Spiker 34ff). Moreover, these
+findings cannot simply be put down to the higher number of films being
+produced in the early years: In 1923, when 254 films are being made, the
+diameter of the network is seven, whereas in 1927 more films are made (267)
+and the diameter is noticeably smaller (five). The stability – and above all,
+the connectivity – that is achieved in 1924, after the inflation and the crash
+of the economy, shows how this sector had settled on a relatively stable base
+from which it then operated. This is maybe one of the key findings: despite a
+rather large fluctuation of personnel (see above), the industry had achieved a
+measure of structural stability by the mid-1920s which remained intact until
+the late 1930s. Yet again, despite this structural consolidation, a rather large
+number of professionals were forced out of the industry around the National
+socialist take-over of power in 1933.
+Another important measure in networks is the so called “Eigenvector
+centrality” which calculates the centrality of specific nodes by looking at
+neighboring nodes. A high score in Eigenvector centrality indicates that a
+node is connected to numerous nodes which have high values (and therefore
+also many connections to other high-scoring nodes). One of the most famous
+
+10 The average path length is the average number of steps along the shortest path for all possible pairs of network nodes.
+
+Journal of Cultural Analytics
+
+10
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+Table 1. network density, average path length, diameter (1919-39)
+Year
+
+Density
+
+Average Path Length
+
+Diameter
+
+1919
+
+0,011
+
+3,202
+
+7
+
+1920
+
+0,01
+
+3,196
+
+8
+
+1921
+
+0,012
+
+3,182
+
+9
+
+1922
+
+0,014
+
+3,097
+
+7
+
+1923
+
+0,015
+
+3,101
+
+7
+
+1924
+
+0,018
+
+3,084
+
+6
+
+1925
+
+0,019
+
+3,001
+
+6
+
+1926
+
+0,026
+
+2,644
+
+6
+
+1927
+
+0,026
+
+2,568
+
+5
+
+1928
+
+0,024
+
+2,665
+
+5
+
+1929
+
+0,021
+
+2,709
+
+6
+
+1930
+
+0,022
+
+2,827
+
+6
+
+1931
+
+0,022
+
+2,746
+
+5
+
+1932
+
+0,025
+
+2,706
+
+5
+
+1933
+
+0,025
+
+2,689
+
+5
+
+1934
+
+0,028
+
+2,745
+
+6
+
+1935
+
+0,03
+
+2,719
+
+5
+
+1936
+
+0,027
+
+2,731
+
+5
+
+1937
+
+0,029
+
+2,795
+
+6
+
+1938
+
+0,027
+
+2,784
+
+5
+
+1939
+
+0,028
+
+2,718
+
+5
+
+cases of Eigenvector centrality is the Google PageRank which calculates the
+11
+value of web pages by looking at the incoming links. In our case, value
+flows in both directions, as highly sought after professionals bestow value
+to a production, but being part of an important film (with other respected
+professionals) also increases the prestige of a person. Therefore, our edges
+were undirected (not distinguishing between incoming and outgoing links).
+The results are meaningful for calculating the real and symbolic value of
+film workers that connect with others and therefore have a more central
+position in the network. First of all, we specifically looked at the Eigenvector
+centrality of those people that fell out of the network from one year to
+another to find out how centrally they were positioned in the network. In
+the first years, when the industry was highly volatile, the value was around
+0,045, as compared to values around 0,15 for those remaining in the network
+12
+(0,137 for 1920; 0,177 for 1921; 0,144 for 1922 ). People remaining in the
+film business had a much higher involvement in the industry (number of
+productions they were involved in), roughly by the factor of three. The issue
+at hand here is the structural composition of the industry; being marginal to
+
+11 Google is just interested in incoming links because the value (of web pages) has to be generated from the outside, otherwise a web page
+
+could score high just by linking to central pages without anyone noticing it.
+12 We could not calculate the value for 1919 because we did not have the data for 1918 which would have been necessary to ascertain who
+
+remained and who left the network.
+
+Journal of Cultural Analytics
+
+11
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+Illustration 3. Eigenvector Centrality (1919-39)
+
+the network (i.e. having a lower Eigenvector centrality) significantly increases
+the likelihood of not working again on any film in the following year. From
+1923 until the early 1930s, the Eigenvector Centrality of the people dropping
+out of the network fluctuates between 0,07 and 0,1, while the Eigenvector
+Centrality of the ones that stay in the network moves slightly up and down
+around 2,0. A marked increase in Eigenvector Centrality of those falling out
+of the network can be noticed in 1934, when it jumps to 0,112, indicating
+that more people that were central to the network in the year before do not
+show up anymore. Of course, we see here again the direct result of the Nazi
+purges in the film sector after 1933, as up to 2000 people (Horak 101) had
+to leave the industry.
+Yet again, Eigenvector Centrality seems to be on a steady increase all through
+the period in focus. If we take five year averages for those leaving the
+network and those remaining we get 0,063 and 0,173 (1920-24), 0,072 and
+0,185 (1925-29), 0,091 and 0,222 (1930-34), 0,123 and 0,266 (1935-39).
+The measurement roughly doubles over the twenty years, both for those
+remaining within the network, as well as for those leaving the network.
+What remains stable is the relation between those not being employed in
+the following year and those finding employment again (the factor oscillates
+between 3 and 2,5). The increase confirms the observation that the industry is
+getting more tight and more intensely connected over the years, but the ratio
+of openness (new people entering the industry, established people leaving the
+industry) to closeness (hiring always established experts) remains rather stable.
+One hypothesis might be that a creative industry such as filmmaking requires
+a certain relation between openness (hiring new and unknown people) and
+closure (relying on tested professionals).
+
+Journal of Cultural Analytics
+
+12
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+Finally, we wanted to zoom in, so we examined in more detail some
+individuals and their development over time. Eigenvector Centrality appeared
+to us as the most important measurement of centrality in our network,
+therefore we looked at the ten most highly ranked nodes (individuals) in each
+year. Of course, centrality correlates to a certain degree with productivity –
+with more productions, a node has more edges and therefore it becomes more
+likely that the position is more central. Being engaged in many productions
+implies that a person is sought after and thus occupies a position of centrality.
+The top ten for each year gives us a list of those individuals with the highest
+scores in Eigenvector Centrality in the network, i.e. the strongest neighboring
+nodes. In these lists, actors and actresses dominate at first almost exclusively,
+in the period 1919-24 they make up 72,5% of the list. By the mid-1920s
+composers show up in surprising numbers (in the half-decade from 1925-29
+they even form the biggest group in the list with 38%), probably due to the
+fact that they are now permanently employed by big production companies
+to write sheet music for the cinemas. This task can be done relatively quickly,
+so that the composers can work on many different productions in one year
+which gives them a lot of connections. In the five years after the introduction
+of sound (1930-34), they make up 18% and then drop back to 4% in the
+years leading up to World War Two (1935-39), a decline that is not so easily
+explained. Directors and producers show up only very seldomly in these lists,
+as they are usually occupied for longer periods of time with one project. A
+lower overall number of credits means less connected nodes and therefore less
+potential to be in direct vicinity to high-scoring nodes.
+In 1930, no actor/actress is in the list (the only year in the whole period
+in which acting personnel is absent from the top ten-list), but a number
+of three screenwriters, the highest number in the whole time period under
+investigation. Most likely, sound film increased the significance of the writing
+(i.e. the dialogue), so they occupy about 10% of the positions in the list
+after 1930, whereas before they were far less significant. This could be seen
+as an indication that indeed the filmhistorical transition to sound film is a
+significant turning point for the structure of the film industry. The central
+role of cinematography and set design in German filmmaking which has been
+discussed repeatedly in existing scholarship (Esser; Betz et al.; Bartels; Block)
+can be seen by the relatively steady presence of cameramen and set designers
+all through the period – each group usually makes up around 10%. In the
+half-decade 1935-39 this number even increases to 22% for set design and
+to 14% for cinematography. On the other hand, editing is completely absent
+from this list; no editor makes the top ten in these 21 years. This would
+indeed also corrobate existing scholarship in which editing has not played a
+major role so far.
+
+Journal of Cultural Analytics
+
+13
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+Table 2. Top Ten nodes (individuals) with highest Eigenvector Centrality (1919-39) per year
+1919
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Reinhold Schünzel
+
+acting/direction
+
+26
+
+1
+
+Olga Engl
+
+acting
+
+28
+
+0.961043
+
+Magnus Stifter
+
+acting
+
+15
+
+0.779291
+
+Kurt Richter
+
+production design
+
+21
+
+0.773576
+
+Eduard von Winterstein
+
+acting
+
+15
+
+0.737371
+
+Frida Richard
+
+acting
+
+12
+
+0.672176
+
+Leopold von Ledebur
+
+acting
+
+18
+
+0.634464
+
+Harry Liedtke
+
+acting
+
+13
+
+0.629112
+
+Emil Rameau
+
+acting
+
+13
+
+0.622357
+
+Paul Hartmann
+
+acting
+
+13
+
+0.61175
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+1920
+
+Conrad Veidt
+
+acting/direction
+
+18
+
+1
+
+Hermann Vallentin
+
+acting
+
+20
+
+0.967256
+
+Rudolf Lettinger
+
+acting
+
+12
+
+0.949705
+
+Wilhelm Diegelmann
+
+acting
+
+16
+
+0.929771
+
+Frida Richard
+
+acting
+
+14
+
+0.917065
+
+Eduard von Winterstein
+
+acting
+
+16
+
+0.889449
+
+Robert Neppach
+
+production design
+
+14
+
+0.813694
+
+Carl Hoffmann
+
+cinematography
+
+14
+
+0.802799
+
+Charles Willy Kayser
+
+acting/direction
+
+23
+
+0.781542
+
+Bernhard Goetzke
+
+acting
+
+22
+
+0.776206
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Wilhelm Diegelmann
+
+acting
+
+21
+
+1
+
+Robert Neppach
+
+production design/
+screenwriting
+
+22
+
+0.784435
+
+Erich Kaiser-Titz
+
+acting
+
+21
+
+0.759334
+
+Albert Steinrück
+
+acting
+
+14
+
+0.639941
+
+Robert Scholz
+
+acting
+
+18
+
+0.604983
+
+Olga Engl
+
+acting
+
+12
+
+0.58635
+
+Charles Willy Kayser
+
+acting/direction
+
+20
+
+0.565821
+
+Ilka Grüning
+
+acting
+
+12
+
+0.564551
+
+Alfred Abel
+
+acting/direction
+
+10
+
+0.508669
+
+Hermann Picha
+
+acting
+
+11
+
+0.507694
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Wilhelm Diegelmann
+
+acting
+
+15
+
+1
+
+Alfred Abel
+
+acting
+
+12
+
+0.97597
+
+1921
+
+1922
+
+Journal of Cultural Analytics
+
+14
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+Eduard von Winterstein
+
+acting
+
+12
+
+0.969536
+
+Ilka Grüning
+
+acting
+
+11
+
+0.956453
+
+Robert Scholz
+
+acting
+
+14
+
+0.937518
+
+Margit Barnay
+
+acting
+
+13
+
+0.934813
+
+Hermann Picha
+
+acting
+
+13
+
+0.923251
+
+Frida Richard
+
+acting
+
+10
+
+0.829949
+
+Fritz Arno Wagner
+
+cinematography
+
+7
+
+0.752948
+
+Kurt Lande
+
+cinematography
+
+10
+
+0.743246
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Eduard von Winterstein
+
+acting
+
+11
+
+1
+
+Hermann Vallentin
+
+acting
+
+10
+
+0.979716
+
+Hans Dreier
+
+production design
+
+11
+
+0.837996
+
+1923
+
+Erich Kaiser-Titz
+
+acting
+
+10
+
+0.739235
+
+Alexander Granach
+
+acting
+
+6
+
+0.72093
+
+Guido Seeber
+
+cinematography
+
+5
+
+0.711151
+
+Wilhelm Diegelmann
+
+acting
+
+13
+
+0.687974
+
+Anton Edthofer
+
+acting
+
+5
+
+0.6753
+
+Erich Waschneck
+
+cinematography
+
+5
+
+0.651439
+
+Alfons Fryland
+
+acting
+
+7
+
+0.642457
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Frida Richard
+
+acting
+
+9
+
+1
+
+Erich Pommer
+
+production
+
+7
+
+0.75678
+
+Robert Scholz
+
+acting
+
+8
+
+0.737897
+
+Albert Steinrück
+
+acting
+
+8
+
+0.698131
+
+Margarete Kupfer
+
+acting
+
+9
+
+0.687788
+
+1924
+
+Olga Engl
+
+acting
+
+7
+
+0.678675
+
+Otto Erdmann
+
+production design
+
+6
+
+0.672148
+
+Hans Sohnle
+
+production design
+
+6
+
+0.672148
+
+Mutz Greenbaum
+
+cinematography
+
+8
+
+0.639005
+
+Gustave Preiß
+
+cinematography
+
+7
+
+0.631136
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+1925
+Persons
+Frida Richard
+
+acting
+
+15
+
+1
+
+Hans Behrendt
+
+screenwriting/acting/
+direction
+
+12
+
+0.729216
+
+Margarete Kupfer
+
+acting
+
+8
+
+0.697692
+
+Robert Liebmann
+
+screenwriting
+
+13
+
+0.685088
+
+Hermann Picha
+
+acting
+
+10
+
+0.682415
+
+Willy Schmidt-Gentner
+
+music
+
+9
+
+0.668048
+
+Jacek Rotmil
+
+production design
+
+10
+
+0.627568
+
+Wilhelm Diegelmann
+
+acting
+
+11
+
+0.619729
+
+Journal of Cultural Analytics
+
+15
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+Giuseppe Becce
+
+music
+
+8
+
+0.619376
+
+Hans Mierendorff
+
+acting
+
+8
+
+0.610501
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Willy Schmidt-Gentner
+
+music
+
+16
+
+1
+
+Felix Bartsch
+
+music
+
+16
+
+0.976383
+
+Henry Bender
+
+acting
+
+11
+
+0.796366
+
+Harry Liedtke
+
+acting
+
+12
+
+0.796077
+
+Otto Kanturek
+
+cinematography
+
+11
+
+0.787772
+
+1926
+
+Hans May
+
+music
+
+11
+
+0.743387
+
+Maly Delschaft
+
+acting
+
+11
+
+0.702722
+
+Wilhelm Dieterle
+
+acting
+
+11
+
+0.702592
+
+Jacek Rotmil
+
+production design
+
+10
+
+0.687149
+
+Willi A. Herrmann
+
+production design
+
+13
+
+0.678468
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+1927
+
+Felix Bartsch
+
+music
+
+29
+
+1
+
+Willy Schmidt-Gentner
+
+music
+
+25
+
+0.894267
+
+Hans May
+
+music
+
+23
+
+0.821943
+
+Walter Ulfig
+
+music
+
+18
+
+0.681393
+
+Jacek Rotmil
+
+production design
+
+16
+
+0.647645
+
+Gustav A. Knauer
+
+production design
+
+16
+
+0.644136
+
+Pasquale Perris
+
+music
+
+14
+
+0.615632
+
+Albert Steinrück
+
+acting
+
+12
+
+0.597605
+
+Harry Liedtke
+
+acting
+
+13
+
+0.558995
+
+Hermann Picha
+
+acting
+
+12
+
+0.546915
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Hansheinrich Dransmann
+
+music
+
+22
+
+1
+
+Paul Dessau
+
+music
+
+16
+
+0.821566
+
+Willy Schmidt-Gentner
+
+music
+
+12
+
+0.661269
+
+Walter Ulfig
+
+music
+
+14
+
+0.652854
+
+Hans Junkermann
+
+acting
+
+12
+
+0.640975
+
+Hans Sohnle
+
+production design
+
+13
+
+0.623562
+
+Otto Erdmann
+
+production design
+
+13
+
+0.623562
+
+Curt J. Braun
+
+screenwriting
+
+13
+
+0.621407
+
+Fritz Kampers
+
+acting
+
+13
+
+0.605992
+
+Georg Alexander
+
+acting
+
+11
+
+0.599367
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Werner Schmidt-Boelcke
+
+music
+
+23
+
+1
+
+1928
+
+1929
+
+Journal of Cultural Analytics
+
+16
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+Willy Schmidt-Gentner
+
+music
+
+20
+
+0.844957
+
+Bernhard Homola
+
+music
+
+17
+
+0.784801
+
+Gustav A. Knauer
+
+production design
+
+20
+
+0.784567
+
+Willy Schiller
+
+production design
+
+18
+
+0.751045
+
+Hansheinrich Dransmann
+
+music
+
+14
+
+0.696112
+
+Pasquale Perris
+
+music
+
+13
+
+0.683074
+
+Fritz Kampers
+
+acting
+
+13
+
+0.682755
+
+Georg C. Klaren
+
+screenwriting
+
+10
+
+0.632767
+
+Albert Paulig
+
+acting
+
+12
+
+0.624331
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Willi A. Herrmann
+
+production design
+
+18
+
+1
+
+Willy Schmidt-Gentner
+
+music
+
+12
+
+0.982412
+
+Hans H. Zerlett
+
+screenwriting
+
+9
+
+0.959955
+
+Otto Stransky
+
+music
+
+9
+
+0.957903
+
+Franz Schroedter
+
+production design
+
+14
+
+0.951228
+
+1930
+
+Robert Stolz
+
+music
+
+15
+
+0.937058
+
+Walter Wassermann
+
+screenwriting
+
+10
+
+0.881921
+
+Friedl Behn-Grund
+
+cinematography
+
+9
+
+0.875069
+
+Walter Reisch
+
+screenwriting
+
+15
+
+0.87041
+
+Friedrich Hollaender
+
+music
+
+9
+
+0.862193
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Willi A. Herrmann
+
+production design
+
+16
+
+1
+
+Otto Wallburg
+
+acting
+
+12
+
+0.94901
+
+Paul Hörbiger
+
+acting
+
+10
+
+0.872025
+
+Artur Guttmann
+
+music
+
+11
+
+0.837794
+
+1931
+
+Willy Goldberger
+
+cinematography
+
+11
+
+0.827073
+
+Ralph Arthur Roberts
+
+acting
+
+10
+
+0.826337
+
+Bobby E. Lüthge
+
+screenwriting
+
+9
+
+0.801761
+
+Fritz Schulz
+
+acting
+
+9
+
+0.768044
+
+Julius Falkenstein
+
+acting
+
+8
+
+0.762298
+
+Lucie Englisch
+
+acting
+
+9
+
+0.757352
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Paul Hörbiger
+
+acting
+
+15
+
+1
+
+Ida Wüst
+
+acting
+
+13
+
+0.855504
+
+1932
+
+Jakob Tiedtke
+
+acting
+
+9
+
+0.846241
+
+Willi A. Herrmann
+
+production design
+
+14
+
+0.806304
+
+Anton Pointner
+
+acting
+
+10
+
+0.797539
+
+Oskar Sima
+
+acting
+
+8
+
+0.764021
+
+Willy Goldberger
+
+cinematography
+
+12
+
+0.760103
+
+Journal of Cultural Analytics
+
+17
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+Georg Alexander
+
+acting
+
+9
+
+0.701724
+
+Erich Pommer
+
+production
+
+16
+
+0.676079
+
+Carl Drews
+
+cinematography
+
+9
+
+0.658408
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Otto Wallburg
+
+acting
+
+11
+
+1
+
+1933
+
+Georg Alexander
+
+acting
+
+7
+
+0.948205
+
+Walter Wassermann
+
+screenwriting
+
+11
+
+0.946106
+
+Carl Boese
+
+direction/screenwriting/
+production
+
+14
+
+0.9406
+
+Paul Hörbiger
+
+acting
+
+10
+
+0.930068
+
+Eduard Künneke
+
+music
+
+10
+
+0.917699
+
+Ida Wüst
+
+acting
+
+9
+
+0.912042
+
+Fritz Kampers
+
+acting
+
+13
+
+0.908362
+
+Franz Grothe
+
+music
+
+12
+
+0.886449
+
+Liane Haid
+
+acting
+
+9
+
+0.877544
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Adele Sandrock
+
+acting
+
+13
+
+1
+
+Jakob Tiedtke
+
+acting
+
+11
+
+0.99822
+
+Theo Lingen
+
+acting
+
+11
+
+0.953203
+
+Paul Hörbiger
+
+acting
+
+10
+
+0.881102
+
+1934
+
+Will Meisel
+
+music
+
+9
+
+0.849884
+
+Fritz Odemar
+
+acting
+
+9
+
+0.842207
+
+Erich Czerwonski
+
+production design
+
+12
+
+0.801936
+
+Willy Winterstein
+
+cinematography
+
+11
+
+0.76921
+
+Paul Henckels
+
+acting
+
+8
+
+0.724451
+
+Franz Grothe
+
+music
+
+9
+
+0.699177
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Lothar Philipp August
+Mayring
+
+screenwriting
+
+9
+
+1
+
+Adele Sandrock
+
+acting
+
+10
+
+0.9876
+
+Theo Lingen
+
+acting
+
+8
+
+0.973672
+
+Paul Hörbiger
+
+acting/production
+
+8
+
+0.94581
+
+Philipp Lothar Othello
+Mayring
+
+screenwriting
+
+8
+
+0.91582
+
+1935
+
+Ida Wüst
+
+acting
+
+7
+
+0.895015
+
+Albrecht Schoenhals
+
+acting
+
+6
+
+0.857265
+
+Erich Zander
+
+production design
+
+7
+
+0.856674
+
+Willi Depenau
+
+production design
+
+7
+
+0.856674
+
+Bruno Mondi
+
+cinematography
+
+7
+
+0.818872
+
+1936
+
+Journal of Cultural Analytics
+
+18
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Ewald Daub
+
+cinematography
+
+7
+
+1
+
+Alfred Bütow
+
+production design
+
+8
+
+0.982821
+
+Willi A. Herrmann
+
+production design
+
+8
+
+0.982821
+
+Fritz Maurischat
+
+production design
+
+8
+
+0.902362
+
+Fritz Kampers
+
+acting
+
+6
+
+0.892411
+
+Theo Lingen
+
+acting
+
+5
+
+0.878123
+
+Gustav Fröhlich
+
+acting
+
+6
+
+0.854081
+
+Grethe Weiser
+
+acting
+
+6
+
+0.849666
+
+Hans Leibelt
+
+acting
+
+6
+
+0.834836
+
+Rudolf Platte
+
+acting
+
+7
+
+0.804879
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Leo Leux
+
+music
+
+6
+
+1
+
+Herbert Körner
+
+cinematography
+
+6
+
+0.915335
+
+Artur Günther
+
+production design
+
+7
+
+0.888683
+
+Otto Wernicke
+
+acting
+
+6
+
+0.882058
+
+Friedl Behn-Grund
+
+cinematography
+
+6
+
+0.86962
+
+Oskar Sima
+
+acting
+
+6
+
+0.838815
+
+Georg Alexander
+
+acting
+
+7
+
+0.83415
+
+Bobby E. Lüthge
+
+screenwriting
+
+6
+
+0.829794
+
+Hilde Körber
+
+acting
+
+6
+
+0.829431
+
+Georg Jacoby
+
+direction
+
+5
+
+0.824909
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Lothar Philipp August
+Mayring
+
+screenwriting
+
+9
+
+1
+
+Philipp Lothar Othello
+Mayring
+
+screenwriting
+
+9
+
+1
+
+Georg Alexander
+
+acting
+
+9
+
+0.853298
+
+Karl Weber
+
+production design
+
+7
+
+0.705906
+
+Erich Zander
+
+production design
+
+7
+
+0.705906
+
+Alfred Bütow
+
+production design
+
+9
+
+0.697357
+
+Willi A. Herrmann
+
+production design
+
+9
+
+0.680621
+
+Herbert Hübner
+
+acting
+
+6
+
+0.680146
+
+Hans Schneeberger
+
+cinematography
+
+8
+
+0.666173
+
+René Deltgen
+
+acting
+
+6
+
+0.650699
+
+Persons
+
+Craft
+
+Number of participations in film
+productions
+
+Eigenvector
+Centrality
+
+Paul Hörbiger
+
+acting/production
+
+13
+
+1
+
+Hans Brausewetter
+
+acting
+
+6
+
+0.667036
+
+Werner Bochmann
+
+music
+
+8
+
+0.636867
+
+1937
+
+1938
+
+1939
+
+Journal of Cultural Analytics
+
+19
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+Johannes Riemann
+
+acting
+
+6
+
+0.607806
+
+Ernst Waldow
+
+acting
+
+6
+
+0.584665
+
+Willy Winterstein
+
+cinematography
+
+6
+
+0.57952
+
+Grethe Weiser
+
+acting
+
+6
+
+0.573184
+
+Hilde Hildebrand
+
+acting
+
+5
+
+0.569003
+
+Eduard Hoesch
+
+cinematography
+
+7
+
+0.562098
+
+Heinrich Richter
+
+production design
+
+6
+
+0.561561
+
+Illustration 4. craft group as represented in the top ten-list of professionals with the highest Eigenvector Centrality
+(1919-24; 1925-29; 1930-34; 1935-39)
+
+Conclusion
+This has been an exploratory study which investigates the use value of
+network analysis as a method for conceptualizing collaboration and
+connectivity in a (national) film culture. While network analysis has been
+used as a tool in many fields of the humanities (Barabási; Ahnert et al.) it is
+rather new to film studies. With this methodological adoption, the present
+study does not claim to offer a better approach or the ultimate solution to
+an old problem, but it rather proposes to use the data and digital methods
+at our disposal for an alternative look at some of the issues that film history
+has grappled with in the past. At the same time, this study also wants to
+contribute to answering the question of what new insights might become
+possible through the systematic application of network research methods in a
+specific field.
+
+Journal of Cultural Analytics
+
+20
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+In film history, the focus has traditionally been on single-work analyses and
+relatively stable categories such as author, national cinema, or genre, which
+have been examined according to established methods. Shifting the focus to
+network research means to open up a different perspective. This transition
+from fixed entities to linkages which network research necessitates stresses
+relationality and relativity. Since nodes and edges are mutually dependent,
+the primacy of objects as fixed entities no longer applies; rather, changing
+relations provide for constant repositioning within a wider web of references.
+Thus, instead of being viewed in isolation as a monument, a network-based
+approach emphasizes the embeddedness and interconnectedness of entities
+such as films or filmmakers. This allows new perspectives on structures or
+influences to be derived, and possibilities and limits of agency are once again
+configured differently than in many conventional studies because networks
+of relationships become the focus of attention. The dynamic nature of
+networks, especially when read historically on a temporal axis, requires an
+approach that is interested in the constitution of groups and their always
+fuzzy boundaries (because social groups always include connections beyond
+the internal structure).
+We do not use data to test a fixed and stable hypothesis which are then either
+confirmed or falsified (as, for example, clinical studies do). We rather follow
+the lead of “exploratory data analysis” (Tukey; Arnold and Tilton 50ff), as
+data and hypotheses stand in a relation of mutual interconnectedness. We
+look at data in order to verify or falsify hypotheses, but data also often
+give rise to new hypotheses; as we find trends and outliers that we did not
+notice before. Thus, we need to take the mutual interdependence of data
+and hypotheses into account. In this respect, we have to constantly remind
+ourselves that data is always modelled, as it is an abstraction from reality. Yet
+again, modelling also happens in approaches that study a specific national
+cinema through a small number of films, as the sample implicitly claims that
+it is representative of the larger whole.
+The engagement with subject-specific research data as well as the consistent
+acquisition and application of data skills enables the opening up of new
+perspectives in film studies. In particular, the innovative use of collected data
+resources in relation to existing and new research questions supports a recontouring of the field. Using data-based methods, comparative studies can
+be carried out, because previously unpublished or unnoticed data holdings on
+the history of cinema are made accessible and used consistently for the first
+time. In this way, questions that have already been asked frequently come into
+view in such a way that they can open up data-based paths to other insights
+- and especially to new models of thought. This is by no means to say that
+the large amounts of available data - “big data” in the sense of the Californian
+ideology - finally enable us to find better or even true answers, but rather
+that it is about the productivity of a new perspective that is able to frame
+certain questions differently. Among the questions to be answered in such
+Journal of Cultural Analytics
+
+21
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+studies are: To what extent can thematic foci and multiple relationships and
+collaborations within German film historiography be illustrated with the help
+of network research? Which aspects of cinema research that are particularly
+interested in popular culture allow for a network-based approach?
+Data repository: https://doi.org/10.7910/DVN/C80HD1
+Submitted: March 24, 2024 EDT, Accepted: May 21, 2024 EDT
+
+This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0
+International License (CCBY-4.0). View this license’s legal deed at http://creativecommons.org/licenses/
+by/4.0 and legal code at http://creativecommons.org/licenses/by/4.0/legalcode for more information.
+
+Journal of Cultural Analytics
+
+22
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+works cited
+Acland, Charles R., and Haidee Wasson, editors. Useful Cinema. Duke University Press, 2010,
+https://doi.org/10.1515/9780822394167.
+Ahnert, Ruth, et al. The Network Turn. Changing Perspectives in the Humanities. Cambridge
+University Press, 2020.
+Altman, Charles F. “Towards a Historiography of American Film.” Cinema Journal, vol. 16, no. 2,
+Spring 1977, pp. 1–25, https://doi.org/10.2307/1225381.
+Arnold, Taylor, and Lauren Tilton. Distant Viewing. Computational Exploration of Digital Images.
+The MIT Press, 2023, https://doi.org/10.7551/mitpress/14046.001.0001.
+Barabási, Albert-László. Linked. How Everything Is Connected to Everything Else. Basic Books, 2006.
+Bartels, Nadejda, editor. Deutsche Filmarchitektur / German Film Architecture, 1918-1933. Tchoban
+Foundation, 2019.
+Bergfelder, Tim, et al., editors. The German Cinema Book. 2002. 2nd ed., British Film Institute,
+2020.
+Betz, Connie, et al., editors. Ästhetik der Schatten. Filmisches Licht 1915-1950. Schüren, 2014.
+Block, Axel. Die Kameraaugen des Fritz Lang. Der Einfluss der Kameramänner auf den Film der
+Weimarer Republik. edition text + kritik, 2020.
+Bordwell, David, et al. The Classical Hollywood Cinema. Film Style and Mode of Production to
+1960. Columbia University Press, 1985, https://doi.org/10.2307/1772109.
+Brockmann, Stephen. A Critical History of German Film. Camden House, 2010.
+Caldwell, John Thornton. Production Culture. Industrial Reflexivity and Critical Practice in Film
+and Television. Duke University Press, 2008, https://doi.org/10.2307/j.ctv11sn72d.
+Caughie, John, editor. Theories of Authorship. A Reader. Routledge & Kegan Paul, 1981.
+Christie, I. “Where Is National Cinema Today (and Do We Still Need It)?” Film History, vol. 25,
+no. 1–2, 2013, pp. 19–30.
+Elsaesser, Thomas. “The German Cinema as Image and Idea.” Encyclopedia of European Cinema,
+edited by Ginette Vincendeau, British Film Institute, 1995.
+Engell, Lorenz. Sinn und Industrie. Einführung in die Filmgeschichte. Campus, 2002.
+Esser, Michael, editor. Gleißende Schatten. Kamerapioniere der zwanziger Jahre. Henschel, 1994.
+Fisher, Jaimey, editor. Generic Histories of German Cinema: Genre and Its Deviations. Camden
+House, 2013.
+Garncarz, Joseph, and Annemone Ligensa, editors. The Cinema of Germany. Wallflower, 2012.
+Grant, Barry Keith, editor. Auteurs and Authorship. A Film Reader. Blackwell, 2008.
+Hagener, Malte, and Theresa Blaschke. Approaching a National Film History through Data. 2024.
+Harvard Dataverse, https://doi.org/10.7910/DVN/C80HD1.
+Hickethier, Knut. “Filmgeschichte zwischen Kunst- und Mediengeschichte. Zur Einleitung.”
+Filmgeschichte schreiben. Ansätze, Entwürfe und Methoden. Dokumentation der Tagung der GFF
+1988, edited by Knut Hickethier, Edition Sigma Bohn, 1989, pp. 7–22.
+Higson, Andrew. “The Concept of National Cinema.” Screen, vol. 30, no. 4, Autumn 1989, pp.
+36–47, https://doi.org/10.1093/screen/30.4.36.
+Horak, Jan-Christopher. “Exilfilm, 1933-1945.” Geschichte des deutschen Films, edited by Jacobsen et
+al., Metzler, 1993, pp. 101–18.
+Jacobsen, Wolfgang, et al., editors. Geschichte des deutschen Films. 2nd ed., Metzler, 1993,
+https://doi.org/10.1007/978-3-476-02918-8.
+
+Journal of Cultural Analytics
+
+23
+
+Approaching a National Film History through Data. Network Analysis in German Film History
+
+Jeong, Seung-hoon, and Jeremi Szaniawski, editors. The Global Auteur. The Politics of Authorship in
+the 21st Century Cinema. Bloomsbury, 2016, https://doi.org/10.5040/9781501312663.
+Jones, Candace. “Careers in Project Networks: The Case of the Film Industry.” The Boundaryless
+Career: A New Employment Principle for a New Organizational Era, edited by M. B. Arthur and
+D. M. Rousseau, Oxford University Press, 2001, pp. 58–75, https://doi.org/10.1093/oso/
+9780195100143.003.0004.
+Juhász, S., et al. “Brokering the Core and the Periphery: Creative Success and Collaboration
+Networks in the Film Industry.” PLoS ONE, vol. 15, no. 2, 2020, p. e0229436, https://doi.org/
+10.1371/journal.pone.0229436.
+Kapczynski, Jennifer M., and Michael D. Richardson, editors. A New History of German Cinema.
+Camden House, 2012.
+Kremeier, Klaus. Die UFA Story. Geschichte eines Filmkonzerns. Carl Hanser, 1992.
+Mayer, Vicki, et al., editors. Production Studies. Cultural Studies of Media Industries. Routledge,
+2009.
+Prinzler, Hans Helmut. Chronik des deutschen Films, 1895-1994. Metzler, 1995, https://doi.org/
+10.1007/978-3-476-03585-1.
+Spiker, Jürgen. Film und Kapital. Der Weg der deutschen Filmwirtschaft zum nationalsozialistischen
+Einheitskonzern. Verlag Volker Spiess, 1975.
+Tukey, John. Exploratory Data Analysis. Addison-Wesley, 1977.
+van Es, Karin, and Mirko Tobias Schäfer. “Introduction: New Brave World.” The Datafied Society.
+Studying Culture through Data, edited by Karin van Es and Mirko Tobias Schäfer, Amsterdam
+University Press, 2017, pp. 13–22, https://doi.org/10.1515/9789048531011-003.
+Vitali, Valentina, editor. Theorising National Cinema. British Film Institute, 2008.
+Weingart, Scott. “Demystifying Networks, Parts I & II.” Journal of Digital Humanities, vol. 1, no.
+1, Winter 2011, https://journalofdigitalhumanities.org/1-1/demystifying-networks-by-scottweingart/.
+
+Journal of Cultural Analytics
+
+24
+
+
